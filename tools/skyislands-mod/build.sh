@@ -4,8 +4,11 @@
 set -e
 L=${1:-/opt/minecraft-servers/exosphere-aero/libraries}
 cd "$(dirname "$0")"
-CP=$(find "$L" -name '*.jar' | grep -vE 'net/neoforged/neoforge/21|net/minecraft/server/1.21.1/server-1.21.1.jar|-unpacked|-slim|-mappings|guava-20.0|gson-2.8.9|asm[a-z-]*-9\.3|commons-lang3-3.8.1' | tr '\n' ':'):$L/net/neoforged/neoforge/21.1.262/neoforge-21.1.262-universal.jar
-mkdir -p build/classes
+NF=$L/net/neoforged/neoforge/21.1.262/neoforge-21.1.262-universal.jar
+mkdir -p build/classes build/libs
+# MixinExtras (@Local) ships inside NeoForge's own jar.
+unzip -o -q -j "$NF" 'META-INF/jarjar/mixinextras-neoforge-*.jar' -d build/libs
+CP=$(find "$L" -name '*.jar' | grep -vE 'net/neoforged/neoforge/21|net/minecraft/server/1.21.1/server-1.21.1.jar|-unpacked|-slim|-mappings|guava-20.0|gson-2.8.9|asm[a-z-]*-9\.3|commons-lang3-3.8.1' | tr '\n' ':'):$NF:$(ls build/libs/mixinextras-neoforge-*.jar | head -1)
 javac --release 21 -nowarn -proc:none -cp "$CP" -d build/classes $(find src -name '*.java')
 (cd build/classes && jar cf ../../skyislands-1.0.0.jar .)
 jar uf skyislands-1.0.0.jar -C res .

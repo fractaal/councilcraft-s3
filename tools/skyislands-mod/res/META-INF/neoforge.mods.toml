@@ -9,6 +9,8 @@ description="Server-side sky-island terrain function and per-lake water levels."
 displayTest="IGNORE_ALL_VERSION"
 [[mixins]]
 config="skyislands.mixins.json"
+[[mixins]]
+config="skyislands.compat.mixins.json"
 [[dependencies.skyislands]]
 modId="neoforge"
 type="required"

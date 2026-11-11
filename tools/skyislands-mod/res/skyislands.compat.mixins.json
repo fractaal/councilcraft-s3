@@ -1,0 +1,1 @@
+{"required":false,"minVersion":"0.8","package":"skyislands.mixin","compatibilityLevel":"JAVA_21","mixins":["SableServerLevelPlotMixin","RedOrchidFeatureMixin"],"injectors":{"defaultRequire":0}}

@@ -122,8 +122,10 @@ Measured with `/api/fullgen` in copies of the VPS server folder (8 vCPU, 16 GB),
 2. **All-air cells are skipped.** In those chunks, a 4x4x4 cell whose interpolation corners are all below zero, with no lake water, is left as air without working out its 64 blocks (about 92% of cells).
 3. **Cheaper lake lookups.** Each chunk first checks whether any lake island can reach it, and island lookups go through a per-thread cache.
 4. **No decoration in empty sky.** Biomes that exist only more than 16 blocks from any land don't get their features tried, and an ore blob whose surroundings are all air isn't placed block by block (it still draws the same random numbers).
+5. **No biome lookups high in the sky.** Above the highest point any nearby island can reach (from each island's parameters at their noise maxima, plus 40 blocks), and never below y=240, a column's biome samples reuse the first one: depth only falls with height and the other climate parameters don't change, so the multi-noise result is the same. On the VPS this skipped about a quarter of all biome lookups (Lithostitched's biome injection is most of their cost).
+6. **Excessive Utilities' red orchid** reads every block from y=-64 to 16 of its chunk looking for redstone ore; it is skipped where that band is all air, since it then finds nothing and draws no random numbers.
 
-Checked on the VPS: 432 chunks through the world's generator with the shortcuts on and off differ in no block (including lakes and chunks with roads or structures kept blending). Full chunks from a world with the shortcuts differ from a world without them in 18.9% of block columns, the same as two worlds without them differ from each other (19.1%, decoration that depends on chunk generation order). Speed in the same three areas went from 21.4, 22.9, 17.0 (and 23.8, 24.6, 17.1 in a second run) to 28.5, 38.3, 16.8 full chunks per second.
+Checked on the VPS: 432 chunks through the world's generator with the shortcuts on and off differ in no block and in none of their 995,328 biome samples (including lakes and chunks with roads or structures kept blending). Full chunks from a world with the shortcuts differ from a world without them in 18.9% of block columns, the same as two worlds without them differ from each other (19.1%, decoration that depends on chunk generation order). Speed in the same three areas went from 21.4, 22.9, 17.0 (and 23.8, 24.6, 17.1 in a second run) to 28.5, 38.3, 16.8 full chunks per second.
 
 Rerun both checks (`/api/fastcheck` and `/api/colhash` in the worldgen lab) after adding or updating mods that touch world generation.
 
@@ -134,6 +136,13 @@ The Aero Sky Islands datapack also doubles oil: Oritech oil springs 1 in 350 chu
 
 ### Structure template upgrades (2026-11-11)
 About three quarters of the pack's 8,930 structure templates were saved by older Minecraft versions, and upgrading one with DataFixerUpper happens the first time it is used, during chunk generation. A teleport into fresh land froze the VPS for 35 seconds, about 90% of it upgrading templates. `skyislands` now keeps a disk cache of upgraded templates (`skyislands-cache/structures-<data version>-<mod list hash>/`, 84 MB), filled by a low-priority background thread after the server starts (187 s on the first boot with a new mod list; later boots only check hashes). The same thread first builds DataFixerUpper's upgrade rules for all 47 old data versions. On each boot it re-upgrades 25 cached entries and compares them; on the first check, none differed. Loading one fresh far chunk took 12.2 s with only the rules warmed and 1.9 to 5.0 s with the cache. Turn them off with `-Dskyislands.dfuWarmup=false` and `-Dskyislands.structureCache=false`; delete the folder to rebuild the cache.
+
+### Tried and dropped
+- **ScalableLux** (0.3.0-alpha.0.8, with Sable's incompatibility overridden and the one-line sub-level light fix from Sable issue #1638 applied in `skyislands`): lighting left the worldgen threads, but full generation got slower in the same areas (14.2 against 17.7 chunks per second, warm-up area 7.7 against 20). Not shipped. The Sable fix stays in `skyislands` as an optional mixin; it changes nothing without ScalableLux.
+- **C2ME and Moonrise:** Sable's tracker has open incompatibility issues for both (#634, #727, #318).
+
+### Speed on the VPS after these changes (2026-11-11)
+Same three areas, full chunks per second: 34.1, 45.2, 22.3 (no shortcuts: 21.4, 22.9, 17.0).
 
 ### Not checked yet
 - Joining the VPS on 1.5.1+sky.2 with a client, including whether Advanced Loot Info now gets its data (DirectAuth, which held it back, is gone).

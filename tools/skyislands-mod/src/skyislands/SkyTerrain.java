@@ -921,6 +921,115 @@ public final class SkyTerrain implements DensityFunction {
     }
 
     /**
+     * For each 4x4 column of the 16x16 chunk at (x0, z0), in (localX << 2 | localZ) order: the y ranges, in blocks, where
+     * any island that can reach that column or the columns next to it can put land, as [lo, hi, lo, hi, ...] (empty if
+     * none). The ranges come from each island's parameters at their noise maxima (Island verticalBound), not from
+     * sampling, so a thin islet between sample points can't be missed. SkyBiomes keeps exact biomes inside them.
+     */
+    public double[][] skyEnvelopes(int x0, int z0) {
+        Arch a = p.arch;
+        double room = 2.0 * a.sharedRoom();
+        int rx0 = x0 - 8, rz0 = z0 - 8, rx1 = x0 + 23, rz1 = z0 + 23;
+        java.util.List<Island> cands = new java.util.ArrayList<>();
+        for (int cx = (int) Math.floor(rx0 / a.cell) - a.search; cx <= (int) Math.floor(rx1 / a.cell) + a.search; cx++)
+            for (int cz = (int) Math.floor(rz0 / a.cell) - a.search; cz <= (int) Math.floor(rz1 / a.cell) + a.search; cz++)
+                addCandidate(cands, mainIsland(cx, cz), rx0, rz0, rx1, rz1, room);
+        if (a.leySpacing > 0) {
+            for (int cx = (int) Math.floor(rx0 / a.leyCell) - a.leySearch; cx <= (int) Math.floor(rx1 / a.leyCell) + a.leySearch; cx++)
+                for (int cz = (int) Math.floor(rz0 / a.leyCell) - a.leySearch; cz <= (int) Math.floor(rz1 / a.leyCell) + a.leySearch; cz++)
+                    addCandidate(cands, leyIsland(cx, cz), rx0, rz0, rx1, rz1, room);
+        }
+        if (a.pepperChance > 0) {
+            for (int tx = Math.floorDiv(rx0, PEPPER_TILE); tx <= Math.floorDiv(rx1, PEPPER_TILE); tx++)
+                for (int tz = Math.floorDiv(rz0, PEPPER_TILE); tz <= Math.floorDiv(rz1, PEPPER_TILE); tz++)
+                    for (Island is : pepperTile(tx, tz)) if (!cands.contains(is)) addCandidate(cands, is, rx0, rz0, rx1, rz1, room);
+        }
+        double[][] out = new double[16][];
+        for (int lx = 0; lx < 4; lx++) {
+            for (int lz = 0; lz < 4; lz++) {
+                // This 4x4 column and its neighbours: biome lookups for a block can read the next column's sample.
+                int qx0 = x0 + 4 * lx - 4, qz0 = z0 + 4 * lz - 4, qx1 = qx0 + 11, qz1 = qz0 + 11;
+                double[] env = new double[0];
+                for (Island is : cands) {
+                    if (!reaches(is, qx0, qz0, qx1, qz1, room)) continue;
+                    double[] b = verticalBound(is);
+                    env = java.util.Arrays.copyOf(env, env.length + 2);
+                    env[env.length - 2] = b[0];
+                    env[env.length - 1] = b[1];
+                }
+                out[lx << 2 | lz] = env;
+            }
+        }
+        return out;
+    }
+
+    private static void addCandidate(java.util.List<Island> out, Island is, int x0, int z0, int x1, int z1, double room) {
+        if (is != NO_ISLAND && reaches(is, x0, z0, x1, z1, room)) out.add(is);
+    }
+
+    private static boolean reaches(Island is, int x0, int z0, int x1, int z1, double room) {
+        double dx = Math.max(0.0, Math.max(x0 - is.x, is.x - x1)), dz = Math.max(0.0, Math.max(z0 - is.z, is.z - z1));
+        double r = is.reach + room;
+        return dx * dx + dz * dz < r * r;
+    }
+
+    /**
+     * The lowest and highest y (blocks) island `is` can put land at, from addIsland with every noise at its maximum
+     * (Arch.NOISE_MAX), plus 8 blocks. Wild islands get 64 more each way: their 3D detail noise is applied up to 60
+     * blocks from a surface (compute's nearest >= -3, in units of B).
+     */
+    private double[] verticalBound(Island is) {
+        Arch a = p.arch;
+        double nm = Arch.NOISE_MAX, tier = 0.0;
+        for (int k = 1; k < is.lobes.length / 4; k++) tier = Math.max(tier, Math.abs(is.lobes[4 * k + 3]));
+        double top = is.base + tier + is.dome + is.hills * 1.45 * nm + is.peak * 1.2 + is.rim + is.cliff;
+        if (is.bowlDepth > 0) {
+            double lift = Math.max(0.0, (nm - (1.0 - a.islets)) / Math.max(0.05, a.islets));
+            top = Math.max(top, is.waterLevel + 1.0 + 6.0 * lift + 2.0 * nm);
+        }
+        double depth = (is.edge + is.under * is.r) * (1.0 + a.undersideNoise * 1.5 * nm) + a.drips * Math.sqrt(is.r) * 3.0 * nm
+                + a.peakRoot * is.peak;
+        double bottom = is.base - tier - depth;
+        // addIsland also caps the underside at 4 below the top, and a lake bed can sit bowlDepth under the water.
+        if (is.bowlDepth > 0) bottom = Math.min(bottom, is.waterLevel - is.bowlDepth - 2.0 * nm - 8.0);
+        double extra = 8.0 + (is.wild > 0 ? 64.0 : 0.0);
+        return new double[]{bottom - extra, top + extra};
+    }
+
+    /**
+     * The land in one column as (bottom, top) pairs in blocks, before 3D detail noise, with each lake's water level
+     * counted as top; null if no island reaches the column. SkyBiomes keeps exact biomes within its margin of these.
+     */
+    public double[] landSpans(int x, int z) {
+        Column c = new Column(this, x, z);
+        fill(c, true, true);
+        if (c.count == 0) return null;
+        double[] out = new double[2 * c.count];
+        for (int i = 0; i < c.count; i++) {
+            out[2 * i] = c.bottom[i] / B;
+            double top = c.top[i] / B;
+            if (!Double.isNaN(c.basinLevel[i])) top = Math.max(top, c.basinLevel[i]);
+            out[2 * i + 1] = top;
+        }
+        return out;
+    }
+
+    /** The seeded SkyTerrain in a world's noise router, or null if the world doesn't use one. */
+    public static SkyTerrain of(net.minecraft.world.level.levelgen.RandomState state) {
+        return BY_STATE.computeIfAbsent(state, s -> {
+            SkyTerrain[] found = new SkyTerrain[1];
+            s.router().fluidLevelFloodednessNoise().mapAll(df -> {
+                if (df instanceof SkyTerrain t) found[0] = t;
+                return df;
+            });
+            return java.util.Optional.ofNullable(found[0]);
+        }).orElse(null);
+    }
+
+    private static final java.util.Map<net.minecraft.world.level.levelgen.RandomState, java.util.Optional<SkyTerrain>> BY_STATE =
+            java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
+
+    /**
      * Archipelago lakes for one chunk: water from each lake island's level down to its lake bed, only in its lake
      * columns. Vanilla asks once per air block, so each column's answer is kept. Most chunks have no lake island
      * anywhere near, and those are found once per chunk instead of filling all 256 columns.

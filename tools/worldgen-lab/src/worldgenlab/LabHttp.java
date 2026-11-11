@@ -325,7 +325,7 @@ final class LabHttp {
         int cx = Integer.parseInt(q.get("cx")), cz = Integer.parseInt(q.get("cz"));
         int n = Math.max(1, Math.min(32, Integer.parseInt(q.getOrDefault("n", "8"))));
         LabWorld w = world;
-        long differ = 0, blocks = 0, water = 0, solid = 0, onNanos = 0, offNanos = 0;
+        long differ = 0, blocks = 0, water = 0, solid = 0, onNanos = 0, offNanos = 0, quarts = 0, biomesDiffer = 0;
         long skipped0 = skyislands.FastGen.CELLS_SKIPPED.get(), filled0 = skyislands.FastGen.CELLS_FILLED.get();
         Map<String, Integer> examples = new HashMap<>();
         try {
@@ -351,6 +351,17 @@ final class LabHttp {
                         examples.merge(b.getBlock().getDescriptionId() + " -> " + a.getBlock().getDescriptionId(), 1, Integer::sum);
                     }
                 }
+                // Every biome sample of the chunk, too: the sky-biome shortcut must give the same biomes.
+                for (int qy = on.getMinBuildHeight() >> 2; qy < on.getMaxBuildHeight() >> 2; qy++)
+                    for (int lx = 0; lx < 4; lx++) for (int lz = 0; lz < 4; lz++) {
+                        quarts++;
+                        var ba = on.getNoiseBiome((x << 2) + lx, qy, (z << 2) + lz);
+                        var bb = off.getNoiseBiome((x << 2) + lx, qy, (z << 2) + lz);
+                        if (!ba.equals(bb)) {
+                            biomesDiffer++;
+                            examples.merge("biome y=" + (qy << 2) + " " + bb.getRegisteredName() + " -> " + ba.getRegisteredName(), 1, Integer::sum);
+                        }
+                    }
             }
         } finally {
             skyislands.FastGen.setEnabled(true);
@@ -361,6 +372,8 @@ final class LabHttp {
         r.addProperty("nonAirBlocks", solid);
         r.addProperty("waterBlocks", water);
         r.addProperty("differ", differ);
+        r.addProperty("biomeSamples", quarts);
+        r.addProperty("biomesDiffer", biomesDiffer);
         r.addProperty("msPerChunkOn", onNanos / 1e6 / (n * n));
         r.addProperty("msPerChunkOff", offNanos / 1e6 / (n * n));
         r.addProperty("cellsSkipped", skyislands.FastGen.CELLS_SKIPPED.get() - skipped0);
@@ -381,6 +394,8 @@ final class LabHttp {
         c.addProperty("cellsFilled", skyislands.FastGen.CELLS_FILLED.get());
         c.addProperty("oresSkipped", skyislands.FastGen.ORES_SKIPPED.get());
         c.addProperty("sectionsDropped", skyislands.FastGen.SECTIONS_DROPPED.get());
+        c.addProperty("biomesSkipped", skyislands.FastGen.BIOMES_SKIPPED.get());
+        c.addProperty("biomesExact", skyislands.FastGen.BIOMES_EXACT.get());
         return c;
     }
 

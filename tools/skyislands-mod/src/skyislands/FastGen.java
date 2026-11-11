@@ -42,7 +42,7 @@ public final class FastGen {
     /** Counters for the lab and the log: chunks whose structure blending was skipped or kept, cells skipped. */
     public static final AtomicLong BEARD_SKIPPED = new AtomicLong(), BEARD_KEPT = new AtomicLong(),
             CELLS_SKIPPED = new AtomicLong(), CELLS_FILLED = new AtomicLong(), ORES_SKIPPED = new AtomicLong(),
-            SECTIONS_DROPPED = new AtomicLong();
+            SECTIONS_DROPPED = new AtomicLong(), BIOMES_SKIPPED = new AtomicLong(), BIOMES_EXACT = new AtomicLong();
 
     private FastGen() {}
 
