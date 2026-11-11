@@ -19,8 +19,8 @@ import org.slf4j.Logger;
 /**
  * Sky-island worlds have far less ground than a normal overworld, so most structure placements land on nothing. This
  * packs overworld structures closer together to make up for it: every structure set that can generate in the sky-island
- * overworld and not in the Nether or the End gets a grid whose cells hold `skyislands.structureDensity` (default 2)
- * times as many attempts. Spacing and separation shrink by the square root, so the minimum gap between two of a
+ * overworld and not in the Nether or the End gets a grid whose cells hold `skyislands.structureDensity` (default 1, off)
+ * times as many attempts (off unless set). Spacing and separation shrink by the square root, so the minimum gap between two of a
  * structure shrinks with them. Strongholds (concentric rings) and Nether and End structures are left alone. Mod
  * dimensions are not consulted: some (mining dimensions) reuse overworld biomes, which would rule out every set, and an
  * overworld structure set generating more often there too is harmless.
@@ -30,7 +30,7 @@ import org.slf4j.Logger;
  */
 public final class StructureDensity {
     private static final Logger LOG = LogUtils.getLogger();
-    private static final double DENSITY = Double.parseDouble(System.getProperty("skyislands.structureDensity", "2"));
+    private static final double DENSITY = Double.parseDouble(System.getProperty("skyislands.structureDensity", "1"));
     private static boolean applied;
 
     private StructureDensity() {}
