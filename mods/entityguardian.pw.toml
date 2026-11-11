@@ -1,0 +1,13 @@
+name = "EntityGuardian"
+filename = "entityguardian-1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1ee0a98642fb5c5a40a97f3630041f387b0600c8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6806054
+project-id = 1313091

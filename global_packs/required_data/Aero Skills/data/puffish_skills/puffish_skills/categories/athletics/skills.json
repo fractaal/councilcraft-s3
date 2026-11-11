@@ -1,0 +1,140 @@
+{
+	"1": {
+		"definition": "root_movement_speed+5%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"2": {
+		"definition": "reduced_falldamage-10%",
+		"x": 0,
+		"y": 256,
+		"root": false
+	},
+	"3": {
+		"definition": "reduced_falldamage-10%",
+		"x": 0,
+		"y": 128,
+		"root": false
+	},
+	"4": {
+		"definition": "jump_height+1",
+		"x": -64,
+		"y": 256,
+		"root": false
+	},
+	"5": {
+		"definition": "swim_speed+10%",
+		"x": 32,
+		"y": 64,
+		"root": false
+	},
+	"6": {
+		"definition": "swim_speed+25%",
+		"x": 64,
+		"y": 256,
+		"root": false
+	},
+	"7": {
+		"definition": "dodge_chance+5%",
+		"x": 32,
+		"y": 192,
+		"root": false
+	},
+	"8": {
+		"definition": "swim_speed+10%",
+		"x": 64,
+		"y": 128,
+		"root": false
+	},
+	"9": {
+		"definition": "dodge_chance+5%",
+		"x": 32,
+		"y": 320,
+		"root": false
+	},
+	"11": {
+		"definition": "swim_speed+50%",
+		"x": 64,
+		"y": 384,
+		"root": false
+	},
+	"12": {
+		"definition": "swim_speed+100%",
+		"x": 96,
+		"y": 448,
+		"root": false
+	},
+	"14": {
+		"definition": "reduced_falldamage-25%",
+		"x": 0,
+		"y": 384,
+		"root": false
+	},
+	"16": {
+		"definition": "sprint_speed+2%",
+		"x": -32,
+		"y": 64,
+		"root": false
+	},
+	"17": {
+		"definition": "sprint_speed+2%",
+		"x": -64,
+		"y": 128,
+		"root": false
+	},
+	"18": {
+		"definition": "movement_speed+2%",
+		"x": -32,
+		"y": 192,
+		"root": false
+	},
+	"19": {
+		"definition": "movement_speed+5%",
+		"x": 32,
+		"y": 576,
+		"root": false
+	},
+	"20": {
+		"definition": "movement_speed+5%",
+		"x": 0,
+		"y": 512,
+		"root": false
+	},
+	"21": {
+		"definition": "sprint_speed+5%",
+		"x": -32,
+		"y": 448,
+		"root": false
+	},
+	"22": {
+		"definition": "sprint_speed+5%",
+		"x": 32,
+		"y": 448,
+		"root": false
+	},
+	"23": {
+		"definition": "movement_speed+5%",
+		"x": -32,
+		"y": 320,
+		"root": false
+	},
+	"24": {
+		"definition": "jump_height+1",
+		"x": -64,
+		"y": 384,
+		"root": false
+	},
+	"25": {
+		"definition": "jump_height+1",
+		"x": -96,
+		"y": 448,
+		"root": false
+	},
+	"26": {
+		"definition": "movement_speed+5%",
+		"x": -32,
+		"y": 576,
+		"root": false
+	}
+}

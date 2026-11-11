@@ -1,0 +1,13 @@
+name = "Modonomicon"
+filename = "modonomicon-1.21.1-neoforge-1.123.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/692GClaE/versions/OKyLanIn/modonomicon-1.21.1-neoforge-1.123.0.jar"
+hash-format = "sha512"
+hash = "e9569d3ba39caefb4776a1d9d99d2045f2e6ca4ca26a7e609aa99d0d8e9c696a0c8e9d68df0e9a2b41dc513de8f36e5ea91f8f26db781b8279b2a6a96f95291e"
+
+[update]
+[update.modrinth]
+mod-id = "692GClaE"
+version = "OKyLanIn"

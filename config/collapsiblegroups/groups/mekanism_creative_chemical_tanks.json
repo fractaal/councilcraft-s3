@@ -1,0 +1,12 @@
+{
+  "id": "mekanism_creative_chemical_tanks",
+  "name": {
+    "translate": "collapsible_groups.group.mekanism_creative_chemical_tanks",
+    "fallback": "Mekanism: Creative Chemical Tanks"
+  },
+  "enabled": true,
+  "filter": {
+    "type": "item",
+    "id": "mekanism:creative_chemical_tank"
+  }
+}

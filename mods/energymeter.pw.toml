@@ -1,0 +1,13 @@
+name = "Energy Meter"
+filename = "energymeter-neoforge-1.21.1-0.5.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/MbejSZ2E/versions/rKdSZwE2/energymeter-neoforge-1.21.1-0.5.3.jar"
+hash-format = "sha512"
+hash = "1fc6c79a0ec35c3847aab7511b97f52c8bb4c1ba7171ae70162f1ef57ab0b412fc80f5bbeab90dd07b31ee27175bd084173952acb7153303bf11799cf0b955ca"
+
+[update]
+[update.modrinth]
+mod-id = "MbejSZ2E"
+version = "rKdSZwE2"

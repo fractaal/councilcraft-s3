@@ -1,0 +1,13 @@
+name = "Hordium"
+filename = "hordium-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/W53fUPa6/versions/AzyCb1eb/hordium-1.0.3.jar"
+hash-format = "sha512"
+hash = "e1fd610fbf23bfe8c0adeb15de371cdbff2c32b72305df5c95c389bfdc081c65dc9c5e795174c0375727698cb5a72d8df9506792261bcfa1f9fcfae4f4b2eb29"
+
+[update]
+[update.modrinth]
+mod-id = "W53fUPa6"
+version = "AzyCb1eb"

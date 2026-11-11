@@ -1,0 +1,6 @@
+#The chance that a Brewing Stand in a configured Village Template Pool is replaced with a Peace Candle.
+# Default: 0.3333333333333333
+# Range: 0.0 ~ 1.0
+peaceCandleVillageReplacementChance = 0.3333333333333333
+#The Village Template Pools whose Brewing Stands may be replaced with Peace Candles. Leave empty to disable generation.
+peaceCandleVillageTemplatePools = ["minecraft:village/plains/houses", "minecraft:village/desert/houses", "minecraft:village/savanna/houses", "minecraft:village/snowy/houses", "minecraft:village/taiga/houses"]

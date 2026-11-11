@@ -1,0 +1,13 @@
+name = "Bad Wither No Cookie - Reloaded"
+filename = "bwncr-neoforge-1.21.1-3.20.4.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/lL2MtE37/versions/FRuLJsBp/bwncr-neoforge-1.21.1-3.20.4.jar"
+hash-format = "sha512"
+hash = "642c550c61f0fc374b576bd5b26a6e9ee69c0b8e47a1368d99bffcbd47420689c763b60aef64ace8fa2e0ecd8e909b26771a779add2fcde0dd86c9c4c99ffee8"
+
+[update]
+[update.modrinth]
+mod-id = "lL2MtE37"
+version = "FRuLJsBp"

@@ -1,0 +1,22 @@
+{
+  "id": "apprentice_codex_scroll_inscribe_ice",
+  "name": {
+    "translate": "collapsible_groups.group.apprentice_codex_scroll_inscribe_ice",
+    "fallback": "Apprentice's Codex: Inscribe Ice Scrolls"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "id": "irons_spellbooks:scroll"
+      },
+      {
+        "type": "item",
+        "component": "irons_spellbooks:spell_container",
+        "path": "data[0].id",
+        "value": "apprenticecodex:inscribe_ice"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+name = "[Let's Do] Lili's Pottery"
+filename = "letsdo-lilis_pottery-neoforge-1.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sHiqiJIU/versions/vNj8tYW6/letsdo-lilis_pottery-neoforge-1.0.3.jar"
+hash-format = "sha512"
+hash = "b0ad98fb0039f0d4b8b97f2d0e86c5cd99a82af224c63d9732bf0ffeba89c48ddf8189f25d87a33eb472090afe1d37654dc098d55a2baa0f6492adf5bbf193d5"
+
+[update]
+[update.modrinth]
+mod-id = "sHiqiJIU"
+version = "vNj8tYW6"

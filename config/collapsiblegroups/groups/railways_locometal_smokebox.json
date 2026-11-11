@@ -1,0 +1,34 @@
+{
+  "id": "railways_locometal_smokebox",
+  "name": {
+    "translate": "collapsible_groups.group.railways_locometal_smokebox",
+    "fallback": "Railways: Locometal Smokebox"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "railways"
+      },
+      {
+        "item_path_contains": "locometal_smokebox"
+      },
+      {
+        "not": {
+          "item_path_contains": "brass_wrapped"
+        }
+      },
+      {
+        "not": {
+          "item_path_contains": "copper_wrapped"
+        }
+      },
+      {
+        "not": {
+          "item_path_contains": "iron_wrapped"
+        }
+      }
+    ]
+  }
+}

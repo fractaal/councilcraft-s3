@@ -1,0 +1,13 @@
+name = "Chisel Modern"
+filename = "chisel-1.21.1-NeoForge-1.4.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "371ea3c218b6c218a2dd2aa641c26f964c26f533"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8780015
+project-id = 1392308

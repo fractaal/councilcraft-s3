@@ -1,0 +1,24 @@
+{
+  "id": "create_deepslate_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.create_deepslate_blocks",
+    "fallback": "Create: Deepslate Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "item_path_contains": "deepslate"
+      },
+      {
+        "not": {
+          "item_path_contains": "zinc_ore"
+        }
+      }
+    ]
+  }
+}

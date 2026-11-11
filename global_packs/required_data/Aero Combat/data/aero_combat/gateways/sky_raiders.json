@@ -1,0 +1,132 @@
+{
+  "size": "medium",
+  "color": "#B64536",
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "minecraft:pillager",
+          "count": 4
+        },
+        {
+          "entity": "minecraft:vindicator",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 20,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "minecraft:pillager",
+          "count": 4
+        },
+        {
+          "entity": "raided:inquisitor",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 40,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "minecraft:vindicator",
+          "count": 3
+        },
+        {
+          "entity": "raided:electromancer",
+          "count": 1
+        },
+        {
+          "entity": "minecraft:pillager",
+          "count": 3
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 60,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "irons_spellbooks:magehunter_vindicator",
+          "count": 1
+        },
+        {
+          "entity": "raided:inquisitor",
+          "count": 2
+        },
+        {
+          "entity": "raided:electromancer",
+          "count": 1
+        },
+        {
+          "entity": "minecraft:pillager",
+          "count": 3
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 80,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 7200,
+      "setup_time": 400
+    }
+  ],
+  "rewards": [
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "aero_combat:gateways/sky_raiders",
+      "rolls": 1,
+      "desc": "rewards.aero_combat.sky_raiders"
+    }
+  ],
+  "failures": [
+    {
+      "type": "gateways:mob_effect",
+      "effect": "minecraft:weakness",
+      "duration": 300
+    }
+  ],
+  "rules": {
+    "spawn_range": 10,
+    "leash_range": 48,
+    "allow_discarding": false,
+    "allow_dim_change": false,
+    "player_damage_only": false,
+    "remove_mobs_on_failure": true,
+    "fail_on_out_of_bounds": false,
+    "spacing": 96,
+    "requires_nearby_player": true
+  }
+}

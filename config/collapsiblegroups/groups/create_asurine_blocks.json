@@ -1,0 +1,35 @@
+{
+  "id": "create_asurine_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.create_asurine_blocks",
+    "fallback": "Create: Asurine Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "any": [
+          {
+            "type": "item",
+            "namespace": "create"
+          },
+          {
+            "type": "item",
+            "namespace": "create_chipped"
+          },
+          {
+            "type": "item",
+            "namespace": "rechiseledcreate"
+          },
+          {
+            "type": "item",
+            "namespace": "bits_n_bobs"
+          }
+        ]
+      },
+      {
+        "item_path_contains": "asurine"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:buried_treasure",
+  "biomes": "#minecraft:has_structure/buried_treasure",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_height": {
+    "above_bottom": 48
+  },
+  "step": "underground_structures"
+}

@@ -1,0 +1,448 @@
+{
+	quest.03629D4D6106A625.quest_desc: [
+		"For the next step, we need to combine &aArgon&r with some &2Silicon Dust&r to make &dMonocrystalline Silicon&r."
+		""
+		"These can be cut into &2Silicon Wafers&r that you can use for advanced processor recipes and &6RAM&r."
+	]
+	quest.03629D4D6106A625.title: "&dSilicon Wafer"
+	quest.0973638AADE1B61C.quest_desc: [
+		"&dPolyvinyl Chloride&r is used for advanced electronic components, upgrades, and superconductors."
+	]
+	quest.0973638AADE1B61C.title: "&dPolyvinyl Chloride"
+	quest.0ABE3ABD2CDF6A45.quest_desc: [
+		"There are a lot of &6Reactor Components&r to keep track of, so here is a list of each of them and their function(s)!"
+		""
+		"&eFuel Rods&f: These come in many varieties, and are your main nuclear force. They are responsible for providing the reactor with energy. &6Quad Rods&r last much longer than &aSingle Rods&r or &bDual Rods&r. Their emissivity decreases with temperature."
+		""
+		"&ePlates&f: A general-use conductive and reflective surface. has a high change of converting incoming &6Fast Neutrons&r into &dThermal Neutrons&r."
+		"{@pagebreak}"
+		"&eHeat Exchanger&f: A component designed for managing internal reactor temperature. Has a high thermal conductivity, meaning it can take heat from adjacent sources and send it to adjacent destinations."
+		""
+		"&eWater&f: Comes in several varieties. Pressurized versions are more energy-dense, and &9Heavy Water&r produces &4Tritium&r instead of &5Deuterium&r. Produces &cDeuterium&r when absorbing a &6Fast Neutron&r and increases in temperature (turning to &7Steam&r) when absorbing a &dThermal Neutron&r."
+		""
+		"&eCadmium Control Rod&f: A special component that has a high chance of absorbing incoming &dThermal Neutrons&r."
+	]
+	quest.0ABE3ABD2CDF6A45.title: "&6Reactor Components"
+	quest.0B711741F52B5D69.quest_desc: [
+		"Now we can &3Electrolyze&r the purified solution to create &bPlatinum Tiny Dust&r! With 9 of these, you can create &dPlatinum Dust."
+		""
+		"You then run this through an &3Electric Blast Furnace&r to create &5Platinum Hot Ingot&r, then through either a &3Vacuum Freezer&r or &dHeat Exchanger&r to cool it down!"
+	]
+	quest.0B711741F52B5D69.title: "&dPlatinum Ingot"
+	quest.0E11DBABFFAB0FFA.quest_desc: [
+		"You'll now be able to use the &aQuarry&r to get &dTungsten Ore&r!"
+		""
+		"This can be macerated into dust, then unpacked into tiny dust, then compressed into nuggets, then combined together to finally make &dTungsten Ingots&r!"
+	]
+	quest.0E11DBABFFAB0FFA.title: "&dTungsten Ingot"
+	quest.0F22A0A29B961A1C.quest_desc: [
+		"While you get &eEthylbenzene&r from &3Distilling&r &dSteam-Cracked Naphtha&r, you can also combine extra &3Ethylene&r and &aBenzene&r you get to make more &eEthylbenzene&r."
+	]
+	quest.0F22A0A29B961A1C.title: "&eEthylbenzene"
+	quest.0F8037316FBF818A.quest_desc: ["&eButadiene&r is used to make &7Styrene-Butadiene&r."]
+	quest.0F8037316FBF818A.title: "&eButadiene"
+	quest.0FA81BDE4918C7F7.quest_desc: [
+		"&6Boosted Diesel is the best liquid fuel."
+		""
+		"Note that you will need &2Diethyl Ether&r to make it (found in the petrochem distillation tree directly below)."
+	]
+	quest.0FA81BDE4918C7F7.title: "&6Boosted Diesel"
+	quest.15AE2FB38468A8B3.quest_desc: [
+		"With pure &2Naphtha&r, you can combine it with &7Steam&r in another &3Chemical Reactor&r to make &dSteam-Cracked Naphtha&r."
+		""
+		"You'll want to process this in a new &3Distillation Tower&r with 8 outputs."
+		""
+		"I guess you can say it isn't what it's &ocracked up&r to be."
+	]
+	quest.15AE2FB38468A8B3.title: "&dSteam-Cracked Naphtha Processing"
+	quest.16224A108EBCDC46.quest_desc: [
+		"With our new technology and chemicals, we can now create a new type of board for our electronics, the &dProcessing Unit Board&r."
+	]
+	quest.16224A108EBCDC46.title: "&dProcessing Unit Board"
+	quest.16C3EFC0741108EE.quest_desc: [
+		"&zQuantum Gear&r is the best there is. You can fly freely for no power cost, never take damage from external sources, and kill any mob in one hit with the &zQuantum Sword&r."
+	]
+	quest.16C3EFC0741108EE.title: "&zQuantum Gear"
+	quest.1D572D53A6EE3205.quest_desc: [
+		"Once your &2Quarry&r digs up some &aPlatinum Ore&r, we can macerate it down into &bRaw Platinum Ore&r."
+	]
+	quest.1D572D53A6EE3205.title: "&dRaw Platinum"
+	quest.1F3C96D0DAC4F080.quest_desc: [
+		"Our first step into &5Quantum &mRealms&r &5Machines&r!"
+		""
+		"Just like all other hulls, the &5Quantum Machine Hull&r can be used to upgrade your processing machines to the hull's tier!"
+	]
+	quest.1F3C96D0DAC4F080.title: "&5Quantum Machine Hull"
+	quest.216FBD5E15FE2E7D.quest_desc: [
+		"If we want our machines to handle these levels of power, we'll need to make &5Quantum Upgrades&r."
+		""
+		"The first one you make should be used on your &3Electric Packer&r to unlock new recipes."
+		""
+		"&5Quantum Upgrades&r cap out machine speeds."
+	]
+	quest.216FBD5E15FE2E7D.title: "&5Quantum Upgrade"
+	quest.22794ACEC855690B.quest_desc: [
+		"A lot goes into making a &6Nuclear Reactor&r, and there are many types. To explain the process, check out the &bReactor Components&r and &2Reactor Mechanics&r quests linked to this one!"
+		""
+		"&6Nuclear Reactors&r produce a lot of energy primarily as &7Steam&r."
+		""
+		"&7&oUnlike most other Nuclear Reactors, this one does not explode or emit radiation."
+	]
+	quest.22794ACEC855690B.title: "&6Nuclear Reactor&r"
+	quest.2382B2FED36766E4.quest_desc: [
+		"&dAnnealed Copper&r is heat-treated to make it easier to work with. This is a necessary component for crafting all of the advanced tier components."
+		""
+		"It's made by cooking copper with &bOxygen&r in the &2Electric Blast Furnace&r, and then cooling the hot ingot in a &3Vacuum Freezer"
+	]
+	quest.2382B2FED36766E4.title: "&dAnnealed Copper Ingot"
+	quest.26567E1596ADB808.quest_desc: [
+		"Durability is a thing of the past!"
+		""
+		"The &6Gravichestplate&r uses energy to enable &5Creative Flight&r!"
+	]
+	quest.26567E1596ADB808.quest_subtitle: "Creative Flight!"
+	quest.26567E1596ADB808.title: "&6Gravichestplate"
+	quest.26D4074DECF26C04.quest_desc: [
+		"The &6Plasma Turbine&r is the ultimate &eMI&r energy producer. It uses &5Helium Plasma&r to produce over &c1 Million EU/t&r."
+	]
+	quest.26D4074DECF26C04.title: "&6Plasma Turbine"
+	quest.28F3F31EA5BA9197.quest_desc: [
+		"By packing 3 incredibly strong ingots, you can make &dMixed Blastproof Ingots&r!"
+		""
+		"These are needed to make the &dImplosion Compressor&r, which can then make resources more efficiently."
+	]
+	quest.28F3F31EA5BA9197.title: "&dMixed Blastproof Ingot"
+	quest.29A42AFE639AA7DB.quest_desc: [
+		"&cTritium&r is a byproduct of &9Heavy Water&r getting hit by a &6Fast Neutron&r in a &6Nuclear Reactor&r."
+		""
+		"You can also make &cTritium&f via &eMekanism&f... This involves 2 thermal evaporation plants, 2 rotary condensentrator and 1 solar neutron activator."
+	]
+	quest.29A42AFE639AA7DB.title: "&4Tritium"
+	quest.2AF684DE838B0F83.quest_desc: [
+		"&5MOX Fuel&r is generally superior to regular &6Uranium Fuel&r, with an added benefit that it produces more &5Plutonium&r than it takes to make it. A 1.33x surplus, to be precise."
+		""
+		"This does NOT make it suitable for dedicated &5Plutonium&r production, but it does mean that you don't lose much by using it. Its high neutron output might be appealing."
+	]
+	quest.2AF684DE838B0F83.title: "&5HE MOX Fuel"
+	quest.2D31E8D06F40EAA9.quest_desc: [
+		"&eDiesel&r can be used as a fuel, or enriched into &6Boosted Diesel&r with the help of some &2Diethyl Ether&r. "
+	]
+	quest.2D31E8D06F40EAA9.title: "&eDiesel, Again"
+	quest.2F34A04C7FB2D605.quest_desc: [
+		"Using the &6Fusion Reactor&r, we can combine several liquids together to create &5Helium Plasma&r."
+		""
+		"There are several recipes for this &5Plasma&r!"
+		""
+		"&eHelium 3&r will be the easiest to use, but the others can offer better byproducts as well."
+	]
+	quest.2F34A04C7FB2D605.title: "&5Helium Plasma"
+	quest.32920D5D0DD6AC46.quest_desc: [
+		"The &dImplosion Compressor&r is used to place items under much more intense pressure than a normal compressor. This allows you to transform dusts and ingots into &bhighly blast resistant materials&r."
+		""
+		"Most of the materials will be required for nuclear technologies."
+	]
+	quest.32920D5D0DD6AC46.title: "&dImplosion Compressor"
+	quest.3424F0E39EB5DFC6.quest_desc: [
+		"While you have &2Ethanol&r from your &3Distilleries&r and &aSugar Solution&r, perhaps you could also make more using your excess &eSulfuric Acid&r and &3Ethylene&r."
+	]
+	quest.3424F0E39EB5DFC6.title: "&2Ethanol"
+	quest.346290B1274A92FF.quest_desc: [
+		"&6Titanium Drills&r are essential for producing mass quantities of &2Uranium&r, &7Iridium&r, and &aFluorite&r."
+		""
+		"You're going to need a fair amount of &2Uranium&r for &6Nuclear Power&r, as well as &7Iridium&r for highly advanced components."
+	]
+	quest.346290B1274A92FF.title: "&6Titanium Drills"
+	quest.37A31A3936ADD670.quest_desc: [
+		"To be able to recycle our HP water, we'll need to make the &dHeat Exchanger&r."
+		""
+		"The &dHeat Exchanger&r is a multiblock machine that cools items or liquids down to produce other items or liquids."
+		""
+		"We'll be using this to recycle our HP water, but this can also be used as a more efficient way to cool &cHot Ingots&r!"
+		"{@pagebreak}"
+		"Pressurizing water into HP water consumes a lot of energy, and the &dLarge Steam Turbine&r will not return it. You can use the &dHeat Exchanger&r to recover the HP water for another cycle."
+		""
+		"If you use the recipe that takes &7Steam&r and HP water as inputs, it will output regular water and &7HP Steam&r that we can use for power."
+		""
+		"&eNote&f: Be cautious of the recipe amounts, as you might need higher tiers of hatches to meet the recipe requirements. You'll know your hatches are too small if the recipes fail to start processing."
+		"{@pagebreak}"
+		"This machine is 3x3x5 multiblock, with the middle section built out of specific casings. One wall is made up of &cHeatproof Machine Casings&r and the other of &9Frostproof Machine Casings&r. The item and fluid hatches can only go in certain spots, so make sure to use the &aWrench&r to help place them."
+		""
+		"{image\\:\\ftb:textures/quests/modern_industrialization/heatexchanger.png width:200 height:150 align:center}"
+	]
+	quest.37A31A3936ADD670.title: "&dHeat Exchanger"
+	quest.39621D430CCBF307.quest_desc: [
+		"We'll need stronger motors to make better machines. These can also provide a faster item transfer rate in pipes!"
+	]
+	quest.39621D430CCBF307.title: "&6Large Advanced Motor \\&\\ Pump"
+	quest.3B09E14800C7276A.quest_desc: [
+		"Once you've obtained &7Sulfuric Crude Oil&r, you can process it with &bHydrogen&r in a &3Chemical Reactor&r to get &eSulfuric Acid&r and &7Crude Oil&r."
+		""
+		"[\"You can also run it through a \", {\"text\": \"Thermopneumatic Processing Plant\", \"color\": \"blue\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"6CD6367FB419EA35\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Processing Plant Quest\"}}, \" from \", {\"text\": \"PNCR\", \"color\": \"yellow\"}, \" to get \", {\"text\": \"Sulfur Dust\", \"color\": \"yellow\"}, \" and \", {\"text\": \"Crude Oil\", \"color\": \"gray\"}, \". The processing route you chose is up to you!\"]"
+	]
+	quest.3B09E14800C7276A.title: "&7Sulfuric Crude Oil"
+	quest.3D35A43A4D0E118F.quest_desc: [
+		"By combining &dStyrene&r and &eButadiene&r in another &3Chemical Reactor&r, we can create &7Styrene-Butadiene&r."
+	]
+	quest.3D35A43A4D0E118F.title: "&7Styrene-Butadiene"
+	quest.3D44D7B3E2062870.quest_desc: [
+		"Using an &3Implosion Compressor&r, we can compress an &6Ultradense Metal Ball&r with &c64 Nukes&r to create a &5Singularity&r."
+		""
+		"That's right. We're compressing &cNukes&r. Surely nothing bad will happen... right?"
+	]
+	quest.3D44D7B3E2062870.title: "&5Singularities"
+	quest.3D4A837CF7C2C173.quest_desc: [
+		"&5Plutonium&r is a manufactured material from &6Depleted Fuel Rods&r. To get a lot of it, you might want to invest in a &6Breeder Reactor&r."
+		""
+		"A &6Breeder Reactor&r is generally one which seeks to process fuel rods as quickly as possible with little regard for efficiency. Of course, you'll need to be generating &6Uranium&r at a quick enough rate to supply it."
+		""
+		"&5Plutonium&r rates (per rod) are as follows (Tiny Dust in -> Tiny Dust out):"
+		""
+		"Uranium: 0 -> 27"
+		"LE Uranium: 0 -> 24"
+		"HE Uranium: 0 -> 18"
+		"LE MOX: 9 -> 30 (+21)"
+		"HE MOX: 27 -> 36 (+9)"
+	]
+	quest.3D4A837CF7C2C173.title: "&5Plutonium Dust"
+	quest.40066A9E17ADB45F.quest_desc: [
+		"&3Acrylic Acid&r is used to make &aDiethyl Ether&r."
+		""
+		"It can also be used to make &eAcrylic Glue&r, in case you want to duplicate &aSlimeballs&r, for some reason."
+	]
+	quest.40066A9E17ADB45F.title: "&3Acrylic Acid"
+	quest.40CCB0B7868233CA.quest_desc: [
+		"By &3Centrifuging our new &aPlatinum Sulfuric Solution&r, we can extract &2Purified Platinum Sulfuric Solution&r, with a small chance to get &dIridium Tiny Dust&r as a byproduct."
+	]
+	quest.40CCB0B7868233CA.title: "&dIridium Tiny Dust"
+	quest.44654F0A91D7817D.quest_desc: [
+		"You're playing with &6Nuclear Reactors&r, so the most obvious next step would be to make a &cNuke&r."
+		""
+		"Only for testing purposes, of course... &c:)"
+		""
+		"&7&oThese don't actually explode when placed so don't go getting any ideas."
+	]
+	quest.44654F0A91D7817D.title: "&cNuke"
+	quest.45A36EB1C2133600.quest_desc: [
+		"For us to make more advanced circuitry, we'll need to make a very important module for the boards: &dRandom Access Memory&r (&dRAM&r)"
+		""
+		"Think about it. You're using &dRAM&r in real life to make &dRAM&r in a game."
+	]
+	quest.45A36EB1C2133600.title: "&dRandom Access Memory"
+	quest.48162C60D5F25178.quest_desc: [
+		"With our new boards and &dRAM&r, we can combine our current technology together to create the highly advanced &6Processing Unit&r."
+	]
+	quest.48162C60D5F25178.title: "&6Processing Unit"
+	quest.49603EC381DD1818.quest_desc: [
+		"Welcome to the &6Nuclear Age&r! It's time to start having fun with &6Extreme Voltage&r."
+		""
+		"The &6Highly Advanced Machine Hull&r is used for nearly all your &6EV Tier&r technologies, and just like before, you can use them to upgrade your processing machines!"
+	]
+	quest.49603EC381DD1818.title: "&6Highly Advanced Machines"
+	quest.496561148E384759.quest_desc: [
+		"The &dDistillation Tower&r is a much better way of breaking down &2Petrochemicals&r into byproducts."
+		""
+		"It can stack, meaning one multiblock can have multiple outputs. You can have as few as one output or as many as nine to break down all possible byproducts!"
+		""
+		"&eNote&f: Make sure you set the height of the structure in the controller so that it will properly form!"
+		"{@pagebreak}"
+		"You should aim to make a tower with at least 3 outputs like this one for the next quest."
+		""
+		"{image\\:\\ftb:textures/quests/modern_industrialization/disttower.png width:125 height:150 align:center}"
+	]
+	quest.496561148E384759.title: "&dDistillation Tower"
+	quest.498A5C0A00F19E2E.quest_desc: [
+		"The most basic available reactor fuel is a regular &6Uranium Fuel Rod&r. It requires no fancy processing, but also outputs the least amount of energy. However, its simplicity makes it appealing to start with."
+	]
+	quest.498A5C0A00F19E2E.title: "&6Uranium Fuel Rod"
+	quest.4AC48E53E6022B15.quest_desc: [
+		"&cIndustrial TNT&r is used for the &dImplosion Compressor&r. You are going to want A LOT of these so make sure your automation is up to the task."
+		""
+		"&7&oDon't worry, these don't actually explode... or maybe that's what you wanted all along..."
+	]
+	quest.4AC48E53E6022B15.title: "&cIndustrial TNT"
+	quest.4C3F295D0F44A730.quest_desc: [
+		"The &dLarge Steam Turbine&r converts either &7Regular Steam&r or &7HP Steam&r into energy. It generates up to 16,384 EU/t."
+		""
+		"However, it won't return regular or HP water. To recycle HP water, you'll need to use a &dHeat Exchanger&r"
+	]
+	quest.4C3F295D0F44A730.title: "&dLarge Steam Turbine"
+	quest.4C6838BED2262721.quest_desc: [
+		"The &dStainless Steel Drill&r will allow you access to new and important materials!"
+		""
+		"By using these drills in your &aElectric Quarry&r, you can obtain new ores like Titanium, Platinum, and Tungsten."
+		""
+		"By using these drills in the &3Oil Drilling Rig&r, you can get your hands on Crude Oil, which can be further &aDistilled&r into most of your &2Petrochemical&r needs."
+	]
+	quest.4C6838BED2262721.title: "&dStainless Steel Drill"
+	quest.4D1FE471FC2D8EF4.quest_desc: [
+		"Combining &7Styrene-Butadiene&r with either &aLead Tiny Dust&r or &cChromium Tiny Dust&r in another &3Chemical Reactor&r, we can make &dStyrene-Butadiene Rubber&r."
+		""
+		"This is a super insulator, and you can make tons of rubber at a time. It can also replace some of the &7Synthetic Rubber&r used in certain recipes, like making cables!"
+	]
+	quest.4D1FE471FC2D8EF4.title: "&dStyrene-Butadiene Rubber"
+	quest.4DDC359C9FD609BD.quest_desc: [
+		"&ePropene&r is used to make &bAcrylic Acid&r by combining it with &2Oxygen&r in a &3Chemical Reactor&r."
+	]
+	quest.4DDC359C9FD609BD.title: "&ePropene"
+	quest.4F63F8D79802D6ED.quest_desc: [
+		"The &dHP Large Steam Boiler&r can produce up to 2048 mb/t of &7Steam&r."
+		""
+		"&7HP Steam&r is worth 8 times more than regular steam, so each mb will produce 8 EU/t instead of 1 EU/t!"
+		""
+		"As with all boilers, it needs to run continuously to reach maximum efficiency. It only accepts &bHP Water&r or &bHP Heavy Water&r."
+	]
+	quest.4F63F8D79802D6ED.title: "&dHigh Pressure Large Steam Boiler"
+	quest.51DFB5D58190EEEF.quest_desc: [
+		"&cUranium 235&r is a rare isotope of &6Uranium&r, as opposed to &2Uranium 238&r, its more common sibling."
+		""
+		"When processing &6Uranium Fuel Rods&r that used 235 in their recipe, you will get back 2/3 of the 235 used to create it, meaning that you will need to constantly be centrifuging &6Uranium&r to get more 235."
+		""
+		"These produce more energy than regular &6Uranium Fuel Rods&r, but less than &5Plutonium&r-based ones."
+	]
+	quest.51DFB5D58190EEEF.title: "&cUranium 235 Dust"
+	quest.5346FF153D836A07.quest_desc: [
+		"&aAcetylene&r is used to make &cVinyl Chloride&r by combining it with &eHydrochloric Acid&r in a &3Chemical Reactor&r."
+		""
+		"You can turn all of your &aMethane&r into &2Acetylene&r as well using an &3Electric Blast Furnace&r."
+	]
+	quest.5346FF153D836A07.title: "&aAcetylene"
+	quest.5E48B3223335F4F6.quest_desc: [
+		"If we use our &6Titanium Drills&r in our &dQuarry&r, we can harvest &7Iridium Ore&r."
+		""
+		"You'll probably also have some &7Iridium Tiny Dust&r from your &dPlatinum&r processing chain!"
+	]
+	quest.5E48B3223335F4F6.title: "&7Raw Iridium"
+	quest.5EDAD39B73C1FF9C.quest_desc: [
+		"You can combine &eEthylbenzene&r with &7Steam&r and &aIron Dust&r in a &3Chemical Reactor&r to create &dStyrene&r."
+	]
+	quest.5EDAD39B73C1FF9C.title: "&dStyrene"
+	quest.6457ADA81A371B20.quest_desc: [
+		"The &dPressurizer&r is a special multiblock machine that can convert water or steam into the &bHigh Pressure&r (&bHP&r) versions of either that can be used in the &dHP Large Steam Boiler&r."
+		""
+		"The &dPressurizer&r can also generate &7Liquid Air&r by placing an &2Air Intake&r inside one of the multiblock hatches."
+		"{@pagebreak}"
+		"Unlike most other multiblocks, this machine is built in a cross shape, as seen below."
+		""
+		"{image\\:\\ftb:textures/quests/modern_industrialization/pressurizer.png width:100 height:150 align:center}"
+	]
+	quest.6457ADA81A371B20.title: "&dPressurizer"
+	quest.64D40EF526B53632.quest_desc: [
+		"By mixing &6Uranium 235&r and &6238&r together, we can get &2HE Uranium Dust&r."
+		""
+		"These can be processed into &2HE Uranium Fuel Rod&r for more efficiency!"
+	]
+	quest.64D40EF526B53632.title: "&6HE Uranium Fuel Rod"
+	quest.6507BA74DED764C1.quest_desc: [
+		"&5Deuterium&r is a byproduct of &9Water&r in a &6Nuclear Reactor&r when it is hit with a &6Fast Neutron&r. It can be used to make &9Heavy Water&r."
+	]
+	quest.6507BA74DED764C1.title: "&5Deuterium"
+	quest.66B66C0C33071D7B.quest_desc: [
+		"By combining &aRaw Platinum Ore&r with &eSulfuric Acid&r in a &3Chemical Reactor&r, we can make &dPlatinum Sulfuric Solution&r."
+	]
+	quest.66B66C0C33071D7B.title: "&dPlatinum Sulfuric Solution"
+	quest.67BDF0122CA3FAC1.quest_desc: [
+		"The &dTurbo Machine Hull&r is used as the base building block for &dHigh Voltage&r machines."
+		""
+		"As with &3Advanced Machine Frames&r, your existing processing machines can all be upgraded to this new voltage should you wish by either using the &dTurbo Machine Hull&r directly on the machine, or by placing it in the upgraded slot of the machine."
+	]
+	quest.67BDF0122CA3FAC1.title: "&dTurbo Machine Hull"
+	quest.68F600EFC7166908.quest_desc: [
+		"&6Superconductor Ingots&r are used to make the highest tier of energy transfer cables available. These cables can transfer an astounding &d1.024G EU/t&r. This metal is also used for many of the late game technology recipes."
+		""
+		"To make these, you'll need to start by &3Mixing&r the dusts of &7Iridium&r, &aAnnealed Copper&r, &3Yttrium&r, and &2Neodymium&r together in a mixer. This will give us &6Superconductor Dust&r, which we can smelt in an &3Electric Blast Furnace&r into a &cSuperconductor Hot Ingots&r."
+		""
+		"Cool that down in a &3Vacuum Freezer&r or &3Heat Exchanger&r and you'll get a &6Superconductor Ingot&r!"
+	]
+	quest.68F600EFC7166908.title: "&61.024 GIJJAAWHATS"
+	quest.6A691F59D434B379.quest_desc: [
+		"Here's a simplistic overview of the many reactor mechanics."
+		""
+		"&eNeutron Emission&f: &aFuel Rods&r emit &6Neutrons&r, which start reactions. These can be Fast or Thermal, with a percent change of being either. &aFuel Rods&r can emit the maximum number of &6Neutrons&r, as seen in JEI, or less depending on the temperature it is at. &aFuel Rods&r will also emit &6Neutrons&r when they absorb incoming &6Neutrons&r."
+		"{@pagebreak}"
+		"&eNeutron Absorption&f: &aFuel Rods&r and reactor components have a chance to absorb an incoming &6Fast Neutron&r. If this occurs, the &aFuel Rod&r will emit more &6Neutrons&r, while other components will take a tick of durability."
+		""
+		"&eNeutron Scattering&f: Incoming &6Neutrons&r have a chance to be deflected into other spaces. The direction it travels is random. The &6Neutron&r type has a chance to become either &dFast&r or &dThermal&r, depending on the chance listed on the component's EMI page."
+		"{@pagebreak}"
+		"&eNeutron Travel&f: If a traveling &6Neutron&r is not absorbed and does NOT scatter, it passes through the component, maintaining its direction of travel. If a &6Neutron&r travels into an unoccupied space (any non-hatch), it disappears."
+		""
+		"&eTemperature&f: When a &dThermal Neutron&r is absorbed, it raises the temperature of the component in question."
+		""
+		"&eThermal Conductivity&f: The ability for the component to transmit heat. Sends heat from hot things to less hot things."
+	]
+	quest.6A691F59D434B379.title: "&6Reactor Mechanics"
+	quest.6BC7C49D7F7D5AAF.quest_desc: [
+		"By combining our &eSulfuric Naphtha&r with &bHydrogen&r in a &3Chemical Reactor&r, we can separate the liquid into &aNaphtha&r and &eSulfuric Acid&r."
+	]
+	quest.6BC7C49D7F7D5AAF.title: "&eSulfuric Naphtha Processing"
+	quest.6BD4E9B7B2C99C27.quest_desc: [
+		"To make a &6Nuclear Reactor&r, you'll need &6Nuclear Alloy Plates&r. These are crafted using &bBlastproof Ingots&r, &2Beryllium Ingots&r, and &eCadmium Ingots&r."
+		""
+		"To get &2Beryllium&r, you'll need to centrifuge &aEmeralds&r. You should already have some &eCadmium&r ready to go from processing &3Monazite&r."
+		""
+		"Once you have &6Nuclear Mixed Plates&r, blow them up in an &3Implosion Compressor&r to create &6Nuclear Alloy Plates&r. You'll need plenty of these for your reactors so it's worth setting up a good automation line for them."
+	]
+	quest.6BD4E9B7B2C99C27.title: "&6Nuclear Alloy Plate"
+	quest.6F06B178DDBCAC38.quest_desc: [
+		"Our next step involves some chemistry!"
+		""
+		"By electrolyzing salt, you can extract &eChlorine&r, which is useful for the fundamental chemistry needed for progression."
+	]
+	quest.6F06B178DDBCAC38.title: "&eChlorine"
+	quest.7297DFC4797D2FB9.quest_desc: [
+		"The &6Fusion Reactor&r is a &lmassive&r multiblock machine that combines two input fluids to produce &5Plasma&r that is usable for power."
+		""
+		"You will need to provide the &6Fusion Reactor&r with 1 Energy hatch, 2 Fluid input hatches, and depending on the fluids you combine, 2 or 3 Fluid output hatches."
+		""
+		"We'll need this to make &5Helium Plasma&r."
+	]
+	quest.7297DFC4797D2FB9.title: "&fThe &5Fusion Reactor"
+	quest.738BF8D6430694F4.quest_desc: [
+		"By combining &dRaw Titanium Ore&r with &eManganese Sulfuric Solution&r in an &2Electric Blast Furnace&r, you can make &cTitanium Hot Ingots&r."
+		""
+		"Cool these down in a &3Vacuum Freezer&r to get &dTitanium Ingots&r!"
+	]
+	quest.738BF8D6430694F4.title: "&dTitanium Ingot"
+	quest.73C915668B467F71.quest_desc: [
+		"Until now, &3Monazite&r hasn't been very useful except for the &2Neodymium&r."
+		""
+		"Now you'll want to start fully extracting it for &9Yttrium&r and &eCadmium&r which are required for the most advanced super conducting alloys."
+	]
+	quest.73C915668B467F71.title: "&3Monazite &dByproducts"
+	quest.7577594004D188D9.quest_desc: [
+		"&cVinyl Chloride&r is used to make &aPolyvinyl Chloride&r by combining it with lead or &4Chromium Tiny Dust&r in a &3Chemical Reactor&r."
+	]
+	quest.7577594004D188D9.title: "&cVinyl Chloride"
+	quest.77EFC3A24E922F93.quest_desc: [
+		"Now that we have &dAnnealed Copper&r, we can craft the &dAdvanced Components&r needed to upgrade our tech."
+		""
+		"First, you'll need to make some &aAdvanced Motors&r, which you can then use to make &2Advanced Pumps&r!"
+	]
+	quest.77EFC3A24E922F93.title: "&dAdvanced Components"
+	quest.79C4735198D85139.quest_desc: [
+		"With &dPolyvinyl Chloride&r, you can now make &dTurbo Upgrade&r for your machines, which work 8x faster than &3Advanced Upgrades&r."
+	]
+	quest.79C4735198D85139.title: "&dTurbo Upgrade"
+	quest.7C71C66C357C3623.quest_desc: [
+		"&2Diethyl Ether&r is used to turn &eDiesel&r and &aBiodiesel&r into &6Boosted Diesel&r."
+	]
+	quest.7C71C66C357C3623.title: "&2Diethyl Ether"
+	quest.7D49D69623266062.quest_desc: [
+		"It's going to take everything you've learned so far to make the ultimate circuit: the &5Quantum Circuit&r."
+		""
+		"As long as you are observing the circuit, it will stay as one whole circuit. :)"
+	]
+	quest.7D49D69623266062.title: "&5Quantum Circuit"
+	quest.7E7C206547156447.quest_desc: [
+		"While these upgrades can be made to upgrade our machines, we can also make it for some better armor."
+		""
+		"&6Highly Advanced Upgrades&r work 8x faster than &dTurbo Upgrades&r."
+	]
+	quest.7E7C206547156447.title: "&6Highly Advanced Upgrade"
+	quest.7FDC0BD1CCD75B31.quest_desc: [
+		"&bToluene&r can be used to make &cIndustrial TNT&r, which is important for use in the &dImplosion Compressor&r!"
+		""
+		"You'll probably want to set up a small automation chain for this."
+	]
+	quest.7FDC0BD1CCD75B31.title: "&bToluene"
+	task.66A435F191CD5929.title: "Monazite Byproducts"
+}

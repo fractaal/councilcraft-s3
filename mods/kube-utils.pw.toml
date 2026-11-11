@@ -1,0 +1,13 @@
+name = "Kube Utils"
+filename = "kube-utils-21.1.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JHdL51WR/versions/gS9TjbbC/kube-utils-21.1.3.jar"
+hash-format = "sha512"
+hash = "3f6a516d4dabc3d1186334a4df04dbeb21f952eafe9d3fcd6cce328f07a5ee346698550858853b238d4089efbe760a7742497fc43c5576bd2f0ceb39bf243867"
+
+[update]
+[update.modrinth]
+mod-id = "JHdL51WR"
+version = "gS9TjbbC"

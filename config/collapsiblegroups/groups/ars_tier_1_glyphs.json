@@ -1,0 +1,320 @@
+{
+  "id": "ars_tier_1_glyphs",
+  "name": {
+    "translate": "collapsible_groups.group.ars_tier_1_glyphs",
+    "fallback": "Ars: Tier 1 Glyphs"
+  },
+  "enabled": true,
+  "filter": {
+    "any": [
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_conjure_terrain"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_nullify_defense"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_spark"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_aerial_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_aquatic_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_fiery_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_insect_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_aerial_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_aquatic_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_fiery_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_insect_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_ignite"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_harvest"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_harm"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_freeze"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_fell"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_evaporate"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_dispel"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_delay"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_cut"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_craft"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_light"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_phantom_block"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_bubble"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_break"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_bounce"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_underfoot"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_touch"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_self"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_projectile"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_pantomime"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:blank_glyph"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_undead_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_summon_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_undead_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_elemental:glyph_not_summon_filter"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_interact"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_pickup"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_gust"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_launch"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_leap"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_place_block"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_prestidigitation"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_pull"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_redstone_signal"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:reset"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_rotate"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_rune"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_snare"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_summon_steed"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_summon_wolves"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_toss"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_wind_burst"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:wololo"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_amplify"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_randomize"
+      },
+      {
+        "type": "item",
+        "id": "ars_nouveau:glyph_sensitive"
+      },
+      {
+        "type": "item",
+        "id": "ars_trinkets:glyph_filter_not_self"
+      },
+      {
+        "type": "item",
+        "id": "ars_trinkets:glyph_filter_self"
+      },
+      {
+        "type": "item",
+        "id": "arsomega:glyph_overhead"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_player"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_living_not_player"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_living_not_monster"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_monster"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_living"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_item"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_entity"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_block"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_filter_animal"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_reverse_direction"
+      },
+      {
+        "type": "item",
+        "id": "toomanyglyphs:glyph_ray"
+      },
+      {
+        "type": "item",
+        "id": "not_enough_glyphs:glyph_filter_light"
+      },
+      {
+        "type": "item",
+        "id": "not_enough_glyphs:glyph_filter_dark"
+      },
+      {
+        "type": "item",
+        "id": "not_enough_glyphs:glyph_plow"
+      },
+      {
+        "type": "item",
+        "id": "not_enough_glyphs:glyph_momentum"
+      },
+      {
+        "type": "item",
+        "id": "not_enough_glyphs:glyph_ride"
+      },
+      {
+        "type": "item",
+        "id": "ars_controle:glyph_filter_random"
+      }
+    ]
+  }
+}

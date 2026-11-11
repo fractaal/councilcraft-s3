@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:nether_fossil",
+  "biomes": "#minecraft:has_structure/nether_fossil",
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": {
+      "below_top": 2
+    },
+    "min_inclusive": {
+      "absolute": 32
+    }
+  },
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_height": {
+    "above_bottom": 48
+  },
+  "step": "underground_decoration",
+  "terrain_adaptation": "beard_thin"
+}

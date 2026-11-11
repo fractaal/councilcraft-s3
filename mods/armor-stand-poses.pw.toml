@@ -1,0 +1,13 @@
+name = "Armor Stand Poses"
+filename = "poses-neoforge-1.21.1-1.3.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/vuA4mu4C/versions/Zi88FdhO/poses-neoforge-1.21.1-1.3.0.jar"
+hash-format = "sha512"
+hash = "2f9117977e6e49fc37ecc5aeb3664717b78092ddb8aef62a0a26c5e97cc6fdf52716a244f0a4d6bd3125839cf0373cf158b38377315184faacb8c302c9bfebb9"
+
+[update]
+[update.modrinth]
+mod-id = "vuA4mu4C"
+version = "Zi88FdhO"

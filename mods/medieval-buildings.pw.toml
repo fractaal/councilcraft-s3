@@ -1,0 +1,13 @@
+name = "Medieval Buildings"
+filename = "medieval_buildings-1.21.1-1.1.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sc9lpPiU/versions/kZ7HAN7p/medieval_buildings-1.21.1-1.1.1-neoforge.jar"
+hash-format = "sha512"
+hash = "b0b54ae7288cc133bf16b8a9182bf6c9045d8b99e8ffd744658559c12176e62ad813177f455c7e30c2cd0ca97c216c4ae7c7b2d9a8f353585fcff3e87b94ab39"
+
+[update]
+[update.modrinth]
+mod-id = "sc9lpPiU"
+version = "kZ7HAN7p"

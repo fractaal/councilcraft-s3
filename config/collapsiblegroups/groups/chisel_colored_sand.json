@@ -1,0 +1,19 @@
+{
+  "id": "chisel_colored_sand",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_colored_sand",
+    "fallback": "Chisel: Colored Sand"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "colored_sand/"
+      }
+    ]
+  }
+}

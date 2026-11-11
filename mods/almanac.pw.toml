@@ -1,0 +1,13 @@
+name = "Almanac"
+filename = "almanac-neoforge-1.21.1-1.26.11.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Gi02250Z/versions/hvOxynOa/almanac-neoforge-1.21.1-1.26.11.1.jar"
+hash-format = "sha512"
+hash = "f7928461882dfa3ebc1d75021b44d75fd9327e2bbc92863a9638907c0d58acdab2413cd6246a31f2e590dfb8731e5f5b326f5083983d01b894c4df439d27141c"
+
+[update]
+[update.modrinth]
+mod-id = "Gi02250Z"
+version = "hvOxynOa"

@@ -1,0 +1,13 @@
+name = "shrimpLiquid's Climbing Pick"
+filename = "climbing_pick-1.1.2-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3IqPk2kC/versions/LGGmzEuA/climbing_pick-1.1.2-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "608b5d2be1938fe433f32452a8caa751ad6bdb7981e0cf13dd2bfcc30f0fa39c76fa5dd3ceffa167efa28247c094be5dabddf7f0ed9ed12111de878a271abae2"
+
+[update]
+[update.modrinth]
+mod-id = "3IqPk2kC"
+version = "LGGmzEuA"

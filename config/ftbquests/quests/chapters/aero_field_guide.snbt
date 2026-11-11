@@ -1,0 +1,192 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "aero_field_guide"
+	group: "3A4941EE06F63CCA"
+	icon: {
+		id: "minecraft:compass"
+	}
+	id: "69C14165B71A4483"
+	images: [ ]
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["2DB65B686F757B89"]
+			icon: {
+				id: "minecraft:shield"
+			}
+			id: "5B560E3B926EA94D"
+			tasks: [
+				{
+					consume_items: false
+					id: "533612F820202326"
+					item: { count: 1, id: "minecraft:shield" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 32L
+					id: "5768F5F1BD91522B"
+					item: { count: 1, id: "minecraft:torch" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 8L
+					id: "3B40381BDF0BADDB"
+					item: { count: 1, id: "minecraft:bread" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 64L
+					id: "4DE7E7F876CB1958"
+					item: { count: 1, id: "minecraft:cobblestone" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B560E3B926EA94D"]
+			icon: {
+				id: "mob_loot_bags:commonlootbag"
+			}
+			id: "5DEE1D4CD1A8FCCB"
+			tasks: [{
+				consume_items: false
+				id: "606E3BDBAC373FE8"
+				item: { count: 1, id: "mob_loot_bags:commonlootbag" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5DEE1D4CD1A8FCCB"]
+			icon: {
+				id: "minecraft:barrel"
+			}
+			id: "7DF22B137DC1BBAD"
+			tasks: [
+				{
+					consume_items: false
+					id: "30DB06B2BB769DB7"
+					item: { count: 1, id: "minecraft:barrel" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 3L
+					id: "08E14B3EA02DBC76"
+					item: { count: 1, id: "minecraft:item_frame" }
+					type: "item"
+				}
+				{
+					id: "4423C4C699BF1D0D"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5B560E3B926EA94D"]
+			icon: {
+				id: "minecraft:iron_sword"
+			}
+			id: "238440F8C7F110A8"
+			tasks: [{
+				advancement: "minecraft:adventure/kill_a_mob"
+				criterion: ""
+				id: "419590A12FCC5078"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5B560E3B926EA94D"]
+			icon: {
+				id: "modulargolems:command_wand"
+			}
+			id: "0A8B8616A2FAA8C8"
+			tasks: [{
+				consume_items: false
+				id: "1EAAC2E33830C9C1"
+				item: { count: 1, id: "modulargolems:command_wand" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0A8B8616A2FAA8C8"]
+			icon: {
+				id: "modulargolems:humanoid_golem_body"
+			}
+			id: "3379487EFE59E664"
+			tasks: [
+				{
+					consume_items: false
+					id: "7F5467CDB7E62E76"
+					item: { count: 1, id: "modulargolems:humanoid_golem_body" }
+					type: "item"
+				}
+				{
+					id: "5128C17BE858EFD3"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2DB65B686F757B89"]
+			icon: {
+				id: "bountiful:bountyboard"
+			}
+			id: "1F3FA77AC3142728"
+			tasks: [{
+				consume_items: false
+				id: "0C7E92E31B520A25"
+				item: { count: 1, id: "bountiful:bountyboard" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1F3FA77AC3142728"]
+			icon: {
+				id: "bountiful:bountyboard"
+			}
+			id: "1359358239A7A76A"
+			tasks: [{
+				advancement: "bountiful:bountiful/bounty_taken"
+				criterion: ""
+				id: "2868017D86F72397"
+				type: "advancement"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1359358239A7A76A"]
+			icon: {
+				id: "bountiful:bountyboard"
+			}
+			id: "030FF5C7FA14069E"
+			tasks: [{
+				advancement: "bountiful:bountiful/bounty_complete"
+				criterion: ""
+				id: "746A3CB25BF642FB"
+				type: "advancement"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+}

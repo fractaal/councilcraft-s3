@@ -1,0 +1,13 @@
+name = "Absolute Kinematics | Create Aeronautics"
+filename = "absolute_kinematics-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fc502f4edfab93626a08d33aee45947323533623"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8511680
+project-id = 1619610

@@ -1,0 +1,9 @@
+{
+    "ignoredScreenClasses": [],
+    "ignoredMenuClasses": [],
+    "ignoredSlotClasses": [],
+    "ignoredMenuTypes": [
+        "sophisticatedbackpacks:backpack",
+        "sophisticatedbackpackscreateintegration:mounted_backpack"
+    ]
+}

@@ -1,0 +1,13 @@
+name = "Apothic Tooltip Cleanup"
+filename = "apothic_tooltip_cleanup-1.3.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/vqdO8ENV/versions/Q4amG5PI/apothic_tooltip_cleanup-1.3.0.jar"
+hash-format = "sha512"
+hash = "52e662a909da52990c4761a5803de3a97917a135e739b3cd17130d813ef1b5b29b75c8e2f5064bd52746a3b75cd9947f008cd87736480201d208761f1c400a5f"
+
+[update]
+[update.modrinth]
+mod-id = "vqdO8ENV"
+version = "Q4amG5PI"

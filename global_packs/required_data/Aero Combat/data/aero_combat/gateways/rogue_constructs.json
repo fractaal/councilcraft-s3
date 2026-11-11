@@ -1,0 +1,120 @@
+{
+  "size": "large",
+  "color": "#9262C4",
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:the_watcher",
+          "count": 3
+        },
+        {
+          "entity": "cataclysm:endermaptera",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 20,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:the_watcher",
+          "count": 3
+        },
+        {
+          "entity": "cataclysm:the_prowler",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 40,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:the_prowler",
+          "count": 2
+        },
+        {
+          "entity": "cataclysm:the_watcher",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 60,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:ender_golem",
+          "count": 1
+        },
+        {
+          "entity": "cataclysm:the_watcher",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 80,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 7200,
+      "setup_time": 400
+    }
+  ],
+  "rewards": [
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "aero_combat:gateways/rogue_constructs",
+      "rolls": 1,
+      "desc": "rewards.aero_combat.rogue_constructs"
+    }
+  ],
+  "failures": [
+    {
+      "type": "gateways:mob_effect",
+      "effect": "minecraft:weakness",
+      "duration": 300
+    }
+  ],
+  "rules": {
+    "spawn_range": 10,
+    "leash_range": 48,
+    "allow_discarding": false,
+    "allow_dim_change": false,
+    "player_damage_only": false,
+    "remove_mobs_on_failure": true,
+    "fail_on_out_of_bounds": false,
+    "spacing": 96,
+    "requires_nearby_player": true
+  }
+}

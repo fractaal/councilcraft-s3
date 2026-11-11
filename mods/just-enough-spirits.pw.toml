@@ -1,0 +1,13 @@
+name = "Just Enough Spirits"
+filename = "justenoughspirits-1.21.1-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "20df91ceb2ee7fc7aa31c89efe88f0f4cfe90029"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8387682
+project-id = 1601380

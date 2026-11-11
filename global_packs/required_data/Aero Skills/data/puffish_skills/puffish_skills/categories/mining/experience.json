@@ -1,0 +1,83 @@
+{
+	"experience_per_level": {
+		"type": "expression",
+		"data": {
+			"expression": "level^1.5 * 100"
+		}
+	},
+	"sources": [
+		{
+			"type": "puffish_skills:mine_block",
+			"data": {
+				"variables": {
+					"silk_touch": {
+						"operations": [
+							{
+								"type": "get_tool_item_stack"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"nbt": "{Enchantments:[{id:\"minecraft:silk_touch\"}]}"
+								}
+							}
+						]
+					},
+					"stone_like": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "#c:ores_in_ground/stone"
+								}
+							}
+						]
+					},
+					"deepslate": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "#c:ores_in_ground/deepslate"
+								}
+							}
+						]
+					},
+					"obsidian": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "#c:obsidians"
+								}
+							}
+						]
+					}
+				},
+				"experience": [
+					{
+						"condition": "stone_like",
+						"expression": "10"
+					},
+					{
+						"condition": "deepslate",
+						"expression": "20"
+					},
+					{
+						"condition": "obsidian",
+						"expression": "1"
+					}
+				]
+			}
+		}
+	]
+}

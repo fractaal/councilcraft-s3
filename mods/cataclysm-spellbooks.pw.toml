@@ -1,0 +1,13 @@
+name = "Cataclysm: Spellbooks"
+filename = "cataclysm_spellbooks-1.1.11-1.21.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/3FEg0A8D/versions/MuC8YrbF/cataclysm_spellbooks-1.1.11-1.21.jar"
+hash-format = "sha512"
+hash = "4c9cde2c83cfd61882b39b9fc4b9bf1dc29e433eac49e087e207fab81abb53146190feaf90942796ba3cbdefaceedd512b1ac8faf1a7ce407700406b80ef70e7"
+
+[update]
+[update.modrinth]
+mod-id = "3FEg0A8D"
+version = "MuC8YrbF"

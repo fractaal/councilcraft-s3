@@ -1,0 +1,155 @@
+{
+	quest.0BAA7E5F5FF7B93C.quest_desc: [
+		"The &3Double Layer Capacitor&r is the next tier of &2Capacitors&r."
+		""
+		"It has a &bBase Modifier&r of 2, which means it will multiply both the energy storage and speed of the machine by 2."
+	]
+	quest.0BAA7E5F5FF7B93C.title: "&3Double Layer Capacitor"
+	quest.0F4ABB66EC22C066.quest_desc: [
+		"If you want to hide your &aConduits&r, you'll need to create some &bConduit Facades&r!"
+		""
+		"These Facades can be changed to the appearance of any other block using the &aPainting Machine&r."
+		""
+		"Inside of the &aPainting Machine&r, blocks inserted into the second input slot will be painted to look like the block placed in the template slot. Blocks placed into the Template slot are not consumed."
+	]
+	quest.0F4ABB66EC22C066.title: "&fHiding Conduits"
+	quest.109CB437DFAECDC6.quest_desc: [
+		"The &aAlloy Smelter&r will be your most used machine in &eEnderIO&r as most Machines and Gizmos require some kind of Alloy produced here! oh and it can be upgraded with &bCapacitors&r."
+		""
+		"In the &aAlloy Smelter's&r interface, you can configure it in many different ways to improve your automation. It allows for side input/output configuration, redstone configuration, and swapping between three modes:"
+		"{@pagebreak}"
+		"&eAlloy only mode&f: Only allows the Alloy Smelter to create alloys."
+		""
+		"&eFurnace only mode&f: Treats the Alloy Smelter as a furnace"
+		""
+		"&eAlloying and Smelting&f: This mode will do both alloying and smelting, which can be bad when automating as some items will be smelted before turning into alloys."
+	]
+	quest.109CB437DFAECDC6.title: "&aAlloy Smelter"
+	quest.12D15FCB12460F37.title: "&6Bedrockium Capacitor"
+	quest.1980C42D8CDBE51C.quest_desc: [
+		"The &dPowered Spawner&r is a powered version of the vanilla mob spawner."
+		""
+		"The mob it spawns is based on the &7Broken Spawner&r used to craft it, which can be acquired by breaking a vanilla Minecraft Spawner."
+		""
+		"A &aBroken Spawner&r will retain the mob type of the original spawner, but can also be changed by combining it with a &3Filled Soul Vial&r of the desired mob type in a &aSoul Binder&r."
+		"{@pagebreak}"
+		"When powered, it will spawn mobs up to 4 blocks away from the machine."
+		""
+		"Just like most powered machines, it can be upgraded by installing higher tier &bCapacitors&r."
+		""
+		"&eNote&f: The recipe for this can be found in JEI by hitting &eU&r on a &7Broken Spawner&r in your inventory."
+	]
+	quest.1980C42D8CDBE51C.title: "&fPowered Spawner"
+	quest.1F8EC3339B8873B9.quest_desc: [
+		"The &aXP Obelisk&r is one of the best ways to store your experience, especially when combined with the &aXP Vacuum&r."
+		""
+		"It allows you to store and pull levels from its tank one level at a time, ten levels at a time, or all at once."
+	]
+	quest.1F8EC3339B8873B9.title: "&fXP Obelisk"
+	quest.262F5FE957F52F5D.quest_desc: [
+		"&dMob Souls&r have special properties, and can be captured by using &aEmpty Soul Vials&r on a mob. These souls can be extracted to make end-game items in a &dSoul Binder&r."
+		""
+		"The &dSoul Binder&r consumes liquid experience and a filled &aSoul Vial&r to convert &7Broken Spawners&r or create new empowered items."
+		""
+		"&eNote&f: &aFused Quartz&r is made by smelting 4 Nether Quarts in an &aAlloy Smelter&r."
+	]
+	quest.262F5FE957F52F5D.title: "&fBinding Souls"
+	quest.2B8B225CF404A351.quest_desc: [
+		"The &aEnchanter&r is an &dEnchantment Table&r that allows you to pick which enchantment you want to make."
+		""
+		"When provided with specific items and &2Experience&r, you can enchant &aBook \\&\\ Quills&r with an enchantment of your choice."
+		""
+		"To see which enchantments you can make, make sure to check out the uses in JEI!"
+	]
+	quest.2B8B225CF404A351.title: "&fEnchanter"
+	quest.2E01CCF4FC7D949F.quest_desc: [
+		"&aThe Ender&r is a basic sword made of &aDark Steel&r."
+		""
+		"While it doesn't pack much of a punch, this sword is great to use for gathering &aMob Heads&r."
+	]
+	quest.2E01CCF4FC7D949F.title: "&fThe Ender"
+	quest.30D00AC248214D58.quest_desc: [
+		"The &3Energetic Alloy&r is used in some crafting recipes, but is most commonly used to craft &aDouble Layer Capacitors&r and &dVibrant Alloy&r"
+	]
+	quest.30D00AC248214D58.title: "&3Energetic Alloy"
+	quest.3A55DAA85874864A.quest_desc: [
+		"The &aChest Vacuum&r pulls nearby items into its inventory."
+		""
+		"The &aXP Vacuum&r pulls nearby experience orbs into its inventory."
+	]
+	quest.3A55DAA85874864A.title: "&fOther Useful Machines"
+	quest.4004CA1BEBA2914C.quest_desc: [
+		"&dVibrant Alloy&r is a high tier alloy and is used in several recipes, including the &aElectromagnet&r and the &dOctadic Capacitor&r."
+	]
+	quest.4004CA1BEBA2914C.title: "&dVibrant Alloy"
+	quest.4782346A565FF21F.quest_desc: [
+		"The &aSAG Mill&r crushes items into dusts, and can be used to increase ore yields."
+		""
+		"&bGrinding Balls&r can be used to improve machine power usage, and item process output. There are many tiers of Grinding Balls, but you can always use &3Flint&r when just starting out."
+	]
+	quest.4782346A565FF21F.title: "&fSAG Mill"
+	quest.487A0367385B68BC.quest_desc: ["&6Grains of the End&r shows your mastery of &eEnderIO&r."]
+	quest.487A0367385B68BC.title: "&6Grains of the End"
+	quest.4E623BAFD92591EE.quest_desc: [
+		"The &aStaff of Travelling&r is a powerful tool that allows you to teleport forward a short distance by \"Sneak + Right-clicking\". You can also use this mechanic to go through thin walls!"
+		""
+		"The &aTravel Anchor&r allows you to set a waypoint that can be teleported to when holding the &aStaff of Travelling&r, so long as that block waypoint is within visible range."
+		""
+		"When you hold the staff in your hand, you can see &aTravel Anchors&r through walls. This can be used to make a quick teleportation system in your base!"
+	]
+	quest.4E623BAFD92591EE.title: "&fStaff of Travelling"
+	quest.52BF64BFF5FC3DD4.quest_desc: [
+		"Using our &aPrimitive Alloy Smelter&r, we can make the first alloy you'll need to make powered machines."
+		""
+		"&aDark Steel&r is the most commonly used alloy across &eEnderIO&r machines, blocks, and items."
+	]
+	quest.52BF64BFF5FC3DD4.title: "&fDark Steel Ingot"
+	quest.54D361B81A53A872.quest_desc: [
+		"Most machines will require some type of &2Capacitor&r to work, each tier determining the speed and energy storage of the machine."
+		""
+		"While the &aBasic Capacitor&r does not provide any improvements to your machinery, it is the minimum requirement for most powered machines to function."
+	]
+	quest.54D361B81A53A872.title: "&aBasic Capacitor"
+	quest.566EEDD0B029090D.quest_desc: [
+		"&eEnderIO&r is a tech-mod with machines, inventory and automation tools, and many more features!"
+		""
+		"To get started, you'll need to obtain some &aGrains of Infinity&r."
+		""
+		"In this pack, you can obtain some &aGrains of Infinity&r just by jumping off your island!"
+	]
+	quest.566EEDD0B029090D.title: "&fWelcome to &eEnderIO&r!"
+	quest.665EA6DF800CE815.quest_desc: [
+		"The &dOctadic Capacitor&r is the highest tier of craftable &2Capacitors&r"
+		""
+		"It comes with a Base Modifier of 3, which triples the energy storage and speed of the machine it is installed in."
+	]
+	quest.665EA6DF800CE815.title: "&dOctadic Capacitor"
+	quest.740DA65D6FB1F0EC.quest_desc: [
+		"&aSoularium&r is a special soul-based alloy used to create some late-game machinery, like the &dSoul Binder&r and &aSlice \\&\\ Splice&r."
+	]
+	quest.740DA65D6FB1F0EC.title: "&fSoularium Ingot"
+	quest.77372AD6C4049263.quest_desc: [
+		"For modded veterans, &eEnderIO&r held great memories due to its amazing pipes, called &dConduits&r."
+		""
+		"These &dConduits&r are highly configurable, and can even store multiple conduits in the same block space. If you don't like the look of the cables, you can also slap on a &aConduit Facade&r to cover them up!"
+		""
+		"Configuring them is made easy using the &aYeta Wrench&r. If any pipe is hidden beneath a Facade, holding the wrench in your hand will uncover them for easy configuration."
+	]
+	quest.77372AD6C4049263.title: "&6EnderIO &dConduits"
+	quest.7B17CDF1C8FE0CDA.quest_desc: [
+		"The &aSlice'N'Splice&r is used to convert mob heads into special machine parts."
+		""
+		"It requires two tools in order to function: an &aAxe&r and &aShears&r. Each operation will take off one durability from each tool. The &aAxe&r must be at least iron, and some &aShears&r from other mods may work."
+	]
+	quest.7B17CDF1C8FE0CDA.title: "&fSlice'N'Splice"
+	quest.7D0175F16F9A2D0D.quest_desc: [
+		"The &aElectromagnet&r is a powered accessory that pulls items into your inventory from up to 5 blocks away."
+	]
+	quest.7D0175F16F9A2D0D.title: "&2Electromagnet"
+	quest.7D6F927122F7FE62.quest_desc: [
+		"The &6Ender Crystal&r is an end-game item that is crafted by combining a &aVibrant Crystal&r with the soul of an &dEnderman&r."
+	]
+	quest.7D6F927122F7FE62.title: "&6Ender Crystal"
+	task.221C0FFE873F2F5E.title: "&dConduits"
+	task.768B60201808B40A.title: "Grinding Balls"
+}

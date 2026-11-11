@@ -1,0 +1,657 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_block",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_block",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone_block",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_pearl",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:blaze_rod",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:obsidian",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spyglass",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:name_tag",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:regeneration"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strength"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:fire_resistance"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:night_vision"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_sword",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_axe",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_helmet",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_leggings",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_boots",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 15,
+                "max": 25
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 10,
+                "max": 20
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 10,
+                "max": 20
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:trial_key",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "minecraft:creeper_drop_music_discs",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "mob_loot_bags:bonus/rare"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.3
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.65
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifact_towers:chests/tower",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "bmairballoons:chests/payload",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "friendsandfoes:barrels/citadel",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:sculk_factory/heart_barrel",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/medium_shack_house",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/igloo_chest",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/generic",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/library_chest",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/pillager_chest",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/ravager_chest",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/smithing_room",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/pillager_outpost",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/shipwreck_supply",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/stronghold_crossing",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/corridor",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/intersection_barrel",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_savanna_house",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:houses_uncommon",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/badland_miner_outpost",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/badland_miner_outpost_towers",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/creeping_crypt/crypt_hallway",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/desert_ruins/desert_ruin_grave",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_utility",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/jungle_ruins/jungle_ruins_main_temple_wild",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/lone_citadel/c_forge",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/lone_citadel/c_grave",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/lone_citadel/c_supply",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/shrine/combat_pot",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/stray_fort_tresure",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/witch_villa/bedroom",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/witch_villa/music_room",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/witch_villa/potion_brewing",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:tavern_quest",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "shellbound_for_airship:chests/ship6_lower",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/galleon/chest",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/common/elven_pillar_tall",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/cold_red_trade/capitan",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/explorer_cabin/default_1",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/plains_cottage/2_floor_bed",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/ritual",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/basement_redstone",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/tour_deserts",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/tower",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/wandering_traders/3",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/island_village_1/top_barrels",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/wooden_manor/default_loot",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/very_rare/floating_farm_large/default_loot",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_wagon_snowy",
+          "weight": 60
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mob_loot_bags:bags/rare"
+}

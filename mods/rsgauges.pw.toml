@@ -1,0 +1,13 @@
+name = "Gauges, Switches & Modules"
+filename = "[1.21-1.21.1] rsgauges ported v1.2.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/zLqnXw6d/versions/FlQv340E/%5B1.21-1.21.1%5D%20rsgauges%20ported%20v1.2.3.jar"
+hash-format = "sha512"
+hash = "40c9143b4bce7d152283b689b962de43f2b870af4bb4ebd6bde46bd81cbd62dd5d23f1eede45f424e8e5686ad2565239c53b27f38439ee32303f7238ea016bc5"
+
+[update]
+[update.modrinth]
+mod-id = "zLqnXw6d"
+version = "FlQv340E"

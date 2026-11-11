@@ -1,0 +1,19 @@
+{
+  "id": "chisel_mechanical2",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_mechanical2",
+    "fallback": "Chisel: Mechanical"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "mechanical2/"
+      }
+    ]
+  }
+}

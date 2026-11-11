@@ -1,0 +1,14 @@
+{
+	"chapters/getting_started.snbt": {
+		quest.035F072880BDBC09.quest_desc: {
+			old: ["&oThe high altitude gathers more iron oxide-rich cosmic dust, turning some deserts as red as another familiar planet...&r"]
+			new: ["&oThe high altitude gathers more iron oxide-rich cosmic dust, turning the deserts as red as another familiar planet...&r"]
+		}
+	}
+	reward.snbt: {
+		reward.4486D3EEC964C834.title: {
+			old: "Sending command"
+			new: "Send command"
+		}
+	}
+}

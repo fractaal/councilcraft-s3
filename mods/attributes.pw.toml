@@ -1,0 +1,13 @@
+name = "Pufferfish's Attributes"
+filename = "puffish_attributes-0.8.3-1.21-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FCFcFw09/versions/ZySEqrUb/puffish_attributes-0.8.3-1.21-neoforge.jar"
+hash-format = "sha512"
+hash = "e92d8a653b8c8e0b481aac1722ac5da9ca9174e61b3607e1b28c714e55c6b6399f68592bd227576a5a81dce251776a3221b5fc7e1b1446f17fa4795d9c1b449a"
+
+[update]
+[update.modrinth]
+mod-id = "FCFcFw09"
+version = "ZySEqrUb"

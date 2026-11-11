@@ -1,0 +1,155 @@
+{
+	quest.0065DA4214B7B303.quest_desc: [
+		"The &dEnd Castle&r is a large imposing building filled with shulker sentries that is found while exploring the End."
+		""
+		"Deep inside, the animated remains of an &6ancient reptilian tyrant&r can be encountered and fought."
+	]
+	quest.0065DA4214B7B303.title: "&fDefeat &cAncient Remnant"
+	quest.040795388568AB69.quest_desc: [
+		"One of the few structures found in the barren void of the End."
+		""
+		"Ender Golems can be found scattered throughout, but the hardest foe is the Ender Guardian that rests on the &5lowest floor&r."
+	]
+	quest.040795388568AB69.title: "&fFind the &5Ruined Citadel"
+	quest.05B051603AC63B5A.quest_desc: ["Enchant an item with max stats and Quantic Stability"]
+	quest.05B051603AC63B5A.title: "Ultimate Enchanting"
+	quest.099481C1F0718B67.quest_desc: [
+		"&6Priests&r practicing wizardry are often found in villages, and thankfully don't mind people helping themselves to what they need."
+		""
+		"They are willing to trade healing potions, and offer some magical secrets in return for &bEvoker intel&r..."
+	]
+	quest.099481C1F0718B67.title: "&fThe &6Priest"
+	quest.0D35D0D33922A201.title: "&fDefeat 10 &dGateways To Eternity"
+	quest.1237537100194BED.quest_desc: [
+		"As a minor deity of decay, &6nether stars&r dropped by a defeated &dWither&r are an increasingly common demand of worthiness."
+		""
+		"Summoned by placing 3 wither skeleton skulls on top of a \"T\" of 4 soul sand."
+		""
+		"{image:minecraft:textures/painting/wither.png width:100 height:100 align:center}"
+	]
+	quest.1237537100194BED.title: "&fKill The &dWither"
+	quest.1CA8D89EE7C50CFD.quest_desc: ["Sheltered sentries of the end cities."]
+	quest.1CA8D89EE7C50CFD.title: "&fKill 10 &dShulkers"
+	quest.1F70A066744E64EA.title: "Play for &d50 Hours"
+	quest.20D7DA6055C540FA.quest_desc: [
+		"This quest chapter contains repeatable quests that you can complete for some extra cash you can spend at the shops."
+	]
+	quest.20D7DA6055C540FA.title: "The &6Bounty Board"
+	quest.232E1BBB91DEF799.quest_subtitle: "You survived 100 Days in Minecraft Skies 2 Aero"
+	quest.232E1BBB91DEF799.title: "Play for &z100 Days"
+	quest.24445EC4DA6492F1.quest_desc: [
+		"You'll need a bad omen to trigger a raid... Rumor says killing a peaceful wandering trader may be enough to invoke the ire of the gods..."
+	]
+	quest.24445EC4DA6492F1.quest_subtitle: "Defend A Village From A Raid"
+	quest.24445EC4DA6492F1.title: "&dHero Of The Village"
+	quest.29E78B39C74FBC4E.title: "Kill One Of Every Hostile Mob"
+	quest.2B21D8D19E0413AC.quest_desc: [
+		"[\"A \", {\"text\": \"dormant archlich \", \"color\": \"gold\", \"italic\":false}, \"laying deep in a \", {\"text\": \"Nether Dungeon\", \"color\": \"red\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2B4392602E94D3D8\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Fargo's Dungeon Quest\"]} }, \". Interact with the 'corpse' to challenge its might.\"]"
+	]
+	quest.2B21D8D19E0413AC.title: "&fDefeat &cThe Dead King"
+	quest.2EE5352D8E5F715F.title: "&fKill 20 &cSpiders"
+	quest.31EDCEB6684983E4.title: "Timetraveler's Brew"
+	quest.34C8824842867F5D.title: "&fKill The &dEnder Dragon"
+	quest.3D687BF735E54AE8.title: "&fKill 10 &cBlazes"
+	quest.3E0191A718C8CFF9.quest_subtitle: "Survive 24 Hours Without Dying"
+	quest.3E0191A718C8CFF9.title: "&bSurvival Of The Fittest"
+	quest.3E0D5504617365AD.title: "&fKill 10 &cZombified Piglins"
+	quest.43B65AF71961292F.quest_subtitle: "Time to touch some grass"
+	quest.43B65AF71961292F.title: "Play for &6100 Hours"
+	quest.49540656967A58DC.title: "Play for 1 Hour"
+	quest.50BB7069AC5A1A14.quest_desc: [
+		"At the base of a large arena in the Nether lies a single &6Cinderous Soul Rune&r, binding the memory of a &4great champion of fire&r."
+		""
+		"Use a &6Cinderous Soulcaller&r nearby to challenge an Echo of that memory, though be wary of its power and allies."
+		""
+		"&7The keys that this Echo can drop can be used on the Vaults between the two arenas. These vaults can be reset using standard trial keys."
+	]
+	quest.50BB7069AC5A1A14.title: "&fDefeat &cEcho of Tyros, First Flamebearer"
+	quest.5119EFBB9FB39CDE.quest_desc: [
+		"[ \"The leader of a hostile illager troop, found at the top of a \", {\"text\": \"Certain Magical Dungeon\", \"color\": \"gold\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"4BB5ADD98F958712\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Magical Dungeon Quest\"]}}, \".\"]"
+	]
+	quest.5119EFBB9FB39CDE.title: "&fDefeat &cArchevoker"
+	quest.5455CF5D3C37ECA9.quest_desc: [
+		"This imposing structure in the Nether's void contains valuable loot and porcine foes, with a powerful construct that attacks those who draw near."
+	]
+	quest.5455CF5D3C37ECA9.title: "&fDefeat &cNetherite Monstrosity"
+	quest.54E74795E1F9F9F2.title: "Play for &c25 Hours"
+	quest.588654ACDCEC9BDC.quest_desc: [
+		"Before summoning &cIgnis&f you'll need to kill his minions within the Burning Arena and gather enough &aDying Ember&f to craft the &dBurning Ashes&f item."
+		""
+		"Using the &dBurning Ashes&f on the &2Altar of Fire&f at the top of the arena will summong &cIgnis&f."
+	]
+	quest.5918EA666DF20DA4.quest_subtitle: "Just beat the pack already... What's taking you so long?"
+	quest.5918EA666DF20DA4.title: "Play for &z1000 Hours"
+	quest.59C71582F19E8554.title: "&fKill 20 &cZombies"
+	quest.5A8CEB600CAADCD2.title: "&fDefeat &cCryomancer"
+	quest.5C2C0986D6014ADD.quest_desc: [
+		"Every day, all of the &aWandering Traders&r gather for a meeting. They discuss which players may need their services and when they’re available to help. Their trades include various helpful items, such as &especial grass&r to rapidly spawn creatures or &eborrowed technology&r to jump-start advanced storage."
+		""
+		"They mean well, though they often are not savvy on where they appear and can't tell when a player doesn’t need their help anymore."
+		""
+		"You can use the command"
+		"&b/events toggle ftb:wandering_trader&r"
+		"to let them know if they’re needed or not."
+	]
+	quest.5C2C0986D6014ADD.title: "&6The Wandering Trader"
+	quest.5D2936B7F8D0F8FA.title: "Unstable Ingot Blocks"
+	quest.644DADBCF755057C.quest_desc: [
+		"Acquire a Sigil of Supremacy from wave 100 of the Endless Gateway of Apothic Invaders"
+	]
+	quest.67078BCAD52BC4B4.title: "&fKill 20 &cSlimes"
+	quest.67D1E0D81B2C5D8D.quest_desc: [
+		"Before fighting the &3Leviathan&r, the Abyssal Sacrifice must first be crafted using drops from a Deepling Warlock and a Coralssus, along with plenty of other precious resources."
+	]
+	quest.67D1E0D81B2C5D8D.title: "&fDefeat &cThe Leviathan"
+	quest.6964408274A7ACF7.title: "Play for &a10 Hours"
+	quest.6DC738A434C5B02F.title: "&fKill 10 &dEndermen"
+	quest.6E458E2978B64C77.title: "Industrial Revolution"
+	quest.6E5CEEE43F0DECA7.quest_desc: ["Loot 100 &eLootr&f barrels while exploring."]
+	quest.708DD6CD3AE7F0FE.quest_desc: ["Decayed guardians of the nether fortresses"]
+	quest.708DD6CD3AE7F0FE.title: "&fKill 10 &cWither Skeletons"
+	quest.73D1289092057E9B.title: "Modern Circuitry"
+	quest.77F964631F38EA2E.title: "&fKill 20 &cCreepers"
+	quest.782CCA40CEBC135A.quest_desc: [
+		"Create a spawner with minimal delays that has redstone control, no AI, ignores spawn conditions, and ignores players."
+	]
+	quest.782CCA40CEBC135A.title: "The Ultimate Spawner"
+	quest.7913B52AD9D28D2B.quest_desc: [
+		"A massive stronghold found in the Nether. This castle's core harbors a destructive &4Harbinger&r, guarded by Watchers and Prowlers."
+	]
+	quest.7913B52AD9D28D2B.title: "&fDefeat &cThe Harbinger"
+	quest.7A8669713BE28E8F.quest_desc: [
+		"Keepers of the &3Ancient Cities'&r silence. Call attention to yourself at your own peril."
+		""
+		"[\"These creatures may be summoned via the crafted \", {\"text\": \"gate pearl \", \"color\": \"yellow\", \"italic\":false}, {\"text\":\"'A Peer into the Abyss'\", \"color\": \"dark_aqua\", \"italic\":false}, \" or found in a \", {\"text\": \"certain Nether structure\", \"color\": \"red\", \"underlined\":true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"2B4392602E94D3D8\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Fargo's Dungeon Quest\"]} }, \"...\"]"
+	]
+	quest.7A8669713BE28E8F.title: "&fDefeat &cWarden"
+	quest.7BCC2E37198682F8.quest_desc: ["Acquire an item with level X enchantment"]
+	quest.7D23D1C9DE75721F.title: "&fKill 20 &cSkeletons"
+	task.05BA59C2F9E1F43B.title: "&fKill 10 &cBlazes"
+	task.0707B05028ADBA69.title: "&eKill&f: &4The Harbinger"
+	task.0C13FA83021AE4C5.title: "&eKill&f: &6Netherite Monstrosity"
+	task.268F689AFA620C03.title: "&eKill&f: &cSkeletons"
+	task.2FB8AB5ADB1F8D26.title: "&eKill&f: &4Echo of Flame"
+	task.3F437642D1B08EBF.title: "&eKill&f: &cSpiders"
+	task.4087591E474FC477.title: "&fKill 10 &dEndermen"
+	task.4335140E412572D8.title: "&fDefeat 10 &dGateways To Eternity"
+	task.491E250D69066BBC.title: "&fKill: 1x &dWither"
+	task.4BEC99EFB3F7A310.title: "&bSurvival Of The Fittest"
+	task.55E36C96A2424F59.title: "&eKill&f: &6Ancient Remnant"
+	task.58687506041183E7.title: "&eKill&f: &cSlimes"
+	task.58DC7CD2A4F595DD.title: "&eKill&f: &dArchevoker"
+	task.5B82C7AEA857BED3.title: "&eKill&f: &5Ender Guardian"
+	task.5B97CEFB80FF361B.title: "&fKill 10 &dShulkers"
+	task.5FD1AC346811740C.title: "&eKill&f: &6Dead King"
+	task.61C0F35123FBB85E.title: "&fKill: 1x &dWarden"
+	task.6347BBAD2ED20F25.title: "&eKill&f: &cZombies"
+	task.671339615BA68B10.title: "&eKill&f: &bCryomancer"
+	task.6C730129357A78D0.title: "&eKill&f: &cZombified Piglins"
+	task.79684EDD87FFB47C.title: "&eKill&f: &cCreepers"
+	task.79B58E484D4196CD.title: "&eKill&f: &3The Leviathan"
+	task.7AC3BD79A70049CA.title: "&eKill&f: &6Priest"
+	task.7B71A001741520D3.title: "&eKill&f: &cWither Skeletons"
+	quest.1FE2B36C234A35C9.title: "&fDefeat &cMaledictus"
+	quest.588654ACDCEC9BDC.title: "&fDefeat &cIgnis"
+}

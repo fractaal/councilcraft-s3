@@ -1,0 +1,154 @@
+{
+  "name": "hordium.raid.bone_legion.name",
+  "weight": 100,
+  "radius": 64,
+  "follow_range": "auto",
+  "delay_ticks": 300,
+  "boss_bar_color": "white",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "loot_table": "",
+  "drop_chances": "none",
+  "drop_xp": true,
+  "drop_loot": true,
+  "spawn_on_ground": true,
+  "spawn_on_liquids": "deny",
+  "units": {
+    "skeleton_archer": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{HandItems:[{id:\"minecraft:bow\",count:1},{}]}"
+    },
+    "skeleton_swordsman_stone": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{HandItems:[{id:\"minecraft:stone_sword\",count:1},{}]}"
+    },
+    "skeleton_knight_chainmail": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{ArmorItems:[{id:\"minecraft:chainmail_boots\",count:1},{id:\"minecraft:chainmail_leggings\",count:1},{id:\"minecraft:chainmail_chestplate\",count:1},{id:\"minecraft:chainmail_helmet\",count:1}],HandItems:[{id:\"minecraft:iron_sword\",count:1},{}]}"
+    },
+    "skeleton_knight_iron": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{ArmorItems:[{id:\"minecraft:iron_boots\",count:1},{id:\"minecraft:iron_leggings\",count:1},{id:\"minecraft:iron_chestplate\",count:1},{id:\"minecraft:iron_helmet\",count:1}],HandItems:[{id:\"minecraft:iron_sword\",count:1},{}]}"
+    },
+    "skeleton_horse_archer": {
+      "entity": "minecraft:skeleton_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5}],Passengers:[{id:\"minecraft:skeleton\",HandItems:[{id:\"minecraft:bow\",count:1},{}]}]}"
+    },
+    "skeleton_horse_stray_archer": {
+      "entity": "minecraft:skeleton_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5}],Passengers:[{id:\"minecraft:stray\",HandItems:[{id:\"minecraft:bow\",count:1},{}]}]}"
+    },
+    "skeleton_horse_bogged_archer": {
+      "entity": "minecraft:skeleton_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5}],Passengers:[{id:\"minecraft:bogged\",HandItems:[{id:\"minecraft:bow\",count:1},{}]}]}"
+    },
+    "skeleton_horse_bogged_archer_elite": {
+      "entity": "minecraft:skeleton_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5}],Passengers:[{id:\"minecraft:bogged\",ArmorItems:[{id:\"minecraft:chainmail_boots\",count:1},{id:\"minecraft:chainmail_leggings\",count:1},{id:\"minecraft:chainmail_chestplate\",count:1},{id:\"minecraft:chainmail_helmet\",count:1}],HandItems:[{id:\"minecraft:bow\",count:1,components:{\"minecraft:enchantments\":{\"minecraft:power\":3}}},{}]}]}"
+    }
+  },
+  "waves": {
+    "wave1": {
+      "mobs": [
+        {
+          "unit": "skeleton_archer",
+          "count": 6
+        },
+        {
+          "unit": "skeleton_horse_archer",
+          "count": 2
+        }
+      ]
+    },
+    "wave2": {
+      "mobs": [
+        {
+          "unit": "skeleton_archer",
+          "count": 4
+        },
+        {
+          "entity": "minecraft:stray",
+          "count": 2
+        },
+        {
+          "unit": "skeleton_horse_archer",
+          "count": 4
+        }
+      ]
+    },
+    "wave3": {
+      "mobs": [
+        {
+          "unit": "skeleton_swordsman_stone",
+          "count": 10
+        },
+        {
+          "unit": "skeleton_horse_stray_archer",
+          "count": 4
+        },
+        {
+          "entity": "minecraft:bogged",
+          "count": 2
+        },
+        {
+          "entity": "minecraft:skeleton",
+          "count": 2
+        }
+      ]
+    },
+    "wave4": {
+      "mobs": [
+        {
+          "unit": "skeleton_knight_chainmail",
+          "count": 6
+        },
+        {
+          "unit": "skeleton_horse_bogged_archer",
+          "count": 4
+        },
+        {
+          "entity": "minecraft:skeleton",
+          "count": 4
+        },
+        {
+          "unit": "skeleton_archer",
+          "count": 4
+        }
+      ]
+    },
+    "wave5": {
+      "groups": [
+        {
+          "mobs": [
+            {
+              "unit": "skeleton_horse_bogged_archer_elite",
+              "count": 8
+            },
+            {
+              "unit": "skeleton_knight_iron",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "mobs": [
+            {
+              "entity": "minecraft:skeleton",
+              "count": 4
+            },
+            {
+              "unit": "skeleton_swordsman_stone",
+              "count": 6
+            },
+            {
+              "unit": "skeleton_archer",
+              "count": 4
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "random_eligible": false
+}

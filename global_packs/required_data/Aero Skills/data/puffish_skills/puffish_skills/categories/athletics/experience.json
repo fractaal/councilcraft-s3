@@ -1,0 +1,77 @@
+{
+	"experience_per_level": {
+		"type": "expression",
+		"data": {
+			"expression": "min(level^2.25 * 2 + 2000, 30000)"
+		}
+	},
+	"sources": [
+		{
+			"type": "puffish_skills:increase_stat",
+			"data": {
+				"variables": {
+					"is_jump": {
+						"operations": [
+							{
+								"type": "get_stat"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"stat": "minecraft.custom:minecraft.jump"
+								}
+							}
+						]
+					},
+					"is_swim": {
+						"operations": [
+							{
+								"type": "get_stat"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"stat": "minecraft.custom:minecraft.swim_one_cm"
+								}
+							}
+						]
+					},
+					"is_sprint": {
+						"operations": [
+							{
+								"type": "get_stat"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"stat": "minecraft.custom:minecraft.sprint_one_cm"
+								}
+							}
+						]
+					},
+					"amount": {
+						"operations": [
+							{
+								"type": "get_increase_amount"
+							}
+						]
+					}
+				},
+				"experience": [
+					{
+						"condition": "is_jump",
+						"expression": "amount * 20"
+					},
+					{
+						"condition": "is_sprint",
+						"expression": "amount"
+					},
+					{
+						"condition": "is_swim",
+						"expression": "amount * 2"
+					}
+				]
+			}
+		}
+	]
+}

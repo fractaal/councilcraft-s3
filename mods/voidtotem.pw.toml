@@ -1,0 +1,13 @@
+name = "Void Totem"
+filename = "voidtotem-neoforge-1.21.1-4.0.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/q6eiiQ07/versions/fzkUyVWl/voidtotem-neoforge-1.21.1-4.0.0.jar"
+hash-format = "sha512"
+hash = "10159077190353e0ddbb253bd360d458640f04829c6bff469bdce5286623dfb9f8b721f0e0ab8662b64a80a65509ec452c0a8267af3709fa88019ea9b2f1d19d"
+
+[update]
+[update.modrinth]
+mod-id = "q6eiiQ07"
+version = "fzkUyVWl"

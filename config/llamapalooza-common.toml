@@ -1,0 +1,30 @@
+#General settings
+[general]
+	#The list of loot tables known to the mod (Syntax: namespace:loot_table_name, e.g. minecraft:chests/simple_dungeon)
+	tables = ["ftb:llama_food"]
+	#The interval in ticks between Loot Llamas spitting items out (20 ticks = 1 second) [default = 200 ticks])
+	# Default: 200
+	# Range: > 1
+	spitInterval = 1200
+	#The amount of ticks reduced per Speed upgrade level (20 ticks = 1 second) [default = 20 ticks]
+	# Default: 20
+	# Range: > 1
+	speedReduction = 40
+	#If true, Loot Llamas will always spit items even when there are no players nearby. 
+	#Otherwise, they will only spit items when a player is within 16 blocks of them. [default = false]
+	alwaysSpit = true
+
+#Llama settings
+[llama]
+	#The maximum Loot Speed level a Loot Llama can have [default = 10]
+	# Default: 10
+	# Range: > 1
+	maxSpeed = 10
+	#The maximum Loot Gain level a Loot Llama can have [default = 10]
+	# Default: 10
+	# Range: > 1
+	maxGain = 10
+	#The maximum Loot Strength level a Loot Llama can have [default = 10]
+	# Default: 10
+	# Range: > 1
+	maxStrength = 10

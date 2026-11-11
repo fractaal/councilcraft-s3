@@ -1,0 +1,13 @@
+name = "Compact Machines Preview Fixer"
+filename = "cmpreviewfixer-21.1-1.1.0.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "e384725ebd3a4e903e0c5cb9a3d79d1ce14817dc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8133423
+project-id = 1548811

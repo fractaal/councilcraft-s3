@@ -1,0 +1,22 @@
+{
+  "id": "chisel_llama_carpets",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_llama_carpets",
+    "fallback": "Chisel: Llama Carpets"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "carpet_"
+      },
+      {
+        "item_path_contains": "/llama"
+      }
+    ]
+  }
+}

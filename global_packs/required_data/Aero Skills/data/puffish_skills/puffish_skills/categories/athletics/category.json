@@ -1,0 +1,17 @@
+{
+	"unlocked_by_default": true,
+	"spent_points_limit": 23,
+	"title": { "translate": "puffish_skills.category.athletics" },
+	"icon": {
+		"type": "item",
+		"data": {
+			"item": "minecraft:feather"
+		}
+	},
+	"background": {
+		"texture": "ftb:textures/misc/trial_chamber.png",
+		"width": 1920,
+		"height": 1080,
+		"position": "fill_height"
+	}
+}

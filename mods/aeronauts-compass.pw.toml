@@ -1,0 +1,13 @@
+name = "Aeronaut's Compass"
+filename = "aeronautscompass-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bb10c904c6cfc5f4e15a4126cb519a78d52dc42e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8074616
+project-id = 1539399

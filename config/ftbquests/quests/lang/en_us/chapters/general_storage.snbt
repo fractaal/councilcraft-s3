@@ -1,0 +1,308 @@
+{
+	quest.019C7CBC9B62C803.quest_desc: [
+		"Don't like the look of Drawers? Make &aFramed Drawers&r instead!"
+		""
+		"These drawers can be crafted together with other items to change the look of the drawer to your liking. Each slot in the crafting table corresponds to a specific texture on the drawer."
+		""
+		"- 1st Slot: Outside Texture"
+		"- 2nd Slot: Inside Texture"
+		"- 3rd Slot: Framed Drawer"
+		"- 4th Slot: Divider Texture"
+	]
+	quest.019C7CBC9B62C803.title: "&fFramed Drawers"
+	quest.03569C25419223DC.quest_desc: [
+		"Just like &eSophisticated Backpacks&r, you can upgrade your storage to the different metal tiers."
+		""
+		"This can be done by making a &aBasic To Iron&r upgrade and using it on your storage in the world."
+		""
+		"&eNote&f: You can also upgrade to the higher tiers from the basic tier as well!"
+	]
+	quest.03569C25419223DC.title: "&fTier Upgrades"
+	quest.049DE43A1B31C38F.quest_desc: ["This chapter covers most of the basic ways to store your items!"]
+	quest.049DE43A1B31C38F.title: "&aGeneral Storage Options"
+	quest.05CEF45909A11F60.quest_desc: [
+		"Your inventory is going to get full pretty quick. &oIt is modded MC after all.&r"
+		""
+		"The solution is to make a &2Sophisticated Backpack&r. These Backpacks provide a simple solution to your inventory problems! They can also be upgraded to hold even more items, and have tons of cool upgrades to help you in your adventures, like the &aCrafting Upgrade&r for a portable crafting table."
+		""
+		"You can place these in a &eCurio Slot&r as well for easy access using a keybind. These can also be placed down in the world by Sneak + Right-clicking while it's in your main hand."
+	]
+	quest.05CEF45909A11F60.title: "&eSophisticated Backpacks"
+	quest.08204AA5ACCC914E.quest_desc: [
+		"&aBackpacks&r can also be dyed! This is useful for color-coding your backpacks, or if you just want to look really cool with a black backpack on."
+	]
+	quest.08204AA5ACCC914E.title: "&fColorful Backpacks!"
+	quest.093FB6A70B7243F9.quest_desc: [
+		"When setting up automation, pushing and pulling items into Drawers can get complicated. That's where the Storage Tools come in!"
+		""
+		"The &3Configuration Tool&r is used to lock Drawers to only interact with certain items. This is super useful when you are constantly pulling or pushing items from Drawers!"
+		""
+		"&ePro Tip&f: If you've connected Drawers to a &aStorage Controller&r, you can use the Configuration Tool on the Controller to lock all of the Drawers that are linked, all at once!"
+		"{@pagebreak}"
+		"You can also sneak-use the tool in the air to change modes. There are several modes that you can configure for drawers, like hiding the count amount or disabling the render of items on a Drawer to save FPS."
+	]
+	quest.093FB6A70B7243F9.title: "&fConfiguring Drawers"
+	quest.0ABD10520EAB1C57.quest_desc: [
+		"&aStorage Controllers&r allow you to connect and interact with several drawers at once. These are amazing for automating items going in and out of your drawer system!"
+		""
+		"Once you've linked your drawers to the controller using the &3Linking Tool&r, you can double right-click the controller to deposit all items from your inventory directly into the drawer network! This also means you can pipe in items into the controller as well."
+		""
+		"&aController Access Points&r can be used as extra controllers as long as it is linked to the main controller."
+	]
+	quest.0ABD10520EAB1C57.title: "&fStorage Controllers"
+	quest.0BFACB0AAEE7F4C2.quest_desc: [
+		"Inventory management is pretty important, and that's what &dPocket Storage&r is for!"
+		""
+		"These devices will automatically pickup items that you collect based on what is placed inside of them. This is perfect for keeping your inventory clear of cobblestone on your mining trips."
+		""
+		"Note: These will automatically void excess items, meaning once you've collected the stack limit, those items will be voided. Upgrade the tier to store more at once!"
+	]
+	quest.0BFACB0AAEE7F4C2.title: "&dPocket Storage"
+	quest.10143533A2437ABE.quest_desc: [
+		"&aSilicon&r is needed for crafting most of the electronic parts in &eAE2&r, including creating completed &aProcessors&r."
+		""
+		"You'll want to have a dedicated &2Inscriber&r that is automated and pumps out &aPrinted Silicon&r as soon as possible!"
+	]
+	quest.10143533A2437ABE.title: "&aSilicon"
+	quest.141CE17C25D2A53A.quest_desc: [
+		"To make any of the upgrades for your backpack, you'll first need to craft an &aUpgrade Base&r."
+		""
+		"There are a ton of useful upgrades you can make, like &aStack Upgrades&r to increase the slot stack limit for storing tons of items, or the &aFeeding Upgrade&r that can automatically feed you when you are hungry!"
+		""
+		"Make sure to check them all out!"
+	]
+	quest.141CE17C25D2A53A.title: "&fUpgrade Base"
+	quest.1AA08B095A8B378F.quest_desc: [
+		"If you plan on creating a &aDrawer Wall&r, you'll need to make the &3Linking Tool&r!"
+		""
+		"The &3Linking Tool&r is used to link drawers to a &aStorage Controller&r, or to link separate &dEnder Drawers&r together. For more on how to use it, check the next page!"
+		"{@pagebreak}"
+		"By default, this tool is set to link a single drawer at a time. To do this, first sneak-use the tool on a Controller, then use the tool on the drawer you wish to add to the Controller's network."
+		""
+		"You'll also see the range that the Controller can reach when you hover over it with the tool in hand. This can be upgraded with Storage Upgrades!"
+		""
+		"While looking into the air, using the tool will switch between adding or removing drawers. If you sneak-use the tool in the air, it will switch between adding a single drawer at a time, or multiple!"
+	]
+	quest.1AA08B095A8B378F.title: "&fLinking Drawers"
+	quest.1B10A2DED0629D6B.quest_desc: [
+		"Just like the same upgrade for backpacks, the &dVoid Upgrade&r is probably one of the most useful upgrades that you can install."
+		""
+		"This allows you to void specific items that go into the chest, and comes with a filter that can do some pretty awesome stuff. You could even set the filter to void everything from a certain mod!"
+	]
+	quest.1B10A2DED0629D6B.title: "&aVoid Upgrades"
+	quest.1FEEBCA6D633B479.quest_desc: [
+		"&eEnder Storage&r allows for cross-dimensional storage of items and fluids."
+		""
+		"&aEnder Chests&r link their inventories to others with matching color patterns. You can use any colored dye on the wool pads to change its color."
+		"{@pagebreak}"
+		"&aEnder Pouches&r allow you to remotely access an &aEnder Chest&r of the same color pattern. Right-clicking the pouch on any &aEnder Chest&r will change the pouch's color to match that of the chest."
+		""
+		"&aEnder Tanks&r work in the same way as &aEnder Chests&r but store liquids instead of items."
+		""
+		"Using a &bDiamond&r on the latch of an &aEnder Chest&r will move it to a separate private network for the player that used the diamond. This is especially good for server use."
+	]
+	quest.1FEEBCA6D633B479.title: "&eEnder Storage"
+	quest.304B25BADD64077D.quest_desc: [
+		"You can increase the overall storage size of a backpack by upgrading it to the next tier!"
+		""
+		"From the basic backpack, you can upgrade to either &aCopper&r or &aIron&r. Upgrading to Copper first allows you to save iron, as you only need 4 Iron Ingots to upgrade from Copper."
+		""
+		"Each tier also allows for more &aUpgrade Slots&r!"
+	]
+	quest.304B25BADD64077D.title: "&fTier Upgrades"
+	quest.31F2DAA7A3EA9970.quest_desc: [
+		"These Drawer Generators can be extremely helpful for generating water, lava, and obsidian."
+	]
+	quest.31F2DAA7A3EA9970.title: "&fDrawer Generators"
+	quest.3506242698EDF435.quest_desc: [
+		"&aStack Upgrades&r multiply the stack size of each slot in a backpack. These are super useful for storing tons of the same types of items!"
+		""
+		"When combined with other upgrades like &aTank&r or &aBattery&r upgrades, these also increase the overall storage limit of those upgrades as well."
+	]
+	quest.3506242698EDF435.title: "&fStack Upgrades"
+	quest.367E6EB08A8C70EB.quest_desc: [
+		"Hate having to run to a crafting table to craft things? Make a &aCrafting Upgrade&r!"
+		""
+		"This upgrade will add a crafting table to your backpack inventory to craft on the go. You can also make the &aStonecutter&r or &aAnvil&r upgrades to provide those tables as well!"
+	]
+	quest.367E6EB08A8C70EB.title: "&fUseful Upgrades"
+	quest.3ACF3359B3B59A05.quest_desc: [
+		"&eSophisticated Storage&r allows you to create and upgrade your chests, barrels, and more!"
+		""
+		"These &aStorages&r can hold even more items, hold fluids, or even automate certain tasks like smelting down ores."
+		""
+		"To start out, you can craft a &aSophisticated Chest&r or &aSophisticated Barrel&r by combining the vanilla item with a redstone torch. "
+		""
+		"If you've already placed down your storage in the world, you can craft the &aBasic Tier Upgrade&r and use it on the storage to upgrade it."
+	]
+	quest.3ACF3359B3B59A05.title: "&eSophisticated Storage"
+	quest.3BB67EB21BCABF19.quest_desc: [
+		"Right-clicking specific items in an import/export bus will have the following special interactions:"
+		""
+		"Ars Energistics exports &dSource&f using Source Jars."
+		""
+		"Applied Pneumatics exports &bAir Pressure&f using Air Tanks."
+		""
+		"Applied Flux exports &2Energy&f using Energy Tablets."
+	]
+	quest.49DD167D6323406B.quest_desc: [
+		"Functional Storage can also handle storing fluids using &aFluid Drawers&r!"
+		""
+		"You can pump fluids directly into the drawer to set it, or just by using a bucket of the fluid onto the drawer."
+	]
+	quest.49DD167D6323406B.title: "&fFluid Drawers"
+	quest.4A207BA624849BB8.quest_desc: [
+		"Just like Ender Chests, &dEnder Drawers&r will store items that can be accessed across dimensions."
+		""
+		"To do this, you'll need 2 &dEnder Drawers&r linked together using the &3Linking Tool&r."
+		""
+		"Left-click the &3Linking Tool&r onto the top of the first &dEnder Drawer&r to grab the frequency of the drawer."
+		""
+		"Next, place down another &dEnder Drawer&r where you'd like to use it, and then sneak-use the &3Linking Tool&r to set the frequency of the drawer."
+	]
+	quest.4A207BA624849BB8.title: "&dEnder Drawers"
+	quest.4A707D443EC2DE33.quest_desc: [
+		"&eFunctional Drawers&r is a storage mod that aims to provide an easy solution to storing tons of items in a single block!"
+		""
+		"&aDrawers&r come in three varieties: Single Drawers, 1x2 Drawers, and 2x2 Drawers."
+		""
+		"While a 2x2 drawer can store 4 separate items, the total base storage amount is also divided by 4."
+		"{@pagebreak}"
+		"To place an item in, simply right-click on the &aDrawer&r with the item. Double Right-clicking will deposit multiple stacks at a time."
+		""
+		"To remove items from a &aDrawer&r, Left-clicking it will remove 1 item at a time, while Sneak + Left-clicking will pull out a full stack."
+	]
+	quest.4A707D443EC2DE33.title: "&eFunctional Drawers"
+	quest.4BA8E435EDA995AC.quest_desc: [
+		"You are probably tired of picking up SO MUCH COBBLE when you are out on your mining trips. Why not make a &aVoid Upgrade&r to help get rid of them?"
+		""
+		"By itself, this upgrade can be set up to automatically void specific items that you set inside of its filter. Upgrading to the Advanced version allows for more filtering options!"
+	]
+	quest.4BA8E435EDA995AC.title: "&fVoid Upgrades"
+	quest.5672B339AE16EE6C.quest_desc: [
+		"This is one of the essential upgrades for your chests!"
+		""
+		"The &aStack Upgrade&r increases the stack limit for each slot inside of the chest. These upgrades are also much cheaper than the &aSophisticated Backpack&r upgrades."
+	]
+	quest.5672B339AE16EE6C.title: "&aStack Upgrades"
+	quest.580866E99C53DB3E.quest_desc: [
+		"Making &aPickup&r and &aMagnet&r upgrades can allow the backpack to pick up items for you while out on your adventures. You can also set the backpack to only pick up certain items using the filter settings for the upgrade!"
+		""
+		"While this is great for mining adventures, you can also use the &aMagnet&r upgrades to automate farms by placing the backpack down in the world!"
+	]
+	quest.580866E99C53DB3E.title: "&fAuto-Pickup Upgrades!"
+	quest.5881702D0DE6180E.quest_desc: [
+		"&aCollector Upgrade- &rAdds an internal magnet to pick items up off the ground around it."
+		""
+		"&aPuller Upgrade- &rAllows the drawer to pull from adjacent inventories."
+		""
+		"&aPusher Upgrade- &rAllows the drawer to push to adjacent inventories."
+		""
+		"These can be configured by right-clicking the upgrade while inside of the drawer."
+	]
+	quest.5881702D0DE6180E.title: "&aUtility Upgrades"
+	quest.59376277A06E251A.quest_desc: [
+		"There are plenty of great upgrades for your chests, but these upgrades provide some nice quality of life options!"
+		""
+		"For example, adding a &aCrafting Upgrade&r allows you to craft within the chest!"
+	]
+	quest.59376277A06E251A.title: "&aUseful Upgrades"
+	quest.5A8E25FA6815812E.quest_desc: [
+		"The &aHopper Upgrade&r allows the chest to function like a Hopper would, meaning it can pull items in from the top or push items out from the bottom. "
+	]
+	quest.5A8E25FA6815812E.title: "&aHopper Upgrades"
+	quest.5F820AFF46239CC6.quest_desc: [
+		"&aLimited Barrels&r function like &aDrawers&r from &eFunctional Storage&r."
+		""
+		"These &2Barrels&r can only hold up to 4 types of items, but will hold several stacks of each. The amount of item types it can hold depends on the type of &aLimited Barrel&r you craft, with I holding a single item type, and IV holding 4 item types."
+	]
+	quest.5F820AFF46239CC6.title: "&aLimited Barrels"
+	quest.5FBD41923B66C239.quest_desc: [
+		"By default, drawers can only hold a base amount of items depending on their size. You can upgrade this with these upgrades! "
+		""
+		"For example, a standard Drawer that holds one type of item can hold up to around &a2,000 items&r for the base amount. Each upgrade multiplies the total storage amount, meaning the upgrades stack. Most drawers can hold 4 &aInventory Size Upgrades&r of any tier."
+		""
+		"Pro Tip: You can also place these inside of a &3Storage Controller&r to increase the linking range."
+	]
+	quest.5FBD41923B66C239.title: "&aStorage Size Upgrades"
+	quest.606BDEB81F65A79F.quest_desc: [
+		"There are different upgrades that you can use to allow your chests to pickup nearby items."
+		""
+		"The base level is just a &aPickup Upgrade&r, but upgrading to the &aMagnet Upgrade&r allows for more options and a wider range!"
+	]
+	quest.606BDEB81F65A79F.title: "&aPickup Upgrades"
+	quest.6686C39B8D5B5319.quest_desc: [
+		"By default, you can't place a backpack into another backpack. You can get around this by installing an &dInception Upgrade&r!"
+		""
+		"&7&o\"Yo dawg, I heard you like backpacks, so we put a backpack in your backpack so you can store more items while you store items!\"&r"
+	]
+	quest.6686C39B8D5B5319.title: "&fInception Upgrade"
+	quest.68583162106594A8.quest_desc: [
+		"&7&oMoving chests has always been a pain. But not anymore!"
+		""
+		"&aPacking Tape&r allows you to pack up &eSophisticated chests&r for you to easily move them."
+		""
+		"Use the packing tape on it first, then break it to get the chest as a single item. Once you've placed it down, the tape will disappear!"
+		""
+		"&eNote&f: Chests with &aStack Upgrades&r will need to be packed up first before moving."
+	]
+	quest.68583162106594A8.title: "&fMoving Chests"
+	quest.6BB9FD515DFD8FF1.quest_desc: [
+		"&bAE2&r comes with a built-in guide that you can access at any time within JEI."
+		""
+		"When hovering an item from the mod, you'll be prompted to hold the keybind to open up the guide."
+		""
+		"This guide is incredibly detailed and can be super helpful if you need help along the way!"
+	]
+	quest.6BB9FD515DFD8FF1.title: "&fThe &bAE2 Guide"
+	quest.6D2B6421B1115667.quest_desc: [
+		"Instead of storing Iron Nuggets, Ingots, and Blocks in 3 separate drawers, you can store them all in a &aCompacting Drawer&r."
+		""
+		"These are special drawers that store and convert items directly into their compressed versions. This is useful for items like Iron or Gold to easily convert back and forth!"
+		""
+		"With &aSimple Compacting Drawers&r, you can store items that only use a base and block recipe. This is great for items like Redstone, Diamonds, and Emeralds!"
+	]
+	quest.6D2B6421B1115667.title: "&fCompacting Drawers"
+	quest.6FF752712E99A936.quest_desc: ["To craft any of the upgrades, you'll need to make an &aUpgrade Base&r."]
+	quest.6FF752712E99A936.title: "&fUpgrade Base"
+	quest.7312FFEDAD1A6F75.quest_desc: [
+		"If you plan on using Drawers for storing the massive amount of items you'll get from farms or quarries, you'll need a backup plan &ojust in case your storage gets a little full&r."
+		""
+		"The &dVoid Upgrade&r is a utility upgrade that automatically voids items above the current stack limit. This is super useful for things like voiding excess cobblestone from quarries!"
+	]
+	quest.7312FFEDAD1A6F75.title: "&dVoid Upgrade"
+	quest.7B77544B48E690CB.quest_desc: [
+		"If you want to connect and create all of your storage into a single network, this can easily be done by making the &aStorage Controller&r."
+		""
+		"Any storage container that is placed next to the &aController&r will automatically link to it. This allows you to item dump by right-clicking or Sneak + Right-clicking on the Controller for easy inventory management!"
+		"{@pagebreak}"
+		"Placing storage next to anything that is linked to the Controller will also add it to the network as well, like a big multiblock chest! You can make &aStorage Links&r to connect any storage container that might be separate from your main storage hub, and can use the &aStorage Tool&r to link them up to the Controller!"
+	]
+	quest.7B77544B48E690CB.title: "&aCreating Storage Networks"
+	task.1211B7B1BC40225B.title: "Storage Controllers"
+	task.1A712E5D65A28EF4.title: "&dPocket Storage&f!"
+	task.1E44E4A78D48D820.title: "Useful Upgrades"
+	task.2CC8184A4A0C3AED.title: "In World Upgrading"
+	task.2DCE94139CB2078D.title: "&aUtility Upgrades"
+	task.2F3541ED4C69723B.title: "Special Exports"
+	task.310335F073D442F0.title: "Hopper Upgrades"
+	task.386D9AA214E6D415.title: "Useful Upgrades"
+	task.3B68713C93B4FAA8.title: "Pickup Upgrades"
+	task.3C30835D105E888F.title: "&fFluid Drawers"
+	task.3EF3D33D52CB41A5.title: "Void Upgrades"
+	task.42D7392235F0A913.title: "&fFramed Drawers"
+	task.4A84D885C313D512.title: "&fStack Upgrades"
+	task.4B65088186551D3C.title: "&fVoid Upgrades"
+	task.4DBC16ACBFEF4D40.title: "Stack Upgrades"
+	task.51E0FB26781697CB.title: "Tier Upgrades!"
+	task.530053F67ED5E6F3.title: "Limited Barrels"
+	task.55B1C70507F60EDF.title: "&fThe &bAE2 Guide"
+	task.56A35A967954A4C2.title: "&aDrawers"
+	task.5A0B7C6C05EEBEE2.title: "&dDrawer Upgrades"
+	task.5B8D61770B7554D0.title: "&fGeneral Storage"
+	task.5E3DB978C813B92A.title: "&fController Access Points"
+	task.63C4D2F3F7059C8E.title: "&fAuto-Pickup Upgrades!"
+	task.6FA17DE3B63BDA1A.title: "&fCompacting Drawers"
+	task.75A91CC491740DEA.title: "&aSophisticated Storages&r"
+	task.7FAA87B19ACACCBC.title: "Dye"
+}

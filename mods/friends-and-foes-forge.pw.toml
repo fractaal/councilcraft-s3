@@ -1,0 +1,13 @@
+name = "Friends&Foes (Forge/NeoForge)"
+filename = "friendsandfoes-neoforge-5.0.2+mc1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BOCJKD49/versions/v6DZwPli/friendsandfoes-neoforge-5.0.2%2Bmc1.21.1.jar"
+hash-format = "sha512"
+hash = "40390722eb34160c445d78302950f84d61fbc5ae1566352911c88eafc4323b4728cf19241249ce05b1cec2e0d812a89c36fc0729499cec8134b9404fbfa295eb"
+
+[update]
+[update.modrinth]
+mod-id = "BOCJKD49"
+version = "v6DZwPli"

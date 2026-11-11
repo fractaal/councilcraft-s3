@@ -1,0 +1,13 @@
+name = "IDLE - Inactive Dynamic Lens Exploration"
+filename = "idlecinematics-neoforge-1.21.1-1.4.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5dbbe7f3e831494c849a23c49217b6c83f05c468"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8808897
+project-id = 1647232

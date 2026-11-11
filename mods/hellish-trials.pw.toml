@@ -1,0 +1,13 @@
+name = "Hellish Trials"
+filename = "HellishTrials-neoforge-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Wws4qHxK/versions/1dy6PZgZ/HellishTrials-neoforge-1.0.5.jar"
+hash-format = "sha512"
+hash = "1a8034fab1a8e8240fcf69eed2d65428ea2a20bb4da51cba9104a8bc267cb70de3472014b1c74a351755fd9f8ce8c70c51629387f5c587ad38344855aee1529e"
+
+[update]
+[update.modrinth]
+mod-id = "Wws4qHxK"
+version = "1dy6PZgZ"

@@ -1,0 +1,96 @@
+{
+  "id": "rftools_environmental_modules",
+  "name": {
+    "translate": "collapsible_groups.group.rftools_environmental_modules",
+    "fallback": "RFTools: Environmental Modules"
+  },
+  "enabled": true,
+  "filter": {
+    "any": [
+      {
+        "type": "item",
+        "id": "rftoolsutility:noteleport_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:peaceful_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:poison_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:slowness_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:saturationplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:saturation_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:regenerationplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:regeneration_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:speed_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:speedplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:waterbreathing_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:weakness_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:blindness_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:featherfalling_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:glowing_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:flight_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:hasteplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:haste_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:featherfallingplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:luck_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:nightvision_module"
+      }
+    ]
+  }
+}

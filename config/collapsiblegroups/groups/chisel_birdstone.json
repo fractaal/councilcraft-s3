@@ -1,0 +1,19 @@
+{
+  "id": "chisel_birdstone",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_birdstone",
+    "fallback": "Chisel: Birdstone"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "birdstone/"
+      }
+    ]
+  }
+}

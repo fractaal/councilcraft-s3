@@ -1,0 +1,19 @@
+{
+  "id": "chisel_brick_custom",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_brick_custom",
+    "fallback": "Chisel: Custom Bricks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "brick_custom/"
+      }
+    ]
+  }
+}

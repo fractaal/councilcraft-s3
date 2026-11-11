@@ -1,0 +1,19 @@
+{
+  "id": "create_table_cloths",
+  "name": {
+    "translate": "collapsible_groups.group.create_table_cloths",
+    "fallback": "Create: Table Cloths"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "item_path_contains": "table_cloth"
+      }
+    ]
+  }
+}

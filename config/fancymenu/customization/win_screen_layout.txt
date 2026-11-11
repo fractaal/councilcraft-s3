@@ -1,0 +1,45 @@
+type = fancymenu_layout
+
+layout-meta {
+  identifier = win_screen
+  render_custom_elements_behind_vanilla = false
+  last_edited_time = 1763158421695
+  is_enabled = true
+  randommode = false
+  randomgroup = 1
+  randomonlyfirsttime = false
+  layout_index = 0
+  [loading_requirement_container_meta:67836c3c-bebd-4f0e-aeea-fe30c877fdf2-1763158406382] = [groups:][instances:]
+}
+
+menu_background {
+  image_path = [source:location]beyondmines:textures/menu/beyondmines_anim.fma
+  slide = false
+  repeat_texture = false
+  parallax = false
+  parallax_intensity = 0.02
+  invert_parallax = false
+  restart_animated_on_menu_load = false
+  instance_identifier = ecc62c92-35ec-449a-9271-c53d761687d7-1763158410567
+  background_type = image
+}
+
+customization {
+  action = backgroundoptions
+  keepaspectratio = true
+}
+
+scroll_list_customization {
+  preserve_scroll_list_header_footer_aspect_ratio = true
+  render_scroll_list_header_shadow = true
+  render_scroll_list_footer_shadow = true
+  show_scroll_list_header_footer_preview_in_editor = false
+  repeat_scroll_list_header_texture = false
+  repeat_scroll_list_footer_texture = false
+  show_screen_background_overlay_on_custom_background = false
+  apply_vanilla_background_blur = true
+}
+
+layout_action_executable_blocks {
+}
+

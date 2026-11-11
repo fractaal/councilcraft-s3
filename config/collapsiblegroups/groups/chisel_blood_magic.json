@@ -1,0 +1,19 @@
+{
+  "id": "chisel_blood_magic",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_blood_magic",
+    "fallback": "Chisel: Blood Magic"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "blood_magic/"
+      }
+    ]
+  }
+}

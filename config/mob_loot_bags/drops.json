@@ -1,0 +1,126 @@
+// Mob Loot Bags 2.0: who drops loot bags, how often and how good.
+// Edit and run /lootbags reload, or restart. Missing keys are restored with their defaults.
+{
+  // Master switch for loot bag drops from mob kills.
+  "enabled": true,
+
+  // Chance (0-1) that a hostile mob drops a bag, before the multipliers below.
+  "hostile_chance": 0.18,
+
+  // Chance (0-1) for passive and neutral creatures (cows, villagers, golems...). 0 = never.
+  "passive_chance": 0.0,
+
+  // Multiplies every drop chance. 0.5 halves drops, 2.0 doubles them.
+  "global_multiplier": 1.0,
+
+  // Who gets credit. Arrows and tridents count for their shooter.
+  "kills": {
+    "require_player": true,
+    "credit_pet_kills": true,
+    "allow_fake_players": false
+  },
+
+  // Tougher mobs drop bags more often: chance x (max health / reference_health), clamped.
+  "health_scaling": {
+    "enabled": true,
+    "reference_health": 20.0,
+    "min_multiplier": 0.5,
+    "max_multiplier": 2.5
+  },
+
+  // Chance multiplier for mobs from monster spawners (keeps mob farms in check).
+  "spawner_multiplier": 0.25,
+
+  // Chance multiplier for mobs from trial spawners.
+  "trial_spawner_multiplier": 1.0,
+
+  // Relative odds of each tier before Bag Luck. Defaults: about 60% / 26% / 9.5% / 3.5% / 0.9% / 0.1%.
+  "tier_weights": {
+    "common": 600,
+    "uncommon": 260,
+    "rare": 95,
+    "epic": 35,
+    "legendary": 9,
+    "mythic": 1
+  },
+
+  // Bag Luck shifts the tier odds upward. Each point makes every tier about 42% likelier
+  // relative to the tier below it (per_point 0.35). Sources add up:
+  "luck": {
+    "per_point": 0.35,
+    // Per level of Looting on the killing weapon.
+    "per_looting_level": 0.5,
+    // Multiplier for the player's Luck attribute (Potion of Luck, modded gear).
+    "luck_attribute": 1.0,
+    // Mobs earn one point per doubling of max health over reference_health, up to this.
+    "max_health_luck": 2.0,
+    // Bonus for kills in the Nether, the End and on Hard difficulty.
+    "nether": 0.5,
+    "end": 1.0,
+    "hard_difficulty": 0.25,
+    // Bonus while the killer carries a Fortune Talisman.
+    "fortune_talisman": 1.0
+  },
+
+  // A Fortune Talisman also multiplies the drop chance.
+  "talisman_chance_multiplier": 1.25,
+
+  // Chance that a dropped bag becomes a special bag instead (checked in this order).
+  "specials": {
+    "cursed": 0.02,
+    "hourglass": 0.03,
+    "locked": 0.01,
+    "summoning": 0.015
+  },
+
+  // Bags dropped in the Nether, the End or a modded dimension use themed loot when a table exists:
+  // mob_loot_bags:bags/<tier>/<dimension path>, e.g. bags/rare/the_nether.
+  "themes": true,
+
+  // Bad-luck protection, tracked per player.
+  // kills_without_bag: after this many eligible kills without a bag, the next one drops a bag.
+  // bags_until_rare / bags_until_legendary: after this many bags below that tier, the next is at least that tier.
+  // Set any value to 0 to turn that rule off.
+  "pity": {
+    "enabled": true,
+    "kills_without_bag": 12,
+    "bags_until_rare": 20,
+    "bags_until_legendary": 200
+  },
+
+  // Mobs in #mob_loot_bags:bosses (Wither, Ender Dragon, Warden, Elder Guardian) always drop this many
+  // bags of at least min_tier, each with mythic_chance to be Mythic.
+  "bosses": {
+    "bags": 3,
+    "min_tier": "epic",
+    "mythic_chance": 0.15
+  },
+
+  // Chance that a naturally spawned mob in #mob_loot_bags:bag_carriers spawns holding a loot bag
+  // in its off hand. It always drops it. luck is the Bag Luck used to roll the carried bag.
+  "carriers": {
+    "chance": 0.02,
+    "luck": 1.0
+  },
+
+  // Bags of this tier or better are announced in chat to everyone. "none" to disable.
+  "announce_min_tier": "legendary",
+
+  // Bags of this tier or better chime when they drop. "none" to disable.
+  "drop_sound_min_tier": "rare",
+
+  // Per-mob chance multipliers. Keys are entity ids or entity tags (#namespace:path). 0 = never drops.
+  "mob_multipliers": {
+    "minecraft:slime": 0.25,
+    "minecraft:magma_cube": 0.25,
+    "minecraft:silverfish": 0.25,
+    "minecraft:endermite": 0.25
+  },
+
+  // mode "whitelist": only the listed mobs drop bags. mode "blacklist": the listed mobs never do.
+  // mode "off": no filter. Entries are entity ids or #tags.
+  "filter": {
+    "mode": "off",
+    "mobs": []
+  }
+}

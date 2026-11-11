@@ -1,0 +1,13 @@
+name = "Just Dire Fuels"
+filename = "justdirefuels-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "336d4fcd6e6f7d18d9ca0556f1581193a6a270ed"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8506851
+project-id = 1554863

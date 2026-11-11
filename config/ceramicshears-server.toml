@@ -1,0 +1,5 @@
+["Balance Options"]
+	#Defines the maximum durability of Ceramic Shears. (179 - default value, 0 - deactivates the durability)
+	# Default: 179
+	# Range: 0 ~ 10000
+	durability = 179

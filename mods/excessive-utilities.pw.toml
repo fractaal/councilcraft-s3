@@ -1,0 +1,13 @@
+name = "Excessive Utilities"
+filename = "excessive-utilities-1.21.1-1.11.0-build.69.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/zI2FlF4Q/versions/eCzEtY1x/excessive-utilities-1.21.1-1.11.0-build.69.jar"
+hash-format = "sha512"
+hash = "4f3811588428c536cbec8c8f2e1afb0cf9ad8a67073aad983ee447e49dd3b3eedadd6a3564d4044f41acd50812942da28cb1139c639fa64a24fbbf2e84259673"
+
+[update]
+[update.modrinth]
+mod-id = "zI2FlF4Q"
+version = "eCzEtY1x"

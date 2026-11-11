@@ -1,0 +1,13 @@
+name = "Apprentice's Codex"
+filename = "apprentice_codex-1.0.0+mc1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/MYxjEv5n/versions/GAIEdzhv/apprentice_codex-1.0.0%2Bmc1.21.1.jar"
+hash-format = "sha512"
+hash = "087674344957240e63da63ccb79ca4b34be9a70e54d27de040d19855df374d061af9287dd52ca524e98d84e15bffbd57eddef1a3749528f3bd7cfbd5de660dc7"
+
+[update]
+[update.modrinth]
+mod-id = "MYxjEv5n"
+version = "GAIEdzhv"

@@ -1,0 +1,13 @@
+name = "Colorful Allays"
+filename = "colorfulallays-1.21.1-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cecfeb16d5e5f87186cf861b70bd6b9a6cb5dd60"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6897098
+project-id = 1329263

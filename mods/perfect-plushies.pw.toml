@@ -1,0 +1,13 @@
+name = "Perfect Plushies"
+filename = "perfectplushies-neoforge-1.21.1-1.13.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/L5MLckDN/versions/945EmhYc/perfectplushies-neoforge-1.21.1-1.13.3.jar"
+hash-format = "sha512"
+hash = "5bfec1d7216534dece3f1d5cb5db42831d30097f57df317f1d2b4ea11b42a0f827db96b1a8bb454582dc54e1976d8a4d45f703a80e871a13d8598bb59ec818b1"
+
+[update]
+[update.modrinth]
+mod-id = "L5MLckDN"
+version = "945EmhYc"

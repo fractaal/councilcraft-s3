@@ -1,0 +1,13 @@
+name = "Medieval Buildings [End Edition]"
+filename = "medieval_buildings_end_edition-1.21.1-1.0.4-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/bq6nqeOx/versions/wn6LL8i1/medieval_buildings_end_edition-1.21.1-1.0.4-neoforge.jar"
+hash-format = "sha512"
+hash = "7af3934421957ab2770de041480ba3b217cceb3d4d96e5dcc09b52369a0289049aef64c0651542e5ccefa4db4fb22f95ed14828824899a28f47541c95e889e24"
+
+[update]
+[update.modrinth]
+mod-id = "bq6nqeOx"
+version = "wn6LL8i1"

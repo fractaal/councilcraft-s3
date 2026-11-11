@@ -1,0 +1,13 @@
+name = "Cool Rain"
+filename = "coolrain-1.1.0-1.21.1-neoforge.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "e7e59c06677651828af9298c09b27a8f72a4d2a0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6196244
+project-id = 1196599

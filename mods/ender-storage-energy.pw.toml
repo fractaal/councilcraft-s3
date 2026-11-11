@@ -1,0 +1,13 @@
+name = "Ender Storage - Energy"
+filename = "enderrf-1.21.1-1.1.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f9d945f31fc366b4aacec1717b1868b00d8e68f7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8463381
+project-id = 1488806

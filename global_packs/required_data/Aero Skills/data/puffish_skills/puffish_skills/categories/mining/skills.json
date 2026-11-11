@@ -1,0 +1,146 @@
+{
+	"1": {
+		"definition": "root_ultimine_upgrade+1",
+		"x": 0,
+		"y": -221.70250336881628,
+		"root": true
+	},
+	"2": {
+		"definition": "mining_speed+5%",
+		"x": 0,
+		"y": -147.8016689125442,
+		"root": false
+	},
+	"3": {
+		"definition": "mining_speed+5%",
+		"x": -64,
+		"y": -184.75208614068023,
+		"root": false
+	},
+	"4": {
+		"definition": "mining_speed+5%",
+		"x": 64,
+		"y": -184.75208614068023,
+		"root": false
+	},
+	"5": {
+		"definition": "water_mining_speed+10%",
+		"x": -64,
+		"y": -110.85125168440814,
+		"root": false
+	},
+	"6": {
+		"definition": "water_mining_speed+10%",
+		"x": 64,
+		"y": -110.85125168440814,
+		"root": false
+	},
+	"7": {
+		"definition": "block_reach+1",
+		"x": 192,
+		"y": -110.85125168440814,
+		"root": false
+	},
+	"8": {
+		"definition": "block_reach+1",
+		"x": -192,
+		"y": -110.85125168440814,
+		"root": false
+	},
+	"9": {
+		"definition": "mining_speed+10%",
+		"x": 128,
+		"y": -147.8016689125442,
+		"root": false
+	},
+	"10": {
+		"definition": "mining_speed+10%",
+		"x": 128,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"11": {
+		"definition": "mining_speed+10%",
+		"x": -128,
+		"y": -147.8016689125442,
+		"root": false
+	},
+	"12": {
+		"definition": "mining_speed+10%",
+		"x": -128,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"13": {
+		"definition": "ultimine_upgrade+2",
+		"x": 0,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"14": {
+		"definition": "ultimine_upgrade+3",
+		"x": 0,
+		"y": 0,
+		"root": false
+	},
+	"15": {
+		"definition": "ultimine_upgrade+4",
+		"x": 0,
+		"y": 110.85125168440814,
+		"root": false
+	},
+	"16": {
+		"definition": "mining_speed+25%",
+		"x": -256,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"17": {
+		"definition": "mining_speed+25%",
+		"x": 256,
+		"y": -73.9008344562721,
+		"root": false
+	},
+	"18": {
+		"definition": "fortune+1",
+		"x": -256,
+		"y": 0,
+		"root": false
+	},
+	"19": {
+		"definition": "fortune+1",
+		"x": 256,
+		"y": 0,
+		"root": false
+	},
+	"20": {
+		"definition": "fortune+1",
+		"x": 256,
+		"y": 73.9008344562721,
+		"root": false
+	},
+	"21": {
+		"definition": "fortune+1",
+		"x": -256,
+		"y": 73.9008344562721,
+		"root": false
+	},
+	"22": {
+		"definition": "ultimine_upgrade+5",
+		"x": 0,
+		"y": 221.70250336881628,
+		"root": false
+	},
+	"23": {
+		"definition": "water_mining_speed+25%",
+		"x": -192,
+		"y": -36.95041722813605,
+		"root": false
+	},
+	"24": {
+		"definition": "water_mining_speed+25%",
+		"x": 192,
+		"y": -36.95041722813605,
+		"root": false
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"type": "forge:conditional",
+	"recipes": [
+		{
+			"conditions": [
+				{
+					"type": "reliquary:alkahestry_enabled"
+				}
+			],
+			"recipe": {
+				"type": "reliquary:alkahestry_crafting",
+				"charge": 256,
+				"ingredient": {
+					"item": "simplyswords:runic_tablet"
+				},
+				"result_count": 2
+			}
+		}
+	]
+}

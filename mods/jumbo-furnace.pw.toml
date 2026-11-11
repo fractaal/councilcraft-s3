@@ -1,0 +1,13 @@
+name = "Jumbo Furnace"
+filename = "jumbofurnace-5.0.0.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8c3b0f5ff02b2e4d96eedfe224d19c686d0fc190"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7477280
+project-id = 390880

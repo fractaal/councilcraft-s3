@@ -1,0 +1,13 @@
+name = "Custom Portal API Reforged"
+filename = "cpapireforged-neo-1.21.1-1.2.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/VepYPOdy/versions/lowfyLfO/cpapireforged-neo-1.21.1-1.2.2.jar"
+hash-format = "sha512"
+hash = "c7ec668bb6b67e3855eaf1175caa0eac77101412af10747b8a118134adf86f43d849b7a1523768b5c540debaad2d97b6009db14e280dd35370d420f289b3f9c0"
+
+[update]
+[update.modrinth]
+mod-id = "VepYPOdy"
+version = "lowfyLfO"

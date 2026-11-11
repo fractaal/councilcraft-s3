@@ -1,0 +1,13 @@
+name = "What The Bucket"
+filename = "whatthebucket-neoforge-1.21.1-21.1.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/zUxYvzMP/versions/ARpEytBz/whatthebucket-neoforge-1.21.1-21.1.1.jar"
+hash-format = "sha512"
+hash = "4d675539e2ff461de5af0ca4cba176841709369cf732aaab8be0c6a0faa307de7108c02e06fdea491bf0d8e366624941838cf0ef99a3ba795c0b1a823a936da8"
+
+[update]
+[update.modrinth]
+mod-id = "zUxYvzMP"
+version = "ARpEytBz"

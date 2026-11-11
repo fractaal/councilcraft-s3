@@ -1,0 +1,13 @@
+name = "Exosphere Worldgen Mod"
+filename = "exosphere-1.0.9.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7a827141559fa904fc3bebe1580bddfb29dd4e1e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8846877
+project-id = 1576229

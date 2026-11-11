@@ -1,0 +1,29 @@
+{
+  "id": "mekanism_plastic_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.mekanism_plastic_blocks",
+    "fallback": "Mekanism: Plastic Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "mekanismadditions"
+      },
+      {
+        "item_path_ends_with": "_plastic"
+      },
+      {
+        "not": {
+          "item_path_contains": "_reinforced_plastic"
+        }
+      },
+      {
+        "not": {
+          "item_path_contains": "_slick_plastic"
+        }
+      }
+    ]
+  }
+}

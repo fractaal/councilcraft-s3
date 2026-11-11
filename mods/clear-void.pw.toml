@@ -1,0 +1,13 @@
+name = "Clear Void"
+filename = "clearvoid-mc1.21.1-1.3.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/xsFn8GIq/versions/kNr2s3Ct/clearvoid-mc1.21.1-1.3.1.jar"
+hash-format = "sha512"
+hash = "762705e4c8d3c08cc96a0a00f616b502fbfc9a995870f40966ef61a636edd3a61a34c11ecf057c5a913867844f0c779fa91daa745979508802430fe086283d37"
+
+[update]
+[update.modrinth]
+mod-id = "xsFn8GIq"
+version = "kNr2s3Ct"

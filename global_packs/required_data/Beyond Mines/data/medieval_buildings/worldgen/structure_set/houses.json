@@ -1,0 +1,26 @@
+{
+	"structures": [
+		{
+			"structure": "medieval_buildings:house_2",
+			"weight": 2
+		},
+		{
+			"structure": "medieval_buildings:house_1",
+			"weight": 3
+		},
+		{
+			"structure": "medieval_buildings:tower",
+			"weight": 2
+		},
+		{
+			"structure": "medieval_buildings:fort",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"salt": 602865,
+		"spacing": 56,
+		"separation": 18,
+		"type": "minecraft:random_spread"
+	}
+}

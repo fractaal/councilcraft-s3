@@ -1,0 +1,13 @@
+name = "Irregular Implements"
+filename = "irregular-implements-1.21.1-1.12.1-build.280.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Ni6E23lq/versions/ioF1ZHQU/irregular-implements-1.21.1-1.12.1-build.280.jar"
+hash-format = "sha512"
+hash = "828d99fee93d3d378c1be2984a344c8248ba5b5e053970baa1b2970f9aa80f61c2860c0f76da12a8c2005f91cc855983547bd0b958c67ece65a25d328eacdd7e"
+
+[update]
+[update.modrinth]
+mod-id = "Ni6E23lq"
+version = "ioF1ZHQU"

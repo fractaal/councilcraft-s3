@@ -1,0 +1,29 @@
+{
+  "id": "create_weathered_copper_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.create_weathered_copper_blocks",
+    "fallback": "Create: Weathered Copper Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "item_path_contains": "weathered_copper"
+      },
+      {
+        "any": [
+          {
+            "item_path_contains": "shingle"
+          },
+          {
+            "item_path_contains": "tile"
+          }
+        ]
+      }
+    ]
+  }
+}

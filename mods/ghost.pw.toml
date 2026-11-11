@@ -1,0 +1,13 @@
+name = "Ghost"
+filename = "ghosts-neoforge-1.21.1-1.3.4.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/gJKLGvbS/versions/jlhsMccP/ghosts-neoforge-1.21.1-1.3.4.jar"
+hash-format = "sha512"
+hash = "4a6c28f3b5f27455886baf7825f0afeaaef1ec4fc086994714f8aa734983e3f01584373ae62f72aceacdef23c47f1d79bc014f75360ae204405627aaaa3ebbba"
+
+[update]
+[update.modrinth]
+mod-id = "gJKLGvbS"
+version = "jlhsMccP"

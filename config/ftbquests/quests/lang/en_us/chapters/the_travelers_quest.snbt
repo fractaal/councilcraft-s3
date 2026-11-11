@@ -1,0 +1,78 @@
+{
+	quest.000F1E507ACDFAAE.quest_desc: [
+		"Enter Cataclysm's Acropolis and defeat Scylla. Clawdian is an optional additional encounter."
+		"This uses the registered Cataclysm structure, not a donor-only replacement. Follow the installed mod's encounter instructions and inspect any activation items in JEI."
+	]
+	quest.000F1E507ACDFAAE.title: "The Acropolis Expedition"
+	quest.12468F8BF7B80737.quest_desc: [
+		"Obtain an Explorer's Compass and use it to search for structures registered in this pack. Large searches can take time; choose one target at a time."
+		"Recipes and trades from FTB Aero are not assumed here. Use JEI for this pack's recipe and prepare a return route before travelling."
+	]
+	quest.12468F8BF7B80737.title: "Adventuring Beyond"
+	quest.12498DE8D427D40E.quest_desc: [
+		"Enter a YUNG's Better Nether Fortresses structure. This task specifically detects betterfortresses:fortress, rather than any Nether building."
+		"Bring fire protection and mark a safe path back. Newly generated chunks may be needed to find structures added after world creation."
+	]
+	quest.12498DE8D427D40E.title: "Find a Nether Fortress"
+	quest.3A084B83B8CFAACD.quest_desc: [
+		"Defeat the listed Ignited Berserker, Ignited Revenant and Ignis. This quest tracks those encounters; it does not depend on FTB Aero's custom coliseum."
+		"Search for Cataclysm structures present in this world and consult the installed mod's summoning instructions. Prepare for fire and lava before committing."
+	]
+	quest.3A084B83B8CFAACD.title: "The Ignis Expedition"
+	quest.3CCE39C0957034B3.quest_desc: [
+		"Defeat two Cataclysm Koboletons. This is a required combat objective; the quest does not promise an FTB-specific desert island."
+		"Use exploration and the structures actually present in this pack to locate suitable encounters."
+	]
+	quest.3CCE39C0957034B3.title: "Hunt Two Koboletons"
+	quest.4F8C7DC594972DE4.quest_desc: [
+		"Defeat Cataclysm's Aptrgangr and Maledictus. Both listed kills are required."
+		"Do not rely on FTB Aero's Ice Castle description: locate Cataclysm structures available in this world and follow the installed mod's progression."
+	]
+	quest.4F8C7DC594972DE4.title: "Aptrgangr and Maledictus"
+	quest.7D22824ADC29DA26.quest_desc: [
+		"Defeat one Cataclysm Amethyst Crab. This objective tracks the creature, not an FTB Aero custom altar or island."
+		"Scout terrain around the encounter and leave space to retreat before attacking."
+	]
+	quest.7D22824ADC29DA26.title: "Defeat an Amethyst Crab"
+	task.01A8B6D685C1FB27.title: "&eKill&f: &dAmethyst Crab"
+	task.0E7BA466F8A98A9F.title: "&eKill&f: &cClawdian"
+	task.179DE9F43A4001F3.title: "&eKill&f: &aAptrgangr"
+	task.19AAFC3C9FA8644D.title: "&eKill&f: &cIgnis"
+	task.349CB5A281EE3E5B.title: "&eKill&f: &4The Watcher"
+	task.41F820C3A757072B.title: "&eKill&f: &bScylla"
+	task.4415E9DB78B55B97.title: "&eKill&f: &aMaledictus"
+	task.446DBFCB73EC10E7.title: "&eFind Structure&f: &9The Acropolis"
+	task.554CEA60D1280A89.title: "&eFind Structure&f: &cNether Fortress"
+	task.56F4B59903257C92.title: "&eKill&f: &3Deepling Priest"
+	task.590BA3A3FF454C9F.title: "&eKill&f: &cIgnited Berserker"
+	task.6D2BF51317854A51.title: "&eKill&f: &3Coralssus"
+	task.709D22141E914EBE.title: "&eKill&f: &5Ender Golem"
+	task.73E22145698B74EB.title: "&eKill&f: &4The Prowler"
+	task.74534CC66FBC3BD3.title: "&eKill&f: &62x Koboleton"
+	task.7EA00D7548DFAE17.title: "&eKill&f: &cIgnited Revenant"
+	quest.67E9EE3BEDB801B5.title: "Challenge the Leviathan"
+	quest.74647E2214729AD6.title: "Defeat the Netherite Monstrosity"
+	quest.5CE773814750FE5C.title: "The Harbinger Expedition"
+	quest.0F9701557D63D898.title: "Defeat the Ancient Remnant"
+	quest.67E9EE3BEDB801B5.quest_desc: [
+		"This milestone requires the listed Coralssus and Deepling Priest kills, an Abyssal Sacrifice, and the Leviathan kill. Read every task before setting out."
+		"Use Cataclysm's current information and JEI to investigate the summoning item. Bring equipment appropriate to an underwater encounter and secure a retreat."
+	]
+	quest.74647E2214729AD6.quest_desc: [
+		"Defeat Cataclysm's Netherite Monstrosity. This kill is required for the quest; it is no longer an optional-only objective."
+		"Prepare a safe approach through the Nether, a supply of food and a reliable escape route."
+	]
+	quest.659F9057A150189E.title: "The Ruined Citadel"
+	quest.659F9057A150189E.quest_desc: [
+		"Locate Cataclysm's Ruined Citadel and defeat its Ender Guardian. The Ender Golem objective is an optional extra."
+		"Read the structure and kill tasks separately: entering the structure alone does not complete the boss encounter. Prepare a safe End return route."
+	]
+	quest.5CE773814750FE5C.quest_desc: [
+		"Defeat the Watcher, the Prowler and the Harbinger. All three listed kills are required."
+		"Scout Cataclysm locations in this world and prepare equipment before attempting the boss. Completing only a smaller encounter does not finish this milestone."
+	]
+	quest.0F9701557D63D898.quest_desc: [
+		"Defeat Cataclysm's Ancient Remnant. Consult the current mod's progression and JEI for encounter-related items."
+		"Treat this as a late combat milestone. Clear a safe approach, carry supplies, and plan recovery before engaging."
+	]
+}

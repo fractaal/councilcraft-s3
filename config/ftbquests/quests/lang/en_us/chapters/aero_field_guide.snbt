@@ -1,0 +1,48 @@
+{
+	chapter.69C14165B71A4483.title: "&aAn Adventurer's Field Guide"
+	quest.5DEE1D4CD1A8FCCB.title: "Your First Loot Bag"
+	quest.5DEE1D4CD1A8FCCB.quest_desc: [
+		"Obtain a common loot bag during your adventures. Read its tooltip and leave room in your inventory before opening it."
+		"This pack supplements tiered bags with modded chest loot. Open them somewhere safe and inspect unfamiliar drops before using them."
+	]
+	quest.7DF22B137DC1BBAD.title: "Sort the Expedition Loot"
+	quest.7DF22B137DC1BBAD.quest_desc: [
+		"Build a barrel and three item frames for a simple expedition sorting point. Open your bag and separate equipment, crafting materials and supplies."
+		"Label your storage using the frames. Check JEI uses for unfamiliar materials. The final sorting objective is manually confirmed."
+	]
+	quest.0A8B8616A2FAA8C8.title: "Command a Modular Golem"
+	quest.0A8B8616A2FAA8C8.quest_desc: [
+		"Obtain Modular Golems' Command Wand. Use JEI to inspect golem parts and the installed mod's assembly route."
+		"Choose the golem you want to build and collect its materials. Do not use recipes for integrations absent from this pack."
+	]
+	quest.1F3FA77AC3142728.title: "Bountiful: A Village Noticeboard"
+	quest.1F3FA77AC3142728.quest_desc: [
+		"Craft or collect a Bountiful Bounty Board and place it somewhere safe. Check JEI for its current recipe."
+		"Read available jobs and their timers. This is the Bountiful mod; the separate Bounty Board chapter covers combat milestones."
+	]
+	quest.5B560E3B926EA94D.title: "Pack for an Island Expedition"
+	quest.5B560E3B926EA94D.quest_desc: [
+		"Carry a shield, a stack of building blocks, 32 torches and eight bread before exploring. These possession tasks do not consume your supplies."
+		"Record your base coordinates and plan a return route. Inspect terrain below dungeon entrances; sky-island rooms may overhang the void."
+	]
+	quest.238440F8C7F110A8.title: "First Combat Expedition"
+	quest.238440F8C7F110A8.quest_desc: [
+		"Defeat a hostile monster to earn Minecraft's Monster Hunter advancement. This task uses the advancement and does not require finding a specific modded dungeon."
+		"For a longer expedition, locate a Dungeon Crawl or Golem Dungeons entrance, mark it, and establish a retreat. Finding or clearing a dungeon is optional here; it is not falsely detected by this task."
+	]
+	quest.3379487EFE59E664.title: "Build Your First Golem Body"
+	quest.3379487EFE59E664.quest_desc: [
+		"Obtain a Humanoid Golem Body using its current recipe. Finish assembly following the mod's instructions."
+		"Test commands in an enclosed area away from pets and villagers. Confirm how to command and recover the golem before the final manual checkmark."
+	]
+	quest.1359358239A7A76A.title: "Accept Your First Bounty"
+	quest.1359358239A7A76A.quest_desc: [
+		"Take a bounty from the board to earn Bountiful's own bounty-taken advancement."
+		"Choose objectives you can finish with your current equipment. Read the rewards and expiry time before setting out."
+	]
+	quest.030FF5C7FA14069E.title: "Honest Pay for Honest Work"
+	quest.030FF5C7FA14069E.quest_desc: [
+		"Complete the bounty objectives, then use the bounty on a Bounty Board to turn it in before the timer expires."
+		"This quest detects Bountiful's completion advancement. Its rewards come from the bounty itself; the guide does not duplicate that payout."
+	]
+}

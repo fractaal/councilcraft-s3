@@ -1,0 +1,13 @@
+name = "NeoSync"
+filename = "NeoSync-1.21.1-1.7.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/QJvmrm6D/versions/UQ6vHEZe/NeoSync-1.21.1-1.7.2.jar"
+hash-format = "sha512"
+hash = "79b75a1b23053330d5b7b15fae802060b5d57279a5e65e2c07b27253eb2c92bc3f11b6cb9a621b6cfb30dc0c86cceafbe5988a34c57baefdd778a46b9bcd0df3"
+
+[update]
+[update.modrinth]
+mod-id = "QJvmrm6D"
+version = "UQ6vHEZe"

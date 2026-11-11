@@ -1,0 +1,19 @@
+{
+  "id": "railways_two_pane_locometal_window",
+  "name": {
+    "translate": "collapsible_groups.group.railways_two_pane_locometal_window",
+    "fallback": "Railways: Two Pane Locometal Window"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "railways"
+      },
+      {
+        "item_path_ends_with": "two_pane_locometal_window"
+      }
+    ]
+  }
+}

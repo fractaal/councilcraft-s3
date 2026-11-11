@@ -1,0 +1,2690 @@
+[
+ {
+  "id": "actuallyadditions:engineer_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "apotheosis:chests/chest_valuable",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "apotheosis:chests/tome_tower",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "artifact_towers:chests/tower",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "artifacts:artifact",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 7
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel/crops",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel/food",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel/gems",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel/ingots",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.75
+ },
+ {
+  "id": "artifacts:chests/campsite_barrel/ores",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.63
+ },
+ {
+  "id": "artifacts:chests/campsite_chest",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "betterdungeons:skeleton_dungeon/chests/common",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 5.5
+ },
+ {
+  "id": "betterdungeons:skeleton_dungeon/chests/middle",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.88
+ },
+ {
+  "id": "betterdungeons:small_dungeon/chests/loot_piles",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.13
+ },
+ {
+  "id": "betterdungeons:small_nether_dungeon/chests/common",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 7
+ },
+ {
+  "id": "betterdungeons:spider_dungeon/chests/egg_room",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "betterdungeons:zombie_dungeon/chests/common",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 5.5
+ },
+ {
+  "id": "betterdungeons:zombie_dungeon/chests/special",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "betterdungeons:zombie_dungeon/chests/tombstone",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "betterfortresses:chests/beacon",
+  "dim": "nether",
+  "tier": "epic",
+  "score": 2.75
+ },
+ {
+  "id": "betterfortresses:chests/extra",
+  "dim": "nether",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "betterfortresses:chests/hall",
+  "dim": "nether",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "betterfortresses:chests/keep",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "betterfortresses:chests/obsidian",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "betterfortresses:chests/puzzle",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "betterfortresses:chests/quarters",
+  "dim": "nether",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "betterfortresses:chests/storage",
+  "dim": "nether",
+  "tier": "uncommon",
+  "score": 2.25
+ },
+ {
+  "id": "betterfortresses:chests/worship",
+  "dim": "nether",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "bmairballoons:chests/barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "bmairballoons:chests/payload",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "bmairballoons:chests/payload_rare",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5
+ },
+ {
+  "id": "cataclysm:chests/abandoned",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "cataclysm:chests/abandoned_treasure",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "cataclysm:chests/acropolis_treasure",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 6.25
+ },
+ {
+  "id": "cataclysm:chests/amethyst_nest_chest",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "cataclysm:chests/desert_treasure",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "cataclysm:chests/frosted_prison_treasure",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "das:common_chest",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 3
+ },
+ {
+  "id": "das:hard_chest",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 3.75
+ },
+ {
+  "id": "das:medium_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.75
+ },
+ {
+  "id": "deeperdarker:chests/ancient_temple_apex",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "deeperdarker:chests/ancient_temple_basement",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "deeperdarker:chests/ancient_temple_fountain",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "deeperdarker:chests/ancient_temple_secret",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 4.88
+ },
+ {
+  "id": "deeperdarker:chests/ancient_temple_storage",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.5
+ },
+ {
+  "id": "deeperdarker:chests/crystallized_amber",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "dungeoncrawl:chests/food",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "dungeoncrawl:chests/forge",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/library",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "dungeoncrawl:chests/secret_room",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/stage_1",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/stage_2",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/stage_3",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/stage_4",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/stage_5",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "dungeoncrawl:chests/supply",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.75
+ },
+ {
+  "id": "dungeoncrawl:chests/treasure",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "enderio:chests/alloy_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "enderio:chests/common_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "eternalnether:chests/catacomb/treasure_rib",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 6.25
+ },
+ {
+  "id": "eternalnether:chests/citadel",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 7.75
+ },
+ {
+  "id": "farmersdelight:chests/fd_abandoned_mineshaft",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "farmersdelight:chests/fd_bastion_hoglin_stable",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 3.5
+ },
+ {
+  "id": "farmersdelight:chests/fd_bastion_treasure",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 3.38
+ },
+ {
+  "id": "farmersdelight:chests/fd_end_city_treasure",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 3.25
+ },
+ {
+  "id": "farmersdelight:chests/fd_pillager_outpost",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.75
+ },
+ {
+  "id": "farmersdelight:chests/fd_shipwreck_supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "farmersdelight:chests/fd_simple_dungeon",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.13
+ },
+ {
+  "id": "farmersdelight:chests/fd_village_butcher",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "forsaken:valuable/forge",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "friendsandfoes:barrels/citadel",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "friendsandfoes:barrels/iceologer_cabin",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "friendsandfoes:barrels/illusioner_shack_attic",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "friendsandfoes:barrels/illusioner_shack_basement",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.88
+ },
+ {
+  "id": "friendsandfoes:chests/iceologer_cabin",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "friendsandfoes:chests/illusioner_shack",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "friendsandfoes:rewards/rascal_good_reward",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.88
+ },
+ {
+  "id": "golemdungeons:abandoned_factory/end_chest",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.5
+ },
+ {
+  "id": "golemdungeons:abandoned_factory/end_gravel",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "golemdungeons:abandoned_factory/room_barrel",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "golemdungeons:abandoned_factory/room_chest",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "golemdungeons:abandoned_factory/room_gravel",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "golemdungeons:piglin_factory/root",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 9.25
+ },
+ {
+  "id": "golemdungeons:sculk_factory/crane",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "golemdungeons:sculk_factory/heart_barrel",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3.75
+ },
+ {
+  "id": "golemdungeons:sculk_factory/heart_chest",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 3.63
+ },
+ {
+  "id": "golemdungeons:sculk_factory/root",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.75
+ },
+ {
+  "id": "golemdungeons:trial_reward/factory_remnant",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "golemdungeons:trial_reward/piglin_legacy",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 5.75
+ },
+ {
+  "id": "golemdungeons:trial_reward/sculk_infestation",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.63
+ },
+ {
+  "id": "hellish_trials:chests/nether_trial/nether_trial_normal",
+  "dim": "nether",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "hellish_trials:chests/nether_trial/nether_trial_treasure",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "hellish_trials:chests/nether_trial/nether_trial_vault_normal",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "hellish_trials:chests/nether_trial/nether_trial_vault_ominous",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "hopo:chests/portal/better_ruined_portal",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "hopo:chests/portal/dripstone_portal",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "hopo:chests/portal/lush_portal",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "hopo:chests/portal/piglin_ruin",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "irregular_implements:chests/nature_core",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "irregular_implements:chests/ocean_monument_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "medieval_buildings:chests/medium_shack_hay_bale",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "medieval_buildings:chests/medium_shack_house",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.75
+ },
+ {
+  "id": "medieval_buildings:chests/ship_barrel",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "medieval_buildings:chests/ship_chests",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "medieval_buildings:chests/tiny_shack",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "medieval_buildings:chests/tower",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "medieval_buildings:chests/town_inside",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "medieval_buildings:chests/town_outside_chests",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "medievalend:end_castle",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "medievalend:end_castle_barrer",
+  "dim": "end",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "medievalend:end_house_1chests",
+  "dim": "end",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "medievalend:end_house_2chests",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "medievalend:end_pyramid",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "medievalend:end_pyramid_chests",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "medievalend:ship_barrier",
+  "dim": "end",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "medievalend:ship_chests_superiors",
+  "dim": "end",
+  "tier": "rare",
+  "score": 2.5
+ },
+ {
+  "id": "medievalend:ship_chests_under_the_stairs",
+  "dim": "end",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/abandoned_mineshaft",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "minecraft:chests/ancient_city",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "minecraft:chests/ancient_city_ice_box",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/bastion_bridge",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 4.75
+ },
+ {
+  "id": "minecraft:chests/bastion_hoglin_stable",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "minecraft:chests/bastion_other",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "minecraft:chests/bastion_treasure",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "minecraft:chests/buried_treasure",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 3.75
+ },
+ {
+  "id": "minecraft:chests/desert_pyramid",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "minecraft:chests/end_city_treasure",
+  "dim": "end",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/igloo_chest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/ancient_city_raid_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4.25
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/evoker_chest",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.75
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/generic",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/kitchen",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/library_chest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/pillager_chest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/ravager_chest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/secret_room",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 3.5
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/smithing_room",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.75
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/vindicator_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/witch_chest",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/illager_mansion/wool",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "minecraft:chests/jungle_temple",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/nether_bridge",
+  "dim": "nether",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "minecraft:chests/nether_fortress/fort_inside",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "minecraft:chests/nether_fortress/fort_inside_generic",
+  "dim": "nether",
+  "tier": "epic",
+  "score": 4.25
+ },
+ {
+  "id": "minecraft:chests/pillager_outpost",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/ruined_portal",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "minecraft:chests/shipwreck_supply",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/shipwreck_treasure",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 2.5
+ },
+ {
+  "id": "minecraft:chests/simple_dungeon",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "minecraft:chests/stronghold_corridor",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.75
+ },
+ {
+  "id": "minecraft:chests/stronghold_crossing",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/stronghold_library",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/corridor",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/entrance",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/intersection",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/intersection_barrel",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_common",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_ominous",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_ominous_common",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_ominous_rare",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_ominous_unique",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 6.38
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_rare",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/reward_unique",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4.13
+ },
+ {
+  "id": "minecraft:chests/trial_chambers/supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/village/village_armorer",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "minecraft:chests/village/village_butcher",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_cartographer",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "minecraft:chests/village/village_desert_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_fisher",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_fletcher",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_jungle_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_mason",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_plains_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_savanna_house",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "minecraft:chests/village/village_shepherd",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_snowy_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_swamp_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_taiga_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "minecraft:chests/village/village_tannery",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "minecraft:chests/village/village_temple",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.88
+ },
+ {
+  "id": "minecraft:chests/village/village_toolsmith",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "minecraft:chests/village/village_weaponsmith",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "minecraft:chests/woodland_mansion",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "mss:abandoned",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "mss:arena",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "mss:arena/vault",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "mss:arena/vault_ominous",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "mss:arena_amethyst_cove",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.75
+ },
+ {
+  "id": "mss:arena_dungeon_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "mss:arena_mossy_hallway_chest",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "mss:castle_tower_top",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "mss:crystal",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.75
+ },
+ {
+  "id": "mss:general",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "mss:houses_common",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "mss:houses_rare",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "mss:houses_uncommon",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "mss:junk",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "mss:rare",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7.75
+ },
+ {
+  "id": "mss:sparse",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "mss:stash",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "mynethersdelight:chests/mnd_bastion_hoglin_stable",
+  "dim": "nether",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "mynethersdelight:chests/mnd_bastion_treasure",
+  "dim": "nether",
+  "tier": "epic",
+  "score": 2.5
+ },
+ {
+  "id": "nova_structures:chests/badland_miner_outpost",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/badland_miner_outpost_forge",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "nova_structures:chests/badland_miner_outpost_towers",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/bunker_altar",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "nova_structures:chests/conduit_ruin/conduit_ruin_main",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/conduit_ruin/conduit_ruin_small",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/creeping_crypt/crypt_grave",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/creeping_crypt/crypt_hallway",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.88
+ },
+ {
+  "id": "nova_structures:chests/creeping_crypt/vault_creeping",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/desert_ruins/desert_ruin_grave",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3
+ },
+ {
+  "id": "nova_structures:chests/desert_ruins/desert_ruin_house",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "nova_structures:chests/desert_ruins/desert_ruin_lesser_treasure",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 3.5
+ },
+ {
+  "id": "nova_structures:chests/desert_ruins/desert_ruin_main_temple",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 6.25
+ },
+ {
+  "id": "nova_structures:chests/end_castle/castle_bar",
+  "dim": "end",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/end_castle/castle_brewing",
+  "dim": "end",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "nova_structures:chests/end_castle/greater_loot",
+  "dim": "end",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/end_castle/lesser_loot",
+  "dim": "end",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/end_castle/rocket_barrel",
+  "dim": "end",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/end_castle/supply",
+  "dim": "end",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/end_castle/treasure_lighthouse",
+  "dim": "end",
+  "tier": "epic",
+  "score": 2.5
+ },
+ {
+  "id": "nova_structures:chests/end_castle/vault_brigattine",
+  "dim": "end",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "nova_structures:chests/end_castle/vault_galleon",
+  "dim": "end",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "nova_structures:chests/end_lighthouse/supply_lighthouse",
+  "dim": "end",
+  "tier": "uncommon",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/firewatch_tower",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/food_supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/hamlet/hamlet",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_brewing",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_fishing",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_heart_loot",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.75
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_lesser_tresure",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_library",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_meat",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_random",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_raw_ores",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_trash",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_tresure",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_utility",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_vegitarian",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/illager_hideout_weaponry",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/jungle_ruins/jungle_ruins_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/jungle_ruins/jungle_ruins_main_temple",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "nova_structures:chests/jungle_ruins/jungle_ruins_main_temple_wild",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.5
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_banner",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_cold_barrel",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_forge",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_forge_chest",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_grave",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_library",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_supply",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_vault",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/lone_citadel/c_vault_boss",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/mangrove_witchhud",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/mining_supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/nether_keep/vault_keep",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 7
+ },
+ {
+  "id": "nova_structures:chests/nether_keep/vault_keep_generic",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "nova_structures:chests/nether_port/nether_port_chest",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/nether_port/nether_port_supplies",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "nova_structures:chests/nether_skeleton_tower/skeleton_tower_supply",
+  "dim": "nether",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/piglin_donjon/donjon_generic",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 3
+ },
+ {
+  "id": "nova_structures:chests/piglin_donjon/vault_piglin_donjon",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 10
+ },
+ {
+  "id": "nova_structures:chests/piglin_outstation/outstation_generic",
+  "dim": "nether",
+  "tier": "rare",
+  "score": 3
+ },
+ {
+  "id": "nova_structures:chests/piglin_outstation/outstation_tower",
+  "dim": "nether",
+  "tier": "legendary",
+  "score": 5.75
+ },
+ {
+  "id": "nova_structures:chests/piglin_outstation/outstation_treasure",
+  "dim": "nether",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/pillager_outpost_kitchen",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/ruin_loot_master",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_pot",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_treasure_1",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_treasure_2",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_treasure_3",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_treasure_4",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/combat_treasure_5",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/shrine_lesser_ominous",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/shrine_lesser_treasure",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/shrine/vault_shrine_ominous",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 5.5
+ },
+ {
+  "id": "nova_structures:chests/stray_fort_archer",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/stray_fort_loot_generic",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "nova_structures:chests/stray_fort_tresure",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.5
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/brewing",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/generic",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/kitchen",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/toxic_boss_vault",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/toxic_ominous_vault",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/toxic_lair/toxic_vault",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/trident_trial_monument/ttm_boss_vault_heart",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "nova_structures:chests/trident_trial_monument/ttm_boss_vault_trident",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "nova_structures:chests/trident_trial_monument/ttm_common_vault",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 4.75
+ },
+ {
+  "id": "nova_structures:chests/village/village_birch_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "nova_structures:chests/water_supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/bedroom",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/dirty_clothes",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/gardening",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/general_storage",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.38
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/kitchen",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/lab",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/library",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/music_room",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/potion_brewing",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/pumpkin_room",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "nova_structures:chests/witch_villa/slime_room",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "nova_structures:tavern_quest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.88
+ },
+ {
+  "id": "pneumaticcraft:chests/mechanic_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "pneumaticcraft:custom/common_dungeon_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "pneumaticcraft:custom/rare_dungeon_loot",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "pneumaticcraft:custom/uncommon_dungeon_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "ribbits:chests/fisherman_main",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "ribbits:chests/fisherman_storage",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "ribbits:chests/gardener",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "ribbits:chests/nitwit",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "ribbits:chests/sorcerer",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "shellbound_for_airship:chests/airship",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship3",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship5",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship6",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 7.75
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship6_lower",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.75
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship7",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship8",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "shellbound_for_airship:chests/ship9",
+  "dim": "overworld",
+  "tier": "mythic",
+  "score": 8.5
+ },
+ {
+  "id": "skyvillages:chests/supplementaries/sky_village_supplementaries_urn",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.5
+ },
+ {
+  "id": "supplementaries:loot/galleon/cannon",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "supplementaries:loot/galleon/chest",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.5
+ },
+ {
+  "id": "supplementaries:loot/galleon/key",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1
+ },
+ {
+  "id": "supplementaries:loot/galleon/safe",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "supplementaries:loot/galleon/safe_armor",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "supplementaries:loot/galleon/safe_tools",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "supplementaries:loot/urn_loot/common",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "supplementaries:loot/urn_loot/epic",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "supplementaries:loot/urn_loot/rare",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "supplementaries:loot/urn_loot/uncommon",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "supplementaries:loot/urn_loot/urn_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/common/elven_pillar_tall",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3.38
+ },
+ {
+  "id": "trek:overworld/common/mushroom_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/common/ruine_1",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.88
+ },
+ {
+  "id": "trek:overworld/common/well",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/all_abandoned",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/bases",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/medium/birch_fort",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/birch_trade",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/buried_village",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/camp_1",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/medium/camp_4/camp_barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/camp_4/street_barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/cold_red_trade/capitan",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/medium/cold_red_trade/hay",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/medium/cold_red_trade/iron",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/cold_red_trade/main",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/medium/dark_oak_trade",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/medium/desert_ranch/loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/desert_ranch/trash",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.13
+ },
+ {
+  "id": "trek:overworld/medium/dirt_hut",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/medium/enchanter",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/explorer_cabin/default_1",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/medium/explorer_cabin/default_2",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/explorer_cabin/fridge",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/medium/fort",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/graveyard",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/haunted_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.88
+ },
+ {
+  "id": "trek:overworld/medium/hobbit_hole",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/ice_fort/bottom",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/ice_fort/top",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/igloo_village",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/jungle_treehouse",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/medium/maison",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/medium/mangrove_watchtowers",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/orbital",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:overworld/medium/plains_cottage/1_floor",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/plains_cottage/2_floor",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/plains_cottage/2_floor_barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/plains_cottage/2_floor_bed",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.88
+ },
+ {
+  "id": "trek:overworld/medium/railroad/coal",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/railroad/horse",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/medium/ritual",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.88
+ },
+ {
+  "id": "trek:overworld/medium/ruine_bateaux",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/ruine_cabane",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/small_red_trade",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:overworld/medium/snowman",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/sorcerers_house",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 4
+ },
+ {
+  "id": "trek:overworld/medium/star_spike",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/medium/stelzens",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/basement_diamond",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/basement_emerald",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/basement_gold",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/basement_redstone",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/top",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/strange_house/top_hay",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/tour_deserts",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/medium/tours",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/medium/tower",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/medium/tower_of_ice",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/medium/wandering_traders/1",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/medium/wandering_traders/2",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/medium/wandering_traders/3",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.63
+ },
+ {
+  "id": "trek:overworld/medium/witch_tower",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/rare/abandoned_castle_pillager",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "trek:overworld/rare/castle",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "trek:overworld/rare/island_village_1/common_barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/rare/island_village_1/top_barrels",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 3.5
+ },
+ {
+  "id": "trek:overworld/rare/mushroom_island/middle",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/rare/mushroom_island/top",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "trek:overworld/rare/pyramide_of_anubis/bottom",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.88
+ },
+ {
+  "id": "trek:overworld/rare/pyramide_of_anubis/top",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.88
+ },
+ {
+  "id": "trek:overworld/rare/sleepy_island_3",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/rare/tower_island",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/bedroom",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 4.88
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/default_loot",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.5
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/default_loot_food",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.63
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/default_loot_food_better",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.75
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/default_loot_trash",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/defending_tower",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.13
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/enchantment_room",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2
+ },
+ {
+  "id": "trek:overworld/rare/villager_castle/potions",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:overworld/rare/villager_island/bottom_barrels",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/rare/villager_island/good_loot",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5
+ },
+ {
+  "id": "trek:overworld/rare/villager_island/lighthouse",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "trek:overworld/rare/wooden_manor/blacksmith",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.25
+ },
+ {
+  "id": "trek:overworld/rare/wooden_manor/default_loot",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.25
+ },
+ {
+  "id": "trek:overworld/very_common/crystal_rock",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 2.88
+ },
+ {
+  "id": "trek:overworld/very_rare/farm_island/house",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 5
+ },
+ {
+  "id": "trek:overworld/very_rare/farm_island/mill",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 5
+ },
+ {
+  "id": "trek:overworld/very_rare/floating_farm_large/barn",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.63
+ },
+ {
+  "id": "trek:overworld/very_rare/floating_farm_large/default_loot",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 4
+ },
+ {
+  "id": "trek:overworld/very_rare/floating_farm_large/pen",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "trek:pillagers/miner",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:pillagers/ocean",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:pillagers/outpost_barrel",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.88
+ },
+ {
+  "id": "trek:pillagers/outpost_desert",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:pillagers/outpost_jungle",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:pillagers/outpost_mangrove",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.75
+ },
+ {
+  "id": "trek:pillagers/pillager_mansion",
+  "dim": "overworld",
+  "tier": "legendary",
+  "score": 5.5
+ },
+ {
+  "id": "trek:village/village_cherry_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:village/village_library",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "trek:village/village_library_secret",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 2.25
+ },
+ {
+  "id": "trek:village/village_swamp_house",
+  "dim": "overworld",
+  "tier": "uncommon",
+  "score": 1.63
+ },
+ {
+  "id": "veggiesdelight:chests/vd_abandoned_mineshaft",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "veggiesdelight:chests/vd_pillager_outpost",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.75
+ },
+ {
+  "id": "veggiesdelight:chests/vd_shipwreck_supply",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.13
+ },
+ {
+  "id": "veggiesdelight:chests/vd_simple_dungeon",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 0.75
+ },
+ {
+  "id": "veggiesdelight:chests/vd_village_plains_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "veggiesdelight:chests/vd_village_snowy_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.38
+ },
+ {
+  "id": "veggiesdelight:chests/vd_village_taiga_house",
+  "dim": "overworld",
+  "tier": "common",
+  "score": 1.5
+ },
+ {
+  "id": "veggiesdelight:chests/vd_wagon_desert",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "veggiesdelight:chests/vd_wagon_plains",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "veggiesdelight:chests/vd_wagon_savanna",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ },
+ {
+  "id": "veggiesdelight:chests/vd_wagon_snowy",
+  "dim": "overworld",
+  "tier": "rare",
+  "score": 2.75
+ },
+ {
+  "id": "veggiesdelight:chests/vd_wagon_taiga",
+  "dim": "overworld",
+  "tier": "epic",
+  "score": 3.38
+ }
+]

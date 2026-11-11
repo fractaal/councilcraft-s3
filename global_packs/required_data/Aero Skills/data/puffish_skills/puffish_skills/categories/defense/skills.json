@@ -1,0 +1,266 @@
+{
+	"2": {
+		"definition": "stamina+5%",
+		"x": -32,
+		"y": 64,
+		"root": false
+	},
+	"3": {
+		"definition": "stamina+5%",
+		"x": 32,
+		"y": 64,
+		"root": false
+	},
+	"4": {
+		"definition": "healing+5%",
+		"x": -64,
+		"y": 128,
+		"root": false
+	},
+	"5": {
+		"definition": "knockback_resistance+10%",
+		"x": 0,
+		"y": 128,
+		"root": false
+	},
+	"6": {
+		"definition": "base_armor+1",
+		"x": -32,
+		"y": 192,
+		"root": false
+	},
+	"7": {
+		"definition": "base_armor+1",
+		"x": 32,
+		"y": 192,
+		"root": false
+	},
+	"8": {
+		"definition": "maxhealth_+1",
+		"x": -96,
+		"y": 192,
+		"root": false
+	},
+	"9": {
+		"definition": "maxhealth_+1",
+		"x": 96,
+		"y": 192,
+		"root": false
+	},
+	"10": {
+		"definition": "maxhealth_+1",
+		"x": 160,
+		"y": 224,
+		"root": false
+	},
+	"11": {
+		"definition": "maxhealth_+1",
+		"x": 192,
+		"y": 288,
+		"root": false
+	},
+	"12": {
+		"definition": "maxhealth_+1",
+		"x": -160,
+		"y": 224,
+		"root": false
+	},
+	"13": {
+		"definition": "stamina+5%",
+		"x": -64,
+		"y": 224,
+		"root": false
+	},
+	"14": {
+		"definition": "stamina+5%",
+		"x": 64,
+		"y": 224,
+		"root": false
+	},
+	"15": {
+		"definition": "knockback_resistance+10%",
+		"x": 0,
+		"y": 320,
+		"root": false
+	},
+	"16": {
+		"definition": "resistance_+10%",
+		"x": 0,
+		"y": 512,
+		"root": false
+	},
+	"17": {
+		"definition": "resistance_+5%",
+		"x": 0,
+		"y": 256,
+		"root": false
+	},
+	"Starter Health": {
+		"definition": "root_maxhealth_+1",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"18": {
+		"definition": "healing+5%",
+		"x": 64,
+		"y": 128,
+		"root": false
+	},
+	"19": {
+		"definition": "stamina+5%",
+		"x": -96,
+		"y": 288,
+		"root": false
+	},
+	"20": {
+		"definition": "stamina+5%",
+		"x": 96,
+		"y": 288,
+		"root": false
+	},
+	"21": {
+		"definition": "healing+10%",
+		"x": -96,
+		"y": 352,
+		"root": false
+	},
+	"22": {
+		"definition": "healing+10%",
+		"x": 96,
+		"y": 352,
+		"root": false
+	},
+	"23": {
+		"definition": "knockback_resistance+20%",
+		"x": 0,
+		"y": 384,
+		"root": false
+	},
+	"24": {
+		"definition": "resistance_+5%",
+		"x": 0,
+		"y": 448,
+		"root": false
+	},
+	"25": {
+		"definition": "stamina+5%",
+		"x": -96,
+		"y": 512,
+		"root": false
+	},
+	"26": {
+		"definition": "healing+10%",
+		"x": -192,
+		"y": 512,
+		"root": false
+	},
+	"27": {
+		"definition": "maxhealth_+2",
+		"x": -288,
+		"y": 448,
+		"root": false
+	},
+	"28": {
+		"definition": "stamina+5%",
+		"x": 96,
+		"y": 512,
+		"root": false
+	},
+	"29": {
+		"definition": "healing+10%",
+		"x": 192,
+		"y": 512,
+		"root": false
+	},
+	"30": {
+		"definition": "maxhealth_+2",
+		"x": 288,
+		"y": 448,
+		"root": false
+	},
+	"31": {
+		"definition": "base_armor+1",
+		"x": -288,
+		"y": 352,
+		"root": false
+	},
+	"32": {
+		"definition": "stamina+10%",
+		"x": -288,
+		"y": 224,
+		"root": false
+	},
+	"33": {
+		"definition": "knockback_resistance+10%",
+		"x": -288,
+		"y": 64,
+		"root": false
+	},
+	"34": {
+		"definition": "maxhealth_+2",
+		"x": -288,
+		"y": -96,
+		"root": false
+	},
+	"35": {
+		"definition": "stamina+10%",
+		"x": -192,
+		"y": -64,
+		"root": false
+	},
+	"36": {
+		"definition": "knockback_resistance+20%",
+		"x": -96,
+		"y": -64,
+		"root": false
+	},
+	"37": {
+		"definition": "resistance_+25%",
+		"x": 0,
+		"y": -96,
+		"root": false
+	},
+	"38": {
+		"definition": "knockback_resistance+20%",
+		"x": 96,
+		"y": -64,
+		"root": false
+	},
+	"39": {
+		"definition": "stamina+10%",
+		"x": 192,
+		"y": -64,
+		"root": false
+	},
+	"40": {
+		"definition": "maxhealth_+2",
+		"x": 288,
+		"y": -96,
+		"root": false
+	},
+	"41": {
+		"definition": "knockback_resistance+10%",
+		"x": 288,
+		"y": 64,
+		"root": false
+	},
+	"42": {
+		"definition": "stamina+10%",
+		"x": 288,
+		"y": 224,
+		"root": false
+	},
+	"43": {
+		"definition": "base_armor+1",
+		"x": 288,
+		"y": 352,
+		"root": false
+	},
+	"44": {
+		"definition": "maxhealth_+1",
+		"x": -192,
+		"y": 288,
+		"root": false
+	}
+}

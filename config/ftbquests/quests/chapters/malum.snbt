@@ -1,0 +1,2266 @@
+{
+	autofocus_id: "16D89D5036F39756"
+	default_hide_dependency_lines: false
+	default_min_width: 250
+	default_quest_shape: "rsquare"
+	filename: "malum"
+	group: "33401D44ADADF4FC"
+	icon: {
+		id: "malum:crude_scythe"
+	}
+	id: "78D9A0ADE8A319B1"
+	images: [
+		{
+			click_action: "none:"
+			height: 5.0d
+			id: "4D7AB32707CE1F57"
+			image: "malum:item/raw_soulstone"
+			rotation: 0.0d
+			width: 5.0d
+			x: -0.03600000000000003d
+			y: 1.374d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "4F3A5FAADDF6F8AD"
+			image: "malum:textures/gui/book/widgets/withered_frame_default.png"
+			order: -5
+			rotation: 0.0d
+			width: 4.4d
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "36E82A46A45EBCCE"
+			image: "malum:textures/gui/book/widgets/paper_filling_default.png"
+			order: -6
+			rotation: 0.0d
+			width: 4.4d
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.0d
+			id: "68B12ED6274E2E29"
+			image: "malum:textures/gui/book/widgets/runewood_frame_totemic.png"
+			order: -4
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.0d
+			id: "0E71F7D2AFE0480E"
+			image: "malum:textures/gui/book/widgets/dark_filling_totemic.png"
+			order: -6
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			height: 3.0d
+			id: "43D97709FCABDDAB"
+			image: "malum:block/blight/blighted_growth_7"
+			order: -5
+			rotation: 180.0d
+			width: 3.0d
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "0C8AA218843168AD"
+			image: "malum:textures/gui/book/widgets/soulwood_frame_grand.png"
+			order: -4
+			rotation: 0.0d
+			width: 4.4d
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "4E2088ADA288E791"
+			image: "malum:textures/gui/book/widgets/dark_filling_grand.png"
+			order: -6
+			rotation: 0.0d
+			width: 4.4d
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			click_action: "none:"
+			color: 2361384
+			height: 11.0d
+			id: "3BCDBDFBB09633C3"
+			image: "malum:textures/vfx/totem_poles/arcane_glow.png"
+			order: -9
+			rotation: 0.0d
+			width: 11.0d
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			color: 5636095
+			height: 1.0d
+			id: "61FAA9160586F091"
+			image: "malum:textures/vfx/rite/gaze_aerial.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 3.5d
+			y: 3.0d
+		}
+		{
+			click_action: "none:"
+			color: 43690
+			height: 1.0d
+			id: "2F2C4EF2796527EA"
+			image: "malum:textures/vfx/rite/gaze_aqueous.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			click_action: "none:"
+			color: 16733695
+			height: 1.0d
+			id: "47D1442F62078918"
+			image: "malum:textures/vfx/rite/gaze_arcane.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 7.0d
+			y: 1.5d
+		}
+		{
+			click_action: "none:"
+			color: 5635925
+			height: 1.0d
+			id: "02DCD4E7FFCF0898"
+			image: "malum:textures/vfx/rite/gaze_earthen.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			click_action: "none:"
+			color: 16755200
+			height: 1.0d
+			id: "1746F97A8142CA41"
+			image: "malum:textures/vfx/rite/gaze_infernal.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 6.5d
+			y: 3.0d
+		}
+		{
+			click_action: "none:"
+			color: 16716652
+			height: 1.0d
+			id: "22B2094D2FE08DB8"
+			image: "malum:textures/vfx/rite/gaze_sacred.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			click_action: "none:"
+			color: 11141290
+			height: 1.0d
+			id: "18E24886C7F0EF22"
+			image: "malum:textures/vfx/rite/gaze_wicked.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 5.0d
+			y: 3.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "51BBDE3E5B4CC5A8"
+			image: "malum:textures/gui/book/widgets/runewood_frame_gilded.png"
+			order: -4
+			rotation: 0.0d
+			width: 4.4d
+			x: -4.5d
+			y: 6.5d
+		}
+		{
+			click_action: "none:"
+			height: 4.4d
+			id: "62234631376627B2"
+			image: "malum:textures/gui/book/widgets/paper_filling_gilded.png"
+			order: -6
+			rotation: 0.0d
+			width: 4.4d
+			x: -4.5d
+			y: 6.5d
+		}
+		{
+			click_action: "none:"
+			height: 1.4d
+			id: "579D6C06C4D76777"
+			image: "malum:textures/mob_effect/rejected.png"
+			rotation: 0.0d
+			width: 1.4d
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			click_action: "none:"
+			height: 10.0d
+			id: "680030333884E1B0"
+			image: "malum:block/banners/soulwoven_banner_spawn"
+			order: -10
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			click_action: "none:"
+			height: 1.0d
+			id: "68F05CE83214F0EB"
+			image: "malum:item/geas/pact_of_tidal_affinity"
+			rotation: 0.0d
+			width: 1.0d
+			x: -4.5d
+			y: 8.5d
+		}
+		{
+			click_action: "none:"
+			height: 1.0d
+			id: "1FC3F7C860D53387"
+			image: "malum:textures/mob_effect/wyrd_exhaustion.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -6.5d
+			y: 6.5d
+		}
+		{
+			click_action: "none:"
+			color: 11184810
+			height: 0.8d
+			id: "61E6E74C15AF2993"
+			image: "malum:textures/gui/book/icons/esoteric_reaping.png"
+			rotation: 0.0d
+			width: 0.8d
+			x: 6.0d
+			y: 7.0d
+		}
+		{
+			click_action: "none:"
+			color: 11184810
+			height: 0.8d
+			id: "7B69ECE3327F11BA"
+			image: "malum:textures/gui/book/icons/soul_shard.png"
+			rotation: 0.0d
+			width: 0.8d
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			click_action: "none:"
+			color: 11184810
+			height: 1.0d
+			id: "6B7DF7059735BFDE"
+			image: "malum:item/impetus/lead_node"
+			rotation: 0.0d
+			width: 1.0d
+			x: -3.44d
+			y: 2.5d
+		}
+		{
+			click_action: "none:"
+			color: 11184810
+			height: 1.0d
+			id: "686DF582810A6154"
+			image: "malum:item/impetus/lead_node"
+			rotation: 0.0d
+			width: 1.0d
+			x: -6.6d
+			y: 2.5d
+		}
+	]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["063E980ED2A2A29B"]
+			icon: {
+				id: "malum:refined_soulstone"
+			}
+			id: "16D89D5036F39756"
+			rewards: [
+				{
+					amount: 1
+					id: "06CACE2769F90DCA"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "0DAD30EC22FF87FB"
+					item: {
+						count: 1
+						id: "malum:encyclopedia_arcana"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "2477D8E34E10A2E2"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			size: 1.4d
+			tasks: [
+				{
+					id: "20D75FD4FBED84F9"
+					item: { count: 1, id: "malum:raw_soulstone" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "45BC80B429E95509"
+					item: { count: 1, id: "malum:refined_soulstone" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["16D89D5036F39756"]
+			icon: {
+				id: "malum:crude_scythe"
+			}
+			id: "4C48B5662C396543"
+			rewards: [
+				{
+					amount: 2
+					id: "577A4F4E63006648"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "28497C4F65853B15"
+					item: {
+						components: {
+							"minecraft:stored_enchantments": {
+								levels: {
+									"malum:spirit_plunder": 2
+								}
+							}
+						}
+						count: 1
+						id: "minecraft:enchanted_book"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "7B60F8EEE613668C"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [{
+				id: "527CDDB854DF1827"
+				item: { count: 1, id: "malum:crude_scythe" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"16D89D5036F39756"
+				"4C8EDEEFBC40E44B"
+			]
+			icon: {
+				id: "malum:spirit_altar"
+			}
+			id: "5D8C8F6326C5BB5F"
+			rewards: [
+				{
+					amount: 2
+					id: "5CEBE677FF577D3A"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "5508B738C8ED5E7C"
+					item: {
+						count: 1
+						id: "malum:gilded_runewood_item_pedestal"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "178982E99C2E366B"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "173B0AA58EAAACCF"
+					item: { count: 1, id: "malum:spirit_altar" }
+					type: "item"
+				}
+				{
+					id: "1EDA09495A191E46"
+					item: { count: 1, id: "malum:runewood_obelisk" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"4C48B5662C396543"
+				"5D8C8F6326C5BB5F"
+			]
+			id: "33F236BD2DA075C3"
+			rewards: [
+				{
+					amount: 3
+					id: "1658E9D465555E12"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "75DBE595877CAA73"
+					item: {
+						count: 1
+						id: "malum:hex_ash"
+					}
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "3DE54A8B942CCBB8"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [{
+				count: 2L
+				id: "1943B9200201E000"
+				item: { count: 1, id: "malum:hex_ash" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["063E980ED2A2A29B"]
+			icon: {
+				id: "malum:runewood_sapling"
+			}
+			id: "4C8EDEEFBC40E44B"
+			rewards: [
+				{
+					amount: 1
+					id: "529F600BBC1BE385"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 16
+					id: "1DC8902AA380A232"
+					item: {
+						count: 1
+						id: "malum:exposed_runewood_log"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "2885A35133C5D506"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "014032E1127D63B6"
+					item: { components: { "ftbfiltersystem:filter": "or(item(malum:runewood_sapling)item(malum:azure_runewood_sapling))", "minecraft:custom_name": "\"Runewood Saplings\"" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+					type: "item"
+				}
+				{
+					id: "51260DFF0E677F12"
+					item: { count: 1, id: "malum:runewood_log" }
+					type: "item"
+				}
+				{
+					id: "065358DAEAD876B6"
+					item: { count: 1, id: "malum:runic_sap" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"4C48B5662C396543"
+				"5D8C8F6326C5BB5F"
+			]
+			icon: {
+				id: "malum:tainted_rock"
+			}
+			id: "52A1154376134EDD"
+			rewards: [
+				{
+					amount: 3
+					id: "07564B36F3A6AB42"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 16
+					id: "0CBE910C4BC4D2DA"
+					item: {
+						count: 1
+						id: "malum:tainted_rock"
+					}
+					type: "item"
+				}
+				{
+					count: 16
+					id: "119FCCC77DC3CC56"
+					item: {
+						count: 1
+						id: "malum:twisted_rock"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "67255BEA5E2454E3"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					id: "335696FE9C26CC62"
+					item: { count: 1, id: "malum:tainted_rock" }
+					type: "item"
+				}
+				{
+					id: "178A31812F503CEF"
+					item: { count: 1, id: "malum:twisted_rock" }
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["4C48B5662C396543"]
+			icon: {
+				id: "malum:arcane_spirit"
+			}
+			id: "41C439295D5558C2"
+			rewards: [
+				{
+					amount: 1
+					id: "20E15BD0BADD66F0"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "6D7AF4FADA49D872"
+					item: {
+						count: 1
+						id: "malum:spirit_jar"
+					}
+					type: "item"
+				}
+				{
+					id: "70D6E1DBE05FA2E8"
+					item: {
+						count: 1
+						id: "malum:lamplighters_tongs"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "5A3D375030EF46DB"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [{
+				id: "49DF96867DE0BB9D"
+				item: { components: { "ftbfiltersystem:filter": "item_tag(malum:aspected_spirits)" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"4C48B5662C396543"
+				"5D8C8F6326C5BB5F"
+			]
+			hide_dependent_lines: true
+			icon: {
+				id: "malum:hallowed_gold_ingot"
+			}
+			id: "62C92C8960875611"
+			rewards: [
+				{
+					amount: 5
+					id: "04BE2A2FD36CA3F0"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "13CC33F38C1B14A7"
+					item: {
+						count: 1
+						id: "malum:hallowed_gold_ingot"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "536B376DB5656CE0"
+					item: {
+						count: 1
+						id: "malum:soul_stained_steel_ingot"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "68CFF3C0B2148AD4"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "diamond"
+			tasks: [
+				{
+					count: 2L
+					id: "6496D78011B13029"
+					item: { count: 1, id: "malum:hallowed_gold_ingot" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "1F004DE0AC1C7A85"
+					item: { count: 1, id: "malum:soul_stained_steel_ingot" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5D8C8F6326C5BB5F"]
+			hide_dependency_lines: true
+			id: "652650C157E16712"
+			rewards: [
+				{
+					amount: 1
+					id: "4A1C893E48298AD7"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "5A1E383EF54D634E"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "02016A4219DAE98A"
+				item: { count: 1, id: "malum:soulwoven_silk" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["52A1154376134EDD"]
+			hide_dependency_lines: true
+			icon: {
+				id: "malum:spirit_crucible"
+			}
+			id: "1C0024A48898FB90"
+			rewards: [
+				{
+					amount: 10
+					id: "5F4F1F1EB541A5D5"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 8
+					id: "7B6B262BB9D70459"
+					item: {
+						count: 1
+						id: "malum:alchemical_calx"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "67F88771D3CFB5A8"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			size: 1.0d
+			tasks: [
+				{
+					id: "0DAEA9B511D4FBDF"
+					item: { count: 1, id: "malum:spirit_crucible" }
+					type: "item"
+				}
+				{
+					id: "2BE42CBAB93B5314"
+					item: { count: 1, id: "malum:alchemical_impetus" }
+					type: "item"
+				}
+			]
+			x: -4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1C0024A48898FB90"]
+			icon_scale: 0.7d
+			id: "0AA1977AC1B5E5A9"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "6AE23904F1DE3AEB"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 8
+					id: "412CD01C822E0F57"
+					item: {
+						count: 1
+						id: "malum:alchemical_calx"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "54310C8AC422573E"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "11CC31F7EE2EC40A"
+				item: { count: 1, id: "malum:repair_pylon" }
+				type: "item"
+			}]
+			x: -4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["063E980ED2A2A29B"]
+			id: "74EA351011AA309F"
+			rewards: [
+				{
+					amount: 1
+					id: "744C68B0FD30EF56"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "6E6850D69B7DAAB3"
+					item: {
+						count: 1
+						id: "malum:cthonic_gold_fragment"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "3DDE4661064B3A06"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "561AB327A8C38401"
+				item: { count: 1, id: "malum:cthonic_gold" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1C0024A48898FB90"]
+			icon_scale: 0.8d
+			id: "6B971FA156A96BD5"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "4C77DBC1E53E5A4D"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 8
+					id: "3B22528DF3F4DC6E"
+					item: {
+						count: 1
+						id: "malum:arcane_charcoal"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "0681237471D0C435"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "08F0D70C3040016A"
+				item: { count: 1, id: "malum:spirit_catalyzer" }
+				type: "item"
+			}]
+			x: -5.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1C0024A48898FB90"]
+			icon: {
+				id: "malum:blazing_diode"
+			}
+			id: "7BA228FC749BF70A"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "7A10791064F8A042"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "65055A84A36C1456"
+					item: {
+						count: 1
+						id: "malum:tuning_fork"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "1A7F83177E6E06C0"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "rsquare"
+			tasks: [{
+				id: "2D6AEF337BEAFA58"
+				item: { components: { "ftbfiltersystem:filter": "item_tag(malum:augments)" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+				type: "item"
+			}]
+			x: -5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["063E980ED2A2A29B"]
+			icon: {
+				id: "malum:raw_brilliance"
+			}
+			id: "59CA9831FDCAFA10"
+			rewards: [
+				{
+					amount: 1
+					id: "2D8CDF8B7DF3431C"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 8
+					id: "51C7D305BF603C9C"
+					item: {
+						count: 1
+						id: "malum:refined_brilliance"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "1DE6798A57D45923"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "142DB2B266569D9F"
+					item: { count: 1, id: "malum:raw_brilliance" }
+					type: "item"
+				}
+				{
+					id: "1F96AB1BAA4B6FC8"
+					item: { count: 1, id: "malum:refined_brilliance" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"41C439295D5558C2"
+				"4C8EDEEFBC40E44B"
+			]
+			hide_dependency_lines: true
+			id: "272E84656D0F133C"
+			rewards: [
+				{
+					amount: 10
+					id: "6B9871D36FF0D163"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "57B0EED5157867A1"
+					item: {
+						count: 1
+						id: "malum:totemic_staff"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "314656843552CCF1"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "75C5E0916C7B1FA1"
+				item: { count: 1, id: "malum:runewood_totem_base" }
+				type: "item"
+			}]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["272E84656D0F133C"]
+			icon: {
+				id: "malum:soulwood_sapling"
+			}
+			id: "4D1EBD92C674531E"
+			rewards: [
+				{
+					amount: 5
+					id: "6BFD90D990C85A36"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "67AD778C2D176FD6"
+					item: {
+						count: 1
+						id: "malum:cursed_sap"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "73C731C57707928E"
+					item: {
+						count: 1
+						id: "malum:blightpearl"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "578CE7E244067057"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "7845309BAB352D87"
+					item: { count: 1, id: "malum:soulwood_log" }
+					type: "item"
+				}
+				{
+					id: "2232F6DE41992407"
+					item: { count: 1, id: "malum:soulwood_sapling" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"62C92C8960875611"
+				"4C8EDEEFBC40E44B"
+				"52A1154376134EDD"
+			]
+			hide_dependency_lines: true
+			icon: {
+				id: "malum:soulbinding_brazier"
+			}
+			id: "61B948F3E526ADF9"
+			optional: true
+			rewards: [
+				{
+					amount: 50
+					id: "67F52ACA5C7CD195"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "054AFC7117C68982"
+					item: {
+						count: 1
+						id: "malum:ether"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "73CC796726793ECB"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "657219F7D1E759B8"
+					item: { count: 1, id: "malum:soulbinding_brazier" }
+					type: "item"
+				}
+				{
+					id: "03265E688CF69208"
+					item: { count: 1, id: "malum:paracausal_flame" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["652650C157E16712"]
+			icon: {
+				id: "malum:soul_hunter_cloak"
+			}
+			id: "3B9B79565D5E2CA3"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "7983516975434130"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 12
+					id: "05D86A6A8F0C46F6"
+					item: {
+						count: 1
+						id: "malum:refined_soulstone"
+					}
+					type: "item"
+				}
+				{
+					count: 12
+					id: "7A1B665304303D82"
+					item: {
+						count: 1
+						id: "malum:soulwoven_silk"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "46F86BE70E1685F2"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "3096E22459448117"
+					item: { count: 1, id: "malum:soul_hunter_cloak" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "5644D308B89D6B24"
+					item: { count: 1, id: "malum:soul_hunter_robe" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "6F93511DCC4A3925"
+					item: { count: 1, id: "malum:soul_hunter_leggings" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "00024130879AB6B1"
+					item: { count: 1, id: "malum:soul_hunter_boots" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["652650C157E16712"]
+			id: "51373D5476F2FD7F"
+			rewards: [
+				{
+					amount: 3
+					id: "3ECE7ADE05C10645"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "72F6579DA4D25878"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "3CD9B9CBB7E04913"
+				item: { count: 1, id: "malum:soulwoven_pouch" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["62C92C8960875611"]
+			icon: {
+				id: "malum:necklace_of_the_narrow_edge"
+			}
+			id: "457E591ED546A456"
+			rewards: [
+				{
+					amount: 3
+					id: "22438C21E8546F8B"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 8
+					id: "62A383FC787495A2"
+					item: {
+						count: 1
+						id: "minecraft:leather"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "5E198A699DEC6452"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "03F4476EBA5B9315"
+				item: { components: { "ftbfiltersystem:filter": "or(item_tag(curios:belt)item_tag(curios:necklace)item_tag(curios:ring))or(mod(malum)mod(gaze))", "minecraft:custom_name": "\"Malum trinkets\"" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["62C92C8960875611"]
+			icon: {
+				id: "malum:runic_workbench"
+			}
+			id: "39ED88D2EF2F617B"
+			optional: true
+			rewards: [
+				{
+					amount: 10
+					id: "3C9FA2AC6F9407B5"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 16
+					id: "169709A4C8A30E54"
+					item: {
+						count: 1
+						id: "malum:runewood_planks"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "735429B83CCE5A9B"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6024BC15BAF64800"
+					item: { count: 1, id: "malum:runic_workbench" }
+					type: "item"
+				}
+				{
+					id: "0E7B34D38F84AC11"
+					item: { components: { "ftbfiltersystem:filter": "item_tag(curios:brooch)" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+					type: "item"
+				}
+				{
+					id: "4A5574B73D5286B1"
+					item: { components: { "ftbfiltersystem:filter": "item_tag(curios:rune)" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["62C92C8960875611"]
+			icon: {
+				id: "malum:weavers_workbench"
+			}
+			id: "1BC994881BC225ED"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "142665E49B519C3F"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "7ABDD0185A21459A"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "10F4FDA62394E24A"
+				item: { count: 1, id: "malum:weavers_workbench" }
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["59CA9831FDCAFA10"]
+			id: "29E6EF882A568585"
+			optional: true
+			rewards: [
+				{
+					amount: 3
+					id: "4EE4DF22FE9D3609"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "2069E8EEEB27E108"
+					team_reward: false
+					type: "xp"
+					xp: 150
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "5320AC0592DFC819"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "142D60469E1F9757"
+				item: { count: 1, id: "malum:brilliant_obelisk" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4C48B5662C396543"]
+			hide_dependency_lines: true
+			icon: {
+				id: "malum:warp_flux"
+			}
+			id: "66FE429D36389F75"
+			rewards: [
+				{
+					amount: 1
+					id: "0D3F6A314198E5CA"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "584758708E521DA4"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "6D8527E9C8C06246"
+				item: { components: { "ftbfiltersystem:filter": "item_tag(malum:mob_drops)mod(malum)", "minecraft:custom_name": "\"Soulful Drops\"" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["62C92C8960875611"]
+			icon: {
+				id: "malum:soul_stained_steel_helmet"
+			}
+			id: "6CA9ED28F944DECC"
+			optional: true
+			rewards: [
+				{
+					amount: 5
+					id: "2E936C356D228C13"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 6
+					id: "3F51336075DB2349"
+					item: {
+						count: 1
+						id: "malum:soul_stained_steel_plating"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "1D2DC3D2C901287B"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6C8DDAD9A4005882"
+					item: { count: 1, id: "malum:soul_stained_steel_helmet" }
+					type: "item"
+				}
+				{
+					id: "5D33D6CBBA08ABF9"
+					item: { count: 1, id: "malum:soul_stained_steel_chestplate" }
+					type: "item"
+				}
+				{
+					id: "182D8526B9AC5B3D"
+					item: { count: 1, id: "malum:soul_stained_steel_leggings" }
+					type: "item"
+				}
+				{
+					id: "634E62EDC65E1086"
+					item: { count: 1, id: "malum:soul_stained_steel_boots" }
+					type: "item"
+				}
+			]
+			x: 0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["62C92C8960875611"]
+			icon: {
+				id: "malum:soul_stained_steel_scythe"
+			}
+			id: "59497745146C1EFD"
+			rewards: [
+				{
+					amount: 5
+					id: "25CBD7DE0AD4859F"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 4
+					id: "358D5569B59CD44B"
+					item: {
+						count: 1
+						id: "malum:soul_stained_steel_ingot"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "4165FDCEA71B9BAE"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "0EA14B82D10AB714"
+					item: { count: 1, id: "malum:soul_stained_steel_scythe" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2A8621E270B7428A"
+					item: { count: 1, id: "malum:tyrving" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "0ECBFE9262249011"
+					item: { components: { "ftbfiltersystem:filter": "or(item(malum:soul_stained_steel_sword)item(malum:soul_stained_steel_pickaxe)item(malum:soul_stained_steel_axe)item(malum:soul_stained_steel_shovel)item(malum:soul_stained_steel_hoe))", "minecraft:custom_name": "\"Soulstained Tools\"" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["781D7DA09E444B95"]
+			icon: {
+				id: "malum:null_slate"
+			}
+			id: "66545AFE0DEA820F"
+			rewards: [
+				{
+					amount: 3
+					id: "4E1007E709EDB05A"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "4C82E3187490EBAB"
+					item: {
+						count: 1
+						id: "malum:tophat"
+					}
+					team_reward: false
+					type: "item"
+				}
+				{
+					count: 3
+					id: "26F016C7D6C3D7AD"
+					item: {
+						count: 1
+						id: "malum:raw_brilliance"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "3BD4C5B1104F1028"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6E96E1B22FE2A2A9"
+					item: { count: 1, id: "malum:null_slate" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "0125A9A673C52D9B"
+					item: { count: 1, id: "malum:void_salts" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "060EC6CEB82000AC"
+					item: { count: 1, id: "malum:mnemonic_fragment" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "32AC16580B43EDE3"
+					item: { count: 1, id: "malum:malignant_lead" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 8.25d
+		}
+		{
+			dependencies: ["66545AFE0DEA820F"]
+			icon: {
+				id: "malum:malignant_pewter_plating"
+			}
+			id: "70753CD7045AE9E1"
+			rewards: [
+				{
+					amount: 10
+					id: "08E81035E4D6DA34"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "32C445661D2BB7BD"
+					item: {
+						count: 1
+						id: "malum:malignant_lead"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "306436F70BE86EE3"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6A6F6014E6DFBCBE"
+					item: { count: 1, id: "malum:malignant_pewter_ingot" }
+					type: "item"
+				}
+				{
+					id: "10E849EA86CFEDA0"
+					item: { count: 1, id: "malum:malignant_pewter_plating" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 7.25d
+		}
+		{
+			dependencies: ["66545AFE0DEA820F"]
+			id: "77074CE5719763BB"
+			optional: true
+			rewards: [
+				{
+					amount: 5
+					id: "141A2AD808FA85CD"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					id: "7502C958803AE6DD"
+					item: {
+						count: 1
+						id: "malum:ring_of_the_endless_well"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "2B672C4504E8DED8"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "0E202C624EB90502"
+				item: { count: 1, id: "malum:mnemonic_hex_staff" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["70753CD7045AE9E1"]
+			icon: {
+				id: "malum:malignant_stronghold_helmet"
+			}
+			id: "6BCA2ED05C7D9D4E"
+			optional: true
+			rewards: [
+				{
+					amount: 10
+					id: "38C9FAB55FFA5824"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 4
+					id: "4490BFEE06D97BCA"
+					item: {
+						count: 1
+						id: "malum:malignant_pewter_plating"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3834D102DC589D73"
+					item: {
+						count: 1
+						id: "malum:soulwoven_silk"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "5D63FE4D305591A3"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "2C22485EF787EA9F"
+					item: { count: 1, id: "malum:malignant_stronghold_helmet" }
+					type: "item"
+				}
+				{
+					id: "16F2020915867639"
+					item: { count: 1, id: "malum:malignant_stronghold_chestplate" }
+					type: "item"
+				}
+				{
+					id: "2AEC80355F0355F8"
+					item: { count: 1, id: "malum:malignant_stronghold_leggings" }
+					type: "item"
+				}
+				{
+					id: "06DB96DDEB3D73BB"
+					item: { count: 1, id: "malum:malignant_stronghold_boots" }
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 7.75d
+		}
+		{
+			dependencies: ["70753CD7045AE9E1"]
+			icon: {
+				id: "malum:weight_of_worlds"
+			}
+			id: "4194F3C176E50B7B"
+			optional: true
+			rewards: [
+				{
+					amount: 10
+					id: "4E02BDBFD363C61E"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 2
+					id: "3BFB55813029F683"
+					item: {
+						count: 1
+						id: "malum:malignant_pewter_ingot"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "46E6B3656A25C6E8"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "78AB43AA6606D571"
+					item: { count: 1, id: "malum:edge_of_deliverance" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "276A2E3DBA2B8116"
+					item: { count: 1, id: "malum:weight_of_worlds" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "0BDE4192A6B083D6"
+					item: { count: 1, id: "malum:erosion_scepter" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: 7.75d
+		}
+		{
+			dependencies: ["66545AFE0DEA820F"]
+			icon: {
+				id: "malum:unwinding_chaos"
+			}
+			id: "5D7BABE1A37EC6D3"
+			optional: true
+			rewards: [
+				{
+					amount: 30
+					id: "4B3B2849EE0D919B"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					count: 32
+					id: "31EDE50D221A666D"
+					item: {
+						count: 1
+						id: "malum:eldritch_spirit"
+					}
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "689380BED6B8E418"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6E75DB4841ED93B3"
+					item: { count: 1, id: "malum:sundering_anchor" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "5423EF4A7FB5A5E0"
+					item: { count: 1, id: "malum:unwinding_chaos" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["063E980ED2A2A29B"]
+			icon: {
+				id: "malum:void_depot"
+			}
+			icon_scale: 1.4d
+			id: "781D7DA09E444B95"
+			rewards: [
+				{
+					amount: 10
+					id: "671A4D1609F7F2A9"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "481E068603042AFD"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			shape: "hexagon"
+			tasks: [
+				{
+					icon: {
+						id: "malum:void_depot"
+					}
+					id: "58BEE5F1435F017A"
+					observation_type: "block"
+					observe_type: 0
+					optional_task: true
+					timer: 0L
+					to_observe: "malum:void_conduit"
+					type: "observation"
+				}
+				{
+					id: "4EB296A2A5F25848"
+					item: { count: 1, id: "malum:encyclopedia_esoterica" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["272E84656D0F133C"]
+			icon: {
+				components: {
+					"ftbquests:icon": "malum:textures/mob_effect/grim_certainty.png"
+				}
+				id: "ftbquests:custom_icon"
+			}
+			id: "7A62B07AD0BCCCEA"
+			rewards: [
+				{
+					amount: 1
+					id: "7887347E1EE2F93E"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					auto: "enabled"
+					count: 6
+					id: "2DF4ED6FD005E15D"
+					item: {
+						count: 1
+						id: "malum:refined_brilliance"
+					}
+					random_bonus: 3
+					type: "item"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "1050DD6B46223585"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "3772CB9C1C8A3D66"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["781D7DA09E444B95"]
+			hide_until_deps_complete: true
+			icon: {
+				id: "malum:umbral_spirit"
+			}
+			id: "7169587C7DC4C8C0"
+			rewards: [
+				{
+					amount: 10
+					id: "62D4AE480A978FD6"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "15DFF1CD4B6F25F8"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "24473A0AA35A1540"
+					item: { count: 1, id: "malum:umbral_spirit" }
+					type: "item"
+				}
+				{
+					id: "704B13C98EE2CDCD"
+					item: { components: { "minecraft:damage": 1875 }, count: 1, id: "gaze:veil_dagger" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["4D1EBD92C674531E"]
+			id: "2EE0FD7E1FC4646A"
+			rewards: [
+				{
+					amount: 3
+					id: "2F044F0C8E06A47D"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "144DE98679CECA16"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "273FEFECBA310239"
+				item: { count: 1, id: "malum:large_strange_crystal" }
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["7169587C7DC4C8C0"]
+			id: "76A73B12FC436D0C"
+			rewards: [
+				{
+					amount: 10
+					id: "7991A6772FAFD14C"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "468E5B659A0263EA"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "04BAC9AE4A8C1012"
+				item: { components: { "irons_spellbooks:affinity_data": { bonuses: { "irons_spellbooks:eldritch_blast": 3 } }, "irons_spellbooks:spell_container": { data: [{ id: "gaze:soulward_shield", index: 0, level: 1, locked: 1b }], maxSpells: 11, mustEquip: 1b, spellWheel: 1b } }, count: 1, id: "gaze:encyclopedia_unveiled" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["7169587C7DC4C8C0"]
+			icon: {
+				id: "gaze:rune_of_touch_of_void"
+			}
+			id: "7061D35A3E480891"
+			optional: true
+			rewards: [
+				{
+					amount: 10
+					id: "64234FB9AB606C59"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "58F005D2DC8557BC"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [{
+				id: "11B86810F19A15B9"
+				item: { components: { "ftbfiltersystem:filter": "or(item(gaze:rune_of_beyond_the_veil)item(gaze:rune_of_out_of_phase)item(gaze:rune_of_blighted_presence)item(gaze:rune_of_touch_of_void)item(gaze:rune_of_ymir)item(gaze:rune_of_gymir)item(gaze:rune_of_eir)item(gaze:rune_of_fafnir))" }, count: 1, id: "ftbfiltersystem:smart_filter" }
+				type: "item"
+			}]
+			x: 1.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["7169587C7DC4C8C0"]
+			icon: {
+				components: {
+					"minecraft:damage": 1875
+				}
+				id: "gaze:splintered_world"
+			}
+			id: "0C5173F51D68317C"
+			rewards: [
+				{
+					amount: 50
+					id: "7335688F163C21A4"
+					team_reward: false
+					type: "currency"
+				}
+				{
+					command: "/puffish_skills points add @s puffish_skills:magic 1"
+					feedback_message: "Magic Skills Levelled Up"
+					icon: {
+						id: "malum:arcane_spirit"
+					}
+					id: "297D5DE95F701BC7"
+					permission_level: 2
+					silent: true
+					team_reward: false
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "6A597A9E46204FAC"
+					item: { components: { "minecraft:damage": 1875 }, count: 1, id: "gaze:splintered_world" }
+					type: "item"
+				}
+				{
+					id: "7F88B7B3E9471490"
+					item: { count: 1, id: "gaze:adaptive_wheel" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: -1.0d
+			y: 10.0d
+		}
+	]
+}

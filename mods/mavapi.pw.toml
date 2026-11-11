@@ -1,0 +1,13 @@
+name = "More Axolotl Variants API"
+filename = "mavapi-neoforge-2.4.0+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/t4Ybtys2/versions/hsAPY9KG/mavapi-neoforge-2.4.0%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "b862ff393972c8dec49a46865655fe398cd9637e3940d2e656a0da8f2cde193a6af575ac0bd5d6ab3818bc6fdba11dc6b22d9fb8503af925ed22c50acae2e0da"
+
+[update]
+[update.modrinth]
+mod-id = "t4Ybtys2"
+version = "hsAPY9KG"

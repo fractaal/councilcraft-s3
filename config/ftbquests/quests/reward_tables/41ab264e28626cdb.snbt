@@ -1,0 +1,969 @@
+{
+	icon: {
+		components: {
+			"relics:data": {
+				abilities: {
+					abilities: {
+						envy: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								incoming_damage_multiplier: {
+									initialQuality: 10
+								}
+								outgoing_damage_multiplier: {
+									initialQuality: 10
+								}
+							}
+						}
+						gluttony: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								early_multiplier: {
+									initialQuality: 10
+								}
+								late_multiplier: {
+									initialQuality: 10
+								}
+							}
+						}
+						greed: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								chance: {
+									initialQuality: 10
+								}
+								looting: {
+									initialQuality: 10
+								}
+								luck: {
+									initialQuality: 10
+								}
+							}
+						}
+						lust: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								amount: {
+									initialQuality: 10
+								}
+								time: {
+									initialQuality: 10
+								}
+							}
+						}
+						pride: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								multiplier: {
+									initialQuality: 10
+								}
+							}
+						}
+						sloth: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								speed: {
+									initialQuality: 10
+								}
+								time: {
+									initialQuality: 10
+								}
+							}
+						}
+						wrath: {
+							lock: {
+								breaks: 5
+							}
+							points: 0
+							stats: {
+								early_multiplier: {
+									initialQuality: 10
+								}
+								late_multiplier: {
+									initialQuality: 10
+								}
+								window: {
+									initialQuality: 10
+								}
+							}
+						}
+					}
+					synergies: { }
+				}
+				leveling: { }
+				statistic: {
+					metrics: {
+						retention_time: {
+							value: 2383.0d
+						}
+					}
+				}
+			}
+		}
+		id: "relics:ring_of_the_seven_deadly_sins"
+	}
+	id: "41AB264E28626CDB"
+	loot_crate: {
+		color: 43520
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 1b
+		item_name: "ftbquests.loot_crate.relic_bag"
+		string_id: "relic_bag"
+	}
+	loot_size: 1
+	order_index: 13
+	rewards: [
+		{
+			id: "7EE451A9CEB2F936"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								rewind: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										time: {
+											initialQuality: 10
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:clot_of_time"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "283B25BB91FCE548"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								camouflage: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										absorption: {
+											initialQuality: 7
+										}
+										cooldown: {
+											initialQuality: 5
+										}
+										heal: {
+											initialQuality: 1
+										}
+									}
+								}
+								revival: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										damage: { }
+										heal: { }
+										paralysis: {
+											initialQuality: 1
+										}
+										radius: {
+											initialQuality: 3
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:leafy_mantle"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "5DF1902C67806E7F"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								bounce: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										damage: {
+											initialQuality: 10
+										}
+										damage_modifier: {
+											initialQuality: 5
+										}
+										power: {
+											initialQuality: 2
+										}
+										radius: {
+											initialQuality: 4
+										}
+										stun: {
+											initialQuality: 2
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:springy_boot"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "50D5779A2A44280B"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								gliding: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										damage: {
+											initialQuality: 7
+										}
+										efficiency: {
+											initialQuality: 5
+										}
+										resistance: {
+											initialQuality: 1
+										}
+									}
+								}
+								slots: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										amount: {
+											initialQuality: 8
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:kinetic_belt"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "34207C13EFBB8F63"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								reflection: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										bounces: {
+											initialQuality: 4
+										}
+										chance: {
+											initialQuality: 8
+										}
+										damage: {
+											initialQuality: 6
+										}
+										lifetime: {
+											initialQuality: 4
+										}
+										piercings: {
+											initialQuality: 1
+										}
+										stun: {
+											initialQuality: 1
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:reflective_necklace"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "7B42DBF09D9EA187"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								regeneration: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										max_health: {
+											initialQuality: 8
+										}
+										regeneration: { }
+									}
+								}
+								shock: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										bounces: {
+											initialQuality: 9
+										}
+										cooldown: {
+											initialQuality: 6
+										}
+										damage: {
+											initialQuality: 7
+										}
+										damage_modifier: {
+											initialQuality: 6
+										}
+										distance: {
+											initialQuality: 5
+										}
+										duration: {
+											initialQuality: 6
+										}
+										knockback: {
+											initialQuality: 3
+										}
+										paralysis: { }
+										radius: {
+											initialQuality: 9
+										}
+										rings: {
+											initialQuality: 9
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:jellyfish_necklace"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "7A4A2D593A5D982F"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								constellation: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										constellation_radius: {
+											initialQuality: 9
+										}
+										explosion_damage: {
+											initialQuality: 6
+										}
+										explosion_radius: {
+											initialQuality: 3
+										}
+										star_chance: {
+											initialQuality: 8
+										}
+										star_lifetime: {
+											initialQuality: 2
+										}
+										stun_duration: {
+											initialQuality: 6
+										}
+										tremor_duration: {
+											initialQuality: 7
+										}
+									}
+								}
+								invisibility: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										brightness: {
+											initialQuality: 8
+										}
+										cooldown: {
+											initialQuality: 1
+										}
+										damage: {
+											initialQuality: 2
+										}
+									}
+								}
+								phase: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										attack_damage: {
+											initialQuality: 7
+										}
+										attack_speed: {
+											initialQuality: 4
+										}
+										duration: {
+											initialQuality: 1
+										}
+										health_regeneration: {
+											initialQuality: 3
+										}
+										max_health: {
+											initialQuality: 7
+										}
+										modifier: {
+											initialQuality: 1
+										}
+									}
+								}
+								starfall: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										bounce_chance: {
+											initialQuality: 7
+										}
+										chance: {
+											initialQuality: 8
+										}
+										damage: {
+											initialQuality: 5
+										}
+										radius: {
+											initialQuality: 6
+										}
+										stun: {
+											initialQuality: 4
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:midnight_mantle"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "4F4EF7C7756FAE0F"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								skating: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										damage: { }
+										ignite: {
+											initialQuality: 6
+										}
+										resistance: { }
+										speed: {
+											initialQuality: 2
+										}
+										step_height: {
+											initialQuality: 1
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:roller_skate"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "61FFE84BB89FAFC4"
+			item: {
+				components: {
+					"relics:chorus_staff/charge": 3
+					"relics:data": {
+						abilities: {
+							abilities: {
+								blink: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										cooldown: {
+											initialQuality: 2
+										}
+										distance: {
+											initialQuality: 1
+										}
+										max_charge: {
+											initialQuality: 1
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:chorus_staff"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "37D1B7B6A8BD138F"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								barter: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										items_count: {
+											initialQuality: 1
+										}
+										trades: {
+											initialQuality: 6
+										}
+									}
+								}
+								looting: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										attack_damage: {
+											initialQuality: 8
+										}
+										attack_speed: { }
+										chance: {
+											initialQuality: 9
+										}
+										duration: {
+											initialQuality: 6
+										}
+										health: {
+											initialQuality: 7
+										}
+									}
+								}
+								neutrality: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: { }
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:piglin_mask"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "795402AD337E9D5B"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								satiety: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										chance: {
+											initialQuality: 10
+										}
+										healing: {
+											initialQuality: 1
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:chef_hat"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "74FBF4F881CEBEA3"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								stable: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										heal: {
+											initialQuality: 7
+										}
+										max_slots: {
+											initialQuality: 7
+										}
+										resistance: {
+											initialQuality: 7
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:rider_flute"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "0520B79F8C50F238"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								sacrifice: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										resistance: { }
+										stacks: {
+											initialQuality: 3
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:sphere_of_self_sacrifice"
+			}
+			weight: 2.0f
+		}
+		{
+			id: "3CB8A2678245E5DB"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								pack: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										damage_modifier: {
+											initialQuality: 3
+										}
+										pet_radius: {
+											initialQuality: 10
+										}
+										resistance_per_pet: { }
+										revival_cost: {
+											initialQuality: 3
+										}
+									}
+								}
+								slots: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										amount: {
+											initialQuality: 6
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:hunting_belt"
+			}
+			weight: 4.0f
+		}
+		{ id: "5C5FCDCEC142F484", item: { components: { "relics:data": { abilities: { abilities: { retaliation: { lock: { breaks: 5 }, points: 0, stats: { cooldown: { initialQuality: 5 }, extension: { initialQuality: 8 }, miss_damage: { initialQuality: 8 }, miss_duration: { initialQuality: 1 }, projectile_damage: { initialQuality: 10 }, stun: { initialQuality: 4 }, stun_radius: { initialQuality: 1 }, window: { initialQuality: 1 } } } }, synergies: { } }, leveling: { }, statistic: { } } }, count: 1, id: "relics:shield_of_retaliation" } }
+		{
+			id: "40B592BAD7CB1317"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								distortion: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										miss_chance: {
+											initialQuality: 5
+										}
+									}
+								}
+								glitch: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										fall_damage: { }
+										phase_time: {
+											initialQuality: 6
+										}
+										stability_time: {
+											initialQuality: 1
+										}
+									}
+								}
+								illusion: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										duration: {
+											initialQuality: 8
+										}
+										echo_radius: { }
+										interval: {
+											initialQuality: 3
+										}
+										stun: {
+											initialQuality: 5
+										}
+										stun_radius: {
+											initialQuality: 10
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:glitchy_mantle"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "1CB6C80806B1D4B0"
+			item: {
+				components: {
+					"relics:data": {
+						abilities: {
+							abilities: {
+								fog: {
+									lock: {
+										breaks: 5
+									}
+									points: 0
+									stats: {
+										air_loss: {
+											initialQuality: 9
+										}
+										duration: {
+											initialQuality: 6
+										}
+										radius: {
+											initialQuality: 8
+										}
+										suffocation_damage: {
+											initialQuality: 3
+										}
+										tremor: {
+											initialQuality: 5
+										}
+									}
+								}
+								gaze: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										charges: {
+											initialQuality: 8
+										}
+										damage: {
+											initialQuality: 8
+										}
+										range: {
+											initialQuality: 4
+										}
+										weakness: {
+											initialQuality: 2
+										}
+									}
+								}
+								spectral_escape: {
+									lock: {
+										breaks: 0
+									}
+									points: 0
+									stats: {
+										cooldown: {
+											initialQuality: 7
+										}
+										damage: {
+											initialQuality: 2
+										}
+										duration: {
+											initialQuality: 9
+										}
+									}
+								}
+							}
+							synergies: { }
+						}
+						leveling: { }
+						statistic: { }
+					}
+				}
+				count: 1
+				id: "relics:ghostly_mantle"
+			}
+			weight: 2.0f
+		}
+		{ id: "69B51FF25B319EFA", item: { components: { "relics:data": { abilities: { abilities: { dispersion: { lock: { breaks: 5 }, points: 0, stats: { distribution_ratio: { initialQuality: 3 }, player_xp_ratio: { initialQuality: 10 }, same_item_bonus: { initialQuality: 6 } } } }, synergies: { } }, leveling: { }, statistic: { } } }, count: 1, id: "relics:experience_disperser" } }
+		{ id: "456C98E53559EC59", item: { components: { "relics:data": { abilities: { abilities: { envy: { lock: { breaks: 5 }, points: 0, stats: { incoming_damage_multiplier: { }, outgoing_damage_multiplier: { initialQuality: 6 } } }, gluttony: { lock: { breaks: 5 }, points: 0, stats: { early_multiplier: { initialQuality: 4 }, late_multiplier: { initialQuality: 10 } } }, greed: { lock: { breaks: 5 }, points: 0, stats: { chance: { initialQuality: 8 }, looting: { initialQuality: 3 }, luck: { initialQuality: 10 } } }, lust: { lock: { breaks: 5 }, points: 0, stats: { amount: { initialQuality: 4 }, time: { initialQuality: 10 } } }, pride: { lock: { breaks: 5 }, points: 0, stats: { multiplier: { initialQuality: 3 } } }, sloth: { lock: { breaks: 5 }, points: 0, stats: { speed: { initialQuality: 7 }, time: { initialQuality: 8 } } }, wrath: { lock: { breaks: 5 }, points: 0, stats: { early_multiplier: { initialQuality: 5 }, late_multiplier: { }, window: { initialQuality: 4 } } } }, synergies: { } }, leveling: { }, statistic: { } } }, count: 1, id: "relics:ring_of_the_seven_deadly_sins" } }
+	]
+	use_title: true
+}

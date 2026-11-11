@@ -1,0 +1,17 @@
+{
+  "raid.aero_combat.gravebound_scouts": "Gravebound Scouts",
+  "raid.aero_combat.sky_raiders": "Sky Raider Boarding Party",
+  "raid.aero_combat.frostbound_warband": "Frostbound Warband",
+  "raid.aero_combat.dune_revenants": "Dune Revenant Patrol",
+  "raid.aero_combat.cinder_patrol": "Cinder Legion Patrol",
+  "aero_combat.sky_raiders": "Gateway of the Sky Raiders",
+  "rewards.aero_combat.sky_raiders": "Sky Raiders supplies",
+  "aero_combat.ossuary": "Gateway of the Restless Ossuary",
+  "rewards.aero_combat.ossuary": "Restless Ossuary supplies",
+  "aero_combat.frostbound": "Gateway of the Frostbound Host",
+  "rewards.aero_combat.frostbound": "Frostbound Host supplies",
+  "aero_combat.cinder_foundry": "Gateway of the Cinder Foundry",
+  "rewards.aero_combat.cinder_foundry": "Cinder Foundry supplies",
+  "aero_combat.rogue_constructs": "Gateway of the Rogue Constructs",
+  "rewards.aero_combat.rogue_constructs": "Rogue Constructs supplies"
+}

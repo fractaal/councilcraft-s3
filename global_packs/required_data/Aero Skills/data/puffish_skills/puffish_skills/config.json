@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"categories": [
+		"melee",
+		"defense",
+		"ranged",
+		"athletics",
+		"mining",
+		"magic"
+	]
+}

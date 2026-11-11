@@ -1,0 +1,7 @@
+# Files in the repo that the installer must not copy into instances
+tools/
+docs/
+README.md
+.git/
+.gitignore
+*.md

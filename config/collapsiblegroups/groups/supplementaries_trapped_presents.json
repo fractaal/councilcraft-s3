@@ -1,0 +1,19 @@
+{
+  "id": "supplementaries_trapped_presents",
+  "name": {
+    "translate": "collapsible_groups.group.supplementaries_trapped_presents",
+    "fallback": "Supplementaries: Trapped Presents"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "supplementaries"
+      },
+      {
+        "item_path_starts_with": "trapped_present"
+      }
+    ]
+  }
+}

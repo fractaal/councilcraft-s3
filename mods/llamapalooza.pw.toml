@@ -1,0 +1,13 @@
+name = "LlamaPalooza"
+filename = "LLamaPalooza-1.21.1-0.0.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5ea4a3b6cb8a1190504ddafee81b77f403cb5c70"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8548405
+project-id = 970051

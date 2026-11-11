@@ -1,0 +1,13 @@
+name = "Soulbound Enchantment"
+filename = "soulbound-neoforge-1.0.1+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/MmUmcwom/versions/RkfLMEih/soulbound-neoforge-1.0.1%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "329292855e3aa454b23612d16f3920b54d1ce9d8a922a0a97186ba5a0df7d8a834e2c84d90022b0e05b7ccd7ab6627eb158457abad71f4b95648b20a4d60e7bb"
+
+[update]
+[update.modrinth]
+mod-id = "MmUmcwom"
+version = "RkfLMEih"

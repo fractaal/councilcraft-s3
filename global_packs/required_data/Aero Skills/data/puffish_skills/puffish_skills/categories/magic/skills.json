@@ -1,0 +1,254 @@
+{
+	"1": {
+		"definition": "root_iron_spell_damage+10%",
+		"x": 160,
+		"y": 0,
+		"root": true
+	},
+	"2": {
+		"definition": "ars_summon_power+5",
+		"x": -224,
+		"y": 64,
+		"root": false
+	},
+	"3": {
+		"definition": "iron_max_mana+10",
+		"x": 224,
+		"y": 64,
+		"root": false
+	},
+	"4": {
+		"definition": "iron_cooldown-5%",
+		"x": 160,
+		"y": 64,
+		"root": false
+	},
+	"5": {
+		"definition": "iron_summon_damage+10%",
+		"x": 96,
+		"y": 128,
+		"root": false
+	},
+	"6": {
+		"definition": "iron_cast_speed+5%",
+		"x": 160,
+		"y": 128,
+		"root": false
+	},
+	"7": {
+		"definition": "iron_cast_speed+5%",
+		"x": 128,
+		"y": 320,
+		"root": false
+	},
+	"8": {
+		"definition": "iron_cast_speed+5%",
+		"x": 192,
+		"y": 320,
+		"root": false
+	},
+	"9": {
+		"definition": "iron_summon_damage+25%",
+		"x": 128,
+		"y": 448,
+		"root": false
+	},
+	"10": {
+		"definition": "iron_mana_regen+25%",
+		"x": 128,
+		"y": 384,
+		"root": false
+	},
+	"11": {
+		"definition": "iron_cast_speed+25%",
+		"x": 160,
+		"y": 480,
+		"root": false
+	},
+	"12": {
+		"definition": "iron_max_mana+50",
+		"x": 192,
+		"y": 384,
+		"root": false
+	},
+	"13": {
+		"definition": "iron_spell_damage+25%",
+		"x": 160,
+		"y": 416,
+		"root": false
+	},
+	"14": {
+		"definition": "ars_max_mana+10",
+		"x": -96,
+		"y": 128,
+		"root": false
+	},
+	"15": {
+		"definition": "ars_spell_damage+1",
+		"x": -160,
+		"y": 128,
+		"root": false
+	},
+	"16": {
+		"definition": "ars_summon_power+5",
+		"x": -224,
+		"y": 128,
+		"root": false
+	},
+	"17": {
+		"definition": "ars_mana_regen+5",
+		"x": -160,
+		"y": 192,
+		"root": false
+	},
+	"18": {
+		"definition": "ars_spell_damage+3",
+		"x": -160,
+		"y": 256,
+		"root": false
+	},
+	"19": {
+		"definition": "ars_max_mana+25",
+		"x": -96,
+		"y": 256,
+		"root": false
+	},
+	"20": {
+		"definition": "ars_max_mana+50",
+		"x": -96,
+		"y": 384,
+		"root": false
+	},
+	"21": {
+		"definition": "ars_spell_damage+3",
+		"x": -160,
+		"y": 416,
+		"root": false
+	},
+	"22": {
+		"definition": "ars_spell_damage+5",
+		"x": -160,
+		"y": 480,
+		"root": false
+	},
+	"23": {
+		"definition": "ars_spell_damage+1",
+		"x": -160,
+		"y": 64,
+		"root": false
+	},
+	"24": {
+		"definition": "ars_max_mana+10",
+		"x": -96,
+		"y": 64,
+		"root": false
+	},
+	"25": {
+		"definition": "ars_mana_regen+3",
+		"x": -96,
+		"y": 192,
+		"root": false
+	},
+	"26": {
+		"definition": "ars_mana_regen+3",
+		"x": -224,
+		"y": 192,
+		"root": false
+	},
+	"27": {
+		"definition": "ars_max_mana+25",
+		"x": -96,
+		"y": 320,
+		"root": false
+	},
+	"28": {
+		"definition": "ars_summon_power+5",
+		"x": -224,
+		"y": 256,
+		"root": false
+	},
+	"29": {
+		"definition": "ars_summon_power+5",
+		"x": -224,
+		"y": 320,
+		"root": false
+	},
+	"30": {
+		"definition": "ars_summon_power+10",
+		"x": -224,
+		"y": 384,
+		"root": false
+	},
+	"31": {
+		"definition": "ars_spell_damage+3",
+		"x": -160,
+		"y": 320,
+		"root": false
+	},
+	"32": {
+		"definition": "iron_mana_regen+5%",
+		"x": 96,
+		"y": 64,
+		"root": false
+	},
+	"33": {
+		"definition": "iron_spell_damage+25%",
+		"x": 160,
+		"y": 352,
+		"root": false
+	},
+	"34": {
+		"definition": "iron_max_mana+10",
+		"x": 224,
+		"y": 128,
+		"root": false
+	},
+	"35": {
+		"definition": "iron_cooldown-10%",
+		"x": 160,
+		"y": 192,
+		"root": false
+	},
+	"36": {
+		"definition": "iron_spell_damage+10%",
+		"x": 160,
+		"y": 256,
+		"root": false
+	},
+	"37": {
+		"definition": "iron_summon_damage+10%",
+		"x": 96,
+		"y": 192,
+		"root": false
+	},
+	"38": {
+		"definition": "iron_mana_regen+10%",
+		"x": 96,
+		"y": 256,
+		"root": false
+	},
+	"39": {
+		"definition": "iron_max_mana+25",
+		"x": 224,
+		"y": 192,
+		"root": false
+	},
+	"40": {
+		"definition": "iron_max_mana+25",
+		"x": 224,
+		"y": 256,
+		"root": false
+	},
+	"41": {
+		"definition": "iron_cooldown-25%",
+		"x": 192,
+		"y": 448,
+		"root": false
+	},
+	"42": {
+		"definition": "root_ars_spell_damage+3",
+		"x": -160,
+		"y": 0,
+		"root": true
+	}
+}

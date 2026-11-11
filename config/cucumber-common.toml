@@ -1,0 +1,20 @@
+#General configuration options.
+[General]
+	#Mod ids (in order) to prioritize using items for when generating the cucumber-tags.json file.
+	modTagPriorities = ["minecraft",
+    "kubejs",
+    "ftb",
+    "ftbmaterials",
+    "mekanism",
+    "occultism",
+    "modern_industrialization",
+    "xycraft_world",
+    "xycraft_machines",
+    "mysticalagriculture",
+    "theurgy",
+    "forbidden_arcanus",
+    "ae2",
+    "megacells",
+    "enderio"]
+	#If enabled, any tags in the cucumber-tags.json file set to items that don't exist will be refreshed if possible.
+	autoRefreshTagOptions = false

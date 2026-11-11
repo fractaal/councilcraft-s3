@@ -1,0 +1,106 @@
+{
+	"chapters/create.snbt": {
+		quest.0149B3F7F08D7E35.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "A basic crafting component."
+		}
+		quest.5AFD4912CC8FBBB8.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "A necessary crafting component."
+		}
+		quest.768789FEB6EBB8F8.quest_desc: {
+			old: [
+				"The &eBlaze Burner&r is a heat source required for certain &bMixing&r recipes, such as creating &dBrass&r. It can also heat a boiler for a &bSteam Engine&r."
+				""
+				"{@pagebreak}"
+				""
+				"Heating"
+				"Right-click it with &bfurnace fuel&r to heat it, or with a &bBlaze Cake&r to &dSuper-Heat&r it for advanced processes."
+			]
+			new: [
+				"The &eBlaze Burner&r is a heat source required for certain &bMixing&r recipes, such as creating &dBrass&r. It can also heat a boiler for a &bSteam Engine&r."
+				"{@pagebreak}"
+				"Heating"
+				"Right-click it with &bfurnace fuel&r to heat it, or with a &bBlaze Cake&r to &dSuper-Heat&r it for advanced processes."
+			]
+		}
+		quest.6D03D3B4D83C1840.quest_desc: {
+			old: [
+				"The &eMechanical Crafter&r is used for automated crafting. Use a &bWrench&r on its front to set the output direction. Multiple crafters can be placed together to form a crafting grid."
+				""
+				"{@pagebreak}"
+				""
+				"When powered and all ingredient slots for a valid recipe are filled, the crafters will combine the items into the final product."
+			]
+			new: [
+				"The &eMechanical Crafter&r is used for automated crafting. Use a &bWrench&r on its front to set the output direction. Multiple crafters can be placed together to form a crafting grid."
+				"{@pagebreak}"
+				"When powered and all ingredient slots for a valid recipe are filled, the crafters will combine the items into the final product."
+			]
+		}
+		quest.6819665DA7028C9E.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "Used in multiple crafting recipes."
+		}
+		quest.62BAE54B507B7A21.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "An ingredient for crafting."
+		}
+		quest.51CCB7ACFD7B45F1.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "A key crafting ingredient."
+		}
+		quest.5A2450162FD24F7E.quest_subtitle: {
+			old: "Crushing Wheels apply Crushing recipes to any items inserted from the direction they are spinning away from."
+			new: "Applies crushing recipes to items."
+		}
+		quest.24CFA0022432887E.quest_desc: {
+			old: [
+				"The &eThreshold Switch&r emits a &bRedstone Signal&r based on an inventory's fullness. It orients itself towards an adjacent inventory upon placement."
+				""
+				"{@pagebreak}"
+				""
+				"The thresholds for turning the signal on and off can be configured in its UI. The signal can also be inverted."
+			]
+			new: [
+				"The &eThreshold Switch&r emits a &bRedstone Signal&r based on an inventory's fullness. It orients itself towards an adjacent inventory upon placement."
+				"{@pagebreak}"
+				"The thresholds for turning the signal on and off can be configured in its UI. The signal can also be inverted."
+			]
+		}
+		quest.0EE2E9EB6DC01E34.quest_subtitle: {
+			old: "Crafting ingredient"
+			new: "An essential crafting material."
+		}
+		quest.4B976C143EDA4317.quest_desc: {
+			old: [
+				"&eCasings&r are decorative blocks used in many crafting recipes. &dAndesite Casings&r are used for basic contraptions."
+				"{@pagebreak}"
+				"Craft casings by applying an &balloy&r or &bingot&r to a &bStripped Log&r. Most casings can be used to encase &bShafts&r, &bCogwheels&r, and &bMechanical Belts&r for decoration."
+			]
+			new: [
+				"&eCasings&r are decorative blocks used in many crafting recipes. &dAndesite Casings&r are used for basic contraptions."
+				"{@pagebreak}"
+				"Craft casings by applying an &balloy&r or &bingot&r to a &bStripped Log&r. Most casings can be used to encase &bShafts&r, &bCogwheels&r, and &bMechanical Belts&r for decoration. &dCopper Casings&r are exclusively for &bFluid Pipes&r."
+			]
+		}
+		quest.19754AE8C11A6317.quest_desc: {
+			old: [
+				"The &eDeployer&r simulates player actions on blocks or entities 2 blocks away. It can be given items to use and can be stopped with a &bRedstone Signal&r."
+				""
+				"A &bFilter&r can be set to specify which items to use."
+				""
+				"{@pagebreak}"
+				""
+				"By default, the &eDeployer&r simulates right-clicks. Use a &bWrench&r on its front to switch it to left-click mode, allowing it to use tools like pickaxes and swords."
+			]
+			new: [
+				"The &eDeployer&r simulates player actions on blocks or entities 2 blocks away. It can be given items to use and can be stopped with a &bRedstone Signal&r."
+				""
+				"A &bFilter&r can be set to specify which items to use."
+				"{@pagebreak}"
+				"By default, the &eDeployer&r simulates right-clicks. Use a &bWrench&r on its front to switch it to left-click mode, allowing it to use tools like pickaxes and swords."
+			]
+		}
+	}
+}

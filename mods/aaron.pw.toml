@@ -1,0 +1,13 @@
+name = "Aaron"
+filename = "aaron-1.21.1-1.21.0-build.39.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/usfxOp9L/versions/9OGHCJcW/aaron-1.21.1-1.21.0-build.39.jar"
+hash-format = "sha512"
+hash = "4d564a177da836d48375a62ae465259f40c7ada71b2885d510e73c3e04078e8d11b08ce438369186109704bda325f551c88a385b498df328c6f60efab84c130d"
+
+[update]
+[update.modrinth]
+mod-id = "usfxOp9L"
+version = "9OGHCJcW"

@@ -1,0 +1,13 @@
+name = "Royal Variations"
+filename = "royal-variations-[NeoForge]_1.21.1_2.0.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/n2G0Tyys/versions/uIrA446U/royal-variations-%5BNeoForge%5D_1.21.1_2.0.4.jar"
+hash-format = "sha512"
+hash = "a59a5b89f016e9477dbdaa414b42d8d97d7017b9f6ff03771b1be599e8574af6ba92decf2391e206e82bc6d90b2deb63581b0985c05bb067459c96cbed7def04"
+
+[update]
+[update.modrinth]
+mod-id = "n2G0Tyys"
+version = "uIrA446U"

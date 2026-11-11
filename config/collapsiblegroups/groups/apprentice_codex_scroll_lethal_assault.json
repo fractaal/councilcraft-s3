@@ -1,0 +1,22 @@
+{
+  "id": "apprentice_codex_scroll_lethal_assault",
+  "name": {
+    "translate": "collapsible_groups.group.apprentice_codex_scroll_lethal_assault",
+    "fallback": "Apprentice's Codex: Lethal Assault Scrolls"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "id": "irons_spellbooks:scroll"
+      },
+      {
+        "type": "item",
+        "component": "irons_spellbooks:spell_container",
+        "path": "data[0].id",
+        "value": "apprenticecodex:lethal_assault"
+      }
+    ]
+  }
+}

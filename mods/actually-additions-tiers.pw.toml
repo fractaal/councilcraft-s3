@@ -1,0 +1,13 @@
+name = "Actually Additions: Tiers"
+filename = "actuallyadditionstiers-21.1.1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cbd739d3e96c1d3deb76cb057ef10c521b84993e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8358554
+project-id = 1549640

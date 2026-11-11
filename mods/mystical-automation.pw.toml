@@ -1,0 +1,13 @@
+name = "Mystical Automation"
+filename = "MysticalAutomation-1.21.1-1.0.8.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/wtZsRhqk/versions/HdlBF75n/MysticalAutomation-1.21.1-1.0.8.jar"
+hash-format = "sha512"
+hash = "5f00c98e399b3b99fd5fb1db4e89b4ee48d61d4eeeb9cfe3adb23e58f51e603ad58e884b6dde9c7ff2c8baec82c3a668ad50553a8c421798fb6e1ad10e784189"
+
+[update]
+[update.modrinth]
+mod-id = "wtZsRhqk"
+version = "HdlBF75n"

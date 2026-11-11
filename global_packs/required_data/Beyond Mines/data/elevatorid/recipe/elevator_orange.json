@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "elevator",
+  "pattern": [
+    "WWW",
+    "WEW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:orange_wool"
+    },
+    "E": {
+      "item": "enderio:void_chassis"
+    }
+  },
+  "result": {
+    "id": "elevatorid:elevator_orange"
+  }
+}
+

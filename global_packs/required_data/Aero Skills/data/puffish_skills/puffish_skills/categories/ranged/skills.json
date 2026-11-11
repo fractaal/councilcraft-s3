@@ -1,0 +1,164 @@
+{
+	"1": {
+		"definition": "root_ranged_damage+5%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"2": {
+		"definition": "arrow_drawspeed+10%",
+		"x": 72,
+		"y": 72,
+		"root": false
+	},
+	"3": {
+		"definition": "ranged_damage+5%",
+		"x": 0,
+		"y": 144,
+		"root": false
+	},
+	"4": {
+		"definition": "arrow_velocity+10%",
+		"x": -72,
+		"y": 72,
+		"root": false
+	},
+	"5": {
+		"definition": "arrow_velocity+10%",
+		"x": -144,
+		"y": 144,
+		"root": false
+	},
+	"6": {
+		"definition": "arrow_velocity+10%",
+		"x": -144,
+		"y": 180,
+		"root": false
+	},
+	"7": {
+		"definition": "arrow_velocity+20%",
+		"x": -144,
+		"y": 216,
+		"root": false
+	},
+	"8": {
+		"definition": "arrow_damage+10%",
+		"x": 0,
+		"y": 252,
+		"root": false
+	},
+	"9": {
+		"definition": "arrow_drawspeed+10%",
+		"x": 108,
+		"y": 108,
+		"root": false
+	},
+	"10": {
+		"definition": "arrow_drawspeed+10%",
+		"x": 144,
+		"y": 144,
+		"root": false
+	},
+	"11": {
+		"definition": "arrow_drawspeed+10%",
+		"x": 144,
+		"y": 180,
+		"root": false
+	},
+	"12": {
+		"definition": "arrow_drawspeed+20%",
+		"x": 144,
+		"y": 216,
+		"root": false
+	},
+	"13": {
+		"definition": "arrow_drawspeed+20%",
+		"x": 144,
+		"y": 252,
+		"root": false
+	},
+	"14": {
+		"definition": "arrow_velocity+20%",
+		"x": -144,
+		"y": 252,
+		"root": false
+	},
+	"15": {
+		"definition": "arrow_velocity+20%",
+		"x": -144,
+		"y": 288,
+		"root": false
+	},
+	"16": {
+		"definition": "arrow_damage+10%",
+		"x": 0,
+		"y": 324,
+		"root": false
+	},
+	"17": {
+		"definition": "arrow_damage+25%",
+		"x": 0,
+		"y": 360,
+		"root": false
+	},
+	"18": {
+		"definition": "arrow_damage+25%",
+		"x": 0,
+		"y": 396,
+		"root": false
+	},
+	"19": {
+		"definition": "ranged_damage+5%",
+		"x": -36,
+		"y": 432,
+		"root": false
+	},
+	"20": {
+		"definition": "ranged_damage+5%",
+		"x": 36,
+		"y": 432,
+		"root": false
+	},
+	"21": {
+		"definition": "arrow_damage+5%",
+		"x": 0,
+		"y": 72,
+		"root": false
+	},
+	"22": {
+		"definition": "arrow_velocity+10%",
+		"x": -108,
+		"y": 108,
+		"root": false
+	},
+	"23": {
+		"definition": "arrow_drawspeed+20%",
+		"x": 144,
+		"y": 288,
+		"root": false
+	},
+	"24": {
+		"definition": "arrow_damage+5%",
+		"x": 0,
+		"y": 180,
+		"root": false
+	},
+	"25": {
+		"definition": "arrow_damage+10%",
+		"x": 0,
+		"y": 216,
+		"root": false
+	},
+	"26": {
+		"definition": "arrow_damage+10%",
+		"x": 0,
+		"y": 288,
+		"root": false
+	},
+	"27": {
+		"definition": "ranged_damage+25%",
+		"x": 0,
+		"y": 468,
+		"root": false
+	}
+}

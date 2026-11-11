@@ -1,0 +1,13 @@
+name = "FishingOverhaul"
+filename = "fishingoverhaul-1.21.1-1.2.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/mO6KzcvH/versions/J6h1bEpa/fishingoverhaul-1.21.1-1.2.1.jar"
+hash-format = "sha512"
+hash = "8d5a4447c34cf78dcee5fa4d86b50ea22c9dce550939dae63830a4832c8dae79e4ba3f345ad42a0c643c72ed5c9e74214a65b01ddb37587fa98118ff9afc7a0e"
+
+[update]
+[update.modrinth]
+mod-id = "mO6KzcvH"
+version = "J6h1bEpa"

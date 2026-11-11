@@ -1,0 +1,10 @@
+# Exosphere: native Hordium random checks. Five curated encounters replace sample raids in the random pool.
+checkIntervalTicks = 1200
+baseChancePerCheck = 0.03
+maxConcurrentRaidsPerLevel = 1
+minRaidDistance = 192.0
+abandonTicks = 1200
+raidExpireTicks = 12000
+playerTrackRadius = 96.0
+requireSkyVisible = true
+allowedDimensions = ["minecraft:overworld"]

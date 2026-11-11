@@ -1,0 +1,13 @@
+name = "Auroral"
+filename = "auroral-1.21.1-1.1.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/atxUWJdN/versions/pAED8TiW/auroral-1.21.1-1.1.4.jar"
+hash-format = "sha512"
+hash = "fb751947a838f0a9e2e254ad69749e881d0e77288e427d576570dcc3bab0bec5aafc0364a1d686d09003fe5038071426ecb3f908f46d0c62b4d22bea0352a8a2"
+
+[update]
+[update.modrinth]
+mod-id = "atxUWJdN"
+version = "pAED8TiW"

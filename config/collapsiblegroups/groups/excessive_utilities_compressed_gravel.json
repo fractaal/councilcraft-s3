@@ -1,0 +1,19 @@
+{
+  "id": "excessive_utilities_compressed_gravel",
+  "name": {
+    "translate": "collapsible_groups.group.excessive_utilities_compressed_gravel",
+    "fallback": "Excessive Utilities: Compressed Gravel"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "excessive_utilities"
+      },
+      {
+        "item_path_contains": "compressed_gravel"
+      }
+    ]
+  }
+}

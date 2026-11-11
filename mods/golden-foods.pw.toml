@@ -1,0 +1,13 @@
+name = "Golden Foods!"
+filename = "golden_foods-merged-1.21.1-2.4.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/zUg53pQP/versions/jtIomjJd/golden_foods-merged-1.21.1-2.4.0.jar"
+hash-format = "sha512"
+hash = "b8c206d4af7605a5c3d275ab1bd2c7723a9a9c2876ad1373bebd41de7e1e428a50813dfe0d340a05ee5c561872c0c8ee0ed33e2f4fd3ce6e3d9d7fb9935fe20c"
+
+[update]
+[update.modrinth]
+mod-id = "zUg53pQP"
+version = "jtIomjJd"

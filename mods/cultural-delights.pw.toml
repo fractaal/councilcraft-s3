@@ -1,0 +1,13 @@
+name = "Cultural Delights"
+filename = "culturaldelights-1.21.1-0.19.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/YttyNOFA/versions/lpSnr0LJ/culturaldelights-1.21.1-0.19.4.jar"
+hash-format = "sha512"
+hash = "3e2575847ee4b0da34d0bcf42922eb0c1ede7b67e56844e2c7f61fcc50d8040c46f4e09b6177363cb53f2cfcb435c92dd91e396827f951559f656876690a83c6"
+
+[update]
+[update.modrinth]
+mod-id = "YttyNOFA"
+version = "lpSnr0LJ"

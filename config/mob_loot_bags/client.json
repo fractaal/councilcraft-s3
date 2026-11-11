@@ -1,0 +1,14 @@
+// Mob Loot Bags 2.0: client-side visuals. These only change what you see.
+{
+  // Dropped bags of beam_min_tier or better send up a beam of their tier's colour, beam_height blocks tall.
+  "loot_beams": true,
+  "beam_min_tier": "rare",
+  "beam_height": 2.5,
+
+  // Show the loot you got from a bag in a toast for toast_seconds.
+  "reveal_toast": true,
+  "toast_seconds": 5.0,
+
+  // Hold Shift over a bag to see its possible loot.
+  "preview_tooltips": true
+}

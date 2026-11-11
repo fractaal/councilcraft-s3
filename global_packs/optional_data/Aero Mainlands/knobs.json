@@ -1,0 +1,12 @@
+{
+  "regionOctave": -9,
+  "regionXZScale": 0.5,
+  "mainlandThreshold": 0.05,
+  "blendWidth": 0.2,
+  "inlandMin": -0.11,
+  "inlandWidth": 0.15,
+  "undersideTop": 10,
+  "undersideBottom": -40,
+  "skyIslandsAbove": 210,
+  "islandCeiling": 255
+}

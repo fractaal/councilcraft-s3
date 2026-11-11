@@ -1,0 +1,218 @@
+{
+	quest.0174ACD260158165.title: "&fGas Pipe"
+	quest.0DB5CBE2E76D2FD9.quest_desc: [
+		"If you're looking for a pipe to transfer pretty much anything in or out, the &ePipez&r mod has you covered."
+		""
+		"This mod adds several useful pipes for transferring &bitems&r, &9fluids&r, &cpower&r, or &2gases&r. You can even use the &dUniversal Pipes&r to condense everything down into one pipe."
+		""
+		"To set the pipe to extract, you'll need to sneak-use a &aPipe Wrench&r on the end of the pipe that is connected to the block you want to extract from. Once done, you can upgrade the pipe using a &bPipe Upgrade&r to make it faster, allow for filters, and more!"
+	]
+	quest.0DB5CBE2E76D2FD9.title: "&ePipez"
+	quest.103DD37E53765969.quest_subtitle: "Transfers Items"
+	quest.103DD37E53765969.title: "&fMI Item Pipes"
+	quest.12662BF53A31F0B4.quest_desc: [
+		"Want to keep other players away from your stuff? Make an &aExpulsion Pylon&r!"
+		""
+		"This pushes back and prevents players from entering in a set radius around the &ePylon&r. You can also filter out which players are allowed in using &aPlayer Filters&r."
+	]
+	quest.12662BF53A31F0B4.title: "&fExpulsion Pylon"
+	quest.1706D0B9391ED8E1.quest_desc: [
+		"&ePowah&r actually has very fast energy cables and can be faster than &6Mekanism&r cables when connected individually. However, these don't have a buffer for storage like, nor can their throughput be increased by having more cables connected together."
+		""
+		"These are your basic cables for transferring energy between machines."
+	]
+	quest.1706D0B9391ED8E1.title: "&fEnergy Cables"
+	quest.1739969280BB4E82.quest_subtitle: "Transfers Redstone Signals"
+	quest.1739969280BB4E82.title: "&fRedstone Conduit"
+	quest.1AE69DDE0FBE9E9F.quest_subtitle: "Transfers Items"
+	quest.1AE69DDE0FBE9E9F.title: "&fItem Pipe"
+	quest.1CFBFD1CE648772F.quest_desc: [
+		"If you want to tap into your power storage wirelessly, you should pump your power into an &dEnder Cell&r."
+		""
+		"These are used to store a massive amount of power into a &bfrequency&r, which can be accessed from any dimension using another Ender Cell or &6Ender Gate&r."
+	]
+	quest.1CFBFD1CE648772F.title: "&5Ender &fCells"
+	quest.1DA78BAB2A6E2C82.quest_desc: [
+		"For modded veterans, &eEnderIO&r held great memories due to its amazing pipes, called &dConduits&r."
+		""
+		"These &dConduits&r are highly configurable, and can even store multiple conduits in the same block space. If you don't like the look of the cables, you can also slap on a &2Facade&r to cover them up!"
+		""
+		"Configuring them is made easy using the &aYeta Wrench&r. If any pipe is hidden beneath a &2Facade&r, holding the wrench in your hand will uncover them for easy configuration."
+	]
+	quest.1DA78BAB2A6E2C82.title: "&eEnderIO"
+	quest.2A1AE478A678C1A9.title: "&fEnergy Interfaces"
+	quest.2A65FC21A4BBF686.quest_subtitle: "Transfers Power"
+	quest.2A65FC21A4BBF686.title: "&fEnergy Pipe"
+	quest.2AF7DF42143C5443.quest_desc: [
+		"&eIntegrated Dynamics&r is a mod for those who want to bypass the user friendly stuff and get straight into the internals of how things work."
+		""
+		"This is more of an advanced mod, but allows those who master it to take complete control over every aspect of logistics. Near infinite transfer speeds, complete filtering options, you name it."
+		""
+		"Anything can be transferred using &aLogic Cables&r, &aVariable Cards&r, and the appropriate &aInterface&r."
+	]
+	quest.2AF7DF42143C5443.title: "&eIntegrated Dynamics"
+	quest.2FCED22162B00429.quest_subtitle: "Transfers Power"
+	quest.2FCED22162B00429.title: "&fEnergy Conduit"
+	quest.34D191F76AA69707.quest_desc: [
+		"&eFlux Networks&r is the ultimate wireless power solution!"
+		""
+		"[\"To get started, you'll need to create \", {\"text\": \"Flux Dust\", \"color\": \"green\"}, \" in a \", {\"text\": \"Reaction Chamber\", \"color\": \"gold\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"3334E05101A7297F\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Reaction Chamber Quest\"}}, \", or in bulk by crushing \", {\"text\": \"Redstone\", \"color\": \"red\"}, \" between an \", {\"text\": \"Anvil\", \"color\": \"green\"}, \" and \", {\"text\": \"Bedrock\", \"color\": \"gray\"}, \" found in the \", {\"text\": \"End\", \"color\": \"light_purple\"}, \".\"]"
+		""
+		"&aFlux Dust&r is the main crafting material for all blocks within the mod. "
+		""
+		"Use this to make the &bFlux Configurator&r, which shows all power networks you have access to and allows you to remotely manage all devices connected to that network."
+	]
+	quest.34D191F76AA69707.quest_subtitle: "Power Management"
+	quest.34D191F76AA69707.title: "&eFlux Networks"
+	quest.366F506F69C65F28.quest_subtitle: "Transfers Items"
+	quest.366F506F69C65F28.title: "&fItem Conduit"
+	quest.3C0D9DFFEC915E2C.quest_subtitle: "Transfers Fluids"
+	quest.3C0D9DFFEC915E2C.title: "&fFluid Conduit"
+	quest.40255F6F1C60B588.title: "&fFluid Interfaces"
+	quest.408165388CBC4556.quest_subtitle: "Transfers Gases and Chemicals"
+	quest.408165388CBC4556.title: "&fChemical Conduit"
+	quest.4D8644BC9308E349.title: "&fItem Interfaces"
+	quest.4E6EC6E1A507A52B.quest_desc: [
+		"&dEnder Gates&r can be placed down on any machine to transfer power wirelessly."
+		""
+		"[\"These will only work if you have enough power in your \", {\"text\": \"Ender Cell\", \"color\": \"dark_purple\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"1CFBFD1CE648772F\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Ender Cells Quest\"}}, \" network.\" ]"
+	]
+	quest.4EE97D251DD2E9B7.quest_desc: [
+		"&eModern Industrialization&r's (&eMI&r) pipes and cables are highly configurable, allowing for multiple types and different colors within the same blockspace. If you're planning on progressing through &eMI&r, it's a good idea to use them for the machines, as well as making the &aWrench&r from the mod."
+		""
+		"&eMI&r's &aWrench&r is probably the most feature rich wrench you'll ever use. It makes configuring the pipes and cables easy, but most importantly, it helps visualize and build out the multiblock machines from the mod."
+	]
+	quest.4EE97D251DD2E9B7.title: "&eModern Industrialization&r"
+	quest.4F092D86017F37E9.quest_desc: [
+		"We can make some of the basics using Iron, but to improve our setup we'll need to make some stronger alloys by using the &aEnergizing Orb&r."
+		""
+		"To use this, you'll need power going into &bEnergizing Rods&r within 4 blocks of the Orb. When given the right items, the Rods will zap power into the &aOrb&f to energize the items."
+		""
+		"The Energizing Orb is how you create the different tiers of items in the mod. &bBasic Energizing Rods&r will struggle to make the higher tier materials like &bNiotic Crystals&r, so upgrading those is a must as you progress!"
+	]
+	quest.4F092D86017F37E9.title: "&fEnergizing Orb"
+	quest.5283000032BDFE0B.title: "&fMI Fluid Pipes"
+	quest.583FFE29C881EE8C.quest_desc: [
+		"Using the &6Flux Configurator&r, you can access the Network UI by using it in your hand. You can also access this from any block within the mod."
+		""
+		"Let's create your first network! On the far right tab of the UI, you can click the &a+&r to create a new network."
+		"{@pagebreak}"
+		"On this screen, you can change the network's name and switch configuration options to public, private, or encrypted, making it a great power transfer mod for server use."
+		""
+		"{image\\:\\ftb:textures/quests/fluxnetworks/new_network.png width:140 height:150 align:center}"
+		""
+		"When you're finished configuring the options, you can hit &bCreate&r at the bottom!"
+		"{@pagebreak}"
+		"This will bring you to the &aNetwork List&r. In this list, you can see all networks that are available to you, including the one you just created!"
+		""
+		"For every device that needs to connect to the network, this is the first thing you'll do whenever you place it down."
+		""
+		"{image\\:\\ftb:textures/quests/fluxnetworks/network_list.png width:140 height:150 align:center}"
+		""
+		"Once you've selected a network, you can head over to the Home page to configure the settings of the device."
+		"{@pagebreak}"
+		"The &bHome&r page allows you to configure several parts of the device, including the &aName&r, &dPriority&r, and &cTransfer Limit&r."
+		""
+		"{image\\:\\ftb:textures/quests/fluxnetworks/network_configure.png width:140 height:150 align:center}"
+		""
+		"The higher the &dPriority&r number, the more priority it gets for the power in your network."
+		""
+		"The &cTransfer Limit&r allows you to control how much the device can pull from the network."
+		"{@pagebreak}"
+		"You also have toggles on the bottom to override these settings if you wish!"
+		""
+		"&aPower Surge&r will ignore all priority settings and force the device to be the highest priority in the network."
+		""
+		"&aBypass Limit&r just ignores the device's Transfer Limit settings and sets it to max."
+	]
+	quest.583FFE29C881EE8C.title: "&fAll About Networks!"
+	quest.5BAC67D69E4CEBFD.quest_desc: [
+		"These are the starter energy cables for the mod, handling &aLow Voltage&r power up to 256 EU/t."
+	]
+	quest.5BAC67D69E4CEBFD.title: "&fMI Basic Energy Cables"
+	quest.61D79267453CA30C.quest_desc: [
+		"The &aFlux Plug&r is the device you place on your generators or power storage. It acts as a &cPower Tap&r and tells your network where to get the power from."
+		""
+		"The &aFlux Point&r is the device you place on the blocks or pipes you need powered. You'll want a lot of these!"
+	]
+	quest.61D79267453CA30C.title: "&fEnergy Transfer"
+	quest.64E34B2DA32D3586.quest_desc: [
+		"In this &bChapter&r, you'll find most of the ways to handle transferring items, energy, fluids, and more!"
+	]
+	quest.64E34B2DA32D3586.title: "&fGeneral Logistics"
+	quest.6A4A2A2EFD552316.quest_desc: [
+		"If you're looking to store your power, &aEnergy Cells&r will do the trick."
+		""
+		"You can also craft &aBatteries&r and charge them up using the Cells. The Batteries can then be used to charge items in your inventory in the early game!"
+	]
+	quest.6A4A2A2EFD552316.title: "&fEnergy Cells"
+	quest.6D5905345348ABEF.quest_desc: [
+		"The &dFlux Controller&r is a vital part of any network."
+		""
+		"These are required in order to enable wireless inventory charging in your network."
+		""
+		"Once placed down and connected to a network, you can open up the &dWireless Charging&r tab to select which slots you want to be charged wirelessly."
+		""
+		"Make sure to toggle it on at the bottom and click apply!"
+	]
+	quest.6D5905345348ABEF.title: "&fFlux Controller"
+	quest.70A9E1AC900A77B4.quest_desc: [
+		"&aPlayer Transmitters&r are used to power items in your inventory."
+		""
+		"To do this, you'll need to first make a &aBinding Card&r, then use it in your hand to claim it. Placing the card in the Transmitter will tell it to power your inventory."
+		""
+		"You can also use the &aBinding Card&r on an Enderman to convert it into a &dDimensional Binding Card&r, which allows the Transmitter to work across dimensions."
+	]
+	quest.718AF92800C06825.quest_desc: [
+		"If you've ever wanted to filter out which mobs that spawn within a certain area, the &aInterdiction Pylon&r is the machine for the job."
+		""
+		"This &ePylon&r uses &aMob Filters&r to configure which mobs spawn within its radius. To filter out which mobs can spawn, craft a Mob Filter and use it on the mob you want to stop spawning."
+		""
+		"While it has niche uses, this could be great to use for creating specific natural mob farms like a Wither Skeleton farm in a Nether Fortress."
+	]
+	quest.718AF92800C06825.title: "&fInterdiction Pylon"
+	quest.72AB47828922F73A.quest_desc: [
+		"One of the most useful &ePylons&r for managing farms, the &2Harvester Pylon&r allows automatic collection and harvesting of any plants within a configurable radius around it."
+		""
+		"This &aPylon&r works without creating &aitem entities&r in the world whenever plants are harvested, and shuts down when the inventory is full or the tool it uses breaks. This makes it great for servers!"
+		"{@pagebreak}"
+		"To use this &aPylon&r, place it in the center of your farm and waterlog it. Open up the interface and place a &aHoe&r inside for it to work with, then adjust the radius you'd like it to cover in the top right. The Hoe you choose to use will take durability each time the pylon collects, so make sure to replace it when needed!"
+		""
+		"Once adjusted, you'll want to place an inventory on top of the Pylon for it to output collected items into, and then you are good to go!"
+	]
+	quest.72AB47828922F73A.title: "&aHarvester Pylon"
+	quest.74BED9604BDE1EA5.quest_desc: [
+		"&eFlux Networks&r will always pull energy from a generator's internal energy buffer first, but if you ever need a little extra power storage, you can always use &aFlux Storage&r!"
+		""
+		"They can store between 2 - 128 Million RF, and can be set to a lower priority than your &aFlux Plugs&r on your generators so they can be used exclusively as backups."
+	]
+	quest.74BED9604BDE1EA5.title: "&fEnergy Storage"
+	quest.7C0EFB4A52F2EC61.quest_desc: [
+		"We have removed all methods of generating energy with &ePowah&r in this pack, but it's still a great way to transfer and store all of the power you'll be generating."
+		""
+		"To get started, you'll need some &aDielectric Paste&r to craft the initial components."
+	]
+	quest.7C0EFB4A52F2EC61.title: "&fManaging Power With &ePowah&f!"
+	quest.7F4E7C687E7D8707.quest_desc: [
+		"The &aBasic Item Collector&r is a configurable collector that automatically collects items within its radius and pushes them into an inventory below."
+		""
+		"By default, the &aBasic Item Collector&r can collect items up to an 11x11x11 area. Opening up the interface allows you to adjust the collector area."
+		""
+		"Upgrading to an &dAdvanced Item Collector&r allows for more control, giving you options for filtering items it collects, as well as extending the collection range to a max of 15x15x15."
+	]
+	quest.7F4E7C687E7D8707.title: "&eItem Collectors"
+	task.096452CE0C4FC543.title: "Any Hoe"
+	task.19FEB64A680EC482.title: "MI Fluid Pipes"
+	task.1F380E6DD3CF799C.title: "General Logistics"
+	task.33E428135EC63BC7.title: "&fPlayer Transmitters"
+	task.36D4CF12BC70DBDD.title: "&fAll About Networks!"
+	task.51876BE373B08431.title: "&dEnder &fGates"
+	task.53DBF8E185837F67.title: "MI Basic Energy Cables"
+	task.55F5BD3470BD58A4.title: "Energizing Rods"
+	task.56AEAE6BD791EA6C.title: "&fEnergy Cables"
+	task.5B0B7A1B78FA15B6.title: "&fEnergy Cells"
+	task.60AE0E54D1CAE9EE.title: "&fBatteries"
+	task.62DE6121CE506116.title: "Pipe Upgrades"
+	task.6ADC311A6F201C21.title: "&dEnder &fCells"
+	task.77EA3C2586C0BFC9.title: "MI Item Pipes"
+}

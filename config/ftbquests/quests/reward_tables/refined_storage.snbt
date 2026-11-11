@@ -1,0 +1,32 @@
+{
+	id: "0B6C8669E2EA9077"
+	loot_size: 1
+	order_index: 19
+	rewards: [
+		{
+			count: 32
+			id: "788DA761D90FD099"
+			item: {
+				count: 1
+				id: "minecraft:quartz"
+			}
+		}
+		{
+			count: 24
+			id: "105D97E07FF348FA"
+			item: {
+				count: 1
+				id: "minecraft:iron_ingot"
+			}
+		}
+		{
+			count: 16
+			id: "4EC4BD9F01758BD6"
+			item: {
+				count: 1
+				id: "minecraft:redstone"
+			}
+		}
+		{ id: "6CD7D2FB0789B1BD", item: { count: 1, id: "minecraft:slime_block" } }
+	]
+}

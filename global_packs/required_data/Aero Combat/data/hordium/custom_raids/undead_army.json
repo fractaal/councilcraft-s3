@@ -1,0 +1,222 @@
+{
+  "name": "hordium.raid.undead_army.name",
+  "weight": 80,
+  "radius": 64,
+  "follow_range": "auto",
+  "delay_ticks": 300,
+  "boss_bar_color": "purple",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "loot_table": "",
+  "drop_chances": "none",
+  "drop_xp": true,
+  "drop_loot": true,
+  "spawn_on_ground": true,
+  "spawn_on_liquids": "deny",
+  "units": {
+    "zombie_baby": {
+      "entity": "minecraft:zombie",
+      "nbt": "{IsBaby:1b}"
+    },
+    "zombie_iron_stone_sword": {
+      "entity": "minecraft:zombie",
+      "nbt": "{ArmorItems:[{id:\"minecraft:iron_boots\",count:1},{id:\"minecraft:iron_leggings\",count:1},{id:\"minecraft:iron_chestplate\",count:1},{id:\"minecraft:iron_helmet\",count:1}],HandItems:[{id:\"minecraft:stone_sword\",count:1},{}]}"
+    },
+    "zombie_horse_iron_sword_rider": {
+      "entity": "minecraft:zombie_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5},{id:\"minecraft:generic.max_health\",base:35.0}],Passengers:[{id:\"minecraft:zombie\",HandItems:[{id:\"minecraft:iron_sword\",count:1},{}]}]}"
+    },
+    "zombie_chainmail": {
+      "entity": "minecraft:zombie",
+      "nbt": "{ArmorItems:[{id:\"minecraft:chainmail_boots\",count:1},{id:\"minecraft:chainmail_leggings\",count:1},{id:\"minecraft:chainmail_chestplate\",count:1},{id:\"minecraft:chainmail_helmet\",count:1}]}"
+    },
+    "zombie_baby_iron_axe": {
+      "entity": "minecraft:zombie",
+      "nbt": "{IsBaby:1b,HandItems:[{id:\"minecraft:iron_axe\",count:1},{}]}"
+    },
+    "skeleton_leather": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{ArmorItems:[{id:\"minecraft:leather_boots\",count:1},{id:\"minecraft:leather_leggings\",count:1},{id:\"minecraft:leather_chestplate\",count:1},{id:\"minecraft:leather_helmet\",count:1}]}"
+    },
+    "zombie_iron_iron_sword": {
+      "entity": "minecraft:zombie",
+      "nbt": "{ArmorItems:[{id:\"minecraft:iron_boots\",count:1},{id:\"minecraft:iron_leggings\",count:1},{id:\"minecraft:iron_chestplate\",count:1},{id:\"minecraft:iron_helmet\",count:1}],HandItems:[{id:\"minecraft:iron_sword\",count:1},{}]}"
+    },
+    "skeleton_bow_power_flame": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{HandItems:[{id:\"minecraft:bow\",count:1,components:{\"minecraft:enchantments\":{\"minecraft:power\":2,\"minecraft:flame\":1}}},{}]}"
+    },
+    "zombie_baby_diamond": {
+      "entity": "minecraft:zombie",
+      "nbt": "{IsBaby:1b,ArmorItems:[{id:\"minecraft:diamond_boots\",count:1},{id:\"minecraft:diamond_leggings\",count:1},{id:\"minecraft:diamond_chestplate\",count:1},{id:\"minecraft:diamond_helmet\",count:1}]}"
+    },
+    "zombie_diamond_axe": {
+      "entity": "minecraft:zombie",
+      "nbt": "{ArmorItems:[{id:\"minecraft:diamond_boots\",count:1},{id:\"minecraft:diamond_leggings\",count:1},{id:\"minecraft:diamond_chestplate\",count:1},{id:\"minecraft:diamond_helmet\",count:1}],HandItems:[{id:\"minecraft:diamond_axe\",count:1},{}]}"
+    },
+    "zombie_diamond_sword": {
+      "entity": "minecraft:zombie",
+      "nbt": "{HandItems:[{id:\"minecraft:diamond_sword\",count:1},{}]}"
+    },
+    "skeleton_bow": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{HandItems:[{id:\"minecraft:bow\",count:1},{}]}"
+    },
+    "skeleton_bow_power": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{HandItems:[{id:\"minecraft:bow\",count:1,components:{\"minecraft:enchantments\":{\"minecraft:power\":2}}},{}]}"
+    },
+    "skeleton_horse_archer_rider": {
+      "entity": "minecraft:skeleton_horse",
+      "nbt": "{attributes:[{id:\"minecraft:generic.movement_speed\",base:0.5},{id:\"minecraft:generic.max_health\",base:35.0}],Passengers:[{id:\"minecraft:skeleton\",HandItems:[{id:\"minecraft:bow\",count:1},{}]}]}"
+    },
+    "skeleton_diamond_bow": {
+      "entity": "minecraft:skeleton",
+      "nbt": "{ArmorItems:[{id:\"minecraft:diamond_boots\",count:1},{id:\"minecraft:diamond_leggings\",count:1},{id:\"minecraft:diamond_chestplate\",count:1},{id:\"minecraft:diamond_helmet\",count:1}],HandItems:[{id:\"minecraft:bow\",count:1},{}]}"
+    }
+  },
+  "waves": {
+    "wave1": {
+      "mobs": [
+        {
+          "entity": "minecraft:zombie",
+          "count": 10
+        },
+        {
+          "unit": "zombie_baby",
+          "count": 2
+        },
+        {
+          "entity": "minecraft:skeleton",
+          "count": 4
+        }
+      ]
+    },
+    "wave2": {
+      "groups": [
+        {
+          "mobs": [
+            {
+              "unit": "zombie_iron_stone_sword",
+              "count": 8
+            },
+            {
+              "unit": "zombie_baby",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "mobs": [
+            {
+              "unit": "zombie_horse_iron_sword_rider",
+              "count": 2
+            },
+            {
+              "entity": "minecraft:skeleton",
+              "count": 6
+            }
+          ]
+        }
+      ]
+    },
+    "wave3": {
+      "mobs": [
+        {
+          "unit": "zombie_chainmail",
+          "count": 10
+        },
+        {
+          "unit": "zombie_baby_iron_axe",
+          "count": 8
+        },
+        {
+          "unit": "skeleton_leather",
+          "count": 12
+        }
+      ]
+    },
+    "wave4": {
+      "groups": [
+        {
+          "mobs": [
+            {
+              "unit": "zombie_iron_iron_sword",
+              "count": 10
+            },
+            {
+              "unit": "skeleton_bow_power_flame",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "mobs": [
+            {
+              "unit": "skeleton_bow",
+              "count": 10
+            },
+            {
+              "unit": "zombie_baby_diamond",
+              "count": 8
+            },
+            {
+              "entity": "minecraft:witch",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    "wave5": {
+      "groups": [
+        {
+          "mobs": [
+            {
+              "entity": "minecraft:witch",
+              "count": 4
+            },
+            {
+              "unit": "zombie_diamond_axe",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "mobs": [
+            {
+              "unit": "zombie_diamond_sword",
+              "count": 20
+            },
+            {
+              "unit": "skeleton_bow",
+              "count": 8
+            },
+            {
+              "unit": "skeleton_bow_power",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "mobs": [
+            {
+              "unit": "skeleton_horse_archer_rider",
+              "count": 6
+            },
+            {
+              "unit": "skeleton_diamond_bow",
+              "count": 5
+            },
+            {
+              "unit": "skeleton_bow_power_flame",
+              "count": 8
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "random_eligible": false
+}

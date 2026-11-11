@@ -1,0 +1,13 @@
+name = "Enhanced Celestials 2: Default Lunar Events"
+filename = "Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/19P0GlZk/versions/oqNjcnKK/Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar"
+hash-format = "sha512"
+hash = "41d079b127da22340265b4f99469490cdb2f54f794510a954ad12d2bc3bb62cc3876e9f955ef8f1f47d1e569092615ea6d19e3caad7f272d89c2e9f363ae7fe3"
+
+[update]
+[update.modrinth]
+mod-id = "19P0GlZk"
+version = "oqNjcnKK"

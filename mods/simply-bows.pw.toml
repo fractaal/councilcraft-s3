@@ -1,0 +1,13 @@
+name = "Simply Bows"
+filename = "SimplyBows-neoforge-0.1.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/lkqOlxmM/versions/nvw0Xq1g/SimplyBows-neoforge-0.1.4-1.21.1.jar"
+hash-format = "sha512"
+hash = "6c15c0e7bcf0fbd2eb50bc67f1a0ea669829c5c30992f6cff1c52e7e6f2b6756dc68d42aa09002ea21257966a758c86243cb546dc986574b3d51423f7e765bae"
+
+[update]
+[update.modrinth]
+mod-id = "lkqOlxmM"
+version = "nvw0Xq1g"

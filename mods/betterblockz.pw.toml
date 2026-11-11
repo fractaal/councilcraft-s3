@@ -1,0 +1,13 @@
+name = "BetterBlockZ"
+filename = "betterblockz-0.2.10-1.21.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/oPU4euBQ/versions/7E52UnH3/betterblockz-0.2.10-1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "aa68aea80c5ab0c3d02ea41bb3eaafc3d29e23502dbfb24e7fd470a920ccf07f1fc91acc7c29268324a8ba9f4b09ce48b140ed053f9570982cbefbf55807b8f3"
+
+[update]
+[update.modrinth]
+mod-id = "oPU4euBQ"
+version = "7E52UnH3"

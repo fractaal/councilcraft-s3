@@ -1,0 +1,235 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "mob_loot_bags:bags/rare"
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_pearl",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chorus_fruit",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:popped_chorus_fruit",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:end_rod",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:purpur_block",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_eye",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:phantom_membrane",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shulker_shell",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:end_crystal",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dragon_breath",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.65
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "medievalend:end_castle_barrer",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medievalend:end_house_1chests",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medievalend:ship_barrier",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medievalend:ship_chests_superiors",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medievalend:ship_chests_under_the_stairs",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/castle_bar",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/castle_brewing",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/greater_loot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/lesser_loot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/supply",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_castle/treasure_lighthouse",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/end_lighthouse/supply_lighthouse",
+          "weight": 9
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mob_loot_bags:bags/rare/the_end"
+}

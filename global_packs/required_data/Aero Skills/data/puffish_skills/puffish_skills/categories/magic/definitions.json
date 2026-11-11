@@ -1,0 +1,1058 @@
+{
+	"root_iron_spell_damage+10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.root_iron_spell_damage_10pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "challenge"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 0.1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_spell_damage+5%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_spell_damage_5pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_spell_damage+10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_spell_damage_10pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 0.1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_spell_damage+25%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_spell_damage_25pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_spell_damage+50%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_spell_damage_50pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 0.5,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_spell_damage+100%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_spell_damage_100pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:spell_power",
+					"value": 1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_max_mana+10": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_max_mana_10"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:max_mana",
+					"value": 10,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_max_mana+25": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_max_mana_25"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:max_mana",
+					"value": 25,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_max_mana+50": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_max_mana_50"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:max_mana",
+					"value": 50,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_max_mana+100": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_max_mana_100"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:max_mana",
+					"value": 100,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_max_mana+200": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_max_mana_200"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:guided"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:max_mana",
+					"value": 200,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"iron_cast_speed+5%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cast_speed_5pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cast_time_reduction",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cast_speed+10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cast_speed_10pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cast_time_reduction",
+					"value": 0.1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cast_speed+25%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cast_speed_25pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cast_time_reduction",
+					"value": 0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cast_speed+50%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cast_speed_50pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cast_time_reduction",
+					"value": 0.5,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cooldown-5%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cooldown_5pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cooldown_reduction",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cooldown-10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cooldown_10pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cooldown_reduction",
+					"value": 0.1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cooldown-25%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cooldown_25pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cooldown_reduction",
+					"value": 0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_cooldown-50%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_cooldown_50pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:charged"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:cooldown_reduction",
+					"value": 0.5,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_mana_regen+5%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_mana_regen_5pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:planar_sight"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:mana_regen",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_mana_regen+10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_mana_regen_10pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:planar_sight"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:mana_regen",
+					"value": 0.1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_mana_regen+25%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_mana_regen_25pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:planar_sight"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:mana_regen",
+					"value": 0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_mana_regen+50%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_mana_regen_50pct"
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:planar_sight"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:mana_regen",
+					"value": 0.5,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_mana_regen+100%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_mana_regen_100pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "effect",
+			"data": {
+				"effect": "irons_spellbooks:planar_sight"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:mana_regen",
+					"value": 1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_summon_damage+5%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_summon_damage_5pct"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "irons_spellbooks:archevoker_logbook_translated"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:summon_damage",
+					"value": 0.05,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_summon_damage+10%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_summon_damage_10pct"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "irons_spellbooks:archevoker_logbook_translated"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:summon_damage",
+					"value": 0.1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_summon_damage+25%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_summon_damage_25pct"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "irons_spellbooks:archevoker_logbook_translated"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:summon_damage",
+					"value": 0.25,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_summon_damage+50%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_summon_damage_50pct"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "irons_spellbooks:archevoker_logbook_translated"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:summon_damage",
+					"value": 0.5,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"iron_summon_damage+100%": {
+		"title": {
+			"translate": "puffish_skills.definition.magic.iron_summon_damage_100pct"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "goal"
+			}
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "irons_spellbooks:archevoker_logbook_translated"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "irons_spellbooks:summon_damage",
+					"value": 1,
+					"operation": "multiply_total"
+				}
+			}
+		]
+	},
+	"root_ars_spell_damage+3": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.root_ars_spell_damage_3"
+		},
+		"frame": {
+			"type": "advancement",
+			"data": {
+				"frame": "challenge"
+			}
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+1": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_1"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.05,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+3": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_3"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+5": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_5"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.15,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+10": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_10"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.2,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+25": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_25"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.3,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_spell_damage+50": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_spell_damage_50"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:arcane_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "lodestone:magic_proficiency",
+					"value": 0.5,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_max_mana+10": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_max_mana_10"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:sacred_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_capacity",
+					"value": 1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_max_mana+25": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_max_mana_25"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:sacred_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_capacity",
+					"value": 2,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_max_mana+50": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_max_mana_50"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:sacred_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_capacity",
+					"value": 3,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_max_mana+100": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_max_mana_100"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:sacred_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_capacity",
+					"value": 4,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_max_mana+200": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_max_mana_200"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:sacred_spirit"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_capacity",
+					"value": 6,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_mana_regen+3": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_mana_regen_3"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:spirit_jar"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_recovery_rate",
+					"value": 0.05,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_mana_regen+5": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_mana_regen_5"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:spirit_jar"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_recovery_rate",
+					"value": 0.1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_mana_regen+10": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_mana_regen_10"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:spirit_jar"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_recovery_rate",
+					"value": 0.2,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_mana_regen+25": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_mana_regen_25"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:spirit_jar"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:soul_ward_recovery_rate",
+					"value": 0.3,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_summon_power+5": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_summon_power_5"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:ring_of_esoteric_spoils"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:spirit_spoils",
+					"value": 1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_summon_power+10": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_summon_power_10"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:ring_of_esoteric_spoils"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:spirit_spoils",
+					"value": 1,
+					"operation": "addition"
+				}
+			}
+		]
+	},
+	"ars_summon_power+25": {
+		"title": {
+			"translate": "puffish_skills.definition.aero_magic.ars_summon_power_25"
+		},
+		"icon": {
+			"type": "item",
+			"data": {
+				"item": "malum:ring_of_esoteric_spoils"
+			}
+		},
+		"rewards": [
+			{
+				"type": "puffish_skills:attribute",
+				"data": {
+					"attribute": "malum:spirit_spoils",
+					"value": 2,
+					"operation": "addition"
+				}
+			}
+		]
+	}
+}

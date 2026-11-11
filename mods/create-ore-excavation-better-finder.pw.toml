@@ -1,0 +1,13 @@
+name = "Create Ore Excavation Better Finder"
+filename = "coebetterfinder-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "495d8ef2b06f676a6d85d597dbb1dbd561d79c09"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8203046
+project-id = 1566138

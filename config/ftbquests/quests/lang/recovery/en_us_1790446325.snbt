@@ -1,0 +1,143 @@
+{
+	"chapters/getting_started.snbt": {
+		quest.2DB65B686F757B89.quest_subtitle: {
+			old: "&6Sleep is essential for life!&r"
+			new: "&6Sleep is essential!&r"
+		}
+		quest.58EBFBFFE9DCE3C9.quest_subtitle: {
+			old: "Try getting your first kills!"
+			new: "Slash your first monsters!"
+		}
+		quest.4B3B22E5E56E75B9.quest_desc: {
+			old: [
+				"This Book will guide you through the sky islands and new Dimensions!"
+				""
+				"Complete Tasks and get useful Rewards."
+				""
+				"Master each Chapter for unobtainable and stronger items."
+			]
+			new: [
+				"This Book will guide you through the sky islands and new Dimensions!"
+				""
+				"&bComplete Tasks&r and get &euseful Rewards&r."
+			]
+		}
+		quest.3BC083F50968AC77.title: {
+			old: "Locate a Jungle"
+			new: "Locate a River?"
+		}
+		quest.0FF6B788C7F5EACD.quest_desc: {
+			old: [
+				"&dSky Villages&r are floating settlements found high above the ground, offering a unique version of &eVillages&r."
+				""
+				"Use &bbuilding blocks, grappling hooks&r or &egliders&r to reach them safely."
+				""
+				"A &bTarget Block&r beneath the fountain may reveal something hidden if you hit it."
+			]
+			new: [
+				"Use &bbuilding blocks, grappling hooks&r or &egliders&r to reach them safely."
+				""
+				"A &bTarget Block&r beneath the fountain may reveal something hidden if you hit it."
+			]
+		}
+		quest.04D05F87CF9D52A0.quest_desc: {
+			old: [
+				"- Press \"&bP&r\" to toggle the advanced movement"
+				""
+				"- Hold \"&bCTRL&r\" while sprinting for fast run"
+				""
+				"- Press \"&bC&r\" for crawling and for sliding, when fast running"
+				""
+				"- Press \"&bR&r\" while fast running for a role"
+				""
+				""
+				""
+				""
+				"{@pagebreak}"
+				""
+				"&eAdditional shortcuts in Air&r"
+				""
+				" - Hold \"&bW/S&r\" + \"&bR&r\" before landing, to &ddecrease Fall Damage&r"
+				""
+				" - Landing on Leaves, Lilypads and similar blocks grants &dno Fall Damage&r"
+				""
+				" - Press \"&bSHIFT&r\" to increase your fall Speed"
+				""
+				" - Repeat to increase it further"
+			]
+			new: [
+				"- Press \"&bCTRL + P&r\" to toggle the advanced movement"
+				""
+				"- Hold \"&bCTRL&r\" while sprinting for fast run"
+				""
+				"- Press \"&bC&r\" for crawling and for sliding, when fast running"
+				""
+				"- Press \"&bR&r\" while fast running for a roll"
+				""
+				""
+				""
+				""
+				"{@pagebreak}"
+				""
+				"&eAdditional shortcuts in Air&r"
+				""
+				" - Hold \"&bW/S&r\" + \"&bR&r\" before landing, to &ddecrease Fall Damage&r"
+				""
+				" - Landing on Leaves, Lilypads and similar blocks grants &dno Fall Damage&r"
+				""
+				" - Press \"&bSHIFT&r\" to increase your fall Speed"
+				""
+				" - Repeat to increase it further"
+			]
+		}
+		quest.035F072880BDBC09.quest_desc: {
+			old: ["&oThe high altitude gathers more iron oxide-rich cosmic dust, turning the deserts as red as another familiar planet...&r"]
+			new: ["&oThe high altitude gathers more iron oxide-rich cosmic dust, turning some &2deserts&r as red as another familiar planet...&r"]
+		}
+		quest.4B3B22E5E56E75B9.title: {
+			old: "&eBegin Quests&r"
+			new: "&zBegin Quests&r"
+		}
+		quest.58EBFBFFE9DCE3C9.quest_desc: {
+			old: [""]
+			new: ["&dCut Through&r mod lets your attacks pass through blocks without a collision shape, like tall grass."]
+		}
+		quest.445BE2D5B10DBEE0.quest_desc: {
+			old: [
+				"&dThe Fishing Rod&r is a simple tool for catching fish, but it can also pull up valuable treasures from the water.  "
+				"{@pagebreak}"
+				"Fishing during &brain&r further improves bite rates."
+			]
+			new: [
+				"&dThe Fishing Rod&r is a simple tool for catching fish, but it can also pull up valuable treasures from the water."
+				"  "
+				"{@pagebreak}"
+				"Fishing during &brain&r further improves bite rates."
+			]
+		}
+		quest.445BE2D5B10DBEE0.quest_subtitle: {
+			old: "Fishing for Artifacts"
+			new: "Fish in any bodies of water"
+		}
+		quest.3BC083F50968AC77.quest_desc: {
+			old: ["&dJungle Biomes&r are dense and vibrant, with hidden surprises among the trees. You can find &eocean-related items&r and &eslime&r more commonly in &bloot chests&r found throughout the jungle.  "]
+			new: ["&dRivers&r are just bodies of water surrounded by mud. You can find &eocean-related items&r more commonly in &bloot chests&r scattered throughout sunken shipwrecks."]
+		}
+	}
+	"chapters/starter_kits.snbt": {
+		quest.7830A686E4567D6D.quest_subtitle: {
+			old: "A grappling hook for reaching high places quickly."
+			new: "Reach high places quickly."
+		}
+	}
+	"chapters/nether.snbt": {
+		quest.7CC82A2E3958EB13.quest_desc: {
+			old: ["A &dCitadel&r is a huge nether structure similar to the fortress. A Wildfire mob can be found inside."]
+			new: ["A &dCitadel&r is a huge nether structure similar to the fortress. A &cWildfire&r can be found inside."]
+		}
+		quest.0F1C22C1700FA328.title: {
+			old: "Ancient Trade"
+			new: "Wither Trade"
+		}
+	}
+}

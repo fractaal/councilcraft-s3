@@ -1,0 +1,13 @@
+name = "Structure Expansion"
+filename = "structure-expansion-neoforge-88.0.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/IKJL3zrR/versions/n6du4tlO/structure-expansion-neoforge-88.0.1.jar"
+hash-format = "sha512"
+hash = "7bb917cf9d6c30456f42001c163e8f5e089422c1e79dcff6a377b77abbd21f4520b16f483941314944d01cc0e441a520bc94b56b9f6fe40fd5f9665bd0f527a0"
+
+[update]
+[update.modrinth]
+mod-id = "IKJL3zrR"
+version = "n6du4tlO"

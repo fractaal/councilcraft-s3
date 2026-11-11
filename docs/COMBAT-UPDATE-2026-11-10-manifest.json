@@ -1,0 +1,336 @@
+{
+  "name": "Exosphere Aero Combat Update",
+  "date": "2026-11-10",
+  "target": "BM Exosphere 2 Aero Clean / Minecraft 1.21.1 / NeoForge 21.1.262",
+  "baseline": "Verified against Desktop/BM - Exosphere 2 Aero (Clean) v1.5.zip (1138981386 bytes)",
+  "runtime_tested": false,
+  "apotheosis_finale_implemented": false,
+  "delete": [],
+  "downloads": [
+    {
+      "filename": "hordium-1.0.3.jar",
+      "version_id": "AzyCb1eb",
+      "sha512": "e1fd610fbf23bfe8c0adeb15de371cdbff2c32b72305df5c95c389bfdc081c65dc9c5e795174c0375727698cb5a72d8df9506792261bcfa1f9fcfae4f4b2eb29",
+      "version": "1.0.3",
+      "url": "https://cdn.modrinth.com/data/W53fUPa6/versions/AzyCb1eb/hordium-1.0.3.jar"
+    },
+    {
+      "filename": "Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar",
+      "version_id": "oqNjcnKK",
+      "sha512": "41d079b127da22340265b4f99469490cdb2f54f794510a954ad12d2bc3bb62cc3876e9f955ef8f1f47d1e569092615ea6d19e3caad7f272d89c2e9f363ae7fe3",
+      "version": "2.0.1.4-neoforge",
+      "url": "https://cdn.modrinth.com/data/19P0GlZk/versions/oqNjcnKK/Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar"
+    },
+    {
+      "filename": "Enhanced-Celestials-2-Core-NeoForge-1.21.1-2.0.3.4.jar",
+      "version_id": "b5tyRnjL",
+      "sha512": "5c075c16ca9390cd9c313e8086342e8a4fcf1a7f83d8fe96c8be5156eaf1ea59d60ffc005a70be44861dbfc5590d52382ce4a8491d9d758261d9339ac3ce5b13",
+      "version": "2.0.3.4-neoforge",
+      "url": "https://cdn.modrinth.com/data/ugCWUHV9/versions/b5tyRnjL/Enhanced-Celestials-2-Core-NeoForge-1.21.1-2.0.3.4.jar"
+    },
+    {
+      "filename": "Corgilib-NeoForge-1.21.1-5.0.0.10.jar",
+      "version_id": "Za7PInLk",
+      "sha512": "38107fc4823b54dee5107abb916231f2a9b18a1ae2947ed4c4d9e1af68e70cfa6d8a84019633074bcba478541b9723a9ed26abfb2e14b28b716180cf70efbca2",
+      "version": "1.21.1-5.0.0.10-NeoForge",
+      "url": "https://cdn.modrinth.com/data/ziOp6EO8/versions/Za7PInLk/Corgilib-NeoForge-1.21.1-5.0.0.10.jar"
+    },
+    {
+      "filename": "Data_Anchor-neoforge-1.21.1-2.0.0.18.jar",
+      "version_id": "WwTx4TaQ",
+      "sha512": "4bcce405d9cf535a42ad11fbada8d9c56ce020bd67c3b3cd4411a037381ccea84198e48fffdd7c8e4a308645209e7cf328c2d1651c76836a59c96de49462f74e",
+      "version": "2.0.0.18-neoforge",
+      "url": "https://cdn.modrinth.com/data/z2XEADmE/versions/WwTx4TaQ/Data_Anchor-neoforge-1.21.1-2.0.0.18.jar"
+    }
+  ],
+  "files": [
+    {
+      "path": "minecraft/config/hordium-common.toml",
+      "status": "added",
+      "size": 354,
+      "sha256": "10a3ce6202a433475e54f9831aeb82e5faf37a0f9c828a9a6a4f23f869a9bfca"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/chapters/aero_field_guide.snbt",
+      "status": "modified",
+      "size": 3768,
+      "sha256": "d0116deba696ab615d6ff743e3d232422251e25cfcecd680552a1ab0a8d3df4f"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/chapters/aero_workshop.snbt",
+      "status": "modified",
+      "size": 3682,
+      "sha256": "eab5d751256a894cccb60761bfa3029fe3253e774eb1558e627da935ae245ef9"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/chapters/aeronautics.snbt",
+      "status": "modified",
+      "size": 27460,
+      "sha256": "7fa5c36973d751a0a38403d42c4b37ae3cfbeb9214359579aa8bb22decabc670"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/chapters/companions.snbt",
+      "status": "modified",
+      "size": 21441,
+      "sha256": "dae8fbc8d9622f04f95d163fc9bc486a559d7c8a18ffc36fe5d50a04ff92c9a7"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/chapters/the_travelers_quest.snbt",
+      "status": "modified",
+      "size": 8851,
+      "sha256": "56d4ae356b4995a30f4347e6422090af4c96119f7384986e75dfa307408f264c"
+    },
+    {
+      "path": "minecraft/config/ftbquests/quests/lang/en_us.snbt",
+      "status": "modified",
+      "size": 469564,
+      "sha256": "1b90fad709a7c5b025b8c88bba9c2519b050530d0d20c52fee43880c41cf428d"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/pack.mcmeta",
+      "status": "added",
+      "size": 141,
+      "sha256": "a0a4c0e467b040d54ffff3a90ab8aa151d33d17293bcb967c5c9618cffe34baf"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/cinder_patrol.json",
+      "status": "added",
+      "size": 2204,
+      "sha256": "a898540ec35cefb466be2157d903c354988cfc093d4c0788cb7f5a9aed310a37"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/dune_revenants.json",
+      "status": "added",
+      "size": 2539,
+      "sha256": "c9a99300205eb02a0f11cd3497b5a4dd1654aa2e421fbf5acf05fa5b9385adc3"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/frostbound_warband.json",
+      "status": "added",
+      "size": 2763,
+      "sha256": "db67414b09d22ad02877b35a7b147de54a971cac950e49c83c810191a9054ce4"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/gravebound_scouts.json",
+      "status": "added",
+      "size": 2415,
+      "sha256": "b1f5552540fe814d2e4efed6ad511d2752b2eadd66e6a8a78b6d2c3c88de1594"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/sky_raiders.json",
+      "status": "added",
+      "size": 2354,
+      "sha256": "ae448a637cf4eed45eabd537c7ab32a728bd7c862a46fba91958c9aac56d5a17"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/gateways/cinder_foundry.json",
+      "status": "added",
+      "size": 2514,
+      "sha256": "f78177abd38156f2825189b2c7f27bdf0f101dcd8b2cda403f1287cd07dffd86"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/gateways/frostbound.json",
+      "status": "added",
+      "size": 2642,
+      "sha256": "62904b3d97402cc194db4d2147cbc7265dfb5039afa32a5d7094a8c42cd81261"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/gateways/ossuary.json",
+      "status": "added",
+      "size": 2386,
+      "sha256": "8fbd767a71da52ef97583c90b67ea92f53fb7fba0c4a1f77b39df8725c36cd36"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/gateways/rogue_constructs.json",
+      "status": "added",
+      "size": 2410,
+      "sha256": "9999cc1be928c6fef9df8ca191ea671970209e17c8ade7bd49f3593772099949"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/gateways/sky_raiders.json",
+      "status": "added",
+      "size": 2654,
+      "sha256": "38e298a6fe2363ceb9b0e439dc0c559e754742db0c41e5aec8165bf2b4167a4b"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/gateways/cinder_foundry.json",
+      "status": "added",
+      "size": 1267,
+      "sha256": "8eb4d7a340b16b595c8be967f70e225d85770a15f0e871cbb2bf92b24fade3a0"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/gateways/frostbound.json",
+      "status": "added",
+      "size": 1269,
+      "sha256": "9225352d7e1a8826a844049b2a6b04a437d08d7f302602ac4bf6c7cd6c733862"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/gateways/ossuary.json",
+      "status": "added",
+      "size": 1270,
+      "sha256": "236aff1ed501c18d27f74301047e75ac83fbf41bfc89eb19eec4756a848f40a4"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/gateways/rogue_constructs.json",
+      "status": "added",
+      "size": 1268,
+      "sha256": "d81ef127f49687d10a265d372e5be0afe132ef603aa68a0e41febd9ffeb554a4"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/gateways/sky_raiders.json",
+      "status": "added",
+      "size": 1271,
+      "sha256": "d4493de5bb36758926d102d1afaa9099e476faf2483ef7762a131c1b5cbfb463"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/raids/cinder_patrol.json",
+      "status": "added",
+      "size": 1269,
+      "sha256": "be4ad96b51e35c9c315831b54b63830f7805be8222ab38c4f7da42432dde5540"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/raids/dune_revenants.json",
+      "status": "added",
+      "size": 1265,
+      "sha256": "f156bee3c51c1ae7c40f9f0e5cbaa13e7326f2d3d3a2518282e8c37e6e122792"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/raids/frostbound_warband.json",
+      "status": "added",
+      "size": 1268,
+      "sha256": "b58ce96984a9e880a8a552d1482dc7c4519acd0a43d392fe31295ebda5e25b01"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/raids/gravebound_scouts.json",
+      "status": "added",
+      "size": 1269,
+      "sha256": "ab9514422937545c32fb785a6d1e02ca9ed962ac6cad3d0064a3d43c1191b2cd"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/loot_table/raids/sky_raiders.json",
+      "status": "added",
+      "size": 1270,
+      "sha256": "b58405278f2dd07f2d88b4a289fae35a3acad23468b7caa053b3e15bd55d7b8d"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/recipe/gateways/cinder_foundry.json",
+      "status": "added",
+      "size": 387,
+      "sha256": "2632f21805bbf996524b79d75f9adf0108bd00814cae29fa009fede9514c57f4"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/recipe/gateways/frostbound.json",
+      "status": "added",
+      "size": 386,
+      "sha256": "ccf2f42f0fb0ac4c7038b612de4a30c980c3f3e925ee875a06cab59529c64f39"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/recipe/gateways/ossuary.json",
+      "status": "added",
+      "size": 381,
+      "sha256": "4cddec427f63a3997d9695e0e85153259e6b89e2dd5f02f1166263ef014228af"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/recipe/gateways/rogue_constructs.json",
+      "status": "added",
+      "size": 388,
+      "sha256": "c301955d31b804c67ca2a3963e02ebd3f0ef3c2b1c720db538f9b643d1d3d6eb"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/aero_combat/recipe/gateways/sky_raiders.json",
+      "status": "added",
+      "size": 383,
+      "sha256": "4903bee9674f561e50f9edada123d58ada5eb8e03d57e28f974886cf67860c59"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/enhancedcelestials2defaultlunarevents/enhancedcelestials2core/lunar/event_modifier/blood_moon_spawn_category_multiplier.json",
+      "status": "added",
+      "size": 135,
+      "sha256": "005a3cdbebdb97851f44a56948585cc3d632c001d03d4daed211987fd8991643"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/enhancedcelestials2defaultlunarevents/enhancedcelestials2core/lunar/event_modifier/super_blood_moon_spawn_category_multiplier.json",
+      "status": "added",
+      "size": 136,
+      "sha256": "af84423f0024a1d559cddee04e0310eab4ca376e6bde9c4f02c751ceb5620116"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/enhancedcelestials2defaultlunarevents/enhancedcelestials2core/lunar/event_probability/blood_moon.json",
+      "status": "added",
+      "size": 695,
+      "sha256": "e021b1bc531be7fbd80921286226e76dbc844b144af945b6eabbd33299b664b1"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/enhancedcelestials2defaultlunarevents/enhancedcelestials2core/lunar/event_probability/super_blood_moon.json",
+      "status": "added",
+      "size": 606,
+      "sha256": "2bea6722e66337b5c3829a6fa356e82700de81a685d672a4a87d43a7e6a31bd2"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/hordium/custom_raids/bone_legion.json",
+      "status": "added",
+      "size": 4576,
+      "sha256": "f6c2846e34cd7cff201afd27575d68aae1cd961b1cd37e2469bb36a7adca2195"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/hordium/custom_raids/undead_army.json",
+      "status": "added",
+      "size": 6879,
+      "sha256": "f2785d81a6b633a796c4acadcd09fe9184c6eca7dbdd034ea9e68c3b7652867f"
+    },
+    {
+      "path": "minecraft/global_packs/required_data/Aero Combat/data/hordium/custom_raids/undead_horde.json",
+      "status": "added",
+      "size": 3305,
+      "sha256": "bb5dd41973fa8fa98df0a3c7f60002515e3e4d6708499c9266fbf6827b1d70b9"
+    },
+    {
+      "path": "minecraft/global_packs/required_resources/Aero Combat/pack.mcmeta",
+      "status": "added",
+      "size": 122,
+      "sha256": "8aeb4cc7c2e5fc8d866af6bc8927b9bc556c469dbd7dfce81241760106afb42a"
+    },
+    {
+      "path": "minecraft/global_packs/required_resources/Aero Combat/assets/aero_combat/lang/en_us.json",
+      "status": "added",
+      "size": 951,
+      "sha256": "fb374a9035fcdc4a98b717bea8cd384de74bc5d45e9e603a5c7f7d9ec5823850"
+    },
+    {
+      "path": "minecraft/mods/Corgilib-NeoForge-1.21.1-5.0.0.10.jar",
+      "status": "added",
+      "size": 309788,
+      "sha256": "ae720bcc5bdff1483b0bfc7502ff885b5f27e4aaef920ba23c0f6d012c390f82"
+    },
+    {
+      "path": "minecraft/mods/Data_Anchor-neoforge-1.21.1-2.0.0.18.jar",
+      "status": "added",
+      "size": 119264,
+      "sha256": "53828cb3371672e7306795f9c5b640fd37ff79067ce715f2922b5a01530bc5cb"
+    },
+    {
+      "path": "minecraft/mods/Enhanced-Celestials-2-Core-NeoForge-1.21.1-2.0.3.4.jar",
+      "status": "added",
+      "size": 406222,
+      "sha256": "afc0c3a1d142fcd8a1ea2e35d40a6c0c9e8b606fa4c84ad3ba18ab5311af03de"
+    },
+    {
+      "path": "minecraft/mods/Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar",
+      "status": "added",
+      "size": 1512623,
+      "sha256": "085c3376dde5a84c0885db3ab7eee09105d0d7dd0a176808d05ecf73ecaecf79"
+    },
+    {
+      "path": "minecraft/mods/hordium-1.0.3.jar",
+      "status": "added",
+      "size": 72424,
+      "sha256": "8a2f833f599c561bca2be20eb98af778e04561f64210188798bafc34c0f6346d"
+    }
+  ],
+  "baseline_comparison": {
+    "unchanged_distribution_files": 3498,
+    "excluded_cache_history_files": 2,
+    "gameplay_deletions": 0,
+    "ignored_missing_launcher_index_files": 270
+  }
+}

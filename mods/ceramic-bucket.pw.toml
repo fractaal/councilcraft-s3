@@ -1,0 +1,13 @@
+name = "Ceramic Bucket"
+filename = "ceramicbucket-neoforge-1.21-6.1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "589fe4b7d2e7aed350a45bb8ef5d55c4560fcab8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5676627
+project-id = 363799

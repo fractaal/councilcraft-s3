@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:jigsaw",
+    "biomes": "#artifact_towers:has_structure/tower",
+    "step": "surface_structures",
+    "spawn_overrides": {},
+    "terrain_adaptation": "beard_thin",
+    "start_pool": "artifact_towers:tower",
+    "size": 7,
+    "start_height": {
+        "above_bottom": 48
+    },
+    "project_start_to_heightmap": "WORLD_SURFACE_WG",
+    "max_distance_from_center": 80,
+    "use_expansion_hack": false
+}

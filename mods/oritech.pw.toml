@@ -1,0 +1,13 @@
+name = "Oritech"
+filename = "oritech-neoforge-1.21.1-1.2.13.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4sYI62kA/versions/BR0KKypH/oritech-neoforge-1.21.1-1.2.13.jar"
+hash-format = "sha512"
+hash = "9a688409643075051d759da1b7dc732dd97f5f3ae584a12c5908689858af145373a69046d9c1881e6e0f41916c742e2850512296e05dbcd39fc0f214ecfc3cdf"
+
+[update]
+[update.modrinth]
+mod-id = "4sYI62kA"
+version = "BR0KKypH"

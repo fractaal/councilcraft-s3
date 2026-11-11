@@ -1,0 +1,13 @@
+{
+	"unlocked_by_default": true,
+	"exclusive_root": true,
+	"title": "Something",
+	"spent_points_limit": 60,
+	"icon": {
+		"type": "item",
+		"data": {
+			"item": "dirt"
+		}
+	},
+	"background": "textures/gui/advancements/backgrounds/stone.png"
+}

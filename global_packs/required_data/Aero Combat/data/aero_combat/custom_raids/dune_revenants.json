@@ -1,0 +1,132 @@
+{
+  "name": "raid.aero_combat.dune_revenants",
+  "weight": 65,
+  "radius": 24,
+  "follow_range": 48,
+  "active_targeting": true,
+  "delay_ticks": 400,
+  "boss_bar_color": "yellow",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "min_day": 14,
+  "moon_phase": [
+    2,
+    6
+  ],
+  "biome": [
+    "minecraft:desert",
+    "minecraft:badlands",
+    "minecraft:wooded_badlands",
+    "minecraft:eroded_badlands"
+  ],
+  "random_eligible": true,
+  "loot_table": "aero_combat:raids/dune_revenants",
+  "drop_chances": "none",
+  "drop_xp": true,
+  "drop_loot": true,
+  "spawn_on_ground": true,
+  "spawn_on_liquids": "deny",
+  "waves": {
+    "wave1": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:husk",
+            "count": 4
+          },
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:husk",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:skeleton",
+            "count": 2
+          },
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "wave2": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:husk",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 2
+          },
+          {
+            "entity": "minecraft:husk",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:spider",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "wave3": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 4
+          },
+          {
+            "entity": "minecraft:husk",
+            "count": 4
+          },
+          {
+            "entity": "minecraft:skeleton",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:koboleton",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:husk",
+            "count": 5
+          },
+          {
+            "entity": "minecraft:spider",
+            "count": 2
+          }
+        ]
+      }
+    ]
+  }
+}

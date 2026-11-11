@@ -1,0 +1,13 @@
+name = "Drive-By-Wire With Sable"
+filename = "drivebywire-0.3.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "217cb078513ba01d542d3665ed7271af1f270ecb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8247104
+project-id = 1520378

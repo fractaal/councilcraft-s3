@@ -1,0 +1,30 @@
+{
+	id: "37050078793DE537"
+	loot_crate: {
+		color: 5635925
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 1b
+		item_name: "ftbquests.loot_crate.box_of_ae2_goodies"
+		string_id: "box_of_ae2_goodies"
+	}
+	loot_size: 1
+	order_index: 23
+	rewards: [{
+		count: 8
+		id: "7198F25E14959674"
+		item: {
+			components: {
+				"ftbfiltersystem:filter": "item_tag(c:silicon)"
+			}
+			count: 1
+			id: "ftbfiltersystem:smart_filter"
+		}
+		random_bonus: 8
+		weight: 50.0f
+	}]
+	use_title: true
+}

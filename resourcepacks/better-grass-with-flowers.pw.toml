@@ -1,0 +1,13 @@
+name = "Better Grass - With Flowers"
+filename = "Better Grass - jannik6879.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/X7IvqqyR/versions/nhaOXZWC/Better%20Grass%20-%20jannik6879.zip"
+hash-format = "sha512"
+hash = "c7f4b758f2c6fda105f6d64c9af874b1538eb9196d1c2ffdd3468f296ca95bd918bab01cae345c239b30c483a26099a0b852c5e7f144038ee18d8af2f2909d7d"
+
+[update]
+[update.modrinth]
+mod-id = "X7IvqqyR"
+version = "nhaOXZWC"

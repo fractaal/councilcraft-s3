@@ -1,0 +1,89 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "dungeoncrawl:dungeon",
+      "required": false
+    },
+    {
+      "id": "nova_structures:deepslate_camp",
+      "required": false
+    },
+    {
+      "id": "nova_structures:illager_hideout",
+      "required": false
+    },
+    {
+      "id": "nova_structures:undead_crypt",
+      "required": false
+    },
+    {
+      "id": "nova_structures:underground_house",
+      "required": false
+    },
+    {
+      "id": "golemdungeons:piglin_factory",
+      "required": false
+    },
+    {
+      "id": "golemdungeons:sculk_factory",
+      "required": false
+    },
+    {
+      "id": "hopo:portal/overworld/portal_deepslate",
+      "required": false
+    },
+    {
+      "id": "hopo:portal/overworld/portal_dripstone",
+      "required": false
+    },
+    {
+      "id": "hopo:portal/overworld/portal_lush",
+      "required": false
+    },
+    {
+      "id": "cataclysm:amethyst_nest",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ancient_factory",
+      "required": false
+    },
+    {
+      "id": "malum:weeping_well",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/lower/deep_dark",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/lower/default",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/lower/dripstone",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/lower/lush",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:skeleton_dungeon",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:small_dungeon",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:spider_dungeon",
+      "required": false
+    },
+    {
+      "id": "minecraft:ancient_city",
+      "required": false
+    }
+  ]
+}

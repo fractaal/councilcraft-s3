@@ -1,0 +1,13 @@
+name = "Ore Creeper"
+filename = "Ore Creeper-neoforge-1.21.1-1.3.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/CGmwbV8J/versions/oTX5GFMo/Ore%20Creeper-neoforge-1.21.1-1.3.2.jar"
+hash-format = "sha512"
+hash = "ecc268a17c09b96ddff9c7d7a67157739a47bf6deea1874f8f07b00ceca2c2236acf781162b1366aa5273ed57ed27d952fc852339251f1fb927c65db659892af"
+
+[update]
+[update.modrinth]
+mod-id = "CGmwbV8J"
+version = "oTX5GFMo"

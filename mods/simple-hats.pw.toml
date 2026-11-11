@@ -1,0 +1,13 @@
+name = "Simple Hats"
+filename = "simplehats-neoforge-1.21.1-0.4.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/iSkQCp6b/versions/t7zbSooi/simplehats-neoforge-1.21.1-0.4.1.jar"
+hash-format = "sha512"
+hash = "db4f65911bdfaf21d68dc2d930ef0053069d6c518177b19095c051e0ba77754862c334215c7e613dda90351a86880995e043038ceb40987f5bfcfde72eda6cb3"
+
+[update]
+[update.modrinth]
+mod-id = "iSkQCp6b"
+version = "t7zbSooi"

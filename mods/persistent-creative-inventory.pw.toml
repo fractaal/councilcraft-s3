@@ -1,0 +1,13 @@
+name = "Persistent Creative Inventory"
+filename = "PersistentCreativeInventory-1.0.1.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "6bc9f44c21cff993a54ef05dc338ecf5436d14e2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6910269
+project-id = 1011631

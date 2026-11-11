@@ -1,0 +1,19 @@
+{
+  "id": "excessive_utilities_compressed_dirt",
+  "name": {
+    "translate": "collapsible_groups.group.excessive_utilities_compressed_dirt",
+    "fallback": "Excessive Utilities: Compressed Dirt"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "excessive_utilities"
+      },
+      {
+        "item_path_contains": "compressed_dirt"
+      }
+    ]
+  }
+}

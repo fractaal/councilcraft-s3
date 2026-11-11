@@ -1,0 +1,740 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:elytra"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_ingot",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 39,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 39,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 39,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 3,
+        "max": 5
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_ingot",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_scrap",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_block",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald_block",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:elytra",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_star",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:trident",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:beacon"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dragon_breath",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:dragon_head"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_upgrade_smithing_template",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 16,
+                "max": 32
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ancient_debris",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shulker_shell",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_sword",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_axe",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_helmet",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_chestplate",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_leggings",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "type": "minecraft:uniform",
+                "min": 35,
+                "max": 39
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_sword",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 30,
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:heavy_core"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mace"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "mob_loot_bags:bonus/legendary"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.35
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.9
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "apotheosis:chests/chest_valuable",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifacts:chests/campsite_barrel",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifacts:chests/campsite_chest",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "betterdungeons:spider_dungeon/chests/egg_room",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "betterdungeons:zombie_dungeon/chests/special",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "cataclysm:chests/abandoned_treasure",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "cataclysm:chests/amethyst_nest_chest",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "cataclysm:chests/frosted_prison_treasure",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "das:hard_chest",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/secret_room",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/stage_4",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/stage_5",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:abandoned_factory/room_gravel",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:sculk_factory/heart_chest",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:trial_reward/factory_remnant",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:trial_reward/sculk_infestation",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hopo:chests/portal/better_ruined_portal",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hopo:chests/portal/dripstone_portal",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "hopo:chests/portal/lush_portal",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/tower",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/town_inside",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/abandoned_mineshaft",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/buried_treasure",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/desert_pyramid",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/evoker_chest",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/secret_room",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/ruined_portal",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/simple_dungeon",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/stronghold_corridor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/reward_ominous_rare",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/woodland_mansion",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:arena",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:castle_tower_top",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:houses_rare",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/creeping_crypt/vault_creeping",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/desert_ruins/desert_ruin_lesser_treasure",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/desert_ruins/desert_ruin_main_temple",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/hamlet/hamlet",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_heart_loot",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_tresure",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/shrine/combat_treasure_1",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/shrine/combat_treasure_2",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/shrine/combat_treasure_3",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/toxic_lair/toxic_boss_vault",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/toxic_lair/toxic_ominous_vault",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/toxic_lair/toxic_vault",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "shellbound_for_airship:chests/ship5",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "shellbound_for_airship:chests/ship8",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/abandoned_castle_pillager",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/castle",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/mushroom_island/top",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/pyramide_of_anubis/bottom",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/pyramide_of_anubis/top",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/bedroom",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_island/good_loot",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:pillagers/pillager_mansion",
+          "weight": 8
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mob_loot_bags:bags/legendary"
+}

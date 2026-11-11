@@ -1,0 +1,164 @@
+{
+	quest.0603F40C8DB12868.quest_desc: [
+		"&3Diesel Generators&r can provide on-demand power by burning different fuels, most notably &eDiesel&r."
+		""
+		"These will only consume fuel when producing energy, unlike &2Boilers&r."
+		""
+		"The &aLV Diesel Generator&r can produce up to 64 EU/t."
+		""
+		"[\"You can refer to the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.0603F40C8DB12868.title: "&aLV Diesel Generator"
+	quest.09C7A0F207271224.quest_desc: ["Consumes pink dyes and blocks.", "", "&o&7Used for the Rainbow Generator"]
+	quest.0AA18ADCF4B4315E.quest_desc: ["Consumes food items.", "", "&o&7Used for the Rainbow Generator"]
+	quest.176D9BAC77298ABB.quest_desc: [
+		"These machines can generate energy when placed against a hot block like magma or &aPrimal Coal&f and pumping in a coolant."
+		""
+		"Polymorphic Fluid is the easier of the two coolants to get started with, and Time Fluid is twice as effective again. Consider automating one of them for large amounts of power!"
+	]
+	quest.176D9BAC77298ABB.title: "&dThermo Generator"
+	quest.183EA37FA456C008.quest_desc: [
+		"The &zRainbow Generator&f produces 5 Million FE/t when &lALL&r other &eExcessive Utilities&f generators are consuming power."
+		""
+		"Though it may seem daunting, this is actually considered a &cMid-Game&f generator as its only real complexity is automating all 16 other generators."
+	]
+	quest.183EA37FA456C008.title: "&zRainbow Generator"
+	quest.1A867730290C7745.quest_desc: [
+		"The &dLarge Steam Turbine&r consumes a variety of fluids to produce up to 16,384 EU/t."
+		""
+		"[\"You can refer to the \", {\"text\": \"Main Large Steam Turbine Quest\", \"color\": \"light_purple\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4C3F295D0F44A730\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Large Steam Turbine Quest\"} }, \" for more information or the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.1A867730290C7745.title: "&dLarge Steam Turbine"
+	quest.1BF4810083FE3046.quest_desc: [
+		"These two rows are considered your &cMid Game Generators&f, providing you a good infrastructure to start developing more advanced automation and machinery."
+		""
+		"[ \"The \", { \"text\": \"Rainbow Generator\", \"color\":\"rainbow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"183EA37FA456C008\" }, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Quest\"} }, \" is also included in this tier.\" ]"
+	]
+	quest.20C572AF6BF2FAD9.quest_desc: ["Consumes TNT or Gunpowder.", "", "&o&7Used for the Rainbow Generator"]
+	quest.217F8824DCB38FA1.quest_desc: [
+		"Consumes regular furnace fuels."
+		""
+		"&cWarning&f: This generator consumes it's fuel once every tick. It's recommended to control the power output if you're using this for the Rainbow Generator."
+		""
+		"&o&7Used for the Rainbow Generator"
+	]
+	quest.28FCC1558A29CA8D.quest_desc: ["Consumes Ender Pearls or Eyes of Ender.", "", "&o&7Used for the Rainbow Generator"]
+	quest.35C4B2EA0D7FB8CB.quest_desc: [
+		"This row of power generators are your &aEarly Generators&r and will help you create your first few machines."
+		""
+		"Some of these can be scaled up, while others you'll want to quickly set aside in favour of better options."
+	]
+	quest.361D61EE15801A6E.quest_desc: [
+		"The &3HV Diesel Generator&r can produce up to 1,024 EU/t."
+		""
+		"[\"You can refer to the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.361D61EE15801A6E.title: "&dHV Diesel Generator"
+	quest.379AF010B6BB7ECA.quest_desc: [
+		"These solar panels generate energy during the daytime when they have a clear view of the sky."
+		""
+		"Placing &eLiquid Sunshine&f near a panel allows it to generate energy during nighttime, but will still require direct sunlight."
+	]
+	quest.37A14843BCE4FF0E.quest_desc: [
+		"Consumes enchanted books."
+		""
+		"&eRecommendation&f: Use an &bEnchanter&f to make &2Knowledge of the Ages III&f."
+		""
+		"&o&7Used for the Rainbow Generator"
+	]
+	quest.3B8310CD44BBD6F1.quest_desc: [
+		"&aGenerator Coils&f convert the &eCreate Mod's &bStress Units&f (&bSU&f) into &cForge Energy&f using the power of magnets and &2Carbon Brushes&f."
+		""
+		"[\"Using this method, your power will scale better the more you invest into your \", {\"text\": \"SU\", \"color\": \"aqua\"}, \" production, with each \", {\"text\": \"Nuclear Reactor\", \"color\": \"gold\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"2617A856093F36AB\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Quest\"}}, \" providing enough \", {\"text\": \"SU\", \"color\": \"aqua\"}, \" to generate around 300,000 FE/t.\"]"
+		""
+		"Up to 8 &aCoils&f can be stacked in a single line, but their magnets can be shared with other &aCoils&f when placed next to each other, saving some resources."
+		""
+		"You can check the next page for the exact conversion rates"
+		"{@pagebreak}"
+		"&cIMPORTANT&f: The values below represent a single ring of magnets. Larger systems may vary slightly depending on your setup."
+		""
+		"&6Redstone&f: 12,288 SU -> 180 FE/t"
+		""
+		"&cLayered&f: 18,432 SU -> 360 FE/t"
+		""
+		"&eFluxuated&f: 30,720 SU -> 720 FE/t"
+		""
+		"&bNetherite&f: 79,872 SU -> 2,376 FE/t"
+		""
+		"&dBedrockium&f: 116,736 SU -> 3,564 FE/t"
+	]
+	quest.3D45356D57BBD334.quest_desc: ["Consumes Lava and Redstone Dust.", "", "&o&7Used for the Rainbow Generator"]
+	quest.42C7DDFED49DAC47.quest_desc: ["Consumes Nether Stars or firework stars.", "", "&o&7Used for the Rainbow Generator"]
+	quest.44BEA4F6BA513806.quest_desc: [
+		"&eOritech's &aSteam Boiler Addon&f allows an &eOritech&f generator to produce &bSteam&f instead of energy, which can be used in the &dSteam Engine&f to produce a lot of energy."
+		""
+		"[ \"In \", {\"text\": \"Skies 2: Aero\", \"color\": \"gold\"}, \", \", {\"text\": \"Steam\", \"color\": \"aqua\"}, \" can be converted and used to power other modded generators such as \", { \"text\": \"Mekanism's Turbine\", \"color\": \"green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"27DDFC98CAD347B1\" }, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Meka Turbine Quest\"} }, \" and \", { \"text\": \"Modern Industrialization's Steam Turbine\", \"color\": \"dark_green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"50049BE2452AB7F5\" }, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Turbine Quest\"} }, \".\"]"
+	]
+	quest.44BEA4F6BA513806.title: "&dSteam Power!"
+	quest.51D242BB3BA2BE40.quest_desc: [
+		"The &3HV Steam Turbine&r consumes &7Steam&r to produce up to 512 EU/t."
+		""
+		"[\"You can refer to the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.51D242BB3BA2BE40.title: "&3HV Steam Turbine"
+	quest.54D8CBA1E79004FD.quest_desc: ["Consumes regular furnace fuels.", "", "&o&7Used for the Rainbow Generator"]
+	quest.5AA8C6E318141B69.quest_desc: ["Consumes icy blocks.", "", "&o&7Used for the Rainbow Generator"]
+	quest.5AEEDA6376EE5EDD.quest_desc: ["Consumes potions.", "", "&o&7Used for the Rainbow Generator"]
+	quest.5DD907AA92F6C760.quest_desc: ["Consumes Lava.", "", "&o&7Used for the Rainbow Generator"]
+	quest.5EF11F96A97C2A23.quest_desc: [
+		"&eModern Industrialization&r (&eMI&r) has a variety of tiered &aSteam Turbines&r which can be used to convert &7Steam&r into &cPower&r."
+		""
+		"The &aLV Steam Turbine&r can produce up to 32 EU/t."
+		""
+		"[\"You can refer to the \", {\"text\": \"Main LV Steam Turbine Quest\", \"color\": \"green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"50049BE2452AB7F5\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to LV Steam Turbine Quest\"} }, \" for more information or the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.5EF11F96A97C2A23.title: "&aLV Steam Turbine"
+	quest.5F972715B2392E1E.quest_desc: ["Consumes Dragon's Breath.", "", "&o&7Used for the Rainbow Generator"]
+	quest.6137FF3EFFACB3A3.quest_desc: ["Consumes regular furnace fuels.", "", "&o&7Used for the Rainbow Generator"]
+	quest.62D413C857B3AAE5.quest_desc: ["Consumes some mob drops.", "", "&o&7Used for the Rainbow Generator"]
+	quest.664551F5E62A9D00.quest_desc: [
+		"The &2MV Diesel Generator&r can produce up to 256 EU/t."
+		""
+		"[\"You can refer to the \", {\"text\": \"Main MV Diesel Generator Quest\", \"color\": \"green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"58F29A199D553D29\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MV Diesel Generator Quest\"} }, \" for more information or the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.664551F5E62A9D00.title: "&3MV Diesel Generator"
+	quest.67F79CE27B61F135.quest_desc: [
+		"The &aLV Diesel Generator&r can produce up to 64 EU/t."
+		""
+		"[\"You can refer to the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.67F79CE27B61F135.title: "&5Large Diesel Generator"
+	quest.6D72AFBA0AAC164C.quest_desc: [
+		"The &2MV Steam Turbine&r consumes &7Steam&r to produce up to 128 EU/t."
+		""
+		"[\"You can refer to the \", {\"text\": \"Main MV Steam Turbine Quest\", \"color\": \"dark_green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1DBE1D496463B310\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MV Steam Turbine Quest\"} }, \" for more information or the \", { \"text\": \"MI Questline\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"51F2FC13FA7C3A89\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI Chapter\"} }, \" to get started.\"]"
+	]
+	quest.6D72AFBA0AAC164C.title: "&2MV Steam Turbine"
+	quest.725E648984E4FFBF.quest_desc: [
+		"The &6Black Hole&f can produce up to 50,000 RF each time it consumes a block if a &aTachyon Absorber&f is placed on the opposite side of where that block was consumed relative to the &6Black Hole&f."
+		""
+		"&c&lWARNING!&r Do &lNOT&r build this setup inside a &bCompact Machine&r. The room does not tick reliably while you are outside it, so your block placer falls behind and the &6Black Hole&r will consume your setup."
+		""
+		"[\"Check the \", {\"text\": \"Black Hole GuideMe\", \"underlined\":true, \"color\": \"aqua\", \"clickEvent\": {\"action\": \"run_command\", \"value\": \"/guideme open @s oritech:guide oritech:black_hole_generator.md\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Open GuideMe Page\"}},\" for an example setup.\"]"
+	]
+	quest.725E648984E4FFBF.title: "&dBlack Hole Power&r"
+	quest.72B5E5B3788E6E6C.quest_desc: ["Consumes slime balls and milk.", "", "&o&7Used for the Rainbow Generator"]
+	quest.748DAA46EC10AA3F.quest_desc: ["The &aCoral Generator&f consumes liquid coral to produce 5,000 RF/t."]
+	quest.754048401D3A6A7B.quest_desc: [
+		"This chapter covers most of the different ways to generate power."
+		""
+		"&eNote&f: FE and RF are the same thing. Some mods still use RF (Redstone Flux) and others use FE (Forge Energy). Both are effectively the same."
+		""
+		"EU, however, is used by &eModern Industrialization&f and converts at a ratio of 1:10 to RF/t"
+	]
+	quest.754048401D3A6A7B.title: "&fPower \\&\\ You"
+	quest.7E4532B9052F0BEC.quest_desc: [
+		"Theis row has your &dLate Game Generators&f, providing you the most power; perfect for your advanced late-game setups."
+	]
+	task.0F9F80BE3C6A92D6.title: "Photovoltaic Modules"
+	task.29DAAFF53D9E9531.title: "Late Game Options"
+	task.2E2AAC08F926D8EE.title: "&fPower \\&\\ You"
+	task.47A2769F6A66E88A.title: "Magnetic Blocks"
+	task.6AE9CBE1EAAE4F72.title: "Early Game Options"
+	task.7883DDD837E876A4.title: "Mid Game Options"
+}

@@ -1,0 +1,13 @@
+name = "Sodium/Embeddium Leaf Culling"
+filename = "slc_unofficial-neoforge-3.3.0+1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/xtym7fz7/versions/7hBpUiih/slc_unofficial-neoforge-3.3.0%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "82ac0b5f2d52166f4f934fb73db9b725273bd6a44c50597e75dea070bec0a3dd179da7b56cf1547a2f9692d65760a803ae266093404d829c59d4608ce671dd20"
+
+[update]
+[update.modrinth]
+mod-id = "xtym7fz7"
+version = "7hBpUiih"

@@ -1,0 +1,22 @@
+{
+  "id": "chisel_hexplating_new",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_hexplating_new",
+    "fallback": "Chisel: Hexplating New"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "hexplating_"
+      },
+      {
+        "item_path_contains": "/hexnew"
+      }
+    ]
+  }
+}

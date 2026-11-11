@@ -1,0 +1,132 @@
+{
+  "size": "medium",
+  "color": "#72BEE4",
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:draugr",
+          "count": 3
+        },
+        {
+          "entity": "minecraft:stray",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 20,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:draugr",
+          "count": 4
+        },
+        {
+          "entity": "cataclysm:royal_draugr",
+          "count": 1
+        },
+        {
+          "entity": "irons_spellbooks:ice_spider",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 40,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:elite_draugr",
+          "count": 1
+        },
+        {
+          "entity": "cataclysm:royal_draugr",
+          "count": 2
+        },
+        {
+          "entity": "friendsandfoes:iceologer",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 60,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:aptrgangr",
+          "count": 1
+        },
+        {
+          "entity": "cataclysm:draugr",
+          "count": 3
+        },
+        {
+          "entity": "minecraft:stray",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 80,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 7200,
+      "setup_time": 400
+    }
+  ],
+  "rewards": [
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "aero_combat:gateways/frostbound",
+      "rolls": 1,
+      "desc": "rewards.aero_combat.frostbound"
+    }
+  ],
+  "failures": [
+    {
+      "type": "gateways:mob_effect",
+      "effect": "minecraft:weakness",
+      "duration": 300
+    }
+  ],
+  "rules": {
+    "spawn_range": 10,
+    "leash_range": 48,
+    "allow_discarding": false,
+    "allow_dim_change": false,
+    "player_damage_only": false,
+    "remove_mobs_on_failure": true,
+    "fail_on_out_of_bounds": false,
+    "spacing": 96,
+    "requires_nearby_player": true
+  }
+}

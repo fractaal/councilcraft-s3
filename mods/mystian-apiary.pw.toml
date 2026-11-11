@@ -1,0 +1,13 @@
+name = "Mystian Apiary"
+filename = "mystianapiary-neoforge-1.10.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4YKkzsCe/versions/M0uMLPwS/mystianapiary-neoforge-1.10.jar"
+hash-format = "sha512"
+hash = "f8887d87b292b1cfa622ef3e1aaa18f98927ea2840f902417dca23ba50ebd27823225910c13b1c9430eb5e569f62905f3f1cf58ce3ae0b16b2224826a08496bc"
+
+[update]
+[update.modrinth]
+mod-id = "4YKkzsCe"
+version = "M0uMLPwS"

@@ -1,0 +1,41 @@
+[gravestone]
+	#Fraction of XP to keep in gravestone on death (0.0 = lose all, 1.0 = keep all)
+	# Default: 0.5
+	# Range: 0.0 ~ 1.0
+	xpRetainRatio = 0.5
+	#If true, gravestone can be created in water
+	#If false, use last safe position
+	allowGravestoneInWater = true
+	#If true, gravestone can be created when a player dies in lava
+	#If false, the items drop normally
+	gravestoneOnLavaDeath = true
+	#If true, place gravestone in the lava
+	#If false, use last safe position
+	allowGravestoneInLava = false
+	#If true, dying to the void will place a gravestone at the last safe position
+	#If false, the items drop normally
+	gravestoneOnVoidDeath = true
+
+[soulShape]
+	#Duration of the Soul Shape effect after respawn in minutes (0.0 = disabled, maximum 60.0)
+	# Default: 20.0
+	# Range: 0.0 ~ 60.0
+	soulShapeDurationMinutes = 10.0
+	#Speed bonus multiplier for Soul Shape effect (0.0 = no bonus, 0.2 = 20% faster, 1.0 = 100% faster)
+	# Default: 0.2
+	# Range: 0.0 ~ 2.0
+	soulShapeSpeedBonus = 0.4
+	#If true, players with Soul Shape effect are invincible
+	soulShapeInvincible = true
+	#If true, players with Soul Shape effect have slow falling
+	soulShapeSlowFalling = true
+	#If true, players with Soul Shape effect cannot attack mobs or other players
+	soulShapePreventAttacks = true
+	#If true, players with Soul Shape effect cannot break blocks
+	soulShapePreventBlockBreaking = false
+	#If true, breaking a block while Soul Shape is active will remove the effect (only when soulShapePreventBlockBreaking is false)
+	soulShapeRemoveOnBlockBreak = true
+	#Duration of the Soul Shape effect after retrieving items from gravestone in seconds (0.0 = disabled, maximum 300.0)
+	# Default: 5.0
+	# Range: 0.0 ~ 300.0
+	soulShapeRetrieveDurationSeconds = 5.0

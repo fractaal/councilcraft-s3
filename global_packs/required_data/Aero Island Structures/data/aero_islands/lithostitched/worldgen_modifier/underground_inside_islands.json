@@ -1,0 +1,9 @@
+{
+  "type": "lithostitched:set_structure_spawn_condition",
+  "structures": "#aero_islands:underground",
+  "spawn_condition": {
+    "type": "lithostitched:sample_noise_router",
+    "target": "final_density",
+    "min_inclusive": 0
+  }
+}

@@ -1,0 +1,49 @@
+{
+ "L0": 750,
+ "weights": [
+  0.78,
+  1.3,
+  1,
+  0.19
+ ],
+ "cutoff": 0.36,
+ "openSky": 0.3,
+ "fillHoles": 1,
+ "coastWidth": 0.25,
+ "taper": 1,
+ "dome": 20,
+ "underside": 40,
+ "layers": 3,
+ "layerGap": 90,
+ "heightSpread": 60,
+ "heightDriftWidth": 1200,
+ "smallScatter": 25,
+ "layerMerging": 0.8,
+ "mergingWidth": 2500,
+ "seed": 2,
+ "ceiling": 512,
+ "wild": {
+  "widthBlocks": 2800,
+  "shiftX": 3602.349,
+  "shiftZ": -3954.646,
+  "threshold": 0.15,
+  "fade": 0.15,
+  "strength": 1.8,
+  "interiorCap": 1.0,
+  "thicken": 0.8,
+  "hills": 2.0
+ },
+ "lakes": {
+  "cell": 480,
+  "chance": 1.0,
+  "minRadius": 22,
+  "maxRadius": 200,
+  "shore": 0.6,
+  "wobble": 0.18,
+  "rimTolerance": 30,
+  "maxDepth": 12,
+  "centreInland": 0.1,
+  "rimInland": 0.02,
+  "attempts": 10
+ }
+}

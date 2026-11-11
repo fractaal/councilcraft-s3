@@ -1,0 +1,54 @@
+{
+	id: "5F726AD2B912C6C3"
+	loot_crate: {
+		color: 16755200
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		glow: 1b
+		item_name: "ftbquests.loot_crate.legendary_crate"
+		string_id: "legendary_crate"
+	}
+	loot_size: 1
+	order_index: 25
+	rewards: [
+		{ id: "6679EDF280A42FED", item: { count: 1, id: "mysticalagradditions:nether_star_crux" } }
+		{ id: "089D7B21F1F400AE", item: { count: 1, id: "mysticalagradditions:awakened_supremium_paxel" } }
+		{
+			id: "6A2A774882B63A49"
+			item: {
+				count: 1
+				id: "productivelib:upgrade_productivity_4"
+			}
+			random_bonus: 3
+		}
+		{ id: "06CB6DF41EFE3C55", item: { count: 1, id: "extended_industrialization:ultimate_laser_drill" } }
+		{ id: "5DE08B07B87CEA59", item: { count: 1, id: "apothic_enchanting:ender_library" } }
+		{ id: "0DAAB03D95DA0081", item: { components: { "apothic_attributes:bonus_attribute_modifiers": { modifiers: [ { amount: 25.0d, id: "apothic_attributes:command_generated_658377850", operation: "add_value", slot: "mainhand", type: "minecraft:generic.attack_damage" }, { amount: 0.10000000149011612d, id: "apothic_attributes:command_generated_1675147067", operation: "add_value", slot: "mainhand", type: "apothic_attributes:current_hp_damage" } ] }, "minecraft:custom_name": "{\"extra\":[{\"color\":\"light_purple\",\"italic\":false,\"text\":\"Extremely Sharp Cactus\"}],\"text\":\"\"}", "minecraft:enchantment_glint_override": 1b }, count: 1, id: "minecraft:cactus" } }
+		{
+			count: 3
+			id: "4AA4B387D04CD4C5"
+			item: {
+				components: {
+					"ftbquests:loot_crate": "relic_bag"
+				}
+				count: 1
+				id: "ftbquests:lootcrate"
+			}
+		}
+		{
+			count: 3
+			id: "2094A8A757FA6E86"
+			item: {
+				components: {
+					"ftbquests:loot_crate": "perfect_gems_bag"
+				}
+				count: 1
+				id: "ftbquests:lootcrate"
+			}
+		}
+	]
+	use_title: true
+}

@@ -1,0 +1,111 @@
+{
+  "name": "raid.aero_combat.cinder_patrol",
+  "weight": 100,
+  "radius": 24,
+  "follow_range": 48,
+  "active_targeting": true,
+  "delay_ticks": 400,
+  "boss_bar_color": "red",
+  "dimensions": [
+    "minecraft:the_nether"
+  ],
+  "min_day": 14,
+  "random_eligible": false,
+  "loot_table": "aero_combat:raids/cinder_patrol",
+  "drop_chances": "none",
+  "drop_xp": true,
+  "drop_loot": true,
+  "spawn_on_ground": true,
+  "spawn_on_liquids": "deny",
+  "waves": {
+    "wave1": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:blaze",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 2
+          },
+          {
+            "entity": "minecraft:magma_cube",
+            "count": 2,
+            "nbt": "{Size:1}"
+          }
+        ]
+      }
+    ],
+    "wave2": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:blaze",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 3
+          },
+          {
+            "entity": "cataclysm:ignited_revenant",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "wave3": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:blaze",
+            "count": 2
+          },
+          {
+            "entity": "cataclysm:ignited_revenant",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:wither_skeleton",
+            "count": 4
+          },
+          {
+            "entity": "cataclysm:ignited_revenant",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  }
+}

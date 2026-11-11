@@ -1,0 +1,154 @@
+{
+	"experience_per_level": {
+		"type": "expression",
+		"data": {
+			"expression": "min(level^2.532 + 250, 15000)"
+		}
+	},
+	"sources": [
+		{
+			"type": "puffish_skills:kill_entity",
+			"data": {
+				"variables": {
+					"dropped_xp": {
+						"operations": [
+							{
+								"type": "get_dropped_experience"
+							}
+						]
+					},
+					"max_health": {
+						"operations": [
+							{
+								"type": "get_killed_living_entity"
+							},
+							{
+								"type": "get_max_health"
+							}
+						]
+					},
+					"is_magic_kill": {
+						"operations": [
+							{
+								"type": "get_damage_source"
+							},
+							{
+								"type": "get_type"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"damage_type": "#c:is_magic"
+								}
+							}
+						]
+					}
+				},
+				"experience": [
+					{
+						"condition": "is_magic_kill",
+						"expression": "dropped_xp + max_health / 10"
+					}
+				],
+				"anti_farming": {
+					"limit_per_chunk": 10,
+					"reset_after_seconds": 300
+				}
+			}
+		},
+		{
+			"type": "puffish_skills:mine_block",
+			"data": {
+				"variables": {
+					"soulstone": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "malum:soulstone_ore"
+								}
+							}
+						]
+					},
+					"deep_soulstone": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "malum:deepslate_soulstone_ore"
+								}
+							}
+						]
+					},
+					"blazing": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "malum:blazing_quartz_ore"
+								}
+							}
+						]
+					},
+					"natural_quartz": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "malum:natural_quartz_ore"
+								}
+							}
+						]
+					},
+					"cthonic": {
+						"operations": [
+							{
+								"type": "get_mined_block_state"
+							},
+							{
+								"type": "puffish_skills:test",
+								"data": {
+									"block": "malum:cthonic_gold_ore"
+								}
+							}
+						]
+					}
+				},
+				"experience": [
+					{
+						"condition": "soulstone",
+						"expression": "15"
+					},
+					{
+						"condition": "deep_soulstone",
+						"expression": "25"
+					},
+					{
+						"condition": "blazing",
+						"expression": "20"
+					},
+					{
+						"condition": "natural_quartz",
+						"expression": "15"
+					},
+					{
+						"condition": "cthonic",
+						"expression": "60"
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,134 @@
+{
+	"1": {
+		"definition": "root_melee_damage+5%",
+		"x": 0,
+		"y": 0,
+		"root": true
+	},
+	"2": {
+		"definition": "melee_damage+3%",
+		"x": 36,
+		"y": 36,
+		"root": false
+	},
+	"3": {
+		"definition": "melee_damage+3%",
+		"x": 72,
+		"y": 108,
+		"root": false
+	},
+	"6": {
+		"definition": "attack_speed+5%",
+		"x": -36,
+		"y": 36,
+		"root": false
+	},
+	"7": {
+		"definition": "attack_speed+5%",
+		"x": -72,
+		"y": 108,
+		"root": false
+	},
+	"15": {
+		"definition": "melee_damage+5%",
+		"x": 72,
+		"y": 288,
+		"root": false
+	},
+	"16": {
+		"definition": "attack_speed+5%",
+		"x": -36,
+		"y": 324,
+		"root": false
+	},
+	"17": {
+		"definition": "armor_pierce+5%",
+		"x": -72,
+		"y": 180,
+		"root": false
+	},
+	"18": {
+		"definition": "attack_speed+5%",
+		"x": -72,
+		"y": 288,
+		"root": false
+	},
+	"19": {
+		"definition": "crit_chance+2%",
+		"x": 0,
+		"y": 108,
+		"root": false
+	},
+	"20": {
+		"definition": "crit_chance+2%",
+		"x": 0,
+		"y": 180,
+		"root": false
+	},
+	"21": {
+		"definition": "attack_reach+1",
+		"x": 0,
+		"y": 252,
+		"root": false
+	},
+	"22": {
+		"definition": "armor_pierce+5%",
+		"x": 72,
+		"y": 180,
+		"root": false
+	},
+	"23": {
+		"definition": "melee_damage+5%",
+		"x": 36,
+		"y": 324,
+		"root": false
+	},
+	"24": {
+		"definition": "life_steal+5%",
+		"x": -72,
+		"y": 252,
+		"root": false
+	},
+	"25": {
+		"definition": "life_steal+5%",
+		"x": 72,
+		"y": 252,
+		"root": false
+	},
+	"27": {
+		"definition": "crit_chance+5%",
+		"x": 0,
+		"y": 360,
+		"root": false
+	},
+	"28": {
+		"definition": "crit_chance+5%",
+		"x": 0,
+		"y": 432,
+		"root": false
+	},
+	"29": {
+		"definition": "looting+1",
+		"x": 36,
+		"y": 396,
+		"root": false
+	},
+	"30": {
+		"definition": "life_steal+5%",
+		"x": 0,
+		"y": 324,
+		"root": false
+	},
+	"31": {
+		"definition": "attack_reach+1",
+		"x": 0,
+		"y": 396,
+		"root": false
+	},
+	"32": {
+		"definition": "looting+1",
+		"x": -36,
+		"y": 396,
+		"root": false
+	}
+}

@@ -1,0 +1,13 @@
+name = "Iron's Spells x Aeronautics Compat"
+filename = "ironssablecompat-1.0.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8cfe21160b4ee0ddd70659620181bf0313f8470b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8284717
+project-id = 1544353

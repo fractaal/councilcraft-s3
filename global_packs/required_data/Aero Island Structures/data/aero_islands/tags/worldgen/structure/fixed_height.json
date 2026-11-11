@@ -1,0 +1,49 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "das:deep_fortress",
+      "required": false
+    },
+    {
+      "id": "das:deep_spawner_1",
+      "required": false
+    },
+    {
+      "id": "das:deep_spawner_2",
+      "required": false
+    },
+    {
+      "id": "das:deep_spawner_3",
+      "required": false
+    },
+    {
+      "id": "nova_structures:lone_citadel",
+      "required": false
+    },
+    {
+      "id": "nova_structures:toxic_lair",
+      "required": false
+    },
+    {
+      "id": "nova_structures:trident_trial_monument",
+      "required": false
+    },
+    {
+      "id": "nova_structures:witch_villa",
+      "required": false
+    },
+    {
+      "id": "excessive_utilities:ancient_city",
+      "required": false
+    },
+    {
+      "id": "cataclysm:soul_black_smith",
+      "required": false
+    },
+    {
+      "id": "betterdungeons:zombie_dungeon",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+name = "ColoredWater"
+filename = "colored_water-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/URKqRflb/versions/r4AsoXb5/colored_water-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "a62cb1fc452cbefa86260f0ffb8eabdc9aa2b8995f798bda6f6a026f1c34a2f39cab988e752ad42c3088845e91707a5f10e5271c557dc775685634c4aa9873e5"
+
+[update]
+[update.modrinth]
+mod-id = "URKqRflb"
+version = "r4AsoXb5"

@@ -1,0 +1,258 @@
+{
+	quest.03E1EFC3F5AD2CA5.quest_desc: [
+		"The &3Bio Reactor&r burns seeds, foods, and plants to generate energy."
+		""
+		"It generates more power when it burns different kinds of resources."
+	]
+	quest.03E1EFC3F5AD2CA5.title: "&3Bio Reactor"
+	quest.0A97780560F74901.quest_desc: [
+		"The &cLens of Certain Death&r deals damage to all entities in the beam and is strong enough to one-hit a player."
+	]
+	quest.0A97780560F74901.title: "&cLens of Certain Death"
+	quest.0BFC8B66AF86846E.quest_desc: [
+		"The &aAutomatic Feeder&r will automatically feed animals in a 9x9 radius when provided with the appropriate feed."
+		""
+		"It will automatically stop feeding when too many mobs are nearby."
+	]
+	quest.0BFC8B66AF86846E.title: "&aAutomatic Feeder"
+	quest.1044061B20F62F5E.quest_desc: [
+		"The &aEnergizer&r charges items that hold energy."
+		""
+		"The &aEnervator&r discharges items that hold energy and stores it."
+	]
+	quest.1044061B20F62F5E.title: "&aEnergy Management"
+	quest.126B4E4814DADCC8.quest_desc: [
+		"The &aLens of the Miner&r can create ores out of blocks in sight."
+		""
+		"When the laser hits a block of stone or deepslate, it will convert it into overworld ores, and when it hits a block of netherrack it will be converted into nether ores."
+	]
+	quest.126B4E4814DADCC8.title: "&aLens of the Miner"
+	quest.13C8B2286F5184C7.quest_desc: [
+		"When charged, right-clicking the &3Teleport Staff&r will teleport you in the direction you are looking, up to 100 blocks away."
+	]
+	quest.13C8B2286F5184C7.title: "&3Teleport Staff"
+	quest.189DE52ADD270985.quest_desc: [
+		"Lenses are placed on an &eAtomic Reconstructor&r to change its functionality."
+		""
+		"The basic &aLens&r is only used as a crafting material for other lenses."
+	]
+	quest.189DE52ADD270985.title: "&aLens"
+	quest.1D410DFB7EFEE4CE.quest_desc: [
+		"&aCoffee Beans&r can be found in the wild, and can be harvested to make &aCoffee&r."
+	]
+	quest.1D410DFB7EFEE4CE.title: "&aCoffee Beans"
+	quest.1E95AD23243FEF87.quest_desc: [
+		"You can now produce the best fuel &eActually Additions&r has to offer. Simply drop the &aEmpowered Canola Seed&r into &3Crystallized Oil&r and you have &dEmpowered Oil&r!"
+	]
+	quest.1E95AD23243FEF87.title: "&dEmpowered Canola Seeds"
+	quest.206987FC6B1524F8.quest_desc: [
+		"The &aAtomic Reconstructor&r is used to crystallize materials and is one of the main machines used in &eActually Additions&r."
+		""
+		"When provided with power, it will shoot a laser beam up to ten blocks away, or until the laser comes into contact with another block."
+		""
+		"It will crystallize any dropped items or blocks placed on either side of the laser."
+	]
+	quest.206987FC6B1524F8.title: "&aAtomic Reconstructor"
+	quest.210E56AC8F66C19E.quest_desc: [
+		"The &3Experience Solidifier&r uses the player's experience and turns it into &bSolidified Experience&r."
+		""
+		"&bSolidified Experience&r contains XP, which can be consumed by right-clicking (sneaking will consume a full stack)."
+	]
+	quest.210E56AC8F66C19E.title: "&3Experience Solidifier"
+	quest.283EA4E7BA93DA11.quest_desc: [
+		"The &aEmpowerer&r will consume four surrounding items to empower your crystals."
+		""
+		"You'll need to set up each &aDisplay Stand&r three blocks away (two block gap) on each side of the &aEmpowerer&r."
+		""
+		"The position of items on the &aDisplay Stands&r do not matter, but you will need to power them."
+		""
+		"&eNot Enough Patterns&f allows you to connect an &dAE2 Pattern Provider&f directly to the &aEmpowerer&f and it'll automatically distribute the items stored in your ME Network to complete the recipe."
+		""
+		"Check the AE2 Guideme's NEP section for more details."
+	]
+	quest.283EA4E7BA93DA11.title: "&fEmpowering Crystals"
+	quest.298BFB73F3B2E3D5.quest_desc: [
+		"&aBatteries&r are a good way to store energy to move around. They can be charged with any wired or wireless charging method."
+		""
+		"When holding them in hand, they can be Sneak + Right-clicked to put them into discharge mode, charging other items in your inventory."
+	]
+	quest.298BFB73F3B2E3D5.title: "&aBatteries"
+	quest.2992268BD1E5C553.quest_desc: [
+		"&3Empowering&r blocks costs the same as a single crystal, giving you more value per operation."
+		""
+		"These can only be crafted on &aIron+&f &dTiered Display Stands&f."
+	]
+	quest.2992268BD1E5C553.quest_subtitle: "900% Value!"
+	quest.2992268BD1E5C553.title: "&3Empowered Crystal Blocks"
+	quest.2D7445BDE865635C.quest_desc: [
+		"The &aCoffee Maker&r is used to make a potion-like drink that provides several buffs when consumed."
+		""
+		"This machine requires power to work, and mixes water and &aCoffee Beans&r into an &aEmpty Cup&r to make a &aCoffee Cup&r."
+		""
+		"You can add up to 8 items within the GUI to provide special buffs."
+		"{@pagebreak}"
+		"&eNote&f: The small numbers on the GUI represent the order in which the items will be consumed, so make sure you have the correct order of buffs."
+		""
+		""
+		"You can brew the following buffs:"
+		""
+		"Pufferfish: Provides &9Water Breathing&r (up to 2)."
+		""
+		"Magma Cream: Provides &6Fire Resistance&r (up to 2)."
+		""
+		"Golden Carrot: Provides &eNight Vision&r (up to 2)."
+		""
+		"Fermented Spider Eye: Provides &7Invisibility&r (up to 2)."
+		""
+		"Ghast Tear: Provides &cRegeneration&r (up to 3)."
+		""
+		"Blaze Powder: Provides &dStrength&r (up to 4)."
+		""
+		"Sugar: Provides &bSpeed&r (up to 4)."
+		""
+		"Milk Bottle/Bucket: Adds 1min to a buff, but reduces its level by 1."
+	]
+	quest.2D7445BDE865635C.title: "&aCoffee Maker"
+	quest.2F2E3501A70EB920.quest_desc: [
+		"The &aRanged Collector&r picks up items within a radius of 6 blocks around it which can be white- or blacklisted."
+	]
+	quest.2F2E3501A70EB920.title: "&aRanged Collector"
+	quest.330F69D2F2626B50.quest_desc: [
+		"The &aLens of Color&r shoots a laser that phases through objects and changes the color of items like stained glass and stained glass panes, carpets, dyes, wool, and glazed terracotta."
+	]
+	quest.330F69D2F2626B50.title: "&aLens of Color"
+	quest.3ACEBC2F651514F4.quest_desc: [
+		"The &3Leaf-Eating Generator&r will consume leaves in a 7 block radius to generate power."
+	]
+	quest.3ACEBC2F651514F4.title: "&3Leaf-Eating Generator"
+	quest.3AEBDB8CAA13C522.quest_desc: [
+		"The &aRing of Magnetizing&r will suck up items within a 6 block radius around the player while powered."
+	]
+	quest.3AEBDB8CAA13C522.title: "&aRing of Magnetizing"
+	quest.3B6CDE92B84CBFE5.quest_desc: [
+		"The &aDrill&r works like a pickaxe and a shovel when charged, and it can be upgraded by Sneak + Right-clicking with it in your hand."
+		""
+		"The next quest contains a list of all &bDrill Augments&r."
+		""
+		"&7&oThe Light Blue Drill can be dyed."
+		""
+		"{@pagebreak}"
+		"&eNote&f: Tiered upgrades require the previous tier to be installed for them to work."
+		""
+		""
+		"Speed (I, II, III): Increases the mining speed."
+		""
+		"Area (I, II): Increases mining area."
+		""
+		"Silk Touch: Applies vanilla Silk Touch, allowing you to mine blocks like glass."
+		""
+		"Fortune (I, II): Applies vanilla Fortune. Tier 2 applies Fortune III."
+		""
+		"Block Placing: Right-clicking the &bAugment&r into any slot of your hotbar will allow the &aDrill&r to place a block from that slot when right-clicked."
+	]
+	quest.3B6CDE92B84CBFE5.title: "&aLight Blue Drill"
+	quest.3E00AA33AC5304F9.quest_desc: [
+		"When &aWorms&r are placed down on grass or dirt, they will till, hydrate, and speed up crop growth in a 3x3 area around them."
+		""
+		"&aWorms&r can be found by tilling grass with a hoe and removed by simply breaking the block they are on."
+	]
+	quest.3E00AA33AC5304F9.title: "&aWorm"
+	quest.41DC64EC52AB0494.quest_desc: [
+		"You can also crystallize entire blocks at once by dropping or placing them down in front of, or next to, the &aAtomic Reconstructor's&r laser beam."
+	]
+	quest.41DC64EC52AB0494.quest_subtitle: "900% Value!"
+	quest.41DC64EC52AB0494.title: "&aCrystal Blocks"
+	quest.443C71D871AFAB67.quest_desc: [
+		"&aSacks&r are not only an easy way to transport items around, but they can also be configured to automatically pick up all or specific items from the ground."
+		""
+		"&aVoid Sacks&r have the same functionality as normal ones, however, they remove items from the world instead of storing them."
+	]
+	quest.443C71D871AFAB67.title: "&aSacks"
+	quest.47547FC5591CE0D3.quest_desc: [
+		"&eActually Additions&r mainly revolves around creating and empowering crystals by zapping them with LASERS!"
+		""
+		"To get started, you'll need to get &aBudding Black Quartz&r or get some by trading with piglins!"
+	]
+	quest.47547FC5591CE0D3.title: "&fWelcome to &eActually Additions&f!"
+	quest.47EAA97131FD2B76.quest_desc: [
+		"The &3Ring of Growth&r grows crops in a 3 block radius around the player when charged."
+	]
+	quest.47EAA97131FD2B76.title: "&3Ring of Growth"
+	quest.5BFA3D0271320E07.quest_desc: [
+		"At random intervals, the &3Greenhouse Glass&r will instantly grow crops and saplings when placed above them."
+		""
+		"The glass will only work during &edaytime&r, and it must have an unobstructed view of the sky."
+	]
+	quest.5BFA3D0271320E07.title: "&3Greenhouse Glass"
+	quest.5D4E2FAD79F5AC0A.quest_desc: [
+		"The &3Vertical Digger&r can be used to automatically mine a 5x5 area below it. It has 2 modes: &bmine everything&r, or &emine ores only&r."
+		""
+		"In &eores only&r mode, it will scan the ground beneath it until it finds an ore, which it will then mine and store inside its internal buffer."
+	]
+	quest.5D4E2FAD79F5AC0A.title: "&3Vertical Digger"
+	quest.5DD4E634673638F8.quest_desc: [
+		"The &aLeaf Blower&r can blow away tall grass and flowers around you when you hold right-click."
+		""
+		"The &aAdvanced Leaf Blower&r is much faster and also breaks leaves."
+	]
+	quest.5DD4E634673638F8.title: "&aLeaf Blower"
+	quest.5E18F5B83FC4EC2D.quest_desc: [
+		"The &3Lens of Disenchanting&r can be used to transfer a single enchantment from an enchanted item to a blank or already enchanted book."
+		""
+		"To do this, throw both items in the same blockspace in front of the laser (more than one of each type won't work)."
+		""
+		"When the items are hit by the laser, the topmost enchantment from the non-book item is removed and added onto the book."
+	]
+	quest.5E18F5B83FC4EC2D.title: "&3Lens of Disenchanting"
+	quest.680EF3BB338460AA.quest_desc: [
+		"The &aLava Factory&r can produce blocks of lava when powered."
+		""
+		"The block above the &aFactory Controller&r has to be surrounded with 4 &aFactory Casings&r in order to generate lava."
+		""
+		"Right-clicking the &aFactory Controller&r will show you if it's able to produce lava with the current setup."
+	]
+	quest.680EF3BB338460AA.title: "&fLava Factory"
+	quest.69C82E67CEA88673.quest_desc: [
+		"The &aHeat Collector&r generates energy when surrounded by lava on all 4 sides. It will sometimes consume this lava."
+	]
+	quest.69C82E67CEA88673.title: "&aHeat Collector"
+	quest.6B23438D6F622F5D.quest_desc: [
+		"&4&lWARNING!&r The &cLens of Detonation&r will create a fiery explosion around the block hit by the laser."
+	]
+	quest.6B23438D6F622F5D.title: "&cLens of Detonation"
+	quest.735DAACDBF57DA01.quest_desc: [
+		"&aCanola&r can be used to generate energy via &aCanola Oil&r variants."
+		""
+		"[ \"Canola seeds can be found in the world, or bought from \", { \"text\": \"The Market\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"073546F80EDA632E\" }, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Market Quest\"]} }, \".\" ]"
+	]
+	quest.735DAACDBF57DA01.title: "&aCanola"
+	quest.7380416E70BEAD65.quest_desc: ["&aFlax Seeds&r give you string when harvested."]
+	quest.7380416E70BEAD65.title: "&aFlax Seeds"
+	quest.7819C1805C7E5BCD.quest_desc: [
+		"The &aFarmer&r machine plants and harvest different types of crops in a 9x9 area in front of it."
+		""
+		"In the GUI, the left side is reserved for seeds and other things that should be planted, while the right side will contain the harvested items."
+	]
+	quest.7819C1805C7E5BCD.title: "&aFarmer"
+	quest.7A82CC64D8966010.quest_desc: [
+		"Dropping &aCrystallized Canola Seeds&r into &aRefined Oil&r will turn it into &3Crystallized Oil&r, which still has one last upgrade."
+	]
+	quest.7A82CC64D8966010.title: "&3Crystallized Canola Seeds"
+	quest.7EA01C721DFBF014.quest_desc: [
+		"The &aAuto-Placer&r/&aFluid Placer&r automatically places block/fluids down in front of it."
+		""
+		"The &aLong-Range Breaker&r works in the same way, but has an 8 block range."
+		""
+		"The &aAuto-Breaker&r/&aFluid Collector&r automatically breaks/collects blocks/fluids in front of it."
+	]
+	quest.7EA01C721DFBF014.title: "&aBlock \\&\\ Fluid Management"
+	task.03DFD823ACDCF36F.title: "Fluid Management"
+	task.07D45DB34812D4A8.title: "Any #actuallyadditions:crystals"
+	task.08061F73E1D9775F.title: "Batteries"
+	task.1114E07F8446FAA0.title: "Block Management"
+	task.1FC35625F1D3282E.title: "Empowered Crystal Blocks"
+	task.220243C996A84559.title: "Sacks"
+	task.425475855D1D929C.title: "Augments"
+	task.5019F5D65BE76137.title: "Any #actuallyadditions:empowered_crystals"
+	task.7F7F60B4E9A074FE.title: "Crystal Blocks"
+}

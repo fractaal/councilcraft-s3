@@ -1,0 +1,19 @@
+{
+  "id": "create_toolboxes",
+  "name": {
+    "translate": "collapsible_groups.group.create_toolboxes",
+    "fallback": "Create: Toolboxes"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "item_path_contains": "toolbox"
+      }
+    ]
+  }
+}

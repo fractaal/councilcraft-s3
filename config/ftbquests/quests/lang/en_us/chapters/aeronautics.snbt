@@ -1,0 +1,396 @@
+{
+	quest.010F6CB71BAB1731.quest_desc: [
+		"&aDocking Connectors&f come in pairs. Extend both, bring them close, and they pull themselves into line and lock. The connection is rigid but the two sides stay separate ships, and once locked, items and fluids pass straight through in either direction, as long as something is inserting on one side and pulling on the other."
+		""
+		"Retract either end to undock. A comparator reads how far along the docking is, which is the signal an automated dock waits for."
+		""
+		"&aRedstone Magnets&f help line a big ship up. Opposite poles attract and try to align with each other, so a magnet on the hull and one on the pier drags the connectors into range."
+	]
+	quest.010F6CB71BAB1731.title: "&aDocking Connector"
+	quest.012ACDB95C655DDB.quest_desc: [
+		"A ship needs rotation on board, and a waterwheel doesn't travel well. The &aPortable Engine&f burns fuel and spins a shaft, in either direction, and it'll take fuel from hoppers and belts so you don't have to hand-feed it in flight."
+		""
+		"Drop a &dBlaze Cake&f in and it runs superheated for more power. "
+		""
+		"[\"The \", {\"text\": \"Stirling Engine\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"17C82FAD796695DE\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Stress Relief Quest\"]}}, \" from \", {\"text\": \"Create Propulsion\", \"color\": \"yellow\"}, \" is the other onboard option, and any \", {\"text\": \"Create Propulsion\", \"color\": \"yellow\"}, \" burner can heat it.\"]"
+	]
+	quest.012ACDB95C655DDB.title: "&aPortable Engine"
+	quest.02926DC431DB0DD2.quest_desc: [
+		"&bThrust&f is the push. Propellers make it from rotation, thrusters make it from fuel, and both of them push on the ship at the block where they sit."
+		""
+		"Where the push sits matters as much as how hard it pushes. Thrust below the centre of mass pitches the nose up, thrust on one side turns you, and thrust that isn't pointed straight through the centre of mass turns into a slow spin. The &aContraption Diagram&f shows you exactly where every one of them is pushing."
+	]
+	quest.02926DC431DB0DD2.title: "&bThrust"
+	quest.035FB8020EAB6725.quest_desc: [
+		"Place a &aContraption Claim Block&f on a ship and the ship becomes &eFTB Chunks&f territory. Only your team can break it or open it, allies can be added from the block, and it shows up on the map with its altitude and speed."
+		""
+		"The block also lets you force-load the ship. &bKeep Anchor Loaded&f keeps the chunks under it awake so it keeps existing while you're gone, and &bKeep Physics Active&f keeps it simulating too, so a flying farm keeps farming. Both count against your team's force-load limits."
+		""
+		"&cWarning&f: A ship that never stops simulating is a ship that never stops costing the server. Force-load the base, not the fleet."
+	]
+	quest.035FB8020EAB6725.title: "&aContraption Claim Block"
+	quest.0765E40A957F1F00.quest_desc: [
+		"Climbing down to tie up a ship gets old. A &3Throwable Rope Connector&f is a connector you throw, and it anchors wherever it lands, up to 10 blocks away. Keep one in your off hand and the &3Rope Connector Launcher&f fires it 20 blocks instead."
+		""
+		"The &3Mounted Rope Launcher&f is the ship-side version with a 40 block reach. Right-click to mount it, left-click to fire, right-click to release the anchor, and a redstone pulse fires it along its last aim so the docking sequence can throw its own lines. Ammo is only used up when a throw actually sticks."
+	]
+	quest.0765E40A957F1F00.title: "&3Rope Launchers"
+	quest.09B7653EF21B5A33.quest_desc: [
+		"&bLift&f is anything that pushes up. There are three ways to get it. Trap hot gas in a balloon, bolt on &dLevitite&f, use propellers to propel higher, or go fast enough that sails and wings start carrying you."
+		""
+		"A ship settles at the height where lift and weight are equal. Air gets thinner as you climb, so the same balloon lifts less up high, and that's what stops a balloon rising forever. Add lift to climb, cut it to sink. "
+	]
+	quest.09B7653EF21B5A33.title: "&bLift"
+	quest.0BC10EF89AA8FF5D.quest_desc: [
+		"A flying base is a target. A flying base with guns is a fleet."
+		""
+		"&eCreate Big Cannons&f puts real artillery on the deck, from a cast-iron field gun to a built-up steel monster, and &eShield Generators&f puts something between you and the reply. Both run on the same &eCreate&f rotation and redstone the rest of the ship already uses."
+		""
+		"&cWarning&f: Guns kick. A cannon firing off one side of a light airship moves the airship. Mount them near the centre of mass, fire in pairs, or enjoy the spin."
+	]
+	quest.0BC10EF89AA8FF5D.title: "&cArmament"
+	quest.0D3AB3D21858B5E3.quest_desc: [
+		"&aHoney Glue&f is &bSuper Glue&f for ships. Click two corners and it glues the box between them. &bCtrl+Scroll&f grows or shrinks the box, and holding &bAlt&f lets you drop a corner in mid-air."
+		""
+		"The difference from &bSuper Glue&f is what it sticks to. &aHoney Glue&f only ever attaches to &bSimulated Contraptions&f, so a bearing or piston contraption passing by won't drag half your deck away. It will grab any &bSuper Glue&f it overlaps, but &bSuper Glue&f won't grab it back."
+		""
+		"&eCreate Propulsion&f adds an &aAuto Glue&f item that draws one honey box over a whole connected structure in a single click. Handy on a big hull."
+	]
+	quest.0D3AB3D21858B5E3.title: "&aHoney Glue"
+	quest.0E51F853D09B41FE.quest_desc: [
+		"Spin a &aPropeller&f and it pushes. Spin it the other way and it pulls. A wrench flips the direction without touching the gearing. The &aWooden&f and &aAndesite&f versions are fixed, and the &3Smart Propeller&f pitches itself along one axis to try and face upward, which makes it the easy pick for a helicopter rotor."
+		""
+		"Each one costs 4 SU on the network. A propeller that's already moving through the air can't push as hard, so thrust falls off as you pick up speed, and it falls off again as the air thins with altitude."
+		""
+		"Goggles show the &bThrust&f and &bAirflow&f of any propeller you look at."
+	]
+	quest.0E51F853D09B41FE.title: "&aPropellers"
+	quest.112F8339E73484F3.quest_desc: [
+		"A fixed engine pushes one way. To steer with thrust you need the engine to swivel."
+		""
+		"The &dVector Thruster&f swivels by itself. Redstone on its faces yaws and pitches the nozzle, and the &dLiquid Vector Thruster&f does the same on &bTurpentine&f. The &3Servo Bearing&f is the other route. Mount any thruster on it and a redstone difference across the bearing pivots the whole assembly up to 90 degrees."
+		""
+		"Put a &bSmart Gearbox&f in servo mode behind a &3Servo Bearing&f and it aims the engine from orientation data automatically, which is how a ship holds a heading on its own."
+	]
+	quest.112F8339E73484F3.title: "&dVectored Thrust"
+	quest.12D46DE4D42AA302.quest_desc: [
+		"Cannons are cast, not crafted. The &aBasin Foundry Lid&f goes on a heated &bBasin&f and melts metal into molten &aCast Iron&f, &3Bronze&f, &3Steel&f or &dNethersteel&f. A &aCannon Cast&f built up from &aCasting Sand&f and a cannon mould is the shape you pour it into."
+		""
+		"Fill the cast, wait for it to set, and break it open. A comparator on the cast reads 0 to 14 while it fills and 15 when it's done. What comes out is an unbored block, so the &aCannon Drill&f comes next. It needs rotation, water, and a lathe turning the cannon at the same speed as the drill, and it eats more water the faster it runs."
+		""
+		"&aCast Iron&f is the starter metal. &3Steel&f and &dNethersteel&f cannons are built up in layers with the &3Cannon Builder&f and finished under a blasting fan, and they take far more powder before they burst."
+	]
+	quest.12D46DE4D42AA302.title: "&aCasting a Cannon"
+	quest.174B0BF2FAF28318.quest_desc: [
+		"A &aNameplate&f names the ship. Right-click to edit, dye to recolour, and wax it with honeycomb to lock the name. Every nameplate on the same contraption shares one name, and the &aAirship Station&f later in this chapter picks ships by that name, so name it early."
+		""
+		"A &aHandle&f is something to hold on to. Hold right-click to grab it and pull yourself along, hold it while sneaking to pull the ship instead, and scroll to change your distance. Grabbing one mid-fall also ends the fall without ending you."
+	]
+	quest.174B0BF2FAF28318.title: "&aNameplates and Handles"
+	quest.1813C6C6A1D8AB8E.quest_desc: [
+		"&dLevitite&f is a crystal that refuses to fall. Enough of it on a ship and the ship floats with no balloon, no burner and no fuel. It can't climb on its own, and at low speed it drags hard against any movement, though the drag fades once you get going."
+		""
+		"If you've got &eJust Dire Things&f going, a &3Tier 2 Goo&f block turns lava into blend in two minutes flat."
+		""
+		"Pour the blend where you want the crystal and touch it with fire, a torch, a campfire, magma or a lit blaze burner. The reaction spreads through the whole pool and sets. Once placed its lift will be applied. This block can be picked up so move it as needed."
+	]
+	quest.1813C6C6A1D8AB8E.title: "&dLevitite"
+	quest.1B6D163AEB801FF7.quest_desc: [
+		"A &aMechanical Servo&f turns a redstone signal into an angle. Right-click to set its range, and a full signal rotates it to the end of that range, a weaker signal to somewhere in between. It finishes the move it's on before it starts the next one."
+		""
+		"The &aStepper Servo&f steps instead. Set the angle per step, and each signal strength turns it that many steps. Signal on one side goes one way, the other side goes the other way, and both sides powered means hold still. Either one costs 4 SU per RPM while the input shaft turns."
+		""
+		"Rudders, elevators, aiming a propeller, opening a hangar door. Anything that needs to be at an angle rather than spinning."
+	]
+	quest.1B6D163AEB801FF7.title: "&aServos"
+	quest.1F34918369AC97C7.quest_desc: [
+		"A normal &3Propeller Bearing&f on top of a ship makes a helicopter that tips over. The &dGyroscopic Propeller Bearing&f keeps its rotor pointing up no matter what the hull is doing underneath, which is the difference between a helicopter and a very expensive fan."
+		""
+		"Mount one upside down under a top-heavy build and it stabilizes the whole thing instead. A redstone signal resets the tilt to zero if the auto-levelling is fighting you."
+		""
+		"It needs a &dGyroscopic Mechanism&f, which is covered in the &bStability&f quest path."
+	]
+	quest.1F34918369AC97C7.title: "&dGyroscopic Propeller Bearing"
+	quest.1F9921A99FE2A241.quest_desc: [
+		"The &3Propeller Bearing&f turns a structure into a propeller. It grabs the block in front of it, and anything with at least two sail-like blocks in it counts. More sails, more thrust for the same rotation, and a big four-blade windmill out of &aSails&f will out-push a mini propeller several times over."
+		""
+		"It draws 2 SU. Reverse the input rotation or wrench it to reverse the thrust, and expect the same fall-off with airspeed and altitude as the small propellers."
+	]
+	quest.1F9921A99FE2A241.title: "&3Propeller Bearing"
+	quest.207B925E3490E7CC.quest_desc: [
+		"&aSolid Shot&f punches. &3AP Shot&f punches deeper. &cHE Shells&f blow up, &cShrapnel&f sprays, &aSmoke Shells&f hide you, &aFluid Shells&f dump whatever you filled them with, and a &aBag of Grapeshot&f turns the gun into a very large shotgun."
+		""
+		"Shells need a fuze to go off. An &aImpact Fuze&f detonates on a hit about two times in three, an &3Inertia Fuze&f nine times in ten, and the delayed versions of each wait until the shell is inside something first."
+		""
+		"A &3Big Cartridge&f rolls powder and shell into one item for the &3Quick-Firing Breech&f, which is how a &bMechanical Arm&f reloads a gun by itself. Keep a &aGas Mask&f aboard if you're the one firing smoke."
+	]
+	quest.207B925E3490E7CC.title: "&cMunitions"
+	quest.23131503EF0BF979.quest_desc: [
+		"&aEnvelope&f blocks are the skin of a balloon. Build an airtight shell out of them, point a burner into it, and every cubic metre of &bHot Air&f inside lifts 1.5 kpg."
+		""
+		"The shell has to be sealed. Hot air fills it from the top down and leaks out of any gap, and any block sitting inside the shell steals volume. Shafts that need to pass through the wall get encased in envelope blocks to stay airtight."
+		""
+		"Right-click with dye to paint them. A good balloon is a big, empty, closed box with as few blocks inside as you can manage."
+	]
+	quest.23131503EF0BF979.title: "&aHot Air Envelope"
+	quest.2316F3820C478CDC.quest_desc: [
+		"Before the artillery, there's the vegetable. The &dMounted Potato Cannon&f is the handheld one bolted to the deck. It takes the same ammo, loads from hoppers and belts, and charges on rotation. Once charged, redstone fires it, and a held signal keeps firing."
+		""
+		"It kicks. A light ship with a cannon on one side will notice."
+	]
+	quest.2316F3820C478CDC.title: "&dMounted Potato Cannon"
+	quest.2345657297A97D4A.quest_desc: [
+		"&eAeroworks&f gives you a proper cockpit with the &dControl Desk&f. It's a block of sockets, and every &aControl Module&f you mount in one becomes a real control with its own keybinds and redstone link frequencies. Right-click with an empty hand to sit at it, use keyboard and mouse to move the controls, and press &bEsc&f to let go."
+		""
+		"Each control transmits how far it's moved on one frequency, and the opposite direction on a second frequency. Desks that touch join into one deck that a single player runs together. Sneak and right-click a mounted control to configure it, and wrench it off when you change your mind. It keeps its settings."
+		""
+		"The standalone &aJoystick&f block is the same idea in a single block, with four axes and a spare button."
+		"{@pagebreak}"
+		"Each &aModule&f can be installed separately and come with their own buttons as well."
+		""
+		"You can place multiple &dDesks&f side by side to extend the amount of controls you can assign to a single &dDesk&f. Clicking anywhere on the &dDesk&f allows you to interact with all controls via keybinds."
+	]
+	quest.2345657297A97D4A.title: "&dControl Desk"
+	quest.23A56DB24FE7D584.quest_desc: [
+		"Right-click a ship with the &aContraption Diagram&f and it opens a page of the things you actually need to know. Total mass, the &bcentre of mass&f, and every force arrow, merged or separate."
+		""
+		"The &bcentre of mass&f is the number that decides whether your ship flies level or nose-first. Balloons and propellers push on the ship where they sit, so lift far from the centre of mass turns into a tilt, and a tilt turns into a spin. Check the diagram before the maiden voyage, then move the heavy bits until the arrows line up."
+	]
+	quest.23A56DB24FE7D584.title: "&aContraption Diagram"
+	quest.2C3835C8412B1DF2.quest_desc: [
+		"&eCopycats+&f blocks take on the texture of whatever block you click them with, so a hull can look like oak, deepslate or brass while weighing almost nothing. &eAero Copycats&f is the glue between the two mods. It hands every copycat shape a proper physics mass, and a &aCopycat Board&f comes in at 0.125 kpg."
+		""
+		"That's the trick to a big ship. Build the shape out of boards, beams, panels and slices, skin them with the heavy-looking block, and let the balloon carry a fraction of the weight."
+	]
+	quest.2C3835C8412B1DF2.title: "&aLight Hull Blocks"
+	quest.2F06B5B38E9B8804.quest_desc: [
+		"Keys become redstone with the &3Linked Typewriter&f. It binds keyboard keys to &bRedstone Link&f frequencies. Sneak and right-click to open the setup, put a link's items on a key, and from then on pressing the key transmits on that frequency. Right-click it with a &bLinked Controller&f to copy that controller's bindings across in one go."
+		""
+		"Right-click to take control and the typewriter steals your movement keys and every bound key until you let go. Thirteen thrusters, six servos and a burner, all from one seat."
+		""
+		"&eAeronautics Curios Compat&f gives it a slot of its own. Keep a typewriter in the curio slot and the &bUse Remote Typewriter&f key drives the ship from anywhere aboard."
+	]
+	quest.2F06B5B38E9B8804.title: "&3Linked Typewriter"
+	quest.31747F470139AA5A.quest_desc: [
+		"Everything in this chapter is about one thing. Building a ship that actually flies, and not falling out of it."
+		""
+		"A &bSimulated Contraption&f is a pile of blocks that has been handed over to the physics engine. It has mass, measured in &bkpg&f, and it obeys three forces. &bWeight&f pulls it down, &bLift&f holds it up, &bThrust&f shoves it around. Get lift and weight to agree and the ship hovers. Add thrust and it goes somewhere."
+		""
+		"[\"You've already met the \", {\"text\": \"Physics Assembler\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"0128A3EC005A8AE5\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Physics Assembler Quest\"]}}, \" and the \", {\"text\": \"Hot Air Burner\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"0B78BFB7B5C11DCF\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Hot Air Burner Quest\"]}}, \" on your starter ship. The quest paths below cover the hull, the lift, the engines, keeping it level, steering it, getting it somewhere useful, and arming it.\"]"
+		""
+		"&eNote&f: Nearly every block here has a &bPonder&f. Hold W over the item in JEI or your inventory. They're short and they'll save you a crash or two."
+	]
+	quest.31747F470139AA5A.quest_subtitle: "Up, up and away"
+	quest.31747F470139AA5A.title: "&6Taking to the Skies"
+	quest.322D2B0CB2B547D8.quest_desc: [
+		"The &dGyroscopic Mechanism&f is the part that everything in this quest path is built around. "
+		""
+		"You'll want them for the &dGyroscopic Propeller Bearing&f as well."
+	]
+	quest.322D2B0CB2B547D8.title: "&dGyroscopic Mechanism"
+	quest.38F4B084BA4C6236.quest_desc: [
+		"Everything on a ship listens to redstone. Burners take an analog signal for how hot, thrusters take one for how hard, servos take one for how far. Controls are just ways to turn a hand on a wheel or a key on the keyboard into those signals."
+		""
+		"Start with a lever and a wheel. Graduate to a desk full of modules when the ship has more than three things to adjust."
+	]
+	quest.38F4B084BA4C6236.title: "&bControls"
+	quest.3E63FAE41FEA9A17.quest_desc: [
+		"Down is the one direction a ship keeps losing track of, and the &aGimbal Sensor&f is how it finds it again. It puts out a redstone signal on the low side, each axis on its own, and the angle for full signal is set in the value boxes. Invert it if you'd rather the signal came out uphill."
+		""
+		"On its own it's a tilt alarm. Fed into a &aServo&f or a thruster throttle it's the start of an autopilot. Fed into the blocks below it becomes the ship's sense of balance."
+	]
+	quest.3E63FAE41FEA9A17.title: "&aGimbal Sensor"
+	quest.4538EAA0215C8EC0.quest_desc: [
+		"A &aJoystick&f gives two tilt axes. A &aThrottle Quadrant&f gives four levers side by side. Then there's the &aYoke&f, the &aWheel&f, the &aPedal&f, the &aLever&f, a single &aButton&f, a 2x2 &aButton Panel&f and a 3x3 &aKeypad&f."
+		""
+		"Smaller modules fit in larger sockets, and a few of the big ones carry a small socket of their own. Right-click that with a small module to stack a head on top, and it rides along with the control underneath while working like any other input."
+	]
+	quest.4538EAA0215C8EC0.title: "&aControl Modules"
+	quest.4896357F588DAA54.quest_desc: [
+		"On a &bSimulated Contraption&f, a &aSail&f is a wing. Move it through the air and it makes lift at right angles to its surface, and the faster you go the more it makes. Enough sail and enough speed and a ship with no balloon at all leaves the ground."
+		""
+		"The &aSymmetric Sail&f is the other half. It makes no lift, only drag, and only when it's angled away from the direction of travel. That's a rudder, a tail fin or a stabilizer, depending on where you bolt it."
+	]
+	quest.4896357F588DAA54.title: "&aSails"
+	quest.499819F644DAAB83.quest_desc: [
+		"[\"The \", {\"text\": \"Hot Air Burner\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"0B78BFB7B5C11DCF\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Hot Air Burner Quest\"]}}, \" tops out at 500 hot air. The \", {\"text\": \"Steam Vent\", \"color\": \"aqua\"}, \" puts out up to 5,000 steam, which lifts exactly the same 1.5 kpg per cubic metre, so a vented balloon carries ten times the ship.\"]"
+		""
+		"The catch is the piping. A vent wants the same things a &bSteam Engine&f wants, heat under a boiler, water in it, and enough boiler space. Power it with redstone and it fills the balloon above it. The signal strength scales the output, and the panel on the vent sets the ceiling."
+		""
+		"Both burners and vents will hunt up to 80 blocks for a balloon to fill, and several can share one balloon. Click a vent with an &aIron Sheet&f to change its metal."
+	]
+	quest.499819F644DAAB83.title: "&bSteam Vent"
+	quest.4B52F4885BEA9FC0.quest_desc: [
+		"Same blend, different flame. Put a &aSoul Campfire&f or &aSoul Torch&f next to the &dLevitite Blend&f instead of regular fire, or pour it over soul sand or soul soil that's burning, and it crystallizes pink instead of blue."
+		""
+		"&7&oIt floats exactly the same. This one is purely for the ship that has everything."
+	]
+	quest.4B52F4885BEA9FC0.title: "&dPearlescent Levitite"
+	quest.4F433F2FA020F0E3.quest_desc: [
+		"A big cannon is a line of bored cannon blocks, a chamber at the back, a barrel in front, and a breech to load through. Blocks placed by hand don't join on their own. Weld them with the &aCannon Welder&f, or better, build the gun once and move it whole with a contraption."
+		""
+		"The &aCannon Mount&f holds the assembled gun and pitches it with rotation. The &3Yaw Controller&f under the mount turns it. Load a &aPowder Charge&f and a projectile through the breech, by hand with a &aRam Head&f on a stick, or with the &aCannon Loader&f, then give the mount a redstone pulse. Guns can be up to 64 blocks long."
+		""
+		"More powder, more range, until the barrel gives out. A cast iron gun with too many charges has a coin-flip chance of bursting, so learn its limit on the ground before you learn it at altitude."
+	]
+	quest.4F433F2FA020F0E3.title: "&3Big Cannon"
+	quest.5122A391CD92E556.quest_desc: [
+		"The &dContraption Controller&f is a flight computer with 13 channels. Bind keys to pitch, roll, yaw, throttle and whatever else, pick an input mode per channel for how the signal ramps, and it puts out clean analog redstone for each one."
+		""
+		"The &aAnalogue Joystick&f is its physical cousin. Tilt it and each side sends its own signal scaled to how far you pushed. Good for the pilot who wants to feel the ship rather than type at it."
+	]
+	quest.5122A391CD92E556.title: "&dContraption Controller"
+	quest.51A57B31F8DA4A8F.quest_desc: [
+		"Before anything flies it has to hold together, and it has to be light enough to be worth lifting."
+		""
+		"Every block on a ship has a mass. Stone and metal are heavy, wood and wool are light, and a hull built out of the wrong stuff will need three times the lift. Press &bF3+H&f and the mass shows up in item tooltips, courtesy of &eSable Mass View&f."
+		""
+		"This quest path is about glue, goggles, hull blocks and knowing what your ship weighs."
+	]
+	quest.51A57B31F8DA4A8F.title: "&aThe Hull"
+	quest.53D0DF41254360B9.quest_desc: [
+		"Not everything has to fly. &eOffroad&f puts a &aTire&f on a &aWheel Mount&f and a &bSimulated Contraption&f becomes a truck. Rotation drives the wheel, redstone from the top brakes it, redstone from the side steers it toward the signal. Tires come in &aSmall&f, standard, &3Large&f and &dMonstrous&f, and the mount's suspension strength is set on its scroll panel."
+		""
+		"The &3Borehead Bearing&f is the same mod's drill. Attach &aRock Cutting Wheels&f and a storage block to it and it chews through terrain in a radius, at a quarter of the input speed, dropping everything into the storage until the storage is full."
+	]
+	quest.53D0DF41254360B9.title: "&aGround Travel"
+	quest.547C772CB5972224.quest_desc: [
+		"The &aTilt Adapter&f from &eCreate Propulsion&f tilts rotational output by an analog signal, up to 90 degrees each way in this pack. The &3Advanced Tilt Adapter&f lets you set a different limit for each side, and holding &bCtrl&f while setting one toggles shared limits."
+		""
+		"Where a servo holds an angle, the adapter keeps the shaft spinning through the tilt, so it's the one for a propeller you want to aim while it runs."
+	]
+	quest.547C772CB5972224.title: "&aTilt Adapter"
+	quest.55B5C402ABBDF7C1.quest_desc: [
+		"The &aSteering Wheel&f is precise rotation by hand. Hold right-click to grab it and move the mouse to turn, sneak while turning to snap to 45 degree steps, and set the maximum angle on its value panel. A comparator on it reads the angle, and a comparator on the back reads whether someone's holding it."
+		""
+		"The &aThrottle Lever&f is the same idea for redstone. Drag it to set an analog signal, wrench it to invert. One for the burner, one for the engines, and you have a cockpit."
+		""
+		"&eNote&f: A bearing on the far end of a wheel will happily disassemble whatever it's turning. Tell it not to."
+	]
+	quest.55B5C402ABBDF7C1.title: "&aWheel and Throttle"
+	quest.596B99FA746FF18B.quest_desc: [
+		"A &3Wing&f is a purpose-made lifting surface, the &3Tempered Wing&f is the sturdier version, and the &aCopycat Wings&f come in 8 and 12 metre spans that take the texture of any block you click them with."
+		""
+		"Pair wings with thrusters and you've got a plane rather than a blimp. Planes are faster, planes are lighter, and planes fall out of the sky the moment the engine stops. Choose accordingly."
+	]
+	quest.596B99FA746FF18B.title: "&3Wings"
+	quest.5B59923796F5C973.quest_desc: [
+		"&eAutomated Logistics&f teaches a ship a route by watching you fly it. Put a &3Vehicle Transponder&f on the ship and an &3Airship Station&f at each end of the trip. Open the transponder, switch to &bRecording Mode&f, add a route from this station to that one, fly it, and save the segment when you land. Routes are saved per direction, so fly the return leg too."
+		""
+		"Press play from any station on the route and the ship flies it by itself, stop after stop, and it keeps flying while the chunks between are unloaded. The stops screen sets wait conditions and docking waits, and during a dock both the station and the transponder put out redstone so your connectors know when to extend."
+		""
+		"The &3Logistics Terminal&f is the top-down map of every station, route and ship in the network. The &dAdvanced Transponder&f adds four redstone output ports for dock and drive intent."
+	]
+	quest.5B59923796F5C973.title: "&3Airship Station"
+	quest.5BA4D2B907325D32.quest_desc: [
+		"&eCreate Propulsion&f has its own family of engines. The &aSolid Fuel Thruster&f is the cheap one. It burns items from the slot on its back, redstone is on or off with no in-between, and it pushes about a quarter as hard as its liquid cousins. Wrench it to open the hatch and it'll pull fuel from a container behind it."
+		""
+		"The &3Thruster&f runs on &bTurpentine&f and holds a 1,000 mB tank that lasts 1,000 ticks at full throttle. The &dIon Thruster&f skips fuel and drinks 40 FE per tick instead, and it's the strongest of the three."
+		""
+		"Build any of them as a 2x2x2 or 3x3x3 block and they merge. The big versions push 25% and 50% harder and burn 40% and 60% less fuel."
+	]
+	quest.5BA4D2B907325D32.title: "&3Propulsion Thrusters"
+	quest.5EE8F456D1B56D3D.quest_desc: [
+		"The &3Advanced Data Link&f carries orientation. Point it at a &aGimbal Sensor&f or another orientation source, up to 128 blocks away, and any block next to the link that can use that data gets it."
+		""
+		"It's the same idea as a &bDisplay Link&f, but instead of text it moves pitch, roll and heading to the blocks that need them."
+	]
+	quest.5EE8F456D1B56D3D.title: "&3Advanced Data Link"
+	quest.5F4BAB9B54CF7E4A.quest_desc: [
+		"The &dGyroscope&f actively holds the ship level along whatever axis you place it on. Spin it up and it fights pitch and roll, and it bleeds off a spin so the ship stops turning when you stop turning it."
+		""
+		"It wants rotation, and a lot of it. Full control arrives at 256 RPM and the draw is 16 SU per RPM, so a gyroscope at full speed costs 4,096 SU. One gyro fully steadies about 5,000 units of ship inertia. A bigger hull needs more of them, and a ship with too few isn't unstable, just slower to right itself."
+	]
+	quest.5F4BAB9B54CF7E4A.title: "&dGyroscope"
+	quest.62987A983CFB5C77.quest_desc: [
+		"Two separate rotation lanes run through the &3Smart Gearbox&f at different speeds, which is useful on its own when a hull is short on space."
+		""
+		"The trick is &bServo Mode&f. Feed it orientation from an &3Advanced Data Link&f and it aims any &3Servo Bearing&f attached to it so the mounted thruster or propeller always points the way you want it to. Power the gearbox with redstone and the aim inverts. Between this, a &aGimbal Sensor&f and a couple of thrusters, a ship can hold itself level with no player at the controls."
+	]
+	quest.62987A983CFB5C77.title: "&3Smart Gearbox"
+	quest.62BF630E65CE5CDD.quest_desc: [
+		"The &3Thruster&f from &eCreate Thrusters&f burns fuel and shoves the ship away from its nozzle. Coal, blaze rods, lava and a long list of fluids all count as fuel. A redstone signal from 1 to 15 is the throttle, and full throttle gives about 2.94 kpN."
+		""
+		"Throttle is not linear. A neutral fuel burns 5.6 mB per tick flat out, and backing off to half throttle cuts the burn a lot more than it cuts the thrust. Cruise low, sprint rarely."
+		""
+		"The &aSmall Thruster&f is the same engine in a shorter body. Stay out of the exhaust, it hurts."
+		"{@pagebreak}"
+		"These &aThrusters&f do a lot more than just move your contraptions thanks to their upgrades, which can allow &aThrusters&f to smelt, cook, and haunt items just like &bEncased Fans&f."
+		""
+		"They consume liquid fuel by default, but can be made to consume power (FE) instead using the &dThruster Lens&f"
+	]
+	quest.62BF630E65CE5CDD.title: "&3Thrusters"
+	quest.655A43231DB3160E.quest_desc: [
+		"The &3Autocannon&f is the small fast one. A breech, a recoil spring and a few barrel blocks, cast the same way as the big gun except the moulds shed their sand on their own. It sits on a &aCannon Mount&f like the big gun and aims the same way."
+		""
+		"It feeds from an &aAutocannon Ammo Container&f that holds 64 rounds, or 128 &aMachine Gun Rounds&f. &aFlak&f rounds burst in the air for anything with wings, &3AP&f rounds go through armour. The recoil is half of a big cannon's, which on a small ship still counts."
+	]
+	quest.655A43231DB3160E.title: "&3Autocannon"
+	quest.65BC94BEFE461307.quest_desc: [
+		"Two &aRope Connectors&f and a &aRope Coupling&f ties two contraptions together, or a contraption to the ground. Right-click one end then the other. Shears cut it, and right-clicking with a wrench slides you down it."
+		""
+		"A &aRope Winch&f in place of one connector reels the rope in and out with rotation, which is a mooring line, a crane or an elevator depending on what's on the end. Two winches won't connect to each other."
+		""
+		"The &3Powered Zipline&f from &eCreate Thrusters&f rides along a rope under its own power, and the &3Claw&f hangs from one and grabs connectors on a redstone pulse."
+	]
+	quest.65BC94BEFE461307.title: "&aRopes"
+	quest.6932BD0BC70C77E7.quest_desc: [
+		"A ship that flies is easy. A ship that flies level is the hard part."
+		""
+		"Anything with the lift and the weight in different places wants to tip, and once it's tipping the lift points sideways and it tips faster. Balance the hull first, then add something that actively fights the tilt. Follow this quest path to learn the ways to balance."
+	]
+	quest.6932BD0BC70C77E7.title: "&bStability"
+	quest.6B09F7DEBFE6905B.quest_desc: [
+		"A ship that flies and steers still needs somewhere to go and a way to stop when it gets there."
+		""
+		"This quest path is docking, ropes, navigation, automated routes, claiming your ship so it keeps ticking while you're away, and taking it into other dimensions."
+	]
+	quest.6B09F7DEBFE6905B.title: "&bGoing Places"
+	quest.6D24519E78D6F67C.quest_desc: [
+		"A &aCover&f is a facade that wraps around pipes, cables and other awkward blocks so the hull reads as one surface. The &aDirectional Cover&f does the same with a block that has a front."
+		""
+		"Regular cable facades fall off the moment a ship assembles. These survive &eCreate&f contraptions and physics assembly both, so a covered engine room stays covered when it takes off."
+	]
+	quest.6D24519E78D6F67C.title: "&aAeronautics Covers"
+	quest.6E9D6254DEBD449A.quest_desc: [
+		"The &aNavigation Table&f points at things. Give it a navigation item, a &bFilled Map&f or a &bCompass&f, and it puts out a redstone signal toward the destination, strongest when the ship faces it dead on and weaker as you drift off. Feed that into a servo and the ship finds its own way."
+		""
+		"The &aNavigator's Table&f from &eAeronaut's Compass&f is how you make the destination. Put a compass on it, type coordinates and a name, and the compass points there. Craft it alone to reset it."
+		""
+		"The &3Advanced Navigation Table&f holds several maps at once and exposes the slots to automation, so a route can swap targets as it goes."
+	]
+	quest.6E9D6254DEBD449A.title: "&aNavigation Tables"
+	quest.71806B23D902DDE1.quest_desc: [
+		"The &aAltitude Sensor&f turns height into a redstone signal. By default the signal grows as you climb, the range is set in its interface, and it can be flipped to shrink instead."
+		""
+		"Feed that signal into the burner or vent and the ship holds a height by itself. Climb, the signal rises, the redstone into the burner drops, the balloon cools, the ship sinks back. Wearing goggles or holding a wrench shows the exact altitude and air pressure."
+	]
+	quest.71806B23D902DDE1.title: "&aAltitude Sensor"
+	quest.765CD0AA28077AA3.quest_desc: [
+		"Wear these and the ship stops being a mystery. Every force acting on a &bSimulated Contraption&f gets drawn as an arrow, propellers and thrusters print their output, and assemblies show their details."
+		""
+		"[\"The \", {\"text\": \"Aviator's Goggles\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"425A41A378E7BF52\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": [\"Go to Engineer's Goggles Quest\"]}}, \" from \", {\"text\": \"Aeronautics\", \"color\": \"yellow\"}, \" do the same job as \", {\"text\": \"Engineer's Goggles\", \"color\": \"aqua\"}, \" for stress and RPM. Pick whichever pair suits the outfit.\"]"
+	]
+	quest.765CD0AA28077AA3.title: "&3Physics Goggles"
+	quest.7C2F9F95406E9258.quest_desc: [
+		"&eAeroPortals&f lets a ship fly through a portal. Not you, the ship. Sail the hull into a &bNether Portal&f and the entire contraption arrives on the other side, crew, cargo, balloon and all, still moving at the speed it went in."
+		""
+		"It works on far more than the Nether. The &bEnd&f, &eArs Nouveau&f portals, &eDraconic&f, the &bEnder Gateway&f, &eTelePastries&f, even the &6Pina Colada&f. Build the portal big enough for the ship to pass through it."
+		""
+		"&cWarning&f: The destination has to have room. A ship that would arrive inside solid rock has its jump cancelled rather than the rock removed, so scout the far side first. A portal of matching size gets built for you if none is waiting, and a ship can't jump again for ten seconds after arriving. Keep the hull under 200,000 blocks of bounding box or the portal won't notice it at all."
+	]
+	quest.7C2F9F95406E9258.quest_subtitle: "The whole ship goes"
+	quest.7C2F9F95406E9258.title: "&dAero Portals"
+	quest.7D996CB0951B1037.quest_desc: [
+		"A &dPropulsion Upgrade&f multiplies thrust. Tier 1 doubles it, and each tier doubles again up to sixteen times at Tier 4, with the fuel bill climbing to match."
+		""
+		"&dProcessing Upgrades&f turn the exhaust into an &bEncased Fan&f. Items on &aDepots&f in the stream get smoked, smelted or haunted, faster and over a wider area at higher tiers. The &dThruster Lens&f swaps fuel for &bFE&f entirely, 90 FE per tick at full throttle, and focuses the plume into a beam that pushes harder than the open flame. The &aFuel Oxidizer&f boosts supported fuels by half again."
+	]
+	quest.7D996CB0951B1037.title: "&dThruster Upgrades"
+	task.6EB6678C52C4F313.title: "Upgrades"
+	quest.34155C195AD70571.title: "Solid-Fuel Thrust"
+	quest.34155C195AD70571.quest_desc: [
+		"Obtain a Create: Propulsion Solid Fuel Thruster. Inspect its fuel and control requirements in JEI and the installed mod's tooltips."
+		"Test thrust on a small, restrained prototype before using it on your main ship. Keep clear of the exhaust and confirm your controls before flight."
+	]
+}

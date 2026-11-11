@@ -1,0 +1,13 @@
+name = "L2 Library"
+filename = "l2library-3.0.10.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/4Vh3BQ3F/versions/tmLrL542/l2library-3.0.10.jar"
+hash-format = "sha512"
+hash = "8cf6dd51de031644182e945f60596e14b64eb8158cf74b3415acb01b3017f1c3a574a97a3306dd63eca1c0738dfa011ac530f7d7dba18d8d29b5da5f42c396f2"
+
+[update]
+[update.modrinth]
+mod-id = "4Vh3BQ3F"
+version = "tmLrL542"

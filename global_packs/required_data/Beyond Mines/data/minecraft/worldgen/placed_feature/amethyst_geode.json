@@ -1,0 +1,120 @@
+{
+  "feature": {
+    "config": {
+      "features": [
+        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:coal_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:copper_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.08,
+          "feature": {
+            "feature": "more_geodes:zinc_geode",
+            "placement": []
+          }
+        },        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:iron_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:gold_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:redstone_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.06,
+          "feature": {
+            "feature": "more_geodes:lapis_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.05,
+          "feature": {
+            "feature": "more_geodes:diamond_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.03,
+          "feature": {
+            "feature": "more_geodes:emerald_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.05,
+          "feature": {
+            "feature": "more_geodes:slime_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.03,
+          "feature": {
+            "feature": "more_geodes:ice_geode",
+            "placement": []
+          }
+        },
+        {
+          "chance": 0.03,
+          "feature": {
+            "feature": "more_geodes:honey_geode",
+            "placement": []
+          }
+        }
+      ],
+      "default": {
+        "feature": "more_geodes:amethyst_geode",
+        "placement": []
+      }
+    },
+    "type": "minecraft:random_selector"
+  },
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 22
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": 30
+        },
+        "min_inclusive": {
+          "above_bottom": 6
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

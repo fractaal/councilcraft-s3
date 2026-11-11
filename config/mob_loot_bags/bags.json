@@ -1,0 +1,102 @@
+// Mob Loot Bags 2.0: opening bags, their loot tables and the special bags.
+// Edit and run /lootbags reload, or restart. Missing keys are restored with their defaults.
+{
+  // hold_ticks: how long you hold Use to open a bag (20 ticks = 1 second, 0 = instant).
+  // sneak_opens_stack: sneak while opening to open the whole stack (up to max_stack_open) at once.
+  // loot_to_inventory: loot goes straight into your inventory; what does not fit drops at your feet.
+  // reveal_toast: show the loot you got in a toast. chat_summary: also list it in chat.
+  // title_min_tier: bags of this tier or better flash a title on screen. "none" to disable.
+  "opening": {
+    "hold_ticks": 16,
+    "sneak_opens_stack": true,
+    "max_stack_open": 64,
+    "loot_to_inventory": true,
+    "reveal_toast": true,
+    "chat_summary": false,
+    "title_min_tier": "legendary"
+  },
+
+  // Optional loot table overrides per bag. Empty = the mod's table (mob_loot_bags:bags/<bag>) with
+  // dimension themes. List several tables to pick one at random each time. Datapacks can also
+  // override mob_loot_bags:bags/<bag> directly, or add items to #mob_loot_bags:bonus/<tier>.
+  "loot_tables": {
+    "common": [],
+    "uncommon": [],
+    "rare": [],
+    "epic": [],
+    "legendary": [],
+    "mythic": [],
+    "cursed": [],
+    "hourglass": [],
+    "locked": [],
+    "summoning": []
+  },
+
+  // Opening a Cursed Loot Bag rolls one outcome by weight:
+  // ambush: cursed mobs surround you; each one you kill drops a bag of at least ambush_reward_min_tier.
+  // jackpot: the bag opens as a jackpot_tier bag. hex: random harmful effects for hex_seconds.
+  // chaos: runs one random chaos_command as the player (leave the list empty or weight 0 to disable).
+  "cursed": {
+    "outcomes": {
+      "ambush": 50,
+      "jackpot": 15,
+      "hex": 25,
+      "chaos": 10
+    },
+    "ambush_mobs": [
+      "minecraft:zombie",
+      "minecraft:skeleton",
+      "minecraft:spider",
+      "minecraft:husk",
+      "minecraft:stray",
+      "minecraft:witch"
+    ],
+    "ambush_min": 3,
+    "ambush_max": 5,
+    "ambush_reward_min_tier": "uncommon",
+    "jackpot_tier": "legendary",
+    "hex_effects": [
+      "minecraft:darkness",
+      "minecraft:slowness",
+      "minecraft:weakness",
+      "minecraft:hunger",
+      "minecraft:nausea",
+      "minecraft:mining_fatigue",
+      "minecraft:levitation"
+    ],
+    "hex_seconds": 12,
+    "chaos_commands": [
+      "summon minecraft:tnt ~ ~1 ~ {fuse:60}",
+      "summon minecraft:lightning_bolt ~2 ~ ~2",
+      "weather thunder 600",
+      "effect give @s minecraft:levitation 3 1",
+      "summon minecraft:zombie ~ ~ ~ {IsBaby:1b}",
+      "summon minecraft:vex ~ ~1 ~",
+      "xp add @s 100",
+      "give @s minecraft:poisonous_potato 16",
+      "summon minecraft:firework_rocket ~ ~1 ~ {LifeTime:30}"
+    ],
+    "sound": true
+  },
+
+  // An Hourglass Loot Bag ripens after a random time in this range, then opens into better bags.
+  "hourglass": {
+    "min_minutes": 5.0,
+    "max_minutes": 10.0
+  },
+
+  // The item that unlocks a Locked Loot Bag (used up). key_anywhere: the key can be anywhere in your
+  // inventory, otherwise it must be in your off hand.
+  "locked": {
+    "key": "mob_loot_bags:diamond_key",
+    "key_anywhere": true
+  },
+
+  // Hold Shift over a bag to see its possible loot. The server samples each loot table this many times
+  // and sends the results to players. lines: how many items the tooltip lists.
+  "preview": {
+    "enabled": true,
+    "samples": 400,
+    "lines": 8
+  }
+}

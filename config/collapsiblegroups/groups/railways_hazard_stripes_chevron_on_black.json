@@ -1,0 +1,19 @@
+{
+  "id": "railways_hazard_stripes_chevron_on_black",
+  "name": {
+    "translate": "collapsible_groups.group.railways_hazard_stripes_chevron_on_black",
+    "fallback": "Railways: Chevron on Black"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "railways"
+      },
+      {
+        "item_path_ends_with": "hazard_stripes_chevron_on_black"
+      }
+    ]
+  }
+}

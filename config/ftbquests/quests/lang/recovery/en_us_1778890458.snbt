@@ -1,0 +1,566 @@
+{
+	"chapters/create.snbt": {
+		quest.75E7216AB5411DF6.quest_desc: {
+			old: [
+				"Chopping"
+				"Mechanical Saws are powered through rotational force, and when placed down facing to the side they will automatically chop down wood blocks in front of them. When chopping down a tree or giant mushroom, it will automatically destroy the entire tree by only destroying the bottom-most block."
+				""
+				"Mechanical saws are only supposed to mine 2x2 trees as long as at least the last block (horizontally) is mined using the saw. The easiest way to bypass this is by removing the block immediately above the block being cut, in which case the entire 2x2 tree will be cut down by the mechanical saw."
+				""
+				"{@pagebreak}"
+				""
+				"Mechanical saws can mine any structure of logs that doesn't have a vertical 2x2 square with the block being destroyed as one of the bottom blocks"
+				""
+				"Mechanical saws are automatically powered when on a create Contraption. The saw will damage entities and break blocks at a certain speed depending on the contraption's speed."
+			]
+			new: [
+				"The &eMechanical Saw&r, when powered, will chop down trees in front of it. It can fell an entire tree by cutting only the bottom-most log."
+				""
+				"{@pagebreak}"
+				""
+				"When on a moving contraption, it will damage entities and break wood blocks it comes into contact with."
+			]
+		}
+		quest.1B65E8BE91A087DA.quest_desc: {
+			old: [
+				"After placing a Chain Conveyor, they can be connected to other Chain Conveyors by right-clicking them with a Chain. The selection can be cleared by right-clicking the Chain Conveyor again. "
+				""
+				"The maximum distance at which chain conveyors can be placed is 32 blocks, can add 8 blocks to the side if it is 32 blocks away."
+				""
+				"The maximum angle at which chain conveyors can connect with elevation difference is 45°, this allows an approximate ratio of 2 horizontal blocks to one vertical block. the maximum possible straight slope is 30L by 14H center to center."
+			]
+			new: [
+				"&eChain Conveyors&r can be connected by right-clicking them with a &bChain&r. The maximum connection distance is 32 blocks."
+				""
+				"They can handle a maximum slope of roughly 1 vertical block for every 2 horizontal blocks."
+			]
+		}
+		quest.626580DB654F128D.quest_desc: {
+			old: ["The Millstone is capable of applying milling recipes to any valid items inserted from above."]
+			new: ["The &eMillstone&r applies milling recipes, like turning wheat into flour, to any valid items inserted from above."]
+		}
+		quest.54778BD66812A1CF.quest_desc: {
+			old: ["A transport component used to move fluids between tanks, machines, and engines. Designed for efficiency and integration with Create’s mechanical systems, it ensures smooth fluid transfer in your automation setups."]
+			new: ["The &eFluid Pipe&r is a component used to transport fluids between tanks and machines. It is essential for fluid automation setups."]
+		}
+		quest.6E8C6A4A07957E5A.quest_desc: {
+			old: [
+				"When Rotational Force is given to the Hose Pully, it can extend the hose infinitely. Reversing the Rotational Force will retract the hose back to the block. The hose of the Hose Pully must be extended by at least one block before it can function."
+				""
+				"A Fluid Pump is required for the hose to drain or flood liquids."
+				""
+				"-If a fluid is pumped out, it will drain a body of liquid down to the level of the hose. If multiple hose pulleys draw from the same source, it will effectively expedite the drainage process, provided that the pipe's capacity is maintained."
+				""
+				"-If a fluid is pumped in, it will flood a room of any size, with the hose marking the highest point of flooding."
+			]
+			new: ["The &eHose Pulley&r can extend or retract a hose to drain or fill large areas with fluid. It requires a &bFluid Pump&r to move the liquid."]
+		}
+		quest.605C0B84DFC1A4D5.quest_desc: {
+			old: [
+				"Gantry Carriages are a Contraption that will collide with unmovable blocks in their path."
+				""
+				"Place Gantry Shafts along where the Gantry Carriage will move. Apply Rotational power to the shafts to move the Carriage along them, and invert the power to move it back. Inverting the placement of the shafts will invert all movement. Use a Wrench to help change the orientation."
+				""
+				"For every 1rpm of rotational power, the gantry carriage will move along the shaft at a linear speed of 0.03846 blocks/second."
+				""
+				"Apply a Redstone signal to the shaft to stop the carriage and send rotational power through the Carriage's output. This can be used to move another attached Gantry Carriage."
+				""
+				"Gantry Shafts attached to the Carriage's output will move along with them automatically."
+				""
+				"Multiple Carriages on one shaft can also move the same structure built onto it."
+			]
+			new: ["The &eGantry Carriage&r moves along &bGantry Shafts&r when they are powered. Reversing the rotation reverses its direction. Applying a &bRedstone Signal&r to the shaft will stop the carriage."]
+		}
+		quest.5A2450162FD24F7E.quest_desc: {
+			old: [
+				"Two Crushing Wheels must be placed next to each other horizontally or vertically one block apart. Both wheels must be given opposite rotational force. Any items to be crushed must be inserted where the wheels rotate inwards."
+				""
+				"Crushing wheels can be automated by placing a hopper at the top directly between the wheels and either a depot or conveyor belt below."
+			]
+			new: ["To use &eCrushing Wheels&r, place two wheels next to each other, one block apart, and power them in opposite directions. Items dropped between them will be crushed."]
+		}
+		quest.6D03D3B4D83C1840.quest_desc: {
+			old: [
+				"Right click the front of a Mechanical Crafter with a Wrench to change the direction it sends items during crafting. "
+				""
+				"Mechanical Crafters can be automatically filled by Funnels or Hoppers."
+				""
+				"On the back and sides of Mechanical Crafters, a Wrench can be used to connect or disconnect the inventory of two adjacent crafters. Crafters can share inventories while not participating in the same crafting recipe."
+				""
+				"{@pagebreak}"
+				""
+				"Items can also be inserted or removed by hand."
+				""
+				"Each Mechanical Crafter has an internal gear that can only be powered by adjacent Mechanical Crafters or any size Cogwheel. This means only 1 Mechanical Crafter in a setup needs to be powered by a Cogwheel."
+				""
+				"When powered by rotational force and either powered with Redstone or all crafter slots are filled, Mechanical Crafters will send their items to adjacent crafters. For a successful recipe, the items must eventually meet in one crafter. Once all of the items reach the final Crafter, they will turn into the product."
+			]
+			new: [
+				"The &eMechanical Crafter&r is used for automated crafting. Use a &bWrench&r on its front to set the output direction. Multiple crafters can be placed together to form a crafting grid."
+				""
+				"{@pagebreak}"
+				""
+				"When powered and all ingredient slots for a valid recipe are filled, the crafters will combine the items into the final product."
+			]
+		}
+		quest.7C074B5E2A0EAA63.quest_desc: {
+			old: [
+				"To assemble a Train, the train must have at least one set of controls that face forward relative to the Train Station the train is created at. If a non-player conductor is desired, a Blaze Burner or Seat must be placed directly behind the controls."
+				""
+				"On a Train, Train Controls can be right clicked to take control of the Train. The player's ordinary movement options will affect the Train instead. Use the controls again or sneak to stop. Hold left or right at a fork to choose a path. Use the scroll wheel to adjust maximum speed. Hold jump to approach and align at a Station. If a Steam Whistle is attached, press the sprint key to blow it."
+			]
+			new: ["The &eTrain Controls&r block is required to operate a train. A &bBlaze Burner&r or &bSeat&r must be placed behind it for a conductor. Right-click the controls to drive the train manually."]
+		}
+		quest.135E27A19B935CD7.quest_desc: {
+			old: [
+				"Right-click the chain of a Chain Conveyor to set the frogport’s target, then place the frogport. Frogports can be placed up to 4 blocks to the side and down from their target chain."
+				""
+				"The frogport will only take packages that match its address. The address can be set by right-clicking the placed frogport or in it's UI. "
+				""
+				"The frogport will only send packages that don’t match its address unless its set to “only send packages” in its UI."
+			]
+			new: [
+				"The &eFrogport&r takes packages that match its address. Right-click a &bChain Conveyor&r to set the target, then place the &eFrogport&r within 4 blocks."
+				""
+				"Set the address by right-clicking the placed &eFrogport&r. It will only send packages that do not match its address, unless configured otherwise in its UI."
+			]
+		}
+		quest.46004D01A142777E.quest_desc: {
+			old: ["Smart Fluid Pipes can be used to allow only a certain liquid to pass through them."]
+			new: ["The &eSmart Fluid Pipe&r is a type of &bFluid Pipe&r that can be filtered to allow only a specific liquid to pass through it."]
+		}
+		quest.23A9A2D399A7BF94.quest_desc: {
+			old: [
+				"The Elevator Pulley moves much like the Rope Pulley and shares certain functionalities. Unlike the Rope Pulley, it can phase through blocks, and will not turn back into blocks unless the Pulley is right-clicked."
+				""
+				"An Elevator Pulley requires a single horizontal Redstone Contact to be on the contraption in order to assemble. If more than one is added, the Elevator will not assemble. If either of these conditions are not met, a corresponding error message will be displayed while looking at the Elevator Pulley."
+			]
+			new: ["The &eElevator Pulley&r moves a contraption vertically and can phase through blocks. It requires a single horizontal &bRedstone Contact&r on the contraption to assemble."]
+		}
+		quest.4F78122BABAB041C.quest_desc: {
+			old: [
+				"The Mechanical Plough is a Movement Actor used to break non-collidable blocks and fling entities."
+				""
+				"Placement"
+				"The Plough can only be placed on the horizontal face of a solid block, however, this block is not necessary to support the Plough after it is placed."
+				""
+				"Breaking Blocks"
+				"While attached to a Contraption, the Mechanical Plough will break non-collidable blocks it comes in contact with (ex. snow layers). The Mechanical Plough will also move or launch entities and till soil blocks."
+				""
+				"Tilling"
+				"While attached to a Contraption, the Mechanical Plough will till any grass blocks below it (change grass blocks to farmland), which can be used to quickly till huge farms."
+				""
+				"Flinging Entities"
+				"While attached to a Contraption that moves the Mechanical Plough in a swinging motion, any colliding entities will be flung in the direction of the swing."
+			]
+			new: ["The &eMechanical Plough&r, when on a moving contraption, breaks non-solid blocks like crops and tall grass. It can also be used to till soil into &bFarmland&r."]
+		}
+		quest.7322A19FDA5B78E1.quest_desc: {
+			old: ["The Valve Handle functions much like the Hand Crank, though the amount and direction it rotates with one use can be adjusted in its Value Settings Screen."]
+			new: ["The &eValve Handle&r functions like a &bHand Crank&r but allows you to configure the rotation amount and direction in its UI."]
+		}
+		quest.1B04A295850D0F00.quest_desc: {
+			old: ["The Train Observer is used to detect passing Trains."]
+			new: ["The &eTrain Observer&r is used to detect passing &bTrains&r."]
+		}
+		quest.4181323BF72047A9.quest_desc: {
+			old: [
+				"Rightclick a valid conductor with a schedule to give it to them. A conductor must either be a mob Seated directly in front of Train Controls on an assembled Train or a Blaze Burner positioned similarly."
+				""
+				"3 types of commands can be added."
+				""
+				"Travel to Station - Navigate to a specified Train Station."
+				"Update Schedule Title&r - Name of route as displayed by the Train Station summary in the Display Link."
+				"Limit Max Speed - Change max speed when traveling to a station."
+			]
+			new: ["Give a &eSchedule&r to a conductor (&bSeated Mob&r or &bBlaze Burner&r) to automate a train. The schedule can include commands like traveling to a station or setting a maximum speed."]
+		}
+		quest.09BE3D92053AE1F8.quest_desc: {
+			old: ["When attempting to place the Roller on the top face of a block, it will be placed one block above it, similarly to a Mechanical Mixer or Mechanical Press. Though it appears to take up a few blocks of space, it only takes up one. There is also Placement Assist functionality, allowing for easy placement of Rollers to either of two sides of a roller. The Roller can be picked up by sneak using a Wrench on it."]
+			new: ["The &eRoller&r is placed one block above the targeted block, similar to a &bMechanical Mixer&r or &bMechanical Press&r. It can be picked up by sneak-using a &bWrench&r on it."]
+		}
+		quest.45BA5B8A785E1B82.quest_desc: {
+			old: [
+				"Using a Wrench on a component will rotate the component around the face with which you interacted."
+				""
+				"Using a Wrench on a component, redstone component, rail or vanilla rail variant will dismantle it and place it in your inventory. Any block which can be rotated or otherwise interacted with using right click must be dismantled while sneaking."
+				""
+				"Hovering over certain configurable components will allow configuration by scrolling."
+				""
+				"For certain components such as the Linear Chassis, ctrl can be held to configure all connected components at once."
+			]
+			new: ["The &eWrench&r is used to rotate components and safely dismantle them. Sneak while using it to dismantle blocks that have a right-click function. You can also scroll with the mouse wheel while hovering over certain components to configure them."]
+		}
+		quest.4B976C143EDA4317.quest_desc: {
+			old: [
+				"Casings are blocks used throughout many crafting recipes in Create, as well as for decoration and aesthetic purposes."
+				""
+				"There are four types of Casings: Andesite Casings are mainly used in basic Contraptions."
+				""
+				"{@pagebreak}"
+				"Casings can only be crafted through physically applying a valid alloy or ingot to any Stripped variant of Log or Wood. The logs will convert themselves into the casing."
+				""
+				"Mechanical Belts, Shafts, and Cogwheels can be encased in most casings, creating a decoration around the encased block. Copper casings, however, can be used only on Fluid Pipes. Likewise, a fluid pipe will not accept any other kind of casing."
+			]
+			new: [
+				"&eCasings&r are decorative blocks used in many crafting recipes. &dAndesite Casings&r are used for basic contraptions."
+				""
+				"{@pagebreak}"
+				""
+				"Craft casings by applying an &balloy&r or &bingot&r to a &bStripped Log&r. Most casings can be used to encase &bShafts&r, &bCogwheels&r, and &bMechanical Belts&r for decoration. &dCopper Casings&r are exclusively for &bFluid Pipes&r."
+			]
+		}
+		quest.50CE0BD7B0BC4017.quest_desc: {
+			old: ["Fluid Valves can be switched between open and closed by providing Rotational Force to the side. This is often done with a Valve Handle or Gearshift. A set of directional arrows on the side of the valve will also rotate to indicate whether the valve is open or closed."]
+			new: ["The &eFluid Valve&r can stop or allow the flow of liquids when rotational force is applied to its side. This is often done with a &bValve Handle&r or &bGearshift&r."]
+		}
+		quest.0BBE6CADED48A971.quest_desc: {
+			old: [
+				"Click a Stock Link with the Stock Ticker to connect it to that network. Place a Mob in a Seat or a Blaze Burner behind the Stock Ticker to turn it into a Stock Keeper."
+				""
+				"The Stock Keeper can see all the items on the network. The UI displays how many Stock Links are connected. If the Stock Keeper is left unlocked, players can search the network, request items, and give their requests an Address to be sent to."
+				""
+				"If the Stock Keeper is locked, other players will not be able to access its UI. The Stock Keeper will still be able to accept Shopping Lists."
+			]
+			new: [
+				"Connect the &eStock Ticker&r to a network by clicking a &bStock Link&r. Place a &bMob in a Seat&r or a &bBlaze Burner&r behind it to create a &dStock Keeper&r."
+				""
+				"The &dStock Keeper&r allows players to search the network and request items. Locking it prevents other players from accessing its UI, but it will still accept &bShopping Lists&r."
+			]
+		}
+		quest.1D00D782B8F0B6D6.quest_desc: {
+			old: [
+				"The Mechanical Mixer is powered by an internal cogwheel, and will behave as one to any adjacent components, relaying and reversing rotation sideways."
+				""
+				"The Mixer requires a minimum rotational speed of 30 RPM from its power source to work. Mixers will process ingredients faster the more speed it is given."
+				""
+				"To work, a Mixer must be placed directly above a Basin, with a 1 block gap. When a valid recipe is inserted by throwing the ingredients in the Mixer, the Mixer will automatically combine the ingredients."
+			]
+			new: [
+				"The &eMechanical Mixer&r is powered from its internal cogwheel and requires a rotational speed of at least 30 RPM."
+				""
+				"It must be placed one block above a &bBasin&r. When a valid recipe's ingredients are thrown into the &bBasin&r, the mixer will automatically activate and combine them."
+			]
+		}
+		quest.4CFE8B1C53B429E9.quest_desc: {
+			old: ["Crafter Slot Covers are used to denote empty spaces in Mechanical Crafter setups."]
+			new: ["&eCrafter Slot Covers&r are used to mark empty slots in a &bMechanical Crafter&r setup, ensuring the crafting recipe is correctly recognized."]
+		}
+		quest.383D6F1A001A0AEC.quest_desc: {
+			old: ["Chutes transport items vertically, generally downward unless an encased fan is used to blow items upward. There are two varieties: Chute and Smart Chute. Smart Chutes allow the player to control the types of items passed and their stack size."]
+			new: ["The &eChute&r transports items vertically downwards. An &bEncased Fan&r can be used to blow items upwards. The &dSmart Chute&r variant allows for item filtering."]
+		}
+		quest.768789FEB6EBB8F8.quest_desc: {
+			old: [
+				"A Blaze Burner is a heating component that is required for certain Mixing recipes. It can be used for heating Steam Engines, Bulk Smoking, Bulk Smelting, and as a decorative light source."
+				""
+				"{@pagebreak}"
+				""
+				"Heating"
+				"Blaze Burners are used for Heating and Super-Heating Basins when doing Mixing recipes. In particular, they are required to make Brass. They can also be used as a heat source for boilers used to power Steam Engines. When a heat-able block is placed above a fueled Blaze Burner, the Burner will appear to channel heat into the block."
+				""
+				"Right-clicking a Blaze Burner with any item that can be used as Furnace fuel will temporarily put it in a Heated state. Right-clicking a Blaze Burner with a Blaze Cake will temporarily put it in a Super-Heated state."
+			]
+			new: [
+				"The &eBlaze Burner&r is a heat source required for certain &bMixing&r recipes, such as creating &dBrass&r. It can also heat a boiler for a &bSteam Engine&r."
+				""
+				"{@pagebreak}"
+				""
+				"Heating"
+				"Right-click it with &bfurnace fuel&r to heat it, or with a &bBlaze Cake&r to &dSuper-Heat&r it for advanced processes."
+			]
+		}
+		quest.3A2633B6030BBC52.quest_desc: {
+			old: ["While worn, the Engineer's Goggles will show the stress impact of the viewed machine while it is running. They will also give numbers and highlight the current rotation when looking at a Stressometer or Speedometer. Additionally, they show how much fluid is in a tank along with the total storage capacity of the tank."]
+			new: ["While worn, the &eEngineer's Goggles&r display information about mechanical systems, such as stress impact, rotational speed, and the amount of fluid in a &bFluid Tank&r."]
+		}
+		quest.4D482A1A908ABFDA.quest_desc: {
+			old: [
+				"Unlike Linear Chassis, the Radial Chassis connects to a radius of blocks around it rather than a straight line of blocks. This can be unwieldy if there are blocks nearby one would rather not connect to the Contraption."
+				""
+				"You can right click on the sides of the chassis while holding a Slimeball or Super Glue to make them sticky, and again to apply it to all sides. The items are not consumed. The radius of affected blocks can be changed per chassis with a Wrench. Hold Ctrl to scroll every connected chassis."
+			]
+			new: ["The &eRadial Chassis&r connects to a radius of blocks around it. Use a &bSlimeball&r or &bSuper Glue&r to make its faces sticky. The radius can be adjusted with a &bWrench&r."]
+		}
+		quest.38E9C4DB82B1279A.quest_desc: {
+			old: [
+				"While stationary, certain items can be applied to the block's filter. If it has a filter, it will only affect that contraption actor. If powered with a redstone signal before and while it is assembled, the contraption actors will start out disabled. Keep in mind that redstone and levers assembled on Contraptions have no effect."
+				""
+				"While on an assembled Contraption, Contraption Controls can be right-clicked to enable and disable certain Contraption Actors."
+			]
+			new: ["The &eContraption Controls&r block allows you to enable or disable actors on a moving contraption, like drills or saws. Apply a filter to control a specific actor."]
+		}
+		quest.147FC2959F9FC5F5.quest_desc: {
+			old: [
+				"Trains are Contraptions that travel on Train Tracks."
+				""
+				"Assembly"
+				"Place the track and right-click it with a station block. Place the station block near the track."
+				""
+				"Right click on the station and select \"Create Train\" to enter assembly mode (blue flag shown on station)."
+				""
+				"Place one or more Train Casings on the track where indicated with blue. The casings will turn into bogeys."
+				""
+				"When assembled, each bogey will automatically become coupled together as part of the train."
+				" "
+				"Place a Train Controls block facing the direction dictated by the station. Place a Seat or Blaze Burner behind the controls for the driver."
+				""
+				"Use Block Attachment Utilities such as Super Glue to connect all parts together (green highlight)."
+				""
+				"When finished, use the Station's interface to attempt to assemble the Train. If a Train fails to assemble, an error will be shown in the Station's interface. Common errors are detailed below."
+			]
+			new: [
+				"&eTrains&r are contraptions that travel on &bTrain Tracks&r."
+				""
+				"To assemble a train, place a &bStation&r near a track and select \"Create Train\". Place &bTrain Casings&r on the track to form bogeys. Add &bTrain Controls&r and a &bSeat&r or &bBlaze Burner&r for the driver."
+				""
+				"Use &bSuper Glue&r to connect all parts, then assemble the train via the &bStation's&r interface. Errors will be displayed if assembly fails."
+			]
+		}
+		quest.21A830CC8DAD6566.quest_desc: {
+			old: [
+				"Right-click a Train Track, then place the Station within 15 blocks of the track. It can only create Trains if placed on a straight Track, and Bogeys may only be placed on a 3 block long straight track."
+				""
+				"In the interface, the Station can be named; these names are how non-player conducted Trains will identify stations. A conductor cannot be instructed to navigate to a station that is named the same as the station they are currently at, and will otherwise choose the closest accessible station out of multiple stations with the same name."
+				""
+				"The name will also show up on a Map if it is used on the station, similarly to Banners."
+			]
+			new: [
+				"Place the &eStation&r within 15 blocks of a straight &bTrain Track&r to create trains."
+				""
+				"Stations can be named in their interface. This name is used by conductors for navigation and will appear on a &bMap&r if used on the station."
+			]
+		}
+		quest.35C37231C1C86294.quest_desc: {
+			old: [
+				"uper glue has two modes of application: Block by Block Mode and Area Mode. These modes can be intermixed on the same contraption."
+				""
+				"Each use of the super glue decreases its durability by one. (Durability in this case means the number of times that a tube of super glue can be used. The glue attaching blocks is permanent until removed.) Super Glue can be Enchanted with unbreaking and mending to extend its life."
+				""
+				"{@pagebreak}"
+				""
+				"Block by Block Mode"
+				"In block-by-block mode, super glue is used just like a Slimeball. Right clicking on a Linear Chassis or Radial Chassis while holding the super glue, coats the face of a chassis with green glue allowing other blocks to be attached."
+				""
+				"Super glue can also be held in the off hand while placing blocks to automatically glue each block individually. Note that the edges of chassis cannot be coated with glue like the face can. However, while holding super glue in the off-hand, blocks can still be attached to the edges of chassis."
+				""
+				"Remove glue coatings from the faces of chassis by right clicking with an empty hand while sneaking."
+				""
+				"{@pagebreak}"
+				""
+				"Area Mode"
+				"Area mode is used to glue collections of blocks together after they have been placed. Glue a 3-D section of blocks by right clicking a block on one corner of the section while holding the super glue. Move the cursor to the opposite corner of the section. A green box will appear indicating the blocks which will be glued together. Right click again to complete the glueing process. To abort the process, right click while sneaking."
+				""
+				"The second block can be up to 24 blocks away from the initially selected block and the maximum volume of selection is 2312. No matter the size of the selection, only 1 durability will be used. Overlapping instances of super glue will combine while keeping their shape. Note that the game will not allow you to select the face of a chassis in area mode, it will instead revert to block by block mode. To select a chassis in area mode, click on the side rather than the face."
+				""
+				"Glued areas can be seen simply by holding the super glue in the main hand. Glued areas will be outlined in green. Note that blocks glued by first coating a surface with glue and then attaching a block (as in the Block by Block Mode) will not show a green outline. However, blocks attached with the super glue in the off hand will show a green outline."
+			]
+			new: [
+				"&eSuper Glue&r is used to attach blocks to a contraption. It can be applied block-by-block to a &bChassis&r or used in an area mode to glue a selection of blocks together."
+				""
+				"{@pagebreak}"
+				""
+				"Block by Block Mode"
+				"Right-click a &bChassis&r face with &eSuper Glue&r to coat it. You can also hold it in your off-hand while placing blocks to glue them automatically."
+				""
+				"{@pagebreak}"
+				""
+				"Area Mode"
+				"Right-click two opposite corners of a selection to glue all blocks within the area."
+			]
+		}
+		quest.177C0E37A35A14F4.quest_desc: {
+			old: [
+				"When Powered by kinetics:"
+				""
+				"Starts rotating the attached structure towards the current hour. If an independent second structure exists in front of the first one, it will serve as the minute hand."
+				""
+				"The Value Settings Screen can be accessed from the side of the block, and can be used to change the order of the hands or switch to a 24-hour reading resembling the Clock item."
+			]
+			new: [
+				"When powered, the &eClockwork Bearing&r rotates an attached structure to the current hour. A second, separate structure can act as the minute hand."
+				""
+				"The Value Settings Screen allows for changing the hand order or switching to a 24-hour format."
+			]
+		}
+		quest.5C2108BD3DEEB0E6.quest_desc: {
+			old: [
+				"The Spout is a block used for filling liquid containers such as bottles or buckets, or crafting with liquids."
+				""
+				"The Spout can be filled with up to 1 bucket of any one liquid via Fluid Pipes, and it will empty some of its fluid onto compatible items that pass under it via a Conveyor Belt or Depot. "
+				""
+				"The spout takes 1 second to process an item regardless of the amount of fluid used, though delay between fills may be caused by the time it takes the spout to fill back up."
+			]
+			new: ["The &eSpout&r fills containers with liquids or is used for crafting recipes involving fluids. It must be supplied with a liquid via &bFluid Pipes&r and will dispense it onto items on a &bConveyor Belt&r or &bDepot&r below."]
+		}
+		quest.30A84C6A54BD336E.quest_desc: {
+			old: [
+				"A stationary Mechanical Drill will break blocks in the block in front of it with a time in seconds of (45 x Hardness)/RPM and will hurt entities in an area around it."
+				""
+				"A Mechanical Drill moved by Contraptions will break blocks and damage entities with which it collides without needing a direct supply of Rotational Force."
+				""
+				"The time it takes for a Mechanical Drill to break a block is based on the Contraption's speed and the block's Hardness value. The damage dealt to entities is also based on the Contraption's speed."
+			]
+			new: ["A stationary &eMechanical Drill&r will break the block in front of it. When moved on a &bContraption&r, it breaks blocks it collides with. Its breaking speed and damage depend on the rotational speed or contraption speed."]
+		}
+		quest.77C3D285E52CCA0E.quest_desc: {
+			old: ["Table Cloths can be used to sell items to other players."]
+			new: ["&eTable Cloths&r can be used as a simple way to sell items to other players."]
+		}
+		quest.743C84D1D94C5670.quest_desc: {
+			old: ["The Brass Funnel is a block that can extract or insert items into inventories"]
+			new: ["The &eBrass Funnel&r is an advanced version of the &bFunnel&r that can be configured to move specific quantities of items, making it useful for precise automation."]
+		}
+		quest.4512B97451C2221F.quest_desc: {
+			old: ["The Mechanical Arm can take or deposit items from various blocks within a 5 block radius of where it is placed. A placed Mechanical Arm's selected blocks can be viewed by hovering over it with a Wrench. The Mechanical Arm is capable of transferring up to a stack of items at once."]
+			new: ["The &eMechanical Arm&r can move items between inventories within a 5-block radius. Use a &bWrench&r while hovering over it to see its selected input and output points."]
+		}
+		quest.66D9F91519D52482.quest_desc: {
+			old: ["Blaze Cake is an item that can be fed to a Blaze Burner in order to make it Super-Heated."]
+			new: ["The &eBlaze Cake&r is a special fuel used on a &bBlaze Burner&r to achieve the &dSuper-Heated&r state, which is required for certain advanced recipes."]
+		}
+		quest.302D29E43E9C9A94.quest_desc: {
+			old: [
+				"When placed adjacent to any inventory, Packagers can create Cardboard Packages from the inventory they’re attached to. The process does not require extra materials."
+				""
+				"When powered with a redstone signal, the packager attempts to fill the package as much as possible. A Cardboard Package has 9 slots of inventory. Placing a written sign on the Packager labels the created Cardboard Package with an address to be sent to."
+			]
+			new: ["When placed next to an inventory, the &ePackager&r creates &bCardboard Packages&r. A &bRedstone Signal&r makes it fill the package as much as possible. Placing a written &bSign&r on the &ePackager&r assigns an address to the package."]
+		}
+		quest.4C7CD3858A2BE870.quest_desc: {
+			old: [
+				"The Mechanical Press is a mechanical component that applies Pressing, Packing, and Compacting recipes to items below it. It is used to press Ingots into Sheets, which are important ingredients for higher-level components."
+				""
+				"The Mechanical Press is powered by an internal Shaft, accessed from two opposite sides. Much like Shafts, Presses will relay rotation along their axis. It processes items faster when it receives faster rotational power."
+			]
+			new: ["The &eMechanical Press&r applies pressing and compacting recipes to items placed on a &bDepot&r or &bBasin&r below it. It is powered by a shaft and is used to turn &bIngots&r into &bSheets&r."]
+		}
+		quest.21B40BEC30B40491.quest_desc: {
+			old: [
+				"While held, funnels prevent the player from accessing inventories, instead placing them. Sneak right clicking with a Funnel places it in input mode."
+				""
+				"Using a Wrench on the funnel switches it between input and output mode. Redstone can be applied to stop the funnel from inputting or outputting. Right-clicking a funnel on a Mechanical Belt causes it to extend one block forward."
+			]
+			new: [
+				"The &eFunnel&r inputs or extracts items from inventories. Sneak-right-clicking places it in input mode."
+				""
+				"Use a &bWrench&r to switch between input and output modes. It can be disabled with a &bRedstone Signal&r. Right-clicking a &bMechanical Belt&r extends it forward."
+			]
+		}
+		quest.2CD70FCC8B119D7A.quest_desc: {
+			old: ["The Brown arrow symbols on the pump indicate the direction of flow. The flow direction can be changed by using a Wrench. When a wrench is used, the entire valve will appear to have rotated 180 degrees. The brown directional arrows will appear on the other side of the pump's gear."]
+			new: ["The &eMechanical Pump&r moves fluids through pipes. The arrow symbols indicate the direction of flow, which can be reversed using a &bWrench&r."]
+		}
+		quest.719218CEA358D540.quest_desc: {
+			old: ["Right-click the ground to place a Train Track facing away from you. Train tracks can be placed in eight different directions corresponding to the closest of the four cardinal direction and 45° increments in between. Tracks may also be placed on the side of blocks that have no blocks immediately above them. These tracks will have a 45° vertical incline. Break tracks using any pickaxe or by right clicking with a wrench while sneaking. Breaking with any other item will cause a track to disappear."]
+			new: ["&eTrain Tracks&r can be placed on the ground or on the side of blocks to create slopes. Use a &bWrench&r while sneaking to safely pick them up."]
+		}
+		quest.2E8B8DBE61162084.quest_desc: {
+			old: [
+				"They can be filtered to only allow certain items through, and be stopped with a redstone signal. Unlike funnels, they can insert and extract at the same time, but can only function vertically."
+				""
+				"When directly below an inventory, the Filter slot doubles as a Value Settings diode, much like the Brass Funnel. The Chute can be adjusted to extract up to or exactly a set amount of items. The Value Settings of a Smart Chute will be saved even when the inventory above is destroyed, though this has no effect on the Chute's behavior when not under an inventory."
+			]
+			new: ["The &eSmart Chute&r functions like a regular &bChute&r but can be filtered to allow only specific items. It can also be configured to extract a set amount of items from an inventory above it."]
+		}
+		quest.2A404708E175235F.quest_desc: {
+			old: [
+				"Fluids can be stored and extracted from fluid tanks via Fluid Pipe. The fluid pipes can be placed on any face of the fluid tank: top, bottom, or sides. The window of a tank can be toggled with a Wrench."
+				""
+				"The direction of flow in the fluid pipe indicates whether fluids will be put into the tank or extracted from the tank; if fluid is flowing towards the tank, the fluid will be stored in the tank. Likewise, if a fluid pipe is flowing away from the tank (via Mechanical Pump), then fluid from the tank will be extracted into that pipe."
+			]
+			new: ["The &eFluid Tank&r stores liquids. Use &bFluid Pipes&r to insert or extract fluids. The flow direction of the pipes determines whether fluid is added or removed. The window can be toggled with a &bWrench&r."]
+		}
+		quest.1DBA8DD396081924.quest_desc: {
+			old: ["The Interfaces must be placed facing each other at 1-2 blocks apart, one on a Contraption with Fluid Tanks and one stationary. A Fluid Pump is required to insert or extract liquid from the Contraption. To pump liquids to another tank, simply connect the stationary interface and the fluid tank with fluid pipes, although pumps are required to move the liquids."]
+			new: ["The &eContraption Interface&r transfers fluids between a moving contraption and a stationary location. The interfaces must be placed facing each other, 1-2 blocks apart. A &bFluid Pump&r is required to move liquids."]
+		}
+		quest.6CD96328B7567F46.quest_desc: {
+			old: ["The Mechanical Harvester will harvest all mature crops it comes in contact with while moving forward."]
+			new: ["The &eMechanical Harvester&r, when on a moving contraption, will automatically harvest mature crops it comes into contact with."]
+		}
+		quest.61348E2551E8AD6C.quest_desc: {
+			old: [
+				"For the Rotation Speed Controller to work, it must be paired with a Large Cogwheel. The Rotation Speed Controller, when powered by the Large Cogwheel, outputs any desired speed of rotational force from its sides. It also does the opposite; when powered from its sides, it controls the speed of the Large Cogwheel."
+				""
+				"The rotation speed and direction can be changed in the Value Settings Screen at the front or the back of the machine. The speed can be set to a maximum of 256rpms clockwise or counter-clockwise."
+			]
+			new: ["The &eRotation Speed Controller&r must be paired with a &bLarge Cogwheel&r. It allows you to set a precise rotation speed output, up to 256 RPM in either direction."]
+		}
+		quest.7917E75BBA3F0614.quest_desc: {
+			old: [
+				"First, use the display link on a Display Block to link it. Then place it on the Source Block that will be read from. Though it will link to any block, not every block can act as a display or source. "
+				""
+				"Right click the link to access its interface. Additional labels can be added to the output text through this interface. Some sources provide multiple options for formatting the text. Once the interface settings are accepted, the green light on the display link will start blinking, indicating transmission of information to the display blocks."
+			]
+			new: ["The &eDisplay Link&r transmits information from a source block to a &bDisplay Board&r. Use the link on a display, then place it on a source. Right-click the link to configure the output text."]
+		}
+		quest.1FDBB75ECD39FB24.quest_desc: {
+			old: [
+				"The Item Drain can hold up to 1500mb of fluid at a time. A Fluid Pump is needed to extract the fluid."
+				""
+				"A Basin will automatically deposit output fluids into an Item Drain placed near it."
+			]
+			new: [
+				"The &eItem Drain&r can hold up to 1500mb of fluid. A &bFluid Pump&r is needed to extract the fluid from it."
+				""
+				"A &bBasin&r will automatically deposit output fluids into an adjacent &eItem Drain&r."
+			]
+		}
+		quest.24CFA0022432887E.quest_desc: {
+			old: [
+				"When placed by the player, the Threshold Switch will attempt to orient itself toward an adjacent inventory. If multiple or no inventories are present, the Threshold Switch may orient itself toward the player and can be adjusted as normal using the Wrench. At present, it cannot be oriented vertically."
+				""
+				"Item thresholds can be set to determine when the redstone signal turns on or off. When the Switch is first placed, it stays off until it reaches 75% inventory, then stays on until it reaches 25% inventory."
+				""
+				"{@pagebreak}"
+				"The chest icon represents how full the inventory is, as well as the current signal state (on/off) depending on which lane the chest icon is in. The arrows represent inventory thresholds, illustrated by the chest icon switching lanes upon reaching the arrow."
+				""
+				"The signal can be inverted by clicking the button showing two opposing arrows next to the lower threshold bar."
+			]
+			new: [
+				"The &eThreshold Switch&r emits a &bRedstone Signal&r based on an inventory's fullness. It orients itself towards an adjacent inventory upon placement."
+				""
+				"{@pagebreak}"
+				""
+				"The thresholds for turning the signal on and off can be configured in its UI. The signal can also be inverted."
+			]
+		}
+		quest.53C0234C053BF0CF.quest_desc: {
+			old: [
+				"Place a Stock Link to start a new Logistics Network. Right-click a placed Stock Link before placement to share that link’s network. Place the link on a Packager to connect the packager’s connected inventory to the network."
+				""
+				"Stock Links have no range limitations, but the chunk they’re in must be loaded in order to be seen by the network."
+				""
+				"Stock Links can receive and transmit requests through the Logistics Network."
+			]
+			new: ["Place a &eStock Link&r on a &bPackager&r to connect its inventory to the logistics network. &eStock Links&r have no range limit, but must be in a loaded chunk to function."]
+		}
+		quest.19754AE8C11A6317.quest_desc: {
+			old: [
+				"The Deployer simulates player actions on blocks or entities exactly 2 blocks away from it."
+				""
+				"The Deployer can be given items to use with machines or by right clicking the items into the hand."
+				""
+				"The Deployer can be stopped with a Redstone signal."
+				""
+				"The Filter on the side of the Deployer can be adjusted to only use certain items. The filter is also essential when using a Deployer in a Contraption."
+				""
+				"{@pagebreak}"
+				""
+				"The Deployer has 2 inventory slots; the held item and one extra internal slot. As well as unusable items, items harvested by the Deployer will be transferred to the extra slot to be removed by machines, during which time the Deployer will stall. Items cannot be extracted from the extra slot directly by the player."
+				""
+				"The Deployer simulates right clicks by default. It can be adjusted to left click instead by right clicking the front with a Wrench. While in left-click mode, the Deployer can use normal tools, such as pickaxes and swords. The tools will behave as if the player was holding them, including mobs dropping rare items when slain by a Deployer."
+			]
+			new: [
+				"The &eDeployer&r simulates player actions on blocks or entities 2 blocks away. It can be given items to use and can be stopped with a &bRedstone Signal&r."
+				""
+				"A &bFilter&r can be set to specify which items to use."
+				""
+				"{@pagebreak}"
+				""
+				"By default, the &eDeployer&r simulates right-clicks. Use a &bWrench&r on its front to switch it to left-click mode, allowing it to use tools like pickaxes and swords."
+			]
+		}
+	}
+}

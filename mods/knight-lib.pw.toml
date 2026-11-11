@@ -1,0 +1,13 @@
+name = "Knight Lib"
+filename = "knightlib-neoforge-1.21.1-2.0.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/hAnl9nbm/versions/S2thfur8/knightlib-neoforge-1.21.1-2.0.5.jar"
+hash-format = "sha512"
+hash = "1ef8b486a19fd293d049ba76b58fd00b0dbf2ff8531b77b02cb9d2e33198a9ca1f689138ab4f0709c15c636d51ab04cc9dfaeca3b2ca3223ae726bd05edd2f71"
+
+[update]
+[update.modrinth]
+mod-id = "hAnl9nbm"
+version = "S2thfur8"

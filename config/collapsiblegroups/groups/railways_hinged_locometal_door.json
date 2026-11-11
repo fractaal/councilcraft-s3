@@ -1,0 +1,19 @@
+{
+  "id": "railways_hinged_locometal_door",
+  "name": {
+    "translate": "collapsible_groups.group.railways_hinged_locometal_door",
+    "fallback": "Railways: Hinged Locometal Door"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "railways"
+      },
+      {
+        "item_path_ends_with": "hinged_locometal_door"
+      }
+    ]
+  }
+}

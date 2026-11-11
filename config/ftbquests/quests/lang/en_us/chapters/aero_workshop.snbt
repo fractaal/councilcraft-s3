@@ -1,0 +1,48 @@
+{
+	chapter.152E15BCE9C8DF8C.title: "&6A Practical Workshop"
+	quest.0203E74ABB4E19EF.title: "One View of Your Supplies"
+	quest.0203E74ABB4E19EF.quest_desc: [
+		"Build a Tom's storage terminal to browse a connected workshop inventory. Use its current JEI recipe."
+		"Start with a small network beside two ordinary chests; expand only after you can withdraw and return items reliably."
+	]
+	quest.2AF564E68FD62FB6.title: "Craft from Stored Ingredients"
+	quest.2AF564E68FD62FB6.quest_desc: [
+		"Upgrade to a crafting terminal and connect it to the network you just tested."
+		"Try a chest or torch recipe using stored ingredients. Keep your existing storage accessible while you migrate it."
+	]
+	quest.630F46F8C93BA7AC.title: "Wireless Workshop Access"
+	quest.630F46F8C93BA7AC.quest_desc: [
+		"Obtain a wireless terminal. Follow its tooltip to link it, then test near your working network."
+		"Range, upgrades and dimension access depend on the installed version. Wireless access from a moving ship is not assumed."
+	]
+	quest.497D954F77E35575.title: "Build a Logistics Route"
+	quest.497D954F77E35575.quest_desc: [
+		"Make two LogisticsNetworks nodes for a small source-to-destination test. Use the mod's controls to configure the route."
+		"This route complements your workshop storage. Start with a single item and a nearby destination so mistakes are easy to see."
+	]
+	quest.0DEF800B55A56918.title: "Prepare Compact Crafting"
+	quest.0DEF800B55A56918.quest_desc: [
+		"Obtain a Compact Crafting Field Projector. Inspect its JEI uses to find recipes available in this pack."
+		"This is an optional multiblock-crafting branch. Do not assume recipes or machine sizes from older Compact Machines packs apply here."
+	]
+	quest.62AF1A8307DA7CE8.title: "Enter Compact Machines"
+	quest.62AF1A8307DA7CE8.quest_desc: [
+		"Make a Personal Shrinking Device and follow its tooltip and current JEI uses to set up a Compact Machine."
+		"The installed room system differs from older versions. Keep the entrance somewhere safe in your base."
+	]
+	quest.6499B568082965F9.title: "Connect Your First Storage Network"
+	quest.6499B568082965F9.quest_desc: [
+		"Connect two chests using the Inventory Connector and the connections shown by the installed mod."
+		"Put a different item in each chest. At the terminal, withdraw and return both items. The final checkmark is a manual confirmation of this working setup; possession of components alone does not test a network."
+	]
+	quest.102A41F46F4F7E85.title: "Filter a Delivery"
+	quest.102A41F46F4F7E85.quest_desc: [
+		"Configure a filter for iron ingots on your test route. Put iron ingots and a different item in the source."
+		"Verify iron arrives at the destination while the unrelated item stays behind. The checkmark records this test manually. Use your existing ingots; item tasks do not consume them."
+	]
+	quest.0DB417F9E202726E.title: "A Persistent Pocket Workshop"
+	quest.0DB417F9E202726E.quest_desc: [
+		"Enter your Compact Machine room, place a chest with an item inside, leave, then return. Confirm the chest and its contents are still there."
+		"Mark the final task after this test. External connections and moving-ship compatibility require separate tests."
+	]
+}

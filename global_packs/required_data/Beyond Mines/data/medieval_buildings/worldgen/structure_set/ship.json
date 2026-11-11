@@ -1,0 +1,14 @@
+{
+	"structures": [
+		{
+			"structure": "medieval_buildings:ship",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"salt": 1564422,
+		"spacing": 60,
+		"separation": 24,
+		"type": "minecraft:random_spread"
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:shipwreck",
+  "biomes": "#minecraft:has_structure/shipwreck",
+  "is_beached": false,
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_height": {
+    "above_bottom": 48
+  },
+  "start_height": {
+    "above_bottom": 48
+  },
+  "step": "surface_structures"
+}

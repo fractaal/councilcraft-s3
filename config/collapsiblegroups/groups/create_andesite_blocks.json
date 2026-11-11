@@ -1,0 +1,32 @@
+{
+  "id": "create_andesite_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.create_andesite_blocks",
+    "fallback": "Create: Andesite Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "any": [
+          {
+            "item_path_contains": "cut_andesite"
+          },
+          {
+            "item_path_contains": "small_andesite"
+          },
+          {
+            "item_path_contains": "layered_andesite"
+          },
+          {
+            "item_path_contains": "andesite_pillar"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "reliquary:ender_staff",
+    "reliquary:glacial_staff",
+    "reliquary:pyromancer_staff",
+    "reliquary:sojourner_staff",
+    "reliquary:serpent_staff"
+  ]
+}

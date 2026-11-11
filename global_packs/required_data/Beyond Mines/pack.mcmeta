@@ -1,0 +1,17 @@
+{
+    "pack": {
+        "pack_format": 61,
+        "supported_formats": [
+            26,
+            61
+        ],
+        "description": [
+            {
+                "text": "Created by "
+            },
+            {
+                "text": "BeyondMines.net"
+            }
+        ]
+    }
+}

@@ -1,0 +1,12 @@
+{
+	"chapters/end.snbt": {
+		quest.196023BD7BB276EB.quest_desc: {
+			old: [""]
+			new: ["The Ender Dragon drops a Dragon Heart, crucial for Draconic Evolution crafting."]
+		}
+		quest.0BEEC906FEC7B7E8.quest_desc: {
+			old: [""]
+			new: ["The End dimension contains uraninite ore geodes, making it an excellent place to gather uraninite."]
+		}
+	}
+}

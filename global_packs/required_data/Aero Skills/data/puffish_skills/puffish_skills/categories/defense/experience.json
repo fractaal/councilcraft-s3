@@ -1,0 +1,46 @@
+{
+	"experience_per_level": {
+		"type": "expression",
+		"data": {
+			"expression": "min(level ^ 2.732 + 100, 6000)"
+		}
+	},
+	"sources": [
+		{
+			"type": "puffish_skills:take_damage",
+			"data": {
+					"variables": {
+						"damage": {
+							"operations": [
+								{
+									"type": "get_taken_damage"
+								}
+							]
+						},
+						"is_fall_damage": {
+							"operations": [
+								{
+									"type": "get_damage_source"
+								},
+								{
+									"type": "get_type"
+								},
+								{ 
+									"type": "puffish_skills:test",
+									"data": {
+										"damage_type": "#is_fall"
+									}
+								}
+							]
+						}
+					},
+					"experience": [
+						{
+							"condition": "!is_fall_damage",
+							"expression": "damage * 4"
+						}
+					]
+			}
+		}
+	]
+}

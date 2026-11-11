@@ -1,0 +1,1027 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 2,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bread",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_porkchop",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_chicken",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:baked_potato",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:apple",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:melon_slice",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sweet_berries",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:torch",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:arrow",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:coal",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nugget",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 9
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:flint",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone_meal",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:feather",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:oak_log",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ladder",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_wool",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lead",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone_sword",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone_pickaxe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone_axe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bucket",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:shears",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:fishing_rod",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_helmet",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_chestplate",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_leggings",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_boots",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "expand": true,
+          "name": "mob_loot_bags:bonus/common"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.25
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.4
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "actuallyadditions:engineer_house",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifacts:chests/campsite_barrel/crops",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifacts:chests/campsite_barrel/food",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "artifacts:chests/campsite_barrel/gems",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "betterdungeons:small_dungeon/chests/loot_piles",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "bmairballoons:chests/barrels",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/food",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "enderio:chests/alloy_loot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "enderio:chests/common_loot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "farmersdelight:chests/fd_abandoned_mineshaft",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "farmersdelight:chests/fd_pillager_outpost",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "farmersdelight:chests/fd_shipwreck_supply",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "farmersdelight:chests/fd_simple_dungeon",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "farmersdelight:chests/fd_village_butcher",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "friendsandfoes:barrels/iceologer_cabin",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "friendsandfoes:barrels/illusioner_shack_attic",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "friendsandfoes:barrels/illusioner_shack_basement",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "friendsandfoes:chests/iceologer_cabin",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:abandoned_factory/room_barrel",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "golemdungeons:abandoned_factory/room_chest",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "irregular_implements:chests/nature_core",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/ship_barrel",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/town_outside_chests",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/kitchen",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/illager_mansion/witch_chest",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/entrance",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/reward",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/trial_chambers/supply",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_armorer",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_cartographer",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:houses_common",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:junk",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mss:sparse",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/conduit_ruin/conduit_ruin_main",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/conduit_ruin/conduit_ruin_small",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/creeping_crypt/crypt_grave",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/food_supply",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_meat",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_random",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_raw_ores",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_trash",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/illager_hideout_vegitarian",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/jungle_ruins/jungle_ruins_house",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/lone_citadel/c_banner",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/lone_citadel/c_cold_barrel",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/mangrove_witchhud",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/mining_supply",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/pillager_outpost_kitchen",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/ruin_loot_master",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/toxic_lair/kitchen",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/water_supply",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/witch_villa/kitchen",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pneumaticcraft:custom/common_dungeon_loot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "pneumaticcraft:custom/uncommon_dungeon_loot",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "ribbits:chests/fisherman_storage",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "shellbound_for_airship:chests/airship",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/galleon/cannon",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/galleon/key",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/galleon/safe_tools",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/urn_loot/common",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/urn_loot/uncommon",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "supplementaries:loot/urn_loot/urn_loot",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/common/mushroom_house",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/common/ruine_1",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/common/well",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/all_abandoned",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/bases",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/camp_1",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/camp_4/camp_barrels",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/camp_4/street_barrels",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/cold_red_trade/iron",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/cold_red_trade/main",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/desert_ranch/loot",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/desert_ranch/trash",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/dirt_hut",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/explorer_cabin/default_2",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/fort",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/graveyard",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/hobbit_hole",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/igloo_village",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/maison",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/plains_cottage/1_floor",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/plains_cottage/2_floor",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/plains_cottage/2_floor_barrels",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/railroad/coal",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/ruine_bateaux",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/ruine_cabane",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/snowman",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/stelzens",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/basement_emerald",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/basement_gold",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/top",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/top_hay",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/tours",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/wandering_traders/1",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/island_village_1/common_barrels",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/default_loot",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/default_loot_food",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/default_loot_food_better",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/default_loot_trash",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/potions",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_island/bottom_barrels",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_island/lighthouse",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/wooden_manor/blacksmith",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/very_rare/floating_farm_large/barn",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/very_rare/floating_farm_large/pen",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:pillagers/outpost_barrel",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_abandoned_mineshaft",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_pillager_outpost",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_shipwreck_supply",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_simple_dungeon",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_village_plains_house",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_village_snowy_house",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "veggiesdelight:chests/vd_village_taiga_house",
+          "weight": 9
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mob_loot_bags:bags/common"
+}

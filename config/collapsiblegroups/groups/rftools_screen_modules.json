@@ -1,0 +1,72 @@
+{
+  "id": "rftools_screen_modules",
+  "name": {
+    "translate": "collapsible_groups.group.rftools_screen_modules",
+    "fallback": "RFTools: Screen Modules"
+  },
+  "enabled": true,
+  "filter": {
+    "any": [
+      {
+        "type": "item",
+        "id": "rftoolsutility:counter_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:fluid_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:clock_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:redstone_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:counterplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:fluidplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:machineinformation_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:button_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:inventoryplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:inventory_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:energyplus_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:energy_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsutility:text_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsstorage:dump_module"
+      },
+      {
+        "type": "item",
+        "id": "rftoolsstorage:storage_control_module"
+      }
+    ]
+  }
+}

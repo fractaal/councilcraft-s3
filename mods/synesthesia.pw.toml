@@ -1,0 +1,13 @@
+name = "Synesthesia: Sound Visualizer"
+filename = "synesthesia-1.21.1-NeoForge-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2566eccf775b812fdf448cb479c0627113f0cacc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7944216
+project-id = 1402473

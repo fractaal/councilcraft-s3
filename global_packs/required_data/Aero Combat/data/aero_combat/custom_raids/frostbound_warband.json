@@ -1,0 +1,139 @@
+{
+  "name": "raid.aero_combat.frostbound_warband",
+  "weight": 65,
+  "radius": 24,
+  "follow_range": 48,
+  "active_targeting": true,
+  "delay_ticks": 400,
+  "boss_bar_color": "blue",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "min_day": 20,
+  "moon_phase": [
+    2,
+    6
+  ],
+  "biome": [
+    "minecraft:snowy_plains",
+    "minecraft:ice_spikes",
+    "minecraft:snowy_taiga",
+    "minecraft:grove",
+    "minecraft:snowy_slopes",
+    "minecraft:frozen_peaks",
+    "minecraft:jagged_peaks"
+  ],
+  "random_eligible": true,
+  "loot_table": "aero_combat:raids/frostbound_warband",
+  "drop_chances": "none",
+  "drop_xp": true,
+  "drop_loot": true,
+  "spawn_on_ground": true,
+  "spawn_on_liquids": "deny",
+  "waves": {
+    "wave1": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:stray",
+            "count": 3
+          },
+          {
+            "entity": "cataclysm:draugr",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "minecraft:stray",
+            "count": 2
+          },
+          {
+            "entity": "irons_spellbooks:ice_spider",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "wave2": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:draugr",
+            "count": 3
+          },
+          {
+            "entity": "minecraft:stray",
+            "count": 3
+          },
+          {
+            "entity": "irons_spellbooks:ice_spider",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:draugr",
+            "count": 3
+          },
+          {
+            "entity": "cataclysm:royal_draugr",
+            "count": 1
+          },
+          {
+            "entity": "minecraft:stray",
+            "count": 2
+          }
+        ]
+      }
+    ],
+    "wave3": [
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:draugr",
+            "count": 3
+          },
+          {
+            "entity": "cataclysm:royal_draugr",
+            "count": 1
+          },
+          {
+            "entity": "friendsandfoes:iceologer",
+            "count": 1
+          },
+          {
+            "entity": "minecraft:stray",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "weight": 1,
+        "mobs": [
+          {
+            "entity": "cataclysm:draugr",
+            "count": 3
+          },
+          {
+            "entity": "cataclysm:elite_draugr",
+            "count": 1
+          },
+          {
+            "entity": "irons_spellbooks:ice_spider",
+            "count": 2
+          }
+        ]
+      }
+    ]
+  }
+}

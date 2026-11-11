@@ -1,0 +1,52 @@
+// Mob Loot Bags 2.0: the Bag Opener and the Loot Recycler.
+// Edit and run /lootbags reload, or restart. Missing keys are restored with their defaults.
+{
+  // ticks_per_bag: how long the Bag Opener takes per bag (20 ticks = 1 second).
+  "opener": {
+    "ticks_per_bag": 20
+  },
+
+  // The Loot Recycler grinds mob-farm junk into salvage points and turns points_per_bag points into
+  // one output_bag. Loot bags fed to it become stored experience instead (bag_xp).
+  // junk: salvage points per item. Keys are item ids or #item tags. Anything not listed is refused.
+  "recycler": {
+    "ticks_per_item": 5,
+    "points_per_bag": 64,
+    "output_bag": "common",
+    "bag_xp": {
+      "common": 10,
+      "uncommon": 20,
+      "rare": 40,
+      "epic": 80,
+      "legendary": 200,
+      "mythic": 500,
+      "cursed": 60,
+      "hourglass": 40,
+      "locked": 40,
+      "summoning": 40,
+      "ripe_hourglass": 200
+    },
+    "junk": {
+      "#mob_loot_bags:recycler_junk": 1,
+      "minecraft:spider_eye": 2,
+      "minecraft:gunpowder": 2,
+      "minecraft:slime_ball": 2,
+      "minecraft:phantom_membrane": 3,
+      "minecraft:ender_pearl": 4,
+      "minecraft:blaze_rod": 4,
+      "minecraft:ghast_tear": 6,
+      "minecraft:bow": 3,
+      "minecraft:crossbow": 3,
+      "minecraft:golden_sword": 3,
+      "minecraft:iron_sword": 4,
+      "minecraft:chainmail_helmet": 4,
+      "minecraft:chainmail_chestplate": 6,
+      "minecraft:chainmail_leggings": 5,
+      "minecraft:chainmail_boots": 3,
+      "minecraft:golden_helmet": 4,
+      "minecraft:golden_chestplate": 6,
+      "minecraft:golden_leggings": 5,
+      "minecraft:golden_boots": 3
+    }
+  }
+}

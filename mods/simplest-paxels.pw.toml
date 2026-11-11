@@ -1,0 +1,13 @@
+name = "Simplest Paxels"
+filename = "simplest_paxels-1.21.1-1.0.6.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/45YFF9rc/versions/fTEFVsGr/simplest_paxels-1.21.1-1.0.6.jar"
+hash-format = "sha512"
+hash = "9881bc6bb9069e1604b3d68261bc186ab1dfa6c2e17e65ed8c3ad20ba4b34b7478e66e9f61826b9b4fb179ce5c6b3287df175237854087b124614fa33c524330"
+
+[update]
+[update.modrinth]
+mod-id = "45YFF9rc"
+version = "fTEFVsGr"

@@ -1,0 +1,475 @@
+{
+	quest.00249E1AFEF0051A.quest_desc: [
+		"The &bHeart Pulse Belt&r is a curios when equipped the player gets an increased movement speed, step-assist, and increased jump height."
+		""
+		"Upgrade values can be seen on the next page."
+		"{@pagebreak}"
+		"&cRed Heartpulse Belt&f: 1.5 Block Height Jump and slight speed increase."
+		""
+		"&eYellow Heartpulse Belt&f: 2 Block Height Jump and moderate speed increase."
+		""
+		"&9Blue Heartpulse Belt&f: 2.5 Block Height Jump and fast speed increase."
+		""
+		"&aGreen Heartpulse Belt&f: 3 Block Height Jump and very fast speed increase."
+	]
+	quest.00249E1AFEF0051A.title: "A Better Movement"
+	quest.00A7C1FE54F86429.quest_desc: [
+		"&eApotheosis&r overhauls the vanilla enchanting system with three new values, allowing for high-level enchants with upgradable progression. You will want to manage these values as you progress through upgrading your enchanting setup:"
+		""
+		"[\"\", {\"text\": \"Eterna\", \"color\": \"green\"}, \": The power of the enchanting table, capped based on the tier of your bookshelves as well as your \", { \"text\": \"World Tier\", \"color\": \"aqua\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"011DBD2652E49B97\" }, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to World Tiers Quest\"} }, \". This stat determines the maximum level of enchants.\" ]"
+		""
+		"&cQuanta&f: The chaos inherent when enchanting at higher power. This determines the randomness of enchants."
+		""
+		"&dArcana&f: The overall quality and quantity of the enchantments. This determines the rarity of enchants, as well as how many enchants are applied per use."
+	]
+	quest.00A7C1FE54F86429.title: "&6The Secrets of Enchanting"
+	quest.011DBD2652E49B97.quest_desc: [
+		"[\"\", {\"text\": \"Apotheosis\", \"color\": \"yellow\"}, \" has a \", {\"text\": \"World Tier\", \"color\": \"aqua\"}, \" system that can be accessed by pressing \", {\"keybind\": \"key.apotheosis.open_world_tier_select\", \"color\": \"yellow\", \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Default: CTRL + T\"}}, \".\" ]"
+		""
+		"[\"You start at \", {\"text\": \"Haven\", \"color\": \"#7E7E7E\"}, \" upon acquiring your first \", {\"text\": \"Affix Item\", \"color\": \"#55FF55\"}, \", and unlock more tiers as you advance in the mod.\"]"
+		""
+		"Higher tiers increase mob stats and rewards across all dimensions, and reduce your max &aEterna&f cap. These can be viewed in the Tiers menu."
+	]
+	quest.011DBD2652E49B97.title: "&fApothic World Tiers"
+	quest.01D2CEAF59872C33.quest_desc: [
+		"The &dGem Case&f is used to store and upgrade &bGems&r. "
+		""
+		"It's a direct upgrade to the &aGem Cutting Table&f, which is only used to upgrade gems."
+		""
+		"Upgrading a &bGem&r costs &aGem Dust&r, rarity materials, and a second &bGem&r of the same rarity. The material and dust cost of upgrading a &bGem&r increases with its rarity. The exact upgrade costs will be shown in the interface."
+	]
+	quest.01D2CEAF59872C33.title: "&aGem Case"
+	quest.044A192E503B766B.quest_desc: [
+		"The &aHeart Patch&r is like a band-aid it will heal the player based on its level so much health. It has a cooldown so be careful when using it as a life-line."
+		""
+		"Each Tier Increases the base value healed."
+		""
+		"&cRed&f: 1 Heart per use."
+		""
+		"&eYellow&f: 3 Hearts per use."
+		""
+		"&9Blue&f: 6 Hearts per use."
+		""
+		"&aGreen&f: 10 Hearts per use."
+	]
+	quest.044A192E503B766B.title: "Patch Me Up!"
+	quest.0D63039E72A4F69A.title: "&bIce Staff"
+	quest.0E19151FCABF4759.quest_desc: ["Refund your spent skill points in the Athletics tree."]
+	quest.0E19151FCABF4759.title: "&fReset Athletics"
+	quest.0EE35D6E57FAD973.quest_desc: [
+		"The &6Enchantment Library&r acts as a storage for enchantments. With enough low level enchants, it can also create books of higher level enchants for you."
+	]
+	quest.0EE35D6E57FAD973.quest_subtitle: "Enchantment Storage!"
+	quest.0EE35D6E57FAD973.title: "&dEnchantment Library"
+	quest.17612A3DF8930377.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.1771DF7C6EBF1B89.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.1902A402B951AAF6.title: "&bSpellbreaker"
+	quest.192EB03700278BE2.quest_desc: [
+		"The &dRelic Apple&r is more than just an ordinary apple. "
+		""
+		"It gives you buffs when eaten and heals you instantly upon consumption."
+	]
+	quest.192EB03700278BE2.title: "Fancy Apple"
+	quest.1B8BB733ADF897FE.quest_desc: [
+		"&eProductive Metalworks&r is used to smelt and forge alloys into various different parts, which can be used to make tools, armor, and more."
+		""
+		"Start by crafting some &cFire Clay&r and then smelting that into &4Fire Bricks&r. These will be used to build the structure of our &6Foundry&r."
+		""
+		"The &eBig Book of Metallurgy&r can show you how to set up a &6Foundry&r."
+	]
+	quest.1B8BB733ADF897FE.title: "&eProductive Metalworks &6Foundry"
+	quest.1BBED0C6E9F1ED2F.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.1BFDE3507411C116.quest_desc: [
+		"Your &6Foundry&r will need a &aController&r and a &2Tank&r to control the foundry and to store smelting liquids."
+		""
+		"Of course, you'll also need your &6Foundry&r base resistant enough to withstand enough heat to smelt things down."
+		""
+		"&7&oThese can be dyed to match your base aesthetics."
+	]
+	quest.1BFDE3507411C116.title: "&fMain &6Foundry &fComponents"
+	quest.1E7B5442F153ED3B.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.1F804789D4AD363F.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.226E5BD0BEB1BA75.quest_desc: [
+		"These are unique shelves that provide certain bonuses like adding 100% &cQuanta&r, or removing &cQuanta&r and &5Arcana&r."
+	]
+	quest.226E5BD0BEB1BA75.title: "&aMiscellaneous Shelves"
+	quest.266D0151DF0A7BA5.quest_desc: [
+		"The &zVigor Bow&r works similar to a &bHeart Amulet&r. It has its own slots for &2canisters&r."
+		""
+		"Each &2canister&r adds &b1&r additional damage and Draw Speed to the Bow."
+	]
+	quest.266D0151DF0A7BA5.title: "Colorful Bullseye"
+	quest.268CC540E5B605A9.quest_desc: [
+		"The final tier of bookshelves is locked behind the infusion of &dDragon's Breath&r."
+		""
+		"To do this, you will need &a80&r &6Eterna&r, between &a15&r to &a30&r &cQuanta&r, and at least &a60&r &dArcana&r. "
+		""
+		"If you don't have enough &dArcana,&r you can use candles, which provide a small boost."
+	]
+	quest.268CC540E5B605A9.title: "&eAchieving Enlightenment"
+	quest.26B74124E89189F7.quest_desc: [
+		"The base shelf for the final tier of enchanting."
+		""
+		"Besides being locked behind &dInfused Dragon's Breath&r, Endshelves are relatively cheap."
+	]
+	quest.26B74124E89189F7.title: "&eEndshelf"
+	quest.26D7C5298D95C69A.quest_desc: [
+		"When crafting &bJewelry&r, &aBanding Materials&r can be used by themselves to grant effects and/or stat increases."
+		""
+		"Their main use, however, is to multiply &aGem&r effects with their quality multiplier."
+		""
+		"While most vanilla gems will work, you can also search for &a#jewelry_band&r in JEI for a list."
+	]
+	quest.26D7C5298D95C69A.title: "&aBanding Materials"
+	quest.2722C0E2E8993658.quest_desc: [
+		"The centerpiece of a fully completed enchanting setup. "
+		""
+		"The &dDraconic Endshelf&r provides no additional stats, but will boost your &aEterna&r by 20, allowing you to hit a max of &6100&r."
+		""
+		"The &dPearlescent Endshelf&r is the best general-purpose bookshelf, providing significant amounts of both &cQuanta&r and &dArcana&r."
+	]
+	quest.2722C0E2E8993658.title: "&eLevel 100 Enchanting"
+	quest.27E2F70FDEE0F003.quest_desc: [
+		"The &bSoul Amulet&r holds even more by adding a &aSoul Canister&r you gain more max health."
+		""
+		"They work like a &6Totem of Undying&r if the player would &cdie&r and the soul canister will be consumed and reverted back to a &bblue heart canister&r."
+	]
+	quest.27E2F70FDEE0F003.title: "A Soul Bound Amulet"
+	quest.2AD996C548EBF4A4.quest_desc: [
+		"Your &6Foundry&r can also be used to &m&4trap poor helpless souls and melt them to death&r extract matter from the following living entities:"
+		""
+		"- Players: &cMolten Meat"
+		"- Enderman: &3Molten Ender"
+		"- Villager/Market Merchant: &2Molten Emerald"
+		"- Witch: &dMolten Amethyst"
+		"- Bee: &6Honey"
+		"- Blaze: &cMolten Blaze"
+	]
+	quest.2AD996C548EBF4A4.title: "&aThe Floor Is Lava"
+	quest.2E7EBD2A61897192.quest_desc: [
+		"Got a lot of random enchanted gear? Using a &dTome of Scrapping&r, you can break it down and extract some of the enchantments from it."
+		""
+		"The &dTome of Extraction&r will also remove all enchants, but will keep the item from being destroyed, allowing you to remove and replace any number of enchantments on an item at will."
+		""
+		"If you're looking for a specific enchantment for a specific tool, you can use &dTomes&r which can be crafted to only support a certain class of enchantments."
+	]
+	quest.2E7EBD2A61897192.title: "&fHotswapping Enchantments"
+	quest.2F2DC018DD6A2A23.quest_desc: [
+		"&aGems&r are the part of most &bJewelry&r that grants effects or attributes."
+		""
+		"Different pieces of &bJewelry&r are affected by &aGems&r in different ways, so be sure to check each piece carefully before crafting."
+		""
+		"While most vanilla gems will work, you can also search for &a#jewelry_gem&r in JEI for a list."
+	]
+	quest.2F2DC018DD6A2A23.title: "&aGems"
+	quest.30689B890F5E7A03.quest_desc: [
+		"To push your &6Eterna&r even higher, you will need to create and infuse &3Deepshelves&r and also reach the &6Summit &bWorld Tier&f."
+		""
+		"These shelves can push your &6Eterna&r to a max of &a75&r. "
+		""
+		"You can also use a &zDeepshelf of Arcane Treasures&r to allow your enchanting table to enchant &zTreasure Enchantments&r."
+	]
+	quest.30689B890F5E7A03.title: "&3Venturing Deeper"
+	quest.31AA29EBC3AC9060.quest_desc: [
+		"One of the craftable &dMagical Staves&r in the Iron's Spells mod that provides several buffs."
+	]
+	quest.31AA29EBC3AC9060.title: "&dArtificer's Cane"
+	quest.3208AF90091D1B6B.quest_desc: [
+		"Using the &aSimple Reforging Table&r, you can now reforge an item with brand new affixes."
+		""
+		"Reforging is not limited to items that already have &bAffixes&r, and can be performed with any valid item, any number of times."
+		""
+		"The &aSimple Reforging Table&r allows you to reforge items up to &9Rare&r rarity. You'll need to upgrade this table if you wish to reforge higher rarity items."
+		"{@pagebreak}"
+		"Reforging Tables have three input slots:"
+		""
+		"The center slot holds the item you wish to reforge, the top-left slot holds the rarity materials for the rarity you would like to reforge with, and the bottom-right slot holds &aSigils of Rebirth&r, which are used as fuel during reforging."
+		""
+		"There is a base cost of experience, sigils, and materials for reforges of each rarity, which can be doubled or tripled if choosing the other two options."
+	]
+	quest.3208AF90091D1B6B.title: "&aSimple Reforging Table"
+	quest.35CCB0359596DE32.quest_desc: ["Refund your spent skill points in the Melee tree."]
+	quest.35CCB0359596DE32.title: "&fReset Melee"
+	quest.37CB1AD3D940346F.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.37F99696A47264FD.quest_desc: [
+		"This chapter is all about teaching you some of the different ways to craft, enhance, and enchant any gear you might need on your adventures!"
+	]
+	quest.37F99696A47264FD.title: "&fGearing Up For Adventure!"
+	quest.3900E67C8B833980.quest_desc: [
+		"&aArtisan Scrolls&r can be found as loot or from bought from &zShops&r."
+		""
+		"To learn a &bJewel&r blueprint simply right-click with an &aArtisan Scroll&r in hand."
+		""
+		"There are 2 special &aArtisan Scrolls&r that will teach you how to craft &6Duality&r jewelry."
+		""
+		"This jewelry takes both the attributes from the &eMetal&r and the &dGem&r, and has a higher quality overall."
+	]
+	quest.3900E67C8B833980.title: "&aArtisan Scrolls"
+	quest.3A53BB7A6B708966.quest_desc: ["Infused with magical energy, your bookshelves unlock more possibilities."]
+	quest.3A53BB7A6B708966.title: "&cHellshelf Infusion"
+	quest.3A7774F5F0FD174E.quest_desc: [
+		"To get to the next upgrade, you want to get your &6Eterna&r to &a45&r by reaching the &aFrontier &6World Tier&f. This can be done with upgraded shelves."
+		""
+		"The &cHellshelf&r is easier to craft, and focuses on boosting &cQuanta&r."
+		""
+		"&bSeashelves&r will require some fishing to get started, but builds up your &dArcana&r values instead."
+	]
+	quest.3A7774F5F0FD174E.title: "Upgraded Shelves"
+	quest.3B68EF55AB8E61C3.title: "&cRod 'o Lightning"
+	quest.3EB56937CCDFCB2A.quest_desc: [
+		"&bCasts&r are used to shape your metals for tools, weapons and armor, or ingots and other forms."
+		""
+		"You can select which fluid gets poured out by selecting it within the &aController&r, then simply click a drain with the &2Casting Basin&r below to get out your material."
+		""
+		"&7&oThis process can be automated with redstone."
+	]
+	quest.3EB56937CCDFCB2A.title: "&fIngot Cast"
+	quest.3EFFF19211814CEF.title: "&6Quantum Sword"
+	quest.3F53B8955DF5B0F2.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.423C04D5968C6A2B.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.427682661459BB4F.quest_desc: [
+		"&cQuanta&r adds randomness to your enchanting rolls, and at max chaos, you will end up with either +100% or -100% power."
+		""
+		"&eStabilization&r cancels out the negative effects, meaning you get all the upside, and none of the downside."
+	]
+	quest.427682661459BB4F.title: "&eStabilizing Your Enchantments"
+	quest.428A1ABBA6791E75.quest_desc: ["&7&oObtained from the goat event, the shop or quest rewards"]
+	quest.4498E3F4B2DC24FC.quest_desc: [
+		"To get started on getting your ultimate &eApotheosis&r gear, you'll need to fight monsters or explore the world for &bGems&r!"
+		""
+		"&bGems&r are crystals that provide powerful bonuses when applied to &bAffix&r items."
+		""
+		"To apply a &bGem&r to an item, you must combine it with the item in a &2Smithing Table&r. The item must have an open &aGem Socket&r for this to work."
+		"{@pagebreak}"
+		"Gems give different bonuses when slotted in different item types, and can be upgraded in the &aGem Cutting Table&r."
+		""
+		"&cUnique Gems&r can only be socketed once per item, while most other gems can be socketed multiple times for stacking bonuses."
+		""
+		"There are a variety of &eApotheosis&r &bGems&r, which you can get by killing mobs and bosses."
+		"{@pagebreak}"
+		"&bGems&r can also be crushed by an anvil to create &aGem Dust&r."
+		""
+		"You can use &aGem Dust&r for a variety of things, but the first thing you'll want to make is a &aSalvaging Table&r!"
+	]
+	quest.4498E3F4B2DC24FC.title: "&aGems"
+	quest.44C341DE3BCD64CC.quest_desc: [
+		"This upgraded version of the &dEnchantment Library&r can store enchantments values up to level 31."
+		""
+		"&7&oPlease note that the actual enchanted books are still capped at normal pack limits.&r"
+	]
+	quest.44C341DE3BCD64CC.title: "&eLibrary of Alexandria"
+	quest.464AED8311A32476.quest_desc: [
+		"Before we dive into &eApotheosis&r, we need to cover what an &bAffix&r is!"
+		""
+		"An &bAffix&r is the driving force behind all &eApotheosis&r gear. Each &bAffix&r is very similar to an enchantment, providing a bonus to the item it is attached to."
+		"{@pagebreak}"
+		"&bAffix&r items can be found when exploring the world and their effects vary based on the item's rarity. They are more commonly dropped from &eApotheosis&r boss monsters which can be found in underground caves or have a chance to randomly appear during the night."
+		""
+		"There are a few different types of &bAffixes&r, each affecting a specific part of the item such as: Stats, Effects, Durability, and &bGem Sockets&r, which will be covered in the &bGems&r section."
+	]
+	quest.464AED8311A32476.title: "&fUnderstanding &aAffix &fitems"
+	quest.496903AB7E8A0A92.quest_desc: [
+		"&eIron's Gems \\&\\ Jewelry&r is a mod that focuses on combining materials and &bJewels&r to provide the player with special effects or stat increases."
+		""
+		"You will need to craft a &aJewelcrafting Station&r to begin making some basic &bJewelry&r items, but you'll need to purchase more advanced blueprints from the &zShop&r."
+		""
+		"[\"For a full list of compatible items, check out the \", {\"text\": \"Jewelry GuideMe\", \"color\": \"aqua\", \"clickEvent\": {\"action\": \"run_command\", \"value\": \"/guidemec irons_jewelry:guide open irons_jewelry:index.md\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Open Iron's Jewelry GuideMe\"}}, \".\"]"
+	]
+	quest.496903AB7E8A0A92.title: "&fWelcome to &eIron's Gems \\&\\ Jewelry&f!"
+	quest.4A0A19E73680034F.quest_desc: [
+		"&e&lBEER&r&e (Bookshelf Extended Enchanting Reach)&r allows you to modify the range that enchanting tables scan for bookshelves:"
+		""
+		"Normally, enchanting tables only look for bookshelves in a 5x5x3 area around them. With &e&lBEER&r, you can:"
+		""
+		"• Expand the X and Z width (horizontal range)"
+		"• Increase the Y height (vertical range)"
+		"• Use special items to modify these dimensions"
+		"• Create custom enchanting setups beyond vanilla limits"
+		""
+		""
+		"{@pagebreak}"
+		"&l&aHow to Use &e&lBEER&r"
+		""
+		"To modify an enchanting table's range:"
+		"1. Hold the modifier item in your main hand"
+		"2. Optionally hold a specific item in your offhand (to decrease range)"
+		"3. Sneak (Shift) + Right-click on an enchanting table"
+	]
+	quest.4A0A19E73680034F.title: "Bookshelf Extended Enchantment Reach"
+	quest.4BCA8A5C3F80D375.title: "&aSigil of Unnaming"
+	quest.4BDD9230BBA6C0A0.quest_desc: [
+		"&aHearts&r are a key component of &eBaubley Heart Canisters&r."
+		""
+		"&aRed Hearts&f can be made from a replicator with a blueprint."
+		""
+		"Hearts can be eaten and will restore health based on the level."
+		""
+		"- &cRed&f: 10 Hearts per use."
+		"- &eYellow&f: 20 Hearts per use."
+		"- &bBlue&f: 30 Hearts per use."
+		"- &aGreen&f: 40 Hearts per use."
+	]
+	quest.4BDD9230BBA6C0A0.title: "The Unlimited Power of Hearts"
+	quest.4BF0B397B0B9EE8C.quest_desc: ["Refund your spent skill points in the Defense tree."]
+	quest.4BF0B397B0B9EE8C.title: "&fReset Defense"
+	quest.4DE483256F9E1D4F.quest_desc: [
+		"The &aSigil of Withdrawal&r will remove all socketed &bGems&r on an item without damaging your item."
+	]
+	quest.4DE483256F9E1D4F.title: "&aSigil of Withdrawal"
+	quest.4E3A4B79573FC1F2.title: "&dTyrving"
+	quest.4EB43B146ED82F1E.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.4F7B9F938127746E.title: "&6Awakened Supremium Sword"
+	quest.5382CB05500E49DE.quest_desc: [
+		"Once you've maximized your &aEterna&f, you'll want to craft the &zEnchanting Table of the Raven&f."
+		""
+		"This enchantment table allows you to manually configure your &aEterna&f, &cQuanta&f, and &dArcana&f values without requiring any nearby bookshelves."
+		""
+		"&eNot Enough Patterns&f mod allows you to connect an AE2 Pattern Provider directly to the &zTable of the Raven&f and use either liquid experience or bottles of enchanting stored in your ME Network to automatically process enchanting recipes."
+		""
+		"Check the AE2 Guideme's NEP section for more details."
+	]
+	quest.5382CB05500E49DE.title: "&zEnchanting Table of the Raven"
+	quest.53E949B1A0D04290.quest_desc: [
+		"You'll need at least 21 &cFire Bricks&r to set up the outer walls of the smallest sized &6Foundry&r."
+		""
+		"&7&oThese can be dyed to match your base aesthetics."
+	]
+	quest.53E949B1A0D04290.title: "&6Foundry &fOuter Structure"
+	quest.54013FF4444B76EB.quest_desc: [
+		"The &2Heart Canister&r is the most important part of the mod. &2Canisters&f are slotted in &aAmulets&r and used to increase your max health points."
+		""
+		"Each &2Canister&f adds a single new heart and stacks at &b10&r. "
+	]
+	quest.54013FF4444B76EB.title: "The Baubliest of Heart Canisters"
+	quest.57768BEB580BA689.quest_desc: [
+		"The &aRune Inscribed Ring&r pattern allows you to inscribe &dRunes&r from the &eIron's Spells&r mod."
+		""
+		"These &dRunes&r will empower the ring with different powers. Make sure to experiment!"
+	]
+	quest.57768BEB580BA689.title: "Inscribing Runes"
+	quest.58CD2EA60183F861.title: "&cThe Blood Staff"
+	quest.58EA61D0CE13D752.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.59CBFA5583139A3B.quest_desc: [
+		"[\"The \", {\"text\": \"Reforging Table\", \"color\": \"#B900B9\"}, \" is an improved version of the \", {\"text\": \"Simple Reforging Table\", \"color\":\"#55FF55\"}, \", allowing you reforge items of all rarities including \", {\"text\": \"Mythic\", \"color\":\"#EA6F14\"}, \" items.\"]"
+	]
+	quest.59CBFA5583139A3B.title: "{\"text\": \"Reforging Table\", \"color\": \"#B900B9\"}"
+	quest.5A6151C5CBCBAAF4.quest_desc: [
+		"The &dHeart Amulet&r holds all your &2Heart Canisters&r. "
+		""
+		"You add them into the amulet and equip them in the &eCurios Slot&r."
+		""
+		"You can press Shift when hovering over the item to see how many Total Canisters is stored inside."
+		""
+		"You can have a total of &b40&r extra hearts in a base amulet."
+	]
+	quest.5A6151C5CBCBAAF4.title: "The Amulet of the Heart"
+	quest.60FDF616DEDE5E73.quest_desc: [
+		"&eApotheosis&r overhauls exploration and combat by creating a more RPG-like experience."
+		""
+		"Items and mobs you can find in the world can have special &bAffixes&r on them, making them much stronger, and sometimes giving them special abilities to make things even more fun!"
+		""
+		"If you feel lost, you can always refer to the &aChronicle of Shadows&r, which is the guide book for the mod."
+	]
+	quest.60FDF616DEDE5E73.title: "&eApothic Gems&f!"
+	quest.612B021FC1A3B205.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.612B021FC1A3B205.title: "&bJellyfish Necklace"
+	quest.618B5341336CA8CB.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.664924519F78893C.quest_desc: [
+		"The &dGraybeard Staff&r is an early game weapon that can easily be crafted. Staffs allow the casting of spells via using them with right-click instead of using a hotkey."
+	]
+	quest.664924519F78893C.title: "&dGraybeard Staff"
+	quest.66E5ACACAC79B1F8.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.678BE54BD4BB70CC.title: "&5Eclipse Alloy Sword"
+	quest.682D4887ED36D3B7.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.68668718B414B6E4.quest_desc: [
+		"The &6Foundry &aDrain&r can help you extract the metals you are working with onto a &2Casting Table&r."
+		""
+		"Don't do anything yet though, you'll need some &bCasts&r before doing that."
+		""
+		"The &2Casting Basin&r can be used to store and create metal blocks."
+		""
+		"&7&oThese can be dyed to match your base aesthetics."
+	]
+	quest.68668718B414B6E4.title: "&6Foundry &fDrains"
+	quest.6A22434958A72911.quest_desc: ["Refund your spent skill points in the Mining tree."]
+	quest.6A22434958A72911.title: "&fReset Mining"
+	quest.6A67BDD225DCF812.title: "&fMace"
+	quest.6B9371B721B992AD.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.6EE1C1B7FFB86C6C.quest_desc: [
+		"&aSigils of Socketing&r are used to increase the amount of &bGem Sockets&r of an &bAffix&r item."
+	]
+	quest.6EE1C1B7FFB86C6C.title: "&aSigil of Socketing"
+	quest.6FEF508F7DDDB261.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.722901B4259D8AEC.quest_desc: [
+		"The next goal will be to hit &a60&r &6Eterna&r, &a40&r &cQuanta&r, and &a40&r &dArcana&r. You'll need to reach &5Ascent &bWorld Tier&f for this."
+		""
+		"This will require upgrading the &dInfused Bookshelves&r. "
+	]
+	quest.722901B4259D8AEC.title: "Upgraded Shelves"
+	quest.7244D5DADCF0D7A2.quest_desc: [
+		"The &bSeashelf of Aquatic Filtration&r can be loaded with up to six enchanted books, and will block those enchantments from showing up again."
+		""
+		"Works with &cCursed Enchants&r as well!"
+	]
+	quest.7244D5DADCF0D7A2.title: "&bFiltering Unwanted Enchants"
+	quest.72C782BC4F768080.quest_desc: ["&7&oObtained from the shop or quest rewards"]
+	quest.7552BF792403EF44.quest_desc: [
+		"The &6Hellshelf of Masterful Sight&r gives you 2 &3Enchanting Clues&r per shelf instead of 1."
+	]
+	quest.7552BF792403EF44.title: "&6Hellshelf of Masterful Sight"
+	quest.78BCE2A8F87EB08B.quest_desc: [
+		"The &zVitality Blade&r works similar to a &bHeart Amulet&r. It has its own slots for &2canisters&r."
+		""
+		"Each &2canister&r adds &e1&r additional damage to the sword."
+	]
+	quest.78BCE2A8F87EB08B.title: "The Sword of Friendship"
+	quest.794C1EAA6252BC44.quest_desc: ["Refund your spent skill points in the Ranged tree."]
+	quest.794C1EAA6252BC44.title: "&fReset Ranged"
+	quest.7C8E0FEEEF80F70B.quest_desc: ["Refund your spent skill points in the Magic tree."]
+	quest.7C8E0FEEEF80F70B.title: "&fReset Magic"
+	quest.7E685EAD7FB60B45.quest_desc: [
+		"The &aSalvaging Table&r is used to break down affix items into their corresponding rarity materials:"
+		""
+		"{\"text\": \"Common - Mysterious Scrap Metal\", \"color\": \"#7E7E7E\"}"
+		"{\"text\": \"Uncommon - Timeworn Fabric\", \"color\": \"#55FF55\"}"
+		"{\"text\": \"Rare - Luminous Crystal Shard\", \"color\": \"#5454FC\"}"
+		"{\"text\": \"Epic - Arcane Sands\", \"color\": \"#B900B9\"}"
+		"{\"text\": \"Mythic - Godforged Pearls\", \"color\":\"#EA6F14\"}"
+		""
+		"The &aSalvaging Table&r can be automated by sending items in from the top or sides, and extracting them from the bottom of the table. Don't lose any items!"
+	]
+	quest.7E685EAD7FB60B45.title: "&fThe &aSalvaging Table"
+	quest.7E88C7654F281E43.quest_desc: [
+		"[\"The \", {\"text\": \"Augmenting Table\", \"color\": \"#EA6F14\"}, \" is an end-game crafting station used to augment the individual \", {\"text\": \"Affixes\", \"color\": \"#55FFFF\"}, \" of an item.\"]"
+		""
+		"It has two different uses:"
+		""
+		"[\"Firstly, it can upgrade an existing \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \", costing two \", {\"text\": \"Sigils of Enhancement\", \"color\": \"#EA6F14\"}, \" to upgrade the \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \" by 25%. How much of a boost this provides varies per \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \".\"]"
+		"{@pagebreak}"
+		"[\"Secondly, it can reroll an \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \", costing one \", {\"text\": \"Sigil of Enhancement\", \"color\": \"#EA6F14\"}, \" to swap out a selected \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \" for another of the same type. The alternative options will be shown on the left.\"]"
+		""
+		"[\"The \", {\"text\": \"Augmenting Table\", \"color\": \"#EA6F14\"}, \" has two input slots. The upper slot holds the item you wish to \", {\"text\": \"Augment\", \"color\": \"#FF55FF\"}, \", which must be an \", {\"text\": \"Affix\", \"color\": \"#55FFFF\"}, \" item. The lower slot holds the \", {\"text\": \"Sigils of Enhancement\", \"color\": \"#EA6F14\"}, \" used for \", {\"text\": \"Augmenting\", \"color\": \"#FF55FF\"}, \".\"]"
+	]
+	quest.7E88C7654F281E43.title: "{\"text\":\"Augmenting Items\", \"color\":\"#EA6F14\"}"
+	task.0F868488088CDEC1.title: "BEER"
+	task.1B78C40E21D23DD0.title: "Upgraded Hellshelves"
+	task.1C0FFC5D4A1D00C7.title: "Extraction Tomes"
+	task.1E25F96E4ECA6380.title: "Reset Magic"
+	task.1E99CDD9919D994A.title: "&aArtisan Scrolls"
+	task.247B79A552BA6CCE.title: "Gearing Up For Adventure!"
+	task.264FDB7064AF2C7B.title: "Reset Defense"
+	task.2C718A1A0353A93C.title: "Upgraded Seashelves"
+	task.329BA2B5EB3185FC.title: "Salvaged Materials"
+	task.3A26CB40123EC795.title: "Any Rune"
+	task.3B2325C6AF94E846.title: "Reset Melee"
+	task.4544EA17F4CDD321.title: "Understanding Affix Items"
+	task.4B67D8495CB6403D.title: "&aGems"
+	task.574369B60421C9FF.title: "&aBanding Materials"
+	task.601DC826C875D69F.title: "BEER Modifiers"
+	task.6B8F6B75C6182427.title: "Upgraded Deepshelves"
+	task.74FD82EA0E9371E3.title: "Mass Mob Melting"
+	task.75CE8877F456D5E9.title: "Reset Mining"
+	task.774EBA6A762BC415.title: "Reset Ranged"
+	task.7AFA5CC185A71520.title: "Welcome to &eApotheosis"
+	task.7C0D41D354010177.title: "Reset Athletics"
+}

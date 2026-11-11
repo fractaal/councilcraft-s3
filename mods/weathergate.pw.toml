@@ -1,0 +1,13 @@
+name = "WeatherGate"
+filename = "weathergate-neo-2.0.0+mc1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "84c631a26464d0bc8f2839f704e6b7ce79b5c485"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5712024
+project-id = 1048090

@@ -1,0 +1,13 @@
+name = "Subtle Font Tweaks"
+filename = "Subtle Font Tweaks v2.2.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/rk0HWvSg/versions/nzBb9bDB/Subtle%20Font%20Tweaks%20v2.2.zip"
+hash-format = "sha512"
+hash = "2f1ce69bf5b8e272f7a5a6c9060ffa9fdd4e5ded20cf0d8b9d87a3b75388c617be88f4be8c1037e6cf0b07c0d879ec5a3ffa444e17c232bd326d30592f4b55d5"
+
+[update]
+[update.modrinth]
+mod-id = "rk0HWvSg"
+version = "nzBb9bDB"

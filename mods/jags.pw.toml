@@ -1,0 +1,13 @@
+name = "JAGS"
+filename = "jags-neo-21.1.7+mc1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "921765f55f976e0b9eff2402049a09fc4d3d9c86"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8795212
+project-id = 517003

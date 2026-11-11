@@ -1,0 +1,467 @@
+{
+	quest.01177027CE208375.quest_desc: [
+		"Once you have your hands on some &dStainless Steel Dust&r, you can run it through an &3Electric Blast Furnace&r to create a &bStainless Steel Hot Ingot&r!"
+		""
+		"This can be further processed into a &bStainless Steel Ingot&r in a &bVacuum Freezer&r."
+	]
+	quest.01177027CE208375.title: "&dStainless Steel Ingot"
+	quest.04DFBDE537F968F5.quest_desc: [
+		"The &cHeatproof Machine Casing&r will be used in a variety of multiblock structures from &eMI&r, so make sure to make a lot!"
+	]
+	quest.04DFBDE537F968F5.title: "&cHeatproof Machine Casing"
+	quest.06FD385E707F4E12.quest_desc: [
+		"&eMI's&r &aSteam Coke Oven&f needs to be powered with &7Steam&r to operate."
+		""
+		"This is another multiblock, just like the regular &7Coke Oven&r, except this one needs &bItem Hatches&r and &bFluid Hatches&r to function properly."
+		""
+		"The &7Coke Oven&r is a 3x3x3 multiblock made mostly out of Bricks. While it may seem like a hassle, these are definitely worth making!"
+		""
+		"The &7Coke Oven&r will need one input for &7Steam&r and one for coal. This will produce &bCreosote Oil&r and &bCoal Coke&r."
+	]
+	quest.06FD385E707F4E12.title: "&aCoke Oven"
+	quest.0B89C5C624AD9686.quest_desc: [
+		"The &2Polarizer&r gives a magnetic charge to various items. This is primarily useful for making &aMagnetic Steel Rods&r."
+	]
+	quest.0B89C5C624AD9686.title: "&2Polarizer"
+	quest.0C4490929532BC5F.quest_desc: [
+		"These larger pumps provide more power for us to create faster and more pressurized machines."
+		""
+		"You'll use many of these, so it's worth having an automation chain in place for them."
+	]
+	quest.0C4490929532BC5F.title: "&fLarge Pump"
+	quest.0EA1B56A92D0403F.quest_desc: [
+		"Combining &bAluminum Dust&r, &cChromium Dust&r, and &dStainless Steel Dust&r in a &3Mixer&r will yield &eKanthal Dust&r."
+		""
+		"These need to be smelted into &cKanthal Hot Ingots&r in an &3Electric Blast Furnace&r before being cooled down in a &3Vacuum Freezer&r."
+		""
+		"After some more processing, you'll be able to upgrade your &3Electric Blast Furnace&r with &eKanthal Coils&r, allowing you to forge better quality metals that require much higher temperatures."
+	]
+	quest.0EA1B56A92D0403F.title: "&eKanthal Coils"
+	quest.12B8D538B54497E2.quest_desc: [
+		"After you've crafted a &aForge Hammer&r, you'll want to make some &bIron Plates&r as well as some &bCopper Components&r which will be used in a multitude of crafting recipes."
+		""
+		"You can also use these to make one of the best mining tools in the early game!"
+	]
+	quest.12B8D538B54497E2.title: "&fForge Ahead"
+	quest.176610923FDE130F.quest_desc: [
+		"By using &bDoped Silicon Plates&r over their regular counterparts, you can greatly increase the yield from their various recipes."
+	]
+	quest.176610923FDE130F.title: "&fDoped Silicon Plates"
+	quest.1AE287B38F6BA1D4.quest_desc: [
+		"There are many ways to power &eModern Industrialization&r machines (&eMI&r for short)!"
+		""
+		"It's important to know that in &6FTB Skies 2: Aero&r, the power systems are unified to allow you to use and produce FE or MI energy."
+		""
+		"For example, you can power &eMI&r machines with &eMekanism&r generators and vice versa."
+		""
+		"This gives you the freedom to progress however you'd, like while still enjoying the best parts of &eMI&r!"
+	]
+	quest.1AE287B38F6BA1D4.title: "&fPowering Up"
+	quest.1DBE1D496463B310.quest_desc: [
+		"The &3MV Steam Turbine&r consumes up to 128mb/t of &7Steam&r to produce 128 EU/t of power."
+		""
+		"If you haven't already upgraded your &2Large Bronze Boilers&r to the advanced versions, now might be the time!"
+	]
+	quest.1DBE1D496463B310.title: "&3MV Steam Turbine"
+	quest.1F60FA812127821E.quest_desc: [
+		"The &2Electric Packer&r is a machine used for several important recipes, including making printed circuits for &eApplied Energistics 2&r!"
+	]
+	quest.1F60FA812127821E.title: "&2Packing Time!"
+	quest.1FCE7E6527304CC5.quest_desc: [
+		"&aStorage Units&r allow for saving EU for a later time. Just like the generators, they handle the same EU rate as their tier."
+	]
+	quest.1FCE7E6527304CC5.title: "&2LV Storage Unit"
+	quest.22F07FB51C5DE600.quest_desc: [
+		"&dSilk Touch&r is important for maximizing your ore outputs. By processing them in block form, you will receive more products and byproducts than via standard mining."
+		""
+		"Luckily, &eMI&r provides a solution to this! The miraculous &2Steam Mining Drill&r can mine a 3x3 area AND has a &dSilk Touch mode&r."
+		""
+		"&7For the recipe, try mixing together some invar in a foundry..."
+		"{@pagebreak}"
+		"To use it, you'll need to provide it &9Water&r by just having a bucket in your inventory or by right-clicking a water source block."
+		""
+		"To power the drill, open your inventory and drag a fuel source like coal over top of the &2Steam Mining Drill&r and then Right-click it to deposit the fuel. You can change the &2Drill&r mode by Sneak + Right-clicking it."
+		""
+		"Yes, it does work with &eUltimine&r!"
+	]
+	quest.22F07FB51C5DE600.title: "&aA Superior Tool"
+	quest.276A6989CE359DFF.quest_desc: [
+		"The &2Large Steam Boiler&r is a multiblock which performs the same task as many small &2Boilers&r. You can run one with just one &aBronze Water Pump&r feeding it water, but you will eventually need up to 2 &7Steel Water Pumps&r to fully provide enough water."
+		""
+		"You can convert the logs into charcoal in a &7Coke Oven&r and burn both the charcoal and the creosote in the Boiler. You may need several coke ovens to keep up with demand."
+		""
+		"One &2Large Bronze Boiler&r can support 8 LV &7Steam Turbines&r constantly."
+	]
+	quest.276A6989CE359DFF.title: "&2Full Steam Ahead!"
+	quest.2785D267B523F5DC.quest_desc: [
+		"The &3Centrifuge&r spins materials at very high RPMs to separate key components into layers for further extraction."
+		""
+		"Your most important use of this right away will be processing raw iron to obtain &bManganese&r byproducts."
+	]
+	quest.2785D267B523F5DC.title: "&3Centrifuge"
+	quest.2AEF8759144B6AED.quest_desc: [
+		"The &2Electric Blast Furnace&r is a multiblock designed for smelting using &2LV Energy&r."
+		""
+		"This multiblock is a 3x4x3, with the two hollow layers of &aCupronickel Coils&r in the center. The top and bottom layers are made up of &cHeat Proof Machine Casings&r, and of course the hatches to provide power and bring items in and out."
+		""
+		"The next page shows an example of a completed build."
+		"{@pagebreak}"
+		"{image\\:\\ftb:textures/quests/modern_industrialization/electricblastfurnace.png width:200 height:210 align:center}"
+	]
+	quest.2AEF8759144B6AED.title: "&2Electric Blast Furnace"
+	quest.2DDAFF4BE2B4D6E4.quest_desc: [
+		"Combining &#d2b8e0Ethene&r with &aTiny Chromium Dust&r, we can get &3Polyethylene&r."
+	]
+	quest.2DDAFF4BE2B4D6E4.title: "&3Polyethylene"
+	quest.2FCAEA1A5CAB47DE.quest_desc: [
+		"A &3Distillery&r will be essential until you're able to make a &3Distillation Tower&r later in progression."
+		""
+		"With some &bOil&r and the &3Distillery&r, you can now begin refining &2Petrochemical Byproducts&r. There are a lot of these and almost all of them will be useful."
+		""
+		"However, &3Distilleries&r can only refine 1 byproduct at a time so you'll need several of these to get everything set up."
+	]
+	quest.2FCAEA1A5CAB47DE.title: "&3Distillery"
+	quest.2FEC8EC3EB592A03.quest_desc: [
+		"The &2Steel Quarry&r is a multiblock machine that infinitely harvests materials over time, as long as it is provided with &aDrills&r."
+		""
+		"&eNote&f: Different &aDrills&r and tiers will yield different ores, so check the uses to best target the ores you want the most. Make sure your output is large enough to accommodate all the ore types or use multiple output hatches so you don't miss any ores!"
+	]
+	quest.2FEC8EC3EB592A03.title: "&fYour First &dQuarry&f!"
+	quest.30D25E7F53419001.quest_desc: [
+		"If you've chosen to go down the &eMekanism&f route to make Steel, you can click this quest's checkmark to allow you to proceed with the &eMI&f questline from here on out."
+	]
+	quest.3292CF62DE4A7A23.quest_desc: [
+		"With &eMI&r, you'll find that a lot of the technology requires these specific parts."
+		""
+		"In addition to being crafting ingredients, they act as functional upgrades as well. For example, you can insert a motor into your pipes to speed them up!"
+		""
+		"For more info, you can always check out the &eMI Manual&r for a full list."
+	]
+	quest.3292CF62DE4A7A23.title: "&fComponents and You"
+	quest.32C950B612E0F0F7.quest_desc: [
+		"By &3Centrifuging&r raw iron, you can extract some &7Manganese&r as well."
+		""
+		"You'll need this to form more advanced alloys in the future, like &dStainless Steel&r."
+	]
+	quest.32C950B612E0F0F7.title: "&7Manganese Crushed Dust"
+	quest.33B0290BBE5DD5BC.quest_desc: [
+		"Now that you have an &2Electric Blast Furnace&r, you'll be able to make &bIndustrial Aluminum&r. If you're sticking with &eM.I&r, you'll have to acquire &bIndustrial Aluminum Nuggets&r first, but there are more efficient methods through other mods."
+	]
+	quest.33B0290BBE5DD5BC.title: "&bIndustrial Aluminum Ingot"
+	quest.343ACE0C81548119.quest_desc: [
+		"The &aCutting Machine&r can make some items more efficiently or automatically. It will also give you 6 planks per log when cutting wood."
+		""
+		"It's important to note that all operations with the cutting saw take a small amount of &bLubricant&r, so automating it is advised. "
+	]
+	quest.343ACE0C81548119.title: "&aBronze Cutting Machine"
+	quest.34AB2B41BE99B9F9.quest_desc: [
+		"Typically, you would progress into the &aBronze Age&r first, making &7Coal Coke&r and &7Steam&r for early power."
+		""
+		"While this is still a perfectly valid path that is still outlined in the &bMI Guidebook&f, you can also just jump directly to Steel by using any of the steel production methods available in the pack."
+		""
+		"[\"This could mean using \", {\"text\": \"Mekanism's \", \"color\": \"yellow\"}, {\"text\": \"Metallurgic Infuser\", \"color\": \"dark_green\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"616E3CE38F1D73AE\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Metallurgic Infuser Quest\"}}, \", or just sticking with \", {\"text\": \"MI\", \"color\": \"yellow\"}, \" to craft it as well.\"]"
+		""
+		"For those without much experience in &eMI&r, you can never have enough steel. Start cooking. :)"
+	]
+	quest.34AB2B41BE99B9F9.title: "&aThe Gears of Industry"
+	quest.35F2D26D7089C231.quest_desc: [
+		"Before we can use machines that need power, we'll need to power them using &7Steam&r."
+		""
+		"&7Steam&r produced via &eMekanism&r should work as well, but you will need to make sure that it is &lLIQUID&r steam."
+		""
+		"If you plan on generating &7Steam&r using &eMI&r, the &aBronze Boiler&r will be the first method of producing enough &7Steam&r to power your bronze age tech."
+		""
+		"For it to work, you'll need to first provide it &9Water&r, either manually via buckets, or via a &9Water Pump&r. It also needs burnable &cFuel&r like coal, which can be hoppered or piped in."
+		""
+		"Once you have both &9Water&r and &cFuel&r pumping into the &aBronze Boiler&r, you can pump out &7Steam&r from the output face with the square on it (which can also be changed with a &eWrench&r)."
+	]
+	quest.35F2D26D7089C231.title: "&aBronze Boiler"
+	quest.360B33F591DBF76B.quest_desc: [
+		"Since it is much easier to access &aSteel&r in this pack, you can immediately upgrade your bronze machines using &bSteel Upgrades&r."
+		""
+		"This can be done by crafting the machine together with the upgrade in a crafting table, or by simply using the upgrade on them in the world."
+	]
+	quest.360B33F591DBF76B.title: "&fSteel Upgrade"
+	quest.37E9DC506653FCCA.quest_desc: [
+		"We have everything we need to upgrade to &dDigital Circuits&r."
+		""
+		"This dawns in a new age, the &dHigh Voltage Age&r."
+	]
+	quest.37E9DC506653FCCA.title: "&dDigital Circuit"
+	quest.37EBE85B0FE81453.quest_desc: [
+		"The &2Assembler&r now lets us craft upgrades for all of our machines!"
+		""
+		"These upgrades will allow machines to overclock and perform their functions faster at the cost of greater energy consumption."
+	]
+	quest.37EBE85B0FE81453.title: "&aBasic Upgrades"
+	quest.3854D5D51530B938.quest_desc: [
+		"The &3Vacuum Freezer&r is a multiblock machine that uses extreme temperatures to cool down items or liquids placed inside."
+		""
+		"The structure is a hollow 3x4x3 made up of &aFrostproof Machine Casings&r, and hatches to input items, liquids, and power."
+		"{@pagebreak}"
+		"Here is an example of a completed multiblock &3Vacuum Freezer&r!"
+		""
+		"{image\\:\\ftb:textures/quests/modern_industrialization/vacuumfreezer.png width:150 height:200 align:center}"
+	]
+	quest.3854D5D51530B938.title: "&3Vacuum Freezer"
+	quest.3E7001F4A49CF787.quest_desc: [
+		"The &bAir Intake&r can go into the &3Vacuum Freezer&r to make &7Liquid Air&r."
+		""
+		"This &7Liquid Air&r can be broken down into atmospheric gases and utilized in metallurgical processes."
+	]
+	quest.3E7001F4A49CF787.title: "&bAir Intake"
+	quest.403967C03F9A6054.quest_desc: [
+		"With &bPolyethylene&r available, we can craft &3Advanced Upgrades&r that are 8x more effective than the &aBasic Upgrade&r."
+	]
+	quest.403967C03F9A6054.title: "&3Advanced Upgrade"
+	quest.40B9A5403390D8A1.quest_desc: [
+		"Now that you have bronze, you'll be able to make &eMI &aPipes&r. These are highly versatile and absolutely worth using."
+		""
+		"You can stack up to three &aPipes&r in the same block space. They can also be died so they won't connect to each other, and their connection states can be configured with the &eMI Wrench&r"
+		"{@pagebreak}"
+		"You can go even further by creating a &bFacade&r out of any block to blend pipes seamlessly into your builds."
+		""
+		"To do this, Sneak + Right-click on the block you want the &aPipes&r to display as, then right-click any &aPipe&r in the world to apply the &bFacade&r."
+		""
+		"While this does consume blocks from your inventory, it can easily be popped back off by Sneak + Right-clicking with the &bFacade&r with the &eMI Wrench&r."
+		"{@pagebreak}"
+		"To make copying settings of pipes easier, you have been given a &aPipe Config Card&r."
+		""
+		"With this tool, you can copy settings of a &aPipe&r onto the card, then place it in your offhand. Any &aPipe&r you place like this will automatically copy the settings on the card."
+	]
+	quest.40B9A5403390D8A1.title: "&eMI &aPipes"
+	quest.40D4E56DD0876A7D.quest_desc: [
+		"&3Centrifuging &cRuby Dust&r will yield &cTiny Chromium Dust&r, which needs to be further combined into large dusts."
+		""
+		"As a nice byproduct, you'll also get pure &bAluminum Dust Piles&r to smelt for &bAluminum Ingots&r."
+	]
+	quest.40D4E56DD0876A7D.title: "Tiny Chromium Dust"
+	quest.41DDA21E654823EB.quest_desc: [
+		"For the next step, we'll turn our &aSynthetic Oil&r into &7Rubber Sheets&r in a &2Mixer&r."
+	]
+	quest.41DDA21E654823EB.title: "&7Rubber Sheet"
+	quest.4327499499C5397F.quest_desc: [
+		"Before we make our first &3Electronic Circuit&r, we'll need to make an &bElectronic Circuit Board&r to hold all of the components."
+	]
+	quest.4327499499C5397F.title: "&bElectronic Circuit Board"
+	quest.4699D9C4E03C844B.quest_desc: [
+		"&aAnalog Circuits&r are the basis for all &2LV Technology&r."
+		""
+		"You can craft them with &7Rubber Sheets&r and a few components, or you can bypass this process by converting &eMekanism's Elite Circuits&r into &bAnalog Circuits&r instead."
+		""
+		"You will need a lot of these!"
+	]
+	quest.4699D9C4E03C844B.title: "&aWe Cannot Resist This"
+	quest.46EE104195D0391C.quest_desc: [
+		"A &aMixer&r is also a very essential machine to have from &eMI&r, as you'll be using it to mix a variety of dusts and/or materials/components!"
+		""
+		"For example, you can mix &2Gunpowder&r and &2Charcoal Dust&r to get your first &7Sulfur Dust&r."
+	]
+	quest.46EE104195D0391C.title: "&fMixing 'n Matching"
+	quest.4879B6C32F7B1749.quest_desc: [
+		"&aMixers&r are used to combine multiple components and sometimes liquids into new ingredients. Make sure to pay attention to the tier of mixer required for recipes!"
+		""
+		"2 eu/t is a &7Steam Mixer&r. 4 eu/t is a &aSteel Mixer&r. Any higher than that will require an &2Electric Mixer&r or better."
+	]
+	quest.4879B6C32F7B1749.title: "&aBronze Mixer"
+	quest.4B81B0228592E5C9.quest_desc: [
+		"The &2Assembler&r is used to construct many advanced machines, components, and frames for technological progression. It will require power, items, and sometimes fluid as inputs to create the final product."
+		""
+		"When crafting an item, make sure to check the EU/t required for the craft in JEI!"
+		""
+		"&eNote&f: You can lock input and output slots to prevent certain recipes from crafting. This is important to know for automation. Also you're going to want MANY of these eventually."
+	]
+	quest.4B81B0228592E5C9.title: "&fThe &2Assembler"
+	quest.50049BE2452AB7F5.quest_desc: [
+		"Our first goal is to convert our &7Steam&r into power for our machines!"
+		""
+		"We can do this by making the &2LV Steam Turbine&r, which produces 32 EU/t."
+		""
+		"[\"To transfer the power out of the \", {\"text\": \"Turbine\", \"color\": \"dark_green\"}, \", you'll need to  use the right \", { \"text\": \"cables for LV power\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"5BA74A759CC43BBB\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to LV Cables Quest\"}}, \", which can extract up to 256 EU/t.\"]"
+		""
+		"If you need more, you should use different cables to make separate energy networks. Using each of the different cables, you could transfer up to 768 EU/t worth of &2LV&r power."
+	]
+	quest.50049BE2452AB7F5.title: "&2LV Steam Turbine"
+	quest.50DF3CDEE3B111CE.quest_desc: [
+		"The &3Chemical Reactor&r is an essential machine to have from &eMI&r!"
+		""
+		"It is used to fuse certain chemicals or items together using &bchemical reactions&r, and will be useful for creating many new items and chemicals."
+	]
+	quest.50DF3CDEE3B111CE.title: "&3Chemical Reactor"
+	quest.51C1EC5807B5D672.quest_desc: [
+		"Now that we have &7Manganese&r and &cChromium Dust&r, we can combine those two with some iron and nickel dust in a mixer to create &dStainless Steel Dust&r."
+		""
+		"This is needed to make more advanced circuitry, as well as for creating stronger metals to upgrade our &3Blast Furnace&r."
+	]
+	quest.51C1EC5807B5D672.title: "&dStainless Steel Dust"
+	quest.51F2FC13FA7C3A89.quest_desc: [
+		"Now that you can make iron ingots, you can craft a &aForge Hammer&r! This will allow you to smash all varieties of ore and even process the ingots into plates, rings, rods, and other materials."
+		""
+		"While it is easier to do, this method of making materials is considered very inefficient, due to the cost of remaking the hammers."
+		""
+		"You should progress onto machine processing with a &2Steam Macerator&r as soon as you're able."
+		""
+		"&eNote&f: You can also pulverize logs into sawdust for early cardboard boxes. These can be handy for lots of things!"
+	]
+	quest.51F2FC13FA7C3A89.title: "&fThe Start of &eModern Industrialization"
+	quest.54016A2A0FAB6B4B.quest_desc: [
+		"Large motors are both a crafting ingredient and a way to speed your item pipes up. As with most subcomponents in &eMI&r you'll want a production chain setup to ensure you have these available."
+	]
+	quest.54016A2A0FAB6B4B.title: "&fLarge Motor"
+	quest.56E1FAD44A6E8C11.quest_desc: [
+		"There are two ways to get &eDiesel&f:"
+		""
+		"You can use &3Distilleries&r to get &2Light and Heavy Fuels&r, and then use the &2Mixer&r to combine them into &eDiesel&r."
+		""
+		"[\"You can also refine \",{\"text\": \"Crude Oil\", \"color\": \"green\"}, \" using a \", {\"text\": \"Refinery Controller\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"49E9EBFC7B717D8E\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Refinery Quest\"}}, \" from \", {\"text\": \"PNCR\", \"color\": \"yellow\"}, \", which will require heat and pressure.\"]"
+	]
+	quest.56E1FAD44A6E8C11.title: "&eDiesel"
+	quest.58F29A199D553D29.quest_desc: [
+		"&3Diesel Generators&r can provide on-demand power by burning different fuels, most notably &eDiesel&r."
+		""
+		"Unlike &2Boilers&r, they will only consume fuel when producing energy, making them an attractive option when you don't fully consume your maximum output regularly."
+		""
+		"Remember, &eDiesel&r can also fuel your &2Boilers&r should you wish to use it for that!"
+	]
+	quest.58F29A199D553D29.title: "&3MV Diesel Generator"
+	quest.5A5D6A90C0999828.quest_desc: [
+		"The &3Advanced Machine Hull&r starts your journey into &3Medium Voltage&r technology, and is used to build all of your &3MV&r machinery."
+		""
+		"You can also upgrade your existing &2LV&r processing machines by inserting one into its upgrade slot. This will allow the machine to accept and process &3MV&r tier energy and recipes."
+		""
+		"You didn't think you'd have to build all new machines every tier, did you?"
+	]
+	quest.5A5D6A90C0999828.title: "&3Advanced Machine Hull"
+	quest.5B7CC380E28893C1.quest_desc: [
+		"For us to make &2Rubber&r, we'll need to get our hands on some form of &aOil&r first."
+		""
+		"This will require either &aCarbon Dust&r or &aCoke Dust&r to be mixed with water to create &3Raw Synthetic Oil&r."
+		""
+		"[\"To make Coal Coke, you'll need to use \", { \"text\": \"MI's Coke Oven\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": {\"action\": \"change_page\", \"value\": \"06FD385E707F4E12\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to MI's Coke Oven Quest\"}}, \".\"]"
+	]
+	quest.5B7CC380E28893C1.title: "&aCreating Oil from Dust"
+	quest.5BA74A759CC43BBB.quest_desc: [
+		"&eMI&r has several different cables for each tier."
+		""
+		"For &2LV&r, for example, there are &aCopper&r, &7Silver&r, and &2Tin Cables&r, which can transfer the same amount of power with no power loss."
+		""
+		"The reason for different types is that they don't connect to each other, allowing you to place multiple in the same blockspace (up to 3)."
+	]
+	quest.5BA74A759CC43BBB.title: "&eMI &2Cables"
+	quest.5D0742E56290E42B.quest_desc: [
+		"Opening up the next tier of technology will rely on the &3Electronic Circuit&r."
+		""
+		"[\"You can convert a \", {\"text\": \"Mekanism \", \"color\": \"yellow\"}, {\"text\": \"Ultimate Control Circuit\", \"color\": \"light_purple\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"19874DF48B8B2A75\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Ultimate Control Circuit Quest\"}}, \" for these recipes as well.\"]"
+	]
+	quest.5D0742E56290E42B.title: "&3We Are Resisting This"
+	quest.6126333E1B6B6925.quest_desc: [
+		"By distilling &3Sugar Solution&r, you can get &2Ethanol&r, which will be needed for making &#d2b8e0Ethylene&r."
+	]
+	quest.6126333E1B6B6925.title: "&3Ethanol"
+	quest.6738195241EF3317.quest_desc: [
+		"The &3Electrolyzer&r can split materials into their different parts using strong electric currents."
+		""
+		"You can electrolyze &bBauxite Dust&r to get &bAluminum Dust&r, which you can then directly smelt into ingots in the &2Electric Blast Furnace&r."
+	]
+	quest.6738195241EF3317.title: "&3Electrolyzer"
+	quest.69159D10C2791C2E.quest_desc: [
+		"The first few basic machines you'll want to make are the &aBronze Furnace&r and the &2Macerator&r."
+		""
+		"The &aBronze Furnace&r is powered by &7Steam&r to smelt items faster than a regular vanilla furnace."
+		""
+		"The &2Macerator&r is crucial to providing ore multiplication, as well as getting different byproducts from several items."
+	]
+	quest.69159D10C2791C2E.title: "&fCrushing \\&\\ Smelting"
+	quest.6A18A087EA934C46.quest_desc: [
+		"Your first alloy you'll want to make is &aBronze&r. There are several ways to do this, including just mixing dusts in a &eTempered Jar&r."
+		""
+		"It's a very important alloy for progression, and will open your path to &bMI's Bronze Age&r!"
+	]
+	quest.6A18A087EA934C46.title: "&fBronze Ingot"
+	quest.6A22BBE9C146E910.quest_desc: [
+		"Your &2Steam Quarry&r can be upgraded directly into the &3Electric Quarry&r using the same multiblock!"
+		""
+		"This new and improved quarry will allow you to use better &bDrills&r like Gold, Steel, or Stainless Steel."
+		""
+		"[\"If you wish to get into \", {\"text\": \"Petrochemicals\", \"color\": \"dark_green\"}, \" and/or sustainable \", {\"text\": \"Diesel Fuels\", \"color\": \"dark_green\"}, \", it may be worth building an \", {\"text\": \"Oil Drilling Rig\", \"color\": \"yellow\", \"underlined\": true, \"clickEvent\": { \"action\": \"change_page\", \"value\": \"71D274A5F226DAEC\"}, \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"Go to Drilling Rig Quest\"}}, \" soon with aluminum drills for virulent mixture.\"]"
+	]
+	quest.6A22BBE9C146E910.title: "&3Electric Quarry"
+	quest.71D274A5F226DAEC.quest_desc: [
+		"The oil &3Drilling Rig&r uses drills to dig up liquids."
+		""
+		"You drill Crude Oil and run it through the &3Distillation Tower&r, so make sure to check JEI to see how to plan your processing."
+		"{@pagebreak}"
+		"A fully-built &3Drilling Rig&f:"
+		""
+		"{image\\:\\ftb:textures/quests/modern_industrialization/oildrilling.png width:150 height:200 align:center}"
+	]
+	quest.71D274A5F226DAEC.title: "&3Oil Drilling Rig"
+	quest.72A00FD887707E9D.quest_desc: [
+		"It's worth upgrading your &2Large Bronze Boilers&r into the advanced versions now that you can make the circuitry. "
+		""
+		"They &bquadruple&r your &7Steam&r production."
+	]
+	quest.72A00FD887707E9D.title: "&3Advanced Large Steam Boiler"
+	quest.740A857076EAC1BC.quest_desc: [
+		"Now that we have access to &dStainless Steel&r and &ePolyethylene&r, our circuits can become even more advanced by making &dDigital Circuit Boards&r!"
+	]
+	quest.740A857076EAC1BC.title: "&dDigital Circuit Board"
+	quest.75CE1ACD81A3CAC5.quest_desc: [
+		"Similar to the process of extracting &cChromium&r, crushed &7Manganese&r must be combined in a &3Chemical Reactor&r with a strong acid such as &eSulfuric Acid&r."
+		""
+		"This will provide you with a &7Manganese Sulfuric Solution&r, which can then be &3Electrolyzed&r for &7Tiny Manganese Dust&r."
+		""
+		"This process will yield a return of some &eSulfuric Acid&r"
+	]
+	quest.75CE1ACD81A3CAC5.title: "&7Manganese Dust"
+	quest.76E921EC64F80D6C.quest_desc: [
+		"The &aWiremill&r is needed to make most forms of wire and fine wire."
+		""
+		"You'll be using this machine often to make circuits and more intricate machinery, items, and gear."
+		""
+		"It's generally worth upgrading to the highest tier that your current technological progression will allow for."
+	]
+	quest.76E921EC64F80D6C.title: "&fSteel Wiremill"
+	quest.7771675453230C65.quest_desc: [
+		"The &aCompressor&r is great for pressing materials down into plates and other useful items for progression."
+		""
+		"Using the &aForge Hammer&r can only carry you so far!"
+	]
+	quest.7771675453230C65.title: "&aBronze Compressor"
+	quest.78132E2600FC11CF.quest_desc: [
+		"With &aHelium&r, from our &7Crude Oil&r, we can combine this with &2Argon&r in a &3Vacuum Freezer&r to make &dCryofluid&r!"
+		""
+		"This can be used in a &dHeat Exchanger&r to create a faster processing line for cooling &cHot Ingots&r. You'll also need this later on to make &dCooling Cells&r!"
+	]
+	quest.78132E2600FC11CF.title: "&dHelium Processing"
+	quest.79408CC2B3EF8DA6.quest_desc: [
+		"The &aWrench&r is probably one of the most useful tools you'll be using during your playthrough."
+		""
+		"This tool helps configure pipes, rotate blocks, and can even help you build multiblocks!"
+		""
+		"By holding the &aWrench&r and looking at the base machine of a multiblock, it will create holograms of blocks to show you how to build it!"
+		""
+		"&eTip&f: Place it in your off-hand when building multiblocks!"
+	]
+	quest.79408CC2B3EF8DA6.title: "&fThe &2Wrench &fand You!"
+	quest.7D98D9AB89357FA6.quest_desc: [
+		"We're now ready to make the journey into a new technological age, the &2LV Age&r. Each machine in this age will require these &aBasic Machine Hulls&r. You'll use &cA LOT&r of them."
+	]
+	quest.7D98D9AB89357FA6.title: "&fThe &2LV Age"
+	quest.7FA34CEB41A4D9F5.quest_desc: [
+		"The &aSteam Blast Furnace&r is your first major &eMI&r multiblock. You'll need to give it &7Steam&r and uncooked steel dust for it to make &aSteel Ingots&r."
+		""
+		"In addition to the controller block, you'll need a fluid and item &aInput&r hatch as well as an item &cOutput&r hatch as shown in the quest. The remaining blocks should be fire clay bricks."
+		""
+		"You can configure the inputs and outputs in many different ways. Holding the wrench or an &ainput&r/&coutput&r hatch should show you where their valid placements are."
+	]
+	quest.7FA34CEB41A4D9F5.title: "&aSteam Blast Furnace"
+	quest.7FDD828A23BEABFF.quest_desc: [
+		"&3Centrifuging&r redstone will give you &cRuby Dust&r, along with several other useful byproducts, including &dNeodymium&r, which you'll use for advanced magnetic applications and, eventually, superconducting cabling."
+	]
+	quest.7FDD828A23BEABFF.title: "&cRuby Dust"
+	task.21ED0BDC86BC1466.title: "Wrench"
+	task.4840FE1FAC7D7470.title: "Mekanism Path"
+	task.607C59BF2D47F072.title: "Powering Up"
+	task.6C0240B676A69E94.title: "Elite Circuit or Analog Circuit"
+}

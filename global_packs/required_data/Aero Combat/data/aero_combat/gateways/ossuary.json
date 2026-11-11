@@ -1,0 +1,120 @@
+{
+  "size": "medium",
+  "color": "#B8A675",
+  "waves": [
+    {
+      "entities": [
+        {
+          "entity": "minecraft:skeleton",
+          "count": 4
+        },
+        {
+          "entity": "cataclysm:koboleton",
+          "count": 2
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 20,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 200
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:koboleton",
+          "count": 4
+        },
+        {
+          "entity": "minecraft:skeleton",
+          "count": 3
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 40,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:koboleton",
+          "count": 4
+        },
+        {
+          "entity": "irons_spellbooks:necromancer",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 60,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 4800,
+      "setup_time": 400
+    },
+    {
+      "entities": [
+        {
+          "entity": "cataclysm:koboleton",
+          "count": 4
+        },
+        {
+          "entity": "cataclysm:kobolediator",
+          "count": 1
+        }
+      ],
+      "modifiers": [],
+      "rewards": [
+        {
+          "type": "gateways:experience",
+          "experience": 80,
+          "orb_size": 10
+        }
+      ],
+      "max_wave_time": 7200,
+      "setup_time": 400
+    }
+  ],
+  "rewards": [
+    {
+      "type": "gateways:loot_table",
+      "loot_table": "aero_combat:gateways/ossuary",
+      "rolls": 1,
+      "desc": "rewards.aero_combat.ossuary"
+    }
+  ],
+  "failures": [
+    {
+      "type": "gateways:mob_effect",
+      "effect": "minecraft:weakness",
+      "duration": 300
+    }
+  ],
+  "rules": {
+    "spawn_range": 10,
+    "leash_range": 48,
+    "allow_discarding": false,
+    "allow_dim_change": false,
+    "player_damage_only": false,
+    "remove_mobs_on_failure": true,
+    "fail_on_out_of_bounds": false,
+    "spacing": 96,
+    "requires_nearby_player": true
+  }
+}

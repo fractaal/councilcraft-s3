@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:desert_pyramid",
+  "biomes": "#minecraft:has_structure/desert_pyramid",
+  "terrain_adaptation": "beard_thin",
+  "spawn_overrides": {},
+  "start_height": {
+    "above_bottom": 48
+  },
+  "step": "surface_structures"
+}

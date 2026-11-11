@@ -1,0 +1,13 @@
+name = "BM Exosphere 2 Aero"
+author = "fractal"
+version = "1.5.1+sky.2"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "2c47895816febe2d821fcc38f41ab8e6043abae2fa0117e96e9c0a3ee40e8c66"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.262"

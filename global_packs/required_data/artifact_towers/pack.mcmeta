@@ -1,0 +1,7 @@
+{
+	"pack": {
+		"pack_format": 48,
+		"supported_formats": {"min_inclusive": 5, "max_inclusive": 72},
+		"description": "Beyond Mines: Artifact Towers (Based on TOTW!)"
+	}
+}

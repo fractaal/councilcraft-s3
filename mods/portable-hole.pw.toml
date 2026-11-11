@@ -1,0 +1,13 @@
+name = "Portable Hole"
+filename = "PortableHole-v21.1.0-1.21.1-NeoForge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/jckrUoUe/versions/V6PVdKh9/PortableHole-v21.1.0-1.21.1-NeoForge.jar"
+hash-format = "sha512"
+hash = "809e5780fccb73c533b6e9bf0a89b893b3a522b988f82347bbc45179f975f7ccd4cd6eb30bd97e29cd4fa557560ece68ad4e8006032c0f1f709ea329132d0266"
+
+[update]
+[update.modrinth]
+mod-id = "jckrUoUe"
+version = "V6PVdKh9"

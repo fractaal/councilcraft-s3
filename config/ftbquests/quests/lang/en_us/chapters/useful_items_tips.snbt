@@ -1,0 +1,225 @@
+{
+	quest.06666C9D93C1A3EE.quest_desc: [
+		"The &aExplorer's Compass&r can locate any structure in the pack!"
+		""
+		"Type in the structure you are looking for at the top, then select it and click Search."
+		""
+		"The compass will then point in the direction of the nearest structure, and give you the distance in the top left of your screen."
+	]
+	quest.06666C9D93C1A3EE.title: "&fExplorer's Compass"
+	quest.095A405D88EF0250.quest_desc: [
+		"The &cRedstone Remote&r can be used to wirelessly control redstone devices like levers and buttons."
+		""
+		"Left-click on the device you want to control with the Remote to save the frequency, then right-click to toggle it on and off from any distance."
+		""
+		"&eNote&f: The chunk where the redstone is must be loaded and in the same dimension to work."
+	]
+	quest.095A405D88EF0250.title: "&fWireless Redstone Control!"
+	quest.09DE55D4265E6E9D.quest_desc: [
+		"&eCable Facades&r (the mod) provides a one-size-fits-all solution to hiding all of your cables."
+		""
+		"To set up an empty &bFacade&r, place it in a crafting grid with the block you wish to change it to. This will \"convert\" the block, but can be reverted by placing the &bFacade&r back in a crafting grid."
+		""
+		"Once set up, simply place the &bFacade&r over your cables."
+		""
+		"The &aFacade Wrench&r can be used to toggle facade transparency by Sneak + Right-clicking it."
+	]
+	quest.09DE55D4265E6E9D.title: "&eCable Facades"
+	quest.18913114C6D06E74.quest_desc: [
+		"With &eEasy Villagers&r, you can literally pick up villagers by Sneak + Right-clicking on them. This makes for super easy villager halls!"
+		""
+		"You can also create &aTrader Blocks&r to place them in with their trading table to create a one block trading solution."
+	]
+	quest.18913114C6D06E74.title: "&eEasy Villagers"
+	quest.215E7EB95A7C64A3.quest_desc: [
+		"Every second matters, and that's why you should shove them in the &6Temporal Pouch&r."
+		""
+		"This pouch stores time, as long as it is in your inventory. This time can be used to increase the ticks of pretty much anything by sneak-using the pouch on it."
+		""
+		"If something is too slow, use some of your stored time to make it faster!"
+		""
+		"&7&oWho says you can't buy time?"
+	]
+	quest.215E7EB95A7C64A3.title: "&dTemporal Pouch"
+	quest.2682A911828C2D88.quest_desc: [
+		"&eFramed Blocks&r allow you to create custom blocks and shapes that use the texture of almost any other block in the pack!"
+		""
+		"To do this, place down a framed block, and then use the block with the desired texture on the framed block to copy the texture over."
+		""
+		"There are also some cool features for these blocks, like using &6Glowstone Dust&r on a framed block to make it glow!"
+	]
+	quest.2682A911828C2D88.title: "&2Framed Blocks"
+	quest.2697DE3ABB47669F.quest_desc: [
+		"&eIrregular Implements&f introduces a small multiblock that allows you to locate any biome."
+		""
+		"First you must build a small antenna using a &aBiome Radar&f and some iron bars (see next page), then place a configured &2Biome Crystal&f inside the &aRadar&f. Particles will begin to show above the bars if you've built the structure correctly."
+		""
+		"You can easily configure a &2Biome Crystal&f by placing it inside a &aStonecutter&f and selecting the biome you want to track."
+		""
+		"You may also bind the biome location to a &eGolden Compass&f by crafting the compass together with a &bLocation Filter&f bound to an active &aBiome Radar&f structure."
+		""
+		"&7&oExample structure on the next page ->"
+		"{@pagebreak}"
+		"{image\\:\\ftb:textures/quests/irregular_implements/biome_radar.png width:200 height:200 align:center)"
+	]
+	quest.2697DE3ABB47669F.title: "&fLocating Biomes"
+	quest.26F18323EB6EFCA0.quest_desc: [
+		"&bSnad&r blocks allow you to create farms of Cactus or Sugarcane easily. These can also be given a redstone signal to increase the growth rate of the crop."
+	]
+	quest.26F18323EB6EFCA0.title: "&fSNAD"
+	quest.2C1649AE3DADD71D.quest_desc: [
+		"&eConstruction Sticks&r is a mod all about making the building process much faster."
+		""
+		"While holding a &eConstruction Stick&r in your hand, you can extend blocks in any direction with just one click!"
+		""
+		"There are also some cool upgrades that you can add to the &eSticks&r, like making it use power instead of durability."
+	]
+	quest.2C1649AE3DADD71D.title: "&bFaster Building"
+	quest.2E30AE23A0602A0A.quest_desc: [
+		"Need to teleport to different islands around the world? Maybe to completely different dimensions? Craft a &dWaystone&r!"
+		""
+		"On top of being a crafting component, a &dWarp Stone&r allows you to remotely teleport to any of your waystones while exploring!"
+	]
+	quest.2E30AE23A0602A0A.title: "&bFast Travel"
+	quest.2EEE782146096F9C.quest_desc: [
+		"Probably one of the best building mods out there, the &eBuilding Gadgets&r mod adds several new gadgets that are a must have to make building better and easier!"
+	]
+	quest.2EEE782146096F9C.title: "&eBuilding Gadgets"
+	quest.3148FCED5BF543B5.quest_desc: [
+		"The &eTool Belt&r is the perfect place to store all of your tools in one place."
+		""
+		"You can quickly access anything inside by holding down &aR&r to bring up a radial menu. These can also be upgraded using &aBelt Pouches&r (in an Anvil), up to 9 total slots."
+	]
+	quest.3148FCED5BF543B5.title: "&fTool Belt"
+	quest.31C81ED0EEA8FD34.quest_desc: [
+		"If you're trying to draw lightning to yourself for whatever reasons, there are a few methods available. Note that items will need to be on the ground to transform."
+		""
+		"If there's a thunderstorm, a &aLightning Rod&r will periodically get struck with lightning, affecting the area around it."
+		""
+		"The static charge from a &eFTB Pump&r can build up into a lightning strike if you're willing to take some damage, possibly a lot."
+		"{@pagebreak}"
+		"If you can get your hands on a &dLightning Scroll&r, casting that will work for transforming items and charging creepers."
+		""
+		"After some progression, if needed, this can be done more easily by crafting the scroll mentioned before, or making a &dLighting Glyph&r."
+		""
+		"Once able to enchant, another option to force strikes is to hit entities or a lightning rod with a &3Channeling&r-enchanted &eTrident&r during a thunderstorm."
+	]
+	quest.31C81ED0EEA8FD34.title: "&fStrike the Earth"
+	quest.3DEA89318D4B1477.quest_desc: [
+		"Get sick of these trader guys spawning and getting in your face? The solution could be to make a &a'No Solicitors!' Sign&r!"
+	]
+	quest.3DEA89318D4B1477.title: "&6No More Traders&f!"
+	quest.4119A43052DB5E3E.quest_desc: [
+		"The &eRelics&r mod adds several new and unique items, each with the ability to level up and grant unique abilities for those who wish to use them!"
+	]
+	quest.4119A43052DB5E3E.title: "&eRelics"
+	quest.4B6154D6F9B7C7BF.quest_desc: [
+		"&aCrafting Stations&r open a tab next to your crafting inventory that you can use to pick up items stored in adjacent inventories and will also hold items in their crafting grids."
+	]
+	quest.4B6154D6F9B7C7BF.title: "&fCrafting Stations"
+	quest.51804232265672A9.quest_desc: [
+		"[\"By hitting \", {\"keybind\": \"key.trashslot.toggle\", \"color\": \"aqua\", \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"TrashSlot Default: T\"}}, \" while in your inventory, you can toggle the inventory trash slot.\"]"
+		""
+		"[\"You can use the \", {\"keybind\": \"key.trashslot.delete\", \"color\": \"aqua\", \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"TrashSlot Default: Delete\"}},\" key to throw things away instantly, or \", {\"keybind\": \"key.trashslot.delete_all\", \"color\": \"aqua\", \"hoverEvent\": {\"action\": \"show_text\", \"contents\": \"TrashSlot Default: Shift + Delete\"}}, \" to delete several stacks at once.\"]"
+		""
+		"There is also the &aTrash Bin&r icon in the top left of your inventory that you can use as well. This can also be accessed by using the &a/trashcan&r command."
+	]
+	quest.51804232265672A9.title: "&fInventory Trashcan!"
+	quest.59A6D7B544F1AE06.quest_desc: [
+		"Want an easy way to travel to different levels of your base? Make an &dElevator&r!"
+		""
+		"These can also copy the texture of another block by using that block directly on the &dElevator&r."
+	]
+	quest.59A6D7B544F1AE06.title: "&fElevators"
+	quest.63D831B65B0532F1.quest_desc: [
+		"If you want to start a brand new sky island, the &dAngel Block&r is the solution."
+		""
+		"This block can be placed in any empty space, without the need for it to connect to the ground!"
+		""
+		"You pass right through it though, so don't expect this block to save you from a fall."
+	]
+	quest.63D831B65B0532F1.title: "&bPlacing Blocks In The Air"
+	quest.68D710AD53829D16.quest_desc: [
+		"While exploring the skies, you might rarely come across Archipelagos cut off at chunk borders."
+		""
+		"This is done intentionally as that chunk is one where an FTB Base would spawn, meaning that it automatically clears that entire chunk."
+	]
+	quest.68D710AD53829D16.title: "Missing or Cut-Off Islands"
+	quest.6D165125DC0B8F50.quest_desc: [
+		"&aPacking Tape&r is the best way to move your &eSophisticated chests&r!"
+		""
+		"Right-clicking on storage will wrap it up in tape, then you can break and place it down wherever you need it."
+	]
+	quest.6D165125DC0B8F50.title: "&fPacking Tape"
+	quest.74C6CBDB38C29D4D.quest_desc: [
+		"In this chapter, you'll find plenty of useful items and tips you can use in your playthrough!"
+	]
+	quest.74C6CBDB38C29D4D.title: "&fTips \\&\\ Tricks!"
+	quest.7804E97C7772403E.quest_desc: [
+		"Want a portable crafting table? Make a &aCrafting Table on a Stick&r!"
+		""
+		"You can put this in a &bCurio Slot&r that you can even set a keybind for quick access."
+	]
+	quest.7804E97C7772403E.title: "&fOn A STICK!"
+	quest.7A06D08AC7C65D20.quest_desc: [
+		"Have some enchants you want, but they are stuck to items you don't want to use?"
+		""
+		"You can easily separate enchants using the &bAnvil&r method."
+		""
+		"First, place down a block of &dDraconium&r, then throw down an item with enchants on it. For every enchant you want to remove, you'll need to throw down an empty book as well."
+		""
+		"To separate them, drop an &bAnvil&r onto the pile of items!"
+	]
+	quest.7A06D08AC7C65D20.title: "&fEasy Disenchanting"
+	quest.7B20023BE78887DA.quest_desc: [
+		"You can activate a &aMagnet&f by right-clicking, and it'll swiftly pull into your inventory any items around you."
+		""
+		"The &dAdvanced Magnet&r has a larger range and a filter menu that can be opened by Sneak + Right-clicking."
+		""
+		"You can also stop magnets from working in a certain area using &2Demagnetization Coils&r!"
+	]
+	quest.7B20023BE78887DA.title: "&aSimple Magnets"
+	quest.7B954D1F7620FA41.quest_desc: [
+		"If you're tired of switching between the many different mining tools, make yourself a &aPaxel&r!"
+		""
+		"These are &bAll-In-One Tools&r that do it all."
+		""
+		"There are also several other modded tools and updgrades that have the same functionality as &aPaxels&f, so keep an eye out for those."
+	]
+	quest.7B954D1F7620FA41.title: "&bAll-In-One Tools"
+	quest.7C0FD2B2589BC66D.quest_desc: [
+		"Build a 3x3x3 of &aFurnaces&r to create the &dJumbo Furnace&r."
+		""
+		"The &dJumbo Furnace&r allows multiple recipes to be processed at the same time, and it can be upgraded with more &dJumbo Furnaces&r in the bottom-right slot of the interface."
+		""
+		"Up to 64 additional &dJumbo Funarces&f can be added as upgrades, each one increasing the amount of items it can smelt at once."
+	]
+	quest.7C0FD2B2589BC66D.title: "&bBigger \\&\\ Better"
+	quest.7D2375372CF328C3.quest_desc: [
+		"Eager to explore the great void? There is one item that can help a lot: A few stacks of &aBurning Dash Scrolls&r!"
+		""
+		"Throw a single piece of paper into a &cfire&r to make a &aBurning Dash Scroll&r."
+		""
+		"Everything you need to make these can be automated right now:"
+		"- &2Dispensers&r can light &cfires&r with &7flint and steel&r, break &asugarcane&r with &bwater,&r or toss items."
+		"- &2Hoppers&r under &2mud&r can still pick up items."
+		"- &2Snad&r, when directly pulsed with redstone, causes &asugarcane&r to grow quite fast."
+		""
+		"&c&lWarning&f: Throw only one piece of paper! Using more will waste the rest of the stack!"
+	]
+	quest.7D2375372CF328C3.title: "&fAir Dash"
+	task.033F807A7D0F6473.title: "Build a Jumbo Furnace"
+	task.07F3A67702DAA987.title: "Inventory Trashcan!"
+	task.089FB1A19715C97A.title: "Any #relics:relic"
+	task.16E099D5EA18961B.title: "Strike the Earth"
+	task.1C70AB93B6A0F1A6.title: "&aVillager Blocks&r"
+	task.1EAA289B281EBF4C.title: "Any #constructionstick:upgrades"
+	task.390BE5325E1DE990.title: "&dTemporal Pouch&r"
+	task.3D00D0A8A61617EA.title: "Snad"
+	task.5CE52CCA9AEA95D5.title: "Tips \\&\\ Tricks!"
+	task.6925E00B803A9170.title: "Waystones"
+	task.6B9EDB6F4966725F.title: "&6Building Gadgets"
+	task.6C6FBA9B08EC0728.title: "Any #constructionstick:construction_sticks"
+	task.71B63908FDE6CC61.title: "&bAll-In-One Tools"
+	task.78869974512F8AD0.title: "Elevators"
+}

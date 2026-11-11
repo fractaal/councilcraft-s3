@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:torchflower",
+    "minecraft:torch",
+    "minecraft:soul_torch",
+    "supplementaries:fire_pit",
+	"#chipped:magma_block",
+	"#chipped:torch"
+  ]
+}

@@ -1,0 +1,62 @@
+[
+	{
+		"dimension": "minecraft:overworld",
+		"mob": "minecraft:parrot",
+		"mincount": {
+			"amount": 5,
+			"mob": "minecraft:parrot",
+			"perplayer": true
+		},
+		"result": "deny"
+	},
+	{
+		"hostile": true,
+		"mincount": {
+			"amount": 40,
+			"perplayer": true
+		},
+		"result": "deny"
+	},
+	{
+		"mob": [
+			"minecraft:zombie",
+			"minecraft:drowned",
+			"minecraft:husk",
+			"minecraft:zombie_villager",
+			"minecraft:zombified_piglin",
+			"minecraft:piglin"
+		],
+		"result": "default",
+		"when": "finalize",
+		"healthadd": 4,
+		"speedadd": 0.02
+	},
+	{
+		"mob": [
+			"minecraft:skeleton",
+			"minecraft:stray"
+		],
+		"result": "default",
+		"when": "finalize",
+		"healthadd": 2,
+		"followrangeadd": 6
+	},
+	{
+		"mob": [
+			"minecraft:spider",
+			"minecraft:cave_spider"
+		],
+		"result": "default",
+		"when": "finalize",
+		"speedadd": 0.06
+	},
+	{
+		"mob": [
+			"friendsandfoes:iceologer",
+			"friendsandfoes:illusioner"
+		],
+		"result": "default",
+		"when": "finalize",
+		"healthadd": 8
+	}
+]

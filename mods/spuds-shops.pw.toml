@@ -1,0 +1,13 @@
+name = "Spud's shops"
+filename = "spudaciousshops-1.10.3-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/sHFbDnFN/versions/e6t9dR2G/spudaciousshops-1.10.3-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "359359e7d354cea40cc40788b19c1c46dca5cd0bceea924f14f774690c79ccc4ef342acc499ee6df153a55f49951c6008e3b61235d59bb7c8e246a74a9f09fc9"
+
+[update]
+[update.modrinth]
+mod-id = "sHFbDnFN"
+version = "e6t9dR2G"

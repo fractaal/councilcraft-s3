@@ -1,0 +1,22 @@
+{
+  "id": "chisel_llama_wool",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_llama_wool",
+    "fallback": "Chisel: Llama Wool"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "wool_"
+      },
+      {
+        "item_path_contains": "/llama"
+      }
+    ]
+  }
+}

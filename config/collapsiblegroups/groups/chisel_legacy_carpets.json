@@ -1,0 +1,22 @@
+{
+  "id": "chisel_legacy_carpets",
+  "name": {
+    "translate": "collapsible_groups.group.chisel_legacy_carpets",
+    "fallback": "Chisel: Legacy Carpets"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "chisel"
+      },
+      {
+        "item_path_contains": "carpet_"
+      },
+      {
+        "item_path_contains": "/legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "aero_workshop"
+	group: "03201DC13AAA49AA"
+	icon: {
+		id: "toms_storage:storage_terminal"
+	}
+	id: "152E15BCE9C8DF8C"
+	images: [ ]
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["2DB65B686F757B89"]
+			icon: {
+				id: "toms_storage:storage_terminal"
+			}
+			id: "0203E74ABB4E19EF"
+			tasks: [{
+				consume_items: false
+				id: "09ABAE6F12E8176E"
+				item: { count: 1, id: "toms_storage:storage_terminal" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0203E74ABB4E19EF"]
+			icon: {
+				id: "toms_storage:inventory_connector"
+			}
+			id: "6499B568082965F9"
+			tasks: [
+				{
+					consume_items: false
+					id: "2D5C35ACF5001570"
+					item: { count: 1, id: "toms_storage:inventory_connector" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 2L
+					id: "6222EE2538998E78"
+					item: { count: 1, id: "minecraft:chest" }
+					type: "item"
+				}
+				{
+					id: "4D82292EDEE8A781"
+					type: "checkmark"
+				}
+			]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6499B568082965F9"]
+			icon: {
+				id: "toms_storage:crafting_terminal"
+			}
+			id: "2AF564E68FD62FB6"
+			tasks: [{
+				consume_items: false
+				id: "7264D06043DB8FB3"
+				item: { count: 1, id: "toms_storage:crafting_terminal" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AF564E68FD62FB6"]
+			icon: {
+				id: "toms_storage:wireless_terminal"
+			}
+			id: "630F46F8C93BA7AC"
+			tasks: [{
+				consume_items: false
+				id: "152053EE8F19A0B0"
+				item: { count: 1, id: "toms_storage:wireless_terminal" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2DB65B686F757B89"]
+			icon: {
+				id: "logisticsnetworks:logistics_node"
+			}
+			id: "497D954F77E35575"
+			tasks: [{
+				consume_items: false
+				count: 2L
+				id: "3A6CE6A0AEC2873A"
+				item: { count: 1, id: "logisticsnetworks:logistics_node" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["497D954F77E35575"]
+			icon: {
+				id: "logisticsnetworks:small_filter"
+			}
+			id: "102A41F46F4F7E85"
+			tasks: [
+				{
+					consume_items: false
+					id: "2267DCE5CA4FCB12"
+					item: { count: 1, id: "logisticsnetworks:small_filter" }
+					type: "item"
+				}
+				{
+					consume_items: false
+					count: 16L
+					id: "6C0ABE969566A950"
+					item: { count: 1, id: "minecraft:iron_ingot" }
+					type: "item"
+				}
+				{
+					id: "4C2961ADCF7703CB"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2DB65B686F757B89"]
+			icon: {
+				id: "compactcrafting:field_projector"
+			}
+			id: "0DEF800B55A56918"
+			tasks: [{
+				consume_items: false
+				id: "2227D0A32391A3D8"
+				item: { count: 1, id: "compactcrafting:field_projector" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0DEF800B55A56918"]
+			icon: {
+				id: "compactmachines:personal_shrinking_device"
+			}
+			id: "62AF1A8307DA7CE8"
+			tasks: [{
+				consume_items: false
+				id: "4964E48FA3A187DF"
+				item: { count: 1, id: "compactmachines:personal_shrinking_device" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["62AF1A8307DA7CE8"]
+			icon: {
+				id: "minecraft:chest"
+			}
+			id: "0DB417F9E202726E"
+			tasks: [
+				{
+					consume_items: false
+					id: "6AC7AE9B3E4771A4"
+					item: { count: 1, id: "minecraft:chest" }
+					type: "item"
+				}
+				{
+					id: "1A5DD765B388E296"
+					type: "checkmark"
+				}
+			]
+			x: 6.0d
+			y: 6.0d
+		}
+	]
+}

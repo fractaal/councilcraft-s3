@@ -1,0 +1,13 @@
+name = "[Let's Do] Hearth & Timber"
+filename = "letsdo-hearth_and_timber-neoforge-1.0.5.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/paO4gjmE/versions/g9yHj7BB/letsdo-hearth_and_timber-neoforge-1.0.5.jar"
+hash-format = "sha512"
+hash = "db56ccfbeee47019ee769f4973d18cee1f6ed866cc5d91222c16b20465981834091b160e29b8397bc4ee6ca8f6846106495236584aa651f7fac0aeb5f566b4b1"
+
+[update]
+[update.modrinth]
+mod-id = "paO4gjmE"
+version = "g9yHj7BB"

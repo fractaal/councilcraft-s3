@@ -1,0 +1,13 @@
+name = "Golem Dungeons"
+filename = "golemdungeons-2.0.9.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5OrL8C4a/versions/tQhakMGs/golemdungeons-2.0.9.jar"
+hash-format = "sha512"
+hash = "46bc73077584c3529e0d7593a05da944ca78c9045af21b5250f7c1a5dba7458c01073a35872c60c2847410420bd2b103618080508e315407303ea2829cd208cc"
+
+[update]
+[update.modrinth]
+mod-id = "5OrL8C4a"
+version = "tQhakMGs"

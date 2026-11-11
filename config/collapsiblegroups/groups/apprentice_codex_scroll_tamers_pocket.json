@@ -1,0 +1,22 @@
+{
+  "id": "apprentice_codex_scroll_tamers_pocket",
+  "name": {
+    "translate": "collapsible_groups.group.apprentice_codex_scroll_tamers_pocket",
+    "fallback": "Apprentice's Codex: Tamer's Pocket Scrolls"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "id": "irons_spellbooks:scroll"
+      },
+      {
+        "type": "item",
+        "component": "irons_spellbooks:spell_container",
+        "path": "data[0].id",
+        "value": "apprenticecodex:tamers_pocket"
+      }
+    ]
+  }
+}

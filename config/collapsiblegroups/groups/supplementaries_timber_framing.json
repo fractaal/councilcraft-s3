@@ -1,0 +1,26 @@
+{
+  "id": "supplementaries_timber_framing",
+  "name": {
+    "translate": "collapsible_groups.group.supplementaries_timber_framing",
+    "fallback": "Supplementaries: Timber Framing"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "supplementaries"
+      },
+      {
+        "any": [
+          {
+            "item_path_starts_with": "daub"
+          },
+          {
+            "item_path_starts_with": "timber_"
+          }
+        ]
+      }
+    ]
+  }
+}

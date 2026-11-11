@@ -1,0 +1,19 @@
+{
+  "id": "excessive_utilities_compressed_cobbled_deepslate",
+  "name": {
+    "translate": "collapsible_groups.group.excessive_utilities_compressed_cobbled_deepslate",
+    "fallback": "Excessive Utilities: Compressed Cobbled Deepslate"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "excessive_utilities"
+      },
+      {
+        "item_path_contains": "compressed_cobbled_deepslate"
+      }
+    ]
+  }
+}

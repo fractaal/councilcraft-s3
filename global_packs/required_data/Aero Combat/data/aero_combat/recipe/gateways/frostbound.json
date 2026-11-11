@@ -1,0 +1,24 @@
+{
+  "type": "gateways:gate_recipe",
+  "group": "aero_combat",
+  "pattern": [
+    "TMT",
+    "MAM",
+    "TMT"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:blue_ice"
+    },
+    "M": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "A": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "result": {
+    "id": "gateways:gate_pearl"
+  },
+  "gateway": "aero_combat:frostbound"
+}

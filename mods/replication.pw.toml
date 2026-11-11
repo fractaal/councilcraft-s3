@@ -1,0 +1,13 @@
+name = "Replication"
+filename = "Replication-1.21.1-1.2.7.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BrYTsfWv/versions/XfQXDcjc/Replication-1.21.1-1.2.7.jar"
+hash-format = "sha512"
+hash = "57366716e479134750ea39153b10fe9472825a4e810a78f18ffbe97b55d63c5dbe1649857192bdbe8a48dfa7ad308bd649f902a1bb87d49c773a9b67d416d100"
+
+[update]
+[update.modrinth]
+mod-id = "BrYTsfWv"
+version = "XfQXDcjc"

@@ -1,0 +1,13 @@
+enableRaidGolems = true
+# Default: 0.25
+# Range: 0.0 ~ 10.0
+flameSwordDamage = 0.25
+# Default: 0.33
+# Range: 0.0 ~ 1.0
+flameSwordLoot = 0.33
+# Default: 0.25
+# Range: 0.0 ~ 10.0
+sculkScytheDamage = 0.25
+# Default: 1.0
+# Range: 0.0 ~ 10.0
+fierySwordDamage = 1.0

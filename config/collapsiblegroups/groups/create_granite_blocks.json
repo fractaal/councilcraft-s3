@@ -1,0 +1,19 @@
+{
+  "id": "create_granite_blocks",
+  "name": {
+    "translate": "collapsible_groups.group.create_granite_blocks",
+    "fallback": "Create: Granite Blocks"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "create"
+      },
+      {
+        "item_path_contains": "granite"
+      }
+    ]
+  }
+}

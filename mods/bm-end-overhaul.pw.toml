@@ -1,0 +1,13 @@
+name = "BM: End Overhaul"
+filename = "bm_end_overhaul-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bbcbc138ac016dc80ef18376a59df48fbe3ad31c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8408933
+project-id = 1605447

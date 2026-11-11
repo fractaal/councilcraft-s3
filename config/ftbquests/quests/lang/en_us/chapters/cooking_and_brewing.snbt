@@ -1,0 +1,152 @@
+{
+	quest.0224D5E40F659D36.quest_desc: [
+		"The Farmer's Delight &aCutting Board&r can be used for lots of recipes, including breaking Amethyst Blocks down into Amethyst Shards."
+		""
+		"It's also a staple for the kitchen, and is great for cutting up items for recipes!"
+		""
+		"Note: This does not work for the Kitchen Multiblock, and will have to be done in world."
+	]
+	quest.0224D5E40F659D36.title: "&fTo The Chopping Board"
+	quest.04D6FAAF40A941EF.title: "&fStuffed Pumpkin"
+	quest.073546F80EDA632E.quest_desc: [
+		"Need a specific seed for your farm? Check out the local Farmer's &aMarket&r!"
+		""
+		"Once placed, this will call a local Farmer that sells most seeds and items needed for a great farm."
+		""
+		"The &aMarket&r is especially useful in skyblocks."
+		""
+		"Hopefully this guy doesn't fall into a &3Metalworks Foundry&r... who knows what might happen..."
+		"{image:minecraft:item/emerald width:20 height:20 align:center}"
+	]
+	quest.073546F80EDA632E.title: "&fThe &aMarket"
+	quest.077F5C3829CA7300.quest_desc: [
+		"To encourage exploring a variety of food, foods in this pack will grant you &6extra health&r the more you try!"
+		""
+		"To keep up with what foods you’ve eaten and your next culinary threshold, you can always look in the &aFood Book&r."
+	]
+	quest.077F5C3829CA7300.title: "&fFood Diversity"
+	quest.0800E48C01F45F46.title: "&fSweet Berry Farm"
+	quest.0CD3050976F79358.title: "&fCooked Chicken Cuts"
+	quest.10AB0C0930A5D77D.title: "&5Regeneration"
+	quest.111F60263C10C60B.title: "&fHamburger"
+	quest.14FFB82FB7EB0659.title: "&fApple Pie"
+	quest.154E08BC9091684F.quest_desc: [
+		"&eGlowstone Dust&r is used as an amplifier for potions effects."
+		""
+		"When added, this will usually increase the strength of the potion."
+	]
+	quest.154E08BC9091684F.title: "&eGlowstone Dust"
+	quest.186BE7F6DFA8C41E.quest_desc: [
+		"&3Gunpowder&r converts potions into &aSplash Potions&r."
+		""
+		"These potions are instead thrown for an AoE effect, rather than drinking them straight."
+	]
+	quest.186BE7F6DFA8C41E.title: "&7Gunpowder"
+	quest.1AF7088248493BC4.quest_desc: [
+		"&eFarmer's Delight&r comes with a few automation tricks of its own, so your kitchen doesn't have to be a hands-on affair."
+		""
+		"A &6Dispenser&r loaded with a knife will work a &aCutting Board&r for you, and the &aCooking Pot&r takes ingredients from the top or sides and hands finished meals out of the bottom, so hoppers or your favourite item pipes can keep it fed."
+		""
+		"&6Cooking for Blockheads&r takes it further: connect an &aOven&r, &aFridge&r and &aCounter&r into one kitchen and the &aCooking Table&r will pull ingredients from every block attached to it."
+		""
+		"If things like that sound appealing to you, try setting up a little food factory for yourself!"
+	]
+	quest.1AF7088248493BC4.title: "&6Mechanical Meals"
+	quest.1CEEACA025EDE94D.quest_desc: ["Pie Crust serves as the base for many different recipes."]
+	quest.1CEEACA025EDE94D.title: "&eBaking a Pie"
+	quest.24E11CBBB6EC58D5.title: "&fBlaze Powder"
+	quest.29C505C5D1927614.title: "&cInstant Health"
+	quest.3670FA7818A11284.quest_desc: [
+		"There are plenty of great foods out there that provide great stats, but nothing can replace the benefits from &cBrewing Potions&r."
+		""
+		"You'll need to borrow a &cBlaze Rod&r from a Blaze first, or just steal a stand from your local sky village."
+		""
+		"&7&oWho am I to judge?"
+	]
+	quest.3670FA7818A11284.title: "&fTime To &dBrew"
+	quest.37588DD1D7FA6795.title: "&fChocolate Pie"
+	quest.3A389EDA045B65E1.title: "&fCarrot Farm"
+	quest.3F1804C1F7413280.title: "&fChicken Sandwich"
+	quest.4145FED51D1ACD76.title: "&fNether Wart"
+	quest.420F14616E3F8EEF.quest_desc: [
+		"The &cCooking Pot&r from Farmer's Delight contains many unique and exclusive recipes. It must be placed over a campfire for heat."
+		""
+		"This is an in-world crafting station, and doesn't work with the Kitchen Table automatically."
+	]
+	quest.420F14616E3F8EEF.title: "&cCooking Pot"
+	quest.4291D83FD8A79A24.title: "&fSweet Berry Cheesecake"
+	quest.4C50A70027F208BE.quest_desc: [
+		"Not all foods are eaten in your hands."
+		""
+		"Foods like &aCake&r will need to be placed down first, but will provide multiple slices to replenish your hunger!"
+	]
+	quest.4C50A70027F208BE.title: "&dTime For A Feast"
+	quest.4ECF22AA79A3688B.title: "&fCabbage Farm"
+	quest.532DA0BDBF2F215A.title: "&fBeef Patty"
+	quest.57AF9BB4B89D69CF.title: "&fOnion Farm"
+	quest.624B0229DBE6681F.quest_desc: [
+		"Tired of manual farming? Meet your new best friends: &6Loot Llamas&r!"
+		""
+		"These aren't your ordinary llamas. They're magical resource generators that will literally spit valuable items at you! "
+		""
+		"Set them up and watch as they work tirelessly to supply your base with everything from basic food to gourmet delicacies."
+		"{@pagebreak}"
+		"&aLoot Evolution&f: "
+		"Start with humble carrots and potatoes, but as your llamas grow stronger, they'll upgrade to cooked meats, magical ingredients like Demon's Dream seeds, and eventually premium Farmer's Delight meals!"
+		""
+		"&dPro Tips&f: "
+		"  • Breed your llamas strategically to create"
+		"  specialized spitters"
+		"  • Max strength (10) llamas drop epic foods like"
+		"   honey glazed ham"
+		"  • Turn Page for some special Tips »"
+		""
+		"{@pagebreak}"
+		"Did you know your &6Loot Llamas&r can be specialized? You can actually \"feed\" them to drop specific types of resources!"
+		""
+		"Note: These have a chance to Fail!"
+		""
+		"&e All Specialization Options:&r"
+		"  • &7Iron Ingot&r → Iron Clusters"
+		"  • &7Gold Ingot&r → Gold Clusters"
+		"  • &7Copper Ingot&r → Copper Clusters"
+		"  • &7Diamond&r → Diamond Clusters"
+		"  • &7Emerald&r → Emerald Clusters"
+		"  • &7Lapis Lazuli&r → Lapis Clusters"
+		"  • &7Redstone&r → Redstone Clusters"
+		"  • &7Coal&r → Coal Clusters"
+		"  • &7Quartz&r → Quartz Clusters"
+		"  • &7Amethyst Shard&r → Amethyst Shards"
+		"  • &7Slime Block&r → Slimeballs"
+		"  • &7Glowstone Dust&r → Glowstone Dust"
+		"  • &7Golden Apple&r → Default Food Drops"
+	]
+	quest.624B0229DBE6681F.title: "Loot Llamas"
+	quest.6303F008757BA13F.quest_desc: [
+		"&6Pasta with Meatballs&r is a perfect meal to stock up on."
+		""
+		"This is one of the advanced meals that provides &dNourishment&r when eaten, stopping you from going hungry while under the effects."
+		""
+		"Imagine how much you could use Ultimine during that time :)"
+	]
+	quest.6303F008757BA13F.title: "&fPasta with Meatballs"
+	quest.66BC17A3725601D7.title: "&fTomato Farm"
+	quest.6F6671705176E2F8.quest_desc: [
+		"When added to potions, &cRedstone&r can be used to increase the duration of potion's effects."
+	]
+	quest.6F6671705176E2F8.title: "&cRedstone Dust"
+	quest.73846333D68F6339.title: "&fPotato Farm"
+	quest.76F225C6B9A79620.quest_desc: [
+		"To make any potion, you'll need to make an &aAwkward Potion&r first."
+		""
+		"This will give you a base to work with!"
+	]
+	quest.76F225C6B9A79620.title: "&fAwkward Potion"
+	quest.7A208CB40BAFC4A9.quest_desc: ["Provides extra absorption!"]
+	quest.7A208CB40BAFC4A9.title: "&fApple Cider"
+	task.345089696B5A7211.title: "Food Diversity"
+	task.3B7699715021E7F7.title: "Placed Foods"
+	task.6AA28ACC00B467BA.title: "Farmer's Delight Knife"
+	task.71446177D61BD058.title: "Observe (and Leash) a Loot Llama"
+	task.7FEC9CD030E4D844.title: "Mechanical Chefs"
+}

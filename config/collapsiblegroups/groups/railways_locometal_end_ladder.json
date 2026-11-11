@@ -1,0 +1,19 @@
+{
+  "id": "railways_locometal_end_ladder",
+  "name": {
+    "translate": "collapsible_groups.group.railways_locometal_end_ladder",
+    "fallback": "Railways: Locometal End Ladder"
+  },
+  "enabled": true,
+  "filter": {
+    "all": [
+      {
+        "type": "item",
+        "namespace": "railways"
+      },
+      {
+        "item_path_ends_with": "locometal_end_ladder"
+      }
+    ]
+  }
+}

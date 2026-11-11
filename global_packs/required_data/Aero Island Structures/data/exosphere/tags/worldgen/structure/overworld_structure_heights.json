@@ -1,0 +1,489 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apotheosis:tower_leaf",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_main",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_sand",
+      "required": false
+    },
+    {
+      "id": "apotheosis:tower_spruce",
+      "required": false
+    },
+    {
+      "id": "companions:companions_babayaga",
+      "required": false
+    },
+    {
+      "id": "companions:companions_factory",
+      "required": false
+    },
+    {
+      "id": "companions:companions_monkey_temple",
+      "required": false
+    },
+    {
+      "id": "companions:companions_teddytower",
+      "required": false
+    },
+    {
+      "id": "nova_structures:badlands_miner_outpost",
+      "required": false
+    },
+    {
+      "id": "nova_structures:bunker",
+      "required": false
+    },
+    {
+      "id": "nova_structures:conduit_ruin",
+      "required": false
+    },
+    {
+      "id": "nova_structures:creeping_crypt",
+      "required": false
+    },
+    {
+      "id": "nova_structures:desert_ruins",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_birch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_cherry",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_dark_oak",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_forest",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_jungle",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_mangrove",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_savanna",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_swamp",
+      "required": false
+    },
+    {
+      "id": "nova_structures:firewatch_tower_taiga",
+      "required": false
+    },
+    {
+      "id": "nova_structures:illager_camp",
+      "required": false
+    },
+    {
+      "id": "nova_structures:jungle_ruins",
+      "required": false
+    },
+    {
+      "id": "nova_structures:mangrove_witch_hut",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_bee_keeper",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_big_remnant",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_big_remnant_2",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_big_remnant_3",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_birch_graveyard",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_bridge_remnant",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_bunny_base",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_classic_village",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_desert_remnant",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_forest_smith",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_frog_ranch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_graveyard",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_medium_remnant",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_medium_remnant_2",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_miner_hut",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_mud_brick_constructor",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_ominous_shop",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_ruin_farmer",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_ruin_smith",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_sawmill",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_school_remnant",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_taiga_castle",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_woodland_hud",
+      "required": false
+    },
+    {
+      "id": "nova_structures:remnant_zombie_horse_ranch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:ruin_town",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_combat_tier_1",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_combat_tier_2",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_combat_tier_3",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_combat_tier_4",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_combat_tier_5",
+      "required": false
+    },
+    {
+      "id": "nova_structures:shrine_tower",
+      "required": false
+    },
+    {
+      "id": "nova_structures:stray_fort",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_acacia",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_birch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_cherry",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_dark_oak",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_desert",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_jungle",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_mangrove",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_oak",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_snowy",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_spruce",
+      "required": false
+    },
+    {
+      "id": "nova_structures:tavern_swamp",
+      "required": false
+    },
+    {
+      "id": "nova_structures:village_birch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:village_jungle",
+      "required": false
+    },
+    {
+      "id": "nova_structures:village_swamp",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_birch",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_dark_oak",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_jungle",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_oak",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_savana",
+      "required": false
+    },
+    {
+      "id": "nova_structures:well_spruce",
+      "required": false
+    },
+    {
+      "id": "nova_structures:wild_ruin",
+      "required": false
+    },
+    {
+      "id": "ecologics:desert_ruin",
+      "required": false
+    },
+    {
+      "id": "golemdungeons:abandoned_factory",
+      "required": false
+    },
+    {
+      "id": "hopo:portal/overworld/portal_ruined",
+      "required": false
+    },
+    {
+      "id": "cataclysm:abandoned_spire",
+      "required": false
+    },
+    {
+      "id": "cataclysm:abandoned_temple",
+      "required": false
+    },
+    {
+      "id": "cataclysm:abandoned_village",
+      "required": false
+    },
+    {
+      "id": "cataclysm:cursed_pyramid",
+      "required": false
+    },
+    {
+      "id": "cataclysm:desert_occupied_village",
+      "required": false
+    },
+    {
+      "id": "cataclysm:desert_site",
+      "required": false
+    },
+    {
+      "id": "cataclysm:desert_temple",
+      "required": false
+    },
+    {
+      "id": "cataclysm:frosted_prison",
+      "required": false
+    },
+    {
+      "id": "cataclysm:ruined_citadel",
+      "required": false
+    },
+    {
+      "id": "cataclysm:sunken_city",
+      "required": false
+    },
+    {
+      "id": "ribbits:ribbit_village",
+      "required": false
+    },
+    {
+      "id": "supplementaries:galleon",
+      "required": false
+    },
+    {
+      "id": "supplementaries:road_sign",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/upper/default",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/upper/dripstone",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/upper/lush",
+      "required": false
+    },
+    {
+      "id": "trek:monster_room/upper/oak",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/bone_dragon",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/claw_spike",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/cold_red_trade",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/dark_oak_trade",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/desert_ranch",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/explorer_cabin",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/frozen_tree",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/ice_fort",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/jungle_trade",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/offshore_platform_pillager",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/ship_pillager",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/small_pyramide",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/small_red_trade",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/snowman",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/snow_cottage",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/square_tower",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/star_spike",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/three_finger_ice",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/tour_desert",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/underwater_sword",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/wandering_trader_dark_oak",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/medium/wandering_trader_spruce",
+      "required": false
+    },
+    {
+      "id": "trek:overworld/very_rare/coves",
+      "required": false
+    }
+  ]
+}

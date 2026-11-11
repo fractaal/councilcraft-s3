@@ -1,0 +1,13 @@
+name = "P1nero's Better Structure Block"
+filename = "better_structure_block-neoforge1.21.1-2.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8b37b01a9361a18f3c5065ffa3606703b051fdf5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7828515
+project-id = 970671
