@@ -985,32 +985,6 @@ public final class SkyTerrain implements DensityFunction {
         return Integer.MIN_VALUE;
     }
 
-    /**
-     * A picker for height lookups outside the noise fill (NoiseBasedChunkGenerator.iterateNoiseColumn, behind
-     * getBaseHeight), so mods that plan from heights see lake water where the noise fill puts it. One column per lookup.
-     */
-    public Aquifer.FluidPicker columnFluidPicker(Aquifer.FluidPicker fallback) {
-        if (p.arch == null) return fallback;
-        double[][] col = new double[1][];
-        return (x, y, z) -> {
-            double[] k = col[0];
-            if (k == null || k[0] != x || k[1] != z) {
-                Column c = new Column(SkyTerrain.this, x, z);
-                fill(c, true, true);
-                k = new double[2 + 2 * c.count];
-                k[0] = x;
-                k[1] = z;
-                for (int i = 0; i < c.count; i++) {
-                    k[2 + 2 * i] = c.basinLevel[i];
-                    k[3 + 2 * i] = c.top[i] / B - 3.0;
-                }
-                col[0] = k;
-            }
-            for (int i = 2; i < k.length; i += 2) if (!Double.isNaN(k[i]) && y < k[i] && y > k[i + 1]) return water((int) k[i]);
-            return fallback.computeFluid(x, y, z);
-        };
-    }
-
     /** A picker for one chunk. Vanilla asks once per air block in x/z order, so answers are kept per column of the chunk. */
     public Aquifer.FluidPicker fluidPicker(Aquifer.FluidPicker fallback) {
         if (p.arch != null) return new ArchPicker(fallback);

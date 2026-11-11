@@ -13,7 +13,6 @@ import net.minecraft.world.level.levelgen.blending.Blender;
 import com.llamalad7.mixinextras.sugar.Local;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import skyislands.BlendReach;
 import skyislands.FastFill;
@@ -57,16 +56,6 @@ abstract class NoiseBasedChunkGeneratorMixin {
         NoiseChunk nc = NoiseChunk.forChunk(chunk, state, beardifier, settings, fluid, blender);
         ((FastFill) nc).skyislands$setup(reach != null && picker != null && blender == Blender.empty(), picker, reach);
         return nc;
-    }
-
-    /**
-     * Height lookups (getBaseHeight and getBaseColumn, through iterateNoiseColumn) see lake water too. Without it, mods
-     * that plan from heights, such as Streams Reflowing's rivers, see each lake as a dry hole in its island.
-     */
-    @ModifyArg(method = "iterateNoiseColumn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/NoiseChunk;<init>(ILnet/minecraft/world/level/levelgen/RandomState;IILnet/minecraft/world/level/levelgen/NoiseSettings;Lnet/minecraft/world/level/levelgen/DensityFunctions$BeardifierOrMarker;Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;Lnet/minecraft/world/level/levelgen/Aquifer$FluidPicker;Lnet/minecraft/world/level/levelgen/blending/Blender;)V"), index = 7)
-    private Aquifer.FluidPicker skyislands$lakeHeights(Aquifer.FluidPicker fluid, @Local(argsOnly = true) RandomState state) {
-        SkyTerrain terrain = FastGen.terrainOf(state);
-        return terrain == null ? fluid : terrain.columnFluidPicker(fluid);
     }
 
     private static final BlockState AIR = Blocks.AIR.defaultBlockState();
