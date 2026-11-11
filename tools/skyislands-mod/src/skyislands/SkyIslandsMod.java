@@ -20,5 +20,6 @@ public final class SkyIslandsMod {
     public SkyIslandsMod(IEventBus modBus) {
         TYPES.register(modBus);
         NeoForge.EVENT_BUS.addListener(StructureDensity::onLevelLoad);
+        NeoForge.EVENT_BUS.addListener(DfuWarmup::onServerStarted);
     }
 }
