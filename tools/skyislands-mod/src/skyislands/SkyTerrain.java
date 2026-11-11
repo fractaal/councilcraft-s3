@@ -546,6 +546,10 @@ public final class SkyTerrain implements DensityFunction {
      */
     private double channel(Column c, double x, double z) {
         if (!Double.isNaN(c.channel)) return c.channel;
+        return c.channel = channelAt(x, z);
+    }
+
+    private double channelAt(double x, double z) {
         Arch a = p.arch;
         double v = 0.0;
         if (a.channelWidth > 0 && a.leySpacing > 0) {
@@ -560,8 +564,43 @@ public final class SkyTerrain implements DensityFunction {
                 v = smoothstep(0.0, 1.0, clamp(1.0 - dist / Math.max(4.0, width), 0.0, 1.0)) * present;
             }
         }
-        c.channel = v;
         return v;
+    }
+
+    /** The island's shape value at (x, z) with channels applied, as addIsland works it out: under 1 is land. */
+    private double islandRn(Island is, double x, double z, double channelHere) {
+        Arch a = p.arch;
+        double rn = shapeMaths(is, x, z, sharedWarp(x, z), null);
+        if (a.channelWidth > 0) {
+            boolean islet = is.r <= a.pepperMaxRadius && is.bowlDepth == 0 && is.edge <= 3.0;
+            double heart = smoothstep(0.35, 0.8, 1.0 - rn) * smoothstep(40.0, 120.0, is.r);
+            rn += (islet ? a.channelPepper : a.channelStrength) * (Double.isNaN(channelHere) ? channelAt(x, z) : channelHere) * (1.0 - a.channelCoreResist * heart);
+        }
+        return rn;
+    }
+
+    /**
+     * Where (x, z) is relative to a lake island's lake: below 0 is the lake area (the dip under the water level and
+     * its shore), and the shore is at 0. t is how far in from the island's edge (1 - rn).
+     */
+    private double lakeInside(Island is, double x, double z, double t) {
+        return t - (1.0 - is.bowlWidth) + p.arch.shoreWarp * sn(x, z, 0.4 * is.r + 8.0, is.ox - 919.0, is.oz + 457.0);
+    }
+
+    /**
+     * How many blocks (x, z) is outside the lake's water area, negative inside it. The water area is the lake area
+     * minus a strip lakeCoastGap blocks wide along the island's edge. Distances come from how fast the lake and shape
+     * values change here (value / slope), measured over 2 blocks, because coast noise, shore noise and channels can
+     * make them change several times faster than 1 / radius.
+     */
+    private double lakeOutside(Island is, double x, double z, double rn, double inside) {
+        double e = 2.0;
+        double rx = islandRn(is, x + e, z, Double.NaN), rz = islandRn(is, x, z + e, Double.NaN);
+        double ix = lakeInside(is, x + e, z, 1.0 - rx), iz = lakeInside(is, x, z + e, 1.0 - rz);
+        double gi = Math.hypot(ix - inside, iz - inside) / e, gt = Math.hypot(rx - rn, rz - rn) / e;
+        double outsideLake = (-0.02 - inside) / Math.max(gi, 1e-9);
+        double toEdge = (1.0 - rn) / Math.max(gt, 1e-9);
+        return Math.max(outsideLake, p.arch.lakeCoastGap - toEdge);
     }
 
     /** Adds this island's solid span at (x, z) to the column, if its land reaches here. */
@@ -582,29 +621,26 @@ public final class SkyTerrain implements DensityFunction {
         double ground = is.base + tierOut[0];
         double top = ground + is.dome * smoothstep(0.0, 0.6, t);
         double rise = smoothstep(0.0, 0.2, t);
-        double inside = is.bowlDepth > 0
-                ? t - (1.0 - is.bowlWidth) + a.shoreWarp * sn(x, z, 0.4 * is.r + 8.0, is.ox - 919.0, is.oz + 457.0) : 0.0;
+        double inside = is.bowlDepth > 0 ? lakeInside(is, x, z, t) : 0.0;
         top += is.hills * (sn(x, z, Math.max(32.0, 0.6 * is.r), is.ox + 711.0, is.oz - 333.0)
                 + 0.45 * sn(x, z, Math.max(14.0, 0.22 * is.r), is.oz + 211.0, is.ox - 919.0)) * rise;
+        // A lake island rises on one side: the raised side's land climbs to a plateau that ends in a cliff over the water,
+        // and the island's mountains, if it has any, stand there. The rest of the shore stays low.
+        double raised = is.bowlDepth > 0 ? raisedSide(is, x, z) : 0.0;
         if (is.peak > 0) {
             // Ridged noise: sharp crests where the noise crosses zero, so peaks come as ranges rather than cones.
             double ridge = 1.0 - Math.abs(sn(x, z, 0.45 * is.r + 10.0, is.oz + 97.0, is.ox - 41.0));
-            // On a lake island the mountains ring the water: strongest just outside the lake, none inside it.
+            // On a lake island the mountains stand just outside the lake on its raised side, none inside it.
             double where = is.bowlDepth > 0
-                    ? smoothstep(-0.45, -0.08, inside) * (1.0 - smoothstep(-0.08, 0.0, inside))
+                    ? smoothstep(-0.45, -0.08, inside) * (1.0 - smoothstep(-0.08, 0.0, inside)) * raised
                     : Math.pow(smoothstep(0.0, 1.0, t), 1.3);
             top += is.peak * where * (0.35 + 0.85 * ridge * ridge);
         }
         double level = Double.NaN;
         if (is.bowlDepth > 0) {
             // Where the middle dips below the water level, there's lake. Noise moves the shore and lifts islets.
-            if (is.cliff > 0) {
-                // Land rising towards the water on some sides, so it ends in a cliff over the lake there.
-                double side = clamp(0.35 + 1.3 * sn(x, z, 0.7 * is.r + 10.0, is.ox + 3203.0, is.oz - 2741.0), 0.0, 1.0);
-                top += is.cliff * side * smoothstep(-0.35, -0.04, inside) * (1.0 - smoothstep(-0.03, 0.01, inside));
-            }
-            double rimBump = is.rim * Math.exp(-((inside + 0.06) * (inside + 0.06)) / 0.004);
-            top += rimBump;
+            // The raised side: a plateau from a little way back, then a cliff down into the lake.
+            top += (is.cliff + is.rim) * raised * smoothstep(-0.4, -0.22, inside) * (1.0 - smoothstep(-0.03, 0.01, inside));
             // Inside the lake area the ground blends down to a bed set from the water line (deeper towards the
             // middle), so a tall island's dome or hills can't leave the lake dry. The steeper the blend, the more the
             // shore is a cliff. Islets are where the bed noise pokes above the water.
@@ -617,11 +653,25 @@ public final class SkyTerrain implements DensityFunction {
             }
             double into = smoothstep(0.0, a.bowlSteepness, inside);
             top += (bed - top) * into;
-            if (inside > -0.02 && top < is.waterLevel) level = is.waterLevel;
         }
         if (is.terrace > 0) top = ground + Math.floor((top - ground) / is.terrace) * is.terrace;
         // A slight drop at the very edge makes a crisp cliff lip.
         top -= 1.5 * (1.0 - smoothstep(0.0, 0.04, t));
+        double nearLake = 0.0;
+        if (is.bowlDepth > 0) {
+            // A lake holds its water. Within lakeBank blocks outside its water area the land is at least a block above
+            // the water, then falls away no steeper than 1:1; inside, the shore stays dry for lakeShore blocks, then goes
+            // down into the lake no steeper than 1:1. Without this the shore noise could leave dry ground below the
+            // water beside it, which the game shows as water walls and dry pits next to the lake. The gentle profile
+            // also keeps the 4-block cells the game interpolates from dipping under the water line beside the lake.
+            // Any air under the water line in the water area fills with water.
+            double out = lakeOutside(is, x, z, rn, inside);
+            double shore = out > -a.lakeShore ? Math.max(0.0, out - a.lakeBank) : -out - a.lakeShore;
+            top = Math.max(top, is.waterLevel + 1.0 - shore);
+            if (out <= 0) level = is.waterLevel;
+            // Crags (3D detail noise) keep out of the lake and its bank, so they can't open a hole beside the water.
+            nearLake = 1.0 - smoothstep(a.lakeBank, 2.0 * a.lakeBank + 8.0, out);
+        }
         // Underside: a cliff wall at the edge, then an inverted mountain, lumpy at two scales, with drips.
         double cone = Math.pow(smoothstep(0.0, 1.0, Math.min(1.0, 1.1 * t)), 0.65);
         double depth = is.edge + is.under * is.r * cone;
@@ -635,11 +685,17 @@ public final class SkyTerrain implements DensityFunction {
         int i = c.count++;
         c.top[i] = B * top;
         c.bottom[i] = B * bottom;
-        c.k[i] = is.wild > 0 ? is.wild * smoothstep(0.0, 0.3, t) : 0.0;
+        c.k[i] = is.wild > 0 ? is.wild * smoothstep(0.0, 0.3, t) * (1.0 - nearLake) : 0.0;
         c.maxK = Math.max(c.maxK, c.k[i]);
         c.mr[i] = t;
         c.yc[i] = is.base;
         c.basinLevel[i] = level;
+    }
+
+    /** 0 to 1: how strongly (x, z) is on the raised side of lake island `is`. One slow noise, so the raised part is one or two stretches of shore. */
+    private double raisedSide(Island is, double x, double z) {
+        Arch a = p.arch;
+        return clamp(a.raisedBias + a.raisedGain * sn(x, z, a.raisedWavelength * is.r + 10.0, is.ox + 3203.0, is.oz - 2741.0), 0.0, 1.0);
     }
 
     // ---- Basins: calderas and atolls ----------------------------------------------------------------------------
@@ -1085,14 +1141,49 @@ public final class SkyTerrain implements DensityFunction {
                 Column c = new Column(SkyTerrain.this, x, z);
                 fill(c, true, true);
                 for (int i = 0; i < c.count; i++) {
-                    levels[column * CAP + i] = c.basinLevel[i];
-                    // Only down to the lake bed (a little below, for interpolation), not to the underside:
-                    // caves and overhangs under a lake must stay dry.
-                    floors[column * CAP + i] = c.top[i] / B - 3.0;
+                    double level = c.basinLevel[i];
+                    levels[column * CAP + i] = level;
+                    // Only down to the lake bed (a little below), not to the underside: caves and overhangs under a
+                    // lake must stay dry. The game's ground here is a blend of the 4-block cell's corners, never lower
+                    // than the lowest corner, so the bed is taken as the lowest of this column and those corners.
+                    double bed = c.top[i] / B;
+                    if (!Double.isNaN(level)) bed = Math.min(bed, cornerBed(x, z, level));
+                    floors[column * CAP + i] = bed - 3.0;
                 }
                 counts[column] = c.count;
             }
             return column;
+        }
+
+        /** The 5x5 cell corners over this chunk, each as {top, water level} pairs per layer; null until needed. */
+        private final double[][] corners = new double[25][];
+
+        /** The lowest surface among the corners of (x, z)'s cell that belong to the lake at `level`, in blocks. */
+        private double cornerBed(int x, int z, double level) {
+            int ci = (x & 15) >> 2, cj = (z & 15) >> 2;
+            double bed = Double.POSITIVE_INFINITY;
+            for (int a = 0; a <= 1; a++) {
+                for (int b = 0; b <= 1; b++) {
+                    double[] k = corner(x, z, ci + a, cj + b);
+                    for (int i = 0; i < k.length; i += 2) if (k[i + 1] == level) bed = Math.min(bed, k[i]);
+                }
+            }
+            return bed;
+        }
+
+        private double[] corner(int x, int z, int ci, int cj) {
+            double[] k = corners[ci * 5 + cj];
+            if (k == null) {
+                Column c = new Column(SkyTerrain.this, (x & ~15) + 4 * ci, (z & ~15) + 4 * cj);
+                fill(c, true, true);
+                k = new double[2 * c.count];
+                for (int i = 0; i < c.count; i++) {
+                    k[2 * i] = c.top[i] / B;
+                    k[2 * i + 1] = c.basinLevel[i];
+                }
+                corners[ci * 5 + cj] = k;
+            }
+            return k;
         }
     }
 
@@ -1297,6 +1388,7 @@ public final class SkyTerrain implements DensityFunction {
         final double pepperCluster, flowAlign, sharedWarp, sharedWarpWidth;
         final double channelWidth, channelWidthVar, channelStrength, channelPepper, openSky, channelCoreResist;
         final double cliffRim, hybridPeak, wildChance, wildStrength, tierChance, tierMax, peakRoot;
+        final double lakeBank, lakeShore, lakeCoastGap, raisedBias, raisedGain, raisedWavelength;
         final double leyScale, leySpacing, leyPull, leyPullPepper, leyBand, leyPepperBand, leyOff, leyAlign, leyStretch, lineHeightSpread, leyGaps;
         final double leyCell, leyChance, leyMinRadius, leyMaxRadius;
         final int leySearch, pepperSearch, coastSearch, leyCoastSearch;
@@ -1365,6 +1457,13 @@ public final class SkyTerrain implements DensityFunction {
             tierChance = Params.num(o, "tierChance", 0);
             tierMax = Params.num(o, "tierMax", 20);
             peakRoot = Params.num(o, "peakRoot", 1.0);
+            JsonObject lk = o.has("lakeShore") ? o.getAsJsonObject("lakeShore") : null;
+            lakeBank = Params.num(lk, "bank", 12);
+            lakeShore = Params.num(lk, "shore", 4);
+            lakeCoastGap = Params.num(lk, "coastGap", 8);
+            raisedBias = Params.num(lk, "raisedBias", 0.0);
+            raisedGain = Params.num(lk, "raisedGain", 2.5);
+            raisedWavelength = Params.num(lk, "raisedWavelength", 1.2);
             JsonObject ley = o.has("ley") ? o.getAsJsonObject("ley") : null;
             leyScale = 256.0 / Params.num(ley, "width", 2600);
             leySpacing = ley == null ? 0 : Params.num(ley, "spacing", 0.2);
