@@ -689,6 +689,11 @@ public final class SkyTerrain implements DensityFunction {
         // The higher it rises, the deeper it hangs: mountain islands grow roots, and peaked islets become spikes.
         if (is.peak > 0) depth += a.peakRoot * is.peak * Math.pow(smoothstep(0.0, 1.0, t), 1.4);
         double bottom = Math.min(ground - depth, top - 4.0);
+        if (debugOn && DEBUG.get() != null) {
+            DEBUG.get().append(String.format("island at %.0f,%.0f r=%.0f base=%.0f lake=%s rn=%.3f t=%.3f inside=%.3f water=%.0f top=%.1f bottom=%.1f level=%s%n",
+                    is.x, is.z, is.r, is.base, is.bowlDepth > 0, rn, t, inside, is.waterLevel, top, bottom, level));
+            if (is.bowlDepth > 0) DEBUG.get().append(String.format("    lakeOutside=%.1f blocks%n", lakeOutside(is, x, z, rn, inside)));
+        }
         int i = c.count++;
         c.top[i] = B * top;
         c.bottom[i] = B * bottom;
@@ -838,6 +843,23 @@ public final class SkyTerrain implements DensityFunction {
         return out;
     }
 
+    private static volatile boolean debugOn;
+    private static final ThreadLocal<StringBuilder> DEBUG = new ThreadLocal<>();
+
+    /** For tools: each island layer at (x, z) with its shape and lake values, one line per island. */
+    public String debugColumn(int x, int z) {
+        StringBuilder sb = new StringBuilder();
+        debugOn = true;
+        DEBUG.set(sb);
+        try {
+            Column c = new Column(this, x, z);
+            fill(c, true, true);
+        } finally {
+            DEBUG.remove();
+        }
+        return sb.toString();
+    }
+
     /** For tools: how strongly this column is in a plateau region, 0 to 1. */
     public double plateauWeight(int x, int z) {
         if (p.plateauScale <= 0) return 0.0;
@@ -961,6 +983,35 @@ public final class SkyTerrain implements DensityFunction {
             }
         }
         return Integer.MIN_VALUE;
+    }
+
+    /**
+     * A picker for any column, for tools outside the noise fill that sample heights (RoadWeaver's route planner): lake
+     * water where the noise fill would put it, down to 3 below the column's surface. It keeps the last column each
+     * thread asked about, since callers ask about one column's blocks in a row.
+     */
+    public Aquifer.FluidPicker columnFluidPicker(Aquifer.FluidPicker fallback) {
+        if (p.arch == null) return fallback;
+        ThreadLocal<double[]> last = new ThreadLocal<>();
+        return (x, y, z) -> {
+            double[] col = last.get();
+            if (col == null || col[0] != x || col[1] != z) {
+                Column c = new Column(SkyTerrain.this, x, z);
+                fill(c, true, true);
+                col = new double[2 + 2 * c.count];
+                col[0] = x;
+                col[1] = z;
+                for (int i = 0; i < c.count; i++) {
+                    col[2 + 2 * i] = c.basinLevel[i];
+                    col[3 + 2 * i] = c.top[i] / B - 3.0;
+                }
+                last.set(col);
+            }
+            for (int i = 2; i < col.length; i += 2) {
+                if (!Double.isNaN(col[i]) && y < col[i] && y > col[i + 1]) return water((int) col[i]);
+            }
+            return fallback.computeFluid(x, y, z);
+        };
     }
 
     /** A picker for one chunk. Vanilla asks once per air block in x/z order, so answers are kept per column of the chunk. */
