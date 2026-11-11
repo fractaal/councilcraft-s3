@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Worldgen Lab</title>
+<style>
+  :root { --bg: #14171c; --panel: #1c2027; --line: #2c323c; --text: #d9dee7; --muted: #8b94a3; --accent: #7fb3ff; --bad: #ff8a80; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 13px/1.35 system-ui, sans-serif; }
+  #app { display: grid; grid-template-columns: 360px 1fr; height: 100%; }
+  #panel { background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; padding: 10px 12px 40px; }
+  #view { position: relative; overflow: hidden; }
+  canvas { display: block; }
+  h1 { font-size: 15px; margin: 0 0 8px; }
+  .row { display: flex; gap: 6px; align-items: center; margin: 4px 0; flex-wrap: wrap; }
+  button, select, input[type=number], input[type=text] { background: #262b34; color: var(--text); border: 1px solid var(--line); border-radius: 4px; padding: 4px 7px; font: inherit; }
+  button:hover { border-color: var(--accent); }
+  input[type=number] { width: 78px; }
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  summary { cursor: pointer; font-weight: 600; padding: 3px 0; }
+  .field { display: grid; grid-template-columns: 112px 1fr 70px; gap: 6px; align-items: center; margin: 3px 0; }
+  .field label { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .field input[type=range] { width: 100%; }
+  .field input[type=number] { width: 70px; }
+  #status { color: var(--muted); font-size: 12px; min-height: 34px; }
+  #status .err { color: var(--bad); white-space: pre-wrap; }
+  #hud { position: absolute; left: 10px; bottom: 10px; background: #0009; padding: 6px 9px; border-radius: 5px; font-size: 12px; pointer-events: none; }
+  .hint { color: var(--muted); font-size: 11px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="panel">
+    <h1>Worldgen Lab</h1>
+    <div id="status">Connecting…</div>
+    <div class="row">
+      <label>Centre X <input id="cx" type="number" value="0" step="64"></label>
+      <label>Z <input id="cz" type="number" value="0" step="64"></label>
+    </div>
+    <div class="row">
+      <label>Area <select id="area">
+        <option value="512">512 blocks</option>
+        <option value="1024" selected>1024 blocks</option>
+        <option value="2048">2048 blocks</option>
+        <option value="4096">4096 blocks</option>
+      </select></label>
+      <label>Detail <select id="step">
+        <option value="1">every block</option>
+        <option value="2" selected>every 2</option>
+        <option value="4">every 4</option>
+        <option value="8">every 8</option>
+      </select></label>
+    </div>
+    <div class="row">
+      <button id="regen">Regenerate</button>
+      <button id="save" title="Write these settings to the settings file">Save settings</button>
+      <button id="reload" title="Discard edits and load the settings file again">Reload</button>
+    </div>
+    <div class="row"><label><input id="auto" type="checkbox" checked> Apply on change</label>
+      <label><input id="water" type="checkbox" checked> Water</label>
+      <button id="verify" title="Generate the centre chunk with the game's own generator and compare block by block">Verify</button></div>
+    <details id="overviewBox" open><summary>Overview map</summary>
+      <div class="row"><select id="ovSize"><option value="4096">4 km</option><option value="8192" selected>8 km</option><option value="16384">16 km</option></select>
+        <button id="ovGo">Refresh map</button><span class="hint">Click the map to look there.</span></div>
+      <canvas id="ov" width="512" height="512" style="width:100%;image-rendering:pixelated;border:1px solid var(--line)"></canvas>
+    </details>
+    <details id="featuresBox"><summary>Lake, peak and stepped islands nearby</summary><div id="features" class="hint">…</div></details>
+    <p class="hint">Drag to orbit, right-drag to pan, scroll to zoom. Click terrain for its coordinates; double-click to recentre there.</p>
+    <div id="fields"></div>
+  </div>
+  <div id="view"><div id="hud"></div></div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// ---- Ranges for the settings sliders: [min, max, step]. Anything not listed gets a range around its value. ----------
+const RANGES = {
+  'L0': [100, 4000, 10], 'weights.*': [0, 3, 0.01], 'cutoff': [-1, 1.5, 0.01], 'openSky': [0, 1, 0.01],
+  'fillHoles': [0, 1, 0.01], 'coastWidth': [0.01, 1, 0.01], 'taper': [0.05, 3, 0.01], 'dome': [0, 150, 1],
+  'underside': [0, 250, 1], 'layers': [1, 3, 1], 'layerGap': [20, 200, 1], 'heightSpread': [0, 200, 1],
+  'heightDriftWidth': [100, 6000, 10], 'smallScatter': [0, 100, 1], 'layerMerging': [0, 2, 0.01],
+  'mergingWidth': [100, 8000, 10],
+  'wild.widthBlocks': [200, 8000, 10], 'wild.shiftX': [-10000, 10000, 1], 'wild.shiftZ': [-10000, 10000, 1],
+  'wild.threshold': [-1, 1, 0.01], 'wild.fade': [0.01, 1, 0.01], 'wild.strength': [0, 5, 0.05],
+  'wild.interiorCap': [0, 5, 0.05], 'wild.thicken': [0, 3, 0.05], 'wild.hills': [0, 5, 0.05],
+  'lakes.cell': [64, 2000, 8], 'lakes.chance': [0, 1, 0.01], 'lakes.minRadius': [4, 400, 1], 'lakes.maxRadius': [4, 600, 1],
+  'lakes.shore': [0, 2, 0.01], 'lakes.wobble': [0, 1, 0.01], 'lakes.rimTolerance': [0, 100, 1], 'lakes.maxDepth': [1, 64, 1],
+  'lakes.centreInland': [-1, 1, 0.01], 'lakes.rimInland': [-1, 1, 0.01], 'lakes.attempts': [1, 40, 1],
+  'plateau.widthBlocks': [300, 12000, 50], 'plateau.shiftX': [-10000, 10000, 1], 'plateau.shiftZ': [-10000, 10000, 1],
+  'plateau.threshold': [-1, 1, 0.01], 'plateau.fade': [0.01, 1, 0.01], 'plateau.grow': [0, 1, 0.01],
+  'plateau.smooth': [0, 1, 0.01], 'plateau.height': [0, 120, 1], 'plateau.variety': [0, 1, 0.01],
+  'plateau.cliff': [1, 30, 0.1], 'plateau.flat': [0, 1, 0.01], 'plateau.level': [0, 1, 0.01],
+  'plateau.terrace': [0, 24, 1], 'plateau.underside': [0, 150, 1],
+  'basins.cell': [200, 4000, 50], 'basins.chance': [0, 1, 0.01], 'basins.minRadius': [10, 600, 1],
+  'basins.maxRadius': [10, 800, 1], 'basins.atollShare': [0, 1, 0.01], 'basins.wobble': [0, 0.6, 0.01],
+  'basins.rimWidth': [0.05, 1.5, 0.01], 'basins.rimHeight': [0, 80, 1], 'basins.calderaDepth': [1, 60, 1],
+  'basins.ringWidth': [0.05, 1, 0.01], 'basins.ringHeight': [0, 20, 1], 'basins.lagoonDepth': [1, 30, 1],
+  'basins.islets': [0, 1, 0.01], 'basins.thickness': [2, 40, 1], 'basins.underside': [0, 150, 1],
+  // archipelago mode
+  'archipelago.cell': [120, 800, 10], 'archipelago.chance': [0, 1, 0.01], 'archipelago.openSky': [0, 1, 0.01],
+  'archipelago.jitter': [0, 1, 0.01], 'archipelago.minRadius': [8, 200, 1], 'archipelago.maxRadius': [20, 400, 1],
+  'archipelago.sizeSkew': [0.5, 4, 0.05], 'archipelago.elongation': [0, 2, 0.01], 'archipelago.coastWarp': [0, 0.5, 0.01],
+  'archipelago.domainWarp': [0, 0.8, 0.01], 'archipelago.lobes': [0, 6, 1], 'archipelago.regionWidth': [500, 8000, 50],
+  'archipelago.baseY': [60, 320, 1], 'archipelago.regionDrift': [0, 120, 1], 'archipelago.heightSpread': [0, 80, 1],
+  'archipelago.dome': [0, 60, 1], 'archipelago.hills': [0, 40, 1], 'archipelago.flowAlign': [0, 1, 0.01],
+  'archipelago.sharedWarp': [0, 150, 1], 'archipelago.sharedWarpWidth': [100, 2000, 10],
+  'archipelago.bowlChance': [0, 1, 0.01], 'archipelago.bowlMinRadius': [10, 200, 1], 'archipelago.bowlDepthMin': [1, 60, 1],
+  'archipelago.bowlDepthMax': [1, 80, 1], 'archipelago.bowlWidthMin': [0.05, 1, 0.01], 'archipelago.bowlWidthMax': [0.05, 1, 0.01],
+  'archipelago.bowlSteepness': [0.02, 0.6, 0.01], 'archipelago.rimMax': [0, 40, 1], 'archipelago.waterline': [0, 20, 1],
+  'archipelago.shoreWarp': [0, 0.5, 0.01], 'archipelago.islets': [0, 1, 0.01], 'archipelago.terraceChance': [0, 1, 0.01],
+  'archipelago.terraceStep': [2, 20, 1], 'archipelago.peakChance': [0, 1, 0.01], 'archipelago.peakMin': [0, 200, 1],
+  'archipelago.peakMax': [0, 250, 1], 'archipelago.underside': [0, 2, 0.01], 'archipelago.undersideNoise': [0, 1, 0.01],
+  'archipelago.drips': [0, 4, 0.05], 'archipelago.edgeThickness': [0, 40, 1],
+  'archipelago.pepper.cell': [16, 200, 1], 'archipelago.pepper.chance': [0, 1, 0.01], 'archipelago.pepper.minRadius': [2, 40, 1],
+  'archipelago.pepper.maxRadius': [3, 60, 1], 'archipelago.pepper.heightSpread': [0, 150, 1], 'archipelago.pepper.underside': [0, 4, 0.05],
+  'archipelago.pepper.cluster': [0, 4, 0.05],
+  'archipelago.ley.width': [500, 10000, 50], 'archipelago.ley.spacing': [0.05, 1, 0.01], 'archipelago.ley.gaps': [0, 1, 0.01],
+  'archipelago.ley.chance': [0, 1, 0.01], 'archipelago.ley.band': [5, 300, 1], 'archipelago.ley.pull': [0, 1, 0.01],
+  'archipelago.ley.stretch': [0, 3, 0.05], 'archipelago.ley.align': [0, 1, 0.01],
+  'archipelago.channels.width': [0, 150, 1], 'archipelago.channels.widthVariation': [0, 1, 0.01],
+  'archipelago.channels.strength': [0, 3, 0.05], 'archipelago.channels.islets': [0, 3, 0.05],
+};
+function rangeFor(path, v) {
+  const generic = path.replace(/\.\d+$/, '.*');
+  if (RANGES[path]) return RANGES[path];
+  if (RANGES[generic]) return RANGES[generic];
+  const m = Math.max(1, Math.abs(v) * 3);
+  const step = Number.isInteger(v) ? 1 : (m <= 3 ? 0.01 : m <= 30 ? 0.1 : 1);
+  return [v < 0 ? -m : 0, m, step];
+}
+
+// ---- State -------------------------------------------------------------------------------------------------------------
+const $ = id => document.getElementById(id);
+let settings = null, version = 0, minY = -64, height = 512;
+const statusEl = $('status');
+function status(html) { statusEl.innerHTML = html; }
+
+// ---- Three.js scene ----------------------------------------------------------------------------------------------------
+const view = $('view');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+view.appendChild(renderer.domElement);
+const scene = new THREE.Scene();
+const sky = new THREE.Color(0x9cc4ff);
+scene.background = sky;
+scene.fog = new THREE.Fog(sky, 1500, 6000);
+const camera = new THREE.PerspectiveCamera(55, 1, 1, 20000);
+camera.position.set(-600, 700, 900);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 180, 0);
+controls.enableDamping = true;
+controls.screenSpacePanning = false;
+controls.maxPolarAngle = Math.PI * 0.95;
+const opaqueMat = new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.DoubleSide });
+const waterMat = new THREE.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.62, depthWrite: false, side: THREE.DoubleSide });
+const tilesGroup = new THREE.Group();
+scene.add(tilesGroup);
+const marker = new THREE.Mesh(new THREE.SphereGeometry(3, 12, 8), new THREE.MeshBasicMaterial({ color: 0xff3366 }));
+marker.visible = false;
+scene.add(marker);
+
+function resize() {
+  const w = view.clientWidth, h = view.clientHeight;
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+resize();
+(function loop() { controls.update(); renderer.render(scene, camera); requestAnimationFrame(loop); })();
+
+// ---- Meshing worker: turns a tile's column runs into face lists -----------------------------------------------------
+const workerSrc = `
+const WATER = 1 << 24;
+self.onmessage = e => {
+  const { id, buf } = e.data;
+  const dv = new DataView(buf);
+  let o = 0;
+  const rd = () => { const v = dv.getInt32(o); o += 4; return v; };
+  if (rd() !== 0x57474C31) { self.postMessage({ id, error: 'bad tile' }); return; }
+  const version = rd(), tx = rd(), tz = rd(), step = rd(), n = rd(), originX = rd(), originZ = rd();
+  const start = new Int32Array(n * n + 1), Y0 = [], Y1 = [], C = [];
+  let k = 0;
+  for (let s = 0; s < n * n; s++) {
+    start[s] = k;
+    const cnt = dv.getUint8(o); o += 1;
+    for (let r = 0; r < cnt; r++) {
+      Y0.push(dv.getInt16(o)); Y1.push(dv.getInt16(o + 2)); C.push(dv.getInt32(o + 4)); o += 8; k++;
+    }
+  }
+  start[n * n] = k;
+  const solid = [[], []], water = [[], []]; // [positions, colours]
+  const ox = originX + step, oz = originZ + step; // tile origin (first inner sample)
+  function quad(list, ax, ay, az, bx, by, bz, cx, cy, cz, dx, dy, dz, rgb, shade) {
+    const p = list[0], c = list[1];
+    const r = ((rgb >> 16) & 255) * shade, g = ((rgb >> 8) & 255) * shade, b = (rgb & 255) * shade;
+    p.push(ax, ay, az, bx, by, bz, cx, cy, cz, ax, ay, az, cx, cy, cz, dx, dy, dz);
+    for (let i = 0; i < 6; i++) c.push(r, g, b);
+  }
+  // Parts of [lo, hi] not covered by the neighbour column's runs (only opaque runs cover, unless water covers water).
+  function uncovered(nb, lo, hi, isWater) {
+    const out = [];
+    let cur = lo;
+    for (let r = start[nb]; r < start[nb + 1] && cur <= hi; r++) {
+      const w = (C[r] & WATER) !== 0;
+      if (w && !isWater) continue;
+      if (Y1[r] < cur) continue;
+      if (Y0[r] > hi) break;
+      if (Y0[r] > cur) out.push([cur, Y0[r] - 1]);
+      cur = Math.max(cur, Y1[r] + 1);
+    }
+    if (cur <= hi) out.push([cur, hi]);
+    return out;
+  }
+  for (let i = 1; i < n - 1; i++) {
+    for (let j = 1; j < n - 1; j++) {
+      const s = i * n + j;
+      const x0 = (j - 1) * step, x1 = x0 + step, z0 = (i - 1) * step, z1 = z0 + step;
+      for (let r = start[s]; r < start[s + 1]; r++) {
+        const y0 = Y0[r], y1 = Y1[r] + 1, col = C[r] & 0xFFFFFF, isW = (C[r] & WATER) !== 0;
+        const L = isW ? water : solid;
+        const above = r + 1 < start[s + 1] ? r + 1 : -1, below = r > start[s] ? r - 1 : -1;
+        const aboveTouches = above >= 0 && Y0[above] === Y1[r] + 1 && (isW || (C[above] & WATER) === 0);
+        if (!aboveTouches) quad(L, x0, y1, z0, x0, y1, z1, x1, y1, z1, x1, y1, z0, col, 1.0);
+        if (!isW && !(below >= 0 && Y1[below] === Y0[r] - 1 && (C[below] & WATER) === 0))
+          quad(L, x0, y0, z0, x1, y0, z0, x1, y0, z1, x0, y0, z1, col, 0.5);
+        // Sides: west (-x), east (+x), north (-z), south (+z).
+        for (const [nb, sh, face] of [[s - 1, 0.78, 0], [s + 1, 0.78, 1], [s - n, 0.66, 2], [s + n, 0.66, 3]]) {
+          for (const [a, b] of uncovered(nb, Y0[r], Y1[r], isW)) {
+            const ya = a, yb = b + 1;
+            if (face === 0) quad(L, x0, ya, z1, x0, yb, z1, x0, yb, z0, x0, ya, z0, col, sh);
+            else if (face === 1) quad(L, x1, ya, z0, x1, yb, z0, x1, yb, z1, x1, ya, z1, col, sh);
+            else if (face === 2) quad(L, x0, ya, z0, x0, yb, z0, x1, yb, z0, x1, ya, z0, col, sh);
+            else quad(L, x1, ya, z1, x1, yb, z1, x0, yb, z1, x0, ya, z1, col, sh);
+          }
+        }
+      }
+    }
+  }
+  const pack = l => [new Float32Array(l[0]), new Uint8Array(l[1])];
+  const sp = pack(solid), wp = pack(water);
+  self.postMessage({ id, version, tx, tz, step, ox, oz, solid: sp, water: wp }, [sp[0].buffer, sp[1].buffer, wp[0].buffer, wp[1].buffer]);
+};`;
+const workers = Array.from({ length: Math.min(6, navigator.hardwareConcurrency || 4) },
+  () => new Worker(URL.createObjectURL(new Blob([workerSrc], { type: 'text/javascript' }))));
+let nextWorker = 0, msgId = 0;
+const pendingMesh = new Map();
+for (const w of workers) w.onmessage = e => { const cb = pendingMesh.get(e.data.id); pendingMesh.delete(e.data.id); cb && cb(e.data); };
+function mesh(buf) {
+  return new Promise(res => { const id = ++msgId; pendingMesh.set(id, res); workers[nextWorker++ % workers.length].postMessage({ id, buf }, [buf]); });
+}
+
+// ---- Tile loading -------------------------------------------------------------------------------------------------------
+let loadToken = 0, done = 0, total = 0, genMs = 0, chunksSeen = 0, t0 = 0;
+function clearTiles() {
+  for (const m of [...tilesGroup.children]) { m.geometry.dispose(); tilesGroup.remove(m); }
+}
+function addGeometry(pos, col, mat, ox, oz) {
+  if (pos.length === 0) return;
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.BufferAttribute(col, 3, true));
+  g.computeBoundingSphere();
+  const m = new THREE.Mesh(g, mat);
+  m.position.set(ox, 0, oz);
+  m.userData.water = mat === waterMat;
+  m.visible = !m.userData.water || $('water').checked;
+  tilesGroup.add(m);
+}
+async function loadArea() {
+  const token = ++loadToken;
+  clearTiles();
+  const step = +$('step').value, area = +$('area').value, cx = +$('cx').value, cz = +$('cz').value;
+  const span = 64 * step, half = Math.ceil(area / 2 / span);
+  const ctx = Math.floor(cx / span), ctz = Math.floor(cz / span);
+  const order = [];
+  for (let dz = -half; dz < half; dz++) for (let dx = -half; dx < half; dx++) order.push([ctx + dx, ctz + dz]);
+  order.sort((a, b) => Math.hypot(a[0] + 0.5 - cx / span, a[1] + 0.5 - cz / span) - Math.hypot(b[0] + 0.5 - cx / span, b[1] + 0.5 - cz / span));
+  done = 0; total = order.length; genMs = 0; chunksSeen = 0; t0 = performance.now();
+  hud();
+  loadFeatures();
+  loadOverview().catch(() => {});
+  let i = 0;
+  const v = version;
+  async function worker() {
+    while (i < order.length && token === loadToken) {
+      const [tx, tz] = order[i++];
+      let r;
+      try { r = await fetch(`/api/tile?tx=${tx}&tz=${tz}&step=${step}&v=${v}`); } catch (e) { continue; }
+      if (token !== loadToken) return;
+      if (r.status === 409) return; // settings changed while loading; the new load takes over
+      if (!r.ok) { status(`<span class="err">tile ${tx},${tz}: HTTP ${r.status}</span>`); continue; }
+      genMs = Math.max(genMs, +r.headers.get('X-Gen-Ms') || 0);
+      chunksSeen += +r.headers.get('X-Chunks') || 0;
+      const m = await mesh(await r.arrayBuffer());
+      if (token !== loadToken || m.error) return;
+      addGeometry(m.solid[0], m.solid[1], opaqueMat, m.ox, m.oz);
+      addGeometry(m.water[0], m.water[1], waterMat, m.ox, m.oz);
+      done++;
+      hud();
+    }
+  }
+  await Promise.all(Array.from({ length: 6 }, worker));
+}
+// ---- Calderas, atolls and plateaus near the view ---------------------------------------------------------------------
+const markers = new THREE.Group();
+scene.add(markers);
+function goTo(x, z, y) {
+  $('cx').value = x; $('cz').value = z;
+  controls.target.set(x, y ?? controls.target.y, z);
+  loadArea();
+}
+async function loadFeatures() {
+  const cx = +$('cx').value, cz = +$('cz').value, reach = Math.max(+$('area').value, 4000);
+  const box = $('features');
+  let j;
+  try { j = await (await fetch(`/api/features?x0=${cx - reach}&z0=${cz - reach}&x1=${cx + reach}&z1=${cz + reach}`)).json(); }
+  catch (e) { box.textContent = String(e); return; }
+  for (const m of [...markers.children]) { m.geometry.dispose(); markers.remove(m); }
+  const items = [];
+  for (const b of j.basins || []) {
+    const d = Math.hypot(b.x - cx, b.z - cz);
+    items.push({ d, label: `${b.type === 'atoll' ? 'Atoll' : 'Caldera'} r=${b.radius}, water y=${b.level}`, x: b.x, z: b.z, y: b.level });
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(b.radius, 2, 6, 96), new THREE.MeshBasicMaterial({ color: b.type === 'atoll' ? 0x22d3ee : 0xf97316 }));
+    ring.rotation.x = Math.PI / 2;
+    ring.position.set(b.x, b.level + 2, b.z);
+    markers.add(ring);
+  }
+  for (const p of j.plateaus || []) items.push({ d: Math.hypot(p.x - cx, p.z - cz), label: 'Plateau region', x: p.x, z: p.z });
+  for (const i of j.islands || []) items.push({ d: Math.hypot(i.x - cx, i.z - cz), label: `${i.type[0].toUpperCase() + i.type.slice(1)} r=${i.radius}`, x: i.x, z: i.z, y: i.level });
+  items.sort((a, b) => a.d - b.d);
+  box.innerHTML = items.length ? '' : 'None within reach.';
+  for (const it of items.slice(0, 14)) {
+    const row = document.createElement('div');
+    row.className = 'row';
+    row.innerHTML = `<button>Go</button><span>${it.label} at ${it.x}, ${it.z} (${Math.round(it.d)} away)</span>`;
+    row.firstChild.onclick = () => goTo(it.x, it.z, it.y);
+    box.appendChild(row);
+  }
+}
+$('verify').onclick = async () => {
+  const cx = Math.floor(+$('cx').value / 16), cz = Math.floor(+$('cz').value / 16);
+  status('Verifying…');
+  const j = await (await fetch(`/api/compare?cx=${cx}&cz=${cz}&mode=stage`)).json();
+  if (j.error) { status(`<span class="err">${j.error}</span>`); return; }
+  const total = j.same + j.differ + j.featureBlocks;
+  status(j.differ === 0 && j.featureBlocks === 0
+    ? `Chunk ${cx}, ${cz}: the lab's generation matches the game's own generator exactly (${total} of ${total} blocks, using the world's saved settings).`
+    : `<span class="err">Chunk ${cx}, ${cz}: ${j.differ + j.featureBlocks} of ${total} blocks differ from the game's own generator. The lab isn't reproducing the game; tell Claude.</span>`);
+};
+
+// ---- Overview map: island shapes over kilometres, straight from the shape maths (no chunk generation) ------------------
+let ov = null;
+async function loadOverview() {
+  const size = +$('ovSize').value, n = 512, step = size / n;
+  const cx = +$('cx').value, cz = +$('cz').value;
+  const x0 = Math.round(cx - size / 2), z0 = Math.round(cz - size / 2);
+  const buf = await (await fetch(`/api/map?x0=${x0}&z0=${z0}&n=${n}&step=${step}`)).arrayBuffer();
+  const dv = new DataView(buf);
+  ov = { x0, z0, step, n };
+  const cv = $('ov'), g = cv.getContext('2d'), img = g.createImageData(n, n);
+  const top = new Float32Array(n * n);
+  for (let k = 0; k < n * n; k++) top[k] = dv.getFloat32(4 + k * 13);
+  for (let k = 0; k < n * n; k++) {
+    const o = 4 + k * 13, t = top[k], w = dv.getFloat32(o + 8), cnt = dv.getInt8(o + 12);
+    let r = 24, gg = 30, b = 46;
+    if (!Number.isNaN(t)) {
+      const h = Math.max(0, Math.min(1, (t - 90) / 220));
+      const left = k % n ? top[k - 1] : t, up = k >= n ? top[k - n] : t;
+      const shade = Math.max(0.6, Math.min(1.3, 1 + 0.05 * ((Number.isNaN(left) ? 0 : t - left) + (Number.isNaN(up) ? 0 : t - up))));
+      if (!Number.isNaN(w) && w >= t) { r = 60; gg = 120; b = 200; }
+      else { r = (70 + 140 * h) * shade; gg = (120 + 90 * h) * shade; b = (50 + 110 * h) * shade; }
+      if (cnt > 1) { r *= 0.85; gg *= 0.85; b *= 0.85; }
+    }
+    img.data.set([r, gg, b, 255], k * 4);
+  }
+  g.putImageData(img, 0, 0);
+  // the 3D view's area
+  const a = +$('area').value / step;
+  g.strokeStyle = '#ff3366'; g.lineWidth = 2;
+  g.strokeRect(n / 2 - a / 2, n / 2 - a / 2, a, a);
+}
+$('ovGo').onclick = () => loadOverview();
+$('ovSize').onchange = () => loadOverview();
+$('ov').addEventListener('click', e => {
+  if (!ov) return;
+  const rect = $('ov').getBoundingClientRect();
+  const px = (e.clientX - rect.left) / rect.width * ov.n, pz = (e.clientY - rect.top) / rect.height * ov.n;
+  goTo(Math.round(ov.x0 + px * ov.step), Math.round(ov.z0 + pz * ov.step));
+});
+
+function hud() {
+  const secs = ((performance.now() - t0) / 1000).toFixed(1);
+  $('hud').textContent = `settings v${version} · tiles ${done}/${total} · ${secs}s · centre ${$('cx').value}, ${$('cz').value}`;
+}
+
+// ---- Settings panel ------------------------------------------------------------------------------------------------
+function buildFields() {
+  const root = $('fields');
+  root.innerHTML = '';
+  const groups = new Map();
+  const groupFor = name => {
+    if (!groups.has(name)) {
+      const d = document.createElement('details');
+      d.open = name === 'Islands';
+      d.innerHTML = `<summary>${name}</summary>`;
+      root.appendChild(d);
+      groups.set(name, d);
+    }
+    return groups.get(name);
+  };
+  function walk(obj, path, group) {
+    for (const [key, val] of Object.entries(obj)) {
+      const p = path ? `${path}.${key}` : key;
+      if (val && typeof val === 'object' && !Array.isArray(val)) { walk(val, p, groupFor(key[0].toUpperCase() + key.slice(1))); continue; }
+      if (Array.isArray(val)) { val.forEach((v, i) => typeof v === 'number' && field(group, `${p}.${i}`, `${key}[${i}]`, v, obj[key], i)); continue; }
+      if (typeof val === 'number') field(group, p, key, val, obj, key);
+    }
+  }
+  // In archipelago mode the older layered settings do nothing, so only the archipelago's own settings are shown.
+  if (settings.archipelago) walk(settings.archipelago, 'archipelago', groupFor('Islands'));
+  else walk(settings, '', groupFor('Islands'));
+}
+let applyTimer = null;
+function field(parent, path, label, value, holder, key) {
+  const [min, max, step] = rangeFor(path, value);
+  const row = document.createElement('div');
+  row.className = 'field';
+  row.innerHTML = `<label title="${path}">${label}</label><input type="range" min="${min}" max="${max}" step="${step}" value="${value}"><input type="number" step="${step}" value="${value}">`;
+  const [, range, num] = row.children;
+  const set = v => { holder[key] = v; range.value = v; num.value = v; if ($('auto').checked) { clearTimeout(applyTimer); applyTimer = setTimeout(apply, 350); } };
+  range.addEventListener('input', () => { num.value = range.value; });
+  range.addEventListener('change', () => set(+range.value));
+  num.addEventListener('change', () => set(+num.value));
+  parent.appendChild(row);
+}
+async function apply() {
+  const t = performance.now();
+  status('Applying…');
+  const r = await fetch('/api/settings', { method: 'POST', body: JSON.stringify(settings) });
+  const j = await r.json();
+  if (!r.ok) { status(`<span class="err">${j.error}</span>`); return; }
+  version = j.version;
+  status(`Applied as v${version} in ${(performance.now() - t).toFixed(0)} ms · seed ${j.seed}`);
+  loadArea();
+}
+async function load() {
+  const j = await (await fetch('/api/settings')).json();
+  settings = j.settings; version = j.version; minY = j.minY; height = j.height;
+  status(`Loaded v${version} · seed ${j.seed} · y ${minY} to ${minY + height}`);
+  buildFields();
+  loadArea();
+}
+
+// ---- Buttons and picking ------------------------------------------------------------------------------------------
+$('regen').onclick = () => loadArea();
+$('area').onchange = $('step').onchange = () => loadArea();
+$('cx').onchange = $('cz').onchange = () => { controls.target.x = +$('cx').value; controls.target.z = +$('cz').value; loadArea(); };
+$('reload').onclick = async () => { const j = await (await fetch('/api/settings')).json(); settings = j.settings; buildFields(); apply(); };
+$('save').onclick = async () => { const j = await (await fetch('/api/save', { method: 'POST' })).json(); status(j.error ? `<span class="err">${j.error}</span>` : `Saved to ${j.saved}`); };
+$('water').onchange = () => { for (const m of tilesGroup.children) if (m.userData.water) m.visible = $('water').checked; };
+const ray = new THREE.Raycaster(), mouse = new THREE.Vector2();
+function pick(ev) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  mouse.set(((ev.clientX - rect.left) / rect.width) * 2 - 1, -((ev.clientY - rect.top) / rect.height) * 2 + 1);
+  ray.setFromCamera(mouse, camera);
+  const hit = ray.intersectObjects(tilesGroup.children.filter(m => m.visible), false)[0];
+  return hit ? hit.point : null;
+}
+let downAt = null;
+renderer.domElement.addEventListener('pointerdown', e => { downAt = [e.clientX, e.clientY]; });
+renderer.domElement.addEventListener('pointerup', e => {
+  if (!downAt || Math.hypot(e.clientX - downAt[0], e.clientY - downAt[1]) > 4) return;
+  const p = pick(e);
+  if (!p) return;
+  marker.position.copy(p); marker.visible = true;
+  status(`Block ${Math.floor(p.x)}, ${Math.floor(p.y)}, ${Math.floor(p.z)}`);
+});
+renderer.domElement.addEventListener('dblclick', e => {
+  const p = pick(e);
+  if (!p) return;
+  $('cx').value = Math.round(p.x); $('cz').value = Math.round(p.z);
+  controls.target.copy(p);
+  loadArea();
+});
+
+load().catch(e => status(`<span class="err">${e}</span>`));
+</script>
+</body>
+</html>

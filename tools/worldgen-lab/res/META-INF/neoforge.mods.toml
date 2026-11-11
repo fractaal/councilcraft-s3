@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="worldgenlab"
+version="0.1.0"
+displayName="Worldgen Lab"
+description="Development tool: a local web viewer for sky-island terrain settings. Not part of the pack."
+displayTest="IGNORE_ALL_VERSION"
+[[dependencies.worldgenlab]]
+modId="skyislands"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="SERVER"

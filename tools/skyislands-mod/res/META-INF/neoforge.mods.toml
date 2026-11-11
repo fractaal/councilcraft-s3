@@ -1,0 +1,17 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="skyislands"
+version="1.0.0"
+displayName="Sky Islands Terrain"
+description="Server-side sky-island terrain function and per-lake water levels."
+displayTest="IGNORE_ALL_VERSION"
+[[mixins]]
+config="skyislands.mixins.json"
+[[dependencies.skyislands]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="SERVER"
