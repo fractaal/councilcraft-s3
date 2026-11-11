@@ -7313,6 +7313,26 @@ file = "global_packs/required_data/Aero Combat/pack.mcmeta"
 hash = "a0a4c0e467b040d54ffff3a90ab8aa151d33d17293bcb967c5c9618cffe34baf"
 
 [[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/add_ant_hills.json"
+hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
+
+[[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/remove_farm_animals_savanna.json"
+hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
+
+[[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/remove_farm_animals_swamp.json"
+hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
+
+[[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/remove_forest_pigs.json"
+hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
+
+[[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/pack.mcmeta"
+hash = "113d5b2e14672cc42c7c73e00813639ed82213187e889a74432f4d73fe0b6f47"
+
+[[files]]
 file = "global_packs/required_data/Aero Island Structures/data/aero_islands/lithostitched/worldgen_modifier/fixed_height_on_islands.json"
 hash = "5a9aa040106d78469d4999dc122f90efdbe3c09d03444a24b66cbe9b510342a1"
 
@@ -10569,7 +10589,7 @@ metafile = true
 
 [[files]]
 file = "mods/ghost.pw.toml"
-hash = "1ac5ee4aa16330f08d371428d274e682b4c9b56f1d740efcd0884eeb9eafad1c"
+hash = "895a8abebb82f5cd662e71f765b0d1ae8e3bf5e9c7a1bff3270f4fa329cab0cd"
 metafile = true
 
 [[files]]
@@ -11248,6 +11268,11 @@ hash = "1e872498d48cc9fdb7b469ecb3f34f34ba347e0e890cfcb9ab830cbb63d20461"
 metafile = true
 
 [[files]]
+file = "mods/naturalist.pw.toml"
+hash = "607da40a1b301721af35c07c3ee5eb06f82c2a13722037d0cd7d2584ab2dbe57"
+metafile = true
+
+[[files]]
 file = "mods/natures-compass.pw.toml"
 hash = "35acdf433fe8f8599f59975e848efdb717663c2c471d3a5dc18743799795a736"
 metafile = true
@@ -11700,6 +11725,11 @@ metafile = true
 [[files]]
 file = "mods/sky-villages.pw.toml"
 hash = "3c88d13ec3f4c2904befee38aa1a4fc27ffb0c322fb4186d82a53179125e43d1"
+metafile = true
+
+[[files]]
+file = "mods/sky-whales.pw.toml"
+hash = "e3c4cbb386a223c66dee4d4c64146eca5ff5a3205c471264a6ebd68c9b8171c0"
 metafile = true
 
 [[files]]
