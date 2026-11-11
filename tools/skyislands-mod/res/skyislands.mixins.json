@@ -1,1 +1,1 @@
-{"required":true,"minVersion":"0.8","package":"skyislands.mixin","compatibilityLevel":"JAVA_21","mixins":["NoiseBasedChunkGeneratorMixin","NoiseChunkMixin","NoiseInterpolatorAccess","ChunkGeneratorMixin","OreFeatureMixin"],"injectors":{"defaultRequire":1}}
+{"required":true,"minVersion":"0.8","package":"skyislands.mixin","compatibilityLevel":"JAVA_21","mixins":["NoiseBasedChunkGeneratorMixin","NoiseChunkMixin","NoiseInterpolatorAccess","ChunkGeneratorMixin","OreFeatureMixin","RandomSpreadStructurePlacementMixin"],"injectors":{"defaultRequire":1}}

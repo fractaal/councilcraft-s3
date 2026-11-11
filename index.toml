@@ -7157,6 +7157,22 @@ file = "global_packs/optional_data/Aero Sky Islands/data/minecraft/worldgen/nois
 hash = "046e7c0a9833e9e4a233b153ed78d1986eedfe7e5b4726946a9d435c8a72c9ba"
 
 [[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/oritech/worldgen/placed_feature/oil_spring.json"
+hash = "68ac6c9ecbd74d98913371786676b1b2a4dbf5fb8e4c55e6419f677c27dffb3e"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/oritech/worldgen/placed_feature/oil_spring_desert.json"
+hash = "215794c4255b419da71527266b1699aecb8e91c7425aead482febd3ac3b87659"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/pneumaticcraft/worldgen/placed_feature/oil_lake_surface.json"
+hash = "328967ea68466d071df3ce4487161aa9d121b11504e0dd7f744219e3810c00a7"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/pneumaticcraft/worldgen/placed_feature/oil_lake_underground.json"
+hash = "b6153b9edc23a879fedd8608f8954115bab0ebbf2b34dec3a91f26c709285e24"
+
+[[files]]
 file = "global_packs/optional_data/Aero Sky Islands/pack.mcmeta"
 hash = "9fe75a15a68b4fe5d9c4eefdf279f9c67542f3861bad52908f8e349865a9590f"
 
