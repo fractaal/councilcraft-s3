@@ -19,9 +19,11 @@ import org.slf4j.Logger;
 /**
  * Sky-island worlds have far less ground than a normal overworld, so most structure placements land on nothing. This
  * packs overworld structures closer together to make up for it: every structure set that can generate in the sky-island
- * overworld and in no other dimension gets a grid whose cells hold `skyislands.structureDensity` (default 2) times as
- * many attempts. Spacing and separation shrink by the square root, so the minimum gap between two of a structure
- * shrinks with them. Strongholds (concentric rings) and Nether, End and other-dimension structures are left alone.
+ * overworld and not in the Nether or the End gets a grid whose cells hold `skyislands.structureDensity` (default 2)
+ * times as many attempts. Spacing and separation shrink by the square root, so the minimum gap between two of a
+ * structure shrinks with them. Strongholds (concentric rings) and Nether and End structures are left alone. Mod
+ * dimensions are not consulted: some (mining dimensions) reuse overworld biomes, which would rule out every set, and an
+ * overworld structure set generating more often there too is harmless.
  *
  * It runs when the overworld loads, before any chunk is generated, from the structure sets as all datapacks left them.
  * The grid only matters for land that is still to be generated: chunks already generated keep their structures.
@@ -41,9 +43,9 @@ public final class StructureDensity {
         Set<Holder<Biome>> overworld = level.getChunkSource().getGenerator().getBiomeSource().possibleBiomes();
         Set<Holder<Biome>> elsewhere = new HashSet<>();
         Registry<LevelStem> stems = access.registryOrThrow(Registries.LEVEL_STEM);
-        for (Map.Entry<net.minecraft.resources.ResourceKey<LevelStem>, LevelStem> e : stems.entrySet()) {
-            if (e.getKey().location().equals(LevelStem.OVERWORLD.location())) continue;
-            elsewhere.addAll(e.getValue().generator().getBiomeSource().possibleBiomes());
+        for (var key : java.util.List.of(LevelStem.NETHER, LevelStem.END)) {
+            LevelStem stem = stems.get(key);
+            if (stem != null) elsewhere.addAll(stem.generator().getBiomeSource().possibleBiomes());
         }
         double shrink = Math.sqrt(DENSITY);
         int changed = 0, skipped = 0;
@@ -67,7 +69,7 @@ public final class StructureDensity {
                     .append(d.skyislands$baseSpacing()).append('/').append(d.skyislands$baseSeparation()).append("->")
                     .append(spacing).append('/').append(separation).append(", ");
         }
-        LOG.info("[skyislands] Structure density x{} in the sky-island overworld: {} structure sets packed closer, {} left alone because they also generate in other dimensions. {}",
+        LOG.info("[skyislands] Structure density x{} in the sky-island overworld: {} structure sets packed closer, {} left alone because they also generate in the Nether or the End. {}",
                 DENSITY, changed, skipped, examples);
     }
 }
