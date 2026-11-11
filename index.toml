@@ -6877,10 +6877,6 @@ file = "config/stoneworks-common.toml"
 hash = "82a5ceca05f3719f726c346c41ee6931df0be2f1cbc40b44e200b62e4832d3b4"
 
 [[files]]
-file = "config/streamsreflowing.properties"
-hash = "7cc694b1ea039a5043bcdceb11cdf11aaa5a3ad9a867b40b5c5695aeac04a955"
-
-[[files]]
 file = "config/structureessentials.json"
 hash = "54826c1ce55156e6a3d19a22949d733668806c7ed4a77218cc1d26bb6c5fa7bd"
 
@@ -7166,7 +7162,7 @@ hash = "4affe07f79e488d1d0e04f2987df0316a3ed0e1e1fabb7faeac14e6e3f70ec5b"
 
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/data/minecraft/worldgen/noise_settings/overworld.json"
-hash = "046e7c0a9833e9e4a233b153ed78d1986eedfe7e5b4726946a9d435c8a72c9ba"
+hash = "980bad3efbc90c655957538e9a7a9933196e68c58c9f4b3abc855c471389d25f"
 
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/data/oritech/worldgen/placed_feature/oil_spring.json"
@@ -7183,6 +7179,30 @@ hash = "328967ea68466d071df3ce4487161aa9d121b11504e0dd7f744219e3810c00a7"
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/data/pneumaticcraft/worldgen/placed_feature/oil_lake_underground.json"
 hash = "b6153b9edc23a879fedd8608f8954115bab0ebbf2b34dec3a91f26c709285e24"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/neoforge/biome_modifier/bank_plants.json"
+hash = "6a817196ced75ad9bd468586c3f0e3444f59299f3ea1e9375a4a8e1d53bcc42e"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/neoforge/biome_modifier/banks.json"
+hash = "f2620a70bcbee1234dc947fc844fe1933797af551b655d442ff548b7764bd81f"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/worldgen/configured_feature/bank_plants.json"
+hash = "5a2539fded417bcf6bee7c1692163705ee99d56b7e2117710e60fc7886753395"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/worldgen/configured_feature/banks.json"
+hash = "ede31a76516dd533c8059e99011e4465f54341abdffe80027baf91cad9bf59ee"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/worldgen/placed_feature/bank_plants.json"
+hash = "4f340883aff25c6e1b7374dff3484df5672c66c5608938a9b1b8a50dcfdae01e"
+
+[[files]]
+file = "global_packs/optional_data/Aero Sky Islands/data/skyislands/worldgen/placed_feature/banks.json"
+hash = "466e016991e7767e305bc5ad4d97cf950e02b8a659a144c2e31177ea0220cee5"
 
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/pack.mcmeta"
@@ -11742,7 +11762,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "c510235d71cd215cf01c0cfd410dcb9b271d85b63e2dd2f00974e197e73e12c6"
+hash = "ac5ab57ecc25c50bb00590ac97db85f2c3f7767b5abccff0f8a44c2136cf7190"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"
@@ -11862,11 +11882,6 @@ metafile = true
 [[files]]
 file = "mods/strayed-fates-forsaken.pw.toml"
 hash = "f66331aa9ef280410a0bd72644a81f0f5881617665c1d08dfdf9c393eef6e7d5"
-metafile = true
-
-[[files]]
-file = "mods/streams-reflowing.pw.toml"
-hash = "c15f828f93a3ee5765f882d1be4a39fb1386f7e040e1d2e1d81e513c9af23f04"
 metafile = true
 
 [[files]]

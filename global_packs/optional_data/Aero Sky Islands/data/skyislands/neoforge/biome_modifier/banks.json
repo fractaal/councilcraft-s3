@@ -1,0 +1,1 @@
+{"type": "neoforge:add_features", "biomes": {"type": "neoforge:or", "values": ["#minecraft:is_overworld", "#c:is_overworld"]}, "features": "skyislands:banks", "step": "local_modifications"}
