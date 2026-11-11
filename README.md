@@ -127,6 +127,11 @@ Checked on the VPS: 432 chunks through the world's generator with the shortcuts 
 
 Rerun both checks (`/api/fastcheck` and `/api/colhash` in the worldgen lab) after adding or updating mods that touch world generation.
 
+### Structure and oil density in sky-island worlds (2026-11-11)
+Most of the sky is empty, so most structure placements land on nothing. `skyislands.StructureDensity` packs every overworld structure set (random-spread placement) twice as densely: spacing and separation divided by the square root of 2, from the values all datapacks leave (so Beyond Mines' own spacings are the starting point). Sets that can also generate in the Nether or the End, and strongholds, are left alone. `/locate` and explorer maps search the same grid. Change the factor with `-Dskyislands.structureDensity=<n>`; it only affects land generated afterwards. On the VPS it packed 143 of 144 sets closer (for example Better Dungeons' small dungeons 10/6 to 7/4 chunks, Cataclysm's Ancient Factory 112/70 to 79/49).
+
+The Aero Sky Islands datapack also doubles oil: Oritech oil springs 1 in 350 chunks to 1 in 175 (1 in 120 to 1 in 60 in desert-pyramid biomes), PneumaticCraft oil lakes 1 in 25 to 1 in 12 on the surface and 1 in 6 to 1 in 3 underground.
+
 ### Not checked yet
 - Joining the VPS on 1.5.1+sky.2 with a client, including whether Advanced Loot Info now gets its data (DirectAuth, which held it back, is gone).
 - Starting a Hordium raid or a Gate Pearl needs a player in game, so whether raiders find somewhere to stand on small or steep islands is untested.
