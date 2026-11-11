@@ -317,13 +317,15 @@ final class LabHttp {
     }
 
     /**
-     * Generates the n x n chunks from (cx, cz) through the world's own generator (biomes, noise and surface, without
-     * structures) twice, with skyislands' FastGen shortcuts on and then off, and counts blocks that differ. Run it while
-     * nothing else is generating: the switch is global.
+     * Generates the n x n chunks from (cx, cz) through the world's own generator (biomes, noise and surface) twice, with
+     * skyislands' FastGen shortcuts on and then off, and counts blocks that differ. Terrain isn't blended around
+     * structures unless structures=1, which uses the real world's structures and roads. Run it while nothing else is
+     * generating: the switch is global.
      */
     private static void fastcheck(HttpExchange ex, Map<String, String> q) throws Exception {
         int cx = Integer.parseInt(q.get("cx")), cz = Integer.parseInt(q.get("cz"));
         int n = Math.max(1, Math.min(32, Integer.parseInt(q.getOrDefault("n", "8"))));
+        boolean structures = "1".equals(q.get("structures"));
         LabWorld w = world;
         long differ = 0, blocks = 0, water = 0, solid = 0, onNanos = 0, offNanos = 0, quarts = 0, biomesDiffer = 0;
         long skipped0 = skyislands.FastGen.CELLS_SKIPPED.get(), filled0 = skyislands.FastGen.CELLS_FILLED.get();
@@ -333,10 +335,10 @@ final class LabHttp {
                 int x = cx + i, z = cz + j;
                 skyislands.FastGen.setEnabled(true);
                 long t0 = System.nanoTime();
-                ProtoChunk on = CompletableFuture.supplyAsync(() -> w.generateWithWorldGenerator(server, x, z), genPool).join();
+                ProtoChunk on = CompletableFuture.supplyAsync(() -> w.generateWithWorldGenerator(server, x, z, structures), genPool).join();
                 long t1 = System.nanoTime();
                 skyislands.FastGen.setEnabled(false);
-                ProtoChunk off = CompletableFuture.supplyAsync(() -> w.generateWithWorldGenerator(server, x, z), genPool).join();
+                ProtoChunk off = CompletableFuture.supplyAsync(() -> w.generateWithWorldGenerator(server, x, z, structures), genPool).join();
                 long t2 = System.nanoTime();
                 onNanos += t1 - t0;
                 offNanos += t2 - t1;

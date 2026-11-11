@@ -16,6 +16,10 @@ if pgrep -f "java.*worldgenlab.settings=" >/dev/null; then
 fi
 cp "$D/worldgenlab.jar" "$S/mods/worldgenlab.jar"
 cd "$S"
+# A lab runs next to the live server, so it can't take the live server's Simple Voice Chat port: failing to bind it ends
+# the lab's JVM with status 1 a few seconds after the server finishes loading.
+VC=config/voicechat/voicechat-server.properties
+[ -f "$VC" ] && sed -i 's/^port=24454$/port=24464/' "$VC"
 rm -f console.in; touch console.in
 tail -f --pid=$$ console.in | "$JAVA" @user_jvm_args.txt \
   -Dworldgenlab.settings="$SETTINGS" \

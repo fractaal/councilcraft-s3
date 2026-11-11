@@ -168,6 +168,15 @@ final class LabWorld {
      * an identical generator from the template. Uses fresh biomes rather than the cache.
      */
     ProtoChunk generateWithWorldGenerator(MinecraftServer server, int cx, int cz) {
+        return generateWithWorldGenerator(server, cx, cz, false);
+    }
+
+    /**
+     * withStructures: blend the terrain around the real world's structures (and RoadWeaver's roads), whose starts and
+     * references the server loads or generates for the chunks around this one.
+     */
+    ProtoChunk generateWithWorldGenerator(MinecraftServer server, int cx, int cz, boolean withStructures) {
+        StructureManager noStructures = withStructures ? server.overworld().structureManager() : this.noStructures;
         var source = server.overworld().getChunkSource();
         var gen = (NoiseBasedChunkGenerator) source.getGenerator();
         RandomState rs = source.randomState();
