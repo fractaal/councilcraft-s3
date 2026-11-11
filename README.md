@@ -1,6 +1,6 @@
-# BM Exosphere 2 Aero: packwiz repo
+# CouncilCraft S3: packwiz repo
 
-This is the pack definition for BM Exosphere 2 Aero on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.2`.
+CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.2`.
 
 It holds no mod jars except our own. Every other mod, resource pack and shader is a small `.pw.toml` file that pins an exact version and hash and says where to download it (398 from Modrinth, 119 from CurseForge). Configs, KubeJS scripts, quests and datapacks are real files in the repo.
 
@@ -45,11 +45,11 @@ To change the islands, edit `tools/worldgen/settings-archipelago.json` and regen
 ## Installing
 
 ### Players (Prism Launcher)
-1. Download `exosphere-aero-prism.zip` from the [latest release](https://github.com/fractaal/exosphere-aero-pack/releases/latest).
+1. Download `councilcraft-s3-prism.zip` from the [latest release](https://github.com/fractaal/councilcraft-s3/releases/latest).
 2. In Prism: Add Instance, Import, and pick the zip.
 3. Launch it. The first launch downloads about 1 GB of mods; if a window lists mods to download by hand, follow its links, put the files where it says, and launch again.
 
-The instance has a pre-launch command that runs the packwiz installer against `https://raw.githubusercontent.com/fractaal/exosphere-aero-pack/main/pack.toml`, so every launch picks up whatever is on `main`. Memory is set to 6 to 12 GB. The zip itself never needs updating; to make it again, run `tools/prism/make-instance.sh <pack.toml URL> <label>`.
+The instance has a pre-launch command that runs the packwiz installer against `https://raw.githubusercontent.com/fractaal/councilcraft-s3/main/pack.toml`, so every launch picks up whatever is on `main`. Memory is set to 6 to 12 GB. The zip itself never needs updating; to make it again, run `tools/prism/make-instance.sh <pack.toml URL> <label>`.
 
 ### Dedicated server
 In an **empty** folder:

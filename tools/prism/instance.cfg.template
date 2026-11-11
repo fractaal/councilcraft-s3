@@ -2,7 +2,7 @@
 ConfigVersion=1.2
 InstanceType=OneSix
 iconKey=flame
-name=BM Exosphere 2 Aero (@VERSION@)
+name=CouncilCraft S3
 notes=Installs and updates itself from @PACK_URL@ every time it launches (packwiz). First launch downloads about 1 GB of mods.
 AutomaticJava=true
 OverrideMemory=true
