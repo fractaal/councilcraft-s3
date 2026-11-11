@@ -442,6 +442,7 @@ public final class SkyTerrain implements DensityFunction {
 
     private void fillArchipelago(Column c) {
         c.count = 0;
+        c.lakeNear = 0.0;
         c.maxK = 0.0;
         c.wild = 0.0;
         c.channel = Double.NaN;
@@ -457,6 +458,12 @@ public final class SkyTerrain implements DensityFunction {
         }
         if (a.pepperChance > 0) {
             for (Island is : pepperTile(Math.floorDiv(c.x, PEPPER_TILE), Math.floorDiv(c.z, PEPPER_TILE))) addIsland(c, is, c.x, c.z);
+        }
+        // Crags (3D detail noise) keep out of lakes and their banks, on every island here: a crag hollow in an island
+        // that overlaps a lake island would fill with the lake's water and leave it standing against air.
+        if (c.lakeNear > 0.0) {
+            c.maxK = 0.0;
+            for (int i = 0; i < c.count; i++) c.maxK = Math.max(c.maxK, c.k[i] *= 1.0 - c.lakeNear);
         }
     }
 
@@ -685,7 +692,8 @@ public final class SkyTerrain implements DensityFunction {
         int i = c.count++;
         c.top[i] = B * top;
         c.bottom[i] = B * bottom;
-        c.k[i] = is.wild > 0 ? is.wild * smoothstep(0.0, 0.3, t) * (1.0 - nearLake) : 0.0;
+        c.k[i] = is.wild > 0 ? is.wild * smoothstep(0.0, 0.3, t) : 0.0;
+        c.lakeNear = Math.max(c.lakeNear, nearLake);
         c.maxK = Math.max(c.maxK, c.k[i]);
         c.mr[i] = t;
         c.yc[i] = is.base;
@@ -1250,6 +1258,8 @@ public final class SkyTerrain implements DensityFunction {
         final double[] top, bottom, k, mr, yc, basinLevel;
         final double[] scratch = new double[2];
         double maxK, wild, plateau, channel = Double.NaN;
+        /** 0 to 1: how close this column is to a lake's water (1 within its bank); crags fade out by it on every layer. */
+        double lakeNear;
         /** sharedWarp(x, z), set when an archipelago column is filled. */
         double[] sharedWarp;
         /** Solid spans in use: the layer count in layered mode, the islands reaching this column in archipelago mode. */

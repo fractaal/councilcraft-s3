@@ -119,6 +119,7 @@ final class LabHttp {
                 case "/api/fastcheck" -> fastcheck(ex, q);
                 case "/api/colhash" -> colhash(ex, q);
                 case "/api/beard" -> beard(ex, q);
+                case "/api/waterwalls" -> waterwalls(ex, q);
                 default -> serveFile(ex, path);
             }
         } catch (Exception e) {
@@ -444,6 +445,74 @@ final class LabHttp {
             if (any || reach == null || reach.length > 0) r.add(pos.x + "," + pos.z, c);
         }
         json(ex, 200, r);
+    }
+
+    /**
+     * In the real world's chunks within r of (cx, cz) (generated in full if missing): water source blocks, and how many
+     * have air beside them (a water wall, which worldgen water doesn't flow over) or air under them (hanging water).
+     * Lists up to 20 places.
+     */
+    private static void waterwalls(HttpExchange ex, Map<String, String> q) throws Exception {
+        int cx = Integer.parseInt(q.get("cx")), cz = Integer.parseInt(q.get("cz"));
+        int r = Math.max(0, Math.min(32, Integer.parseInt(q.getOrDefault("r", "8"))));
+        long[] n = new long[7];
+        com.google.gson.JsonArray where = new com.google.gson.JsonArray();
+        skyislands.SkyTerrain[] found = new skyislands.SkyTerrain[1];
+        server.overworld().getChunkSource().randomState().router().fluidLevelFloodednessNoise().mapAll(df -> {
+            if (df instanceof skyislands.SkyTerrain t) found[0] = t;
+            return df;
+        });
+        skyislands.SkyTerrain terrain = found[0];
+        for (int x = cx - r; x <= cx + r; x++) for (int z = cz - r; z <= cz + r; z++) {
+            int fx = x, fz = z;
+            server.submit(() -> {
+                var level = server.overworld();
+                var chunk = level.getChunk(fx, fz);
+                var p = new net.minecraft.core.BlockPos.MutableBlockPos();
+                var nb = new net.minecraft.core.BlockPos.MutableBlockPos();
+                var sections = chunk.getSections();
+                for (int si = 0; si < sections.length; si++) {
+                    var sec = sections[si];
+                    if (sec.hasOnlyAir() || !sec.getStates().maybeHas(st -> st.getFluidState().isSource())) continue;
+                    int y0 = chunk.getSectionYFromSectionIndex(si) << 4;
+                    for (int ly = 0; ly < 16; ly++) for (int lz = 0; lz < 16; lz++) for (int lx = 0; lx < 16; lx++) {
+                        var st = sec.getBlockState(lx, ly, lz);
+                        var fl = st.getFluidState();
+                        if (!fl.isSource() || !fl.is(net.minecraft.tags.FluidTags.WATER)) continue;
+                        n[0]++;
+                        p.set(fx * 16 + lx, y0 + ly, fz * 16 + lz);
+                        boolean wall = false;
+                        for (var d : net.minecraft.core.Direction.Plane.HORIZONTAL) if (level.getBlockState(nb.setWithOffset(p, d)).isAir()) wall = true;
+                        boolean hang = level.getBlockState(nb.setWithOffset(p, net.minecraft.core.Direction.DOWN)).isAir();
+                        if (wall) n[1]++;
+                        if (hang) n[2]++;
+                        if (wall || hang) {
+                            // Lake water from skyislands if the column has a layer whose water level is above this block.
+                            double[] sp = terrain == null ? new double[0] : terrain.spansAt(p.getX(), p.getZ());
+                            String kind = "other";
+                            for (int k = 0; k < sp.length; k += 3) if (!Double.isNaN(sp[k + 2]) && p.getY() < sp[k + 2] && p.getY() > sp[k] - 40) kind = "lake";
+                            if (kind.equals("lake")) n[wall ? 3 : 4]++;
+                            // Open to the sky: nothing but this water column above it.
+                            boolean surface = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.WORLD_SURFACE, p.getX(), p.getZ()) <= p.getY() + 4;
+                            if (surface) n[wall ? 5 : 6]++;
+                            if (where.size() < 30) where.add(p.getX() + " " + p.getY() + " " + p.getZ() + (wall ? " wall" : "") + (hang ? " hang" : "") + " " + kind + " spans=" + java.util.Arrays.toString(java.util.Arrays.stream(sp).map(v -> Math.round(v * 10) / 10.0).toArray()));
+                        }
+                    }
+                }
+                return null;
+            }).join();
+        }
+        JsonObject res = new JsonObject();
+        res.addProperty("chunks", (2 * r + 1) * (2 * r + 1));
+        res.addProperty("waterSources", n[0]);
+        res.addProperty("besideAir", n[1]);
+        res.addProperty("overAir", n[2]);
+        res.addProperty("lakeBesideAir", n[3]);
+        res.addProperty("lakeOverAirOnly", n[4]);
+        res.addProperty("surfaceBesideAir", n[5]);
+        res.addProperty("surfaceOverAirOnly", n[6]);
+        res.add("examples", where);
+        json(ex, 200, res);
     }
 
     private static JsonObject fastCounters() {
