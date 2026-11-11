@@ -63,6 +63,21 @@ public final class FastGen {
 
     // ---- Which worlds are sky-island worlds ------------------------------------------------------------------------
 
+    private static final Map<net.minecraft.world.level.levelgen.RandomState, java.util.Optional<SkyTerrain>> TERRAIN =
+            java.util.Collections.synchronizedMap(new java.util.WeakHashMap<>());
+
+    /** The SkyTerrain in this random state's noise router, if it has one. */
+    public static SkyTerrain terrainOf(net.minecraft.world.level.levelgen.RandomState state) {
+        return TERRAIN.computeIfAbsent(state, s -> {
+            SkyTerrain[] found = new SkyTerrain[1];
+            s.router().fluidLevelFloodednessNoise().mapAll(df -> {
+                if (df instanceof SkyTerrain t) found[0] = t;
+                return df;
+            });
+            return java.util.Optional.ofNullable(found[0]);
+        }).orElse(null);
+    }
+
     private static final Map<ChunkGenerator, Boolean> SKY = new ConcurrentHashMap<>();
 
     /** True if the generator's terrain comes from SkyTerrain. */

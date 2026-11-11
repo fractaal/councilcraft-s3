@@ -106,8 +106,8 @@ Measured with `/api/fullgen` in copies of the VPS server folder (8 vCPU, 16 GB),
 | Mod set | Full chunks per second (three areas) |
 |---|---|
 | Everything, with Terrain Slabs and default Streams | 9.7, 19.7, 14.3 |
-| Without Terrain Slabs, default Streams | 19.1, 20.6, 14.7 |
-| **Without Terrain Slabs, tuned Streams (what ships)** | 21.4, 23.0, 17.6 |
+| **Without Terrain Slabs, default Streams (what ships)** | 19.1, 20.6, 14.7 |
+| Without Terrain Slabs, tuned Streams | 21.4, 23.0, 17.6 |
 | Without Terrain Slabs and Streams | 23.1, 23.5, 17.4 |
 | Without all the 2026-11-11 biome mods (and Nature's Delight, which needs Nature's Spirit) | 28.4, 36.2, 27.4 |
 
