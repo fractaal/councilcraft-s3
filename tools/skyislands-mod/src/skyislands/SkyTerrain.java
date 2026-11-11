@@ -985,35 +985,6 @@ public final class SkyTerrain implements DensityFunction {
         return Integer.MIN_VALUE;
     }
 
-    /**
-     * A picker for any column, for tools outside the noise fill that sample heights (RoadWeaver's route planner): lake
-     * water where the noise fill would put it, down to 3 below the column's surface. It keeps the last column each
-     * thread asked about, since callers ask about one column's blocks in a row.
-     */
-    public Aquifer.FluidPicker columnFluidPicker(Aquifer.FluidPicker fallback) {
-        if (p.arch == null) return fallback;
-        ThreadLocal<double[]> last = new ThreadLocal<>();
-        return (x, y, z) -> {
-            double[] col = last.get();
-            if (col == null || col[0] != x || col[1] != z) {
-                Column c = new Column(SkyTerrain.this, x, z);
-                fill(c, true, true);
-                col = new double[2 + 2 * c.count];
-                col[0] = x;
-                col[1] = z;
-                for (int i = 0; i < c.count; i++) {
-                    col[2 + 2 * i] = c.basinLevel[i];
-                    col[3 + 2 * i] = c.top[i] / B - 3.0;
-                }
-                last.set(col);
-            }
-            for (int i = 2; i < col.length; i += 2) {
-                if (!Double.isNaN(col[i]) && y < col[i] && y > col[i + 1]) return water((int) col[i]);
-            }
-            return fallback.computeFluid(x, y, z);
-        };
-    }
-
     /** A picker for one chunk. Vanilla asks once per air block in x/z order, so answers are kept per column of the chunk. */
     public Aquifer.FluidPicker fluidPicker(Aquifer.FluidPicker fallback) {
         if (p.arch != null) return new ArchPicker(fallback);
