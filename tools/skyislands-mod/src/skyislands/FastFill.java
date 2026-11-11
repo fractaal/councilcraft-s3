@@ -19,6 +19,9 @@ public interface FastFill {
     /** True while the selected cell is a skipped all-air cell. */
     boolean skyislands$air();
 
+    /** True if the block just filled is lake water at the lake's surface (SkyTerrain.ArchPicker.lastSurface). */
+    boolean skyislands$lakeSurface();
+
     /** NoiseChunk.getInterpolatedState, which is protected. */
     BlockState skyislands$state();
 }

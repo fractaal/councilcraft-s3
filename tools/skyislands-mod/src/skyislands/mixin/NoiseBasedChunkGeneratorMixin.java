@@ -10,6 +10,7 @@ import net.minecraft.world.level.levelgen.NoiseChunk;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.blending.Blender;
+import com.llamalad7.mixinextras.sugar.Local;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -77,6 +78,15 @@ abstract class NoiseBasedChunkGeneratorMixin {
     @Redirect(method = "doFill", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/NoiseChunk;updateForZ(ID)V"))
     private void skyislands$updateForZ(NoiseChunk nc, int z, double d) {
         if (!((FastFill) nc).skyislands$air()) nc.updateForZ(z, d);
+    }
+
+    /**
+     * Lake water at the surface gets the update vanilla gives aquifer water (marked for post-processing, then ticked when
+     * the chunk is finished), so where it ends up beside air it flows instead of standing as a wall.
+     */
+    @Redirect(method = "doFill", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/Aquifer;shouldScheduleFluidUpdate()Z"))
+    private boolean skyislands$lakeFlow(Aquifer aquifer, @Local NoiseChunk nc) {
+        return aquifer.shouldScheduleFluidUpdate() || ((FastFill) nc).skyislands$lakeSurface();
     }
 
     @Redirect(method = "doFill", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/NoiseChunk;getInterpolatedState()Lnet/minecraft/world/level/block/state/BlockState;"))

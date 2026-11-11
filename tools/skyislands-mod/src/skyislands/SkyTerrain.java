@@ -1111,13 +1111,24 @@ public final class SkyTerrain implements DensityFunction {
             java.util.Arrays.fill(counts, -1);
         }
 
+        /**
+         * True if the last computeFluid gave lake water at the lake's surface. The noise fill then marks the block for
+         * the game to update when the chunk is finished, as vanilla does for aquifer water, so a lake surface that
+         * ends up beside air (a road cut through the bank, a cave mouth) flows into it instead of standing as a wall.
+         */
+        public boolean lastSurface;
+
         @Override
         public Aquifer.FluidStatus computeFluid(int x, int y, int z) {
+            lastSurface = false;
             if (lakes(x, z)) {
                 int column = column(x, z);
                 for (int i = 0; i < counts[column]; i++) {
                     double level = levels[column * CAP + i];
-                    if (!Double.isNaN(level) && y < level && y > floors[column * CAP + i]) return water((int) level);
+                    if (!Double.isNaN(level) && y < level && y > floors[column * CAP + i]) {
+                        lastSurface = y + 1 >= level;
+                        return water((int) level);
+                    }
                 }
             }
             return fallback.computeFluid(x, y, z);

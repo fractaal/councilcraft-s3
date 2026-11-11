@@ -75,6 +75,11 @@ abstract class NoiseChunkMixin implements FastFill {
     }
 
     @Override
+    public boolean skyislands$lakeSurface() {
+        return skyislands$picker != null && skyislands$picker.lastSurface;
+    }
+
+    @Override
     public BlockState skyislands$state() {
         return getInterpolatedState();
     }

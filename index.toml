@@ -11700,7 +11700,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "f8421bb950a99ef7235958bb9f3161f2065cad341a209f27968bf6372ea05c78"
+hash = "c510235d71cd215cf01c0cfd410dcb9b271d85b63e2dd2f00974e197e73e12c6"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"
