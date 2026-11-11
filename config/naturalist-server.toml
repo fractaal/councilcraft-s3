@@ -1,0 +1,61 @@
+[disable_mobs]
+	remove_all_bugs = false
+
+	[disable_mobs.aquatic_mobs]
+		anglerfish_removed = true
+		bass_removed = true
+		blobfish_removed = true
+		catfish_removed = true
+		clam_removed = true
+		giant_isopod_removed = true
+		great_white_shark_removed = true
+		jellyfish_removed = true
+		piranha_removed = true
+		ray_removed = true
+		starfish_removed = true
+		whale_removed = true
+
+	[disable_mobs.land_mobs]
+		alligator_removed = true
+		bear_removed = true
+		bird_removed = false
+		black_bear_removed = true
+		boar_removed = true
+		capybara_removed = true
+		crab_removed = true
+		deer_removed = true
+		duck_removed = true
+		elephant_removed = true
+		forest_fox_removed = true
+		forest_rabbit_removed = true
+		giraffe_removed = true
+		hedgehog_removed = true
+		hippo_removed = true
+		komodo_dragon_removed = true
+		lion_removed = true
+		lizard_removed = true
+		mammoth_removed = true
+		mole_removed = true
+		ostrich_removed = true
+		rat_removed = true
+		rhino_removed = true
+		snake_removed = true
+		tiger_removed = true
+		tortoise_removed = true
+		turkey_removed = true
+		vulture_removed = false
+		zebra_removed = true
+
+	[disable_mobs.bugs]
+		ant_removed = true
+		butterfly_removed = false
+		desert_scorpion_removed = true
+		dragonfly_removed = false
+		firefly_removed = false
+		jungle_scorpion_removed = true
+		snail_removed = true
+
+[behavior]
+	snail_crushing = false
+	bird_head_slow_falling = true
+	parrot_flight = true

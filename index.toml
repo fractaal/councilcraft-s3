@@ -6177,6 +6177,10 @@ file = "config/nanny-server.toml"
 hash = "3ea63565796c544cda48b1d0f8208c9c9afc97cb7b750c91cf82ab3b55ca31d9"
 
 [[files]]
+file = "config/naturalist-server.toml"
+hash = "601fc7c313169885220c69a7a07beba895ccea31461bfb2e6839f26f2fe3ce3c"
+
+[[files]]
 file = "config/naturescompass-client.toml"
 hash = "52155f5707537443156b47499d98b96dcdbf48ad0ed4ce8cfdf53cef7ffb8a9c"
 
@@ -6767,6 +6771,10 @@ hash = "fbcf40465f120ceac12fdc297e8e196ca2774936406404165402d94009f0e53c"
 [[files]]
 file = "config/simulatedcoasters-common.toml"
 hash = "97fa738939cb6a7e0ab5bcd7833544b1bde56b41e314c8a1e37278154082a874"
+
+[[files]]
+file = "config/skywhales-common.toml"
+hash = "367699c9b853ec63094e281841373f8084c7ba64ffc8aba1fbf9320a1e98a27f"
 
 [[files]]
 file = "config/sliceanddice-client.toml"
