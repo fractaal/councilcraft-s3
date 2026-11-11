@@ -55,6 +55,7 @@ public final class SkyTerrain implements DensityFunction {
         final Map<Long, Island> peppers = new ConcurrentHashMap<>();
         final Map<Long, Island[]> pepperTiles = new ConcurrentHashMap<>();
         final Map<Long, Island> leys = new ConcurrentHashMap<>();
+        final Map<Long, River> rivers = new ConcurrentHashMap<>();
     }
 
     private final Caches caches;
@@ -453,11 +454,11 @@ public final class SkyTerrain implements DensityFunction {
             int lx = (int) Math.floor(c.x / a.leyCell), lz = (int) Math.floor(c.z / a.leyCell);
             for (int dx = -a.leySearch; dx <= a.leySearch; dx++) for (int dz = -a.leySearch; dz <= a.leySearch; dz++) {
                 Island is = leyIsland(lx + dx, lz + dz);
-                if (is != NO_ISLAND) addIsland(c, is, c.x, c.z);
+                if (is != NO_ISLAND) addIsland(c, is, c.x, c.z, true);
             }
         }
         if (a.pepperChance > 0) {
-            for (Island is : pepperTile(Math.floorDiv(c.x, PEPPER_TILE), Math.floorDiv(c.z, PEPPER_TILE))) addIsland(c, is, c.x, c.z);
+            for (Island is : pepperTile(Math.floorDiv(c.x, PEPPER_TILE), Math.floorDiv(c.z, PEPPER_TILE))) addIsland(c, is, c.x, c.z, true);
         }
         // Crags (3D detail noise) keep out of lakes and their banks, on every island here: a crag hollow in an island
         // that overlaps a lake island would fill with the lake's water and leave it standing against air.
@@ -472,7 +473,7 @@ public final class SkyTerrain implements DensityFunction {
         int cx = (int) Math.floor(x / a.cell), cz = (int) Math.floor(z / a.cell);
         for (int dx = -a.search; dx <= a.search; dx++) for (int dz = -a.search; dz <= a.search; dz++) {
             Island is = mainIsland(cx + dx, cz + dz);
-            if (is != NO_ISLAND) addIsland(c, is, x, z);
+            if (is != NO_ISLAND) addIsland(c, is, x, z, true);
         }
     }
 
@@ -610,8 +611,8 @@ public final class SkyTerrain implements DensityFunction {
         return Math.max(outsideLake, p.arch.lakeCoastGap - toEdge);
     }
 
-    /** Adds this island's solid span at (x, z) to the column, if its land reaches here. */
-    private void addIsland(Column c, Island is, double x, double z) {
+    /** Adds this island's solid span at (x, z) to the column, if its land reaches here. withRiver false leaves out its river. */
+    private void addIsland(Column c, Island is, double x, double z, boolean withRiver) {
         if (c.count >= c.top.length) return;
         double[] tierOut = new double[1];
         double rn = shapeRn(is, x, z, c.sharedWarp, tierOut);
@@ -664,7 +665,7 @@ public final class SkyTerrain implements DensityFunction {
         if (is.terrace > 0) top = ground + Math.floor((top - ground) / is.terrace) * is.terrace;
         // A slight drop at the very edge makes a crisp cliff lip.
         top -= 1.5 * (1.0 - smoothstep(0.0, 0.04, t));
-        double nearLake = 0.0;
+        double nearLake = 0.0, out = Double.NaN;
         if (is.bowlDepth > 0) {
             // A lake holds its water. Within lakeBank blocks outside its water area the land is at least a block above
             // the water, then falls away no steeper than 1:1; inside, the shore stays dry for lakeShore blocks, then goes
@@ -672,12 +673,40 @@ public final class SkyTerrain implements DensityFunction {
             // water beside it, which the game shows as water walls and dry pits next to the lake. The gentle profile
             // also keeps the 4-block cells the game interpolates from dipping under the water line beside the lake.
             // Any air under the water line in the water area fills with water.
-            double out = lakeOutside(is, x, z, rn, inside);
+            out = lakeOutside(is, x, z, rn, inside);
             double shore = out > -a.lakeShore ? Math.max(0.0, out - a.lakeBank) : -out - a.lakeShore;
             top = Math.max(top, is.waterLevel + 1.0 - shore);
             if (out <= 0) level = is.waterLevel;
             // Crags (3D detail noise) keep out of the lake and its bank, so they can't open a hole beside the water.
             nearLake = 1.0 - smoothstep(a.lakeBank, 2.0 * a.lakeBank + 8.0, out);
+        }
+        River rv = withRiver && is.bowlDepth > 0 ? river(is) : NO_RIVER;
+        if (rv != NO_RIVER) {
+            double px = x - rv.ox, pz = z - rv.oz, s = px * rv.dx + pz * rv.dz;
+            if (s >= rv.s0 && s < rv.s1 + 2.0) {
+                double d = Math.abs(-px * rv.dz + pz * rv.dx - meander(rv, s));
+                if (d < rv.hw + a.riverMaxCut / a.riverBankSlope + 2.0) {
+                    // Distance across the bent centreline, not straight across the path.
+                    double bend = (meander(rv, s + 1.0) - meander(rv, s - 1.0)) / 2.0;
+                    d /= Math.sqrt(1.0 + bend * bend);
+                    double L = rv.levels[Math.min(rv.levels.length - 1, (int) (s - rv.s0))];
+                    if (d < rv.hw) {
+                        // The bed: deepest in the middle, one block deep over the last few blocks to the edge, so only
+                        // the surface pours off and no water stands against the open side of the island.
+                        double u = d / rv.hw, lip = smoothstep(0.0, 6.0, rv.s1 - s);
+                        top = Math.min(top, L - 1.0 - (rv.depth - 1.0) * (1.0 - u * u) * lip);
+                    } else {
+                        // Banks climb from a block above the water, no steeper than bankSlope, up to the land. Outside
+                        // the lake, where the land beside the river is lower than its water, a berm holds the water in.
+                        top = Math.min(top, L + 1.0 + (d - rv.hw) * a.riverBankSlope);
+                        if (out > 0.0) top = Math.max(top, L + 1.0 - Math.max(0.0, d - rv.hw - 2.0));
+                    }
+                    // Water fills any air under the level a little past the banks too, where the game's 4-block cells
+                    // blend the channel's corners into the bank and dip it under the water line.
+                    if (d < rv.hw + 6.0 && Double.isNaN(level)) level = L;
+                    nearLake = Math.max(nearLake, 1.0 - smoothstep(rv.hw + 4.0, rv.hw + 16.0, d));
+                }
+            }
         }
         // Underside: a cliff wall at the edge, then an inverted mountain, lumpy at two scales, with drips.
         double cone = Math.pow(smoothstep(0.0, 1.0, Math.min(1.0, 1.1 * t)), 0.65);
@@ -693,6 +722,8 @@ public final class SkyTerrain implements DensityFunction {
             DEBUG.get().append(String.format("island at %.0f,%.0f r=%.0f base=%.0f lake=%s rn=%.3f t=%.3f inside=%.3f water=%.0f top=%.1f bottom=%.1f level=%s%n",
                     is.x, is.z, is.r, is.base, is.bowlDepth > 0, rn, t, inside, is.waterLevel, top, bottom, level));
             if (is.bowlDepth > 0) DEBUG.get().append(String.format("    lakeOutside=%.1f blocks%n", lakeOutside(is, x, z, rn, inside)));
+            if (rv != NO_RIVER) DEBUG.get().append(String.format("    river dir=%.2f,%.2f s=%.1f..%.1f hw=%.1f depth=%.1f levels %d..%d%n",
+                    rv.dx, rv.dz, rv.s0, rv.s1, rv.hw, rv.depth, rv.levels[0], rv.levels[rv.levels.length - 1]));
         }
         int i = c.count++;
         c.top[i] = B * top;
@@ -703,6 +734,104 @@ public final class SkyTerrain implements DensityFunction {
         c.mr[i] = t;
         c.yc[i] = is.base;
         c.basinLevel[i] = level;
+    }
+
+    // ---- Rivers -------------------------------------------------------------------------------------------------
+
+    /**
+     * A lake island's outflow: a channel from the lake across its low side to the island's edge, where it pours off
+     * into the void. The path runs straight out from the island's centre along (dx, dz), bent sideways by
+     * meander(); s is the distance along it. levels[i] is the water level (water fills y < level) for s in
+     * [s0 + i, s0 + i + 1): the lake's level at first, then a block lower every few blocks, and lower still wherever
+     * the land beside it falls away. ArchPicker marks surface water for an update, so at each step the pool above
+     * spills over the one below and the river runs as flowing water rather than a staircase of still pools.
+     */
+    private record River(double ox, double oz, double dx, double dz, double s0, double s1, double hw, double depth,
+                         double amp, double wavelength, double mox, double moz, int[] levels) {}
+
+    private static final River NO_RIVER = new River(0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, new int[0]);
+
+    private River river(Island is) {
+        long key = mix(Double.doubleToLongBits(is.ox) * 31 ^ Double.doubleToLongBits(is.oz));
+        River rv = caches.rivers.get(key);
+        return rv != null ? rv : caches.rivers.computeIfAbsent(key, k -> buildRiver(is));
+    }
+
+    /** The river centreline's sideways offset at s: none at the lake, growing over the first dozen blocks. */
+    private double meander(River rv, double s) {
+        return rv.amp * smoothstep(rv.s0, rv.s0 + 12.0, s) * sn(s, 0.0, rv.wavelength, rv.mox, rv.moz);
+    }
+
+    /** Island `is` alone at (x, z), without its river: {top, water level or NaN}, or null where it has no land. */
+    private double[] probe(Island is, double x, double z) {
+        Column t = new Column(this, (int) Math.floor(x), (int) Math.floor(z));
+        t.sharedWarp = sharedWarp(x, z);
+        addIsland(t, is, x, z, false);
+        return t.count == 0 ? null : new double[]{t.top[0] / B, t.basinLevel[0]};
+    }
+
+    /**
+     * Picks the outflow once per lake island. Of 16 directions out from the centre, it takes the one that crosses the
+     * least land above the lake between the lake's last open water and the island's edge, away from the raised side.
+     */
+    private River buildRiver(Island is) {
+        Arch a = p.arch;
+        if (!(is.bowlDepth > 0) || a.riverChance <= 0) return NO_RIVER;
+        long h = mix(seedMix ^ Double.doubleToLongBits(is.ox) ^ 0x6A09E667F3BCC909L);
+        if (unit(h) >= a.riverChance) return NO_RIVER;
+        double level = is.waterLevel, theta0 = unit(h = mix(h)) * 2.0 * Math.PI;
+        double best = Double.POSITIVE_INFINITY, bdx = 0.0, bdz = 0.0, bs0 = 0.0, bs1 = 0.0;
+        for (int k = 0; k < 16; k++) {
+            double th = theta0 + k * Math.PI / 8.0, dx = Math.cos(th), dz = Math.sin(th);
+            double lastWater = Double.NaN, edge = Double.NaN, cut = 0.0;
+            for (double s = 0.0; s < is.reach; s += 2.0) {
+                double[] q = probe(is, is.x + s * dx, is.z + s * dz);
+                if (q == null) { edge = s; break; }
+                if (!Double.isNaN(q[1]) && q[0] <= level - 1.0) { lastWater = s; cut = 0.0; }
+                else if (!Double.isNaN(lastWater)) cut = Math.max(cut, q[0] - level);
+            }
+            if (debugOn && DEBUG.get() != null) DEBUG.get().append(String.format("    river try %.2f,%.2f lastWater=%.0f edge=%.0f cut=%.1f%n", dx, dz, lastWater, edge, cut));
+            if (Double.isNaN(lastWater) || Double.isNaN(edge) || edge - lastWater < 8.0 || cut > a.riverMaxCut) continue;
+            double bank = lastWater + a.lakeBank;
+            double score = cut + 40.0 * raisedSide(is, is.x + bank * dx, is.z + bank * dz) + 0.1 * (edge - lastWater);
+            if (score < best) { best = score; bdx = dx; bdz = dz; bs0 = lastWater; bs1 = edge; }
+        }
+        if (best == Double.POSITIVE_INFINITY) return NO_RIVER;
+        double hw = clamp(a.riverHalfWidth * (0.7 + 0.6 * unit(h = mix(h))) * Math.sqrt(is.r / 100.0), 1.5, 2.0 * a.riverHalfWidth);
+        double depth = a.riverDepth * (0.75 + 0.5 * unit(h = mix(h)));
+        double wavelength = a.riverMeanderWavelength * (0.7 + 0.6 * unit(h = mix(h)));
+        double amp = Math.min(a.riverMeander * 3.0 * hw, 0.2 * (bs1 - bs0));
+        double mox = (unit(h = mix(h)) - 0.5) * 40000.0, moz = (unit(h = mix(h)) - 0.5) * 40000.0;
+        River shape = new River(is.x, is.z, bdx, bdz, bs0, bs1, hw, depth, amp, wavelength, mox, moz, new int[0]);
+        // The land along the bent centreline, out to where this island's land ends; NaN where it is still the lake.
+        int n = (int) Math.ceil(bs1 - bs0 + 24.0), count = 0, dry = -1;
+        double[] ground = new double[n];
+        for (int i = 0; i < n; i++) {
+            double s = bs0 + i + 0.5, m = meander(shape, s);
+            double[] q = probe(is, is.x + s * bdx - m * bdz, is.z + s * bdz + m * bdx);
+            if (q == null) break;
+            count = i + 1;
+            boolean wet = !Double.isNaN(q[1]) && q[0] <= level - 1.0;
+            ground[i] = wet ? Double.NaN : q[0];
+            if (!wet && dry < 0) dry = i;
+        }
+        if (count < 8 || dry < 0) return NO_RIVER;
+        // The water steps down evenly from the lake's level to a block under the land at the edge, a block at a time
+        // every few blocks; steeper land beside it pulls it down faster, into small cascades.
+        int top = (int) Math.round(level), end = top;
+        for (int i = Math.max(dry, count - 3); i < count; i++) if (!Double.isNaN(ground[i])) end = Math.min(end, (int) Math.floor(ground[i]) - 1);
+        double spacing = top > end ? clamp((count - dry) / (double) (top - end), a.riverStepMin, a.riverStepMax) : Double.POSITIVE_INFINITY;
+        int[] levels = new int[count];
+        int L = top;
+        double next = dry + spacing;
+        for (int i = 0; i < count; i++) {
+            if (!Double.isNaN(ground[i])) {
+                if (i >= next && L > end) { L--; next = i + spacing * (0.8 + 0.4 * unit(h = mix(h))); }
+                L = Math.min(L, (int) Math.floor(ground[i]) - 1);
+            }
+            levels[i] = L;
+        }
+        return new River(is.x, is.z, bdx, bdz, bs0, bs0 + count, hw, depth, amp, wavelength, mox, moz, levels);
     }
 
     /** 0 to 1: how strongly (x, z) is on the raised side of lake island `is`. One slow noise, so the raised part is one or two stretches of shore. */
@@ -1432,6 +1561,8 @@ public final class SkyTerrain implements DensityFunction {
         final double channelWidth, channelWidthVar, channelStrength, channelPepper, openSky, channelCoreResist;
         final double cliffRim, hybridPeak, wildChance, wildStrength, tierChance, tierMax, peakRoot;
         final double lakeBank, lakeShore, lakeCoastGap, raisedBias, raisedGain, raisedWavelength;
+        final double riverChance, riverHalfWidth, riverDepth, riverStepMin, riverStepMax, riverBankSlope, riverMeander,
+                riverMeanderWavelength, riverMaxCut;
         final double leyScale, leySpacing, leyPull, leyPullPepper, leyBand, leyPepperBand, leyOff, leyAlign, leyStretch, lineHeightSpread, leyGaps;
         final double leyCell, leyChance, leyMinRadius, leyMaxRadius;
         final int leySearch, pepperSearch, coastSearch, leyCoastSearch;
@@ -1507,6 +1638,17 @@ public final class SkyTerrain implements DensityFunction {
             raisedBias = Params.num(lk, "raisedBias", 0.0);
             raisedGain = Params.num(lk, "raisedGain", 2.5);
             raisedWavelength = Params.num(lk, "raisedWavelength", 1.2);
+            // Lake outflow rivers; off unless the settings have a "rivers" object.
+            JsonObject rv = o.has("rivers") ? o.getAsJsonObject("rivers") : null;
+            riverChance = rv == null ? 0 : Params.num(rv, "chance", 1.0);
+            riverHalfWidth = Params.num(rv, "halfWidth", 3.0);
+            riverDepth = Params.num(rv, "depth", 2.5);
+            riverStepMin = Params.num(rv, "stepMin", 3);
+            riverStepMax = Params.num(rv, "stepMax", 6);
+            riverBankSlope = Params.num(rv, "bankSlope", 1.5);
+            riverMeander = Params.num(rv, "meander", 1.0);
+            riverMeanderWavelength = Params.num(rv, "meanderWavelength", 60);
+            riverMaxCut = Params.num(rv, "maxCut", 30);
             JsonObject ley = o.has("ley") ? o.getAsJsonObject("ley") : null;
             leyScale = 256.0 / Params.num(ley, "width", 2600);
             leySpacing = ley == null ? 0 : Params.num(ley, "spacing", 0.2);
