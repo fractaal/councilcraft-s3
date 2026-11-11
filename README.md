@@ -116,6 +116,17 @@ Measured with `/api/fullgen` in copies of the VPS server folder (8 vCPU, 16 GB),
 - Profiles (JFR) of the full pack: the biome stage spends extra time in Lithostitched's biome injector and the larger climate search, the surface stage in TerraBlender's surface rules, and the features stage in Terrain Slabs and Streams Reflowing's river carver. In every mod set, about a fifth of the noise stage goes to patches that several mods put on vanilla's structure-blending code (`Beardifier`), and cave features (dripstone, glow lichen, moss) and ores spend time searching the empty space between islands.
 - The VPS showed 11 to 20% CPU steal during these runs, so expect the numbers to vary.
 
+### Chunk generation shortcuts in the terrain mod (2026-11-11)
+`skyislands` takes four shortcuts in sky-island worlds (class `skyislands.FastGen`). Start the server with `-Dskyislands.fastgen=false` to turn them all off.
+1. **No structure blending where there is nothing to blend.** When none of the Beardifier's fields hold anything (vanilla's lists, YUNG's API and Moog's Structures lists, a RoadWeaver plan with an empty density stamp), the chunk gets vanilla's zero blending density instead. Unknown data keeps blending on and is logged once.
+2. **All-air cells are skipped.** In those chunks, a 4x4x4 cell whose interpolation corners are all below zero, with no lake water, is left as air without working out its 64 blocks (about 92% of cells).
+3. **Cheaper lake lookups.** Each chunk first checks whether any lake island can reach it, and island lookups go through a per-thread cache.
+4. **No decoration in empty sky.** Biomes that exist only more than 16 blocks from any land don't get their features tried, and an ore blob whose surroundings are all air isn't placed block by block (it still draws the same random numbers).
+
+Checked on the VPS: 432 chunks through the world's generator with the shortcuts on and off differ in no block (including lakes and chunks with roads or structures kept blending). Full chunks from a world with the shortcuts differ from a world without them in 18.9% of block columns, the same as two worlds without them differ from each other (19.1%, decoration that depends on chunk generation order). Speed in the same three areas went from 21.4, 22.9, 17.0 (and 23.8, 24.6, 17.1 in a second run) to 28.5, 38.3, 16.8 full chunks per second.
+
+Rerun both checks (`/api/fastcheck` and `/api/colhash` in the worldgen lab) after adding or updating mods that touch world generation.
+
 ### Not checked yet
 - Joining the VPS on 1.5.1+sky.2 with a client, including whether Advanced Loot Info now gets its data (DirectAuth, which held it back, is gone).
 - Starting a Hordium raid or a Gate Pearl needs a player in game, so whether raiders find somewhere to stand on small or steep islands is untested.
