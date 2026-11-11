@@ -45,11 +45,11 @@ To change the islands, edit `tools/worldgen/settings-archipelago.json` and regen
 ## Installing
 
 ### Players (Prism Launcher)
-1. Host this repo somewhere that serves raw files (GitHub works) and note the URL of `pack.toml`.
-2. Run `tools/prism/make-instance.sh <that URL> <version label>`. It makes a small zip.
-3. In Prism: Add Instance, Import from zip.
+1. Download `exosphere-aero-prism.zip` from the [latest release](https://github.com/fractaal/exosphere-aero-pack/releases/latest).
+2. In Prism: Add Instance, Import, and pick the zip.
+3. Launch it. The first launch downloads about 1 GB of mods; if a window lists mods to download by hand, follow its links, put the files where it says, and launch again.
 
-The instance has a pre-launch command that runs the packwiz installer, so it downloads the mods on first launch (about 1 GB) and applies updates every time it starts. Memory is set to 6 to 12 GB.
+The instance has a pre-launch command that runs the packwiz installer against `https://raw.githubusercontent.com/fractaal/exosphere-aero-pack/main/pack.toml`, so every launch picks up whatever is on `main`. Memory is set to 6 to 12 GB. The zip itself never needs updating; to make it again, run `tools/prism/make-instance.sh <pack.toml URL> <label>`.
 
 ### Dedicated server
 In an **empty** folder:
