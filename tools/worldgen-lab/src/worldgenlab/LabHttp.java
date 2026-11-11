@@ -118,6 +118,7 @@ final class LabHttp {
                 case "/api/fullgen" -> fullgen(ex, q);
                 case "/api/fastcheck" -> fastcheck(ex, q);
                 case "/api/colhash" -> colhash(ex, q);
+                case "/api/beard" -> beard(ex, q);
                 default -> serveFile(ex, path);
             }
         } catch (Exception e) {
@@ -385,6 +386,58 @@ final class LabHttp {
                 .forEach(e -> ex2.addProperty(e.getKey(), e.getValue()));
         r.add("examples", ex2);
         r.add("counters", fastCounters());
+        json(ex, 200, r);
+    }
+
+    /**
+     * What structure blending (Beardifier) the real world gives the chunks from (cx, cz) to (cx + n - 1, cz + n - 1): for
+     * each chunk with anything to blend, the size of every list the Beardifier holds and skyislands' blend reach boxes.
+     */
+    private static void beard(HttpExchange ex, Map<String, String> q) throws Exception {
+        int cx = Integer.parseInt(q.get("cx")), cz = Integer.parseInt(q.get("cz"));
+        int n = Math.max(1, Math.min(32, Integer.parseInt(q.getOrDefault("n", "1"))));
+        JsonObject r = new JsonObject();
+        for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) {
+            var pos = new net.minecraft.world.level.ChunkPos(cx + i, cz + j);
+            var b = CompletableFuture.supplyAsync(() -> net.minecraft.world.level.levelgen.Beardifier.forStructuresInChunk(server.overworld().structureManager(), pos), genPool).join();
+            JsonObject c = new JsonObject();
+            boolean any = false;
+            for (Class<?> k = b.getClass(); k != null && k != Object.class; k = k.getSuperclass()) {
+                for (java.lang.reflect.Field f : k.getDeclaredFields()) {
+                    if (java.lang.reflect.Modifier.isStatic(f.getModifiers())) continue;
+                    f.setAccessible(true);
+                    Object v = f.get(b);
+                    int size = -1;
+                    if (v instanceof java.util.Collection<?> col) size = col.size();
+                    else if (v instanceof java.util.ListIterator<?> it) { int back = 0; while (it.hasPrevious()) { it.previous(); back++; } int all = 0; while (it.hasNext()) { it.next(); all++; } for (int m = all; m > back; m--) it.previous(); size = all; }
+                    c.addProperty(f.getName(), v == null ? "null" : size >= 0 ? String.valueOf(size) : v.getClass().getSimpleName());
+                    if (size > 0) any = true;
+                }
+            }
+            var proto = CompletableFuture.supplyAsync(() -> server.overworld().getChunk(pos.x, pos.z, net.minecraft.world.level.chunk.status.ChunkStatus.STRUCTURE_REFERENCES), genPool).join();
+            StringBuilder starts = new StringBuilder(), refs = new StringBuilder();
+            var reg = server.registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.STRUCTURE);
+            proto.getAllStarts().forEach((st, start) -> {
+                if (!start.isValid()) return;
+                starts.append(reg.getKey(st)).append(" pieces=").append(start.getPieces().size()).append(" box=").append(start.getBoundingBox());
+                try {
+                    var f = st.getClass().getField("enhancedTerrainAdaptation");
+                    Object a = f.get(st);
+                    starts.append(" adaptation=").append(a.getClass().getSimpleName()).append(" kernel=").append(a.getClass().getMethod("getKernelSize").invoke(a));
+                } catch (ReflectiveOperationException ignored) {}
+                start.getPieces().stream().limit(3).forEach(pc -> starts.append(" [").append(pc.getClass().getSimpleName())
+                        .append(pc instanceof net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece pe ? " " + pe.getElement().getClass().getSimpleName() + " " + pe.getElement().getProjection() : "")
+                        .append(' ').append(pc.getBoundingBox()).append(']'));
+                starts.append(' ');
+            });
+            proto.getAllReferences().forEach((st, set) -> { if (!set.isEmpty()) refs.append(reg.getKey(st)).append('x').append(set.size()).append(' '); });
+            c.addProperty("starts", starts.toString().trim());
+            c.addProperty("references", refs.toString().trim());
+            if (starts.length() > 0 || refs.length() > 0) any = true;
+            int[] reach = skyislands.BlendReach.of(b, pos);
+            c.addProperty("reach", reach == null ? "unknown" : java.util.Arrays.toString(reach));
+            if (any || reach == null || reach.length > 0) r.add(pos.x + "," + pos.z, c);
+        }
         json(ex, 200, r);
     }
 
