@@ -109,6 +109,10 @@ file = "config/almanac/almanac.json5"
 hash = "74f858bad679e77d95b71631286b01564f116c65da8b2e1ab889099f03cae0d7"
 
 [[files]]
+file = "config/alpinewhispers-common.toml"
+hash = "ba382558cdd778cbab64d6e24b0892fc51364555410bded9e26f06ea70689537"
+
+[[files]]
 file = "config/ambientsounds-client.json"
 hash = "09e1facb992aa3ffc402af94fab37fc4bb82580efcfa8e0e4a29f36638352e32"
 
@@ -6866,7 +6870,7 @@ hash = "82a5ceca05f3719f726c346c41ee6931df0be2f1cbc40b44e200b62e4832d3b4"
 
 [[files]]
 file = "config/streamsreflowing.properties"
-hash = "b36bfcf7ccd98e85364017a564a3f7650fdd4dabb36fb3212f204c75b3927b5a"
+hash = "eae6ca4366489d6f06256105b7482db2a768010fa5a2d3c8d404998c3683964d"
 
 [[files]]
 file = "config/structureessentials.json"
