@@ -2,7 +2,7 @@
 	"experience_per_level": {
 		"type": "expression",
 		"data": {
-			"expression": "min(level^2.25 * 2 + 2000, 30000)"
+			"expression": "min(level^2.25 * 20 + 200000, 300000)"
 		}
 	},
 	"sources": [
@@ -60,7 +60,7 @@
 				"experience": [
 					{
 						"condition": "is_jump",
-						"expression": "amount * 20"
+						"expression": "amount * 50"
 					},
 					{
 						"condition": "is_sprint",

@@ -6870,7 +6870,7 @@ hash = "82a5ceca05f3719f726c346c41ee6931df0be2f1cbc40b44e200b62e4832d3b4"
 
 [[files]]
 file = "config/streamsreflowing.properties"
-hash = "eae6ca4366489d6f06256105b7482db2a768010fa5a2d3c8d404998c3683964d"
+hash = "7cc694b1ea039a5043bcdceb11cdf11aaa5a3ad9a867b40b5c5695aeac04a955"
 
 [[files]]
 file = "config/structureessentials.json"
@@ -7430,7 +7430,7 @@ hash = "cb2a1ea0f57a492e4707edbe78467c726e129761330c842088f109ea809ddd90"
 
 [[files]]
 file = "global_packs/required_data/Aero Skills/data/puffish_skills/puffish_skills/categories/athletics/experience.json"
-hash = "78d4ef3acbd0e7d9ecafa17fd2bdfdebc97fbc3e9eb19bda260692bcbb3aed55"
+hash = "f79b85bbab157591a56c1db23ce22e3d3dfe6a6280c995f583ba614e2bf65d92"
 
 [[files]]
 file = "global_packs/required_data/Aero Skills/data/puffish_skills/puffish_skills/categories/athletics/skills.json"
