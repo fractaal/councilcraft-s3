@@ -434,7 +434,12 @@ final class LabHttp {
             c.addProperty("starts", starts.toString().trim());
             c.addProperty("references", refs.toString().trim());
             if (starts.length() > 0 || refs.length() > 0) any = true;
+            Map<String, Long> before = new HashMap<>();
+            skyislands.BlendReach.KINDS.forEach((k, v) -> before.put(k, v.get()));
             int[] reach = skyislands.BlendReach.of(b, pos);
+            StringBuilder kinds = new StringBuilder();
+            skyislands.BlendReach.KINDS.forEach((k, v) -> { long d = v.get() - before.getOrDefault(k, 0L); if (d > 0) kinds.append(k).append('x').append(d).append(' '); });
+            c.addProperty("kinds", kinds.toString().trim());
             c.addProperty("reach", reach == null ? "unknown" : java.util.Arrays.toString(reach));
             if (any || reach == null || reach.length > 0) r.add(pos.x + "," + pos.z, c);
         }

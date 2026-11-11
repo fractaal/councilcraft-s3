@@ -37,6 +37,11 @@ import org.slf4j.Logger;
  * - RoadWeaver 2.3.2's density stamp: only the chunk's own columns, between the lowest fill depth and the highest carve
  *   height of its columns.
  * Any other field value, or a list entry of another type, makes the reach unknown, and the chunk keeps full blending.
+ *
+ * The worldgen lab's /api/fastcheck?structures=1 compares every block with this on and off around real structures. On
+ * 2026-11-11 it covered vanilla BEARD_BOX, BEARD_THIN and ENCAPSULATE pieces, jigsaw junctions and RoadWeaver stamps (207
+ * bounded chunks, no block differed). YUNG's and Moog's lists stay empty in this pack: Moog's Soaring Structures declare
+ * no enhanced adaptation, and YUNG's own code adds nothing for the Ribbits village, its one overworld user.
  */
 public final class BlendReach {
     private static final Logger LOG = LogUtils.getLogger();
