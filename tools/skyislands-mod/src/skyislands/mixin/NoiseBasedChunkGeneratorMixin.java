@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.blending.Blender;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import skyislands.BlendReach;
 import skyislands.FastFill;
 import skyislands.FastGen;
 import skyislands.SkyTerrain;
@@ -20,9 +21,10 @@ import skyislands.SkyTerrain;
 /**
  * Vanilla has one sea level for the whole world. Worlds using SkyTerrain get per-lake water levels instead.
  *
- * In those worlds the noise fill also takes two shortcuts (FastGen), both exact: a chunk with no structure to blend
- * gets a zero blending density instead of the Beardifier, and a 4x4x4 cell whose corners are all below zero, in a chunk
- * like that and with no lake water in it, is left as air without working out each of its blocks.
+ * In those worlds the noise fill also takes shortcuts (FastGen), all exact. A chunk with no structure to blend gets a
+ * zero blending density instead of the Beardifier. A chunk near structures keeps its Beardifier, but cells outside the
+ * boxes its blending can reach (BlendReach) skip it. And a cell whose corners are all below zero, with no blending and no
+ * lake water in it, is left as air without working out each of its blocks.
  */
 @Mixin(NoiseBasedChunkGenerator.class)
 abstract class NoiseBasedChunkGeneratorMixin {
@@ -38,18 +40,20 @@ abstract class NoiseBasedChunkGeneratorMixin {
         if (terrain[0] == null) return NoiseChunk.forChunk(chunk, state, beardifier, settings, fluid, blender);
         fluid = terrain[0].fluidPicker(fluid);
         SkyTerrain.ArchPicker picker = fluid instanceof SkyTerrain.ArchPicker ap ? ap : null;
-        boolean fast = false;
+        int[] reach = null;
         if (FastGen.enabled()) {
-            if (FastGen.nothingToBlend(beardifier)) {
+            reach = BlendReach.of(beardifier, chunk.getPos());
+            if (reach == null) {
+                FastGen.BEARD_KEPT.incrementAndGet();
+            } else if (reach.length == 0) {
                 beardifier = FastGen.ZERO_BEARD;
                 FastGen.BEARD_SKIPPED.incrementAndGet();
-                fast = picker != null && blender == Blender.empty();
             } else {
-                FastGen.BEARD_KEPT.incrementAndGet();
+                FastGen.BEARD_BOUNDED.incrementAndGet();
             }
         }
         NoiseChunk nc = NoiseChunk.forChunk(chunk, state, beardifier, settings, fluid, blender);
-        ((FastFill) nc).skyislands$setup(fast, picker);
+        ((FastFill) nc).skyislands$setup(reach != null && picker != null && blender == Blender.empty(), picker, reach);
         return nc;
     }
 

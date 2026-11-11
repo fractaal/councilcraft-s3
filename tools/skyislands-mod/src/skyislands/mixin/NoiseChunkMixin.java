@@ -2,11 +2,13 @@ package skyislands.mixin;
 
 import java.util.List;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseChunk;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import skyislands.BlendReach;
 import skyislands.FastFill;
 import skyislands.FastGen;
 import skyislands.SkyTerrain;
@@ -14,8 +16,10 @@ import skyislands.SkyTerrain;
 /**
  * Decides whether a cell of the noise fill is all air. Each NoiseInterpolator holds the cell-corner values of one
  * interpolated density; inside a cell every block's value is a trilinear blend of its 8 corners, so if all 8 corners of
- * every interpolator are below zero, every block in the cell is too. With no structure blending added on top (the chunk
- * was set up with a zero Beardifier) and no lake water in the cell, each of those blocks is air.
+ * every interpolator are below zero, every block in the cell is too. With no structure blending added on top (the cell
+ * is outside every box BlendReach gave for the chunk) and no lake water in the cell, each of those blocks is air.
+ *
+ * The same boxes let the chunk's Beardifier fill a cell outside them with zeros (BeardifierMixin).
  */
 @Mixin(NoiseChunk.class)
 abstract class NoiseChunkMixin implements FastFill {
@@ -25,6 +29,10 @@ abstract class NoiseChunkMixin implements FastFill {
     @Shadow @Final int cellWidth;
     @Shadow @Final int cellHeight;
     @Shadow private int cellStartBlockX;
+    @Shadow int cellStartBlockY;
+    @Shadow private int cellStartBlockZ;
+    @Shadow boolean fillingCell;
+    @Shadow @Final private DensityFunctions.BeardifierOrMarker beardifier;
 
     @Shadow public abstract void selectCellYZ(int cellY, int cellZ);
     @Shadow protected abstract BlockState getInterpolatedState();
@@ -32,11 +40,21 @@ abstract class NoiseChunkMixin implements FastFill {
     @Unique private boolean skyislands$fast;
     @Unique private SkyTerrain.ArchPicker skyislands$picker;
     @Unique private boolean skyislands$air;
+    @Unique private int[] skyislands$reach;
 
     @Override
-    public void skyislands$setup(boolean fast, SkyTerrain.ArchPicker picker) {
+    public void skyislands$setup(boolean fast, SkyTerrain.ArchPicker picker, int[] reach) {
         skyislands$fast = fast;
         skyislands$picker = picker;
+        skyislands$reach = reach;
+    }
+
+    @Override
+    public boolean skyislands$beardZeroInCell(Object beard) {
+        int[] reach = skyislands$reach;
+        if (reach == null || !fillingCell || beard != beardifier || !FastGen.enabled()) return false;
+        return !BlendReach.touches(reach, cellStartBlockX, cellStartBlockY, cellStartBlockZ,
+                cellStartBlockX + cellWidth - 1, cellStartBlockY + cellHeight - 1, cellStartBlockZ + cellWidth - 1);
     }
 
     @Override
@@ -72,6 +90,7 @@ abstract class NoiseChunkMixin implements FastFill {
         }
         if (skyislands$picker == null) return false;
         int y0 = (cellNoiseMinY + cellY) * cellHeight, z0 = (firstCellZ + cellZ) * cellWidth;
+        if (BlendReach.touches(skyislands$reach, cellStartBlockX, y0, z0, cellStartBlockX + cellWidth - 1, y0 + cellHeight - 1, z0 + cellWidth - 1)) return false;
         return !skyislands$picker.mayHaveWater(cellStartBlockX, z0, cellWidth, y0, y0 + cellHeight - 1);
     }
 }

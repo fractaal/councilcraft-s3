@@ -389,7 +389,12 @@ final class LabHttp {
     private static JsonObject fastCounters() {
         JsonObject c = new JsonObject();
         c.addProperty("beardSkipped", skyislands.FastGen.BEARD_SKIPPED.get());
+        c.addProperty("beardBounded", skyislands.FastGen.BEARD_BOUNDED.get());
         c.addProperty("beardKept", skyislands.FastGen.BEARD_KEPT.get());
+        c.addProperty("beardCellsZeroed", skyislands.FastGen.BEARD_CELLS_ZEROED.get());
+        JsonObject kinds = new JsonObject();
+        skyislands.BlendReach.KINDS.forEach((k, v) -> kinds.addProperty(k, v.get()));
+        c.add("blendReachKinds", kinds);
         c.addProperty("cellsSkipped", skyislands.FastGen.CELLS_SKIPPED.get());
         c.addProperty("cellsFilled", skyislands.FastGen.CELLS_FILLED.get());
         c.addProperty("oresSkipped", skyislands.FastGen.ORES_SKIPPED.get());
