@@ -1000,8 +1000,15 @@ public final class SkyTerrain implements DensityFunction {
      * so a shorter overlap leaves the channel's end looking out over open sky beside it), short of B's open water.
      */
     private static double bridgeEnd(River rv) {
-        return rv.waterfall ? rv.sW : Math.max(rv.sB0 + 4.0, Math.min(rv.sB0 + 12.0, rv.s1 - 2.0));
+        return rv.waterfall ? rv.sW + LEDGE : Math.max(rv.sB0 + 4.0, Math.min(rv.sB0 + 12.0, rv.s1 - 2.0));
     }
+
+    /**
+     * A waterfall pours off a flat ledge this long past the channel's end, level with its last, one-block-deep stretch.
+     * Without it the bridge's end is open sky within one of the game's 4-block cells of the water, the blend sags the
+     * end below the water line, and water hangs in the air past it.
+     */
+    private static final double LEDGE = 5.0;
 
     /** The y range a link's bridge can occupy, as verticalBound gives for islands. */
     private static double[] bridgeBound(River rv) {
@@ -1024,9 +1031,11 @@ public final class SkyTerrain implements DensityFunction {
         double bend = (meander(rv, s + 1.0) - meander(rv, s - 1.0)) / 2.0;
         d /= Math.sqrt(1.0 + bend * bend);
         if (d >= W || c.count >= c.top.length) return;
-        double L = levelAt(rv, s), u = d / rv.hw;
+        boolean ledge = rv.waterfall && s >= rv.sW;
+        double L = levelAt(rv, ledge ? rv.sW - 1.0 : s), u = d / rv.hw;
         double lip = rv.waterfall ? smoothstep(0.0, 6.0, rv.sW - s) : 1.0;
-        double top = d < rv.hw ? L - 1.0 - (rv.depth - 1.0) * (1.0 - u * u) * lip
+        double top = ledge ? (d < rv.hw + 4.0 ? L - 1.0 : L - 1.0 - 1.5 * (d - rv.hw - 4.0))
+                : d < rv.hw ? L - 1.0 - (rv.depth - 1.0) * (1.0 - u * u) * lip
                 : d < rv.hw + 4.0 ? L + 1.0 : L + 1.0 - 1.5 * (d - rv.hw - 4.0);
         double ends = Math.min(s - rv.sA1, rv.sB0 - s);
         double thick = 5.0 + 3.0 * (0.5 + 0.5 * sn(s, 0.0, 40.0, rv.mox + 311.0, rv.moz)) + 12.0 * (1.0 - smoothstep(0.0, 16.0, ends));
@@ -1039,7 +1048,7 @@ public final class SkyTerrain implements DensityFunction {
         c.k[i] = 0.0;
         c.mr[i] = 0.5;
         c.yc[i] = L;
-        c.basinLevel[i] = d < rv.hw + 1.5 ? L : Double.NaN;
+        c.basinLevel[i] = !ledge && d < rv.hw + 1.5 ? L : Double.NaN;
         c.lakeNear = Math.max(c.lakeNear, 1.0 - smoothstep(rv.hw + 4.0, rv.hw + 16.0, d));
     }
 
@@ -1063,7 +1072,7 @@ public final class SkyTerrain implements DensityFunction {
             // only the surface pours off and no water stands against the open side of the island; under a link's
             // waterfall the bed drops into a plunge pool.
             double u = d / rv.hw, lip = rv.target == null ? smoothstep(0.0, 6.0, rv.s1 - s) : 1.0;
-            double pool = into && rv.waterfall ? 3.0 * (1.0 - smoothstep(3.0, 8.0, Math.abs(s - rv.sW))) : 0.0;
+            double pool = into && rv.waterfall ? 3.0 * (1.0 - smoothstep(3.0, 8.0, Math.abs(s - rv.sW - LEDGE))) : 0.0;
             st[0] = Math.min(st[0], L - 1.0 - ((rv.depth - 1.0) * lip + pool) * (1.0 - u * u));
         } else {
             // Banks climb from a block above the water, no steeper than bankSlope, up to the land. Outside the lake,
