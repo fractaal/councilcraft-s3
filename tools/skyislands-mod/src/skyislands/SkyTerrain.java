@@ -1683,6 +1683,11 @@ public final class SkyTerrain implements DensityFunction {
         return out;
     }
 
+    /** Smooth noise from -1 to 1 with features about `wavelength` blocks across, for shaping things placed after the terrain. */
+    public double shapeNoise(double x, double z, double wavelength) {
+        return sn(x, z, wavelength, 4409.0, -2713.0);
+    }
+
     private static volatile boolean debugOn;
     private static final ThreadLocal<StringBuilder> DEBUG = new ThreadLocal<>();
 
