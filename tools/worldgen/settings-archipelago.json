@@ -125,6 +125,9 @@
     "wildStrength": 0.9,
     "tierChance": 0.25,
     "tierMax": 24,
-    "peakRoot": 1.0
+    "peakRoot": 1.0,
+    "rivers": {},
+    "chains": {},
+    "landBridges": {}
   }
 }

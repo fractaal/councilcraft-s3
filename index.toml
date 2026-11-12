@@ -7162,7 +7162,7 @@ hash = "4affe07f79e488d1d0e04f2987df0316a3ed0e1e1fabb7faeac14e6e3f70ec5b"
 
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/data/minecraft/worldgen/noise_settings/overworld.json"
-hash = "980bad3efbc90c655957538e9a7a9933196e68c58c9f4b3abc855c471389d25f"
+hash = "4458f3a0449510b34ebc2e100fb969030e840614b3ddd38fc6523534252a8708"
 
 [[files]]
 file = "global_packs/optional_data/Aero Sky Islands/data/oritech/worldgen/placed_feature/oil_spring.json"
@@ -11762,7 +11762,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "ac5ab57ecc25c50bb00590ac97db85f2c3f7767b5abccff0f8a44c2136cf7190"
+hash = "d0926dae3486a1b2e3d95692d1e324bcb88f9de49fa88a56bd5b0177103d9687"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"

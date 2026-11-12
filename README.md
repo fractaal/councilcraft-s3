@@ -1,6 +1,6 @@
 # CouncilCraft S3: packwiz repo
 
-CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.2`.
+CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.3`.
 
 It holds no mod jars except our own. Every other mod, resource pack and shader is a small `.pw.toml` file that pins an exact version and hash and says where to download it (398 from Modrinth, 119 from CurseForge). Configs, KubeJS scripts, quests and datapacks are real files in the repo.
 
@@ -68,6 +68,22 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - `ghosts` and `e4mc` are marked `client`: the live server doesn't run them today. Change their `side` if that should change.
 - Distant terrain comes from Voxy, not Distant Horizons. Voxy is Fabric-only, so clients run the original Voxy jar (0.2.16-beta, built for 1.21.11) through **Roxy**, a NeoForge compatibility layer that its author has verified with Forgified Fabric API 0.116.14. **Voxy Server Side** (`side = "both"`) lets the server send distant terrain and generate missing terrain for it. Its server config is `config/vss-server-config.yaml`; it has no reload command, so changes need a restart. Its network channels are optional, so players without Voxy can still join.
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
+
+## What changed in 1.5.1+sky.3 (2026-11-12)
+All of it is in the terrain mod and the Aero Sky Islands datapack, and it needs a new world.
+
+- **Rivers pick their own course.** A river now searches for a route through low ground from open water near its lake's middle, is smoothed into curves, meanders, changes width, and cuts through every island it crosses. Banks have uneven slopes. Structures are not placed within 20 blocks of a river.
+- **Lake chains** (the `chains` object in the archipelago settings): a lake can drain into a lower neighbour's lake instead of off the edge, across a bridge of land where there is open sky between the islands, gently or as a waterfall off a ledge.
+- **Land bridges** (the `landBridges` object): natural stone arches between neighbouring main islands, wide enough to ride a horse across. Each island bridges to its best neighbour and sometimes a second, which makes chains and branches, not a mesh. A bridge is broad and deep where it leaves each island and slender in the middle.
+- **Structures over open sky** (`StructureFootings` in the mod):
+  - A surface structure that used to land on the bottom of the world is planned at a made-up ground height, about the height of the islands in that part of the sky, and gets an island of its own under it. In a 784-block lab area this took the structure count from 66 to 71 or 72 and cost no measurable chunk speed.
+  - An underground structure floating in the open gets a mass of rock under it.
+  - Support pillars with no land to stand on are cut. They used to run to the bottom of the world.
+  - `-Dskyislands.structureIslands=false` turns off the made-up ground and the islands, `-Dskyislands.structureFootings=false` all of it.
+- **Fixes:** river water no longer hangs in the air off an island's edge where the game blends a bank away, and a land bridge no longer loses 64-block stretches (bridge tiles shared cache keys).
+- **Grappling hook** (config): keeps your momentum after you let go, and its horizontal speed cap is doubled to 8 blocks per tick.
+
+Not checked: none of the 1.5.1+sky.3 terrain has been timed on the VPS yet; the lab numbers are from a desktop.
 
 ## What changed in 1.5.1+sky.2
 - **Terrain:** the archipelago settings replace the lakes settings. Small islets are 1.5 times as dense as in the first archipelago test, so the median gap to the nearest islet is 20 blocks. A bug that clipped about a fifth of the islet land is fixed.
