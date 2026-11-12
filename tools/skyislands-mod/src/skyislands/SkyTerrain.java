@@ -822,6 +822,43 @@ public final class SkyTerrain implements DensityFunction {
         Column t = new Column(this, (int) Math.floor(x), (int) Math.floor(z));
         t.bare = true;
         fillArchipelago(t);
+        return ground(t, level);
+    }
+
+    /**
+     * The same, from a list of the main islands that can reach the area (ProbeArea), instead of searching every grid
+     * cell within the biggest island's reach for each probe: planning a river probes the ground thousands of times.
+     */
+    private double[] groundAt(double x, double z, double level, Island[] mains) {
+        Column t = new Column(this, (int) Math.floor(x), (int) Math.floor(z));
+        t.bare = true;
+        t.count = 0;
+        t.channel = Double.NaN;
+        // Whole-block columns, as fillArchipelago samples them.
+        t.sharedWarp = sharedWarp(t.x, t.z);
+        for (Island is : mains) addIsland(t, is, t.x, t.z);
+        Arch a = p.arch;
+        if (a.pepperChance > 0) for (Island is : pepperTile(Math.floorDiv(t.x, PEPPER_TILE), Math.floorDiv(t.z, PEPPER_TILE))) addIsland(t, is, t.x, t.z);
+        return ground(t, level);
+    }
+
+    /** The main islands whose land can reach the box: the same cells and reach test fillArchipelago uses. */
+    private Island[] mainsIn(double x0, double z0, double x1, double z1) {
+        Arch a = p.arch;
+        double room = a.sharedRoom();
+        java.util.List<Island> out = new java.util.ArrayList<>();
+        for (int cx = (int) Math.floor(x0 / a.cell) - a.search; cx <= (int) Math.floor(x1 / a.cell) + a.search; cx++)
+            for (int cz = (int) Math.floor(z0 / a.cell) - a.search; cz <= (int) Math.floor(z1 / a.cell) + a.search; cz++)
+                addCandidate(out, mainIsland(cx, cz), (int) Math.floor(x0), (int) Math.floor(z0), (int) Math.ceil(x1), (int) Math.ceil(z1), room);
+        if (a.leySpacing > 0 && a.leyChance > 0) {
+            for (int cx = (int) Math.floor(x0 / a.leyCell) - a.leySearch; cx <= (int) Math.floor(x1 / a.leyCell) + a.leySearch; cx++)
+                for (int cz = (int) Math.floor(z0 / a.leyCell) - a.leySearch; cz <= (int) Math.floor(z1 / a.leyCell) + a.leySearch; cz++)
+                    addCandidate(out, leyIsland(cx, cz), (int) Math.floor(x0), (int) Math.floor(z0), (int) Math.ceil(x1), (int) Math.ceil(z1), room);
+        }
+        return out.toArray(new Island[0]);
+    }
+
+    private static double[] ground(Column t, double level) {
         double top = Double.NaN, lake = Double.NaN;
         for (int i = 0; i < t.count; i++) {
             double tp = t.top[i] / B, bt = t.bottom[i] / B;
@@ -897,17 +934,12 @@ public final class SkyTerrain implements DensityFunction {
             bx0 = Math.min(bx0, B.x - B.reach); bz0 = Math.min(bz0, B.z - B.reach);
             bx1 = Math.max(bx1, B.x + B.reach); bz1 = Math.max(bz1, B.z + B.reach);
         }
-        // Seed: open water of A's lake, the nearest found spiralling out from A's centre.
-        double sx = Double.NaN, sz = Double.NaN;
-        search:
-        for (int ring = 0; ring * G < A.r; ring++) {
-            int n = Math.max(1, 8 * ring);
-            for (int k = 0; k < n; k++) {
-                double ang = 2.0 * Math.PI * k / n, x = A.x + ring * G * Math.cos(ang), z = A.z + ring * G * Math.sin(ang);
-                if (open(groundAt(x, z, LA), LA)) { sx = x; sz = z; break search; }
-            }
-        }
-        if (Double.isNaN(sx)) { why(A, B, "no open water found near the centre"); return null; }
+        Island[] mains = mainsIn(bx0, bz0, bx1, bz1);
+        // From open water near A's centre to (for a link) open water near B's centre: a lake's water area can be split
+        // by another island's land, and the river should join the main body, not a side pond.
+        double[] from = lakeSeed(A, G, LA, mains), to = B == null ? null : lakeSeed(B, G, LA, mains);
+        if (from == null || (B != null && to == null)) { why(A, B, "no open water found near a lake's centre"); return null; }
+        double sx = from[0], sz = from[1];
         java.util.Map<Long, double[]> info = new java.util.HashMap<>();
         java.util.Map<Long, Double> dist = new java.util.HashMap<>();
         java.util.Map<Long, Long> prev = new java.util.HashMap<>();
@@ -924,7 +956,7 @@ public final class SkyTerrain implements DensityFunction {
             int i = (int) (key >> 32), j = (int) key;
             double[] g = info.get(key);
             if (key != start && g != null) {
-                if (B == null ? Double.isNaN(g[0]) : open(g, LB)) { goal = key; break; }
+                if (B == null ? Double.isNaN(g[0]) : open(g, LB) && Math.hypot(sx + i * G - to[0], sz + j * G - to[1]) <= 1.5 * G) { goal = key; break; }
             }
             if (++visits > 25000) { why(A, B, "search gave up after 25000 cells"); return null; }
             for (int di = -1; di <= 1; di++) for (int dj = -1; dj <= 1; dj++) {
@@ -934,7 +966,7 @@ public final class SkyTerrain implements DensityFunction {
                 if (x < bx0 || x > bx1 || z < bz0 || z > bz1) continue;
                 long nk = (long) ni << 32 | (nj & 0xFFFFFFFFL);
                 double[] ng = info.get(nk);
-                if (ng == null) info.put(nk, ng = groundAt(x, z, LA));
+                if (ng == null) info.put(nk, ng = groundAt(x, z, LA, mains));
                 double w;
                 if (open(ng, LA) || (B != null && open(ng, LB))) w = 0.05;
                 else if (Double.isNaN(ng[0])) {
@@ -958,14 +990,25 @@ public final class SkyTerrain implements DensityFunction {
         java.util.ArrayList<double[]> path = new java.util.ArrayList<>();
         for (Long k = goal; k != null; k = prev.get(k)) {
             int i = (int) (k >> 32), j = (int) (long) k;
-            double[] g = k == start ? groundAt(sx, sz, LA) : info.get(k);
+            double[] g = k == start ? groundAt(sx, sz, LA, mains) : info.get(k);
             path.add(new double[]{sx + i * G, sz + j * G, open(g, LA) ? 1.0 : 0.0});
         }
         java.util.Collections.reverse(path);
-        // Start just inside the lake: the last open water before the course leaves it.
-        int m = 0;
-        for (int k = 0; k < path.size(); k++) if (path.get(k)[2] > 0.0) m = k;
-        return new java.util.ArrayList<>(path.subList(Math.max(0, m - 1), path.size()));
+        // The whole way from the lake's open water near its centre: the channel then also cuts through any low ridge
+        // between the main body and a side pond the route passes through.
+        return path;
+    }
+
+    /** Open water of the island's lake, the nearest found spiralling out from its centre; null if none. */
+    private double[] lakeSeed(Island is, double G, double level, Island[] mains) {
+        for (int ring = 0; ring * G < is.r; ring++) {
+            int n = Math.max(1, 8 * ring);
+            for (int k = 0; k < n; k++) {
+                double ang = 2.0 * Math.PI * k / n, x = is.x + ring * G * Math.cos(ang), z = is.z + ring * G * Math.sin(ang);
+                if (open(groundAt(x, z, level, mains), is.waterLevel)) return new double[]{x, z};
+            }
+        }
+        return null;
     }
 
     /** Chaikin's corner cutting, twice, keeping the end points: the grid route's corners become curves. */
@@ -1036,7 +1079,10 @@ public final class SkyTerrain implements DensityFunction {
         double LA = A.waterLevel, LB = B == null ? Double.NaN : B.waterLevel;
         int n = rs.size();
         double[][] g = new double[n][];
-        for (int k = 0; k < n; k++) g[k] = groundAt(rs.get(k)[0], rs.get(k)[1], LA);
+        double cx0 = Double.POSITIVE_INFINITY, cz0 = Double.POSITIVE_INFINITY, cx1 = Double.NEGATIVE_INFINITY, cz1 = Double.NEGATIVE_INFINITY;
+        for (double[] q : rs) { cx0 = Math.min(cx0, q[0]); cz0 = Math.min(cz0, q[1]); cx1 = Math.max(cx1, q[0]); cz1 = Math.max(cz1, q[1]); }
+        Island[] mains = mainsIn(cx0, cz0, cx1, cz1);
+        for (int k = 0; k < n; k++) g[k] = groundAt(rs.get(k)[0], rs.get(k)[1], LA, mains);
         // Where the course leaves A's lake for good (its water area, shore strip included), plus 4 blocks, since the
         // lake's edge isn't square to the course: the water stays at the lake's level until then.
         int lastLake = 0;
@@ -1051,8 +1097,9 @@ public final class SkyTerrain implements DensityFunction {
         } else {
             endK = -1;
             for (int k = lastLake + 1; k < n; k++) {
-                if (open(g[k], LB)) { endK = k; break; }
-                if (Double.isNaN(g[k][0])) { if (Double.isNaN(fv)) fv = rs.get(k)[2]; lv = rs.get(k)[2]; }
+                if (open(g[k], LB) && g[k][0] <= LB - 3.0) { endK = k; break; }
+                // Open sky, or land too far below B's level to hold the water up: a bridge carries it.
+                if (g[k][1] != LB && (Double.isNaN(g[k][0]) || g[k][0] < LB - 1.0)) { if (Double.isNaN(fv)) fv = rs.get(k)[2]; lv = rs.get(k)[2]; }
             }
             if (endK < 0) { why(A, B, "course never reaches the lower lake"); return null; }
         }
@@ -1067,7 +1114,7 @@ public final class SkyTerrain implements DensityFunction {
         rv.moz = moz;
         rv.depth = a.riverDepth * (0.75 + 0.5 * unit(h = mix(h)));
         double end = rs.get(endK)[2];
-        rv.len = end + 2.0;
+        rv.len = (B == null ? end : total) + 2.0;
         int count = (int) Math.ceil(rv.len) + 1;
         int[] levels = new int[count];
         int top = (int) Math.round(LA);
@@ -1100,10 +1147,20 @@ public final class SkyTerrain implements DensityFunction {
             boolean steep = run / drop < a.riverStepMin;
             double spacing = steep ? 0.5 * (a.riverStepMin + a.riverStepMax) : Math.min(run / drop, a.riverStepMax);
             if (steep) rv.sW = !Double.isNaN(landB) ? landB + rv.hw + 5.0 : Math.max(dry + 8.0, end - LEDGE - 10.0);
+            // The water also follows the land down into dips (a block under it), never rising again and never below B.
+            int L = top, k = 0;
             for (int i = 0; i < count; i++) {
-                int L = top - (i < dry ? 0 : (int) Math.floor((i - dry) / spacing + 1e-9));
-                levels[i] = steep && i >= rv.sW ? rv.toLevel : Math.max(rv.toLevel, L);
+                while (k + 1 < n && rs.get(k + 1)[2] <= i) k++;
+                L = Math.min(L, top - (i < dry ? 0 : (int) Math.floor((i - dry) / spacing + 1e-9)));
+                if (i >= dry && k < endK && !Double.isNaN(g[k][0]) && g[k][1] != LA && g[k][1] != LB) L = Math.min(L, (int) Math.floor(g[k][0]) - 1);
+                if (k >= endK) L = rv.toLevel;  // on through B's water, cutting any ridge in it, at B's level
+                L = Math.max(L, rv.toLevel);
+                levels[i] = steep && i >= rv.sW ? rv.toLevel : L;
             }
+            // Following dips down can leave the river cutting deeper gorges later on.
+            double deep = 0.0;
+            for (int q = lastLake + 1; q < endK; q++) if (!Double.isNaN(g[q][0])) deep = Math.max(deep, g[q][0] - levels[Math.min(count - 1, (int) rs.get(q)[2])]);
+            if (deep > a.riverMaxCut * 1.5) { why(A, B, String.format("gorge %.0f deep after following dips", deep)); return null; }
             rv.landB = !Double.isNaN(landB) ? landB : end;
             if (!Double.isNaN(fv)) {
                 rv.bridge0 = fv - 6.0;
@@ -1116,7 +1173,7 @@ public final class SkyTerrain implements DensityFunction {
         rv.maxLevel = Integer.MIN_VALUE;
         for (int l : levels) { rv.minLevel = Math.min(rv.minLevel, l); rv.maxLevel = Math.max(rv.maxLevel, l); }
         // The course itself, out to its end, and an index of its segments by cell.
-        int m = Math.min(n, endK + 2);
+        int m = B == null ? Math.min(n, endK + 2) : n;
         rv.px = new double[m];
         rv.pz = new double[m];
         rv.ps = new double[m];
@@ -1157,7 +1214,8 @@ public final class SkyTerrain implements DensityFunction {
         return t != null ? t : caches.riverTiles.computeIfAbsent(key, k -> {
             Arch a = p.arch;
             int x0 = tx * RTILE, z0 = tz * RTILE, x1 = x0 + RTILE, z1 = z0 + RTILE;
-            double pad = 2.0 * a.riverHalfWidth + a.riverMaxCut / a.riverBankSlope + 16.0;
+            // As far as any river's banks can reach from its course (riverReach at the widest a river gets), plus room.
+            double pad = 1.3 * 2.0 * a.riverHalfWidth + Math.max(a.riverMaxCut / (MIN_SLOPE * a.riverBankSlope), 9.0) + 6.0 + 8.0;
             double far = a.search * a.cell + (a.chainChance > 0 ? a.chainMaxLength : 0.0) + pad;
             java.util.List<River> out = new java.util.ArrayList<>();
             for (int cx = (int) Math.floor((x0 - far) / a.cell); cx <= (int) Math.floor((x1 + far) / a.cell); cx++)
@@ -1189,7 +1247,7 @@ public final class SkyTerrain implements DensityFunction {
         boolean ledge = rv.waterfall() && s >= rv.sW;
         double L = ledge ? rv.upLevel : levelAt(rv, s), u = d / hw;
         double lip = rv.waterfall() ? smoothstep(0.0, 6.0, rv.sW - s) : 1.0;
-        double top = ledge ? (d < hw + 4.0 ? L - 1.0 : L - 1.0 - 1.5 * (d - hw - 4.0))
+        double top = ledge ? (d < hw ? L - 1.0 : d < hw + 4.0 ? L + 1.0 : L + 1.0 - 1.5 * (d - hw - 4.0))
                 : d < hw ? L - 1.0 - (rv.depth - 1.0) * (1.0 - u * u) * lip
                 : d < hw + 4.0 ? L + 1.0 : L + 1.0 - 1.5 * (d - hw - 4.0);
         double ends = Math.min(s - rv.bridge0 - 6.0, rv.landB - s);
@@ -1228,6 +1286,12 @@ public final class SkyTerrain implements DensityFunction {
             L = levelAt(rv, s);
         }
         double lip = rv.target == null ? smoothstep(0.0, 6.0, rv.edge - s) : rv.waterfall() && s < rv.sW ? smoothstep(0.0, 6.0, rv.sW - s) : 1.0;
+        // Where the water drops 2 or more blocks at once (following a dip in the land), the channel shallows to a block
+        // deep before it, so only the surface spills over; deeper water would stand against the air over the drop.
+        int i0 = Math.max(0, Math.min(rv.levels.length - 1, (int) Math.floor(s)));
+        for (int j = i0 + 1; j < Math.min(rv.levels.length, i0 + 9); j++) {
+            if (rv.levels[j] <= rv.levels[i0] - 2) { lip = Math.min(lip, smoothstep(0.0, 6.0, j - s)); break; }
+        }
         double hw = width(rv, s);
         // Uneven banks: the slope varies over the land and the bank's edge is roughened, so a gorge's sides don't step
         // up in even parallel stripes.
@@ -1238,7 +1302,12 @@ public final class SkyTerrain implements DensityFunction {
             double top = c.top[i] / B, bottom = c.bottom[i] / B;
             if (bottom > L + a.riverMaxCut + 4.0 || top < L - rv.depth - 12.0) continue;
             if (ledge) {
-                top = Math.min(top, d < hw + 4.0 ? L - 1.0 : L - 1.0 + (d - hw - 4.0) * slope);
+                // A notch as wide as the channel, walled each side, so the waterfall leaves at the river's width.
+                if (d < hw) top = Math.min(top, L - 1.0);
+                else {
+                    top = Math.min(top, L + 1.0 + (db - hw) * slope);
+                    if (d < hw + 3.0 && top < L + 1.0 && top > L - 12.0) top = L + 1.0;
+                }
             } else if (d < hw) {
                 double u = d / hw;
                 top = Math.min(top, L - 1.0 - ((rv.depth - 1.0) * lip + poolDepth) * (1.0 - u * u));
@@ -1249,9 +1318,11 @@ public final class SkyTerrain implements DensityFunction {
             }
             if (top < bottom + 3.0) c.bottom[i] = B * (top - 3.0);
             c.top[i] = B * top;
-            // Water fills any air under the level a little past the banks too, where the game's 4-block cells blend
-            // the channel's corners into the bank and dip it under the water line.
-            if (!ledge && d < hw + 6.0 && Double.isNaN(c.basinLevel[i]) && top <= L + 1.0) c.basinLevel[i] = L;
+            // Water fills the channel, and any air under the level a little past the banks too, where the game's 4-block
+            // cells blend the channel's corners into the bank and dip it under the water line. Not a bank that really is
+            // lower than the water (a hillside below a berm): water there would stand above the land beside it.
+            boolean fill = d < hw || (d < hw + 6.0 && top >= L - 1.0);
+            if (!ledge && fill && Double.isNaN(c.basinLevel[i]) && top <= L + 1.0 && top >= L - rv.depth - 3.0) c.basinLevel[i] = L;
         }
         c.lakeNear = Math.max(c.lakeNear, 1.0 - smoothstep(hw + 4.0, hw + 16.0, d));
     }
@@ -1434,6 +1505,38 @@ public final class SkyTerrain implements DensityFunction {
                         rv.waterfall() ? "waterfall" : "gentle", rv.px[mid], rv.pz[mid]));
             }
         return out;
+    }
+
+    /**
+     * A picker for any chunk, for tools outside the noise fill that sample heights (RoadWeaver's route planner): lake and
+     * river water where the noise fill would put it. Each thread keeps the chunk pickers it used last (the noise fill's
+     * own ArchPicker, which works its 256 columns out once and answers chunks with no lake or river near them at once),
+     * since a sampler asks about one chunk's blocks in turn, moving to the next column every block.
+     */
+    public Aquifer.FluidPicker columnFluidPicker(Aquifer.FluidPicker fallback) {
+        if (p.arch == null) return fallback;
+        ThreadLocal<java.util.LinkedHashMap<Long, ArchPicker>> recent = ThreadLocal.withInitial(() ->
+                new java.util.LinkedHashMap<>(16, 0.75f, true) {
+                    @Override protected boolean removeEldestEntry(java.util.Map.Entry<Long, ArchPicker> e) { return size() > 8; }
+                });
+        return (x, y, z) -> {
+            long key = (long) (x >> 4) << 32 | ((z >> 4) & 0xFFFFFFFFL);
+            java.util.LinkedHashMap<Long, ArchPicker> m = recent.get();
+            ArchPicker ap = m.get(key);
+            if (ap == null) m.put(key, ap = new ArchPicker(fallback));
+            return ap.computeFluid(x, y, z);
+        };
+    }
+
+    /** For tools: each river within reach of (x, z): its source, distance from its course, s along it and its level there. */
+    public String riverAt(int x, int z) {
+        StringBuilder sb = new StringBuilder();
+        if (p.arch == null || p.arch.riverChance <= 0) return "";
+        double[] at = new double[2];
+        for (River rv : riverTile(Math.floorDiv(x, RTILE), Math.floorDiv(z, RTILE)))
+            if (locate(rv, x, z, at)) sb.append(String.format("river from %.0f,%.0f -> %s: d=%.1f s=%.1f/%.1f hw=%.1f level=%d%n",
+                    rv.px[0], rv.pz[0], rv.target == null ? "sky" : String.format("%.0f,%.0f", rv.target.x, rv.target.z), at[0], at[1], rv.len, width(rv, at[1]), levelAt(rv, at[1])));
+        return sb.toString();
     }
 
     /** Whether (x, z) is within margin blocks of a river's channel (StructureMixin keeps structures off rivers). */
@@ -1787,10 +1890,11 @@ public final class SkyTerrain implements DensityFunction {
                     // than the lowest corner, so the bed is taken as the lowest of this column and those corners.
                     double bed = c.top[i] / B;
                     if (!Double.isNaN(level)) bed = Math.min(bed, cornerBed(x, z, level));
-                    // Where a corner of the cell is open sky, the blend hollows the ground under the water by an unknown
-                    // amount (an island's edge, the end of a bridge). Only the top block of water goes there: over air it
-                    // spills off, where deeper water would hang in the air.
-                    floors[column * CAP + i] = !Double.isNaN(level) && skyCorner(x, z) ? level - 2.0 : bed - 3.0;
+                    // Where a corner of the cell doesn't hold water at this level (open sky at an island's edge or past a
+                    // bridge's end, lower water past a step in a river, land below the water line), the blend sags the
+                    // ground under the water by an unknown amount. Only the top block of water goes there: over air it
+                    // spills off, where deeper water would stand against or hang over the air.
+                    floors[column * CAP + i] = !Double.isNaN(level) && lowCorner(x, z, level) ? level - 2.0 : bed - 3.0;
                 }
                 counts[column] = c.count;
             }
@@ -1813,10 +1917,18 @@ public final class SkyTerrain implements DensityFunction {
             return bed;
         }
 
-        /** Whether a corner of (x, z)'s 4-block cell has no land at all. */
-        private boolean skyCorner(int x, int z) {
+        /**
+         * Whether a corner of (x, z)'s 4-block cell fails to hold water at `level`: it holds it if it has water at that
+         * level, or land up to the water line.
+         */
+        private boolean lowCorner(int x, int z, double level) {
             int ci = (x & 15) >> 2, cj = (z & 15) >> 2;
-            for (int a = 0; a <= 1; a++) for (int b = 0; b <= 1; b++) if (corner(x, z, ci + a, cj + b).length == 0) return true;
+            for (int a = 0; a <= 1; a++) for (int b = 0; b <= 1; b++) {
+                double[] k = corner(x, z, ci + a, cj + b);
+                boolean holds = false;
+                for (int i = 0; i < k.length && !holds; i += 2) holds = k[i + 1] == level || k[i] >= level;
+                if (!holds) return true;
+            }
             return false;
         }
 
