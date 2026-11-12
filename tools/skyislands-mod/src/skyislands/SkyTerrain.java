@@ -1398,6 +1398,15 @@ public final class SkyTerrain implements DensityFunction {
         return out;
     }
 
+    /** Whether (x, z) is within margin blocks of a river's channel (StructureMixin keeps structures off rivers). */
+    public boolean nearRiver(int x, int z, double margin) {
+        if (p.arch == null || p.arch.riverChance <= 0) return false;
+        double[] at = new double[2];
+        for (River rv : riverTile(Math.floorDiv(x, RTILE), Math.floorDiv(z, RTILE)))
+            if (locate(rv, x, z, at) && at[0] < rv.hw + margin && at[1] <= rv.len) return true;
+        return false;
+    }
+
     /** For tools: how strongly this column is in a plateau region, 0 to 1. */
     public double plateauWeight(int x, int z) {
         if (p.plateauScale <= 0) return 0.0;
@@ -1740,7 +1749,10 @@ public final class SkyTerrain implements DensityFunction {
                     // than the lowest corner, so the bed is taken as the lowest of this column and those corners.
                     double bed = c.top[i] / B;
                     if (!Double.isNaN(level)) bed = Math.min(bed, cornerBed(x, z, level));
-                    floors[column * CAP + i] = bed - 3.0;
+                    // Where a corner of the cell is open sky, the blend hollows the ground under the water by an unknown
+                    // amount (an island's edge, the end of a bridge). Only the top block of water goes there: over air it
+                    // spills off, where deeper water would hang in the air.
+                    floors[column * CAP + i] = !Double.isNaN(level) && skyCorner(x, z) ? level - 2.0 : bed - 3.0;
                 }
                 counts[column] = c.count;
             }
@@ -1761,6 +1773,13 @@ public final class SkyTerrain implements DensityFunction {
                 }
             }
             return bed;
+        }
+
+        /** Whether a corner of (x, z)'s 4-block cell has no land at all. */
+        private boolean skyCorner(int x, int z) {
+            int ci = (x & 15) >> 2, cj = (z & 15) >> 2;
+            for (int a = 0; a <= 1; a++) for (int b = 0; b <= 1; b++) if (corner(x, z, ci + a, cj + b).length == 0) return true;
+            return false;
         }
 
         private double[] corner(int x, int z, int ci, int cj) {
