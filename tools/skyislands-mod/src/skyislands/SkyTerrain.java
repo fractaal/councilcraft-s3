@@ -1480,7 +1480,7 @@ public final class SkyTerrain implements DensityFunction {
 
     /** The land bridges whose deck can reach an RTILE-wide square. */
     private LandBridge[] landBridgeTile(int tx, int tz) {
-        long key = mix((tx & 0x3FFFFFFL) | (tz & 0x3FFFFFFL) << 26 ^ 0x6C62272E07BB0142L);
+        long key = mix((tx & 0x3FFFFFFL) | (tz & 0x3FFFFFFL) << 26);
         LandBridge[] t = caches.landBridgeTiles.get(key);
         return t != null ? t : caches.landBridgeTiles.computeIfAbsent(key, k -> {
             Arch a = p.arch;
