@@ -5518,7 +5518,7 @@ hash = "a84849bc0aaf6247c887cf1b6e796b50e9d84e690ac00039509fad03e7bd5949"
 
 [[files]]
 file = "config/grapplemod-properties.json"
-hash = "b577d563bea790e766c482b9635d7bd634e2a6e889d4d958233baa399e888292"
+hash = "7c9f438c975e06bb846d5054b400b22099118e90487f4433df4a64c18d0096ab"
 
 [[files]]
 file = "config/gravestone-client.toml"
