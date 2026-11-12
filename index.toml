@@ -7465,6 +7465,26 @@ file = "global_packs/required_data/Aero Loot Bags/tables-used.json"
 hash = "b266c40676accac89392a10d1ed2206ff2ee320bebe367620ccde7a0ca78a488"
 
 [[files]]
+file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/archaeology_plushies.json"
+hash = "2be8c4e42b2dd75149f4bc5c3746e05d17bcea742ed2055045fc4adef7f38d74"
+
+[[files]]
+file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/epic_treasure_plushies.json"
+hash = "88615d03a5f0030502b91f97c6a01e3fa9216b450f890bbb6ab4c1f6a8fe607a"
+
+[[files]]
+file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/epic_village_plushies.json"
+hash = "109ad205364eae59d5537cd08f8b5a1e45b1f05726fb8f5a65ddc9eaccc10944"
+
+[[files]]
+file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/rare_archaeology_plushies.json"
+hash = "88615d03a5f0030502b91f97c6a01e3fa9216b450f890bbb6ab4c1f6a8fe607a"
+
+[[files]]
+file = "global_packs/required_data/Aero Plushie Loot Fix/pack.mcmeta"
+hash = "89ff481d5cf37208db88bd90a3f57ba8139020c46eca536a700f7eaab89fa11d"
+
+[[files]]
 file = "global_packs/required_data/Aero Skills/data/puffish_skills/puffish_skills/categories/athletics/category.json"
 hash = "de6a6055a767c271930efc0a95250cf42616d6aed9c266f3ab43d25fe70f7e54"
 
