@@ -57,6 +57,9 @@ public final class SkyTerrain implements DensityFunction {
         final Map<Long, Island> leys = new ConcurrentHashMap<>();
         final Map<Long, River> rivers = new ConcurrentHashMap<>();
         final Map<Long, River[]> riverTiles = new ConcurrentHashMap<>();
+        final Map<Long, LandBridge> landBridges = new ConcurrentHashMap<>();
+        final Map<Long, LandBridge[]> landBridgeTiles = new ConcurrentHashMap<>();
+        final Map<Long, Island[]> bridgePicks = new ConcurrentHashMap<>();
     }
 
     private final Caches caches;
@@ -461,6 +464,9 @@ public final class SkyTerrain implements DensityFunction {
         if (a.pepperChance > 0) {
             for (Island is : pepperTile(Math.floorDiv(c.x, PEPPER_TILE), Math.floorDiv(c.z, PEPPER_TILE))) addIsland(c, is, c.x, c.z);
         }
+        if (!c.bare && a.landBridgeChance > 0) {
+            for (LandBridge lb : landBridgeTile(Math.floorDiv(c.x, RTILE), Math.floorDiv(c.z, RTILE))) addLandBridge(c, lb);
+        }
         if (!c.bare && a.riverChance > 0) {
             River[] rivers = riverTile(Math.floorDiv(c.x, RTILE), Math.floorDiv(c.z, RTILE));
             if (rivers.length > 0) {
@@ -769,10 +775,12 @@ public final class SkyTerrain implements DensityFunction {
     /** Banks vary from this fraction of bankSlope up to MIN_SLOPE + 0.9 times it. */
     private static final double MIN_SLOPE = 0.6;
 
-    /** The channel's half-width at s: it narrows and widens along the river. */
+    /** The channel's half-width at s: it narrows and widens along the river, never below MIN_HALF_WIDTH - 0.5. */
     private double width(River rv, double s) {
-        return Math.max(1.5, rv.hw * (1.0 + 0.3 * sn(s, 0.0, 41.0, rv.mox + 71.0, rv.moz)));
+        return Math.max(MIN_HALF_WIDTH - 0.5, rv.hw * (1.0 + 0.25 * sn(s, 0.0, 41.0, rv.mox + 71.0, rv.moz)));
     }
+
+    private static final double MIN_HALF_WIDTH = 3.5;
 
     /**
      * Distance from (x, z) to the river's course, and the distance along the course there, into out; false if (x, z) is
@@ -1059,7 +1067,8 @@ public final class SkyTerrain implements DensityFunction {
         if (total - rs.get(rs.size() - 1)[2] > 0.25) rs.add(new double[]{endPt[0], endPt[1], total});
         // Meanders: the smoothed course swings from side to side, a few channel-widths each way, repeating every 40 to 80
         // blocks, fading out near both ends so it still leaves and enters lakes where the route does.
-        double hw0 = clamp(a.riverHalfWidth * Math.sqrt((B == null ? A.r : Math.min(A.r, B.r)) / 100.0), 2.0, 2.0 * a.riverHalfWidth);
+        // At least 7 blocks across: a narrower channel is partly filled in by the game's 4-block cells and breaks up.
+        double hw0 = clamp(a.riverHalfWidth * Math.sqrt((B == null ? A.r : Math.min(A.r, B.r)) / 100.0), MIN_HALF_WIDTH, 2.0 * a.riverHalfWidth);
         double amp = clamp(a.riverMeander * 2.5 * hw0, 4.0, 14.0), wl = 40.0 + 40.0 * unit(h = mix(h));
         java.util.List<double[]> bent = new java.util.ArrayList<>();
         for (int k = 0; k < rs.size(); k++) {
@@ -1109,7 +1118,7 @@ public final class SkyTerrain implements DensityFunction {
 
         River rv = new River();
         rv.target = B;
-        rv.hw = hw0 * (0.8 + 0.4 * unit(h = mix(h)));
+        rv.hw = hw0 * (0.85 + 0.3 * unit(h = mix(h)));
         rv.mox = mox;
         rv.moz = moz;
         rv.depth = a.riverDepth * (0.75 + 0.5 * unit(h = mix(h)));
@@ -1327,6 +1336,199 @@ public final class SkyTerrain implements DensityFunction {
         c.lakeNear = Math.max(c.lakeNear, 1.0 - smoothstep(hw + 4.0, hw + 16.0, d));
     }
 
+    // ---- Land bridges --------------------------------------------------------------------------------------------
+
+    /**
+     * A natural stone arch between two neighbouring main islands, for crossing on foot or by horse: a grassy deck
+     * 2w wide from a little way inside one island's edge to a little way inside the other's, its surface easing from
+     * one island's ground height to the other's with a slight rise in the middle and a gentle bend, thin in the middle
+     * of the span and thick where it meets each island.
+     */
+    private static final class LandBridge {
+        double ax, az, dx, dz, len, hA, hB, w, amp, wl, nox, noz, arch;
+        double x0, z0, x1, z1, minY, maxY;
+    }
+
+    private static final LandBridge NO_BRIDGE = new LandBridge();
+
+    /** Island `is` alone at (x, z): its land's top, or NaN where it has none. */
+    private double ownTop(Island is, double x, double z) {
+        Column t = new Column(this, (int) Math.floor(x), (int) Math.floor(z));
+        t.sharedWarp = sharedWarp(t.x, t.z);
+        addIsland(t, is, t.x, t.z);
+        return t.count == 0 ? Double.NaN : t.top[0] / B;
+    }
+
+    /**
+     * The land bridge a pair of islands could have, or NO_BRIDGE where they touch already, stand too far apart or differ
+     * too much in height to ride across; cached per pair, the same whichever island asks.
+     */
+    private LandBridge landBridge(Island A, Island B) {
+        if (islandKey(A) > islandKey(B)) { Island t = A; A = B; B = t; }
+        Island fa = A, fb = B;
+        long key = mix(islandKey(A) * 31 ^ islandKey(B) ^ 0x5BE0CD19137E2179L);
+        LandBridge lb = caches.landBridges.get(key);
+        return lb != null ? lb : caches.landBridges.computeIfAbsent(key, k -> buildLandBridge(fa, fb));
+    }
+
+    /** Islands that touch a neighbour need no bridge to it: this marks such a pair. */
+    private static final LandBridge TOUCHING = new LandBridge();
+
+    /**
+     * The neighbours main island `is` bridges to: its best one (the shortest gap, then the gentlest slope), most of the
+     * time, and now and then its second best as well; less often if it already touches a neighbour. Each island picking
+     * one or two makes chains and branching trees across the sky, about two bridges per island, not a mesh.
+     */
+    private Island[] bridgePicks(Island is) {
+        long key = islandKey(is) ^ 0x2545F4914F6CDD1DL;
+        Island[] picks = caches.bridgePicks.get(key);
+        return picks != null ? picks : caches.bridgePicks.computeIfAbsent(key, k -> {
+            Arch a = p.arch;
+            int cx = (int) Math.floor(is.x / a.cell), cz = (int) Math.floor(is.z / a.cell);
+            if (mainIsland(cx, cz) != is) return new Island[0];
+            long h = mix(seedMix ^ islandKey(is) ^ 0x1F83D9ABFB41BD6BL);
+            java.util.List<Object[]> valid = new java.util.ArrayList<>();
+            boolean touches = false;
+            for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++) {
+                if (dx == 0 && dz == 0) continue;
+                Island nb = mainIsland(cx + dx, cz + dz);
+                if (nb == NO_ISLAND) continue;
+                LandBridge lb = landBridge(is, nb);
+                if (lb == TOUCHING) touches = true;
+                else if (lb != NO_BRIDGE) valid.add(new Object[]{nb, lb.len + 3.0 * Math.abs(lb.hA - lb.hB)});
+            }
+            valid.sort(java.util.Comparator.comparingDouble(o -> (Double) o[1]));
+            // Some stretches of sky are well bridged, others more sparsely.
+            double regional = 0.6 + 0.8 * region(is.x, is.z, 8117.0);
+            double first = a.landBridgeChance * regional * (touches ? 0.5 : 1.0), second = a.landBridgeSecond * regional;
+            java.util.List<Island> out = new java.util.ArrayList<>();
+            if (valid.size() > 0 && unit(h = mix(h)) < first) out.add((Island) valid.get(0)[0]);
+            if (valid.size() > 1 && unit(h = mix(h)) < second) out.add((Island) valid.get(1)[0]);
+            // Two islands that are each other's best neighbour would make a lone pair: the one with the larger key
+            // also reaches on to its next best, so pairs join into chains.
+            if (out.size() == 1 && valid.size() > 1 && islandKey(is) > islandKey(out.get(0)) && bestNeighbour(out.get(0)) == is)
+                out.add((Island) valid.get(1)[0]);
+            return out.toArray(new Island[0]);
+        });
+    }
+
+    /** The neighbour main island `is` could best bridge to, ignoring chance; null if none. */
+    private Island bestNeighbour(Island is) {
+        Arch a = p.arch;
+        int cx = (int) Math.floor(is.x / a.cell), cz = (int) Math.floor(is.z / a.cell);
+        Island best = null;
+        double bestScore = Double.POSITIVE_INFINITY;
+        for (int dx = -1; dx <= 1; dx++) for (int dz = -1; dz <= 1; dz++) {
+            if (dx == 0 && dz == 0) continue;
+            Island nb = mainIsland(cx + dx, cz + dz);
+            if (nb == NO_ISLAND) continue;
+            LandBridge lb = landBridge(is, nb);
+            if (lb == NO_BRIDGE || lb == TOUCHING) continue;
+            double score = lb.len + 3.0 * Math.abs(lb.hA - lb.hB);
+            if (score < bestScore) { bestScore = score; best = nb; }
+        }
+        return best;
+    }
+
+    private static void whyBridge(String msg) {
+        if (RIVER_DEBUG) System.err.println("land bridge pair: " + msg);
+    }
+
+    private LandBridge buildLandBridge(Island A, Island B) {
+        Arch a = p.arch;
+        long h = mix(seedMix ^ islandKey(A) * 7 ^ islandKey(B) ^ 0x1F83D9ABFB41BD6BL);
+        double D = Math.hypot(B.x - A.x, B.z - A.z), dx = (B.x - A.x) / D, dz = (B.z - A.z) / D;
+        // Along the line between their centres: where A's land ends and B's begins.
+        double sA1 = Double.NaN, sB0 = Double.NaN;
+        for (double s = 0.0; s <= D; s += 2.0) {
+            double x = A.x + s * dx, z = A.z + s * dz;
+            if (Double.isNaN(sA1)) { if (Double.isNaN(ownTop(A, x, z))) sA1 = s; }
+            else if (!Double.isNaN(ownTop(B, x, z))) { sB0 = s; break; }
+        }
+        if (Double.isNaN(sA1)) { whyBridge("touching (A's land reaches B's centre)"); return TOUCHING; }
+        if (Double.isNaN(sB0)) { whyBridge("B's land not on the line"); return NO_BRIDGE; }
+        double gap = sB0 - sA1;
+        if (gap < 6.0) { whyBridge("touching"); return TOUCHING; }
+        if (gap > a.landBridgeMaxGap) { whyBridge("gap " + (int) (gap / 20) * 20); return NO_BRIDGE; }
+        double hA = ownTop(A, A.x + (sA1 - 6.0) * dx, A.z + (sA1 - 6.0) * dz), hB = ownTop(B, A.x + (sB0 + 6.0) * dx, A.z + (sB0 + 6.0) * dz);
+        if (Double.isNaN(hA) || Double.isNaN(hB)) { whyBridge("no ground at an end"); return NO_BRIDGE; }
+        // Gentle enough to ride: at most a block of rise per 2 blocks across, over the span and the ends.
+        if (Math.abs(hA - hB) > (gap + 20.0) / 2.0) { whyBridge("too steep"); return NO_BRIDGE; }
+        whyBridge("ok");
+        LandBridge lb = new LandBridge();
+        lb.ax = A.x + (sA1 - 10.0) * dx;
+        lb.az = A.z + (sA1 - 10.0) * dz;
+        lb.dx = dx;
+        lb.dz = dz;
+        lb.len = gap + 20.0;
+        lb.hA = Math.floor(hA);
+        lb.hB = Math.floor(hB);
+        lb.w = 3.5 + 2.0 * unit(h = mix(h));
+        lb.amp = Math.min(8.0, 0.08 * gap);
+        lb.wl = 40.0 + 40.0 * unit(h = mix(h));
+        lb.nox = (unit(h = mix(h)) - 0.5) * 40000.0;
+        lb.noz = (unit(h = mix(h)) - 0.5) * 40000.0;
+        lb.arch = Math.min(3.0, gap / 30.0);
+        double R = lb.w + 4.0 + lb.amp;
+        double bx = lb.ax + lb.len * dx, bz = lb.az + lb.len * dz;
+        lb.x0 = Math.min(lb.ax, bx) - R; lb.x1 = Math.max(lb.ax, bx) + R;
+        lb.z0 = Math.min(lb.az, bz) - R; lb.z1 = Math.max(lb.az, bz) + R;
+        lb.minY = Math.min(lb.hA, lb.hB) - 30.0;
+        lb.maxY = Math.max(lb.hA, lb.hB) + lb.arch + 6.0;
+        return lb;
+    }
+
+    /** The land bridges whose deck can reach an RTILE-wide square. */
+    private LandBridge[] landBridgeTile(int tx, int tz) {
+        long key = mix((tx & 0x3FFFFFFL) | (tz & 0x3FFFFFFL) << 26 ^ 0x6C62272E07BB0142L);
+        LandBridge[] t = caches.landBridgeTiles.get(key);
+        return t != null ? t : caches.landBridgeTiles.computeIfAbsent(key, k -> {
+            Arch a = p.arch;
+            int x0 = tx * RTILE, z0 = tz * RTILE, x1 = x0 + RTILE, z1 = z0 + RTILE;
+            double far = a.search * a.cell + a.landBridgeMaxGap;
+            java.util.List<LandBridge> out = new java.util.ArrayList<>();
+            for (int cx = (int) Math.floor((x0 - far) / a.cell); cx <= (int) Math.floor((x1 + far) / a.cell); cx++)
+                for (int cz = (int) Math.floor((z0 - far) / a.cell); cz <= (int) Math.floor((z1 + far) / a.cell); cz++) {
+                    Island A = mainIsland(cx, cz);
+                    if (A == NO_ISLAND) continue;
+                    // Only islands whose neighbourhood could reach the tile are asked for their picks.
+                    double r = 1.5 * a.cell + a.search * a.cell;
+                    double ddx = Math.max(0.0, Math.max(x0 - A.x, A.x - x1)), ddz = Math.max(0.0, Math.max(z0 - A.z, A.z - z1));
+                    if (ddx * ddx + ddz * ddz >= r * r) continue;
+                    for (Island Bi : bridgePicks(A)) {
+                        LandBridge lb = landBridge(A, Bi);
+                        if (lb != NO_BRIDGE && lb != TOUCHING && !out.contains(lb) && lb.x0 < x1 && lb.x1 > x0 && lb.z0 < z1 && lb.z1 > z0) out.add(lb);
+                    }
+                }
+            return out.toArray(new LandBridge[0]);
+        });
+    }
+
+    /** The land bridge's span at (x, z), if its deck or body reaches here. */
+    private void addLandBridge(Column c, LandBridge lb) {
+        double px = c.x - lb.ax, pz = c.z - lb.az, s = px * lb.dx + pz * lb.dz;
+        if (s < 0.0 || s > lb.len || c.count >= c.top.length) return;
+        double t = s / lb.len, bend = lb.amp * Math.sin(Math.PI * t) * sn(s, 0.0, lb.wl, lb.nox, lb.noz);
+        double d = Math.abs(-px * lb.dz + pz * lb.dx - bend), W = lb.w + 4.0;
+        if (d >= W) return;
+        // The deck: easing from one island's height to the other's, a slight rise in the middle, a slight crown, and
+        // rounded edges that fall away beyond the walkway.
+        double H = lb.hA + (lb.hB - lb.hA) * smoothstep(0.0, 1.0, t) + lb.arch * Math.sin(Math.PI * t);
+        double top = H + 1.0 - 0.3 * (d / lb.w) * (d / lb.w) - (d > lb.w ? 1.5 * (d - lb.w) : 0.0);
+        // Thin in the middle of the span, thick where it meets each island; drips underneath.
+        double thick = 4.0 + 14.0 * Math.pow(1.0 - Math.sin(Math.PI * t), 1.5) + 2.0 * sn(s, 0.0, 23.0, lb.noz, lb.nox);
+        double drip = 3.0 * Math.max(0.0, sn(c.x, c.z, 7.0, lb.nox - 509.0, lb.noz + 211.0));
+        double bottom = H - thick * Math.sqrt(Math.max(0.0, 1.0 - (d / W) * (d / W))) - drip;
+        if (top <= bottom + 1.0) return;
+        int i = c.count++;
+        c.top[i] = B * top;
+        c.bottom[i] = B * bottom;
+        c.k[i] = 0.0;
+        c.mr[i] = -1.0;  // a bridge: rivers don't carve it
+        c.yc[i] = H;
+        c.basinLevel[i] = Double.NaN;
+    }
+
     /** 0 to 1: how strongly (x, z) is on the raised side of lake island `is`. One slow noise, so the raised part is one or two stretches of shore. */
     private double raisedSide(Island is, double x, double z) {
         Arch a = p.arch;
@@ -1504,6 +1706,14 @@ public final class SkyTerrain implements DensityFunction {
                         rv.bridged() ? String.format("%.0f..%.0f", rv.bridge0, rv.bridge1) : "none",
                         rv.waterfall() ? "waterfall" : "gentle", rv.px[mid], rv.pz[mid]));
             }
+        if (a.landBridgeChance > 0) {
+            java.util.Set<LandBridge> seen = new java.util.HashSet<>();
+            for (int tx = Math.floorDiv(x0, RTILE); tx <= Math.floorDiv(x1, RTILE); tx++)
+                for (int tz = Math.floorDiv(z0, RTILE); tz <= Math.floorDiv(z1, RTILE); tz++)
+                    for (LandBridge lb : landBridgeTile(tx, tz)) if (seen.add(lb))
+                        out.add(String.format("land bridge %.0f,%.0f -> %.0f,%.0f: %.0f blocks, deck y %.0f..%.0f, half-width %.1f",
+                                lb.ax, lb.az, lb.ax + lb.len * lb.dx, lb.az + lb.len * lb.dz, lb.len, lb.hA, lb.hB, lb.w));
+        }
         return out;
     }
 
@@ -1724,6 +1934,12 @@ public final class SkyTerrain implements DensityFunction {
                 for (int tz = Math.floorDiv(rz0, RTILE); tz <= Math.floorDiv(rz1, RTILE); tz++)
                     for (River rv : riverTile(tx, tz)) if (!rivers.contains(rv)) rivers.add(rv);
         }
+        java.util.List<LandBridge> lands = new java.util.ArrayList<>();
+        if (a.landBridgeChance > 0) {
+            for (int tx = Math.floorDiv(rx0, RTILE); tx <= Math.floorDiv(rx1, RTILE); tx++)
+                for (int tz = Math.floorDiv(rz0, RTILE); tz <= Math.floorDiv(rz1, RTILE); tz++)
+                    for (LandBridge lb : landBridgeTile(tx, tz)) if (!lands.contains(lb)) lands.add(lb);
+        }
         double[][] out = new double[16][];
         for (int lx = 0; lx < 4; lx++) {
             for (int lz = 0; lz < 4; lz++) {
@@ -1743,6 +1959,12 @@ public final class SkyTerrain implements DensityFunction {
                     env = java.util.Arrays.copyOf(env, env.length + 2);
                     env[env.length - 2] = rv.minLevel - rv.depth - 30.0;
                     env[env.length - 1] = rv.maxLevel + 8.0;
+                }
+                for (LandBridge lb : lands) {
+                    if (!(lb.x0 < qx1 + 1 && lb.x1 > qx0 && lb.z0 < qz1 + 1 && lb.z1 > qz0)) continue;
+                    env = java.util.Arrays.copyOf(env, env.length + 2);
+                    env[env.length - 2] = lb.minY;
+                    env[env.length - 1] = lb.maxY;
                 }
                 out[lx << 2 | lz] = env;
             }
@@ -2162,6 +2384,7 @@ public final class SkyTerrain implements DensityFunction {
         final double riverChance, riverHalfWidth, riverDepth, riverStepMin, riverStepMax, riverBankSlope, riverMeander,
                 riverMeanderWavelength, riverMaxCut;
         final double chainChance, chainDistrict, chainMaxLength, chainMaxGap, chainMaxDrop;
+        final double landBridgeChance, landBridgeSecond, landBridgeMaxGap;
         final double leyScale, leySpacing, leyPull, leyPullPepper, leyBand, leyPepperBand, leyOff, leyAlign, leyStretch, lineHeightSpread, leyGaps;
         final double leyCell, leyChance, leyMinRadius, leyMaxRadius;
         final int leySearch, pepperSearch, coastSearch, leyCoastSearch;
@@ -2240,7 +2463,7 @@ public final class SkyTerrain implements DensityFunction {
             // Lake outflow rivers; off unless the settings have a "rivers" object.
             JsonObject rv = o.has("rivers") ? o.getAsJsonObject("rivers") : null;
             riverChance = rv == null ? 0 : Params.num(rv, "chance", 1.0);
-            riverHalfWidth = Params.num(rv, "halfWidth", 3.0);
+            riverHalfWidth = Params.num(rv, "halfWidth", 4.0);
             riverDepth = Params.num(rv, "depth", 2.5);
             riverStepMin = Params.num(rv, "stepMin", 3);
             riverStepMax = Params.num(rv, "stepMax", 6);
@@ -2251,10 +2474,15 @@ public final class SkyTerrain implements DensityFunction {
             // Lake chains: links between neighbouring lake islands; off unless the settings have a "chains" object (and rivers).
             JsonObject chn = o.has("chains") ? o.getAsJsonObject("chains") : null;
             chainChance = chn == null || rv == null ? 0 : Params.num(chn, "chance", 0.8);
-            chainDistrict = Params.num(chn, "district", 0.5);
+            chainDistrict = Params.num(chn, "district", 0.4);
             chainMaxLength = Params.num(chn, "maxLength", 420);
             chainMaxGap = Params.num(chn, "maxGap", 160);
             chainMaxDrop = Params.num(chn, "maxDrop", 60);
+            // Land bridges between neighbouring islands; off unless the settings have a "landBridges" object.
+            JsonObject lbs = o.has("landBridges") ? o.getAsJsonObject("landBridges") : null;
+            landBridgeChance = lbs == null ? 0 : Params.num(lbs, "chance", 0.8);
+            landBridgeSecond = Params.num(lbs, "second", 0.3);
+            landBridgeMaxGap = Params.num(lbs, "maxGap", 180);
             JsonObject ley = o.has("ley") ? o.getAsJsonObject("ley") : null;
             leyScale = 256.0 / Params.num(ley, "width", 2600);
             leySpacing = ley == null ? 0 : Params.num(ley, "spacing", 0.2);
