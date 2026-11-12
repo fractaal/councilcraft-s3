@@ -5514,7 +5514,7 @@ hash = "4d5d43e05581276931d81a19e9f58eb441ebe6edea9efaacdb943eeaabd3e50f"
 
 [[files]]
 file = "config/grapplemod-common.json"
-hash = "49f45b39c6a1f6d7c94fc626e9e76b0884aedc8c7f45e581ab5fb4808c9baa11"
+hash = "a84849bc0aaf6247c887cf1b6e796b50e9d84e690ac00039509fad03e7bd5949"
 
 [[files]]
 file = "config/grapplemod-properties.json"

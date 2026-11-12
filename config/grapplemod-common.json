@@ -3,7 +3,7 @@
 	"forceAllowFlight": true,
 	"maxStrafeSpeedInAir": 0.7,
 	"strafeAcceleration": 0.014999999664723873,
-	"overrideMovementInAir": false,
+	"overrideMovementInAir": true,
 	"hookAffectsEntities": true,
 	"ropeSnapBuffer": 5.0,
 	"ropeJumpPower": 100.0,
