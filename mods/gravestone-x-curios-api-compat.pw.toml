@@ -1,0 +1,13 @@
+name = "Gravestone x Curios API Compat"
+filename = "gravestonecurioscompat-1.21.1-NeoForge-4.2.1.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/NaiL8bPN/versions/Z1PzGMtX/gravestonecurioscompat-1.21.1-NeoForge-4.2.1.jar"
+hash-format = "sha512"
+hash = "f28aa5172be644f88c9a2c4ba741a533bced3ca88361c32fc512f4bfea1a545f587e32335f85148b0aa6f064aa830569e36c6cbaacc01a3368a94ba873677ecf"
+
+[update]
+[update.modrinth]
+mod-id = "NaiL8bPN"
+version = "Z1PzGMtX"
