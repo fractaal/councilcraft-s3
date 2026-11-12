@@ -1683,6 +1683,18 @@ public final class SkyTerrain implements DensityFunction {
         return out;
     }
 
+    /**
+     * The ground height (first free block) structures are given where a column has no land: about the height islands
+     * have in that part of the sky, drifting up and down slowly enough that a structure's footprint is nearly level.
+     * NaN in worlds without the archipelago.
+     */
+    public double padHeight(int x, int z) {
+        Arch a = p.arch;
+        if (a == null) return Double.NaN;
+        double band = a.baseY + a.regionDrift * (2.0 * region(x, z, 2203.0) - 1.0);
+        return Math.floor(band + 0.8 * a.heightSpread * sn(x, z, 1400.0, 6113.0, -3907.0));
+    }
+
     /** Smooth noise from -1 to 1 with features about `wavelength` blocks across, for shaping things placed after the terrain. */
     public double shapeNoise(double x, double z, double wavelength) {
         return sn(x, z, wavelength, 4409.0, -2713.0);

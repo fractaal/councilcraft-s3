@@ -6,6 +6,9 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Aquifer;
 import net.minecraft.world.level.levelgen.DensityFunctions;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
+import net.minecraft.world.level.LevelHeightAccessor;
+import net.minecraft.world.level.NoiseColumn;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.NoiseChunk;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.RandomState;
@@ -13,11 +16,14 @@ import net.minecraft.world.level.levelgen.blending.Blender;
 import com.llamalad7.mixinextras.sugar.Local;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import skyislands.BlendReach;
 import skyislands.FastFill;
 import skyislands.FastGen;
 import skyislands.SkyTerrain;
+import skyislands.StructureFootings;
 
 /**
  * Vanilla has one sea level for the whole world. Worlds using SkyTerrain get per-lake water levels instead.
@@ -58,6 +64,31 @@ abstract class NoiseBasedChunkGeneratorMixin {
         return nc;
     }
 
+    /**
+     * A structure being planned over a column with no land is told the ground is at a made-up height
+     * (StructureFootings.searchHeight) instead of the bottom of the world.
+     */
+    @Inject(method = "getBaseHeight", at = @At("RETURN"), cancellable = true)
+    private void skyislands$madeUpGround(int x, int z, Heightmap.Types type, LevelHeightAccessor level, RandomState state, CallbackInfoReturnable<Integer> cir) {
+        if (cir.getReturnValue() > level.getMinBuildHeight()) return;
+        int ground = StructureFootings.searchHeight(state, x, z);
+        if (ground != Integer.MIN_VALUE) cir.setReturnValue(ground);
+    }
+
+    /** The same for structures that read the whole column: stone up to the made-up ground where the column is empty. */
+    @Inject(method = "getBaseColumn", at = @At("RETURN"), cancellable = true)
+    private void skyislands$madeUpColumn(int x, int z, LevelHeightAccessor level, RandomState state, CallbackInfoReturnable<NoiseColumn> cir) {
+        int ground = StructureFootings.searchHeight(state, x, z);
+        if (ground == Integer.MIN_VALUE) return;
+        NoiseColumn column = cir.getReturnValue();
+        int minY = level.getMinBuildHeight(), height = level.getHeight();
+        for (int y = minY; y < minY + height; y++) if (!column.getBlock(y).isAir()) return;
+        BlockState[] states = new BlockState[height];
+        for (int i = 0; i < height; i++) states[i] = minY + i < ground ? STONE : AIR;
+        cir.setReturnValue(new NoiseColumn(minY, states));
+    }
+
+    private static final BlockState STONE = Blocks.STONE.defaultBlockState();
     private static final BlockState AIR = Blocks.AIR.defaultBlockState();
 
     @Redirect(method = "doFill", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/levelgen/NoiseChunk;selectCellYZ(II)V"))

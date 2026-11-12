@@ -95,6 +95,11 @@ public final class FastGen {
             if (all[i].hasOnlyAir()) continue;
             for (int j = Math.max(0, i - 1); j <= Math.min(n - 1, i + 1); j++) keep[j] = true;
         }
+        // Land about to be built under this chunk's structures (StructureFootings) counts as land too.
+        int[] land = StructureFootings.landRange(level, chunk);
+        if (land != null) {
+            for (int i = Math.max(0, chunk.getSectionIndex(land[0])); i <= Math.min(n - 1, chunk.getSectionIndex(land[1])); i++) keep[i] = true;
+        }
         for (boolean k : keep) if (k) kept++;
         if (kept == n) return all;
         SECTIONS_DROPPED.addAndGet(n - kept);
