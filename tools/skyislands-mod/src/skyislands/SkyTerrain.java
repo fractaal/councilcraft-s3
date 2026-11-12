@@ -1339,15 +1339,19 @@ public final class SkyTerrain implements DensityFunction {
     // ---- Land bridges --------------------------------------------------------------------------------------------
 
     /**
-     * A natural stone arch between two neighbouring main islands, for crossing on foot or by horse: a grassy deck
-     * 2w wide from a little way inside one island's edge to a little way inside the other's, its surface easing from
-     * one island's ground height to the other's with a slight rise in the middle and a gentle bend, thin in the middle
-     * of the span and thick where it meets each island.
+     * A natural stone arch between two neighbouring main islands, for crossing on foot or by horse: a grassy deck from
+     * a little way inside one island's edge to a little way inside the other's, its surface easing from one island's
+     * ground height to the other's with a slight rise in the middle and a gentle bend. It is broad and deep where it
+     * leaves each island and narrows to 2w wide and `thick` deep in the middle of the span, both along a cubic curve,
+     * so most of the span is slender and the ends flare out into the islands.
      */
     private static final class LandBridge {
-        double ax, az, dx, dz, len, hA, hB, w, amp, wl, nox, noz, arch;
+        double ax, az, dx, dz, len, gap, hA, hB, w, wEnd, thick, thickEnd, amp, wl, nox, noz, arch;
         double x0, z0, x1, z1, minY, maxY;
     }
+
+    /** How far inside each island's edge a land bridge starts; its ends are rounded off over this length. */
+    private static final double LB_INSET = 16.0;
 
     private static final LandBridge NO_BRIDGE = new LandBridge();
 
@@ -1456,24 +1460,29 @@ public final class SkyTerrain implements DensityFunction {
         if (Math.abs(hA - hB) > (gap + 20.0) / 2.0) { whyBridge("too steep"); return NO_BRIDGE; }
         whyBridge("ok");
         LandBridge lb = new LandBridge();
-        lb.ax = A.x + (sA1 - 10.0) * dx;
-        lb.az = A.z + (sA1 - 10.0) * dz;
+        lb.ax = A.x + (sA1 - LB_INSET) * dx;
+        lb.az = A.z + (sA1 - LB_INSET) * dz;
         lb.dx = dx;
         lb.dz = dz;
-        lb.len = gap + 20.0;
+        lb.len = gap + 2.0 * LB_INSET;
+        lb.gap = gap;
         lb.hA = Math.floor(hA);
         lb.hB = Math.floor(hB);
-        lb.w = 3.5 + 2.0 * unit(h = mix(h));
+        // Longer spans are heavier: thicker in the middle, and broader and deeper at the ends.
+        lb.w = 4.5 + 2.0 * unit(h = mix(h));
+        lb.wEnd = lb.w + clamp(0.1 * gap, 6.0, 14.0);
+        lb.thick = 6.0 + 0.02 * gap + 1.5 * unit(h = mix(h));
+        lb.thickEnd = lb.thick + clamp(0.15 * gap, 10.0, 24.0);
         lb.amp = Math.min(8.0, 0.08 * gap);
         lb.wl = 40.0 + 40.0 * unit(h = mix(h));
         lb.nox = (unit(h = mix(h)) - 0.5) * 40000.0;
         lb.noz = (unit(h = mix(h)) - 0.5) * 40000.0;
         lb.arch = Math.min(3.0, gap / 30.0);
-        double R = lb.w + 4.0 + lb.amp;
+        double R = lb.wEnd + 4.0 + lb.amp;
         double bx = lb.ax + lb.len * dx, bz = lb.az + lb.len * dz;
         lb.x0 = Math.min(lb.ax, bx) - R; lb.x1 = Math.max(lb.ax, bx) + R;
         lb.z0 = Math.min(lb.az, bz) - R; lb.z1 = Math.max(lb.az, bz) + R;
-        lb.minY = Math.min(lb.hA, lb.hB) - 30.0;
+        lb.minY = Math.min(lb.hA, lb.hB) - lb.thickEnd - 10.0;
         lb.maxY = Math.max(lb.hA, lb.hB) + lb.arch + 6.0;
         return lb;
     }
@@ -1509,14 +1518,21 @@ public final class SkyTerrain implements DensityFunction {
         double px = c.x - lb.ax, pz = c.z - lb.az, s = px * lb.dx + pz * lb.dz;
         if (s < 0.0 || s > lb.len || c.count >= c.top.length) return;
         double t = s / lb.len, bend = lb.amp * Math.sin(Math.PI * t) * sn(s, 0.0, lb.wl, lb.nox, lb.noz);
-        double d = Math.abs(-px * lb.dz + pz * lb.dx - bend), W = lb.w + 4.0;
+        // 0 in the middle of the span, 1 at each island's edge and on inside it; cubed, so the flare is at the ends.
+        double u = Math.min(1.0, Math.abs(s - 0.5 * lb.len) / (0.5 * lb.gap)), flare = u * u * u;
+        // Inside the island the end is rounded off, not cut square.
+        double in = Math.min(s, lb.len - s) / LB_INSET, cap = in >= 1.0 ? 1.0 : Math.sqrt(1.0 - (1.0 - in) * (1.0 - in));
+        double w = (lb.w + (lb.wEnd - lb.w) * flare) * cap;
+        if (w < 1.0) return;
+        double d = Math.abs(-px * lb.dz + pz * lb.dx - bend), W = w + 4.0;
         if (d >= W) return;
-        // The deck: easing from one island's height to the other's, a slight rise in the middle, a slight crown, and
-        // rounded edges that fall away beyond the walkway.
-        double H = lb.hA + (lb.hB - lb.hA) * smoothstep(0.0, 1.0, t) + lb.arch * Math.sin(Math.PI * t);
-        double top = H + 1.0 - 0.3 * (d / lb.w) * (d / lb.w) - (d > lb.w ? 1.5 * (d - lb.w) : 0.0);
-        // Thin in the middle of the span, thick where it meets each island; drips underneath.
-        double thick = 4.0 + 14.0 * Math.pow(1.0 - Math.sin(Math.PI * t), 1.5) + 2.0 * sn(s, 0.0, 23.0, lb.noz, lb.nox);
+        // The deck: easing from one island's height to the other's (from 10 blocks inside each edge), a slight rise in
+        // the middle, a slight crown, and rounded edges that fall away beyond the walkway.
+        double e = clamp((s - (LB_INSET - 10.0)) / (lb.gap + 20.0), 0.0, 1.0);
+        double H = lb.hA + (lb.hB - lb.hA) * smoothstep(0.0, 1.0, e) + lb.arch * Math.sin(Math.PI * e);
+        double top = H + 1.0 - 0.3 * (d / w) * (d / w) - (d > w ? 1.5 * (d - w) : 0.0);
+        // The underside arches the same way: shallow in the middle, deep where it meets each island; drips underneath.
+        double thick = lb.thick + (lb.thickEnd - lb.thick) * flare + 1.5 * sn(s, 0.0, 23.0, lb.noz, lb.nox);
         double drip = 3.0 * Math.max(0.0, sn(c.x, c.z, 7.0, lb.nox - 509.0, lb.noz + 211.0));
         double bottom = H - thick * Math.sqrt(Math.max(0.0, 1.0 - (d / W) * (d / W))) - drip;
         if (top <= bottom + 1.0) return;
@@ -2115,8 +2131,11 @@ public final class SkyTerrain implements DensityFunction {
                     // Where a corner of the cell doesn't hold water at this level (open sky at an island's edge or past a
                     // bridge's end, lower water past a step in a river, land below the water line), the blend sags the
                     // ground under the water by an unknown amount. Only the top block of water goes there: over air it
-                    // spills off, where deeper water would stand against or hang over the air.
-                    floors[column * CAP + i] = !Double.isNaN(level) && lowCorner(x, z, level) ? level - 2.0 : bed - 3.0;
+                    // spills off, where deeper water would stand against or hang over the air. And none goes where this
+                    // column is itself bank above the water line: next to open sky the blend can take that bank away
+                    // altogether, and water put in its place would hang in the air off the island's edge.
+                    boolean low = !Double.isNaN(level) && lowCorner(x, z, level);
+                    floors[column * CAP + i] = low ? (c.top[i] / B >= level ? level : level - 2.0) : bed - 3.0;
                 }
                 counts[column] = c.count;
             }
