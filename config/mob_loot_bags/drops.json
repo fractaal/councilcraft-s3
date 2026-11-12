@@ -36,10 +36,10 @@
 
   // Relative odds of each tier before Bag Luck. Defaults: about 60% / 26% / 9.5% / 3.5% / 0.9% / 0.1%.
   "tier_weights": {
-    "common": 600,
-    "uncommon": 260,
-    "rare": 95,
-    "epic": 35,
+    "common": 1800,
+    "uncommon": 780,
+    "rare": 285,
+    "epic": 50,
     "legendary": 9,
     "mythic": 1
   },

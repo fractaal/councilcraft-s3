@@ -17,8 +17,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
+                "min": 2,
+                "max": 3
               }
             }
           ]
@@ -32,8 +32,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 5
+                "min": 3,
+                "max": 6
               }
             }
           ]
@@ -47,8 +47,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 6
+                "min": 4,
+                "max": 8
               }
             }
           ]
@@ -56,7 +56,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_block",
-          "weight": 4
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
