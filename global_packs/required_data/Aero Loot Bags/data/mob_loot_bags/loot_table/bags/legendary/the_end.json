@@ -159,11 +159,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:elytra",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:shulker_box"
         }
       ]

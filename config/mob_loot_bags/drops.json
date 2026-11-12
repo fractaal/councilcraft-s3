@@ -47,13 +47,13 @@
   // Bag Luck shifts the tier odds upward. Each point makes every tier about 42% likelier
   // relative to the tier below it (per_point 0.35). Sources add up:
   "luck": {
-    "per_point": 0.35,
+    "per_point": 0.15,
     // Per level of Looting on the killing weapon.
-    "per_looting_level": 0.5,
+    "per_looting_level": 0.25,
     // Multiplier for the player's Luck attribute (Potion of Luck, modded gear).
     "luck_attribute": 1.0,
     // Mobs earn one point per doubling of max health over reference_health, up to this.
-    "max_health_luck": 2.0,
+    "max_health_luck": 0.5,
     // Bonus for kills in the Nether, the End and on Hard difficulty.
     "nether": 0.5,
     "end": 1.0,

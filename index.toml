@@ -6082,7 +6082,7 @@ hash = "971bc2210b5e23635d9a0095bf83fd71ea2e07cdb2eed4416c5c74c70e9ab36d"
 
 [[files]]
 file = "config/mob_loot_bags/drops.json"
-hash = "8ac3123004173febb508f5011888cfcb3960837094737391cdd8136f79899c9a"
+hash = "794faa4a27605a880738bfa3c1d375bc11586875fe31b5d2168e433b84fa25e3"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
@@ -7386,7 +7386,7 @@ hash = "e4aa842396acdd46b093e9f5ed22036f9e6fd427f89294b593439045d391822d"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/common.json"
-hash = "a21a3a9635d23804984d86063cc80b2a837705aeb39e791643108f1228299fab"
+hash = "2b3231ab4a5c2d8c680126d53e9db787c2f7768d1aa51260fa04c60d296894f7"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/common/the_end.json"
@@ -7398,7 +7398,7 @@ hash = "91863fd883604202000dbe5fe8ce7676fa19aea0317a261a9d28fa8cbf646b1e"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/epic.json"
-hash = "1e574e16e06425e20c14ab7651a3d63cec3003bc095048df746fc848f28af164"
+hash = "36e2a57fd8a655f5d5aaeb3442fc1b41470f0e43ec73840481a0991d9959e95b"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/epic/the_end.json"
@@ -7410,11 +7410,11 @@ hash = "b7edae393768b7ba64ab22ad9a0fbb96fa141fe5fc39bf158a89c0b93323acdb"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/legendary.json"
-hash = "a7b4e1462bf4d7fa18ade307fd03185d7bfee30e4a82897241a1aa46bb140e56"
+hash = "49ce7c6d337c23388897a47bdd76be633b991b31101839e3a669a6cfda9cfd2a"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/legendary/the_end.json"
-hash = "a2e7f580cdf655b9cdfb3a0d199a8454496f8ec7152a03732c8d4dea590791ea"
+hash = "08696fa190150a986b840298ee92dd10afa77eb1208dbdcaf7405e1fb5c3eedf"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/legendary/the_nether.json"
@@ -7422,11 +7422,11 @@ hash = "b9e2b8a71a82bc649ea6a7439170a9426aa2d4e2d3d56b242a8314f6e17f52fc"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/mythic.json"
-hash = "bb195e8f2e5a9e7390ac7886f7a01fc067228a4ddfc2ff1b9c1b20f122ab7efa"
+hash = "ad01b15ecdeaa6eb472d821324ddc75b677b74ce16e4f5d28a7a2220a0331693"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/mythic/the_end.json"
-hash = "ce4607d228076af5891164b736b9e221f0373c9c9f31f26a9c2db8bdb70baae2"
+hash = "10351c4c846d08367d73ce2343576acdb1d43be6288d873d87bcea528e31d107"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/mythic/the_nether.json"
@@ -7434,7 +7434,7 @@ hash = "45c3c7261afdac2239e22cf1f32e37dd9869213a69dee7f223b671bf62c1cb89"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/rare.json"
-hash = "7d5eb18f42df2c24851e4a9dd284113dea48b2ece1c6972f86af134bbbcc8b8a"
+hash = "01fe66381efef8f24d8e338ef52691abb8da36d28be5ba5a466e26a503ce2afb"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/rare/the_end.json"
@@ -7446,7 +7446,7 @@ hash = "a71d42336322618cbffc563ae6ba2524147795eb36316b16cf3c45a127e943f4"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/uncommon.json"
-hash = "820e371613b789012882a2b0df854ee15cd7cd63511e8db7ab015b7ce61b14f5"
+hash = "d3acf39ef1adb95dc90b3d66445e4e38d49ab9a5cc5100483bb1ff00711a4c50"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/uncommon/the_end.json"

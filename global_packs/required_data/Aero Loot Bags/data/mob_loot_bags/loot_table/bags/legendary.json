@@ -6,17 +6,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:enchanted_golden_apple",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:totem_of_undying",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:elytra"
+          "name": "minecraft:nether_star",
+          "weight": 4
         },
         {
           "type": "minecraft:item",
@@ -25,39 +16,79 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_sword",
-          "weight": 2,
+          "name": "minecraft:beacon",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 3,
           "functions": [
             {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
+              "function": "minecraft:set_count",
+              "count": 2
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_pickaxe",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:emberblade",
+          "weight": 1
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:diamond_chestplate",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:whisperwind",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:brimstone_claymore",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:frostfall",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:molten_edge",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:livyatan",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:icewhisper",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:shadowsting",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:arcanethyst",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:thunderbrand",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:hearthflame",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:twisted_blade",
+          "weight": 1
         }
       ]
     },
@@ -107,8 +138,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 4,
-                "max": 10
+                "min": 8,
+                "max": 16
               }
             }
           ]
@@ -122,8 +153,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
+                "min": 2,
+                "max": 3
               }
             }
           ]
@@ -161,21 +192,6 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:totem_of_undying",
-          "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:elytra",
           "weight": 2
         },
         {
@@ -425,6 +441,31 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:mace"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "irons_spellbooks:epic_ink",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "oritech:adamant_ingot",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sophisticatedbackpacks:stack_upgrade_tier_3",
+          "weight": 2
         }
       ]
     },

@@ -6,97 +6,68 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_sword",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:soulkeeper",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_pickaxe",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:soulstealer",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_axe",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:soulrender",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_helmet",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:soulpyre",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_chestplate",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:stars_edge",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_leggings",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:harbinger",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:netherite_boots",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 39,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "simplyswords:sunfire",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:elytra",
-          "weight": 4
+          "name": "simplyswords:tempest",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:caelestis",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:stormbringer",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:watcher_claymore",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "simplyswords:the_devourer",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:nether_star",
-          "weight": 4,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -111,34 +82,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:beacon",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "irons_spellbooks:legendary_ink",
           "weight": 3
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:enchanted_golden_apple",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:mace",
-          "weight": 2,
-          "functions": [
-            {
-              "function": "minecraft:enchant_with_levels",
-              "levels": 30,
-              "options": "#minecraft:on_random_loot"
-            }
-          ]
+          "name": "minecraft:heavy_core",
+          "weight": 2
         }
       ]
     },
@@ -158,8 +112,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 1,
+                "max": 2
               }
             }
           ]
@@ -187,17 +141,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:totem_of_undying",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 2,
-                "max": 3
-              }
-            }
-          ]
+          "weight": 2
         },
         {
           "type": "minecraft:item",
@@ -245,8 +189,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 4
+                "min": 4,
+                "max": 8
               }
             }
           ]
@@ -303,11 +247,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:elytra",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:book",
           "weight": 5,
           "functions": [
@@ -325,6 +264,16 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:music_disc_otherside"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sophisticatedbackpacks:stack_upgrade_omega_tier",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "sophisticatedbackpacks:netherite_backpack",
+          "weight": 1
         }
       ]
     },
