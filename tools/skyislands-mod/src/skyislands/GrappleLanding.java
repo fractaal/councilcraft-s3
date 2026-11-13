@@ -29,6 +29,23 @@ public final class GrappleLanding {
         com.mojang.logging.LogUtils.getLogger().info("[skyislands] Grapple landing cap: receiving the hook mod's movement updates");
     }
 
+    /** Fall distance below which a landing does no damage (vanilla safe_fall_distance). */
+    public static final float SAFE_FALL = 3.0F;
+
+    /** Damaging landings up to this many ticks after a player's last hook update are logged. */
+    public static final int LOG_TICKS = 200;
+
+    /**
+     * Logs a damaging landing shortly after grappling, so a fall death can be matched to what the cap did: whether the
+     * landing was inside the cap's window, the fall distance before and after, and the speeds it was worked out from.
+     */
+    public static void logLanding(String player, int ticksSinceUpdate, float before, float after, double vy, double dy, double y) {
+        com.mojang.logging.LogUtils.getLogger().info(
+                "[skyislands] Grapple landing: {} at y {}, {} ticks after the last hook update, fall distance {} -> {} (vy {}, move dy {})",
+                player, String.format("%.1f", y), ticksSinceUpdate, String.format("%.2f", before), String.format("%.2f", after),
+                String.format("%.3f", vy), String.format("%.3f", dy));
+    }
+
     /** Added to ServerPlayer by mixin.ServerPlayerGrappleMixin. */
     public interface Tracked {
         void skyislands$grappleUpdate(int tick, double y);

@@ -37,12 +37,16 @@ abstract class ServerPlayerGrappleMixin implements GrappleLanding.Tracked {
 
     @Inject(method = "doCheckFallDamage", at = @At("HEAD"))
     private void skyislands$capGrappleLanding(double dx, double dy, double dz, boolean onGround, CallbackInfo ci) {
-        if (!onGround) return;
+        if (!onGround || skyislands$tick == Integer.MIN_VALUE) return;
         ServerPlayer self = (ServerPlayer) (Object) this;
-        double vy = skyislands$grappleVerticalSpeed(self.server.getTickCount());
-        if (Double.isNaN(vy)) return;
+        int now = self.server.getTickCount();
+        float before = self.fallDistance;
+        double vy = skyislands$grappleVerticalSpeed(now);
         // This move's own drop counts too: it can be the last part of the descent.
-        float cap = GrappleLanding.fallDistanceFor(Math.min(vy, dy));
-        if (self.fallDistance > cap) self.fallDistance = cap;
+        float cap = Double.isNaN(vy) ? Float.NaN : GrappleLanding.fallDistanceFor(Math.min(vy, dy));
+        if (!Double.isNaN(vy) && self.fallDistance > cap) self.fallDistance = cap;
+        if (before > GrappleLanding.SAFE_FALL && now - skyislands$tick <= GrappleLanding.LOG_TICKS) {
+            GrappleLanding.logLanding(self.getScoreboardName(), now - skyislands$tick, before, self.fallDistance, vy, dy, self.getY());
+        }
     }
 }
