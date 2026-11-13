@@ -190,6 +190,21 @@
         },
         {
           "type": "minecraft:item",
+          "name": "minecraft:slime_ball",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:ender_pearl",
           "weight": 4
         },
@@ -504,6 +519,51 @@
           "type": "minecraft:item",
           "name": "minecraft:fishing_rod",
           "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone_block",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_block",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
         }
       ]
     },
@@ -544,6 +604,11 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "betterdungeons:skeleton_dungeon/chests/middle",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "das:common_chest",
           "weight": 60
         },
@@ -551,6 +616,16 @@
           "type": "minecraft:loot_table",
           "value": "deeperdarker:chests/ancient_temple_storage",
           "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/library",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "dungeoncrawl:chests/supply",
+          "weight": 30
         },
         {
           "type": "minecraft:loot_table",
@@ -564,6 +639,11 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "golemdungeons:abandoned_factory/end_chest",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "golemdungeons:abandoned_factory/end_gravel",
           "weight": 30
         },
@@ -574,7 +654,22 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "medieval_buildings:chests/ship_chests",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/ancient_city_ice_box",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "minecraft:chests/illager_mansion/wool",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/stronghold_library",
           "weight": 3
         },
         {
@@ -594,7 +689,17 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_desert_house",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "minecraft:chests/village/village_fisher",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_fletcher",
           "weight": 3
         },
         {
@@ -609,7 +714,17 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_plains_house",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "minecraft:chests/village/village_shepherd",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:chests/village/village_snowy_house",
           "weight": 3
         },
         {
@@ -639,6 +754,11 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "mss:abandoned",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "nova_structures:chests/badland_miner_outpost_forge",
           "weight": 5
         },
@@ -660,6 +780,11 @@
         {
           "type": "minecraft:loot_table",
           "value": "nova_structures:chests/illager_hideout_fishing",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "nova_structures:chests/stray_fort_archer",
           "weight": 5
         },
         {
@@ -734,7 +859,22 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/dark_oak_trade",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/enchanter",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "trek:overworld/medium/explorer_cabin/fridge",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/haunted_house",
           "weight": 2
         },
         {
@@ -754,7 +894,17 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/mangrove_watchtowers",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "trek:overworld/medium/orbital",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/railroad/horse",
           "weight": 2
         },
         {
@@ -764,7 +914,27 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/star_spike",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/strange_house/basement_diamond",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "trek:overworld/medium/tower_of_ice",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/wandering_traders/2",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/medium/witch_tower",
           "weight": 2
         },
         {
@@ -779,7 +949,32 @@
         },
         {
           "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/tower_island",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/defending_tower",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/rare/villager_castle/enchantment_room",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:overworld/very_common/crystal_rock",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
           "value": "trek:pillagers/miner",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:pillagers/ocean",
           "weight": 2
         },
         {
@@ -795,6 +990,21 @@
         {
           "type": "minecraft:loot_table",
           "value": "trek:pillagers/outpost_mangrove",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:village/village_cherry_house",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:village/village_library",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "trek:village/village_swamp_house",
           "weight": 2
         }
       ]
