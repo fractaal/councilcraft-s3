@@ -99,8 +99,8 @@
     {
       "rolls": {
         "type": "minecraft:uniform",
-        "min": 4,
-        "max": 6
+        "min": 5,
+        "max": 7
       },
       "entries": [
         {
@@ -266,6 +266,151 @@
           "type": "minecraft:item",
           "name": "sophisticatedbackpacks:netherite_backpack",
           "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:witherite_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:ignitium_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:cursium_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:ancient_metal_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:black_steel_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:enderite_ingot",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:void_core",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:warden_carapace",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:heart_of_the_deep",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:soul_crystal",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:reinforced_echo_shard",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
         }
       ]
     },
@@ -282,147 +427,6 @@
         {
           "condition": "minecraft:random_chance",
           "chance": 0.4
-        }
-      ]
-    },
-    {
-      "rolls": 2,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 1
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "value": "artifacts:artifact",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "cataclysm:chests/acropolis_treasure",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "cataclysm:chests/desert_treasure",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "deeperdarker:chests/ancient_temple_apex",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "deeperdarker:chests/ancient_temple_basement",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "deeperdarker:chests/ancient_temple_secret",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/ancient_city",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/trial_chambers/reward_ominous_unique",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:arena/vault",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:arena/vault_ominous",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:arena_mossy_hallway_chest",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:rare",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/lone_citadel/c_vault",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/lone_citadel/c_vault_boss",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/combat_treasure_4",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/combat_treasure_5",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/shrine_lesser_ominous",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/shrine_lesser_treasure",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/vault_shrine_ominous",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/trident_trial_monument/ttm_boss_vault_heart",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/trident_trial_monument/ttm_boss_vault_trident",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/trident_trial_monument/ttm_common_vault",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship3",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship6",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship7",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship9",
-          "weight": 15
         }
       ]
     }

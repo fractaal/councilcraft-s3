@@ -95,8 +95,8 @@
     {
       "rolls": {
         "type": "minecraft:uniform",
-        "min": 3,
-        "max": 5
+        "min": 4,
+        "max": 6
       },
       "entries": [
         {
@@ -466,6 +466,151 @@
           "type": "minecraft:item",
           "name": "sophisticatedbackpacks:stack_upgrade_tier_3",
           "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:witherite_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:ignitium_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:cursium_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:ancient_metal_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:black_steel_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:enderite_ingot",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cataclysm:void_core",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:warden_carapace",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:heart_of_the_deep",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:soul_crystal",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "deeperdarker:reinforced_echo_shard",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
         }
       ]
     },
@@ -482,237 +627,6 @@
         {
           "condition": "minecraft:random_chance",
           "chance": 0.35
-        }
-      ]
-    },
-    {
-      "rolls": 2,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.9
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "value": "apotheosis:chests/chest_valuable",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "artifacts:chests/campsite_chest",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "betterdungeons:spider_dungeon/chests/egg_room",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "betterdungeons:zombie_dungeon/chests/special",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "cataclysm:chests/abandoned_treasure",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "cataclysm:chests/amethyst_nest_chest",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "cataclysm:chests/frosted_prison_treasure",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "das:hard_chest",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "golemdungeons:abandoned_factory/room_gravel",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "golemdungeons:sculk_factory/heart_chest",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "golemdungeons:trial_reward/factory_remnant",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "golemdungeons:trial_reward/sculk_infestation",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "hopo:chests/portal/better_ruined_portal",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "hopo:chests/portal/dripstone_portal",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "hopo:chests/portal/lush_portal",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "medieval_buildings:chests/tower",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "medieval_buildings:chests/town_inside",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/abandoned_mineshaft",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/buried_treasure",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/illager_mansion/evoker_chest",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/illager_mansion/secret_room",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/ruined_portal",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/stronghold_corridor",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/trial_chambers/reward_ominous_rare",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:castle_tower_top",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:houses_rare",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/creeping_crypt/vault_creeping",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/desert_ruins/desert_ruin_lesser_treasure",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/hamlet/hamlet",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/illager_hideout_heart_loot",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/illager_hideout_tresure",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/combat_treasure_1",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/combat_treasure_2",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/shrine/combat_treasure_3",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/toxic_lair/toxic_boss_vault",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/toxic_lair/toxic_ominous_vault",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/toxic_lair/toxic_vault",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship5",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship8",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/castle",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/mushroom_island/top",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/pyramide_of_anubis/bottom",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/pyramide_of_anubis/top",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:pillagers/pillager_mansion",
-          "weight": 8
         }
       ]
     }
