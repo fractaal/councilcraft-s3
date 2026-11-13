@@ -480,6 +480,86 @@
           "type": "minecraft:item",
           "name": "sophisticatedbackpacks:gold_backpack",
           "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_block",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone_block",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_block",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_block",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "create:brass_block",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "modern_industrialization:steel_block",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
         }
       ]
     },
@@ -551,26 +631,6 @@
           "type": "minecraft:loot_table",
           "value": "deeperdarker:chests/crystallized_amber",
           "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/forge",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/stage_1",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/stage_2",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/stage_3",
-          "weight": 15
         },
         {
           "type": "minecraft:loot_table",
@@ -659,27 +719,12 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "mss:general",
-          "weight": 12
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "mss:stash",
           "weight": 12
         },
         {
           "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/desert_ruins/desert_ruin_house",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "nova_structures:chests/illager_hideout_lesser_tresure",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/illager_hideout_library",
           "weight": 5
         },
         {
@@ -699,11 +744,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/lone_citadel/c_library",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "nova_structures:chests/toxic_lair/generic",
           "weight": 5
         },
@@ -719,22 +759,12 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/witch_villa/library",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "nova_structures:chests/witch_villa/pumpkin_room",
           "weight": 5
         },
         {
           "type": "minecraft:loot_table",
           "value": "pneumaticcraft:custom/rare_dungeon_loot",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "ribbits:chests/fisherman_main",
           "weight": 60
         },
         {
@@ -764,22 +794,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "trek:overworld/medium/sorcerers_house",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/very_rare/farm_island/house",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "trek:overworld/very_rare/farm_island/mill",
-          "weight": 15
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:village/village_library_secret",
           "weight": 15
         },
         {

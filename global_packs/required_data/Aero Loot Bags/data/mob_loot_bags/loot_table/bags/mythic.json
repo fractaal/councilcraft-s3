@@ -259,14 +259,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:music_disc_pigstep"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:music_disc_otherside"
-        },
-        {
-          "type": "minecraft:item",
           "name": "sophisticatedbackpacks:stack_upgrade_omega_tier",
           "weight": 1
         },
@@ -309,11 +301,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "bmairballoons:chests/payload_rare",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "cataclysm:chests/acropolis_treasure",
           "weight": 30
         },
@@ -336,11 +323,6 @@
           "type": "minecraft:loot_table",
           "value": "deeperdarker:chests/ancient_temple_secret",
           "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/treasure",
-          "weight": 60
         },
         {
           "type": "minecraft:loot_table",

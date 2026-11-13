@@ -646,11 +646,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "minecraft:chests/igloo_chest",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/illager_mansion/generic",
           "weight": 5
         },
@@ -671,11 +666,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "minecraft:chests/pillager_outpost",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/stronghold_crossing",
           "weight": 5
         },
@@ -687,11 +677,6 @@
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:chests/trial_chambers/intersection_barrel",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/village/village_savanna_house",
           "weight": 5
         },
         {
@@ -771,11 +756,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "trek:overworld/medium/strange_house/basement_redstone",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "trek:overworld/medium/tour_deserts",
           "weight": 5
         },
@@ -786,17 +766,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "trek:overworld/medium/wandering_traders/3",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "trek:overworld/rare/island_village_1/top_barrels",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/wooden_manor/default_loot",
           "weight": 5
         },
         {

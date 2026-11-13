@@ -501,11 +501,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "artifacts:chests/campsite_barrel",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "artifacts:chests/campsite_chest",
           "weight": 30
         },
@@ -538,21 +533,6 @@
           "type": "minecraft:loot_table",
           "value": "das:hard_chest",
           "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/secret_room",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/stage_4",
-          "weight": 20
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/stage_5",
-          "weight": 20
         },
         {
           "type": "minecraft:loot_table",
@@ -611,11 +591,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "minecraft:chests/desert_pyramid",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/illager_mansion/evoker_chest",
           "weight": 6
         },
@@ -631,11 +606,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "minecraft:chests/simple_dungeon",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/stronghold_corridor",
           "weight": 6
         },
@@ -643,16 +613,6 @@
           "type": "minecraft:loot_table",
           "value": "minecraft:chests/trial_chambers/reward_ominous_rare",
           "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/woodland_mansion",
-          "weight": 6
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "mss:arena",
-          "weight": 20
         },
         {
           "type": "minecraft:loot_table",
@@ -672,11 +632,6 @@
         {
           "type": "minecraft:loot_table",
           "value": "nova_structures:chests/desert_ruins/desert_ruin_lesser_treasure",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/desert_ruins/desert_ruin_main_temple",
           "weight": 5
         },
         {
@@ -736,11 +691,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/abandoned_castle_pillager",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "trek:overworld/rare/castle",
           "weight": 8
         },
@@ -757,16 +707,6 @@
         {
           "type": "minecraft:loot_table",
           "value": "trek:overworld/rare/pyramide_of_anubis/top",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/villager_castle/bedroom",
-          "weight": 8
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "trek:overworld/rare/villager_island/good_loot",
           "weight": 8
         },
         {
