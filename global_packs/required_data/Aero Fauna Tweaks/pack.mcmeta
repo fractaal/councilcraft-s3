@@ -1,6 +1,6 @@
 {
 	"pack": {
 		"pack_format": 48,
-		"description": "Keeps Naturalist from removing farm animals or adding ant hills: only its fliers are used in this pack."
+		"description": "Keeps Naturalist from removing farm animals or adding ant hills (only its fliers are used in this pack), and stops Ecologics squirrels spawning, since they plant saplings around bases."
 	}
 }
