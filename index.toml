@@ -7373,6 +7373,26 @@ file = "global_packs/required_data/Aero Fauna Tweaks/pack.mcmeta"
 hash = "113d5b2e14672cc42c7c73e00813639ed82213187e889a74432f4d73fe0b6f47"
 
 [[files]]
+file = "global_packs/required_data/Aero Hat Trader/data/aero_hat_trader/function/check.mcfunction"
+hash = "b23a9a89fb2f856226d43d963c07e72c6793bd779281ace19ebc3ee13123c7b3"
+
+[[files]]
+file = "global_packs/required_data/Aero Hat Trader/data/aero_hat_trader/function/load.mcfunction"
+hash = "1f3e86ee4bdc70a6086254d23a6d0ccced3f82f9b0aad08a75b8b5d45960f069"
+
+[[files]]
+file = "global_packs/required_data/Aero Hat Trader/data/aero_hat_trader/function/restock.mcfunction"
+hash = "bc1b21d0ecf99dcfda3ccb88ef12326480bc8606cdf655f8d0fe77eed6c8c733"
+
+[[files]]
+file = "global_packs/required_data/Aero Hat Trader/data/minecraft/tags/function/load.json"
+hash = "2e4661a7be505668f8ec7d0e2f4302378a0b031455c5b28249c270cd2f7546d2"
+
+[[files]]
+file = "global_packs/required_data/Aero Hat Trader/pack.mcmeta"
+hash = "dbcb67b19ea021b6e1afd04ac0c2c71759f5b053a873abe15e2042986907bbc0"
+
+[[files]]
 file = "global_packs/required_data/Aero Island Structures/data/aero_islands/lithostitched/worldgen_modifier/fixed_height_on_islands.json"
 hash = "5a9aa040106d78469d4999dc122f90efdbe3c09d03444a24b66cbe9b510342a1"
 

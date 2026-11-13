@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": "Hat Bag Trader: resets its trade limits once per in-game day (asked for by Tripledent_Gum)"
+  }
+}
