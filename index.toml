@@ -9271,7 +9271,7 @@ hash = "e00a67922942660d77c213379b5128a46c5abc894178b0be04006d325ff5f6b3"
 
 [[files]]
 file = "kubejs/config/web_server.json"
-hash = "8c2e7fb3b60f910357deff90c607fa186681f7023ef715a5c25424a5baa415ce"
+hash = "e86c6860817ca8fc6e6d65bfe502abe057cbc42d152677137bc94009cc9108eb"
 
 [[files]]
 file = "kubejs/server_scripts/homestead_compat.js"
