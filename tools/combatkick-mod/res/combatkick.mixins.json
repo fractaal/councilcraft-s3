@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "combatkick.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["KeyboardInputMixin"],
+  "injectors": {"defaultRequire": 1}
+}

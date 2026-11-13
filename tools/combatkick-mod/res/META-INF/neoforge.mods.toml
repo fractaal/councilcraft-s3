@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="combatkick"
+version="1.0.0"
+displayName="Combat Kick"
+description="Client-side camera kick and sway on Better Combat hits; keeps you moving through Heavier Weapons hitstop."
+displayTest="IGNORE_ALL_VERSION"
+[[mixins]]
+config="combatkick.mixins.json"
+[[dependencies.combatkick]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.combatkick]]
+modId="heavier_weapons"
+type="optional"
+versionRange="[1.4,)"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.combatkick]]
+modId="bettercombat"
+type="required"
+versionRange="[2.0,)"
+ordering="AFTER"
+side="CLIENT"

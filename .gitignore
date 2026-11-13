@@ -2,3 +2,5 @@ skyislands-1.0.0.jar
 build/
 !mods/skyislands-1.0.0.jar
 .packwiz-cache/
+combatkick-1.0.0.jar
+!mods/combatkick-1.0.0.jar

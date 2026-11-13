@@ -1,0 +1,13 @@
+name = "Better Combat - Heavier Weapons"
+filename = "heavier_weapons-1.21.1-NeoForge-1.4.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "eb0c81e68201f9adf09be0432d562f1eb7f1fc6c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9334123
+project-id = 1487841

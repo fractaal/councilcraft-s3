@@ -1,0 +1,83 @@
+#Enable blood particles when entities take damage
+enabled = true
+#Replicate particle effects (sprint, fall, enchant trails, etc.) for other players you see on the server. Disable to render effects only for yourself — saves a small amount of work per tick on crowded servers.
+otherPlayersParticles = true
+#Particle count multiplier (1.0 = original count from definition, 2.0 = double, 0.5 = half, 10.0 = ten times)
+# Default: 1.0
+# Range: 0.0 ~ 10.0
+intensity = 3.0
+#Maximum distance in blocks at which blood particles are rendered around the local player
+# Default: 64
+# Range: 0 ~ 256
+viewRadius = 64
+#Scale particle count with attack charge (cooldown) and critical boost. Only applies to attacks by the local player.
+respectHitContext = true
+#Extra particle multiplier applied on critical hits (vanilla MC criterion: jumping, falling, fully charged, not sprinting). Only used if respectHitContext is enabled.
+# Default: 2.0
+# Range: 1.0 ~ 5.0
+criticalBoost = 4.0
+#Show a red blood vignette overlay around screen edges when player HP drops. Alpha grows as HP gets lower.
+bloodOverlay = true
+#HP percentage (1-99) at which the overlay starts becoming visible. Above this %, alpha is 0; at 0% HP, alpha is max. Default 50.
+# Default: 50
+# Range: 1 ~ 99
+bloodOverlayThreshold = 50
+#Which blood overlay texture to use: V1 (subtle) or V2 (bloodier).
+#Allowed Values: V1, V2
+bloodOverlayVariant = "V2"
+#Emit blood particles around the player when HP is low. Pulses below the threshold and becomes continuous below half-threshold.
+lowHpBloodParticles = true
+#HP percentage (1-99) at which the low-HP blood pulses start appearing. Continuous emission begins at half this value. Default 60.
+# Default: 60
+# Range: 1 ~ 99
+lowHpBloodThreshold = 60
+#Particle count multiplier for low-HP blood (1.0 = baseline, 2.0 = double, 0.5 = half).
+# Default: 1.0
+# Range: 0.0 ~ 10.0
+lowHpBloodIntensity = 1.0
+#Emit campfire smoke particles behind the player while sprinting on the ground. Also applies when riding a fast-moving mount (horse galloping).
+sprintParticles = true
+#Ticks of continuous sprinting before particles start appearing (20 ticks = 1 second). 0 = appear immediately.
+# Default: 20
+# Range: 0 ~ 200
+sprintWarmupTicks = 20
+#Emit a faint white-gray dust trail behind the player while falling through the air.
+fallingTrailParticles = true
+#Emit a burst of smoke + dust + stone particles when landing on the ground after a fall (>3 blocks).
+landingParticles = true
+#Emit water splash + foam + dolphin sound when entering water after a fall (>1.5 blocks).
+waterEntryParticles = true
+#Emit crit + wooden block particles forward (in look direction) when blocking an attack with a shield.
+shieldBlockParticles = true
+#Emit a fire+smoke trail behind Flame-enchanted arrows and a magic enchant trail behind Power-enchanted ones. Particle count scales with Power level.
+enchantedArrowParticles = true
+#Emit a flame burst on melee hits when the local player's mainhand item has the Fire Aspect enchantment.
+fireAspectParticles = true
+#Emit 2-5 feather particles when landing after a fall (>3 blocks) with Feather Falling boots.
+featherFallingParticles = true
+#Emit snowflake particles on water that gets frozen by Frost Walker boots.
+frostWalkerParticles = true
+#Emit soul particles when walking on soul sand / soul soil with Soul Speed boots.
+soulSpeedParticles = true
+#Particle count multiplier for Soul Speed (1.0 = baseline, 2.0 = double, 0.5 = half).
+# Default: 1.0
+# Range: 0.0 ~ 5.0
+soulSpeedIntensity = 1.0
+#Emit bubble + fishing + dolphin particles when moving underwater with Depth Strider boots.
+depthStriderParticles = true
+#Particle count multiplier for Depth Strider (1.0 = baseline, 2.0 = double, 0.5 = half).
+# Default: 1.0
+# Range: 0.0 ~ 5.0
+depthStriderIntensity = 1.0
+#Emit a portal + dragon breath + greenish-blue spark trail behind thrown ender pearls, and a teleport burst on the player at impact.
+enderPearlParticles = true
+#Continuously emit flame and smoke around any burning entity (mob or player). Skips fire-immune mobs (blaze, magma cube).
+onFireParticles = true
+#Particle frequency multiplier for on-fire continuous loop (1.0 = baseline, 2.0 = double, 0.5 = half).
+# Default: 1.0
+# Range: 0.0 ~ 5.0
+onFireIntensity = 1.0
+#Emit a growing impact wave chain when hitting a mob with a Knockback-enchanted melee weapon (sword, axe). Count scales with enchant level.
+knockbackParticles = true
+#Emit a wave at the bow tip when shooting a Punch-enchanted bow, plus a wave chain on arrow impact. Count scales with enchant level.
+punchParticles = true

@@ -1117,6 +1117,10 @@ file = "config/bits_n_bobs-server.toml"
 hash = "2db77d9be4160e314441c7bfa6d12458fbcf609100841c1da4472024c79cd5b0"
 
 [[files]]
+file = "config/bloodyparticles-client.toml"
+hash = "ae301422a54247621ae9ab8973f1d9a119251980bbf58a647dc7c84cf68ef3f9"
+
+[[files]]
 file = "config/bonsaitrees4-client.toml"
 hash = "9b0e6f3655eb5a4ad7339947f64e92a99f3260d5b935ef96f30b9b558459daa3"
 
@@ -3649,6 +3653,10 @@ file = "config/colorwheel-client.toml"
 hash = "a7d87ab03d61fecad6d297bcad9976c9e48765ca67f90b3c388419c2a70b452e"
 
 [[files]]
+file = "config/combatkick-client.toml"
+hash = "e72a19d4bdb7e4f3eff13a46091c74d58a30b82524abf6cf59ea3da61b12265f"
+
+[[files]]
 file = "config/comforts-common.toml"
 hash = "1f21c10bfce9cd25aea641046a79df88867f68ba8ba3838a5e1662521f9f06a2"
 
@@ -5539,6 +5547,10 @@ hash = "e4f58ced20ccf200592141f4afcad54a0d33faa6b672a90e58781c1a8183a036"
 [[files]]
 file = "config/harvest_with_ease-common.toml"
 hash = "6038448f3571796bca38e824d8aa7e90e569053764cbbe16723705966ffb594b"
+
+[[files]]
+file = "config/heavier_weapons.properties"
+hash = "255d07e7d42d5a6e3b851300fcbb72f5df5fff2730f84b869ef21be36e531a5b"
 
 [[files]]
 file = "config/hellspawn-common.toml"
@@ -9536,6 +9548,11 @@ hash = "eb0c1e82baced061d551f83b4be1c9996029d8b6571eca5390bc0eca96b9f7a6"
 metafile = true
 
 [[files]]
+file = "mods/better-combat-heavier-weapons.pw.toml"
+hash = "41d46ebf29632ae9f94cf126ca2985d770adb04867462190306be0b41dfef381"
+metafile = true
+
+[[files]]
 file = "mods/better-combat.pw.toml"
 hash = "438170e7e704a1b8ed67bf0521dc5d77cdeeaabf6f729dba9f8dfdad75330acf"
 metafile = true
@@ -9573,6 +9590,11 @@ metafile = true
 [[files]]
 file = "mods/block-runner.pw.toml"
 hash = "05884675211a3b35feddbdef24e8da4d970954a21e5e5586a9bf5a97a1103033"
+metafile = true
+
+[[files]]
+file = "mods/bloodyparticlesmod.pw.toml"
+hash = "3978a2359d74ec306ffecd87764c0632ab680951ccf78550380f38baca68bc62"
 metafile = true
 
 [[files]]
@@ -9804,6 +9826,10 @@ metafile = true
 file = "mods/colorwheel.pw.toml"
 hash = "6867922a8ccface85edc8df2268e4996c6ab6867b9da34258b6bf6efc0bc2efa"
 metafile = true
+
+[[files]]
+file = "mods/combatkick-1.0.0.jar"
+hash = "324e7a45c9fd929873b59bc23c10f14359352d613f818878a370fb04f4c305fb"
 
 [[files]]
 file = "mods/comforts.pw.toml"

@@ -1,6 +1,6 @@
 # CouncilCraft S3: packwiz repo
 
-CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.3`.
+CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.4`.
 
 It holds no mod jars except our own. Every other mod, resource pack and shader is a small `.pw.toml` file that pins an exact version and hash and says where to download it (398 from Modrinth, 119 from CurseForge). Configs, KubeJS scripts, quests and datapacks are real files in the repo.
 
@@ -10,11 +10,13 @@ It holds no mod jars except our own. Every other mod, resource pack and shader i
 |---|---|
 | `pack.toml`, `index.toml` | The packwiz pack and its file index. Rebuilt by `packwiz refresh`. |
 | `mods/*.pw.toml` | One file per mod. `side` says where it installs: `both`, or `client` for mods the live server doesn't run (Sodium, Iris and so on). |
-| `mods/skyislands-1.0.0.jar` | Our own terrain mod. The only jar in the repo. |
+| `mods/skyislands-1.0.0.jar` | Our own terrain mod. |
+| `mods/combatkick-1.0.0.jar` | Our own client-side combat feel mod (see 1.5.1+sky.4). |
 | `resourcepacks/`, `shaderpacks/`, `datapacks/` | Metadata for packs hosted on Modrinth, plus the few that exist nowhere else as plain files. |
 | `config/`, `kubejs/`, `scripts/`, `defaultconfigs/` | Pack configuration and quests (from v1.5). `config/fml.toml` is left out on purpose, see "Server notes". |
 | `global_packs/` | Datapacks and resource packs loaded by the Global Packs mod (see below). |
 | `tools/skyislands-mod/` | Source for our terrain mod and a `build.sh`. |
+| `tools/combatkick-mod/` | Source for Combat Kick and a `build.sh`, which compiles against a Prism Launcher NeoForge 21.1.262 install. |
 | `tools/worldgen/` | `settings-archipelago.json` (the island settings in use), the older `settings-lakes.json` and `settings-islands.json`, and `gen_java.py`, which turns settings into the datapack's noise settings. |
 | `tools/worldgen-lab/` | A test-server mod with a web viewer for tuning the terrain, plus benchmarks (`/api/tile`, `/api/fullgen`). Run it with `run-lab.sh` on a copy of a server folder, never on the live one. |
 | `tools/tests/` | Scripts used to check generated worlds (structure placement, terrain comparison, water). |
@@ -68,6 +70,19 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - `ghosts` and `e4mc` are marked `client`: the live server doesn't run them today. Change their `side` if that should change.
 - Distant terrain comes from Voxy, not Distant Horizons. Voxy is Fabric-only, so clients run the original Voxy jar (0.2.16-beta, built for 1.21.11) through **Roxy**, a NeoForge compatibility layer that its author has verified with Forgified Fabric API 0.116.14. **Voxy Server Side** (`side = "both"`) lets the server send distant terrain and generate missing terrain for it. Its server config is `config/vss-server-config.yaml`; it has no reload command, so changes need a restart. Its network channels are optional, so players without Voxy can still join.
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
+- **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
+
+## What changed in 1.5.1+sky.4 (2026-11-13)
+Combat feel, tuned by Ben in singleplayer. Measured over 90 s of fighting with Java Flight Recorder, the three mods below plus Physics Mod took about 2% of the render thread, less than Better Combat itself.
+
+- **Better Combat – Heavier Weapons** (`both`): hitstop. On a hit the swing animation and the struck mob freeze for a few ticks, the mob's knockback is held until the freeze ends, and the camera jitters. Lengths per weapon category in `config/heavier_weapons.properties`, about 1.5 times the mod's defaults (sword 4 ticks, claymore 9, hammer and greathammer 10, crits +4), plus Simply Swords' greataxe, greathammer, warglaive and chakram, which the mod doesn't list. Its sound is on, camera shake 1.5×, mob shake 3×.
+- **BloodyParticles!** (`client`): per-mob blood on hit. 3× particles, 4× on crits, the bloodier low-health overlay.
+- **Combat Kick** (ours, `client`, source in `tools/combatkick-mod/`):
+  - Each Better Combat hit kicks the camera in the direction of the swing (read from the attack animation's name), and a damped spring sways it back. Slower weapons, combo finishers, crits and multi-target hits kick harder, and kicks stack to a cap. It moves only the view, never your aim.
+  - Heavier Weapons zeroes WASD input during hitstop, which also cancels sprinting. Combat Kick puts the input back, so you keep moving and sprinting through the freeze.
+  - Tuned in `config/combatkick-client.toml` (shipped at `strength = 0.5`); NeoForge reloads it while the game runs.
+- **KubeJS web server off** (`kubejs/config/web_server.json`): its accept loop kept a whole CPU core busy on Ben's client.
+- Physics Mod ragdolls were tried alongside and are Ben's own client addition, not part of the pack.
 
 ## What changed in 1.5.1+sky.3 (2026-11-12)
 All of it is in the terrain mod and the Aero Sky Islands datapack, and it needs a new world.
