@@ -10,8 +10,8 @@ import skyislands.GrappleLanding;
 
 /**
  * The Grappling Hook mod's movement update, as the server applies it: once it has moved the player to the position the
- * client sent, note that height and tick for the landing cap (skyislands.GrappleLanding). Optional: without the hook
- * mod this mixin doesn't apply and nothing else changes.
+ * client sent, note that height and tick for the landing cap (skyislands.GrappleLanding), and end any Forgiving Void
+ * fall in progress. Optional: without the hook mod this mixin doesn't apply and nothing else changes.
  */
 @Pseudo
 @Mixin(targets = "com.yyon.grapplinghook.network.serverbound.PlayerMovementC2SPayload")
@@ -22,6 +22,7 @@ abstract class GrapplePlayerMovementMixin {
         if (player instanceof GrappleLanding.Tracked t) {
             t.skyislands$grappleUpdate(player.server.getTickCount(), player.getY());
             GrappleLanding.logFirstUpdate();
+            GrappleLanding.endVoidFall(player);
         }
     }
 }

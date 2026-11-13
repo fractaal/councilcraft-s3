@@ -46,6 +46,25 @@ public final class GrappleLanding {
                 String.format("%.3f", vy), String.format("%.3f", dy));
     }
 
+    /**
+     * Forgiving Void (net.blay09.mods.forgivingvoid) marks a player it has sent back up from the void, and replaces the
+     * damage of their next landing with its own (on this server, 100% of max health), however slowly they touch down.
+     * It already lets an elytra flight end that state; this does the same for a grappling hook taking over, so a player
+     * who hooks onto an island after a void fall takes ordinary, capped fall damage instead. The flag lives where Balm
+     * keeps Forgiving Void's per-player data on NeoForge.
+     */
+    public static void endVoidFall(net.minecraft.server.level.ServerPlayer player) {
+        // getPersistentData comes from NeoForge's patch to Entity, which this mod is compiled without.
+        net.minecraft.nbt.CompoundTag balm = ((net.neoforged.neoforge.common.extensions.IEntityExtension) (Object) player)
+                .getPersistentData().getCompound("PlayerPersisted").getCompound("BalmData");
+        if (!balm.getBoolean("ForgivingVoidIsFalling")) return;
+        balm.putBoolean("ForgivingVoidIsFalling", false);
+        // Forgiving Void also switches off the movement checks for the fall; it turns them back on when the fall ends.
+        player.hasChangedDimension();
+        com.mojang.logging.LogUtils.getLogger().info("[skyislands] Grapple ended {}'s Forgiving Void fall at y {}",
+                player.getScoreboardName(), String.format("%.1f", player.getY()));
+    }
+
     /** Added to ServerPlayer by mixin.ServerPlayerGrappleMixin. */
     public interface Tracked {
         void skyislands$grappleUpdate(int tick, double y);
