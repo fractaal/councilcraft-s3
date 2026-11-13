@@ -71,19 +71,29 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:lapis_block",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:redstone_block",
-          "weight": 3,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 2
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:redstone_block",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 4
               }
             }
           ]
@@ -388,12 +398,6 @@
           "weight": 3
         },
         {
-          "type": "minecraft:tag",
-          "expand": true,
-          "name": "minecraft:creeper_drop_music_discs",
-          "weight": 3
-        },
-        {
           "type": "minecraft:item",
           "name": "create:precision_mechanism",
           "weight": 4
@@ -567,6 +571,36 @@
           "type": "minecraft:item",
           "name": "sophisticatedbackpacks:iron_backpack",
           "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 6,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:quartz",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 16
+              }
+            }
+          ]
         }
       ]
     },
@@ -602,11 +636,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "bmairballoons:chests/payload",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "friendsandfoes:barrels/citadel",
           "weight": 60
         },
@@ -617,22 +646,12 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "medieval_buildings:chests/medium_shack_house",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/igloo_chest",
           "weight": 5
         },
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:chests/illager_mansion/generic",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:chests/illager_mansion/library_chest",
           "weight": 5
         },
         {
@@ -657,11 +676,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "minecraft:chests/shipwreck_supply",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "minecraft:chests/stronghold_crossing",
           "weight": 5
         },
@@ -682,22 +696,12 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "mss:houses_uncommon",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "nova_structures:chests/badland_miner_outpost",
           "weight": 4
         },
         {
           "type": "minecraft:loot_table",
           "value": "nova_structures:chests/badland_miner_outpost_towers",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/creeping_crypt/crypt_hallway",
           "weight": 4
         },
         {
@@ -739,36 +743,6 @@
           "type": "minecraft:loot_table",
           "value": "nova_structures:chests/stray_fort_tresure",
           "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/witch_villa/bedroom",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/witch_villa/music_room",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:chests/witch_villa/potion_brewing",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "nova_structures:tavern_quest",
-          "weight": 4
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "shellbound_for_airship:chests/ship6_lower",
-          "weight": 60
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "supplementaries:loot/galleon/chest",
-          "weight": 60
         },
         {
           "type": "minecraft:loot_table",
@@ -829,11 +803,6 @@
           "type": "minecraft:loot_table",
           "value": "trek:overworld/very_rare/floating_farm_large/default_loot",
           "weight": 5
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "veggiesdelight:chests/vd_wagon_snowy",
-          "weight": 60
         }
       ]
     }

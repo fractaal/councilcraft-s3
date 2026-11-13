@@ -7446,7 +7446,7 @@ hash = "45c3c7261afdac2239e22cf1f32e37dd9869213a69dee7f223b671bf62c1cb89"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/rare.json"
-hash = "01fe66381efef8f24d8e338ef52691abb8da36d28be5ba5a466e26a503ce2afb"
+hash = "9f80ef5c06df967af18b7050a9814879fe5605dcbeeee9d9c7ccdb0b76372898"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/rare/the_end.json"
