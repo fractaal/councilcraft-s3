@@ -619,11 +619,6 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "dungeoncrawl:chests/library",
-          "weight": 30
-        },
-        {
-          "type": "minecraft:loot_table",
           "value": "dungeoncrawl:chests/supply",
           "weight": 30
         },
