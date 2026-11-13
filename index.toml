@@ -4886,7 +4886,7 @@ hash = "9b9525f6baadc8312819ae21ad8688b20fb887e0e2bec4bceece4cbb296196b8"
 
 [[files]]
 file = "config/forgivingvoid-common.toml"
-hash = "34b9ad5bdb253742bfe1be162787ffee603656d7d78f214a0603a92ae94cc7e1"
+hash = "0323bcd3e00788e0cf07e379bbdda34c4563c44bcb5ed7449ec1d8e482f6f3fd"
 
 [[files]]
 file = "config/framedblocks-client.toml"

@@ -1,5 +1,5 @@
 #Set to true to make Forgiving Void return the player to the sky above their last grounded position instead of their current position. Prevents players from using Forgiving Void to fly across larger distances.
-returnToLastGrounded = true
+returnToLastGrounded = false
 #Set to true if players are rubber-banding while falling through the void. If you're hosting a public server, you should only do this if you have proper anti-cheat installed.
 disableVanillaAntiCheatWhileFalling = true
 #The height from which the player will be falling after falling through the void.
