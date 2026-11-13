@@ -9,6 +9,9 @@ description="Client-side camera kick and sway on Better Combat hits; keeps you m
 displayTest="IGNORE_ALL_VERSION"
 [[mixins]]
 config="combatkick.mixins.json"
+# Optional hooks into Physics Mod ragdolls; skipped when Physics Mod is absent.
+[[mixins]]
+config="combatkick.physicsmod.mixins.json"
 [[dependencies.combatkick]]
 modId="neoforge"
 type="required"

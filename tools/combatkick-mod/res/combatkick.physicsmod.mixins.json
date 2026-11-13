@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "combatkick.mixin.physicsmod",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["PhysicsModMixin", "BreakableRagdollMixin"],
+  "injectors": {"defaultRequire": 0}
+}

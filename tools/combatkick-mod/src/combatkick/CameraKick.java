@@ -55,19 +55,19 @@ final class CameraKick {
     }
 
     /** Slower weapons hit heavier: a 1.6-speed sword is 1.0, a 0.8-speed hammer 2.0, a 2.4-speed dagger about 0.67. */
-    private static double weight(LocalPlayer player) {
+    static double weight(LocalPlayer player) {
         double speed = player.getAttributeValue(Attributes.ATTACK_SPEED);
         return speed <= 0 ? 1.0 : Math.clamp(1.6 / speed, 0.5, 2.5);
     }
 
     /** Vanilla's critical-hit test, minus the sprint check that Better Combat doesn't apply. */
-    private static boolean isCrit(LocalPlayer p) {
+    static boolean isCrit(LocalPlayer p) {
         return p.fallDistance > 0 && !p.onGround() && !p.onClimbable() && !p.isInWater()
                 && !p.hasEffect(MobEffects.BLINDNESS) && !p.isPassenger();
     }
 
     /** How a swing animation moves the camera, per unit of kick. */
-    private record Shape(double yaw, double pitch, double roll, double fov) {
+    record Shape(double yaw, double pitch, double roll, double fov) {
         static Shape of(String animation, boolean offHand, boolean follow) {
             String a = animation == null ? "" : animation.substring(animation.indexOf(':') + 1);
             // "_right" animations start on the right and sweep left; "_left" ones sweep right.

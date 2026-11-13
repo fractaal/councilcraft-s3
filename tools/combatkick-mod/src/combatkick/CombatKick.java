@@ -2,6 +2,7 @@ package combatkick;
 
 import net.bettercombat.api.client.BetterCombatClientEvents;
 import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
@@ -15,11 +16,14 @@ import net.neoforged.neoforge.common.NeoForge;
 public final class CombatKick {
     public static final String MODID = "combatkick";
 
-    public CombatKick(ModContainer container) {
+    public CombatKick(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.CLIENT, KickConfig.SPEC);
+        modBus.addListener(KillIcons::registerLayer);
+        NeoForge.EVENT_BUS.addListener(KillIcons::onClientTick);
         NeoForge.EVENT_BUS.addListener(CameraKick::onCameraAngles);
         NeoForge.EVENT_BUS.addListener(CameraKick::onFov);
         NeoForge.EVENT_BUS.addListener(KeepMovement::onMovementInput);
         BetterCombatClientEvents.ATTACK_HIT.register(CameraKick::onAttackHit);
+        BetterCombatClientEvents.ATTACK_HIT.register(RagdollFling::onAttackHit);
     }
 }

@@ -72,6 +72,14 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
 - **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
 
+## What changed in 1.5.1+sky.5 (2026-11-13)
+Combat Kick (`client`, source in `tools/combatkick-mod/`) now rewards kills, tuned by Ben in singleplayer. Settings are in `config/combatkick-client.toml`; NeoForge reloads it while the game runs. Nothing changes on the server.
+
+- **Kill insignia** above the hotbar when you kill a hostile mob: a diamond with the mob's portrait crossed out, and the other mob types from the streak orbiting it. It grows more elaborate and hotter in colour (white, yellow, orange, red) as the streak builds. Each kill fires a lens-flare starburst and a diamond pulse, both bigger with the streak (capped at x40), and an XP ding that rises in pitch, with an echo.
+- **Streak counter** (`xN`) that jumps in size on each kill and eases back, and a running count of the hearts of damage you've dealt under it. Damage counts only your own hits: each drop in a mob's health is matched to the hits the server reported just before it.
+- **Streak window**: 5 s after one kill, growing to 15 s at x20. The insignia stays up for the whole window and fades in its last second; then a combat report fades in, e.g. `x47 KILL STREAK | TOTAL DAMAGE 147.5` and a heart. The timers stop while singleplayer is paused.
+- **Ragdoll hits**, only with Physics Mod ragdolls installed (not part of the pack): the killing swing drives the body part it struck, the way the swing was going, and the rest of the body follows through its joints. Without Physics Mod these hooks are skipped.
+
 ## What changed in 1.5.1+sky.4 (2026-11-13)
 Combat feel, tuned by Ben in singleplayer. Measured over 90 s of fighting with Java Flight Recorder, the three mods below plus Physics Mod took about 2% of the render thread, less than Better Combat itself.
 

@@ -3654,7 +3654,7 @@ hash = "a7d87ab03d61fecad6d297bcad9976c9e48765ca67f90b3c388419c2a70b452e"
 
 [[files]]
 file = "config/combatkick-client.toml"
-hash = "e72a19d4bdb7e4f3eff13a46091c74d58a30b82524abf6cf59ea3da61b12265f"
+hash = "68521c510d3b6267f1d05d0de28bce5e84dfb51bf9259882067037acd5850463"
 
 [[files]]
 file = "config/comforts-common.toml"
@@ -9833,7 +9833,7 @@ metafile = true
 
 [[files]]
 file = "mods/combatkick-1.0.0.jar"
-hash = "324e7a45c9fd929873b59bc23c10f14359352d613f818878a370fb04f4c305fb"
+hash = "9b58af2ea3652b584f69ad4f843181b5aaaffb34cd2df515f86ab8ec33d95356"
 
 [[files]]
 file = "mods/comforts.pw.toml"

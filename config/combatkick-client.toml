@@ -32,3 +32,40 @@ fovPunch = 0.03
 followSwing = true
 #Keep walking and sprinting during Heavier Weapons hitstop, which otherwise stops your movement input
 keepMovementDuringHitstop = true
+#Show a kill insignia at the bottom centre and ding when you kill a mob
+killIcons = true
+#Only count hostile mobs as kills
+killOnlyHostile = true
+#Volume of the kill ding (0 mutes it)
+# Default: 0.6
+# Range: 0.0 ~ 2.0
+killSoundVolume = 0.6
+#Size of the kill insignia
+# Default: 1.0
+# Range: 0.25 ~ 4.0
+killIconScale = 1.0
+#Height of the insignia's centre above the bottom of the screen, in GUI pixels
+# Default: 140.0
+# Range: 0.0 ~ 400.0
+killIconHeight = 140.0
+#Follow the ding with fading repeats, like an echo
+killEcho = true
+#With Physics Mod ragdolls, drive the body part your killing swing struck the way the swing was going
+ragdollFling = true
+#Speed given to the struck body part, in blocks per second, for a sword-weight kill; heavier weapons hit harder
+# Default: 8.0
+# Range: 0.0 ~ 40.0
+ragdollFlingSpeed = 8.0
+#After a first kill, another within this many seconds continues the streak (the xN counter).
+#The insignia stays up for the same time, fading over the last second, and the combat report follows
+# Default: 5.0
+# Range: 1.0 ~ 300.0
+killStreakMinSeconds = 5.0
+#The streak window grows steadily with each kill up to this many seconds
+# Default: 15.0
+# Range: 1.0 ~ 300.0
+killStreakMaxSeconds = 15.0
+#Streak count at which the window reaches killStreakMaxSeconds
+# Default: 20
+# Range: 2 ~ 1000
+killStreakMaxAt = 20
