@@ -9286,6 +9286,10 @@ file = "kubejs/config/web_server.json"
 hash = "e86c6860817ca8fc6e6d65bfe502abe057cbc42d152677137bc94009cc9108eb"
 
 [[files]]
+file = "kubejs/server_scripts/aero_recipes.js"
+hash = "8467cfaf112b46076d7a70b0f9794055a4290127a85a6b15f736f0bc87115b3c"
+
+[[files]]
 file = "kubejs/server_scripts/homestead_compat.js"
 hash = "d567c557bd11b760ed4ba6f3569c14d5af65c3e859898757de883b1d363a9258"
 
