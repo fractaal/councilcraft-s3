@@ -1,0 +1,13 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "memtweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "DirectoryListerMixin",
+    "SimpleBakedModelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

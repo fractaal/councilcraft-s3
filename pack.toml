@@ -1,12 +1,12 @@
 name = "CouncilCraft S3"
 author = "fractal"
-version = "1.5.1+sky.6"
+version = "1.5.1+sky.7"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "3534252d1ab70f999dde7aa0b727e305397a4277fc8cc82be2f83a9218a8332b"
+hash = "760a491a39ac04cd983691d0c92d48cd797e39cba58f917e5f17e48d45f8717e"
 
 [versions]
 minecraft = "1.21.1"

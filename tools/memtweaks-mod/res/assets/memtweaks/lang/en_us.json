@@ -1,0 +1,10 @@
+{
+  "memtweaks.configuration.voxySectionCacheSize": "Voxy Section Cache Size",
+  "memtweaks.configuration.voxySectionCacheSize.tooltip": "Recently used world sections Voxy keeps in memory, about 262 KB each. Rejoin the world after changing it.",
+  "memtweaks.configuration.shareNestedJars": "Share Bundled Jar Copies",
+  "memtweaks.configuration.shareNestedJars.tooltip": "Keeps one in-memory copy of each jar bundled inside another mod's jar instead of up to three. Applies at the next launch.",
+  "memtweaks.configuration.entityTexturesOutOfBlockAtlas": "Entity Textures Out of Block Atlas",
+  "memtweaks.configuration.entityTexturesOutOfBlockAtlas.tooltip": "Stops one mod's atlas file from pulling every mod's entity textures into the block atlas, which doubles its size. Turn off if something shows the missing texture.",
+  "memtweaks.configuration.shareIdenticalQuads": "Share Identical Model Faces",
+  "memtweaks.configuration.shareIdenticalQuads.tooltip": "Keeps one copy of each distinct block model face instead of one per model. Turn off if blocks render with wrong or missing faces."
+}

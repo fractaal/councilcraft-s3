@@ -1,6 +1,6 @@
 # CouncilCraft S3: packwiz repo
 
-CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.4`.
+CouncilCraft season 3 runs BM Exosphere 2 Aero. This is the pack definition, on Minecraft 1.21.1 with NeoForge 21.1.262. It starts from the "BM - Exosphere 2 Aero (Clean) v1.5" build that a friend made, with their 2026-11-10 combat update on top, and adds our sky-island terrain, extra biome mods and a set of cozy mods (farming, cooking, decoration). Pack version `1.5.1+sky.7`.
 
 It holds no mod jars except our own. Every other mod, resource pack and shader is a small `.pw.toml` file that pins an exact version and hash and says where to download it (398 from Modrinth, 119 from CurseForge). Configs, KubeJS scripts, quests and datapacks are real files in the repo.
 
@@ -12,11 +12,13 @@ It holds no mod jars except our own. Every other mod, resource pack and shader i
 | `mods/*.pw.toml` | One file per mod. `side` says where it installs: `both`, or `client` for mods the live server doesn't run (Sodium, Iris and so on). |
 | `mods/skyislands-1.0.0.jar` | Our own terrain mod. |
 | `mods/combatkick-1.0.0.jar` | Our own client-side combat feel mod (see 1.5.1+sky.4). |
+| `mods/memtweaks-1.0.0.jar` | Our own client-side memory mod (see 1.5.1+sky.7). |
 | `resourcepacks/`, `shaderpacks/`, `datapacks/` | Metadata for packs hosted on Modrinth, plus the few that exist nowhere else as plain files. |
 | `config/`, `kubejs/`, `scripts/`, `defaultconfigs/` | Pack configuration and quests (from v1.5). `config/fml.toml` is left out on purpose, see "Server notes". |
 | `global_packs/` | Datapacks and resource packs loaded by the Global Packs mod (see below). |
 | `tools/skyislands-mod/` | Source for our terrain mod and a `build.sh`. |
 | `tools/combatkick-mod/` | Source for Combat Kick and a `build.sh`, which compiles against a Prism Launcher NeoForge 21.1.262 install. |
+| `tools/memtweaks-mod/` | Source for Memory Tweaks and a `build.sh`, built the same way as Combat Kick. |
 | `tools/worldgen/` | `settings-archipelago.json` (the island settings in use), the older `settings-lakes.json` and `settings-islands.json`, and `gen_java.py`, which turns settings into the datapack's noise settings. |
 | `tools/worldgen-lab/` | A test-server mod with a web viewer for tuning the terrain, plus benchmarks (`/api/tile`, `/api/fullgen`). Run it with `run-lab.sh` on a copy of a server folder, never on the live one. |
 | `tools/tests/` | Scripts used to check generated worlds (structure placement, terrain comparison, water). |
@@ -71,6 +73,16 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - Distant terrain comes from Voxy, not Distant Horizons. Voxy is Fabric-only, so clients run the original Voxy jar (0.2.16-beta, built for 1.21.11) through **Roxy**, a NeoForge compatibility layer that its author has verified with Forgified Fabric API 0.116.14. **Voxy Server Side** (`side = "both"`) lets the server send distant terrain and generate missing terrain for it. Its server config is `config/vss-server-config.yaml`; it has no reload command, so changes need a restart. Its network channels are optional, so players without Voxy can still join.
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
 - **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
+
+## What changed in 1.5.1+sky.7 (2026-11-14)
+Client memory and startup time. Nothing changes on the server. Measured on Ben's client from heap dumps and launch logs: about 2.4 GB less live heap (8.6 GB to 6.25 GB under ZGC; an estimated 6.7 GB to 4.8 GB under the G1 settings players get) and about 48 seconds less from launch to title screen.
+
+- **Memory Tweaks** (`client`, our own mod, source in `tools/memtweaks-mod/`). Settings are in Mods > Memory Tweaks > Config, which edits `config/memtweaks-client.toml`; the pack doesn't ship that file, so a player's own values survive pack updates. Each part logs what it did under `memtweaks` in `logs/latest.log`, and each can be turned off:
+  - **One in-memory copy of each bundled jar** (`shareNestedJars`). NeoForge opens every jar that is bundled inside another mod's jar up to three times, and the JDK reads each one fully into memory. This points the duplicates at one copy: 351 MB freed.
+  - **Voxy section cache size** (`voxySectionCacheSize`, default 1024). Voxy hard-codes 2048 recently used world sections at about 262 KB each and never shrinks the cache. 1024 saves about 270 MB; raise it if you have memory to spare.
+  - **Entity textures out of the block atlas** (`entityTexturesOutOfBlockAtlas`). The Grappling Hook mod's atlas file adds the whole `entity` texture folder to the block atlas, and a folder entry applies to every mod, so 42 of the atlas's 99 megapixels were other mods' entity textures. This limits that one entry to the Grappling Hook mod's own two textures. The atlas goes from 16384x8192 to 8192x8192, which also halves Voxy's in-memory copy of it and the video memory the atlas takes. If something that used to render shows the purple and black missing texture, turn this off and press F3+T.
+  - **Shared model faces** (`shareIdenticalQuads`). 74% of the 5.8 million baked model faces were exact copies of another, because models for different states of a block repeat the same faces. This keeps one of each: about 300 MB. If blocks render with wrong or missing faces, turn this off.
+- **MoreCulling removed.** On every resource load it asked for the baked model of every non-solid block state on the main thread: 41 seconds of each launch, and it defeated ModernFix's build-on-first-use for models and block shape caches. Without it, live heap is 1.15 GB lower. What it gave in return was extra hidden-face culling on non-solid blocks, leaves and item frames; Ben saw no frame rate difference without it.
 
 ## What changed in 1.5.1+sky.6 (2026-11-14)
 Combat Kick (`client`) and the grappling hook.

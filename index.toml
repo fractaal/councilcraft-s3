@@ -6145,10 +6145,6 @@ file = "config/moonlight-common.toml"
 hash = "be083a83e536cbc79a172ba1354d486b29e3e85a39c47c6b8fa8ddf8d85316c0"
 
 [[files]]
-file = "config/moreculling.toml"
-hash = "db63bd41fae1b92828f13b34b93215549ca167ccf44a4c09d050fe559fa203a5"
-
-[[files]]
 file = "config/moreoverlays.toml"
 hash = "939926cdd6c391f3c924ec286762e62947078f7079b5cce865455d35cab240ce"
 
@@ -11217,6 +11213,10 @@ hash = "d7ff27bf5e0c0bd5ede8303d5a41cec193f700292c78c86ad6812a5193f013d9"
 metafile = true
 
 [[files]]
+file = "mods/memtweaks-1.0.0.jar"
+hash = "393316ed57671c64ed566d6cb859b281aa41eaf7d48897a8ffb48bda13e480f9"
+
+[[files]]
 file = "mods/mezzconfig.pw.toml"
 hash = "cf5d87f046590b99d92096a79f6ea2f456290ba5d423c256f06674d2d10a1592"
 metafile = true
@@ -11314,11 +11314,6 @@ metafile = true
 [[files]]
 file = "mods/more-red.pw.toml"
 hash = "f978224776c543bba4eda79ab3352f00b9eafd72e24167474775e2c130527313"
-metafile = true
-
-[[files]]
-file = "mods/moreculling.pw.toml"
-hash = "e484cc8f8f03940addbb053b09e9efd2804785d95240719b81393942eb3883d3"
 metafile = true
 
 [[files]]
