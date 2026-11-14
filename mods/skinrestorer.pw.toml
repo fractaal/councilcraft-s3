@@ -1,0 +1,13 @@
+name = "Skin Restorer"
+filename = "skinrestorer-2.11.1+1.21-neoforge.jar"
+side = "server"
+
+[download]
+url = "https://cdn.modrinth.com/data/ghrZDhGW/versions/VW4OYPBP/skinrestorer-2.11.1%2B1.21-neoforge.jar"
+hash-format = "sha512"
+hash = "3657b23fbbf0148c4a57438cf21f909434d7e1446fcd0c3a539df255781839c7b0e86e903a0800f3104ab6e49fb513d03d6d214977edcc5a17ff5f079b4db13e"
+
+[update]
+[update.modrinth]
+mod-id = "ghrZDhGW"
+version = "VW4OYPBP"

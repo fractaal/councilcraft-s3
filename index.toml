@@ -11822,6 +11822,11 @@ hash = "77e3c81c00c0a4c61aedea5e57760dac58f181788d670012e66f60614365def3"
 metafile = true
 
 [[files]]
+file = "mods/skinrestorer.pw.toml"
+hash = "e6c590903ab9902bcacfc92da2510cc289f1ccd93e27e997cabc12f9d1c4e550"
+metafile = true
+
+[[files]]
 file = "mods/sky-villages.pw.toml"
 hash = "3c88d13ec3f4c2904befee38aa1a4fc27ffb0c322fb4186d82a53179125e43d1"
 metafile = true
