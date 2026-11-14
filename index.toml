@@ -3738,7 +3738,7 @@ hash = "4f9577e9c8002872f5f3382f9892a38cbeefb6e2772b2ca248beab44859068fc"
 
 [[files]]
 file = "config/cosmeticarmorreworked-common.toml"
-hash = "687143b4844094f166ff875447d139941970649475924d47ce8982e04ef1cf5d"
+hash = "15e6c312e74934d10759f01b602d937bd5101a77c3e33ff3724471c3dcda6f41"
 
 [[files]]
 file = "config/craftingstation-client.toml"
