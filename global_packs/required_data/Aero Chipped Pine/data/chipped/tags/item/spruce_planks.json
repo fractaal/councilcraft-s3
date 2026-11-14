@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "meadow:pine_planks", "required": false }
+  ]
+}

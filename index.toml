@@ -7197,6 +7197,30 @@ file = "global_packs/optional_data/Aero Sky Islands/pack.mcmeta"
 hash = "9fe75a15a68b4fe5d9c4eefdf279f9c67542f3861bad52908f8e349865a9590f"
 
 [[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/spruce_door.json"
+hash = "8fa8002102c999401b88bac5004054b9d5638aee9d2bdd0425d015245044b1cb"
+
+[[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/spruce_log.json"
+hash = "981c64b8dcdb6baa2affe817ed9d28bcbb42597eb4642da8c935749ca855afa9"
+
+[[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/spruce_planks.json"
+hash = "0adc019d152430ecb8bf83de661ba035406eebbe77200b8c5ebdbe2170667cbb"
+
+[[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/spruce_trapdoor.json"
+hash = "a31404c9003117b6878d49bd5f23feb3f770b56adba86ccfb23b2da900e38294"
+
+[[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/stripped_spruce_log.json"
+hash = "c0ecd2e1bc153bd6e3277d6a296ee00a78ee69411f7f730291dd1144c1b55524"
+
+[[files]]
+file = "global_packs/required_data/Aero Chipped Pine/pack.mcmeta"
+hash = "059fe86c4f475d53730ddcfc110734d7a5b59479a0255be9cf36f76151ab963b"
+
+[[files]]
 file = "global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/cinder_patrol.json"
 hash = "a898540ec35cefb466be2157d903c354988cfc093d4c0788cb7f5a9aed310a37"
 
