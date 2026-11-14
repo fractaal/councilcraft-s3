@@ -6,6 +6,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.neoforge.client.gui.ConfigurationScreen;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.NeoForge;
 
 /**
@@ -18,6 +20,7 @@ public final class CombatKick {
 
     public CombatKick(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.CLIENT, KickConfig.SPEC);
+        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         modBus.addListener(KillIcons::registerLayer);
         NeoForge.EVENT_BUS.addListener(KillIcons::onClientTick);
         NeoForge.EVENT_BUS.addListener(CameraKick::onCameraAngles);

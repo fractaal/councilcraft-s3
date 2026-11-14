@@ -235,7 +235,7 @@ final class KillIcons {
 
     private static final int WHITE = 0xF4F1EC, SLASH = 0xFF3B30;
     /** Built-in size on top of the killIconScale setting, in GUI units, so it follows the GUI scale. */
-    private static final float BASE_SCALE = 1.25f;
+    private static final float BASE_SCALE = 1.0f;
     private static final int CENTER_HALF = 12, ORBIT_HALF = 8, ORBIT_RADIUS = 37;
     /** Wiki-style three-quarter view: turned 35 degrees and seen from 25 degrees above. */
     private static final float PORTRAIT_YAW = 215, PORTRAIT_PITCH = (float) Math.toRadians(25);

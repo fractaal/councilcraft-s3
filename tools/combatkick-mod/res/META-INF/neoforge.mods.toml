@@ -12,6 +12,9 @@ config="combatkick.mixins.json"
 # Optional hooks into Physics Mod ragdolls; skipped when Physics Mod is absent.
 [[mixins]]
 config="combatkick.physicsmod.mixins.json"
+# Optional hook into Heavier Weapons' camera shake; skipped when Heavier Weapons is absent.
+[[mixins]]
+config="combatkick.heavier.mixins.json"
 [[dependencies.combatkick]]
 modId="neoforge"
 type="required"

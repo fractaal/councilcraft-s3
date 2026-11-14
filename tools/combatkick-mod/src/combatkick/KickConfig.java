@@ -2,7 +2,11 @@ package combatkick;
 
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-/** combatkick-client.toml. NeoForge reloads it when the file changes, so values can be tuned while playing. */
+/**
+ * combatkick-client.toml. NeoForge reloads it when the file changes, and Mods > Combat Kick > Config edits it in game,
+ * so values can be tuned while playing. The pack doesn't ship this file, so a player's edits survive pack updates;
+ * the pack's choices are these defaults.
+ */
 final class KickConfig {
     static final ModConfigSpec SPEC;
     static final ModConfigSpec.BooleanValue ENABLED;
@@ -26,12 +30,13 @@ final class KickConfig {
     static final ModConfigSpec.DoubleValue KILL_ICON_HEIGHT;
     static final ModConfigSpec.BooleanValue RAGDOLL_FLING;
     static final ModConfigSpec.DoubleValue RAGDOLL_FLING_SPEED;
+    static final ModConfigSpec.DoubleValue HEAVIER_SHAKE;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
         ENABLED = b.comment("Kick the camera when a melee attack hits").define("enabled", true);
         STRENGTH = b.comment("Overall multiplier for every kick (also scaled by the vanilla Screen Effect Scale slider)")
-                .defineInRange("strength", 1.0, 0.0, 10.0);
+                .defineInRange("strength", 0.5, 0.0, 10.0);
         KICK_DEGREES = b.comment("Kick in degrees for a sword-weight hit; heavier (slower) weapons kick more, lighter ones less")
                 .defineInRange("kickDegrees", 3.0, 0.0, 30.0);
         MAX_DEGREES = b.comment("Cap on how far stacked kicks can push the camera, in degrees")
@@ -67,6 +72,9 @@ final class KickConfig {
                 .define("ragdollFling", true);
         RAGDOLL_FLING_SPEED = b.comment("Speed given to the struck body part, in blocks per second, for a sword-weight kill; heavier weapons hit harder")
                 .defineInRange("ragdollFlingSpeed", 8.0, 0.0, 40.0);
+        HEAVIER_SHAKE = b.comment("Multiplier on Heavier Weapons' camera shake when a hit lands (0 turns it off).",
+                        "Also scaled by the vanilla Screen Effect Scale slider")
+                .defineInRange("heavierWeaponsShake", 1.0, 0.0, 3.0);
         SPEC = b.build();
     }
 

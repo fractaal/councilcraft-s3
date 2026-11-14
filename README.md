@@ -72,6 +72,13 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
 - **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
 
+## What changed in 1.5.1+sky.6 (2026-11-14)
+Combat Kick only (`client`); nothing changes on the server.
+
+- **Settings in game:** Mods > Combat Kick > Config edits `config/combatkick-client.toml`. The pack no longer ships that file, so NeoForge writes it with Combat Kick's defaults (which now include the pack's `strength = 0.5`) and a player's own edits survive pack updates.
+- **Heavier Weapons' screen shake** has its own slider there, "Heavier Weapons Screen Shake" (`heavierWeaponsShake`, 0 turns it off). It multiplies the shake Heavier Weapons already applies (1.5x in its config), and like Combat Kick's own kick it also follows the vanilla Screen Effect Scale slider.
+- **Kill insignia back to 1x** of the GUI scale, from 1.25x: the diamond, the portraits and the `xN` counter. The hearts line and the combat report stay at normal text size, as before.
+
 ## What changed in 1.5.1+sky.5 (2026-11-13)
 Combat Kick (`client`, source in `tools/combatkick-mod/`) now rewards kills, tuned by Ben in singleplayer. Settings are in `config/combatkick-client.toml`; NeoForge reloads it while the game runs. Nothing changes on the server.
 
@@ -88,7 +95,7 @@ Combat feel, tuned by Ben in singleplayer. Measured over 90 s of fighting with J
 - **Combat Kick** (ours, `client`, source in `tools/combatkick-mod/`):
   - Each Better Combat hit kicks the camera in the direction of the swing (read from the attack animation's name), and a damped spring sways it back. Slower weapons, combo finishers, crits and multi-target hits kick harder, and kicks stack to a cap. It moves only the view, never your aim.
   - Heavier Weapons zeroes WASD input during hitstop, which also cancels sprinting. Combat Kick puts the input back, so you keep moving and sprinting through the freeze.
-  - Tuned in `config/combatkick-client.toml` (shipped at `strength = 0.5`); NeoForge reloads it while the game runs.
+  - Tuned in `config/combatkick-client.toml` (shipped at `strength = 0.5`; from sky.6 that's the built-in default and the file isn't shipped); NeoForge reloads it while the game runs.
 - **KubeJS web server off** (`kubejs/config/web_server.json`): its accept loop kept a whole CPU core busy on Ben's client.
 - Physics Mod ragdolls were tried alongside and are Ben's own client addition, not part of the pack.
 

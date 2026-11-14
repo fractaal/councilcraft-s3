@@ -3653,10 +3653,6 @@ file = "config/colorwheel-client.toml"
 hash = "a7d87ab03d61fecad6d297bcad9976c9e48765ca67f90b3c388419c2a70b452e"
 
 [[files]]
-file = "config/combatkick-client.toml"
-hash = "68521c510d3b6267f1d05d0de28bce5e84dfb51bf9259882067037acd5850463"
-
-[[files]]
 file = "config/comforts-common.toml"
 hash = "1f21c10bfce9cd25aea641046a79df88867f68ba8ba3838a5e1662521f9f06a2"
 
@@ -9853,7 +9849,7 @@ metafile = true
 
 [[files]]
 file = "mods/combatkick-1.0.0.jar"
-hash = "9b58af2ea3652b584f69ad4f843181b5aaaffb34cd2df515f86ab8ec33d95356"
+hash = "66b1a4e3744e62f1432c21f6927c2ab3b858f22cf8b617f7156a1d8ba2430e1f"
 
 [[files]]
 file = "mods/comforts.pw.toml"
