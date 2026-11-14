@@ -28,7 +28,7 @@ S:custom_game_intro_skip_text = '';
 B:show_custom_window_icon = 'true';
 S:custom_window_icon_macos = '/config/fancymenu/assets/icon_256x256.icns';
 S:custom_window_icon_32 = '/config/fancymenu/assets/icon_32x32.png';
-S:custom_window_title = 'BM: Exosphere 2 Create';
+S:custom_window_title = 'CouncilCraft Season 3';
 S:custom_window_icon_16 = '/config/fancymenu/assets/icon_16x16.png';
 
 

@@ -4,8 +4,12 @@
   "package": "memtweaks.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ClientHooksMixin",
     "DirectoryListerMixin",
-    "SimpleBakedModelMixin"
+    "SimpleBakedModelMixin",
+    "ModelBakeryAccessor",
+    "ModelBakeryLazyFilesMixin",
+    "GameRendererBannerMixin"
   ],
   "injectors": {
     "defaultRequire": 0

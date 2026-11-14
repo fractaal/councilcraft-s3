@@ -1054,7 +1054,7 @@ element {
 
 element {
   interactable = true
-  source = [BM: Exosphere 2 Create - Join Discord](https://discord.gg/RYRpuSAZX7)
+  source = CouncilCraft Season 3
   source_mode = direct
   shadow = true
   enable_scrolling = false

@@ -6,5 +6,15 @@
   "memtweaks.configuration.entityTexturesOutOfBlockAtlas": "Entity Textures Out of Block Atlas",
   "memtweaks.configuration.entityTexturesOutOfBlockAtlas.tooltip": "Stops one mod's atlas file from pulling every mod's entity textures into the block atlas, which doubles its size. Turn off if something shows the missing texture.",
   "memtweaks.configuration.shareIdenticalQuads": "Share Identical Model Faces",
-  "memtweaks.configuration.shareIdenticalQuads.tooltip": "Keeps one copy of each distinct block model face instead of one per model. Turn off if blocks render with wrong or missing faces."
+  "memtweaks.configuration.shareIdenticalQuads.tooltip": "Keeps one copy of each distinct block model face instead of one per model. Turn off if blocks render with wrong or missing faces.",
+  "memtweaks.configuration.reuseModelLocationList": "Reuse Model Location List",
+  "memtweaks.configuration.reuseModelLocationList.tooltip": "Builds Puzzles Lib's list of every block state's model once per resource load instead of once per mod that uses it. Turn off if models from Diagonal Fences, Walls or Windows, Easy Anvils, Easy Magic or Visual Workbench look wrong.",
+  "memtweaks.configuration.lazyModelReplaceAll": "Lazy Model Replacement",
+  "memtweaks.configuration.lazyModelReplaceAll.tooltip": "Applies mods' replace-every-model wrapping when a model is first baked instead of for all of them at startup. Turn off if blocks or items from Create Thrusters, Fetzi's Asian Deco or Display Delight render wrong.",
+  "memtweaks.configuration.lazyModelFileEntries": "Lazy Model File Entries",
+  "memtweaks.configuration.lazyModelFileEntries.tooltip": "Stops a loop over the model file list from parsing every model file in the game. Turn off if axolotl bucket items show the missing model.",
+  "memtweaks.configuration.trustEmfFolderListing": "Trust EMF Folder Listing",
+  "memtweaks.configuration.trustEmfFolderListing.tooltip": "Entity Model Features no longer asks every mod pack about model files its own folder listing didn't find. Turn off if a custom entity model from a resource pack stops showing.",
+  "memtweaks.configuration.startupBanner": "Startup Banner",
+  "memtweaks.configuration.startupBanner.tooltip": "Shows the fractalWARP banner on the first loading screen, and how long the start took on the menu for a few seconds afterwards, when the pack's startup agent is active."
 }

@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "memtweaks.mixin.puzzleslib",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["PuzzlesModelLocationsMixin"],
+  "injectors": {"defaultRequire": 0}
+}

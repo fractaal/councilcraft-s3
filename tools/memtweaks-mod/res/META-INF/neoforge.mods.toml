@@ -12,6 +12,15 @@ config="memtweaks.mixins.json"
 # Optional hook into Voxy; skipped when Voxy is absent.
 [[mixins]]
 config="memtweaks.voxy.mixins.json"
+# Optional hook into Puzzles Lib; skipped when Puzzles Lib is absent.
+[[mixins]]
+config="memtweaks.puzzleslib.mixins.json"
+# Optional hooks into ModernFix; skipped when ModernFix is absent.
+[[mixins]]
+config="memtweaks.modernfix.mixins.json"
+# Optional hook into Entity Model Features; skipped when it is absent.
+[[mixins]]
+config="memtweaks.emf.mixins.json"
 [[dependencies.memtweaks]]
 modId="neoforge"
 type="required"

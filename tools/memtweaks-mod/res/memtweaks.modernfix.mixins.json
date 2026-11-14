@@ -1,0 +1,14 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "memtweaks.mixin.modernfix",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "EmulatedModelRegistryMixin",
+    "ModelBakeEventHelperMixin",
+    "ModelLocationBuilderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

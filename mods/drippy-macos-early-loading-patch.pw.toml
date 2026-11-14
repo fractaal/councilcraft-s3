@@ -1,0 +1,13 @@
+name = "Drippy macOS Early Loading Patch"
+filename = "Drippy-macOS-Early-Loading-Patch-3.1.2-NeoForge-1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/FpeCdJZ8/versions/WFBO3ZDF/Drippy-macOS-Early-Loading-Patch-3.1.2-NeoForge-1.21.1.jar"
+hash-format = "sha512"
+hash = "9e8a3f3e10a165a21aa39211778c18c1a8c542c3316f7c5faa11eeff9d161971d7b7bda1383732b623575bc588afb41bcceb95afd15c31790fb986a5f6ea6c34"
+
+[update]
+[update.modrinth]
+mod-id = "FpeCdJZ8"
+version = "WFBO3ZDF"

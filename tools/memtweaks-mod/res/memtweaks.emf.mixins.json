@@ -1,0 +1,8 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "memtweaks.mixin.emf",
+  "compatibilityLevel": "JAVA_21",
+  "client": ["EmfResourceCachingMixin"],
+  "injectors": {"defaultRequire": 0}
+}

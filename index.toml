@@ -218,7 +218,7 @@ hash = "fe9b8df858b60c15d8a08b0009c24ef7638233339f1af1db2280a64f6ee0be24"
 
 [[files]]
 file = "config/asynclogger.toml"
-hash = "75f2f8a219996623d5e125f844611b0ca7f2da04f366dd154ca39b99d9eacbf3"
+hash = "aec3581717aa2732ee597aeaf4a2b509848ae0ad9730f636cb30c7804551164e"
 
 [[files]]
 file = "config/asynclogger/default.toml"
@@ -3753,22 +3753,6 @@ file = "config/craftingtweaks-common.toml"
 hash = "55e65193d38d29dc2175692a3b3b555cd1c7301620d2c4064ff5a278131c2e96"
 
 [[files]]
-file = "config/crash_assistant/config.toml"
-hash = "1367f157980e5e15f91bc70c79bb7c1c84d9d83a0be044cf5147661833a1646e"
-
-[[files]]
-file = "config/crash_assistant/modlist.json"
-hash = "c61fa5b5793606ac9f0845b0b3ec44d57c015a35149b30934e3248c12b4b1c90"
-
-[[files]]
-file = "config/crash_assistant/scripts/log_analysis/example.jexl"
-hash = "adde7e5e42b9d716f14a9bc49797999a21a0ee05cc67e71410a232f830115b3b"
-
-[[files]]
-file = "config/crash_assistant/scripts/startup/example.jexl"
-hash = "346378f04a9e7319cdcb405fad82d6e7f1b36b39e0e4129c00a226b49f41cf37"
-
-[[files]]
 file = "config/crashutilities-server.toml"
 hash = "fdbdac2aadba4e298693704e0642df8d1e6f2a8fea0b75fd9a05828d70b67acb"
 
@@ -4570,7 +4554,7 @@ hash = "b91b825e05ce0311f8fc796757cf52f9416d2847f7f03b5dbe0405a752b9cdf7"
 
 [[files]]
 file = "config/fancymenu/custom_locals/BeyondMines/en_us.lang"
-hash = "720b178c88bd33f9c0b47fe7430667e48228a372627f231579ec3447da747334"
+hash = "f64d4fc3ffcb83c6f50af70e6efc65802b64d0f7d11bde39cfbf8217cfcf58f3"
 
 [[files]]
 file = "config/fancymenu/customizablemenus.txt"
@@ -4578,7 +4562,7 @@ hash = "06f6790f958a1bff272d58ac004f110a90051b531f876ac638371cccb0e84296"
 
 [[files]]
 file = "config/fancymenu/customization/Beyond Mines.txt"
-hash = "18bac3a333b80a7b775f07678e360d7fc3d3fcba6457b4e45460c6f12042195f"
+hash = "0263723e9a33c2c23a426e46734a067ff82f7f25545f8473f27870aa35965299"
 
 [[files]]
 file = "config/fancymenu/customization/ConnectionErrorScreen.txt"
@@ -4754,7 +4738,7 @@ hash = "9bdd808b0e3e8a7fa3f0f3b543da5905e53cf20b5bceff2a8eac542d5fec56e1"
 
 [[files]]
 file = "config/fancymenu/options.txt"
-hash = "ceaf0dd8080f532b5fad669e3b8257aef808ae0e20b21a91866d2d06ddeab769"
+hash = "ba3804545a0d4e690a2a87806489f649c1c553edb81306b71d8d7af39d6df5c7"
 
 [[files]]
 file = "config/fancymenu/panoramas/exosphere/panorama/panorama_0.png"
@@ -6006,7 +5990,7 @@ hash = "c088a5e2ac97282375f0c346ced0647f0b76d09e62f0e37342b52dcba17f43c3"
 
 [[files]]
 file = "config/logbegone.json"
-hash = "8d3e327f5524c355259b5919a31170aa0b439a4936442e7513ca054ff2c348a8"
+hash = "8cd7b4486ddf1c12339def2ec7e7cf1a05fecd43b9ac58af0da135d2064c509e"
 
 [[files]]
 file = "config/logistics-network/client.toml"
@@ -9943,11 +9927,6 @@ hash = "e8752ccef8c59a6544354d66182d14161184ed1985ea5060dfbef5819a08db82"
 metafile = true
 
 [[files]]
-file = "mods/crash-assistant.pw.toml"
-hash = "f8d08bc8e4586caada4f3c2fa72a8bb740240059f95653fd41dc1f5a0ac8ff5d"
-metafile = true
-
-[[files]]
 file = "mods/crash-utilities.pw.toml"
 hash = "6457e8702c7c3d603e1e35252bf2388db4ec44c875209af3c4364a79f4c1709c"
 metafile = true
@@ -10288,8 +10267,18 @@ hash = "60a35c9cea4467fcd1c60415ae31eca67b11257f68288115f9cf3eafe368024e"
 metafile = true
 
 [[files]]
+file = "mods/drippy-early-loading-module.pw.toml"
+hash = "5fea3c19a3984ad752fd965510c4f8847c5100d001c31cbe46373628de729e06"
+metafile = true
+
+[[files]]
 file = "mods/drippy-loading-screen.pw.toml"
 hash = "d89b50af502aab4416e07fa8f92433a18fac11285fe1c39ebccea610dbfdd1e7"
+metafile = true
+
+[[files]]
+file = "mods/drippy-macos-early-loading-patch.pw.toml"
+hash = "aefae7d7194661a27506560c31ccb2e071d92b20aac3ab92fb7bf19efa735251"
 metafile = true
 
 [[files]]
@@ -11214,7 +11203,7 @@ metafile = true
 
 [[files]]
 file = "mods/memtweaks-1.0.0.jar"
-hash = "393316ed57671c64ed566d6cb859b281aa41eaf7d48897a8ffb48bda13e480f9"
+hash = "898a96dae4c1142ccee69f23e85bfe6b700ee2315de5ee51487a74f8dab27839"
 
 [[files]]
 file = "mods/mezzconfig.pw.toml"
@@ -11939,6 +11928,10 @@ metafile = true
 file = "mods/starter-kit.pw.toml"
 hash = "8d5d384df3fcc89b485c536aa3920eeeff2e8cd6d03eafb0304a463cda1012fb"
 metafile = true
+
+[[files]]
+file = "mods/startupfix-1.0.0.jar"
+hash = "7ab7e464d5ad23b7bda7bb5d9af764f406fd8f805f141c9afd2879b0b7d41408"
 
 [[files]]
 file = "mods/stoneworks.pw.toml"

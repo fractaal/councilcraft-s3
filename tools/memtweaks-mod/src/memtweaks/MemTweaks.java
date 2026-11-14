@@ -38,6 +38,11 @@ public final class MemTweaks {
     static final ModConfigSpec.BooleanValue SHARE_NESTED_JARS;
     static final ModConfigSpec.BooleanValue ENTITY_TEXTURES_OUT_OF_BLOCK_ATLAS;
     static final ModConfigSpec.BooleanValue SHARE_IDENTICAL_QUADS;
+    static final ModConfigSpec.BooleanValue REUSE_MODEL_LOCATION_LIST;
+    static final ModConfigSpec.BooleanValue LAZY_MODEL_REPLACE_ALL;
+    static final ModConfigSpec.BooleanValue LAZY_MODEL_FILE_ENTRIES;
+    static final ModConfigSpec.BooleanValue TRUST_EMF_FOLDER_LISTING;
+    static final ModConfigSpec.BooleanValue STARTUP_BANNER;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -62,16 +67,72 @@ public final class MemTweaks {
                 "distinct face instead of one per model (about 0.3 GB in this pack).",
                 "Turn it off if blocks render with wrong or missing faces. Applies to models built after the change.")
                 .define("shareIdenticalQuads", true);
+        REUSE_MODEL_LOCATION_LIST = b.comment(
+                "While resources load, Puzzles Lib builds a list of every block state's model once for each mod that uses",
+                "its model events (Diagonal Fences, Walls and Windows, Easy Anvils, Easy Magic, Visual Workbench).",
+                "This builds it once and reuses it for the others, which shortens startup and every F3+T by a few seconds.",
+                "Turn it off if models from those mods look wrong.")
+                .define("reuseModelLocationList", true);
+        LAZY_MODEL_REPLACE_ALL = b.comment(
+                "Some mods wrap their models by asking for every model in the game to be replaced (Create Thrusters,",
+                "Fetzi's Asian Deco and Display Delight in this pack). With ModernFix that walks every model location and",
+                "bakes and keeps each wrapped model during startup. This applies the wrapping when a model is first baked",
+                "instead, which shortens startup and every F3+T by several seconds and keeps those models out of memory",
+                "until they are needed. Turn it off if those mods' blocks or items render wrong.")
+                .define("lazyModelReplaceAll", true);
+        LAZY_MODEL_FILE_ENTRIES = b.comment(
+                "More Axolotl Variants API loops over every model file on each resource load, and with ModernFix that",
+                "parses every model file in the game (about four seconds in this pack). This makes such a loop free.",
+                "Turn it off if axolotl bucket items show the missing model.")
+                .define("lazyModelFileEntries", true);
+        TRUST_EMF_FOLDER_LISTING = b.comment(
+                "Entity Model Features lists its model folders once per resource load, then still asks every mod pack",
+                "about each model file it didn't find there (about two seconds per load). This takes the listing's word",
+                "for it. Turn it off if a custom entity model from a resource pack stops showing.")
+                .define("trustEmfFolderListing", true);
+        STARTUP_BANNER = b.comment(
+                "Shows \"fractalWARP STARTUP BOOST 9000 ACTIVE\" on the first loading screen, and how long the start took on",
+                "the menu for a few seconds afterwards, when the pack's startup agent (mods/startupfix) is active.",
+                "It does nothing else.")
+                .define("startupBanner", true);
         SPEC = b.build();
     }
 
     public MemTweaks(IEventBus modBus, ModContainer container) {
+        dropTraceLogEvents();
         container.registerConfig(ModConfig.Type.CLIENT, SPEC);
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         // Once when loading finishes, and again on joining a world to catch jars first opened after that.
         modBus.addListener(MemTweaks::onLoadComplete);
         NeoForge.EVENT_BUS.addListener(MemTweaks::onWorldJoin);
+        NeoForge.EVENT_BUS.addListener((net.neoforged.neoforge.client.event.ScreenEvent.Render.Post e) -> StartupBanner.renderStat(e.getGuiGraphics()));
         modBus.addListener(MemTweaks::onRegisterReloadListeners);
+    }
+
+    /**
+     * NeoForge's logging setup accepts every event that carries one of its markers, whatever its level, and
+     * its loader logs a TRACE line with such a marker for each event sent to each mod. No log file keeps
+     * those lines, but each one is still built and queued first, which costs several seconds of startup on
+     * the threads everything else waits for. This puts a filter in front that drops TRACE events before
+     * they are created. -Dmemtweaks.keepTraceLogs=true leaves logging alone.
+     */
+    private static void dropTraceLogEvents() {
+        if (Boolean.getBoolean("memtweaks.keepTraceLogs")) return;
+        try {
+            org.apache.logging.log4j.core.LoggerContext context = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+            org.apache.logging.log4j.core.config.Configuration config = context.getConfiguration();
+            org.apache.logging.log4j.core.Filter existing = config.getFilter();
+            org.apache.logging.log4j.core.Filter noTrace = org.apache.logging.log4j.core.filter.ThresholdFilter.createFilter(
+                    org.apache.logging.log4j.Level.DEBUG, org.apache.logging.log4j.core.Filter.Result.NEUTRAL, org.apache.logging.log4j.core.Filter.Result.DENY);
+            noTrace.start();
+            if (existing != null) config.removeFilter(existing);
+            config.addFilter(noTrace);
+            if (existing != null) config.addFilter(existing);
+            context.updateLoggers();
+            LOG.info("Logging: TRACE events are dropped before they are created");
+        } catch (Throwable e) {
+            LOG.warn("Logging: left as it was ({})", e.toString());
+        }
     }
 
     private static void onLoadComplete(FMLLoadCompleteEvent event) { shareNestedJars("load complete"); }
@@ -124,6 +185,63 @@ public final class MemTweaks {
             LOG.warn("Block atlas: config not readable yet ({}), using the default", e.toString());
             return true;
         }
+    }
+
+    /** Called from the Puzzles Lib hook. Before the config has loaded, the default (on) applies. */
+    public static boolean reuseModelLocationList() {
+        try {
+            return REUSE_MODEL_LOCATION_LIST.get();
+        } catch (RuntimeException e) {
+            return true;
+        }
+    }
+
+    /** Called from the ModernFix hook. Before the config has loaded, the default (on) applies. */
+    public static boolean lazyModelReplaceAll() {
+        try {
+            return LAZY_MODEL_REPLACE_ALL.get();
+        } catch (RuntimeException e) {
+            return true;
+        }
+    }
+
+    /** Called when a model bakery is created, which on the first load is before the config has loaded: default on. */
+    public static boolean lazyModelFileEntries() {
+        try {
+            return LAZY_MODEL_FILE_ENTRIES.get();
+        } catch (RuntimeException e) {
+            return true;
+        }
+    }
+
+    /** Called from the Entity Model Features hook. Before the config has loaded, the default (on) applies. */
+    public static boolean trustEmfFolderListing() {
+        try {
+            return TRUST_EMF_FOLDER_LISTING.get();
+        } catch (RuntimeException e) {
+            return true;
+        }
+    }
+
+    /** Called while the first loading screen is drawn, which is before the config has loaded: default on. */
+    public static boolean startupBanner() {
+        try {
+            return STARTUP_BANNER.get();
+        } catch (RuntimeException e) {
+            return true;
+        }
+    }
+
+    public static void logLazyModelReplace(int calls, int replacedNow) {
+        LOG.info("Model replaceAll: {} calls deferred to bake time, {} existing models replaced right away", calls, replacedNow);
+    }
+
+    public static void warnLazyModelReplace(String what, Throwable e) {
+        LOG.warn("Model replaceAll: {} ({})", what, e.toString());
+    }
+
+    public static void logModelLocationShare(int size, int reused) {
+        LOG.info("Model location list: {} entries built once, reused {} times by Puzzles Lib in this model event", size, reused);
     }
 
     public static void logEntityAtlasSource(int kept) {
