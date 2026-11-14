@@ -65,7 +65,7 @@ final class EarlyBanner implements Consumer<Object> {
 
     private final int guiScaleSetting = guiScaleSetting();
     private final long started = ProcessHandle.current().info().startInstant().map(java.time.Instant::toEpochMilli).orElse(System.currentTimeMillis());
-    private final long lastCold = lastCold();
+    private final long lastStart = lastStart();
     private boolean broken;
     private Field width, height;
     private MethodHandle begin, end, vertex, color, enable, disable, blendFunc;
@@ -86,10 +86,10 @@ final class EarlyBanner implements Consumer<Object> {
         return true;
     }
 
-    /** Seconds the last cold start took, which Memory Tweaks writes when the menu appears; 0 when there is no record. */
-    private static long lastCold() {
+    /** Seconds the previous warm start took, which Memory Tweaks writes when the menu appears; 0 when there is no record. */
+    private static long lastStart() {
         try {
-            return Long.parseLong(Files.readString(Path.of("startupfix", "last-cold-start.txt")).trim());
+            return Long.parseLong(Files.readString(Path.of("startupfix", "last-start.txt")).trim());
         } catch (Exception e) {
             return 0;
         }
@@ -142,11 +142,11 @@ final class EarlyBanner implements Consumer<Object> {
         while (scale != guiScaleSetting && scale < windowWidth && scale < windowHeight
                 && windowWidth / (scale + 1) >= 320 && windowHeight / (scale + 1) >= 240) scale++;
         int guiWidth = (windowWidth + scale - 1) / scale, guiHeight = (windowHeight + scale - 1) / scale;
-        // The clock after the spinner, as in StartupBanner.render: this start against the last cold one.
+        // The clock after the spinner, as in StartupBanner.render: this start against the previous one.
         long seconds = (System.currentTimeMillis() - started) / 1000;
         boolean coldStart = "cold".equals(System.getProperty("startupfix.cache"));
-        String clock = coldStart ? "COLD START " + seconds + "s" : lastCold > 0 ? seconds + "s / " + lastCold + "s" : seconds + "s";
-        int clockColor = !coldStart && lastCold > 0 && seconds > lastCold ? RED : WHITE;
+        String clock = coldStart ? "COLD START " + seconds + "s" : lastStart > 0 ? seconds + "s / " + lastStart + "s" : seconds + "s";
+        int clockColor = !coldStart && lastStart > 0 && seconds > lastStart * 5 / 4 ? RED : WHITE;    // a quarter slower than last time
         int textWidth = TEXT.length() * 6 - 1, spinner = 10, gap = 6;
         int x = (guiWidth - (textWidth + gap + spinner + gap + clock.length() * 6 - 1)) / 2, y = guiHeight - 14;
         disable.invokeExact(GL_TEXTURE_2D);

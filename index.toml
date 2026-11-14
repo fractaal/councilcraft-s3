@@ -11203,7 +11203,7 @@ metafile = true
 
 [[files]]
 file = "mods/memtweaks-1.0.0.jar"
-hash = "898a96dae4c1142ccee69f23e85bfe6b700ee2315de5ee51487a74f8dab27839"
+hash = "66783b9db6b15cc45ea34f7df1b407431c5cd757fd79880237ae07741c03da0b"
 
 [[files]]
 file = "mods/mezzconfig.pw.toml"
@@ -11931,7 +11931,7 @@ metafile = true
 
 [[files]]
 file = "mods/startupfix-1.0.0.jar"
-hash = "7ab7e464d5ad23b7bda7bb5d9af764f406fd8f805f141c9afd2879b0b7d41408"
+hash = "069d6476b91aa040a239116549d1d7596e1fee2cd168a6199accdc998ab46807"
 
 [[files]]
 file = "mods/stoneworks.pw.toml"

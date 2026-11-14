@@ -3,7 +3,6 @@ package memtweaks;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -13,23 +12,27 @@ import net.neoforged.fml.loading.FMLPaths;
 /**
  * "fractalWARP STARTUP BOOST 9000 ACTIVE" with a spinner, drawn over the loading screen of the first resource
  * load when the pack's startup agent (tools/startupfix) is loaded in this JVM. Purely for show. After the
- * spinner comes a running clock: "32s / 105s" is this start against the last cold one (red once it is slower),
- * "COLD START 32s" a start that is rebuilding the agent's class cache.
+ * spinner comes a running clock: "32s / 54s" is this start against the previous one (red when it runs well
+ * past it), "COLD START 32s" a start that is rebuilding the agent's class cache.
  *
  * When that loading screen closes, the same spot on the menu shows how long the start took, for a few seconds
- * before it fades: "Started in 54s (vs 105s cold!) (1.94x improvement)", or on a start that had to rebuild the agent's class cache
- * (the first one after any mod change) "Cold start: 105s. Your next start should be much faster."
+ * before it fades: "Started in 54s. Would have taken ~105s.", or on a cold start (the first one after any mod
+ * change) "Cold start: took 79s. Your next start should be much faster."
  *
- * Minecraft's font isn't usable yet at that point (fonts are one of the things being loaded), so the text is
- * drawn from a small 5x7 pixel font kept here, one filled rectangle per pixel.
+ * The "would have taken" figure is an estimate, not a measurement: this start's time multiplied by the ratio
+ * measured on one machine on 2026-11-14 between the pack before this work (105 s) and after it (about 53 s with
+ * the two JVM flags the README lists, about 60 s without). A cold start already has every fix except the class
+ * cache, so comparing warm starts with cold ones would say very little.
+ *
+ * Minecraft's font isn't usable yet during the first load (fonts are one of the things being loaded), so the
+ * banner and clock are drawn from a small 5x7 pixel font kept here, one filled rectangle per pixel.
  */
 public final class StartupBanner {
     private static final Map<Character, String[]> FONT = new HashMap<>();
     private static final String TEXT = "fractalWARP STARTUP BOOST 9000 ACTIVE";
     private static final int CYAN = 0xFF6FE8FF, WHITE = 0xFFF2F2F2, GOLD = 0xFFFFC83D, GREEN = 0xFF6BFF8A, RED = 0xFFFF5A5A, SHADOW = 0xC0000000;
     private static final long STARTED = ProcessHandle.current().info().startInstant().map(java.time.Instant::toEpochMilli).orElse(System.currentTimeMillis());
-    private static long lastCold = -1;    // seconds the last cold start took; 0 when there is no record, -1 before the file is read
-    private static int statColor = WHITE;
+    private static long lastStart = -1;    // seconds the previous warm start took; 0 when there is no record, -1 before the file is read
     private static final long STAT_HOLD_MS = 10_000, STAT_FADE_MS = 5_000;
     private static boolean firstLoadOver;
     private static String stat;
@@ -92,45 +95,41 @@ public final class StartupBanner {
 
     /**
      * Start-up time is measured from the start of the Java process. The agent says whether its class cache was
-     * there ("warm") or had to be recorded ("cold"); a cold start's time is kept in startupfix/last-cold-start.txt
-     * so later warm starts can show it next to their own.
+     * there ("warm") or had to be recorded ("cold"). A warm start's time is kept in startupfix/last-start.txt
+     * for the next start's clock.
      */
     private static void prepareStat() {
         try {
             long seconds = Math.round((System.currentTimeMillis() - STARTED) / 1000.0);
-            long cold = lastCold();
-            statColor = WHITE;
             if ("cold".equals(System.getProperty("startupfix.cache"))) {
-                Files.createDirectories(coldFile().getParent());
-                Files.writeString(coldFile(), Long.toString(seconds));
-                stat = "Cold start: " + seconds + "s. Your next start should be much faster.";
-            } else if (cold <= 0) {
-                stat = "Started in " + seconds + "s";
-            } else if (seconds < cold) {
-                stat = "Started in " + seconds + "s (vs " + cold + "s cold!) (" + String.format(Locale.ROOT, "%.2f", cold / (double) seconds) + "x improvement)";
+                stat = "Cold start: took " + seconds + "s. Your next start should be much faster.";
             } else {
-                stat = "Started in " + seconds + "s (vs " + cold + "s cold)";
-                statColor = RED;
+                Files.createDirectories(lastStartFile().getParent());
+                Files.writeString(lastStartFile(), Long.toString(seconds));
+                boolean flags = java.lang.management.ManagementFactory.getRuntimeMXBean().getInputArguments().stream().anyMatch(a -> a.startsWith("-XX:SymbolTableSize"));
+                long without = Math.round(seconds * (flags ? 2.0 : 1.75) / 5) * 5;    // see the class comment: an estimate
+                stat = "Started in " + seconds + "s. Would have taken ~" + without + "s.";
             }
             statSince = System.currentTimeMillis();
+            org.apache.logging.log4j.LogManager.getLogger("memtweaks").info("Startup banner: {}", stat);
         } catch (Exception e) {
             stat = null;    // an unwritable file: nothing to show
         }
     }
 
-    private static Path coldFile() {
-        return FMLPaths.GAMEDIR.get().resolve("startupfix").resolve("last-cold-start.txt");
+    private static Path lastStartFile() {
+        return FMLPaths.GAMEDIR.get().resolve("startupfix").resolve("last-start.txt");
     }
 
-    private static long lastCold() {
-        if (lastCold < 0) {
+    private static long lastStart() {
+        if (lastStart < 0) {
             try {
-                lastCold = Files.exists(coldFile()) ? Long.parseLong(Files.readString(coldFile()).trim()) : 0;
+                lastStart = Files.exists(lastStartFile()) ? Long.parseLong(Files.readString(lastStartFile()).trim()) : 0;
             } catch (Exception e) {
-                lastCold = 0;
+                lastStart = 0;
             }
         }
-        return lastCold;
+        return lastStart;
     }
 
     /** Draws the start-up time over whatever screen is open, until it has faded or a world is entered. */
@@ -148,14 +147,14 @@ public final class StartupBanner {
         String name = "fractalWARP  ";
         int x = (g.guiWidth() - font.width(name + stat)) / 2, y = g.guiHeight() - 14;
         g.drawString(font, name, x, y, alpha << 24 | (CYAN & 0xFFFFFF), true);
-        g.drawString(font, stat, x + font.width(name), y, alpha << 24 | (statColor & 0xFFFFFF), true);
+        g.drawString(font, stat, x + font.width(name), y, alpha << 24 | (WHITE & 0xFFFFFF), true);
     }
 
     public static void render(GuiGraphics g) {
-        long seconds = (System.currentTimeMillis() - STARTED) / 1000, cold = lastCold();
+        long seconds = (System.currentTimeMillis() - STARTED) / 1000, last = lastStart();
         boolean coldStart = "cold".equals(System.getProperty("startupfix.cache"));
-        String clock = coldStart ? "COLD START " + seconds + "s" : cold > 0 ? seconds + "s / " + cold + "s" : seconds + "s";
-        int clockColor = !coldStart && cold > 0 && seconds > cold ? RED : WHITE;
+        String clock = coldStart ? "COLD START " + seconds + "s" : last > 0 ? seconds + "s / " + last + "s" : seconds + "s";
+        int clockColor = !coldStart && last > 0 && seconds > last * 5 / 4 ? RED : WHITE;    // a quarter slower than last time
         int width = TEXT.length() * 6 - 1, spinner = 10, gap = 6;
         int x = (g.guiWidth() - (width + gap + spinner + gap + clock.length() * 6 - 1)) / 2, y = g.guiHeight() - 14;
         drawText(g, TEXT, x + 1, y + 1, SHADOW, true);
