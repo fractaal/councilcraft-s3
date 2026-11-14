@@ -1,8 +1,8 @@
 {
   "maxRopeLength": 64.0,
   "hookGravity": 0.75,
-  "hookSpeed": 2.9,
-  "playerMovementMultiplier": 1.0,
+  "hookSpeed": 4.5,
+  "playerMovementMultiplier": 1.5,
   "grappleGravity": 0.08,
   "maxVerticalAirspeed": 4.0,
   "maxHorizontalAirspeed": 8.0,

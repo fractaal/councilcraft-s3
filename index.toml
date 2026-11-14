@@ -5518,11 +5518,11 @@ hash = "4d5d43e05581276931d81a19e9f58eb441ebe6edea9efaacdb943eeaabd3e50f"
 
 [[files]]
 file = "config/grapplemod-common.json"
-hash = "a84849bc0aaf6247c887cf1b6e796b50e9d84e690ac00039509fad03e7bd5949"
+hash = "a0f8cc84a5045d1af55a9a228b254cb8a8ec85ec79ddbf4cb553c99e35e7d361"
 
 [[files]]
 file = "config/grapplemod-properties.json"
-hash = "7c9f438c975e06bb846d5054b400b22099118e90487f4433df4a64c18d0096ab"
+hash = "64459d8a8ef6f2f524242eb9ca5189f19102292085f79eea28264733e2072f32"
 
 [[files]]
 file = "config/gravestone-client.toml"

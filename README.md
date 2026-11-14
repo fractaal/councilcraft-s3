@@ -73,10 +73,11 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
 
 ## What changed in 1.5.1+sky.6 (2026-11-14)
-Combat Kick only (`client`); nothing changes on the server.
+Combat Kick (`client`) and the grappling hook.
 
 - **Settings in game:** Mods > Combat Kick > Config edits `config/combatkick-client.toml`. The pack no longer ships that file, so NeoForge writes it with Combat Kick's defaults (which now include the pack's `strength = 0.5`) and a player's own edits survive pack updates.
 - **Heavier Weapons' screen shake** has its own slider there, "Heavier Weapons Screen Shake" (`heavierWeaponsShake`, 0 turns it off). It multiplies the shake Heavier Weapons already applies (1.5x in its config), and like Combat Kick's own kick it also follows the vanilla Screen Effect Scale slider.
+- **Punchier grappling hook** (`config/grapplemod-common.json` and `grapplemod-properties.json`, server and clients): climbing the rope with sneak+W/S is twice as fast (`climbSpeed` 0.3 to 0.6 blocks per tick), W/A/S/D builds swing momentum 1.5 times as fast (`playerMovementMultiplier` 1.0 to 1.5, the mod's cap is 2), and the hook flies at 4.5 blocks per tick instead of 2.9 (a 64-block throw in about 0.7 s instead of 1.1 s; the cap is 5). Hooks customised at the modifier block keep their own values.
 - **Kill insignia back to 1x** of the GUI scale, from 1.25x: the diamond, the portraits and the `xN` counter. The hearts line and the combat report stay at normal text size, as before.
 
 ## What changed in 1.5.1+sky.5 (2026-11-13)

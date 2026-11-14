@@ -9,7 +9,7 @@
 	"ropeJumpPower": 100.0,
 	"ropeJumpAtAngle": false,
 	"ropeJumpCooldown": 0,
-	"climbSpeed": 0.3,
+	"climbSpeed": 0.6,
 	"enableHookCutting": true,
 	"hookCutsRequired": 3,
 	"hookCutCooldownTicks": 10,
