@@ -1,0 +1,289 @@
+#!/usr/bin/env python3
+"""Loot drop simulator for Mob Loot Bags 2.0.1 and FTB Quests loot crates.
+
+Reproduces the two mods' drop rolls (decompiled from mob_loot_bags-neoforge-1.21.1-2.0.1's DropEngine and TierRoller,
+and ftb-quests-neoforge-2101.1.36's BaseQuestFile.makeRandomLootCrate) and runs them over a kill mix, so a config change
+can be checked before it goes live.
+
+  python3 sim.py --server DIR                         reference profiles over a real player's kill mix
+  python3 sim.py --server DIR --luck 25 --looting 3   one profile
+  python3 sim.py --server DIR --validate              predicted vs actual bags found, per player
+  python3 sim.py --server DIR --set luck.luck_attribute=0.25   try a config change
+
+DIR is a server folder (or a copy) holding config/mob_loot_bags/drops.json, config/ftbquests/quests/ and, for kill
+mixes and --validate, world/stats/*.json, world/data/mob_loot_bags/players.json and usercache.json.
+
+What it doesn't model: bag carriers (2% of some mobs spawn holding a bag), cursed-bag ambush rewards, per-dimension
+themes, and spawner tags (pass --spawner for the share of kills from spawners). Mob max health comes from the table
+below; mobs not in it count as hostile with 20 health, and the share of such kills is printed. Apotheosis world tier
+plays no part in either mod's rolls.
+"""
+import argparse, json, math, random, re, sys
+from collections import Counter
+from pathlib import Path
+
+TIERS = ["common", "uncommon", "rare", "epic", "legendary", "mythic"]
+SPECIALS = ["cursed", "hourglass", "locked", "summoning"]
+
+# Vanilla and common modded max health. passive=True means not Enemy/MONSTER (no bag at passive_chance 0, and the
+# crate weight used is "passive"). crate_boss=True means canUsePortal(false) is false, which FTB Quests treats as a boss.
+MOBS = {
+    "minecraft:zombie": 20, "minecraft:husk": 20, "minecraft:drowned": 20, "minecraft:zombie_villager": 20,
+    "minecraft:skeleton": 20, "minecraft:stray": 20, "minecraft:bogged": 16, "minecraft:wither_skeleton": 20,
+    "minecraft:spider": 16, "minecraft:cave_spider": 12, "minecraft:creeper": 20, "minecraft:enderman": 40,
+    "minecraft:witch": 26, "minecraft:slime": 16, "minecraft:magma_cube": 16, "minecraft:blaze": 20,
+    "minecraft:ghast": 10, "minecraft:piglin": 16, "minecraft:piglin_brute": 50, "minecraft:zombified_piglin": 20,
+    "minecraft:hoglin": 40, "minecraft:zoglin": 40, "minecraft:pillager": 24, "minecraft:vindicator": 24,
+    "minecraft:evoker": 24, "minecraft:vex": 14, "minecraft:ravager": 100, "minecraft:phantom": 20,
+    "minecraft:guardian": 30, "minecraft:elder_guardian": 80, "minecraft:shulker": 30, "minecraft:silverfish": 8,
+    "minecraft:endermite": 8, "minecraft:breeze": 30, "minecraft:warden": 500, "minecraft:wither": 300,
+    "minecraft:ender_dragon": 200, "minecraft:illusioner": 32,
+}
+PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chicken", "minecraft:rabbit",
+           "minecraft:villager", "minecraft:iron_golem", "minecraft:snow_golem", "minecraft:fox", "minecraft:bee",
+           "minecraft:squid", "minecraft:glow_squid", "minecraft:cod", "minecraft:salmon", "minecraft:bat",
+           "naturalist:butterfly", "minecraft:wandering_trader", "minecraft:goat", "minecraft:wolf"}
+CRATE_BOSS = {"minecraft:wither", "minecraft:ender_dragon"}
+BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
+
+
+def load_jsonc(path):
+    text = re.sub(r"^\s*//.*$", "", Path(path).read_text(), flags=re.M)
+    return json.loads(text)
+
+
+def apply_set(cfg, assignments):
+    for a in assignments or []:
+        key, val = a.split("=", 1)
+        node = cfg
+        parts = key.split(".")
+        for p in parts[:-1]:
+            node = node[p]
+        node[parts[-1]] = json.loads(val)
+
+
+def load_crates(server):
+    """[(string_id, monster, boss, passive)] plus the no-drop weights and the master switch, from the quest files."""
+    q = Path(server) / "config/ftbquests/quests"
+    data = (q / "data.snbt").read_text()
+    on = "drop_loot_crates: true" in data
+    nd = re.search(r"loot_crate_no_drop: \{\s*boss: (\d+)\s*monster: (\d+)\s*passive: (\d+)", data)
+    no_drop = {"boss": int(nd[1]), "monster": int(nd[2]), "passive": int(nd[3])}
+    crates = []
+    for f in sorted((q / "reward_tables").glob("*.snbt")):
+        t = f.read_text()
+        m = re.search(r"drops: \{\s*boss: (\d+)\s*monster: (\d+)\s*passive: (\d+)", t)
+        if not m:
+            continue
+        sid = re.search(r'string_id: "([^"]+)"', t)
+        crates.append((sid[1] if sid else f.stem, {"boss": int(m[1]), "monster": int(m[2]), "passive": int(m[3])}))
+    return on, no_drop, crates
+
+
+class Profile:
+    def __init__(self, name, luck=0.0, looting=0, talisman=False, dim="overworld", hard=False, spawner=0.0):
+        self.name, self.luck, self.looting, self.talisman = name, luck, looting, talisman
+        self.dim, self.hard, self.spawner = dim, hard, spawner
+
+
+def mob_info(mob):
+    passive = mob in PASSIVE
+    known = passive or mob in MOBS
+    return MOBS.get(mob, 20.0), passive, known
+
+
+def bag_luck(cfg, p, health):
+    L, hs = cfg["luck"], cfg["health_scaling"]
+    luck = p.looting * L["per_looting_level"] + p.luck * L["luck_attribute"] + (L["fortune_talisman"] if p.talisman else 0)
+    if hs["enabled"] and health > hs["reference_health"]:
+        luck += min(max(math.log2(health / hs["reference_health"]), 0), L["max_health_luck"])
+    luck += {"nether": L["nether"], "end": L["end"]}.get(p.dim, 0.0)
+    if p.hard:
+        luck += L["hard_difficulty"]
+    return luck
+
+
+def tier_dist(cfg, luck, min_rank=0):
+    w = [cfg["tier_weights"][t] * math.exp(cfg["luck"]["per_point"] * luck * i) if i >= min_rank else 0.0
+         for i, t in enumerate(TIERS)]
+    s = sum(w)
+    return [x / s for x in w]
+
+
+def bag_chance(cfg, mob, health, passive, from_spawner, p):
+    c = cfg["passive_chance"] if passive else cfg["hostile_chance"]
+    c *= cfg["mob_multipliers"].get(mob, 1.0)
+    hs = cfg["health_scaling"]
+    if hs["enabled"]:
+        c *= min(max(health / hs["reference_health"], hs["min_multiplier"]), hs["max_multiplier"])
+    if from_spawner:
+        c *= cfg["spawner_multiplier"]
+    if p.talisman:
+        c *= cfg["talisman_chance_multiplier"]
+    return min(1.0, c * cfg["global_multiplier"])
+
+
+def pick(rng, dist):
+    r, acc = rng.random(), 0.0
+    for i, x in enumerate(dist):
+        acc += x
+        if r < acc:
+            return i
+    return len(dist) - 1
+
+
+def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
+    """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses."""
+    rng = random.Random(seed)
+    mobs, weights = zip(*mix.items())
+    bags, crates = Counter(), Counter()
+    pity = {"kills": 0, "rare": 0, "leg": 0}
+    pc = cfg["pity"]; sp = cfg["specials"]; boss = cfg["bosses"]
+    on, no_drop, crate_list = crates_cfg
+    cum, acc = [], 0
+    for w in weights:
+        acc += w; cum.append(acc)
+    import bisect
+    for _ in range(kills):
+        mob = mobs[bisect.bisect_right(cum, rng.random() * acc)]
+        health, passive, _known = mob_info(mob)
+        luck = bag_luck(cfg, p, health)
+        # FTB Quests crate roll, independent of bags.
+        if on:
+            kind = "boss" if mob in CRATE_BOSS else ("passive" if passive else "monster")
+            total = no_drop[kind] + sum(c[1][kind] for c in crate_list)
+            if total > 0:
+                n = rng.randrange(total) + 1
+                cur = no_drop[kind]
+                if cur < n:
+                    for sid, w in crate_list:
+                        cur += w[kind]
+                        if cur >= n:
+                            crates[sid] += 1
+                            break
+        if not cfg["enabled"]:
+            continue
+        if mob in BAG_BOSSES:
+            mr = TIERS.index(boss["min_tier"])
+            for _ in range(boss["bags"]):
+                t = 5 if rng.random() < boss["mythic_chance"] else pick(rng, tier_dist(cfg, luck, mr))
+                bags[TIERS[t]] += 1
+            continue
+        chance = bag_chance(cfg, mob, health, passive, rng.random() < p.spawner, p)
+        if chance <= 0:
+            continue
+        forced = False
+        if pc["enabled"]:
+            pity["kills"] += 1
+            forced = pc["kills_without_bag"] > 0 and pity["kills"] >= pc["kills_without_bag"]
+        if not forced and rng.random() >= chance:
+            continue
+        pity["kills"] = 0
+        special = None
+        for s in SPECIALS:
+            if rng.random() < sp[s]:
+                special = s
+                break
+        if special:
+            bags[special] += 1
+            continue
+        mr = 0
+        if pc["enabled"]:
+            if pc["bags_until_legendary"] > 0 and pity["leg"] >= pc["bags_until_legendary"]:
+                mr = 4
+            elif pc["bags_until_rare"] > 0 and pity["rare"] >= pc["bags_until_rare"]:
+                mr = 2
+        t = pick(rng, tier_dist(cfg, luck, mr))
+        bags[TIERS[t]] += 1
+        pity["rare"] = 0 if t >= 2 else pity["rare"] + 1
+        pity["leg"] = 0 if t >= 4 else pity["leg"] + 1
+    return bags, crates
+
+
+def kill_mix(server, uuid):
+    stats = json.loads((Path(server) / "world/stats" / f"{uuid}.json").read_text())["stats"]
+    return Counter(stats.get("minecraft:killed", {})), stats.get("minecraft:custom", {})
+
+
+def names(server):
+    try:
+        return {e["uuid"]: e["name"] for e in json.loads((Path(server) / "usercache.json").read_text())}
+    except FileNotFoundError:
+        return {}
+
+
+def fmt_row(label, bags, crates, kills):
+    per = 1000.0 / kills
+    tiers = "  ".join(f"{bags[t] * per:7.1f}" for t in TIERS)
+    total = sum(bags[t] for t in TIERS + SPECIALS) * per
+    return f"{label:<26}{tiers}  {total:7.1f}  {sum(crates.values()) * per:7.1f}"
+
+
+def header():
+    return f"{'per 1000 kills':<26}" + "  ".join(f"{t[:7]:>7}" for t in TIERS) + f"  {'all bags':>7}  {'crates':>7}"
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--server", required=True)
+    ap.add_argument("--mix-from", default="otenlamiughh", help="player whose real kill mix is used")
+    ap.add_argument("--kills", type=int, default=200000)
+    ap.add_argument("--luck", type=float); ap.add_argument("--looting", type=int, default=0)
+    ap.add_argument("--talisman", action="store_true"); ap.add_argument("--hard", action="store_true")
+    ap.add_argument("--dim", default="overworld", choices=["overworld", "nether", "end"])
+    ap.add_argument("--spawner", type=float, default=0.0, help="share of kills from monster spawners (0-1)")
+    ap.add_argument("--set", action="append", help="override a drops.json key, e.g. luck.luck_attribute=0.25")
+    ap.add_argument("--validate", action="store_true")
+    ap.add_argument("--player-luck", action="append", default=[], help="NAME=LUCK for --validate")
+    ap.add_argument("--crates", action="store_true", help="also list crates by type")
+    a = ap.parse_args()
+
+    cfg = load_jsonc(Path(a.server) / "config/mob_loot_bags/drops.json")
+    apply_set(cfg, a.set)
+    crates_cfg = load_crates(a.server)
+    who = names(a.server)
+    by_name = {v: k for k, v in who.items()}
+
+    mix, custom = kill_mix(a.server, by_name.get(a.mix_from, a.mix_from))
+    unknown = sum(n for m, n in mix.items() if not mob_info(m)[2])
+    print(f"kill mix: {a.mix_from}, {sum(mix.values())} kills, {len(mix)} mob types, "
+          f"{unknown / max(1, sum(mix.values())):.0%} not in the health table (counted as hostile, 20 health)")
+    print(f"config: luck_attribute {cfg['luck']['luck_attribute']}, per_point {cfg['luck']['per_point']}, "
+          f"hostile_chance {cfg['hostile_chance']}; FTB crates {'on' if crates_cfg[0] else 'off'}\n")
+
+    if a.validate:
+        luck = dict((k, float(v)) for k, v in (x.split("=") for x in a.player_luck))
+        found = json.loads((Path(a.server) / "world/data/mob_loot_bags/players.json").read_text())
+        print(f"{'player':<16}{'kills':>6}  {'luck':>5}  " + "  ".join(f"{t[:6]:>13}" for t in TIERS))
+        for uuid, e in found.items():
+            name = who.get(uuid, uuid[:8])
+            try:
+                pmix, pc = kill_mix(a.server, uuid)
+            except FileNotFoundError:
+                continue
+            kills = pc.get("minecraft:mob_kills", sum(pmix.values()))
+            if not pmix or kills < 50:
+                continue
+            p = Profile(name, luck.get(name, 0.0), a.looting, a.talisman, a.dim, a.hard, a.spawner)
+            bags, _ = simulate(cfg, crates_cfg, pmix, p, kills * 20)
+            cells = "  ".join(f"{e['found'][t]:>5} vs {bags[t] / 20:5.0f}" for t in TIERS)
+            print(f"{name:<16}{kills:>6}  {p.luck:>5.1f}  {cells}")
+        print("\nactual vs predicted at the luck given, with today's config. Actual counts cover the whole world's"
+              " history, when luck and config were different.")
+        return
+
+    if a.luck is not None:
+        profiles = [Profile(f"luck {a.luck}", a.luck, a.looting, a.talisman, a.dim, a.hard, a.spawner)]
+    else:
+        profiles = [Profile(f"luck {l}", l, a.looting, a.talisman, a.dim, a.hard, a.spawner) for l in (0, 7, 15, 25, 30)]
+    print(header())
+    for p in profiles:
+        bags, crates = simulate(cfg, crates_cfg, mix, p, a.kills)
+        print(fmt_row(p.name, bags, crates, a.kills))
+        if a.crates:
+            for sid, n in crates.most_common():
+                print(f"    {sid:<28}{n * 1000.0 / a.kills:7.2f}")
+
+
+if __name__ == "__main__":
+    main()
