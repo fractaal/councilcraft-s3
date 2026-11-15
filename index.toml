@@ -7377,6 +7377,14 @@ file = "global_packs/required_data/Aero Curio Slots/pack.mcmeta"
 hash = "2e25b31cc9be10c63817c6380a58ecefda798f2e7fb01df802ed035bee6f40b9"
 
 [[files]]
+file = "global_packs/required_data/Aero Enchanting Table Fix/data/easymagic/tags/block/unaltered_enchanting_tables.json"
+hash = "fc35ef8bfc4e40f89a7f60a9413a3b1802986b7376635150efd0fe8cb9765c04"
+
+[[files]]
+file = "global_packs/required_data/Aero Enchanting Table Fix/pack.mcmeta"
+hash = "53061b4171b34c04e915bc998e95339f8914a4c8c2c2d0eae46e3ad0e1feba14"
+
+[[files]]
 file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/add_ant_hills.json"
 hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
 
