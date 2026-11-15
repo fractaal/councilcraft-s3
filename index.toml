@@ -7353,6 +7353,30 @@ file = "global_packs/required_data/Aero Combat/pack.mcmeta"
 hash = "a0a4c0e467b040d54ffff3a90ab8aa151d33d17293bcb967c5c9618cffe34baf"
 
 [[files]]
+file = "global_packs/required_data/Aero Curio Slots/data/aero/curios/slots/necklace.json"
+hash = "61eb1e152788aa3dcd30094b1084fba3329826dcdd4396ca81e0801a0d090360"
+
+[[files]]
+file = "global_packs/required_data/Aero Curio Slots/data/curios/tags/item/belt.json"
+hash = "38fdd261bfb0104f5e12d13b8dfc0333fd66697aed3e1bf9ce454274aff64778"
+
+[[files]]
+file = "global_packs/required_data/Aero Curio Slots/data/curios/tags/item/ring.json"
+hash = "647f64f22bfdc10d81a2eec2ec738d9bea5eae428a4b68f007954bc930a39650"
+
+[[files]]
+file = "global_packs/required_data/Aero Curio Slots/data/curios/tags/item/rings.json"
+hash = "9746fd3a033ffe76de1c46994e7398d26e3e9dc04f1fc54d73e15909c8218b3e"
+
+[[files]]
+file = "global_packs/required_data/Aero Curio Slots/data/curios/tags/item/waist.json"
+hash = "0745ee35ef095e5bfc7b7b9526da201b3f76dfd0b89c231c700fa6155d8841bf"
+
+[[files]]
+file = "global_packs/required_data/Aero Curio Slots/pack.mcmeta"
+hash = "2e25b31cc9be10c63817c6380a58ecefda798f2e7fb01df802ed035bee6f40b9"
+
+[[files]]
 file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/add_ant_hills.json"
 hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
 
@@ -9342,6 +9366,11 @@ hash = "e23f5fdde0fc396372e1697fa5d4b384ccb223026a50b8d5e379a38b288deb2a"
 metafile = true
 
 [[files]]
+file = "mods/accents.pw.toml"
+hash = "fe28fe65eb4df0022e6fba1173aae40bb042432c8b87bbcb33ad0cfa0999083a"
+metafile = true
+
+[[files]]
 file = "mods/aces-spell-utils.pw.toml"
 hash = "74861362fa4cd4d10b2d9f07937526e00c8a2c978ef548f5a7037ba4715261f2"
 metafile = true
@@ -10571,6 +10600,11 @@ hash = "ad797a4747adf0a547aff1f6bdb0c99d27b96324356fd0420fe9167e526d7185"
 metafile = true
 
 [[files]]
+file = "mods/fragmentum.pw.toml"
+hash = "e937517aca4968decca4550ea9f436bcf371892fb6bd9dcd0d6b06d0beb350a4"
+metafile = true
+
+[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "6d937e4bbf525c3d446fb1fc37cc9909a5a5cbecbd4f4451872bf94dbc06d986"
 metafile = true
@@ -11148,6 +11182,11 @@ metafile = true
 [[files]]
 file = "mods/lootr.pw.toml"
 hash = "0d3683a8c533e1fb67bf0b1668089a322fc5f594f9610d441657378ab4f64383"
+metafile = true
+
+[[files]]
+file = "mods/luckyowls-wardrobe.pw.toml"
+hash = "29df77bca784d60746347ada9cfb891a61fbdbf77c58867e3277057cbe5c218b"
 metafile = true
 
 [[files]]

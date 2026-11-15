@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    {"id": "cataclysm:belt_of_beginner", "required": false},
+    {"id": "cataclysm:belt_of_monstrosity", "required": false}
+  ]
+}

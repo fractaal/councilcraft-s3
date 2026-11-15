@@ -1,0 +1,13 @@
+name = "Accents"
+filename = "accents-neoforge-1.21.1-2.0.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fALx4O2Q/versions/djiz0JhA/accents-neoforge-1.21.1-2.0.3.jar"
+hash-format = "sha512"
+hash = "b1b2947e95c4fea1ebd34cfc9b71c3f2821eec4f33785941c6d8799a6d7c5893b48185715a7df0d153e345f8d45ff699aa072ded427c968a85d8b64bbe8ea092"
+
+[update]
+[update.modrinth]
+mod-id = "fALx4O2Q"
+version = "djiz0JhA"
