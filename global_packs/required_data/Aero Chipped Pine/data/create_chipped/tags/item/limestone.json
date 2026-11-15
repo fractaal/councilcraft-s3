@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "meadow:limestone", "required": false },
+    { "id": "meadow:limestone_bricks", "required": false },
+    { "id": "meadow:polished_limestone", "required": false },
+    { "id": "meadow:chiseled_limestone", "required": false }
+  ]
+}
