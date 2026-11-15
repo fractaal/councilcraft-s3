@@ -33,7 +33,7 @@ TIERS = ["common", "uncommon", "rare", "epic", "legendary", "mythic"]
 SPECIALS = ["cursed", "hourglass", "locked", "summoning"]
 
 # Vanilla and common modded max health. passive=True means not Enemy/MONSTER (no bag at passive_chance 0, and the
-# crate weight used is "passive"). crate_boss=True means canUsePortal(false) is false, which FTB Quests treats as a boss.
+# crate weight used is "passive").
 MOBS = {
     "minecraft:zombie": 20, "minecraft:husk": 20, "minecraft:drowned": 20, "minecraft:zombie_villager": 20,
     "minecraft:skeleton": 20, "minecraft:stray": 20, "minecraft:bogged": 16, "minecraft:wither_skeleton": 20,
@@ -50,8 +50,11 @@ PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chick
            "minecraft:villager", "minecraft:iron_golem", "minecraft:snow_golem", "minecraft:fox", "minecraft:bee",
            "minecraft:squid", "minecraft:glow_squid", "minecraft:cod", "minecraft:salmon", "minecraft:bat",
            "naturalist:butterfly", "minecraft:wandering_trader", "minecraft:goat", "minecraft:wolf"}
-CRATE_BOSS = {"minecraft:wither", "minecraft:ender_dragon"}
+# The mob_loot_bags:bosses tag (plus anything in c:bosses). The skyislands mod makes FTB Quests crates use it too.
 BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
+# skyislands.LootRules: bags count a player's Luck up to this, and spawner mobs keep this share of their crates.
+BAG_LUCK_CAP = 30.0
+SPAWNER_CRATE_SHARE = 0.25
 # Hostile in MOBS but not a net.minecraft.world.entity.monster.Monster subclass, so no Apotheosis mob gems.
 NOT_MONSTER = {"minecraft:slime", "minecraft:magma_cube", "minecraft:ghast", "minecraft:phantom", "minecraft:shulker",
                "minecraft:hoglin", "minecraft:ender_dragon"}
@@ -108,7 +111,7 @@ def mob_info(mob):
 
 def bag_luck(cfg, p, health):
     L, hs = cfg["luck"], cfg["health_scaling"]
-    luck = p.looting * L["per_looting_level"] + p.luck * L["luck_attribute"] + (L["fortune_talisman"] if p.talisman else 0)
+    luck = p.looting * L["per_looting_level"] + min(p.luck, BAG_LUCK_CAP) * L["luck_attribute"] + (L["fortune_talisman"] if p.talisman else 0)
     if hs["enabled"] and health > hs["reference_health"]:
         luck += min(max(math.log2(health / hs["reference_health"]), 0), L["max_health_luck"])
     luck += {"nether": L["nether"], "end": L["end"]}.get(p.dim, 0.0)
@@ -171,9 +174,10 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_b
         luck = bag_luck(cfg, p, health)
         if not passive and mob not in NOT_MONSTER and rng.random() < GEM_CHANCE:
             extra["gems"] += 1
-        # FTB Quests crate roll, independent of bags.
-        if on:
-            kind = "boss" if mob in CRATE_BOSS else ("passive" if passive else "monster")
+        from_spawner = rng.random() < p.spawner
+        # FTB Quests crate roll, independent of bags. A spawner mob keeps its crate a quarter of the time.
+        if on and (not from_spawner or rng.random() < SPAWNER_CRATE_SHARE):
+            kind = "boss" if mob in BAG_BOSSES else ("passive" if passive else "monster")
             total = no_drop[kind] + sum(c[1][kind] for c in crate_list)
             if total > 0:
                 n = rng.randrange(total) + 1
@@ -192,7 +196,6 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_b
                 t = 5 if rng.random() < boss["mythic_chance"] else pick(rng, tier_dist(cfg, luck, mr))
                 bags[TIERS[t]] += 1
             continue
-        from_spawner = rng.random() < p.spawner
         chance = bag_chance(cfg, mob, health, passive, from_spawner, p)
         if chance <= 0:
             continue

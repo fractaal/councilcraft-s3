@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -28,5 +29,13 @@ public final class SkyIslandsMod {
         NeoForge.EVENT_BUS.addListener(StructureDensity::onLevelLoad);
         NeoForge.EVENT_BUS.addListener(DfuWarmup::onServerAboutToStart);
         NeoForge.EVENT_BUS.addListener(DfuWarmup::onServerStarted);
+        // After FTB Quests has added its loot crate to a mob's drops.
+        NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, LootRules::onDrops);
+        if (LootCheck.ENABLED) {
+            NeoForge.EVENT_BUS.addListener(LootCheck::register);
+            NeoForge.EVENT_BUS.addListener(LootCheck::onTick);
+            // Before any other mod reacts to a drop that is about to be counted and thrown away.
+            NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, LootCheck::onJoin);
+        }
     }
 }
