@@ -19,6 +19,17 @@ abstract class ServerPlayerGrappleMixin implements GrappleLanding.Tracked {
     @Unique private int skyislands$prevTick = Integer.MIN_VALUE;
     @Unique private double skyislands$y;
     @Unique private double skyislands$prevY;
+    @Unique private boolean skyislands$inVoidFall;
+
+    @Override
+    public boolean skyislands$inVoidFall() {
+        return skyislands$inVoidFall;
+    }
+
+    @Override
+    public void skyislands$setInVoidFall(boolean inVoidFall) {
+        skyislands$inVoidFall = inVoidFall;
+    }
 
     @Override
     public void skyislands$grappleUpdate(int tick, double y) {
@@ -37,7 +48,9 @@ abstract class ServerPlayerGrappleMixin implements GrappleLanding.Tracked {
 
     @Inject(method = "doCheckFallDamage", at = @At("HEAD"))
     private void skyislands$capGrappleLanding(double dx, double dy, double dz, boolean onGround, CallbackInfo ci) {
-        if (!onGround || skyislands$tick == Integer.MIN_VALUE) return;
+        if (!onGround) return;
+        skyislands$inVoidFall = false;
+        if (skyislands$tick == Integer.MIN_VALUE) return;
         ServerPlayer self = (ServerPlayer) (Object) this;
         int now = self.server.getTickCount();
         float before = self.fallDistance;

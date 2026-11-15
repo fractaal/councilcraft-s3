@@ -59,14 +59,41 @@ public final class GrappleLanding {
                 .getPersistentData().getCompound("PlayerPersisted").getCompound("BalmData");
         if (!balm.getBoolean("ForgivingVoidIsFalling")) return;
         balm.putBoolean("ForgivingVoidIsFalling", false);
+        // The fall itself goes on until the player lands; stopVoidFall needs to know that after the flag is gone.
+        if (player instanceof Tracked t) t.skyislands$setInVoidFall(true);
         // Forgiving Void also switches off the movement checks for the fall; it turns them back on when the fall ends.
         player.hasChangedDimension();
         com.mojang.logging.LogUtils.getLogger().info("[skyislands] Grapple ended {}'s Forgiving Void fall at y {}",
                 player.getScoreboardName(), String.format("%.1f", player.getY()));
     }
 
+    /**
+     * A hook catching during a void fall stops the player dead: no velocity and no fall distance, so they hang from the
+     * hook at rest (fractal's choice, 2026-11-15). Without this, the hook mod starts its rope physics from either the
+     * player's velocity or their last move, whichever it trusts that tick, so the speed built up over several void
+     * loops (seen at 7.5 blocks per tick) sometimes survived the catch and killed them on the next landing.
+     * Grapple swings outside a void fall keep their momentum.
+     */
+    public static void stopVoidFall(net.minecraft.server.level.ServerPlayer player) {
+        endVoidFall(player);
+        if (!(player instanceof Tracked t) || !t.skyislands$inVoidFall()) return;
+        t.skyislands$setInVoidFall(false);
+        double speed = player.getDeltaMovement().length();
+        float fall = player.fallDistance;
+        player.setDeltaMovement(net.minecraft.world.phys.Vec3.ZERO);
+        player.fallDistance = 0.0F;
+        player.connection.send(new net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket(player));
+        com.mojang.logging.LogUtils.getLogger().info("[skyislands] Grapple caught {} in a void fall at y {}: stopped (speed {}, fall distance {})",
+                player.getScoreboardName(), String.format("%.1f", player.getY()), String.format("%.3f", speed), String.format("%.2f", fall));
+    }
+
     /** Added to ServerPlayer by mixin.ServerPlayerGrappleMixin. */
     public interface Tracked {
+        /** True from the end of a Forgiving Void fall (endVoidFall) until the player lands or a hook catch stops them. */
+        boolean skyislands$inVoidFall();
+
+        void skyislands$setInVoidFall(boolean inVoidFall);
+
         void skyislands$grappleUpdate(int tick, double y);
 
         /** Vertical speed (blocks per tick, negative falling) from the last two updates, or NaN if not recent. */
