@@ -9,12 +9,19 @@ can be checked before it goes live.
   python3 sim.py --server DIR --luck 25 --looting 3   one profile
   python3 sim.py --server DIR --validate              predicted vs actual bags found, per player
   python3 sim.py --server DIR --set luck.luck_attribute=0.25   try a config change
+  python3 sim.py --server DIR --luck-bags 0.003               try the KubeJS "luck gives more low bags" proposal
+  python3 sim.py --server DIR --contents FILE                 add power columns from bag_contents.py --json
 
 DIR is a server folder (or a copy) holding config/mob_loot_bags/drops.json, config/ftbquests/quests/ and, for kill
 mixes and --validate, world/stats/*.json, world/data/mob_loot_bags/players.json and usercache.json.
 
-What it doesn't model: bag carriers (2% of some mobs spawn holding a bag), cursed-bag ambush rewards, per-dimension
-themes, and spawner tags (pass --spawner for the share of kills from spawners). Mob max health comes from the table
+Hourglass bags are counted as the two bags they ripen into (mob_loot_bags:bags/hourglass in the mod jar: 2 rolls of
+epic 60 / legendary 30 / mythic 10; --hourglass overrides it), not as a bag of their own. The gems column is
+Apotheosis 8.9.0's mob gem drops: gem_entity_drops (0.5%, killed_by_player) plus gem_entity_drops_from_real_players
+(4%), both only for `instanceof Monster` victims, so slimes, ghasts, phantoms, shulkers and hoglins give none.
+
+What it doesn't model: bag carriers (2% of some mobs spawn holding a bag), cursed-bag ambush rewards and jackpots,
+bags found inside bags, per-dimension themes, and spawner tags (pass --spawner for the share of kills from spawners). Mob max health comes from the table
 below; mobs not in it count as hostile with 20 health, and the share of such kills is printed. Apotheosis world tier
 plays no part in either mod's rolls.
 """
@@ -45,6 +52,13 @@ PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chick
            "naturalist:butterfly", "minecraft:wandering_trader", "minecraft:goat", "minecraft:wolf"}
 CRATE_BOSS = {"minecraft:wither", "minecraft:ender_dragon"}
 BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
+# Hostile in MOBS but not a net.minecraft.world.entity.monster.Monster subclass, so no Apotheosis mob gems.
+NOT_MONSTER = {"minecraft:slime", "minecraft:magma_cube", "minecraft:ghast", "minecraft:phantom", "minecraft:shulker",
+               "minecraft:hoglin", "minecraft:ender_dragon"}
+GEM_CHANCE = 0.005 + 0.04
+HOURGLASS = {"epic": 60, "legendary": 30, "mythic": 10}
+# The KubeJS "luck bags" proposal (see --luck-bags): one bonus stack per success, tier by weight, count range.
+LUCK_STACKS = [("common", 60, 3, 5), ("uncommon", 28, 2, 3), ("rare", 10, 1, 2), ("epic", 2, 1, 1)]
 
 
 def load_jsonc(path):
@@ -132,9 +146,16 @@ def pick(rng, dist):
     return len(dist) - 1
 
 
-def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
-    """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses."""
+def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_bags=None):
+    """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses.
+
+    luck_bags = (rate, cap): the KubeJS proposal. On every hostile, non-boss kill that could drop a bag, with chance
+    min(cap, rate * Luck attribute) (times spawner_multiplier for spawner mobs) it also drops one LUCK_STACKS stack.
+    """
     rng = random.Random(seed)
+    hg = [(TIERS.index(t), w) for t, w in hourglass.items()]
+    hg_total = sum(w for _, w in hg)
+    extra = Counter()
     mobs, weights = zip(*mix.items())
     bags, crates = Counter(), Counter()
     pity = {"kills": 0, "rare": 0, "leg": 0}
@@ -148,6 +169,8 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
         mob = mobs[bisect.bisect_right(cum, rng.random() * acc)]
         health, passive, _known = mob_info(mob)
         luck = bag_luck(cfg, p, health)
+        if not passive and mob not in NOT_MONSTER and rng.random() < GEM_CHANCE:
+            extra["gems"] += 1
         # FTB Quests crate roll, independent of bags.
         if on:
             kind = "boss" if mob in CRATE_BOSS else ("passive" if passive else "monster")
@@ -169,9 +192,21 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
                 t = 5 if rng.random() < boss["mythic_chance"] else pick(rng, tier_dist(cfg, luck, mr))
                 bags[TIERS[t]] += 1
             continue
-        chance = bag_chance(cfg, mob, health, passive, rng.random() < p.spawner, p)
+        from_spawner = rng.random() < p.spawner
+        chance = bag_chance(cfg, mob, health, passive, from_spawner, p)
         if chance <= 0:
             continue
+        if luck_bags and not passive:
+            lb = min(luck_bags[1], luck_bags[0] * max(0.0, p.luck)) * (cfg["spawner_multiplier"] if from_spawner else 1)
+            if rng.random() < lb:
+                r = rng.random() * sum(s[1] for s in LUCK_STACKS)
+                for tier, w, lo, hi in LUCK_STACKS:
+                    r -= w
+                    if r < 0:
+                        n = rng.randint(lo, hi)
+                        bags[tier] += n
+                        extra["luck_" + tier] += n
+                        break
         forced = False
         if pc["enabled"]:
             pity["kills"] += 1
@@ -184,6 +219,16 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
             if rng.random() < sp[s]:
                 special = s
                 break
+        if special == "hourglass":
+            extra["hourglass"] += 1
+            for _ in range(2):
+                r = rng.random() * hg_total
+                for t, w in hg:
+                    r -= w
+                    if r < 0:
+                        bags[TIERS[t]] += 1
+                        break
+            continue
         if special:
             bags[special] += 1
             continue
@@ -197,6 +242,7 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1):
         bags[TIERS[t]] += 1
         pity["rare"] = 0 if t >= 2 else pity["rare"] + 1
         pity["leg"] = 0 if t >= 4 else pity["leg"] + 1
+    bags.update({"_" + k: v for k, v in extra.items()})
     return bags, crates
 
 
@@ -212,15 +258,37 @@ def names(server):
         return {}
 
 
-def fmt_row(label, bags, crates, kills):
+def power(contents, luck, bags):
+    """Gems, affix items and nether stars from opening the bags, using the bag_contents.py profile nearest `luck`."""
+    key = min(contents, key=lambda k: abs(float(k.split()[1]) - luck))
+    per = contents[key]
+    return key, {
+        "gems": sum(bags[t] * per[t]["gems"] for t in TIERS),
+        "affix": sum(bags[t] * per[t]["affix"] for t in TIERS),
+        "stars": sum(bags[t] * per[t]["notable"].get("minecraft:nether_star", 0) for t in TIERS),
+    }
+
+
+def fmt_row(label, bags, crates, kills, contents=None, luck=0.0):
     per = 1000.0 / kills
     tiers = "  ".join(f"{bags[t] * per:7.1f}" for t in TIERS)
     total = sum(bags[t] for t in TIERS + SPECIALS) * per
-    return f"{label:<26}{tiers}  {total:7.1f}  {sum(crates.values()) * per:7.1f}"
+    # Crafting value: what every tier bag is worth in mythics through the 4-to-1 recipes (stars ignored).
+    craft = sum(bags[t] * 4 ** i for i, t in enumerate(TIERS)) / 4 ** 5 * per
+    row = (f"{label:<26}{tiers}  {total:7.1f}  {craft:7.2f}  {sum(crates.values()) * per:7.1f}"
+           f"  {bags['_gems'] * per:7.1f}")
+    if contents:
+        _, pw = power(contents, luck, bags)
+        row += "  " + "  ".join(f"{pw[k] * per:7.2f}" for k in ("gems", "affix", "stars"))
+    return row
 
 
-def header():
-    return f"{'per 1000 kills':<26}" + "  ".join(f"{t[:7]:>7}" for t in TIERS) + f"  {'all bags':>7}  {'crates':>7}"
+def header(contents=None):
+    h = f"{'per 1000 kills':<26}" + "  ".join(f"{t[:7]:>7}" for t in TIERS) + \
+        f"  {'all bags':>7}  {'mythEq':>7}  {'crates':>7}  {'mobgems':>7}"
+    if contents:
+        h += f"  {'baggems':>7}  {'affix':>7}  {'stars':>7}"
+    return h
 
 
 def main():
@@ -236,7 +304,16 @@ def main():
     ap.add_argument("--validate", action="store_true")
     ap.add_argument("--player-luck", action="append", default=[], help="NAME=LUCK for --validate")
     ap.add_argument("--crates", action="store_true", help="also list crates by type")
+    ap.add_argument("--hourglass", help="hourglass bag weights, e.g. rare=60,epic=30,legendary=10")
+    ap.add_argument("--luck-bags", help="KubeJS proposal: RATE[,CAP], bonus-stack chance per kill = min(CAP, RATE*Luck)")
+    ap.add_argument("--contents", help="bag_contents.py --json output, for gems/affix items/nether stars from bags")
     a = ap.parse_args()
+    hourglass = dict((k, float(v)) for k, v in (x.split("=") for x in a.hourglass.split(","))) if a.hourglass else HOURGLASS
+    luck_bags = None
+    if a.luck_bags:
+        parts = [float(x) for x in a.luck_bags.split(",")]
+        luck_bags = (parts[0], parts[1] if len(parts) > 1 else 0.5)
+    contents = json.loads(Path(a.contents).read_text()) if a.contents else None
 
     cfg = load_jsonc(Path(a.server) / "config/mob_loot_bags/drops.json")
     apply_set(cfg, a.set)
@@ -265,7 +342,7 @@ def main():
             if not pmix or kills < 50:
                 continue
             p = Profile(name, luck.get(name, 0.0), a.looting, a.talisman, a.dim, a.hard, a.spawner)
-            bags, _ = simulate(cfg, crates_cfg, pmix, p, kills * 20)
+            bags, _ = simulate(cfg, crates_cfg, pmix, p, kills * 20, hourglass={}, luck_bags=luck_bags)
             cells = "  ".join(f"{e['found'][t]:>5} vs {bags[t] / 20:5.0f}" for t in TIERS)
             print(f"{name:<16}{kills:>6}  {p.luck:>5.1f}  {cells}")
         print("\nactual vs predicted at the luck given, with today's config. Actual counts cover the whole world's"
@@ -276,10 +353,10 @@ def main():
         profiles = [Profile(f"luck {a.luck}", a.luck, a.looting, a.talisman, a.dim, a.hard, a.spawner)]
     else:
         profiles = [Profile(f"luck {l}", l, a.looting, a.talisman, a.dim, a.hard, a.spawner) for l in (0, 7, 15, 25, 30)]
-    print(header())
+    print(header(contents))
     for p in profiles:
-        bags, crates = simulate(cfg, crates_cfg, mix, p, a.kills)
-        print(fmt_row(p.name, bags, crates, a.kills))
+        bags, crates = simulate(cfg, crates_cfg, mix, p, a.kills, hourglass=hourglass, luck_bags=luck_bags)
+        print(fmt_row(p.name, bags, crates, a.kills, contents, p.luck))
         if a.crates:
             for sid, n in crates.most_common():
                 print(f"    {sid:<28}{n * 1000.0 / a.kills:7.2f}")
