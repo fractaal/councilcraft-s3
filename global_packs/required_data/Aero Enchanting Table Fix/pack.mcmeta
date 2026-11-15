@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": "Keeps Apothic Enchanting's own tables out of Easy Magic's table conversion, so infusing and Apothic shelf stats work at them"
+  }
+}
