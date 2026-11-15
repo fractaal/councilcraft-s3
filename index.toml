@@ -5046,7 +5046,7 @@ hash = "29f0d153c86ac22c8d9cbbed27cb2e09eeaeb464a47f80d6cda914f697b75948"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
-hash = "ed781db32d2e7fda07df12603ceded3cc6564a3987497a950b03e9c4f12a4fb5"
+hash = "d3dfc37d10ed7949223f61766eb30d88d3070318f0ade98d7fbf50316359cc83"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
@@ -5250,19 +5250,19 @@ hash = "7fcc428f99f328c2e76d417d9096e5a41aad630c68c2c15184a6f6a0413dc1ec"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/04e2ade3851064d1.snbt"
-hash = "4119803baa39f56307ab8956c2acc34af9554feb7829040fe1809854e619fb4f"
+hash = "537268314794ce6f602fcd5514cdaa0012b3db1eb6bc0c2f2862dfa08f0b92be"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/0bcfc3959c93667a.snbt"
-hash = "e933d3b7e7d04bc961e75f1b1331ec6e24127c220712d50f7ffea37a1b8a1698"
+hash = "958265eb27c0326edbed6f0a50e56a3116c5ae38d6d2dba7252c1723dae642fb"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/19daa0a82cbd4fb8.snbt"
-hash = "b80f7e82a34081861addb2ba12b7f479068e54748d5be053cdb0585da31bfe6e"
+hash = "f9e57b2f1e6721318f7c55f4cb9708d5220a4e996bec5ccff56c09a296c7eb39"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/1e2d6248e209e76e.snbt"
-hash = "dfcc581eacd531af62259e86ba8cee14ae46ac6f55e94a60220b8f91be096a64"
+hash = "3a3f5bb228e5a0bb1aa93895c4711f9a9b071fd3f4a4c5e0ee64053678ab6f53"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/23c36b2b87266320.snbt"
@@ -5270,7 +5270,7 @@ hash = "cbcef6032777be072a9de38a57ccb435b0b5f3063446e33dd35b4c59bb145318"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/37050078793de537.snbt"
-hash = "2a45db1ba20714012bff21631fd5ae500844293f2a4f45765ba5ba7aac9157c3"
+hash = "ef88b8fb6867dd7a36f343e2167e7e3941f9a3ab9cb3a6e130e5a5821472a970"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/3f244c5658842e1c.snbt"
@@ -5282,27 +5282,27 @@ hash = "75c139c40c6fea2453c84680f5acb450f4c77ac128f5aae1da55339c44fb3b65"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/41ab264e28626cdb.snbt"
-hash = "89e10bc35fb79128761d7794c448a4b467c3e2a079e429126ef3be3106b6332d"
+hash = "2299b49f1d769635c8beca4c254ea8d59d7562fb95aaadce2419594cf34c264c"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/44675ff0c802b588.snbt"
-hash = "0dea09322b389ef7d406630dc94c60e38133f8ee78085b4450b3467855131092"
+hash = "c998daaef516d39a8dc3afade43a4f9608697437e132fd08a4ac76afe1bd197c"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/5980398643e65cbf.snbt"
-hash = "0d14c90a7f0305babba031771142869fc408eb913588a0e21230f26f02ecfdb4"
+hash = "9806672e14d95cbeb7eab6377ecf599eb0a9edb7122e682805a452a2546ef1e3"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/5f726ad2b912c6c3.snbt"
-hash = "a7a13a83ed860797e6186ecacc165e56f41b6dc292faf3d7f19df5c3c3cb4aaa"
+hash = "b1064c9a5793701ef2b005f1158ceaaf610be7fbf53b36c2470d20fb8885c27e"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/61d338f0b6cbfad3.snbt"
-hash = "89fdce00bb925fb8d0b4a4c085f8aa6b77d0d13cd3bb3dfb5ed763b61d01609c"
+hash = "39465656e670e0fa74833e7466d553f65bbd6bb115789fc5a2aeaea3803e75f4"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/72156a7d9aa4b893.snbt"
-hash = "50d3e8f1384b26559af3b606b1d30deda6f9549fe4656a0880bedaa28afb0144"
+hash = "135c5efa41bcc78de34a236b311d2a69635be866c20e0217c8b42a29199f1410"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/72194b4a84c18a8f.snbt"
@@ -5310,15 +5310,15 @@ hash = "2cb705f6985282cb5b4568babd13fa9cd656fa30d44c433b2b95911dcf7daf46"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/74d2721a88e9aaa0.snbt"
-hash = "e8d27e6b3e7c30307b9bba8fc3494ad8261dbd29d988af365c845e60255e3b68"
+hash = "66e476ba10ffe2fd65d03c6125176073439c1593ccacd9e890e1744ad2e03fae"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/790a03e65ce8ebe4.snbt"
-hash = "addc4dee4e4328837293b35190660a90ed53ab77766375093ad9941e23d337a7"
+hash = "393c671172b90b80b1a6bacb44aec9846535d7ac5776f4e8e31150321a7e8668"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/7d4f4bcaa73dd644.snbt"
-hash = "fe1ad9a3507b9fcff07486f9f765f61e5d9dbeeb081b32c6588d1d0ad311e7d5"
+hash = "ebb69558b1ba3ac146c40672bae24fb4b4b376bdc934aaf4dc511f2fb4e604b2"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/arrow.snbt"
@@ -5354,7 +5354,7 @@ hash = "d8d5f8de8d63f8da8ad6eb38e18ff82348c6ba08bdebeb2ff646ba88f7a984eb"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/copper.snbt"
-hash = "40f832cd0269c4da633951d7a2c744ffec4f6612cef9e64cc686ddafd29efdff"
+hash = "ea28731c647e6347df12ffce0cc6ddcad8f565e3f651eb39f1e51e4881b0691e"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/corals.snbt"
@@ -5366,7 +5366,7 @@ hash = "8a94fc06bbe3b9073fdfa31f04d7a9a28cbfb266a8b207e8b8bcaf9010e40ca1"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/diamond.snbt"
-hash = "01b259b38759199c565a395c70c5fadf143a98cd7175b84030891c43c87e29b9"
+hash = "e7e7d924581307b4c3d6d593428b471657b2eb9937ebe713dd16b0ea3d16c747"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/dye.snbt"
@@ -5382,7 +5382,7 @@ hash = "19d24d1ba9d8f1041d81adde0d89d6bfbdd8e3ef4f9b16aad0f14bb148aecfaa"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/gold.snbt"
-hash = "54b0e860ebbf5422b3bbad77cba59da043b3512abdd6005eaa340412c5683477"
+hash = "d394b7f1375f14d9df33029dd65fdf8d2a8ed3a2591d1482910a5369118ab442"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/golden_food.snbt"
@@ -5390,7 +5390,7 @@ hash = "31da3a74f8dfbf2905166d1bbffc19b91e8bd89283da88f7132851d170398075"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/iron.snbt"
-hash = "0b520cf91066965bc10a6c899c51ef08067342e73338b821afc7e3b1414cc9e9"
+hash = "49c61de758f533f346b2b1207dad9f6cf674b789910807160a4937979beba3b9"
 
 [[files]]
 file = "config/ftbquests/quests/reward_tables/leftovers.snbt"
@@ -7217,8 +7217,12 @@ file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/stri
 hash = "c0ecd2e1bc153bd6e3277d6a296ee00a78ee69411f7f730291dd1144c1b55524"
 
 [[files]]
+file = "global_packs/required_data/Aero Chipped Pine/data/create_chipped/tags/item/limestone.json"
+hash = "273733d0201454e32f9f4e78f75cf1a85875d2d9e2b1eb8fa356f30ec035af58"
+
+[[files]]
 file = "global_packs/required_data/Aero Chipped Pine/pack.mcmeta"
-hash = "059fe86c4f475d53730ddcfc110734d7a5b59479a0255be9cf36f76151ab963b"
+hash = "a310d782cbd108778c4f589bae1b20c352c10d04542dbb53d636467cea929999"
 
 [[files]]
 file = "global_packs/required_data/Aero Combat/data/aero_combat/custom_raids/cinder_patrol.json"
@@ -11893,7 +11897,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "4af0fad59552f964551a611877f6999ae02d293d36ede79c7482af2a1219404f"
+hash = "bb3e4d07260d68647d176be4965d8d31bdcff1265fb17910c14f3c3faa020cda"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"

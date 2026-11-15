@@ -4,7 +4,7 @@
 		color: 16767377
 		drops: {
 			boss: 0
-			monster: 30
+			monster: 20
 			passive: 0
 		}
 		item_name: "Iron Crate"

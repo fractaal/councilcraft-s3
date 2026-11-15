@@ -10,7 +10,7 @@
 		color: 43690
 		drops: {
 			boss: 5
-			monster: 4
+			monster: 2
 			passive: 0
 		}
 		item_name: "ftbquests.loot_crate.utility_spell_scrolls"

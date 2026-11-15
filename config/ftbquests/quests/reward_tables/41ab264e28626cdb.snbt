@@ -124,7 +124,7 @@
 	loot_crate: {
 		color: 43520
 		drops: {
-			boss: 10
+			boss: 0
 			monster: 2
 			passive: 0
 		}

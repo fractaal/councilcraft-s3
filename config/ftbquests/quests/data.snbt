@@ -15,7 +15,7 @@
 	lock_message: ""
 	loot_crate_no_drop: {
 		boss: 0
-		monster: 6000
+		monster: 6084
 		passive: 4000
 	}
 	pause_game: false

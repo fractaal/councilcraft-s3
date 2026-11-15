@@ -4,7 +4,7 @@
 		color: 5636095
 		drops: {
 			boss: 10
-			monster: 8
+			monster: 5
 			passive: 0
 		}
 		item_name: "Diamond Crate"

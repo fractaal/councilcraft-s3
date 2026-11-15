@@ -4,7 +4,7 @@
 		color: 16754434
 		drops: {
 			boss: 0
-			monster: 20
+			monster: 12
 			passive: 0
 		}
 		item_name: "Gold Crate"
