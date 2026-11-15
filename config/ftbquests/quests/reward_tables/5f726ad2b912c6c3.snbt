@@ -3,8 +3,8 @@
 	loot_crate: {
 		color: 16755200
 		drops: {
-			boss: 0
-			monster: 0
+			boss: 5
+			monster: 1
 			passive: 0
 		}
 		glow: 1b

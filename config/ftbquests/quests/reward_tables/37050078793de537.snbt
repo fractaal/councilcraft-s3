@@ -4,7 +4,7 @@
 		color: 5635925
 		drops: {
 			boss: 0
-			monster: 0
+			monster: 2
 			passive: 0
 		}
 		glow: 1b

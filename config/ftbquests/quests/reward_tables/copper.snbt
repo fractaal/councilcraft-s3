@@ -4,7 +4,7 @@
 		color: 16740911
 		drops: {
 			boss: 0
-			monster: 0
+			monster: 40
 			passive: 0
 		}
 		item_name: "Copper Crate"

@@ -3,8 +3,8 @@
 	loot_crate: {
 		color: 5636095
 		drops: {
-			boss: 0
-			monster: 0
+			boss: 10
+			monster: 8
 			passive: 0
 		}
 		item_name: "Diamond Crate"
