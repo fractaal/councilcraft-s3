@@ -6074,7 +6074,7 @@ hash = "971bc2210b5e23635d9a0095bf83fd71ea2e07cdb2eed4416c5c74c70e9ab36d"
 
 [[files]]
 file = "config/mob_loot_bags/drops.json"
-hash = "69c9f5ffb5ff7edded1cc51ca093eefc0423ed68b3c113949359b7dd756b9b84"
+hash = "6a797a2b5dbf337ad4f0c9fcd9a4a6849abb4965cd0b83c5a5588aafe2bc2c5e"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
@@ -7487,6 +7487,10 @@ hash = "500eadb8c77a57c7d4bab49d175e95cb60efdc24faf17b532af25ccc1d8fe41f"
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/epic/the_nether.json"
 hash = "b7edae393768b7ba64ab22ad9a0fbb96fa141fe5fc39bf158a89c0b93323acdb"
+
+[[files]]
+file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/hourglass.json"
+hash = "347d51638ab6585fb1459a8e8c51c3ab1b981d0049931256a405210724eef0c1"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/legendary.json"
@@ -11909,7 +11913,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "bb3e4d07260d68647d176be4965d8d31bdcff1265fb17910c14f3c3faa020cda"
+hash = "9fe175fb87199caa08da0c09b2d76d5454ef67f52d53948889372a0c7378c003"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"
