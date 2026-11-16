@@ -147,7 +147,9 @@
       "bhc:wither_bone": 2,
       "reliquary:withered_rib": 2,
       "eternalnether:withered_bone": 1,
-      "irregular_implements:ectoplasm": 2
+      "irregular_implements:ectoplasm": 2,
+      // Name tags, a loot item with no crafting recipe, priced like a bow (TechKeeper, 2026-11-17).
+      "minecraft:name_tag": 3
     }
   }
 }
