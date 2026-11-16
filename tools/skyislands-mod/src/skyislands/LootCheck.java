@@ -31,6 +31,8 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.arguments.ResourceLocationArgument;
+import net.minecraft.commands.arguments.item.ItemArgument;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -53,6 +55,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  *
  *   /lootcheck <player> <mob id> <count> [spawner]
  *   /lootcheck bot <luck> <mob id> <count> [spawner]
+ *   /lootcheck hand <item>
  *
  * spawns that many mobs at the player, one after another, kills each with a player attack from that player (so the kill
  * is theirs, with their Luck, gear and Apotheosis world tier), and counts every item the death puts into the world:
@@ -62,7 +65,8 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  *
  * Mob Loot Bags and Apotheosis give nothing for a fake player's kills, so the killer is either a logged-in player or,
  * with "bot", a stand-in those mods take for one (see standIn). The kills are real to every other mod too: they count toward that player's statistics, quests, advancements and loot bag
- * pity, and a mythic bag is announced in chat. So this is for a test server. The command only exists when the server's
+ * pity, and a mythic bag is announced in chat. "hand" puts an item, with any components, in the stand-in's main hand for
+ * later bot runs, so weapon effects such as Apotheosis affixes take part. So this is for a test server. The command only exists when the server's
  * JVM is started with -Dskyislands.lootcheck=true.
  */
 public final class LootCheck {
@@ -85,7 +89,13 @@ public final class LootCheck {
         double health;
         long started = System.currentTimeMillis();
         final Map<String, Long> items = new TreeMap<>();
+        /** For gems and crates: how many kills dropped that many of them (0, 1, 21...), so bursts show up. */
+        final Map<String, Map<Integer, Integer>> perKill = new TreeMap<>();
+        final Map<String, Integer> thisKill = new TreeMap<>();
     }
+
+    /** Items whose per-kill counts are tallied in "per_kill". */
+    private static final Map<String, String> PER_KILL = Map.of("apotheosis:gem", "gems", "ftbquests:lootcrate", "crates");
 
     private static Run run;
     /** True only while a test mob is being killed: every entity that tries to enter the world then is one of its drops. */
@@ -98,6 +108,8 @@ public final class LootCheck {
                                 .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
                                         .executes(c -> start(c, false, true))
                                         .then(Commands.literal("spawner").executes(c -> start(c, true, true)))))))
+                .then(Commands.literal("hand").then(Commands.argument("item", ItemArgument.item(event.getBuildContext()))
+                        .executes(LootCheck::hand)))
                 .then(Commands.argument("player", EntityArgument.player())
                         .then(Commands.argument("mob", ResourceLocationArgument.id())
                                 .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
@@ -107,11 +119,18 @@ public final class LootCheck {
 
     private static ServerPlayer standIn;
 
+    private static int hand(CommandContext<CommandSourceStack> c) throws CommandSyntaxException {
+        ItemStack stack = ItemArgument.getItem(c, "item").createItemStack(1, false);
+        standIn(c.getSource().getServer(), 0.0).setItemInHand(InteractionHand.MAIN_HAND, stack);
+        c.getSource().sendSuccess(() -> Component.literal("lootcheck bot now holds " + stack.getHoverName().getString()), false);
+        return 1;
+    }
+
     /**
      * A stand-in killer for "/lootcheck bot <luck> ...", so a run needs nobody logged in: an ordinary ServerPlayer that
      * stands at the world spawn and was never connected. Mob Loot Bags, Apotheosis and skyislands.LootRules tell a real
      * player from a machine's by one test, "is it NeoForge's FakePlayer class", and this isn't, so its kills count as a
-     * real player's. It has no gear and no Apotheosis world tier; its Luck is whatever the command gives it.
+     * real player's. It has no gear unless "hand" gives it a weapon, and no Apotheosis world tier; its Luck is whatever the command gives it.
      */
     private static ServerPlayer standIn(MinecraftServer server, double luck) {
         if (standIn == null) {
@@ -194,6 +213,7 @@ public final class LootCheck {
         // A jockey's mount or rider comes along with the mob; none of them should outlive the test.
         List<Entity> group = new ArrayList<>();
         mob.getRootVehicle().getPassengersAndSelf().forEach(group::add);
+        r.thisKill.clear();
         counting = true;
         try {
             for (int hit = 0; hit < 5 && mob.isAlive(); hit++) {
@@ -204,7 +224,11 @@ public final class LootCheck {
             counting = false;
         }
         if (mob.isAlive()) r.survived++;
-        else r.killed++;
+        else {
+            r.killed++;
+            for (String kind : PER_KILL.values())
+                r.perKill.computeIfAbsent(kind, k -> new TreeMap<>()).merge(r.thisKill.getOrDefault(kind, 0), 1, Integer::sum);
+        }
         group.forEach(Entity::discard);
     }
 
@@ -214,6 +238,8 @@ public final class LootCheck {
         if (event.getEntity() instanceof ItemEntity item && run != null) {
             ItemStack stack = item.getItem();
             run.items.merge(key(stack), (long) stack.getCount(), Long::sum);
+            String kind = PER_KILL.get(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
+            if (kind != null) run.thisKill.merge(kind, stack.getCount(), Integer::sum);
         }
         event.setCanceled(true);
     }
@@ -236,6 +262,7 @@ public final class LootCheck {
         out.addProperty("spawn", r.spawner ? "spawner" : "natural");
         out.addProperty("player", r.player.getScoreboardName());
         out.addProperty("luck", r.player.getLuck());
+        out.addProperty("held", BuiltInRegistries.ITEM.getKey(r.player.getMainHandItem().getItem()).toString());
         out.addProperty("dimension", r.player.serverLevel().dimension().location().toString());
         out.addProperty("difficulty", r.player.serverLevel().getDifficulty().getKey());
         out.addProperty("kills", r.killed);
@@ -246,6 +273,13 @@ public final class LootCheck {
         JsonObject items = new JsonObject();
         r.items.forEach(items::addProperty);
         out.add("items", items);
+        JsonObject perKill = new JsonObject();
+        r.perKill.forEach((kind, hist) -> {
+            JsonObject h = new JsonObject();
+            hist.forEach((n, kills) -> h.addProperty(String.valueOf(n), kills));
+            perKill.add(kind, h);
+        });
+        out.add("per_kill", perKill);
         String file = "?";
         try {
             Path dir = r.player.server.getServerDirectory().resolve("logs").resolve("lootcheck");
