@@ -6074,7 +6074,7 @@ hash = "971bc2210b5e23635d9a0095bf83fd71ea2e07cdb2eed4416c5c74c70e9ab36d"
 
 [[files]]
 file = "config/mob_loot_bags/drops.json"
-hash = "6a797a2b5dbf337ad4f0c9fcd9a4a6849abb4965cd0b83c5a5588aafe2bc2c5e"
+hash = "dd6f8a6e1787e06ae9fb5c6f68deca461c1c0b5b5afbe1ba13cbafa2a1c92804"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
