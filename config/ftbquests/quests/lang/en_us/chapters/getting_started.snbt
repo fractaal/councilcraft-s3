@@ -212,7 +212,7 @@
 		""
 		"&bComplete Tasks&r and get &euseful Rewards&r."
 	]
-	quest.4B3B22E5E56E75B9.quest_subtitle: "&dWelcome to Exosphere 2 + Create!&r"
+	quest.4B3B22E5E56E75B9.quest_subtitle: "&dWelcome to CouncilCraft Season 3!&r"
 	quest.4B3B22E5E56E75B9.title: "&zBegin Quests&r"
 	quest.50ADBCBEAD81591E.title: "Redstone III"
 	quest.58EBFBFFE9DCE3C9.quest_desc: [
@@ -254,15 +254,6 @@
 	quest.7BCCBB127E66B6B8.title: "Blast' Smoke"
 	quest.7C195FB479BD0E5A.quest_desc: [
 		"To get the &dHero of the Village&r advancement in Minecraft, you need to successfully &bdefend a village during a Raid&r by defeating all waves of raiding mobs."
-		""
-		""
-		"{@pagebreak}"
-		""
-		"&eHeroes of the Village (Community)&r"
-		""
-		"Ever wondered about the unique &9purple role on Discord&r and special capes?"
-		""
-		"It’s assigned to those members who make &eexceptional contributions&r to the &dBeyond Mines community&r, such as assisting other players, sharing or writing articles on the official Forum, or supporting the project through donations."
 	]
 	quest.7C195FB479BD0E5A.title: "&eHero of the Village&r"
 	quest.7F6D7012E9C93CDE.quest_desc: [

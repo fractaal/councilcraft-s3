@@ -4770,7 +4770,7 @@ hash = "c8b8ead5a2037c8b98a1260a4e95e8e0e2db78b7c9dc6016b817cb54ec78ab5a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/getting_started.snbt"
-hash = "0e5f5be24bcc4ffc7fd86420572c400cd3110167c72c0ff76b93afa36b91c548"
+hash = "aa1f4b8001eb82ef0ba60af4ec3b73a4cc69e27957f542fac1c18c401a5e9514"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/immersive_armors.snbt"
@@ -4854,7 +4854,7 @@ hash = "d3dfc37d10ed7949223f61766eb30d88d3070318f0ade98d7fbf50316359cc83"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "1b90fad709a7c5b025b8c88bba9c2519b050530d0d20c52fee43880c41cf428d"
+hash = "e1addfaa212a85db705fffb59af93be70acb616c1e8d8390f68460140153a2ac"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapter.snbt"
@@ -4930,7 +4930,7 @@ hash = "5770f8c16006655c716fa3749009d1ff93a9f779eaa15471c06b249f7b67c34b"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/getting_started.snbt"
-hash = "0fbbea6c9b8a6a89e49df362fa8290e0fac179bf09768c1690292c3496f98bd9"
+hash = "48796a14180e31e273bd2b915a5c63c7c373d57f14c6f9beae35932b1aa3b715"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us/chapters/immersive_armors.snbt"

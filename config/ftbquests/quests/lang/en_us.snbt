@@ -3339,8 +3339,6 @@
 	quest.3BC083F50968AC77.quest_desc: ["&dRivers&r are just bodies of water surrounded by mud. You can find &eocean-related items&r more commonly in &bloot chests&r scattered throughout sunken shipwrecks."]
 	quest.3BC083F50968AC77.quest_subtitle: "No Oceans"
 	quest.3BC083F50968AC77.title: "Locate a River?"
-	quest.3C0276F8B3471C19.quest_desc: ["https://beyondmines.net/join-team"]
-	quest.3C0276F8B3471C19.quest_subtitle: "We are in need of more team members :("
 	quest.3C0D9DFFEC915E2C.quest_subtitle: "Transfers Fluids"
 	quest.3C0D9DFFEC915E2C.title: "&fFluid Conduit"
 	quest.3CAA89E621ED5B6E.quest_desc: [
@@ -4085,7 +4083,7 @@
 		""
 		"&bComplete Tasks&r and get &euseful Rewards&r."
 	]
-	quest.4B3B22E5E56E75B9.quest_subtitle: "&dWelcome to Exosphere 2 + Create!&r"
+	quest.4B3B22E5E56E75B9.quest_subtitle: "&dWelcome to CouncilCraft Season 3!&r"
 	quest.4B3B22E5E56E75B9.title: "&zBegin Quests&r"
 	quest.4B52F4885BEA9FC0.quest_desc: [
 		"Same blend, different flame. Put a &aSoul Campfire&f or &aSoul Torch&f next to the &dLevitite Blend&f instead of regular fire, or pour it over soul sand or soul soil that's burning, and it crystallizes pink instead of blue."
@@ -6502,15 +6500,6 @@
 	quest.7C0FD2B2589BC66D.title: "&bBigger \\&\\ Better"
 	quest.7C195FB479BD0E5A.quest_desc: [
 		"To get the &dHero of the Village&r advancement in Minecraft, you need to successfully &bdefend a village during a Raid&r by defeating all waves of raiding mobs."
-		""
-		""
-		"{@pagebreak}"
-		""
-		"&eHeroes of the Village (Community)&r"
-		""
-		"Ever wondered about the unique &9purple role on Discord&r and special capes?"
-		""
-		"It’s assigned to those members who make &eexceptional contributions&r to the &dBeyond Mines community&r, such as assisting other players, sharing or writing articles on the official Forum, or supporting the project through donations."
 	]
 	quest.7C195FB479BD0E5A.title: "&eHero of the Village&r"
 	quest.7C2617969808F086.quest_desc: ["Slapping some &3Transistors&r and &3Capacitors&r on the &dUnassembled PCB&r will make a &bPrinted Circuit Board&r."]

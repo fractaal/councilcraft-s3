@@ -560,7 +560,7 @@
 				}
 				{
 					auto: "invisible"
-					command: "/tellraw @p [\"\",{\"text\":\"                                                                  \",\"strikethrough\":true,\"color\":\"light_purple\"},\"\\n\",{\"text\":\"Your journey begins now! If you run into any issues, have questions about quests, or just want to leave feedback, let us know on \",\"color\":\"light_purple\"},{\"text\":\"Discord\",\"underlined\":true,\"color\":\"#8080ff\",\"clickEvent\":{\"action\":\"open_url\",\"value\":\"https://discord.gg/RYRpuSAZX7\"},\"hoverEvent\":{\"action\":\"show_text\",\"contents\":\"Join Discord now\"}},{\"text\":\"!\",\"color\":\"light_purple\"},\"\\n\",{\"text\":\"                                                                  \",\"strikethrough\":true,\"color\":\"light_purple\"}]"
+					command: "/tellraw @p [\"\",{\"text\":\"                                                                  \",\"strikethrough\":true,\"color\":\"light_purple\"},\"\\n\",{\"text\":\"Your journey begins now! If you run into any issues or have questions about quests, just ask in chat.\",\"color\":\"light_purple\"},\"\\n\",{\"text\":\"                                                                  \",\"strikethrough\":true,\"color\":\"light_purple\"}]"
 					id: "25A35B41DA671A6D"
 					permission_level: 4
 					silent: true
