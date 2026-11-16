@@ -58,8 +58,18 @@ configured file, and the later one writes silence over the game's audio from the
 survives. The script therefore configures a link, and repoints it to a throwaway file once the game's sound engine has
 opened the real one. The wall rig's `RIG_SOUND` has no such guard; it needs one if voice chat is ever added there.
 
-To count the game's sound channels in use: `jcmd <game pid> GC.class_histogram | grep 'ChannelAccess\$ChannelHandle'`.
-A dozen is normal; 248 means the pool is full and nothing new can play.
+To see the game's sound channels in use, read the mod's own line, written every 5 s with `-Dfp.sounddebug=true`:
+`fp-sound pool: the game's channels in use Sounds: 23/247 + 1/8, speaker sources 2`. By the lab's speakers the full
+pack sits between 10 and 40; 247 means the pool is full and nothing new can play. Without that flag,
+`jcmd <game pid> GC.class_histogram | grep 'ChannelAccess\$ChannelHandle'` counts the same thing, but it stops the game
+for a few seconds each time, long enough to make it skip a two-second sound, so don't use it during a sound test.
+
+For "do the game's own sounds still play", play a bell to the player five times a second apart, note the time, and give
+it to `heard.py` as the third argument. On 0.3.2 the level above 2.5 kHz doubled for those seconds at the start, middle
+and end of an eight-minute run; on 0.3.1, with the pool full, it didn't move.
+
+The lab's test program is driven by the lab server, so its 8 s cycle wanders by a second now and then, and a sound the
+server announces late starts late in the client, part-way in. One late start in fifteen was normal in that run.
 
 ## What it does not cover
 

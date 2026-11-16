@@ -5,7 +5,7 @@
 
 The lab's speaker test is a steady 330 + 495 Hz tone with a 2 s 1500 Hz tone over it every 8 s. Prints each stretch of
 the steady tone, each 1500 Hz burst with its clock time and the gap since the one before, and (with a third argument)
-how much sound that is neither tone there was in the ten seconds from that time, against a quiet stretch.
+whether a game sound played at that time can be heard.
 """
 import sys
 import numpy as np
@@ -67,15 +67,19 @@ for a, b in bursts:
     last = a
 
 if len(sys.argv) > 3:
+    # A game sound played at that time (a bell: `playsound minecraft:block.bell.use master <player> ~ ~ ~ 1 1`, five
+    # times a second apart) shows as a rise above 2.5 kHz, where the test tones have nothing. With the game's sound
+    # channels used up there is no rise at all.
     h, m, s = sys.argv[3].split(':')
     at = int(h) * 3600 + int(m) * 60 + float(s) - t0
 
-    def rest(a, b):   # what is left once the three test tones are taken out, as an rms
+    def high(a, b):
         seg = mono[int(a * rate):int(b * rate)]
         spec = np.fft.rfft(seg)
         f = np.fft.rfftfreq(len(seg), 1 / rate)
-        for hz in (330, 495, 1500):
-            spec[np.abs(f - hz) < 15] = 0
+        spec[f < 2500] = 0
         return np.sqrt((np.fft.irfft(spec, len(seg)) ** 2).mean())
 
-    print('sound that is not a test tone: %.5f rms in the 10 s from %s, %.5f in the 10 s before' % (rest(at, at + 10), sys.argv[3], rest(at - 10, at)))
+    before = np.mean([high(at + k, at + k + 1) for k in range(-4, 0)])
+    during = np.mean([high(at + k, at + k + 1) for k in range(1, 6)])
+    print('sound above 2.5 kHz around %s: %.4f rms in the 4 s before, %.4f in the 5 s from one second after (%.1f times)' % (sys.argv[3], before, during, during / before if before else float('inf')))
