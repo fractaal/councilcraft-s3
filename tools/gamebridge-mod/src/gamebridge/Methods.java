@@ -47,7 +47,7 @@ import net.neoforged.neoforge.items.IItemHandler;
 final class Methods {
     private Methods() {}
 
-    private static final String LIST = "status, players, entities, inventory, attributes, nbt, command, subscribe";
+    private static final String LIST = "status, players, entities, inventory, attributes, nbt, find_blocks, map, view, command, subscribe";
     private static final int READ_TIMEOUT_MS = 8000;
 
     static void handle(String method, JsonObject p, JsonObject reply) {
@@ -62,6 +62,9 @@ final class Methods {
             case "inventory" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> inventory(p));
             case "attributes" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> attributes(p));
             case "nbt" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> nbt(p));
+            case "find_blocks" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> Sight.find(p));
+            case "map" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> Sight.map(p));
+            case "view" -> Sight.view(p, reply);
             case "command" -> command(p, reply);
             default -> Bridge.fail(reply, "unknown_method", "There is no method '" + method + "'. Methods: " + LIST + ".");
         }
@@ -160,7 +163,7 @@ final class Methods {
         }
     }
 
-    private static Entity one(JsonObject p) {
+    static Entity one(JsonObject p) {
         if (!p.has("target")) throw new Bridge.Refusal("bad_params", "This method needs \"target\": a player name, an entity UUID or a selector that matches one entity.");
         String selector = p.get("target").getAsString();
         List<? extends Entity> found = resolve(selector);
@@ -173,7 +176,7 @@ final class Methods {
         return found.get(0);
     }
 
-    private static ServerLevel level(JsonObject p) {
+    static ServerLevel level(JsonObject p) {
         String name = p.has("dimension") ? p.get("dimension").getAsString() : "minecraft:overworld";
         ServerLevel level = server().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(name)));
         if (level == null) throw new Bridge.Refusal("no_dimension", "There is no dimension '" + name + "'.");

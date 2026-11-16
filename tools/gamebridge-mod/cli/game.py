@@ -9,11 +9,23 @@
   game inv --block X Y Z [--dim D]         a chest, barrel or any block with an item inventory
   game attr <target> [attribute id]        attributes with their modifiers (where a stat comes from)
   game nbt <target> [path]                 saved data, with a /data-style path; game nbt --block X Y Z [path]
+  game find <block id> <target>            where a block is near a player or entity, as places with a block count;
+  game find <block id> --near X Z          options: --radius R (default 96, max 256) --dim D --budget MS
+  game map <target> --out FILE.png         a top-down picture of the area around a player or entity, north up;
+  game map --near X Z --out FILE.png       options: --radius R (default 96, max 256) --scale 1-4 --dim D; --out - writes
+                                           the PNG to standard output and the description to standard error
+  game view <target> --out FILE.png        an isometric picture of the blocks around a player or entity: shows shape
+  game view --near X Z --out FILE.png      and height, which the top-down map can't. Options: --radius R (default 32,
+                                           max 64) --from south-east|south-west|north-west|north-east --scale 1|2
+                                           --min-y Y --max-y Y (cut the world to a slab, to look under a roof) --dim D
   game cmd "<command>" [--wait MS]         run a console command and print everything it says; --wait keeps listening
                                            for answers that come late (locate needs --wait 10000 or so)
   game events [kind ...]                   live stream: chat join leave death advancement (all if none given)
 
 Add --json to print the bridge's reply as JSON instead of the summary; --full on inv prints every item's components.
+
+find, map and view read loaded chunks only (the bridge never loads a chunk to answer) and say how much of the area that was.
+They don't see Sable airships, which live outside the normal chunks.
 
 It talks to 127.0.0.1 on the machine it runs on, with the port and token from <server>/config/gamebridge.properties.
 <server> is --server DIR, else $GAME_SERVER_DIR, else the server folder this script is installed under
@@ -21,7 +33,7 @@ It talks to 127.0.0.1 on the machine it runs on, with the port and token from <s
 reason is printed, including whether anything was run), and 2 when cmd ran a command that the game rejected or that
 reported failure.
 """
-import argparse, json, os, socket, sys
+import argparse, base64, json, os, socket, sys
 from pathlib import Path
 
 
@@ -140,6 +152,13 @@ def main():
     a = sub.add_parser("attr"); a.add_argument("target"); a.add_argument("attribute", nargs="?")
     n = sub.add_parser("nbt"); n.add_argument("target", nargs="?"); n.add_argument("path", nargs="?"); n.add_argument("--block", nargs=3, type=int)
     n.add_argument("--dim"); n.add_argument("--max-bytes", type=int)
+    f = sub.add_parser("find"); f.add_argument("block"); f.add_argument("target", nargs="?"); f.add_argument("--near", nargs=2, type=float)
+    f.add_argument("--radius", type=int); f.add_argument("--dim"); f.add_argument("--budget", type=int)
+    m = sub.add_parser("map"); m.add_argument("target", nargs="?"); m.add_argument("--near", nargs=2, type=float)
+    m.add_argument("--radius", type=int); m.add_argument("--scale", type=int); m.add_argument("--dim"); m.add_argument("--out", required=True)
+    vw = sub.add_parser("view"); vw.add_argument("target", nargs="?"); vw.add_argument("--near", nargs=2, type=float)
+    vw.add_argument("--radius", type=int); vw.add_argument("--scale", type=int); vw.add_argument("--dim"); vw.add_argument("--out", required=True)
+    vw.add_argument("--from", dest="seen_from"); vw.add_argument("--min-y", type=int); vw.add_argument("--max-y", type=int); vw.add_argument("--budget", type=int)
     c = sub.add_parser("cmd"); c.add_argument("command"); c.add_argument("--wait", type=int, default=0)
     ev = sub.add_parser("events"); ev.add_argument("kinds", nargs="*")
     args = ap.parse_args()
@@ -190,14 +209,62 @@ def main():
         if args.attribute: params["attribute"] = args.attribute
     elif args.what == "cmd":
         params = {"command": args.command, "wait_ms": args.wait}
+    elif args.what in ("find", "map", "view"):
+        if args.near: params["near"] = args.near
+        elif args.target: params["target"] = args.target
+        else: sys.exit(f"game: {args.what} needs a player or entity to centre on, or --near X Z")
+        if args.radius: params["radius"] = args.radius
+        if args.what == "find":
+            params["block"] = args.block
+            if args.budget: params["budget_ms"] = args.budget
+        elif args.scale: params["scale"] = args.scale
+        if args.what == "view":
+            for key, value in (("from", args.seen_from), ("min_y", args.min_y), ("max_y", args.max_y), ("budget_ms", args.budget)):
+                if value is not None: params[key] = value
     if getattr(args, "dim", None): params["dimension"] = args.dim
 
-    method = {"inv": "inventory", "attr": "attributes", "cmd": "command"}.get(args.what, args.what)
+    method = {"inv": "inventory", "attr": "attributes", "cmd": "command", "find": "find_blocks"}.get(args.what, args.what)
     r = call(port, token, method, params, timeout=60 + getattr(args, "wait", 0) / 1000)
+    if args.what in ("map", "view"):
+        png = base64.b64decode(r.pop("png_base64"))
+        info = sys.stderr if args.out == "-" else sys.stdout
+        if args.out == "-": sys.stdout.buffer.write(png)
+        else: Path(args.out).write_bytes(png)
+        if args.json:
+            print(json.dumps(r, indent=1), file=info); return
+    if args.what == "view":
+        nw = r["north_west_corner_block"]
+        print(f"{'PNG on standard output' if args.out == '-' else 'wrote ' + args.out}: {r['width']}x{r['height']} px isometric, seen from the {r['seen_from']}, "
+              f"{r['dimension']}" + ("" if r["complete"] else ", INCOMPLETE"), file=info)
+        print(f"  {r['reading']}", file=info)
+        print(f"  area: {r['blocks_across']} blocks square from x {nw[0]}, z {nw[1]} (its north-west corner), y {r['y_from']} to {r['y_to']}; "
+              f"one block of height is {r['pixels_per_block_up']} px; {r['blocks_drawn']} blocks drawn", file=info)
+        if "note" in r: print("  " + r["note"], file=info)
+        for pl in r["players_in_view"]:
+            print(f"  player {pl['name']} at {pos(pl['pos'])}, pixel {pl['pixel'][0]},{pl['pixel'][1]} ({r['player_marker']})", file=info)
+        return
+    if args.what == "map":
+        tl = r["top_left_block"]
+        print(f"{'PNG on standard output' if args.out == '-' else 'wrote ' + args.out}: {r['width']}x{r['height']} px, {r['pixels_per_block']} px per block, "
+              f"north up, {r['dimension']}", file=info)
+        print(f"  top-left pixel is block x {tl[0]}, z {tl[1]}; pixel (px, py) is block x {tl[0]} + px/{r['pixels_per_block']}, z {tl[1]} + py/{r['pixels_per_block']}", file=info)
+        print(f"  not loaded: {r['not_loaded_percent']}% of the area ({r['colour_not_loaded']})", file=info)
+        print(f"  void: {r['void_percent']}% ({r['colour_void']})", file=info)
+        if "lowest_surface_y" in r: print(f"  surface heights from y {r['lowest_surface_y']} to {r['highest_surface_y']}; {r['shading']}", file=info)
+        for pl in r["players_in_view"]:
+            print(f"  player {pl['name']} at {pos(pl['pos'])}, pixel {pl['pixel'][0]},{pl['pixel'][1]} ({r['player_marker']})", file=info)
+        return
     if args.json:
         print(json.dumps(r, indent=1)); return
 
-    if args.what == "status":
+    if args.what == "find":
+        c = r["centre"]
+        print(f"{r['block']}: {r['blocks_found']} blocks in {r['places']} places within {r['radius']} of x {c[0]}, z {c[1]} ({r['dimension']}); "
+              f"scanned {r['chunks_scanned']} of {r['chunks_in_range']} chunks" + ("" if r["complete"] else ", INCOMPLETE"))
+        if "note" in r: print("  " + r["note"])
+        for f in r["found"]:
+            print(f"  {f['distance']:>4} blocks away: {pos(f['pos'])}  ({f['blocks']} blocks)")
+    elif args.what == "status":
         print(f"{r['tps']:g} TPS, {r['mean_tick_ms']:g} ms per tick, {r['players_online']} online, Minecraft {r['minecraft']}, bridge {r['bridge_version']}")
         idle = [l for l in r["levels"] if not l["loaded_chunks"]]
         for l in r["levels"]:
