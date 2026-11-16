@@ -11908,10 +11908,6 @@ hash = "f0a7b5302b5238964306a522238f623274aee1c639198c04dc543ac759132215"
 metafile = true
 
 [[files]]
-file = "mods/toms-peripherals-1.21-1.3.0-cc2.jar"
-hash = "c633130217f8322093e08ebf69f71a9f766eb84045aeb1af3d1f6610f2725890"
-
-[[files]]
 file = "mods/toms-storage.pw.toml"
 hash = "a303683e4c74640f419c31db329e9afc3ee8f388abc5c6a536dc6169c274b5c6"
 metafile = true
