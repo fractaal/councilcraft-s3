@@ -53,7 +53,7 @@ To change the islands, edit `tools/worldgen/settings-archipelago.json` and regen
 2. In Prism: Add Instance, Import, and pick the zip.
 3. Launch it. The first launch downloads about 1 GB of mods; if a window lists mods to download by hand, follow its links, put the files where it says, and launch again.
 
-The instance has a pre-launch command that runs the packwiz installer against `https://raw.githubusercontent.com/fractaal/councilcraft-s3/main/pack.toml`, so every launch picks up whatever is on `main`. Memory is set to 6 to 12 GB. The zip itself never needs updating; to make it again, run `tools/prism/make-instance.sh <pack.toml URL> <label>`.
+The instance has a pre-launch command that runs the packwiz installer against `https://raw.githubusercontent.com/fractaal/councilcraft-s3/main/pack.toml`, so every launch picks up whatever is on `main`. Memory is set to 6 to 8 GB: in play the game keeps about 4.7 GB of live data on the heap, and the whole process takes about 5 GB more than the heap, so 8 GB leaves room on a 16 GB machine. The zip itself never needs updating; to make it again, run `tools/prism/make-instance.sh <pack.toml URL> <label>`.
 
 ### Dedicated server
 In an **empty** folder:

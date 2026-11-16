@@ -7,7 +7,7 @@ notes=Installs and updates itself from @PACK_URL@ every time it launches (packwi
 AutomaticJava=true
 OverrideMemory=true
 MinMemAlloc=6144
-MaxMemAlloc=12288
+MaxMemAlloc=8192
 OverrideJavaArgs=true
 JvmArgs=-XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M -XX:+ParallelRefProcEnabled -XX:SymbolTableSize=4194304 -XX:MetaspaceSize=1g
 OverrideCommands=true
