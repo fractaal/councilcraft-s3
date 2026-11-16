@@ -129,7 +129,17 @@
       "knightlib:small_essence": 1,
       "knightlib:great_essence": 4,
       // Every Apotheosis gem is one item id, so all rarities count the same here.
-      "apotheosis:gem": 4
+      "apotheosis:gem": 4,
+      // Ash and Mystical Agriculture essences (asked for by TechKeeper, 2026-11-16). The tag holds inferium
+      // and every resource essence; each tier essence crafts from 4 of the one below and back, so it is worth 4.
+      "supplementaries:ash": 1,
+      "#mysticalagriculture:essences": 1,
+      "mysticalagriculture:fertilized_essence": 1,
+      "mysticalagriculture:prudentium_essence": 4,
+      "mysticalagriculture:tertium_essence": 16,
+      "mysticalagriculture:imperium_essence": 64,
+      "mysticalagriculture:supremium_essence": 256,
+      "mysticalagradditions:insanium_essence": 1024
     }
   }
 }
