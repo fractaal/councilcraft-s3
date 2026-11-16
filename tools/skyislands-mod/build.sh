@@ -6,6 +6,8 @@ set -e
 L=${1:-/opt/minecraft-servers/exosphere-aero/libraries}
 cd "$(dirname "$0")"
 NF=$L/net/neoforged/neoforge/21.1.262/neoforge-21.1.262-universal.jar
+# Start from no classes, so a source file that was deleted doesn't leave its class in the jar.
+rm -rf build/classes
 mkdir -p build/classes build/libs
 # MixinExtras (@Local) ships inside NeoForge's own jar.
 unzip -o -q -j "$NF" 'META-INF/jarjar/mixinextras-neoforge-*.jar' -d build/libs

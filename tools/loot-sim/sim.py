@@ -60,9 +60,9 @@ PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chick
            "modulargolems:humanoid_golem"}
 # The mob_loot_bags:bosses tag (plus anything in c:bosses). The skyislands mod makes FTB Quests crates use it too.
 BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
-# skyislands.LootRules: bags count a player's Luck up to this, and spawner mobs keep this share of their crates.
+# skyislands.LootRules: bags count a player's Luck up to this, and spawner mobs keep this share of their crates and gems.
 BAG_LUCK_CAP = 30.0
-SPAWNER_CRATE_SHARE = 0.25
+SPAWNER_SHARE = 0.25
 # Hostile in MOBS but not a net.minecraft.world.entity.monster.Monster subclass, so no Apotheosis mob gems.
 NOT_MONSTER = {"minecraft:slime", "minecraft:magma_cube", "minecraft:ghast", "minecraft:phantom", "minecraft:shulker",
                "minecraft:hoglin", "minecraft:ender_dragon", "irons_spellbooks:necromancer",
@@ -208,15 +208,16 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_b
         mob = mobs[bisect.bisect_right(cum, rng.random() * acc)]
         health, passive, _known = mob_info(mob)
         luck = bag_luck(cfg, p, health)
-        if not passive and mob not in NOT_MONSTER and rng.random() < GEM_CHANCE:
-            extra["gems"] += 1
         from_spawner = rng.random() < p.spawner
+        if (not passive and mob not in NOT_MONSTER and rng.random() < GEM_CHANCE
+                and (not from_spawner or rng.random() < SPAWNER_SHARE)):
+            extra["gems"] += 1
         if carriers and cfg["enabled"] and mob in BAG_CARRIERS and not from_spawner and rng.random() < cfg["carriers"]["chance"]:
             nobody = Profile("", 0.0, 0, False, p.dim, p.hard)
             bags[TIERS[pick(rng, tier_dist(cfg, cfg["carriers"]["luck"] + bag_luck(cfg, nobody, health)))]] += 1
             extra["carried"] += 1
         # FTB Quests crate roll, independent of bags. A spawner mob keeps its crate a quarter of the time.
-        if on and (not from_spawner or rng.random() < SPAWNER_CRATE_SHARE):
+        if on and (not from_spawner or rng.random() < SPAWNER_SHARE):
             kind = "boss" if mob in BAG_BOSSES else ("passive" if passive else "monster")
             total = no_drop[kind] + sum(c[1][kind] for c in crate_list)
             if total > 0:

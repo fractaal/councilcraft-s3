@@ -13,7 +13,7 @@ import tn.naizo.moblootbags.common.content.ModTags;
 import tn.naizo.moblootbags.common.drop.DropEngine;
 
 /**
- * Luck gives more low-tier loot bags rather than better ones (option B, chosen by fractal on 2026-11-16). Mob Loot Bags
+ * Luck gives more low-tier loot bags rather than better ones (chosen by fractal on 2026-11-16). Mob Loot Bags
  * still rolls its own bag on every kill, and its drops.json counts only a tenth of a player's Luck toward that bag's
  * tier. On top of that, a hostile kill credited to a real player drops one extra stack below with chance
  * min(CAP, RATE * Luck), a quarter as often from spawner mobs, never from bosses.
@@ -40,7 +40,7 @@ public final class LuckBags {
 
     public static double chance(LivingEntity victim, ServerPlayer player) {
         double chance = Math.min(CAP, RATE * Math.max(0.0, player.getLuck()));
-        return victim.getTags().contains(DropEngine.SPAWNER_TAG) ? chance * LootRules.SPAWNER_CRATE_SHARE : chance;
+        return victim.getTags().contains(DropEngine.SPAWNER_TAG) ? chance * LootRules.SPAWNER_SHARE : chance;
     }
 
     public static void onDrops(LivingDropsEvent event) {

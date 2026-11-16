@@ -73,7 +73,7 @@ def main():
         _health, passive, _known = sim.mob_info(mob)
         kind = "boss" if mob in sim.BAG_BOSSES else ("passive" if passive else "monster")
         total = no_drop[kind] + sum(w[kind] for _, w in crate_list)
-        share = (sim.SPAWNER_CRATE_SHARE if spawner else 1.0) if on and total > 0 else 0.0
+        share = (sim.SPAWNER_SHARE if spawner else 1.0) if on and total > 0 else 0.0
         for sid, w in crate_list:
             if w[kind] or seen_crates[sid]:
                 row("crate " + sid, seen_crates[sid], kills * share * w[kind] / total)
