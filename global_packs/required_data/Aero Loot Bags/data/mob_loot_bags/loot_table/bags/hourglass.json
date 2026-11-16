@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "mob_loot_bags:rarelootbag",
+          "weight": 60
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mob_loot_bags:epiclootbag",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "mob_loot_bags:legendarylootbag",
+          "weight": 10
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 16
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "mob_loot_bags:bags/hourglass"
+}

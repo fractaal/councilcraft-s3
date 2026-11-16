@@ -44,14 +44,15 @@
     "mythic": 1
   },
 
-  // Bag Luck shifts the tier odds upward. Each point makes every tier about 42% likelier
-  // relative to the tier below it (per_point 0.35). Sources add up:
+  // Bag Luck shifts the tier odds upward. Each point makes every tier about 16% likelier
+  // relative to the tier below it (per_point 0.15). Sources add up:
   "luck": {
     "per_point": 0.15,
     // Per level of Looting on the killing weapon.
     "per_looting_level": 0.25,
-    // Multiplier for the player's Luck attribute (Potion of Luck, modded gear).
-    "luck_attribute": 0.35,
+    // Multiplier for the player's Luck attribute (Potion of Luck, modded gear). Kept low because Luck
+    // mostly buys extra low-tier bags instead (skyislands LuckBags), not better ones.
+    "luck_attribute": 0.1,
     // Mobs earn one point per doubling of max health over reference_health, up to this.
     "max_health_luck": 0.5,
     // Bonus for kills in the Nether, the End and on Hard difficulty.
@@ -93,7 +94,7 @@
   "bosses": {
     "bags": 3,
     "min_tier": "epic",
-    "mythic_chance": 0.15
+    "mythic_chance": 0.05
   },
 
   // Chance that a naturally spawned mob in #mob_loot_bags:bag_carriers spawns holding a loot bag
@@ -104,7 +105,7 @@
   },
 
   // Bags of this tier or better are announced in chat to everyone. "none" to disable.
-  "announce_min_tier": "legendary",
+  "announce_min_tier": "mythic",
 
   // Bags of this tier or better chime when they drop. "none" to disable.
   "drop_sound_min_tier": "rare",

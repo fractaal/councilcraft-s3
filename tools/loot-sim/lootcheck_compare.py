@@ -37,8 +37,10 @@ def row(label, seen, expected, mc_count=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--server", required=True)
+    ap.add_argument("--luck-bags", help="as in sim.py: on by default, 'off' leaves the LuckBags bonus out")
     ap.add_argument("reports", nargs="+")
     a = ap.parse_args()
+    luck_bags = sim.parse_luck_bags(a.luck_bags)
     cfg = sim.load_jsonc(Path(a.server) / "config/mob_loot_bags/drops.json")
     crates_cfg = sim.load_crates(a.server)
     on, no_drop, crate_list = crates_cfg
@@ -61,7 +63,7 @@ def main():
                 gems += n
         if r.get("mean_max_health"):
             sim.MOBS[mob] = r["mean_max_health"]
-        bags, _ = sim.simulate(cfg, crates_cfg, Counter({mob: 1}), p, SIM_KILLS, hourglass={})
+        bags, _ = sim.simulate(cfg, crates_cfg, Counter({mob: 1}), p, SIM_KILLS, hourglass={}, luck_bags=luck_bags)
         scale = kills / SIM_KILLS
         for t in sim.TIERS + ["cursed", "_hourglass", "locked", "summoning"]:
             row("bag " + t.lstrip("_"), seen_bags[t], bags[t] * scale, bags[t])

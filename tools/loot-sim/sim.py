@@ -9,14 +9,17 @@ can be checked before it goes live.
   python3 sim.py --server DIR --luck 25 --looting 3   one profile
   python3 sim.py --server DIR --validate              predicted vs actual bags found, per player
   python3 sim.py --server DIR --set luck.luck_attribute=0.25   try a config change
-  python3 sim.py --server DIR --luck-bags 0.003               try the KubeJS "luck gives more low bags" proposal
+  python3 sim.py --server DIR --luck-bags off                 leave out the skyislands LuckBags bonus stacks
   python3 sim.py --server DIR --contents FILE                 add power columns from bag_contents.py --json
 
 DIR is a server folder (or a copy) holding config/mob_loot_bags/drops.json, config/ftbquests/quests/ and, for kill
 mixes and --validate, world/stats/*.json, world/data/mob_loot_bags/players.json and usercache.json.
 
-Hourglass bags are counted as the two bags they ripen into (mob_loot_bags:bags/hourglass in the mod jar: 2 rolls of
-epic 60 / legendary 30 / mythic 10; --hourglass overrides it), not as a bag of their own. The gems column is
+Hourglass bags are counted as the two bags they ripen into (mob_loot_bags:bags/hourglass: 2 rolls, from the Aero Loot
+Bags datapack in DIR's global_packs if it overrides the table, else the mod jar's epic 60 / legendary 30 / mythic 10;
+--hourglass overrides both), not as a bag of their own. Luck bags (the skyislands mod's LuckBags, on since 2026-11-16)
+are on by default: a hostile, non-boss kill by a real player also drops one LUCK_STACKS stack with chance
+min(0.5, 0.003 x Luck), a quarter of that from spawner mobs. The gems column is
 Apotheosis 8.9.0's mob gem drops: gem_entity_drops (0.5%, killed_by_player) plus gem_entity_drops_from_real_players
 (4%), both only for `instanceof Monster` victims, so slimes, ghasts, phantoms, shulkers and hoglins give none.
 
@@ -71,9 +74,29 @@ BAG_CARRIERS = {"minecraft:zombie", "minecraft:husk", "minecraft:skeleton", "min
                 "minecraft:zombified_piglin", "minecraft:pillager", "minecraft:vindicator", "minecraft:wither_skeleton",
                 "minecraft:bogged"}
 GEM_CHANCE = 0.005 + 0.04
-HOURGLASS = {"epic": 60, "legendary": 30, "mythic": 10}
-# The KubeJS "luck bags" proposal (see --luck-bags): one bonus stack per success, tier by weight, count range.
+HOURGLASS = {"epic": 60, "legendary": 30, "mythic": 10}  # the mod jar's own table
+HOURGLASS_OVERRIDE = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/hourglass.json"
+LUCK_BAGS = (0.003, 0.5)  # skyislands LuckBags.RATE and CAP
+# skyislands LuckBags.STACKS (see --luck-bags): one bonus stack per success, tier by weight, count range.
 LUCK_STACKS = [("common", 60, 3, 5), ("uncommon", 28, 2, 3), ("rare", 10, 1, 2), ("epic", 2, 1, 1)]
+
+
+def parse_luck_bags(arg):
+    if arg is None:
+        return LUCK_BAGS
+    if arg == "off":
+        return None
+    parts = [float(x) for x in arg.split(",")]
+    return (parts[0], parts[1] if len(parts) > 1 else LUCK_BAGS[1])
+
+
+def load_hourglass(server):
+    """The hourglass bag's two-roll pool: the datapack override in the server folder if there is one, else the jar's."""
+    path = Path(server) / HOURGLASS_OVERRIDE
+    if not path.exists():
+        return HOURGLASS
+    pool = json.loads(path.read_text())["pools"][0]
+    return {e["name"].split(":")[1].removesuffix("lootbag"): e.get("weight", 1) for e in pool["entries"]}
 
 
 def load_jsonc(path):
@@ -164,7 +187,7 @@ def pick(rng, dist):
 def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_bags=None, carriers=True):
     """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses.
 
-    luck_bags = (rate, cap): the KubeJS proposal. On every hostile, non-boss kill that could drop a bag, with chance
+    luck_bags = (rate, cap): skyislands LuckBags. On every hostile, non-boss kill that could drop a bag, with chance
     min(cap, rate * Luck attribute) (times spawner_multiplier for spawner mobs) it also drops one LUCK_STACKS stack.
     carriers=False leaves out the bags that carrier mobs hold, to compare with the mod's "found" counters.
     """
@@ -325,14 +348,13 @@ def main():
     ap.add_argument("--player-luck", action="append", default=[], help="NAME=LUCK for --validate")
     ap.add_argument("--crates", action="store_true", help="also list crates by type")
     ap.add_argument("--hourglass", help="hourglass bag weights, e.g. rare=60,epic=30,legendary=10")
-    ap.add_argument("--luck-bags", help="KubeJS proposal: RATE[,CAP], bonus-stack chance per kill = min(CAP, RATE*Luck)")
+    ap.add_argument("--luck-bags", help="RATE[,CAP]: LuckBags bonus-stack chance per kill = min(CAP, RATE*Luck); "
+                    "default 0.003,0.5 as live; 'off' leaves it out")
     ap.add_argument("--contents", help="bag_contents.py --json output, for gems/affix items/nether stars from bags")
     a = ap.parse_args()
-    hourglass = dict((k, float(v)) for k, v in (x.split("=") for x in a.hourglass.split(","))) if a.hourglass else HOURGLASS
-    luck_bags = None
-    if a.luck_bags:
-        parts = [float(x) for x in a.luck_bags.split(",")]
-        luck_bags = (parts[0], parts[1] if len(parts) > 1 else 0.5)
+    hourglass = (dict((k, float(v)) for k, v in (x.split("=") for x in a.hourglass.split(","))) if a.hourglass
+                 else load_hourglass(a.server))
+    luck_bags = parse_luck_bags(a.luck_bags)
     contents = json.loads(Path(a.contents).read_text()) if a.contents else None
 
     cfg = load_jsonc(Path(a.server) / "config/mob_loot_bags/drops.json")

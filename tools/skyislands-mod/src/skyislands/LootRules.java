@@ -87,7 +87,7 @@ public final class LootRules {
         return CRATE.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
     }
 
-    private static final boolean[] LOGGED = new boolean[3];
+    private static final boolean[] LOGGED = new boolean[4];
 
     /** One line in the server log the first time each rule runs, so a boot can be checked for rules that never hooked in. */
     public static void logOnce(int rule, String message) {
