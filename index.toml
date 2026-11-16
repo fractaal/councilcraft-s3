@@ -10431,8 +10431,8 @@ hash = "ad797a4747adf0a547aff1f6bdb0c99d27b96324356fd0420fe9167e526d7185"
 metafile = true
 
 [[files]]
-file = "mods/fractals-peripherals-1.21.1-0.2.0.jar"
-hash = "d9768550ffa9f11b60eda8d304b379e0bdefd77f0e4cc514a983d3d0dcbca700"
+file = "mods/fractals-peripherals-1.21.1-0.3.0.jar"
+hash = "109cf101b3784057f18318de1e1d9c1a71ff2dfe6b7762b9ddb083a9a10f7774"
 
 [[files]]
 file = "mods/fragmentum.pw.toml"
