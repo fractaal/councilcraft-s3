@@ -1,0 +1,15 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="gamebridge"
+version="0.1.0"
+displayName="Game Bridge"
+description="Server-only: a local, token-protected JSON socket for reading and changing the running game. Never ships to clients."
+displayTest="IGNORE_ALL_VERSION"
+[[dependencies.gamebridge]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="SERVER"
