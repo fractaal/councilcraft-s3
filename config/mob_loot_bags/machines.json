@@ -141,7 +141,13 @@
       "mysticalagriculture:supremium_essence": 256,
       "mysticalagradditions:insanium_essence": 1024,
       // Reliquary's zombie heart, a rarer zombie drop, priced like the other uncommon mob drops (TechKeeper, 2026-11-16).
-      "reliquary:zombie_heart": 2
+      "reliquary:zombie_heart": 2,
+      // Wither skeleton drops and ectoplasm (TechKeeper, 2026-11-17): the rarer drops at 2 like the zombie heart,
+      // Eternal Nether's withered bone at 1 like a plain bone.
+      "bhc:wither_bone": 2,
+      "reliquary:withered_rib": 2,
+      "eternalnether:withered_bone": 1,
+      "irregular_implements:ectoplasm": 2
     }
   }
 }
