@@ -74,6 +74,16 @@ Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `versio
 - Voxy Server Side's generation loads chunks through the server the way Chunky does. It ran for 25 minutes at 40 chunks at a time on the VM (2026-11-10) without Sable errors, but keep an eye on it.
 - **Heavier Weapons must be on the server before clients get it.** Its hitstop packet channel is required, so a client with the mod can't join a server without it. The server decides hitstop lengths from its own `config/heavier_weapons.properties`, so copy the pack's version there too.
 
+## Old-pack promotion removed from the menus (2026-11-16)
+The menus still carried the hosting offer and links of the pack this one started from. Client only; nothing changes on the server. Checked with screenshots of the title, Multiplayer, Options and pause screens in a test launch.
+
+- **BisectHosting Server Integration Menu removed** (`mods/bisect-mod.pw.toml`, `config/bhmenu-client.toml` and its two FancyMenu layouts). It put a "Need a server?" entry in the server list and a "Public Servers" button on the Multiplayer screen, both under the original pack author's partner id.
+- **Multiplayer screen** (`mpscreenexosphere.txt`): the "25% Discount Code" line and the "Play Together" link button are gone, and the seven vanilla buttons are back in two centred rows.
+- **Main menu** (`Beyond Mines.txt`): the "BM Hub" tile is now a **Mods** tile that opens the mod list, which the main menu had no button for. It keeps its place and picture so the layout is unchanged. The hub screen itself (`beyondmineshub.txt`, its entry in `custom_gui_screens.txt`, the `assets/bm_hub` pictures) is deleted.
+- **Pause menu**: "BM: Hub" and "BM: Website" are gone and the rows above moved down to close the gap.
+- **Options screen**: the "Beyond Mines" website button is gone, which uncovers the vanilla "Online..." button it sat on.
+- **Left alone:** the credits screen, which names the people who made the original pack, and the quest book (see below).
+
 ## What changed in 1.5.1+sky.8 (2026-11-14)
 The pack is now called **CouncilCraft Season 3** (`pack.toml`, the game window title, the loading screen's "Finalizing" line, the Prism template). The line under the main menu's buttons reads "CouncilCraft Season 3" in place of the old pack's Discord invite (`config/fancymenu/customization/Beyond Mines.txt`). Quest text, the BM Hub button and the hosting offer on the Multiplayer screen still come from the pack it started from. The rest is client startup time. Nothing changes on the server. Measured with scratch launches of Ben's client, killed at the title screen: 105 s before any of this work, about 62 s with the Memory Tweaks changes below plus the startup agent, and 51.5 s once the agent's class cache is warm.
 

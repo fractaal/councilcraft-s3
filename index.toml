@@ -1105,10 +1105,6 @@ file = "config/bhc/drops.json"
 hash = "f12ba675e480b68d62a763ab2df1ea43e486839d0e9c69e874c0159285d0c9ee"
 
 [[files]]
-file = "config/bhmenu-client.toml"
-hash = "ba559d781a51fa7784de7a69003c98f5319399e0ee8a87433e4898a76fe5c526"
-
-[[files]]
 file = "config/bits_n_bobs-common.toml"
 hash = "29673a3c8112c9ecd7815c85b61e08081d4b14e6c9144c50d1db9c6377801c20"
 
@@ -4241,186 +4237,6 @@ file = "config/fabric/indigo-renderer.properties"
 hash = "95cfc6a5350790582a216b3fec96661ac478bf3ea23057a0c9334f328040fad9"
 
 [[files]]
-file = "config/fancymenu/assets/bm_hub/air_balloons.jpg"
-hash = "beaa0ba8516764ba55d491b92d379209dc1a93742a89c015671e974c86278311"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/air_balloons_hover.jpg"
-hash = "3c21934045a31b4d453c67affb52feb5e7d1716dacfb8b12ce116823de6d099e"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/bigwooly.jpg"
-hash = "7817433e8185717beac8421a15f8553fab8127e1baac3ae26a6245014c4d8b12"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/bigwooly_hover.jpg"
-hash = "b1638ef92f384ce1d57011ecb71a5dae806ab893324d83e3820457b2f92b97d0"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/creator.jpg"
-hash = "58060a683cd5318c880f7d8ccc6e1db0667fd518a53966980003df1046bd5b3c"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/creator_hover.jpg"
-hash = "7431acff28d1e40db8c09150543803da7eca2b7c93b7ed36c15da5fa3ee64559"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/leonjson.jpg"
-hash = "c0002c895f7820d7f598197a0a952c795ab4ceba1509fe685ae647ae7f09077e"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/leonjson_hover.jpg"
-hash = "9848ef1bed69747b657e683cc34818fb0df020f8ed9efcc57838b428622e6f1f"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/royall.jpg"
-hash = "e9c219f6148f6913a8395cee09ebec39902d6b9aa7a3fa28502c0ae70f915646"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/creator/royall_hover.jpg"
-hash = "5b45f8e2ece76b920e40a9ebbff74c4665d1457d2f0bc4152a0b18d72c9cc0c5"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/end.jpg"
-hash = "5be028b658a61ca00a81021fe7b2fc7be8e93d493dabc21b0fb9fa8d049cb7b3"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/end_hover.jpg"
-hash = "eab2e4b3214e5aeb8581afd33ad506c1558612202b9db4a42d0d5895aa2ebead"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/exosphere_hover.jpg"
-hash = "112e4d6889ecb00d5ef0eb501e2ae808316cddd473bba7bd679887c6dc4cf9cc"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/flags/britain.jpg"
-hash = "6f460a3012752f3c5fbd3ff0389da853e9c394067db260d7124518c03010a7da"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/flags/germany.jpg"
-hash = "ad69f07a7a9e028ee9e9e307c370a240523d56c9f27a3c497e9e527b02c26090"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/flags/usa.jpg"
-hash = "5eb1af7b6d204902a8ad1b94fbbce49fac59ce760c4a2e502a037f778f4fa712"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/bluesky.png"
-hash = "640e1bd2e8c8682bbbd31359db7ae3c2c2103ace60b6bfaa914f280323208319"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/discord.png"
-hash = "f01091f321c82bee92da04e4eefcf32434e9fcba78612415dae5e96c972cf6e7"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/instagram.png"
-hash = "65a8651af39185b573ad5fe3df14ac37ed5921f419f4339676ffff4dff062db4"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/reddit.png"
-hash = "3eeadbeeead73ea7da458b12e8472e39ca3f06c78bf701a36e2def3e4917dae4"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/tiktok.png"
-hash = "184f4e4726ffd542590bd95143ae6b0173b2f971f12f4594bf10910941904228"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/twitter.png"
-hash = "4fd28c51e984ff2ae19b20c739d5db124c2ad670cdc7aa4f880117fc25acd00a"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/icons/youtube.png"
-hash = "3d752ac3bef60b253e977cdd744e28c9ed7eccf38a64eb072c55938999424086"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/mirabilis.jpg"
-hash = "99c7ccd00752f1203f9e244023401695b971dcc72c0b1116f23051c3a92342a6"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/mirabilis_hover.jpg"
-hash = "2b218f7ef880ce1dd3973a065c7684f0321aeaa1bafd6db85c824f4c66896346"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/projects.jpg"
-hash = "8759c0ec94286ce7b6911173bccf9d1f6b259a8c5d92c147280ef8db31d7303d"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/projects_hover.jpg"
-hash = "870c6ddcbd96bbb6afbcdf2f6120595dc1b6c396ad44afe70b42f5e8eb2e75e3"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/revelations.jpg"
-hash = "105f901fc164d2afaec98a2e336cc3b854ae16235a3244cf44b8cc2e33ae01e2"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/revelations_hover.jpg"
-hash = "54ac21db31d7b4a9c236942d00218446638263cf84f66c903428c9f0a6fed667"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/discord.jpg"
-hash = "1522b10765f1d055234429ca3e68479867c0cca90371b37cd7c181ece99d7e00"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/discord_hover.jpg"
-hash = "1812e800432a745199b9eb847ce22a756e2d77435fc811a2e597dff547170b0a"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/instagram.jpg"
-hash = "5c1850f94be5dbf24b8ee388eef0a52c6149c3f0ead5b41719d1cae901575a83"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/instagram_hover.jpg"
-hash = "9380771732de207dee7bfdbbbfef7d874601b84c3cb320d5323eba14b2f58c87"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/reddit.jpg"
-hash = "781d372e940a5a07136fc30726452395c589741944d14d6836323250f0aefcd3"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/reddit_hover.jpg"
-hash = "7487ec1a14c2c9e99b6685394109db5e33ffc9e09ad4f3160cbd6f26881b95c0"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/tiktok.jpg"
-hash = "91a36a9486e947748e58e950faad51d546ab1a519211f4cc044f1409f2c9c254"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/tiktok_hover.jpg"
-hash = "8eff235b3b553199a5020610d2854fdeb28f5bc2e9b5d47af6fd494e979a184e"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/twitter.jpg"
-hash = "535aa44f76f33d321419b3b21b2c79e8499e38166219d430568d3b80f0e7eeb4"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/twitter_hover.jpg"
-hash = "1cd71c5181f6bf1597233ea1209cae29960c33d78b748ac93b71bf4ab7ed4f1a"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/website.jpg"
-hash = "35d2368a40f93c56b788ead7c9ab6ccb659b41a5dd768b11d96846fd36af5488"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/website_hover.jpg"
-hash = "4452fe5fcff8f7e09e76384093ca85c74d1a5b6fac73639e3cbb0f5002f65b89"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/youtube.jpg"
-hash = "61f28df6ee75f9f925479931c0bed0f3cf9ece8ee2fdf4cce292ee1f9774d51c"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/socials/youtube_hover.jpg"
-hash = "471eb1943b694526ec6f145d2c4e1b26153a57164127f7d2605483c5ada76821"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/website.jpg"
-hash = "35d2368a40f93c56b788ead7c9ab6ccb659b41a5dd768b11d96846fd36af5488"
-
-[[files]]
-file = "config/fancymenu/assets/bm_hub/website_hover.jpg"
-hash = "4452fe5fcff8f7e09e76384093ca85c74d1a5b6fac73639e3cbb0f5002f65b89"
-
-[[files]]
 file = "config/fancymenu/assets/bmlogo/bm_logo_gradient.png"
 hash = "44db4355312d4b203786c0f7758420c0aeeb2ebe30cc4b391f118cf94e741243"
 
@@ -4550,11 +4366,11 @@ hash = "ad516b69ca12e2d4d33376ae7f57c77931a48620945b5b551f69944bef031119"
 
 [[files]]
 file = "config/fancymenu/custom_gui_screens.txt"
-hash = "b91b825e05ce0311f8fc796757cf52f9416d2847f7f03b5dbe0405a752b9cdf7"
+hash = "ff492043eaf454c46e949d5eef32ece90cc5a19feb50a161dd29a43b5732c880"
 
 [[files]]
 file = "config/fancymenu/custom_locals/BeyondMines/en_us.lang"
-hash = "f64d4fc3ffcb83c6f50af70e6efc65802b64d0f7d11bde39cfbf8217cfcf58f3"
+hash = "afc32d81cc664af33b23b603c67336d4d663dc56552dc4745fe72fbbf048e007"
 
 [[files]]
 file = "config/fancymenu/customizablemenus.txt"
@@ -4562,7 +4378,7 @@ hash = "06f6790f958a1bff272d58ac004f110a90051b531f876ac638371cccb0e84296"
 
 [[files]]
 file = "config/fancymenu/customization/Beyond Mines.txt"
-hash = "0263723e9a33c2c23a426e46734a067ff82f7f25545f8473f27870aa35965299"
+hash = "bedd50217804a1647956c4d1910e96e4744a219577e856509f2bfa93051abc98"
 
 [[files]]
 file = "config/fancymenu/customization/ConnectionErrorScreen.txt"
@@ -4589,10 +4405,6 @@ file = "config/fancymenu/customization/Levelloading.txt"
 hash = "d9e3866d3365a3e8544177382733ce4a0492aca009cf50fd4f61ced52ec893e5"
 
 [[files]]
-file = "config/fancymenu/customization/MultiplayerScreen.txt"
-hash = "e3fdd07db7244c2b861c0b256d3567db15aa0c695107a28b524113d7278d77fa"
-
-[[files]]
 file = "config/fancymenu/customization/PercentageScreen.txt"
 hash = "3100158fa9b8dae8abdbcda1aec5d448e82840e68ae8956fbb9d37583eb86eec"
 
@@ -4613,16 +4425,8 @@ file = "config/fancymenu/customization/SoundSettingsScreen.txt"
 hash = "69f35459a49cfc5dd7fd2aeb7e557495c70c5b920d0758c0ddd6b0b892811e19"
 
 [[files]]
-file = "config/fancymenu/customization/beyondmineshub.txt"
-hash = "fedc752e4b01e50607cd9768003282ce56b14358d40b222d9f4bd3dddee96965"
-
-[[files]]
 file = "config/fancymenu/customization/bm_loading.txt"
 hash = "8469e6bf99dd393f67dff02f31375d02cefb8f0d7a65e951d4bf09be3b9710dc"
-
-[[files]]
-file = "config/fancymenu/customization/com.bisecthosting.mods.bhmenu.modules.publicserverlist.screen.publicserversscreen_layout.txt"
-hash = "0069ceabc47ca8a3d2c691c585a6a463f373251ec2fb81948e6422081279df2d"
 
 [[files]]
 file = "config/fancymenu/customization/confirm_link_screen_layout.txt"
@@ -4654,7 +4458,7 @@ hash = "8e90b251aeec349f309487ff3097eb40d9ac3ef6d5bfbfb49233a1bc7386ae46"
 
 [[files]]
 file = "config/fancymenu/customization/mpscreenexosphere.txt"
-hash = "a81fcd3f3354b733cc45d1836df8a10c87742189336e1c0f7936a8a7247c3fea"
+hash = "bb9e9edab651ee8088b92266a0f9fd861e1507b2f995a99afae5068e7b6a200f"
 
 [[files]]
 file = "config/fancymenu/customization/net.irisshaders.iris.gui.screen.shaderpackscreen_layout.txt"
@@ -4662,11 +4466,11 @@ hash = "1dddee6dd85cda663e6c6de9075a3293aa06900b61fa96e16356e33ce47837b6"
 
 [[files]]
 file = "config/fancymenu/customization/options_screen_layout.txt"
-hash = "9bb01e00ad2132dfe5bc7eaf138c7d71c0feaa91f1f0abaf09d21fd26ee14a9a"
+hash = "c67926de0fb0836796faf0a1a8e8446a7336a384dce4170f956cba23bc1b9bd1"
 
 [[files]]
 file = "config/fancymenu/customization/pause_screen_layout.txt"
-hash = "cb63dc54b74bc77deb9677744a64fc95f5d50eefc1c3edcaa908379561edced6"
+hash = "79ab4a37788fd8121b083af67cd45c80f906f54d3a5117f581b6a9a5f9b8ce7c"
 
 [[files]]
 file = "config/fancymenu/customization/safety_screen_layout.txt"
@@ -7541,16 +7345,16 @@ file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/
 hash = "4a26d1ab613b5a90dfbf1c1917e9720e8749b0f47358e79f3a9a80543ce9e71a"
 
 [[files]]
+file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/tags/item/recycler_hats.json"
+hash = "2e4ac554f30725a867abd2e9e263c2ab7ab390f3df313a64fdb009e47edd1b60"
+
+[[files]]
 file = "global_packs/required_data/Aero Loot Bags/pack.mcmeta"
 hash = "fdd47bd67a537dacd111f5aab7b4ba309e3e7fa6a3c997eb69edbb9b8de5615e"
 
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/tables-used.json"
 hash = "b266c40676accac89392a10d1ed2206ff2ee320bebe367620ccde7a0ca78a488"
-
-[[files]]
-file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/tags/item/recycler_hats.json"
-hash = "2e4ac554f30725a867abd2e9e263c2ab7ab390f3df313a64fdb009e47edd1b60"
 
 [[files]]
 file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/archaeology_plushies.json"
@@ -9660,11 +9464,6 @@ metafile = true
 [[files]]
 file = "mods/beyond-mines-falling.pw.toml"
 hash = "a6b11a1a6d2125bddb916154ae6e1a3f8c855f4007f49358fa477d29db410714"
-metafile = true
-
-[[files]]
-file = "mods/bisect-mod.pw.toml"
-hash = "b72da2eeea9c58583e4b57fd04ab2711d5b2e53b5f5cc0bb55f78dbbee8d13b1"
 metafile = true
 
 [[files]]
