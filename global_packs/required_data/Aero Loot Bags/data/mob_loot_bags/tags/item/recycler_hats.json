@@ -1,0 +1,1185 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "simplehats:acornhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:aegishat",
+      "required": false
+    },
+    {
+      "id": "simplehats:alien_antennae",
+      "required": false
+    },
+    {
+      "id": "simplehats:alienphil",
+      "required": false
+    },
+    {
+      "id": "simplehats:amalgalichhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:angel_and_devil",
+      "required": false
+    },
+    {
+      "id": "simplehats:angrymask",
+      "required": false
+    },
+    {
+      "id": "simplehats:antlers",
+      "required": false
+    },
+    {
+      "id": "simplehats:apple",
+      "required": false
+    },
+    {
+      "id": "simplehats:artsy",
+      "required": false
+    },
+    {
+      "id": "simplehats:artsy_doll",
+      "required": false
+    },
+    {
+      "id": "simplehats:astronaut",
+      "required": false
+    },
+    {
+      "id": "simplehats:axolotl_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:azumanga_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:baby_crewmate",
+      "required": false
+    },
+    {
+      "id": "simplehats:babydolphin",
+      "required": false
+    },
+    {
+      "id": "simplehats:babyturtle",
+      "required": false
+    },
+    {
+      "id": "simplehats:bandana",
+      "required": false
+    },
+    {
+      "id": "simplehats:bandanargb",
+      "required": false
+    },
+    {
+      "id": "simplehats:baseballeaster",
+      "required": false
+    },
+    {
+      "id": "simplehats:baseballhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:baseballhatfestive",
+      "required": false
+    },
+    {
+      "id": "simplehats:baseballhatjuly",
+      "required": false
+    },
+    {
+      "id": "simplehats:baseballhatrgb",
+      "required": false
+    },
+    {
+      "id": "simplehats:batwinghat",
+      "required": false
+    },
+    {
+      "id": "simplehats:beanie",
+      "required": false
+    },
+    {
+      "id": "simplehats:beanieeaster",
+      "required": false
+    },
+    {
+      "id": "simplehats:beaniefestive",
+      "required": false
+    },
+    {
+      "id": "simplehats:beaniejuly",
+      "required": false
+    },
+    {
+      "id": "simplehats:beaniergb",
+      "required": false
+    },
+    {
+      "id": "simplehats:beaniespooky",
+      "required": false
+    },
+    {
+      "id": "simplehats:beehat",
+      "required": false
+    },
+    {
+      "id": "simplehats:bee_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:beetle_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:beret_ribbon",
+      "required": false
+    },
+    {
+      "id": "simplehats:bicorne",
+      "required": false
+    },
+    {
+      "id": "simplehats:bigbrain",
+      "required": false
+    },
+    {
+      "id": "simplehats:bigcrown",
+      "required": false
+    },
+    {
+      "id": "simplehats:bigeyes",
+      "required": false
+    },
+    {
+      "id": "simplehats:bigribbon",
+      "required": false
+    },
+    {
+      "id": "simplehats:bigstevehead",
+      "required": false
+    },
+    {
+      "id": "simplehats:binky",
+      "required": false
+    },
+    {
+      "id": "simplehats:bluefireeye",
+      "required": false
+    },
+    {
+      "id": "simplehats:bowler",
+      "required": false
+    },
+    {
+      "id": "simplehats:breadhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:brownbrick",
+      "required": false
+    },
+    {
+      "id": "simplehats:bucket",
+      "required": false
+    },
+    {
+      "id": "simplehats:bunnyhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:burgerhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:burning_m_bison",
+      "required": false
+    },
+    {
+      "id": "simplehats:caddycap",
+      "required": false
+    },
+    {
+      "id": "simplehats:camera",
+      "required": false
+    },
+    {
+      "id": "simplehats:camerabeard",
+      "required": false
+    },
+    {
+      "id": "simplehats:candleonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:candycane",
+      "required": false
+    },
+    {
+      "id": "simplehats:cardboard_box",
+      "required": false
+    },
+    {
+      "id": "simplehats:carrotonstick",
+      "required": false
+    },
+    {
+      "id": "simplehats:cartoonegg",
+      "required": false
+    },
+    {
+      "id": "simplehats:caterpillar_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:cat_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:cat_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:chalk_stick",
+      "required": false
+    },
+    {
+      "id": "simplehats:cheeseslice",
+      "required": false
+    },
+    {
+      "id": "simplehats:chefshat",
+      "required": false
+    },
+    {
+      "id": "simplehats:chickenhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:chickenonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:chi_ears",
+      "required": false
+    },
+    {
+      "id": "simplehats:chocolate_sauced",
+      "required": false
+    },
+    {
+      "id": "simplehats:christmascakehat",
+      "required": false
+    },
+    {
+      "id": "simplehats:christmastree",
+      "required": false
+    },
+    {
+      "id": "simplehats:circular_glasses",
+      "required": false
+    },
+    {
+      "id": "simplehats:clockface",
+      "required": false
+    },
+    {
+      "id": "simplehats:cowboy",
+      "required": false
+    },
+    {
+      "id": "simplehats:cowboyrgb",
+      "required": false
+    },
+    {
+      "id": "simplehats:crabonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:crown",
+      "required": false
+    },
+    {
+      "id": "simplehats:crystal_horns",
+      "required": false
+    },
+    {
+      "id": "simplehats:cucumbereyemask",
+      "required": false
+    },
+    {
+      "id": "simplehats:cuphead",
+      "required": false
+    },
+    {
+      "id": "simplehats:cyclopseye",
+      "required": false
+    },
+    {
+      "id": "simplehats:dairyqueen",
+      "required": false
+    },
+    {
+      "id": "simplehats:dangereqsue",
+      "required": false
+    },
+    {
+      "id": "simplehats:dangeresquejuly",
+      "required": false
+    },
+    {
+      "id": "simplehats:dejiko",
+      "required": false
+    },
+    {
+      "id": "simplehats:demoneyes",
+      "required": false
+    },
+    {
+      "id": "simplehats:demonhorns",
+      "required": false
+    },
+    {
+      "id": "simplehats:digger",
+      "required": false
+    },
+    {
+      "id": "simplehats:dimmahat",
+      "required": false
+    },
+    {
+      "id": "simplehats:dipper",
+      "required": false
+    },
+    {
+      "id": "simplehats:discoball",
+      "required": false
+    },
+    {
+      "id": "simplehats:disguise",
+      "required": false
+    },
+    {
+      "id": "simplehats:doctorhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:dorkglassesandteeth",
+      "required": false
+    },
+    {
+      "id": "simplehats:doubletake",
+      "required": false
+    },
+    {
+      "id": "simplehats:dragonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:dragonskull",
+      "required": false
+    },
+    {
+      "id": "simplehats:dragonskullender",
+      "required": false
+    },
+    {
+      "id": "simplehats:drinkinhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:druid_antlers",
+      "required": false
+    },
+    {
+      "id": "simplehats:druid_antlers_rare",
+      "required": false
+    },
+    {
+      "id": "simplehats:dumhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:dwarfminerbeard",
+      "required": false
+    },
+    {
+      "id": "simplehats:easterhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:eevee_ears",
+      "required": false
+    },
+    {
+      "id": "simplehats:egghead",
+      "required": false
+    },
+    {
+      "id": "simplehats:eggonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:elfhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:explorerhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyeholder_beeholder",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyeholder_dark",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyeholder_evil",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyeholder_warm",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyeholder_xanath",
+      "required": false
+    },
+    {
+      "id": "simplehats:eyepatch",
+      "required": false
+    },
+    {
+      "id": "simplehats:fakeblight",
+      "required": false
+    },
+    {
+      "id": "simplehats:fakefire",
+      "required": false
+    },
+    {
+      "id": "simplehats:farmerbrim",
+      "required": false
+    },
+    {
+      "id": "simplehats:festiveantlers",
+      "required": false
+    },
+    {
+      "id": "simplehats:festiveribbon",
+      "required": false
+    },
+    {
+      "id": "simplehats:fez",
+      "required": false
+    },
+    {
+      "id": "simplehats:finnhood",
+      "required": false
+    },
+    {
+      "id": "simplehats:fireworks",
+      "required": false
+    },
+    {
+      "id": "simplehats:fishing_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:fishonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:flagjuly",
+      "required": false
+    },
+    {
+      "id": "simplehats:flies",
+      "required": false
+    },
+    {
+      "id": "simplehats:floatinghearts",
+      "required": false
+    },
+    {
+      "id": "simplehats:floatingstar",
+      "required": false
+    },
+    {
+      "id": "simplehats:flowercrown",
+      "required": false
+    },
+    {
+      "id": "simplehats:floweronhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:foxhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:fro",
+      "required": false
+    },
+    {
+      "id": "simplehats:frozenhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:fullironhelm",
+      "required": false
+    },
+    {
+      "id": "simplehats:ghostmask",
+      "required": false
+    },
+    {
+      "id": "simplehats:gnome",
+      "required": false
+    },
+    {
+      "id": "simplehats:gnome_clover_wig",
+      "required": false
+    },
+    {
+      "id": "simplehats:goggles",
+      "required": false
+    },
+    {
+      "id": "simplehats:grandmadisguise",
+      "required": false
+    },
+    {
+      "id": "simplehats:greaser",
+      "required": false
+    },
+    {
+      "id": "simplehats:greenbirb",
+      "required": false
+    },
+    {
+      "id": "simplehats:grinchhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:halo",
+      "required": false
+    },
+    {
+      "id": "simplehats:haticon",
+      "required": false
+    },
+    {
+      "id": "simplehats:hat_of_discipline",
+      "required": false
+    },
+    {
+      "id": "simplehats:headbolts",
+      "required": false
+    },
+    {
+      "id": "simplehats:headphonesblue",
+      "required": false
+    },
+    {
+      "id": "simplehats:headshot",
+      "required": false
+    },
+    {
+      "id": "simplehats:hockeymask",
+      "required": false
+    },
+    {
+      "id": "simplehats:holyhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:horsemask",
+      "required": false
+    },
+    {
+      "id": "simplehats:hosthat",
+      "required": false
+    },
+    {
+      "id": "simplehats:icedragonskull",
+      "required": false
+    },
+    {
+      "id": "simplehats:jackohat",
+      "required": false
+    },
+    {
+      "id": "simplehats:jesterhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:julydouble",
+      "required": false
+    },
+    {
+      "id": "simplehats:kirbymouthful",
+      "required": false
+    },
+    {
+      "id": "simplehats:ladybug_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:largehorns",
+      "required": false
+    },
+    {
+      "id": "simplehats:lightning_eyes",
+      "required": false
+    },
+    {
+      "id": "simplehats:lilbow",
+      "required": false
+    },
+    {
+      "id": "simplehats:lil_bows",
+      "required": false
+    },
+    {
+      "id": "simplehats:lil_termagant",
+      "required": false
+    },
+    {
+      "id": "simplehats:longfoxears",
+      "required": false
+    },
+    {
+      "id": "simplehats:madscientist",
+      "required": false
+    },
+    {
+      "id": "simplehats:magikarp",
+      "required": false
+    },
+    {
+      "id": "simplehats:medusa",
+      "required": false
+    },
+    {
+      "id": "simplehats:megamanhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:milady_doll",
+      "required": false
+    },
+    {
+      "id": "simplehats:mimic_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:mimic_head_dark",
+      "required": false
+    },
+    {
+      "id": "simplehats:mimic_head_gold",
+      "required": false
+    },
+    {
+      "id": "simplehats:mindflayer",
+      "required": false
+    },
+    {
+      "id": "simplehats:mindflayer_alhoon",
+      "required": false
+    },
+    {
+      "id": "simplehats:mistletoe",
+      "required": false
+    },
+    {
+      "id": "simplehats:mohawk",
+      "required": false
+    },
+    {
+      "id": "simplehats:monkeyking",
+      "required": false
+    },
+    {
+      "id": "simplehats:monocle",
+      "required": false
+    },
+    {
+      "id": "simplehats:moreeyes",
+      "required": false
+    },
+    {
+      "id": "simplehats:murdered",
+      "required": false
+    },
+    {
+      "id": "simplehats:nekoears",
+      "required": false
+    },
+    {
+      "id": "simplehats:nyan_doll",
+      "required": false
+    },
+    {
+      "id": "simplehats:octodad",
+      "required": false
+    },
+    {
+      "id": "simplehats:orange_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:palmtree",
+      "required": false
+    },
+    {
+      "id": "simplehats:paperbag",
+      "required": false
+    },
+    {
+      "id": "simplehats:partyhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:paypay",
+      "required": false
+    },
+    {
+      "id": "simplehats:penguinbaby",
+      "required": false
+    },
+    {
+      "id": "simplehats:penguinhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:peppino",
+      "required": false
+    },
+    {
+      "id": "simplehats:pighead",
+      "required": false
+    },
+    {
+      "id": "simplehats:pika_ears",
+      "required": false
+    },
+    {
+      "id": "simplehats:pinhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:plaguedoctor",
+      "required": false
+    },
+    {
+      "id": "simplehats:pog",
+      "required": false
+    },
+    {
+      "id": "simplehats:pohatoe",
+      "required": false
+    },
+    {
+      "id": "simplehats:policebucket",
+      "required": false
+    },
+    {
+      "id": "simplehats:policesiren",
+      "required": false
+    },
+    {
+      "id": "simplehats:pom_moog",
+      "required": false
+    },
+    {
+      "id": "simplehats:poofballhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:poofballrgb",
+      "required": false
+    },
+    {
+      "id": "simplehats:popehat",
+      "required": false
+    },
+    {
+      "id": "simplehats:potionhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:presentsstack",
+      "required": false
+    },
+    {
+      "id": "simplehats:propelhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:puchiko",
+      "required": false
+    },
+    {
+      "id": "simplehats:questbook",
+      "required": false
+    },
+    {
+      "id": "simplehats:rabbitears",
+      "required": false
+    },
+    {
+      "id": "simplehats:rabbitonhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:rabi_en_rose",
+      "required": false
+    },
+    {
+      "id": "simplehats:rainboworbiters",
+      "required": false
+    },
+    {
+      "id": "simplehats:raincloud",
+      "required": false
+    },
+    {
+      "id": "simplehats:ranahat",
+      "required": false
+    },
+    {
+      "id": "simplehats:redeyes",
+      "required": false
+    },
+    {
+      "id": "simplehats:rednose",
+      "required": false
+    },
+    {
+      "id": "simplehats:redstache",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbbigribbon",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbbowler",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbdragonskull",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbdrinkinhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbeasterhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbfullhelm",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbpartyhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbsmallbowler",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbsunglasses",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbtoptophathat",
+      "required": false
+    },
+    {
+      "id": "simplehats:rgbushanka",
+      "required": false
+    },
+    {
+      "id": "simplehats:right_hand_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:rock",
+      "required": false
+    },
+    {
+      "id": "simplehats:round_purple_wig",
+      "required": false
+    },
+    {
+      "id": "simplehats:round_red_wig",
+      "required": false
+    },
+    {
+      "id": "simplehats:rubbernipple",
+      "required": false
+    },
+    {
+      "id": "simplehats:sandcastle",
+      "required": false
+    },
+    {
+      "id": "simplehats:santaclaus",
+      "required": false
+    },
+    {
+      "id": "simplehats:sausage",
+      "required": false
+    },
+    {
+      "id": "simplehats:scouter",
+      "required": false
+    },
+    {
+      "id": "simplehats:seaweedhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:shakehat",
+      "required": false
+    },
+    {
+      "id": "simplehats:sheep",
+      "required": false
+    },
+    {
+      "id": "simplehats:shrekears",
+      "required": false
+    },
+    {
+      "id": "simplehats:shroomcap",
+      "required": false
+    },
+    {
+      "id": "simplehats:simsgem",
+      "required": false
+    },
+    {
+      "id": "simplehats:sleepeyemask",
+      "required": false
+    },
+    {
+      "id": "simplehats:slime_cube_dnd",
+      "required": false
+    },
+    {
+      "id": "simplehats:slime_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:smokingpipe",
+      "required": false
+    },
+    {
+      "id": "simplehats:snowmanbaby",
+      "required": false
+    },
+    {
+      "id": "simplehats:sombrero",
+      "required": false
+    },
+    {
+      "id": "simplehats:sonichood",
+      "required": false
+    },
+    {
+      "id": "simplehats:spadesoldier",
+      "required": false
+    },
+    {
+      "id": "simplehats:special",
+      "required": false
+    },
+    {
+      "id": "simplehats:spiderweb",
+      "required": false
+    },
+    {
+      "id": "simplehats:sport_sunglasses",
+      "required": false
+    },
+    {
+      "id": "simplehats:springer",
+      "required": false
+    },
+    {
+      "id": "simplehats:sprout",
+      "required": false
+    },
+    {
+      "id": "simplehats:spyzombie",
+      "required": false
+    },
+    {
+      "id": "simplehats:stackofeggs",
+      "required": false
+    },
+    {
+      "id": "simplehats:stinkycheeseman",
+      "required": false
+    },
+    {
+      "id": "simplehats:strawberry_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:stress",
+      "required": false
+    },
+    {
+      "id": "simplehats:stuck_lollipop",
+      "required": false
+    },
+    {
+      "id": "simplehats:summerhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:sunglasses",
+      "required": false
+    },
+    {
+      "id": "simplehats:sunglassesbig",
+      "required": false
+    },
+    {
+      "id": "simplehats:supersandhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:swimmer",
+      "required": false
+    },
+    {
+      "id": "simplehats:tanuki_leaf",
+      "required": false
+    },
+    {
+      "id": "simplehats:teddy_bear",
+      "required": false
+    },
+    {
+      "id": "simplehats:the_noise",
+      "required": false
+    },
+    {
+      "id": "simplehats:the_noisier",
+      "required": false
+    },
+    {
+      "id": "simplehats:thumbnail",
+      "required": false
+    },
+    {
+      "id": "simplehats:tick_on_head",
+      "required": false
+    },
+    {
+      "id": "simplehats:tinkerhat",
+      "required": false
+    },
+    {
+      "id": "simplehats:toast",
+      "required": false
+    },
+    {
+      "id": "simplehats:toilet",
+      "required": false
+    },
+    {
+      "id": "simplehats:tomato_splats",
+      "required": false
+    },
+    {
+      "id": "simplehats:topcathat",
+      "required": false
+    },
+    {
+      "id": "simplehats:tophat",
+      "required": false
+    },
+    {
+      "id": "simplehats:toptophathat",
+      "required": false
+    },
+    {
+      "id": "simplehats:toy_story_alien",
+      "required": false
+    },
+    {
+      "id": "simplehats:traffic_cone",
+      "required": false
+    },
+    {
+      "id": "simplehats:triangleshades",
+      "required": false
+    },
+    {
+      "id": "simplehats:tricorne",
+      "required": false
+    },
+    {
+      "id": "simplehats:tvhead",
+      "required": false
+    },
+    {
+      "id": "simplehats:twilight_doll",
+      "required": false
+    },
+    {
+      "id": "simplehats:udder_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:unicornhorn",
+      "required": false
+    },
+    {
+      "id": "simplehats:ushanka",
+      "required": false
+    },
+    {
+      "id": "simplehats:vikinghatbeard",
+      "required": false
+    },
+    {
+      "id": "simplehats:villagernose",
+      "required": false
+    },
+    {
+      "id": "simplehats:winghat",
+      "required": false
+    },
+    {
+      "id": "simplehats:worm_hat",
+      "required": false
+    },
+    {
+      "id": "simplehats:worms_mine",
+      "required": false
+    },
+    {
+      "id": "simplehats:zigzagwitchhat",
+      "required": false
+    }
+  ]
+}

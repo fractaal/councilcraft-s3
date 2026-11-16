@@ -6078,7 +6078,7 @@ hash = "dd6f8a6e1787e06ae9fb5c6f68deca461c1c0b5b5afbe1ba13cbafa2a1c92804"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
-hash = "80cebcf859007fc53453354127642ba51fa6a700cce7372d8cc1332a7d1130ab"
+hash = "ddb2f061135325c9ba1741bc8a36b5b2d6fd60ccf43fc270856142d90ae9d374"
 
 [[files]]
 file = "config/modelfix-client.toml"
@@ -7547,6 +7547,10 @@ hash = "fdd47bd67a537dacd111f5aab7b4ba309e3e7fa6a3c997eb69edbb9b8de5615e"
 [[files]]
 file = "global_packs/required_data/Aero Loot Bags/tables-used.json"
 hash = "b266c40676accac89392a10d1ed2206ff2ee320bebe367620ccde7a0ca78a488"
+
+[[files]]
+file = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/tags/item/recycler_hats.json"
+hash = "2e4ac554f30725a867abd2e9e263c2ab7ab390f3df313a64fdb009e47edd1b60"
 
 [[files]]
 file = "global_packs/required_data/Aero Plushie Loot Fix/data/perfectplushieapi/tags/item/archaeology_plushies.json"
