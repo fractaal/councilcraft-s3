@@ -64,6 +64,8 @@ Don't run it directly over a live server folder. On a first run the installer wr
 ### Updating the pack
 Change files or run `packwiz update <mod>`, then `packwiz refresh`, bump `version` in `pack.toml`, and publish.
 
+The refresh is needed after any change to a file the index lists, including a config only the server reads: the installer downloads every listed file to every client and checks it against the hash in `index.toml`, so a stale hash fails the update for everyone. A client keeps working without a `version` bump; it does not keep working with a wrong hash.
+
 ## Server notes
 - Keep `maxThreads = 1` in the server's `config/fml.toml`. With parallel mod construction, boot deadlocked between `libjf` and Mixin. `libjf` is no longer in the pack, but 1 is the setting every server boot has been tested with. The friend's v1.5 has `maxThreads = -1` in its client config, so the repo ships no `fml.toml` and each side keeps its own.
 - Do not add Chunky or C2ME. They break against Sable's chunk hooks.
