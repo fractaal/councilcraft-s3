@@ -6078,7 +6078,7 @@ hash = "dd6f8a6e1787e06ae9fb5c6f68deca461c1c0b5b5afbe1ba13cbafa2a1c92804"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
-hash = "ddb2f061135325c9ba1741bc8a36b5b2d6fd60ccf43fc270856142d90ae9d374"
+hash = "90a9465ace50f9cdbba8ff17926df4e8c4ec110065611240f5e7df33e308b2be"
 
 [[files]]
 file = "config/modelfix-client.toml"

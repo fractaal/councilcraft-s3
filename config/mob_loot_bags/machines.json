@@ -116,6 +116,14 @@
       "simplyswords:brimstone_claymore": 16,
       "simplyswords:arcanethyst": 16,
       "#mob_loot_bags:recycler_hats": 2,
+      "simplehats:hatbag_common": 2,
+      "simplehats:hatbag_uncommon": 3,
+      "simplehats:hatbag_rare": 5,
+      "simplehats:hatbag_epic": 8,
+      "simplehats:hatbag_easter": 3,
+      "simplehats:hatbag_festive": 3,
+      "simplehats:hatbag_halloween": 3,
+      "simplehats:hatbag_summer": 3,
       // Every Apotheosis gem is one item id, so all rarities count the same here.
       "apotheosis:gem": 4
     }
