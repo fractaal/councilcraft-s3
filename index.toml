@@ -7389,6 +7389,10 @@ file = "global_packs/required_data/Aero Enchanting Table Fix/pack.mcmeta"
 hash = "53061b4171b34c04e915bc998e95339f8914a4c8c2c2d0eae46e3ad0e1feba14"
 
 [[files]]
+file = "global_packs/required_data/Aero Fauna Tweaks/data/cataclysm/tags/worldgen/structure/berserker_spawn.json"
+hash = "4aedafdbe1a77e251ec748f78578dc58b05ee927121a451aa98a3c685f1b4fad"
+
+[[files]]
 file = "global_packs/required_data/Aero Fauna Tweaks/data/naturalist/neoforge/biome_modifier/add_ant_hills.json"
 hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
 
@@ -7406,7 +7410,7 @@ hash = "646b527b69063ce4e8a20a365e676006148651bb24827bb7b4228fef4dcc6296"
 
 [[files]]
 file = "global_packs/required_data/Aero Fauna Tweaks/pack.mcmeta"
-hash = "113d5b2e14672cc42c7c73e00813639ed82213187e889a74432f4d73fe0b6f47"
+hash = "376e8421b54227b69620efef842c34b35941a74aaf152a2eb527d3a3be3c7532"
 
 [[files]]
 file = "global_packs/required_data/Aero Hat Trader/data/aero_hat_trader/function/check.mcfunction"
