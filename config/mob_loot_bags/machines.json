@@ -124,6 +124,7 @@
       "simplehats:hatbag_festive": 3,
       "simplehats:hatbag_halloween": 3,
       "simplehats:hatbag_summer": 3,
+      "minecraft:amethyst_shard": 1,
       // Every Apotheosis gem is one item id, so all rarities count the same here.
       "apotheosis:gem": 4
     }
