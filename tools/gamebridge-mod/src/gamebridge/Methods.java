@@ -344,7 +344,11 @@ final class Methods {
             if (!level.isLoaded(pos)) throw new Bridge.Refusal("not_loaded", "The chunk holding " + pos.toShortString() + " is not loaded, and the bridge does not load chunks to read them.");
             BlockEntity be = level.getBlockEntity(pos);
             if (be == null) throw new Bridge.Refusal("no_block_entity", "The block at " + pos.toShortString() + " (" + BuiltInRegistries.BLOCK.getKey(level.getBlockState(pos).getBlock()) + ") stores no data.");
-            root = be.saveWithFullMetadata(server().registryAccess());
+            // "view": "client" gives what the server sends players for this block (its update tag) instead of what it
+            // saves, which is how to see a screen's pixels or anything else that only exists for display.
+            root = p.has("view") && p.get("view").getAsString().equals("client")
+                    ? be.getUpdateTag(server().registryAccess())
+                    : be.saveWithFullMetadata(server().registryAccess());
         } else {
             root = one(p).saveWithoutId(new CompoundTag());
         }

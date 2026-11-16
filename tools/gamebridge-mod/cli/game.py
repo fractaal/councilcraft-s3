@@ -9,6 +9,7 @@
   game inv --block X Y Z [--dim D]         a chest, barrel or any block with an item inventory
   game attr <target> [attribute id]        attributes with their modifiers (where a stat comes from)
   game nbt <target> [path]                 saved data, with a /data-style path; game nbt --block X Y Z [path]
+                                           (--client: what players are sent for that block, such as a screen's pixels)
   game find <block id> <target>            where a block is near a player or entity, as places with a block count;
   game find <block id> --near X Z          options: --radius R (default 96, max 256) --dim D --budget MS
   game map <target> --out FILE.png         a top-down picture of the area around a player or entity, north up;
@@ -152,6 +153,7 @@ def main():
     a = sub.add_parser("attr"); a.add_argument("target"); a.add_argument("attribute", nargs="?")
     n = sub.add_parser("nbt"); n.add_argument("target", nargs="?"); n.add_argument("path", nargs="?"); n.add_argument("--block", nargs=3, type=int)
     n.add_argument("--dim"); n.add_argument("--max-bytes", type=int)
+    n.add_argument("--client", action="store_true", help="for --block: what the server sends players for it, not what it saves")
     f = sub.add_parser("find"); f.add_argument("block"); f.add_argument("target", nargs="?"); f.add_argument("--near", nargs=2, type=float)
     f.add_argument("--radius", type=int); f.add_argument("--dim"); f.add_argument("--budget", type=int)
     m = sub.add_parser("map"); m.add_argument("target", nargs="?"); m.add_argument("--near", nargs=2, type=float)
@@ -204,6 +206,7 @@ def main():
             path = args.path if not args.block else (args.path or args.target)
             if path: params["path"] = path
             if args.max_bytes: params["max_bytes"] = args.max_bytes
+            if args.client: params["view"] = "client"
     elif args.what == "attr":
         params = {"target": args.target}
         if args.attribute: params["attribute"] = args.attribute
