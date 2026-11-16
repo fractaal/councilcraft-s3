@@ -2,9 +2,12 @@ package skyislands;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import com.mojang.authlib.GameProfile;
+import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
@@ -13,6 +16,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.UUID;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.Connection;
+import net.minecraft.network.PacketSendListener;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ClientInformation;
+import net.minecraft.server.network.CommonListenerCookie;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -38,6 +52,7 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * Measures what mobs really drop on this server, with every mod, config and datapack in play.
  *
  *   /lootcheck <player> <mob id> <count> [spawner]
+ *   /lootcheck bot <luck> <mob id> <count> [spawner]
  *
  * spawns that many mobs at the player, one after another, kills each with a player attack from that player (so the kill
  * is theirs, with their Luck, gear and Apotheosis world tier), and counts every item the death puts into the world:
@@ -45,8 +60,8 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * as natural spawns, or as spawner-block spawns with "spawner". The tally is written to
  * logs/lootcheck/<time>-<mob>.json and a summary to the server log.
  *
- * It needs a real, logged-in player, because Mob Loot Bags and Apotheosis give nothing for a fake player's kills. The
- * kills are real to every other mod too: they count toward that player's statistics, quests, advancements and loot bag
+ * Mob Loot Bags and Apotheosis give nothing for a fake player's kills, so the killer is either a logged-in player or,
+ * with "bot", a stand-in those mods take for one (see standIn). The kills are real to every other mod too: they count toward that player's statistics, quests, advancements and loot bag
  * pity, and a mythic bag is announced in chat. So this is for a test server. The command only exists when the server's
  * JVM is started with -Dskyislands.lootcheck=true.
  */
@@ -67,6 +82,7 @@ public final class LootCheck {
         ResourceLocation typeId;
         boolean spawner;
         int wanted, killed, survived;
+        double health;
         long started = System.currentTimeMillis();
         final Map<String, Long> items = new TreeMap<>();
     }
@@ -77,14 +93,55 @@ public final class LootCheck {
 
     public static void register(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("lootcheck").requires(s -> s.hasPermission(4))
+                .then(Commands.literal("bot").then(Commands.argument("luck", DoubleArgumentType.doubleArg(0.0, 1024.0))
+                        .then(Commands.argument("mob", ResourceLocationArgument.id())
+                                .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
+                                        .executes(c -> start(c, false, true))
+                                        .then(Commands.literal("spawner").executes(c -> start(c, true, true)))))))
                 .then(Commands.argument("player", EntityArgument.player())
                         .then(Commands.argument("mob", ResourceLocationArgument.id())
                                 .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
-                                        .executes(c -> start(c, false))
-                                        .then(Commands.literal("spawner").executes(c -> start(c, true)))))));
+                                        .executes(c -> start(c, false, false))
+                                        .then(Commands.literal("spawner").executes(c -> start(c, true, false)))))));
     }
 
-    private static int start(CommandContext<CommandSourceStack> c, boolean spawner) throws CommandSyntaxException {
+    private static ServerPlayer standIn;
+
+    /**
+     * A stand-in killer for "/lootcheck bot <luck> ...", so a run needs nobody logged in: an ordinary ServerPlayer that
+     * stands at the world spawn and was never connected. Mob Loot Bags, Apotheosis and skyislands.LootRules tell a real
+     * player from a machine's by one test, "is it NeoForge's FakePlayer class", and this isn't, so its kills count as a
+     * real player's. It has no gear and no Apotheosis world tier; its Luck is whatever the command gives it.
+     */
+    private static ServerPlayer standIn(MinecraftServer server, double luck) {
+        if (standIn == null) {
+            ServerLevel level = server.overworld();
+            GameProfile profile = new GameProfile(UUID.nameUUIDFromBytes("skyislands:lootcheck".getBytes(StandardCharsets.UTF_8)), "lootcheck_bot");
+            ServerPlayer player = new ServerPlayer(server, level, profile, ClientInformation.createDefault());
+            new NoConnection(server, player);
+            BlockPos spawn = level.getSharedSpawnPos();
+            level.setChunkForced(spawn.getX() >> 4, spawn.getZ() >> 4, true);
+            player.setPos(spawn.getX() + 0.5, spawn.getY() + 1.0, spawn.getZ() + 0.5);
+            standIn = player;
+        }
+        standIn.getAttribute(Attributes.LUCK).setBaseValue(luck);
+        return standIn;
+    }
+
+    /** What the stand-in has where a player has a network connection: everything sent to it is dropped. */
+    private static final class NoConnection extends ServerGamePacketListenerImpl {
+        NoConnection(MinecraftServer server, ServerPlayer player) {
+            super(server, new Connection(PacketFlow.CLIENTBOUND), player, CommonListenerCookie.createInitial(player.getGameProfile(), false));
+        }
+
+        @Override
+        public void send(Packet<?> packet) {}
+
+        @Override
+        public void send(Packet<?> packet, PacketSendListener listener) {}
+    }
+
+    private static int start(CommandContext<CommandSourceStack> c, boolean spawner, boolean bot) throws CommandSyntaxException {
         CommandSourceStack source = c.getSource();
         if (run != null) {
             source.sendFailure(Component.literal("lootcheck is busy: " + run.killed + "/" + run.wanted + " " + run.typeId));
@@ -97,7 +154,7 @@ public final class LootCheck {
             return 0;
         }
         Run r = new Run();
-        r.player = EntityArgument.getPlayer(c, "player");
+        r.player = bot ? standIn(source.getServer(), DoubleArgumentType.getDouble(c, "luck")) : EntityArgument.getPlayer(c, "player");
         r.type = type;
         r.typeId = id;
         r.spawner = spawner;
@@ -132,6 +189,7 @@ public final class LootCheck {
         mob.moveTo(r.player.getX(), r.player.getY(), r.player.getZ(), 0.0F, 0.0F);
         EventHooks.finalizeMobSpawn(mob, level, level.getCurrentDifficultyAt(mob.blockPosition()),
                 r.spawner ? MobSpawnType.SPAWNER : MobSpawnType.NATURAL, null);
+        r.health += mob.getMaxHealth();
         level.addFreshEntityWithPassengers(mob);
         // A jockey's mount or rider comes along with the mob; none of them should outlive the test.
         List<Entity> group = new ArrayList<>();
@@ -182,6 +240,8 @@ public final class LootCheck {
         out.addProperty("difficulty", r.player.serverLevel().getDifficulty().getKey());
         out.addProperty("kills", r.killed);
         out.addProperty("survived", r.survived);
+        // After every mod's spawn-time changes; Mob Loot Bags scales a mob's bag chance by this.
+        out.addProperty("mean_max_health", r.killed + r.survived == 0 ? 0.0 : r.health / (r.killed + r.survived));
         out.addProperty("seconds", (System.currentTimeMillis() - r.started) / 1000.0);
         JsonObject items = new JsonObject();
         r.items.forEach(items::addProperty);

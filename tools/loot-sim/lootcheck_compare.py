@@ -8,9 +8,9 @@ it prints, per kind of drop, the count seen, the count expected for that many ki
 apart they are. |z| above 3 is marked, since chance alone gets there about once in 400 rows.
 
 Expected bag counts come from sim.py's own Monte Carlo over the one mob in the report, at the Luck, dimension, difficulty
-and spawn kind the report records. Expected crate counts are worked out exactly from the crate weights. Things sim.py
-doesn't model (bag carriers, Looting on the weapon held, the Fortune Talisman, Apotheosis mob health) show up here as
-differences, which is the point.
+and spawn kind the report records, with the mob's health set to the average the report measured. Expected crate counts
+are worked out exactly from the crate weights. Things sim.py doesn't model (Looting on the weapon held, the Fortune
+Talisman) show up here as differences, which is the point.
 """
 import argparse, json, math, sys
 from collections import Counter
@@ -59,6 +59,8 @@ def main():
                 seen_crates[detail.split("]")[0]] += n
             elif item == "apotheosis:gem":
                 gems += n
+        if r.get("mean_max_health"):
+            sim.MOBS[mob] = r["mean_max_health"]
         bags, _ = sim.simulate(cfg, crates_cfg, Counter({mob: 1}), p, SIM_KILLS, hourglass={})
         scale = kills / SIM_KILLS
         for t in sim.TIERS + ["cursed", "_hourglass", "locked", "summoning"]:

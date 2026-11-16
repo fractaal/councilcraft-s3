@@ -20,9 +20,9 @@ epic 60 / legendary 30 / mythic 10; --hourglass overrides it), not as a bag of t
 Apotheosis 8.9.0's mob gem drops: gem_entity_drops (0.5%, killed_by_player) plus gem_entity_drops_from_real_players
 (4%), both only for `instanceof Monster` victims, so slimes, ghasts, phantoms, shulkers and hoglins give none.
 
-What it doesn't model: bag carriers (2% of some mobs spawn holding a bag), cursed-bag ambush rewards and jackpots,
-bags found inside bags, per-dimension themes, and spawner tags (pass --spawner for the share of kills from spawners). Mob max health comes from the table
-below; mobs not in it count as hostile with 20 health, and the share of such kills is printed. Apotheosis world tier
+What it doesn't model: cursed-bag ambush rewards and jackpots, bags found inside bags, per-dimension themes, and
+spawner tags (pass --spawner for the share of kills from spawners). Mob max health comes from the table below, measured
+on the real server; mobs not in it count as hostile with 20 health, and the share of such kills is printed. Apotheosis world tier
 plays no part in either mod's rolls.
 """
 import argparse, json, math, random, re, sys
@@ -32,24 +32,29 @@ from pathlib import Path
 TIERS = ["common", "uncommon", "rare", "epic", "legendary", "mythic"]
 SPECIALS = ["cursed", "hourglass", "locked", "summoning"]
 
-# Vanilla and common modded max health. passive=True means not Enemy/MONSTER (no bag at passive_chance 0, and the
-# crate weight used is "passive").
+# Max health as mobs really spawn on this server: measured in the lab with /lootcheck (2026-11-16), which reads it
+# after every mod's spawn-time changes. Several differ from vanilla here (zombies, pillagers and their kin have 24,
+# skeletons 22.3, piglins 20). Slimes and magma cubes are averages over their sizes. The last three lines are vanilla
+# values that were not measured. Mob Loot Bags scales a mob's bag chance by health / 20.
 MOBS = {
-    "minecraft:zombie": 20, "minecraft:husk": 20, "minecraft:drowned": 20, "minecraft:zombie_villager": 20,
-    "minecraft:skeleton": 20, "minecraft:stray": 20, "minecraft:bogged": 16, "minecraft:wither_skeleton": 20,
-    "minecraft:spider": 16, "minecraft:cave_spider": 12, "minecraft:creeper": 20, "minecraft:enderman": 40,
-    "minecraft:witch": 26, "minecraft:slime": 16, "minecraft:magma_cube": 16, "minecraft:blaze": 20,
-    "minecraft:ghast": 10, "minecraft:piglin": 16, "minecraft:piglin_brute": 50, "minecraft:zombified_piglin": 20,
-    "minecraft:hoglin": 40, "minecraft:zoglin": 40, "minecraft:pillager": 24, "minecraft:vindicator": 24,
-    "minecraft:evoker": 24, "minecraft:vex": 14, "minecraft:ravager": 100, "minecraft:phantom": 20,
+    "minecraft:zombie": 24.1, "minecraft:husk": 24.2, "minecraft:drowned": 24.1, "minecraft:zombie_villager": 24.3,
+    "minecraft:skeleton": 22.3, "minecraft:stray": 22.4, "minecraft:bogged": 16, "minecraft:wither_skeleton": 20.1,
+    "minecraft:spider": 16, "minecraft:cave_spider": 12, "minecraft:creeper": 20, "minecraft:enderman": 40.3,
+    "minecraft:witch": 26.1, "minecraft:slime": 6.4, "minecraft:magma_cube": 7.2, "minecraft:blaze": 20,
+    "minecraft:ghast": 10, "minecraft:piglin": 20, "minecraft:piglin_brute": 50.2, "minecraft:zombified_piglin": 24.1,
+    "minecraft:hoglin": 40, "minecraft:zoglin": 40, "minecraft:pillager": 24.1, "minecraft:vindicator": 24.1,
+    "minecraft:evoker": 24.2, "minecraft:vex": 14.1, "minecraft:ravager": 100, "minecraft:phantom": 20,
     "minecraft:guardian": 30, "minecraft:elder_guardian": 80, "minecraft:shulker": 30, "minecraft:silverfish": 8,
-    "minecraft:endermite": 8, "minecraft:breeze": 30, "minecraft:warden": 500, "minecraft:wither": 300,
-    "minecraft:ender_dragon": 200, "minecraft:illusioner": 32,
+    "minecraft:endermite": 8, "minecraft:breeze": 30, "minecraft:warden": 500,
+    "irons_spellbooks:necromancer": 25, "irons_spellbooks:citadel_keeper": 60, "irons_spellbooks:cursed_armor_stand": 60,
+    "royalvariations:royal_zombie": 60, "royalvariations:royal_skeleton": 45, "cataclysm:koboleton": 25,
+    "minecraft:wither": 300, "minecraft:ender_dragon": 200, "minecraft:illusioner": 32,
 }
 PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chicken", "minecraft:rabbit",
            "minecraft:villager", "minecraft:iron_golem", "minecraft:snow_golem", "minecraft:fox", "minecraft:bee",
            "minecraft:squid", "minecraft:glow_squid", "minecraft:cod", "minecraft:salmon", "minecraft:bat",
-           "naturalist:butterfly", "minecraft:wandering_trader", "minecraft:goat", "minecraft:wolf"}
+           "naturalist:butterfly", "minecraft:wandering_trader", "minecraft:goat", "minecraft:wolf",
+           "modulargolems:humanoid_golem"}
 # The mob_loot_bags:bosses tag (plus anything in c:bosses). The skyislands mod makes FTB Quests crates use it too.
 BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
 # skyislands.LootRules: bags count a player's Luck up to this, and spawner mobs keep this share of their crates.
@@ -57,7 +62,14 @@ BAG_LUCK_CAP = 30.0
 SPAWNER_CRATE_SHARE = 0.25
 # Hostile in MOBS but not a net.minecraft.world.entity.monster.Monster subclass, so no Apotheosis mob gems.
 NOT_MONSTER = {"minecraft:slime", "minecraft:magma_cube", "minecraft:ghast", "minecraft:phantom", "minecraft:shulker",
-               "minecraft:hoglin", "minecraft:ender_dragon"}
+               "minecraft:hoglin", "minecraft:ender_dragon", "irons_spellbooks:necromancer",
+               "irons_spellbooks:citadel_keeper", "irons_spellbooks:cursed_armor_stand"}
+# The mob_loot_bags:bag_carriers tag: a natural spawn of one of these holds a loot bag "carriers.chance" of the time and
+# always drops it. The bag's tier is rolled when the mob spawns, with "carriers.luck" and no player's Luck. A carried bag
+# is not counted in the mod's per-player "found" numbers.
+BAG_CARRIERS = {"minecraft:zombie", "minecraft:husk", "minecraft:skeleton", "minecraft:stray", "minecraft:piglin",
+                "minecraft:zombified_piglin", "minecraft:pillager", "minecraft:vindicator", "minecraft:wither_skeleton",
+                "minecraft:bogged"}
 GEM_CHANCE = 0.005 + 0.04
 HOURGLASS = {"epic": 60, "legendary": 30, "mythic": 10}
 # The KubeJS "luck bags" proposal (see --luck-bags): one bonus stack per success, tier by weight, count range.
@@ -149,11 +161,12 @@ def pick(rng, dist):
     return len(dist) - 1
 
 
-def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_bags=None):
+def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_bags=None, carriers=True):
     """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses.
 
     luck_bags = (rate, cap): the KubeJS proposal. On every hostile, non-boss kill that could drop a bag, with chance
     min(cap, rate * Luck attribute) (times spawner_multiplier for spawner mobs) it also drops one LUCK_STACKS stack.
+    carriers=False leaves out the bags that carrier mobs hold, to compare with the mod's "found" counters.
     """
     rng = random.Random(seed)
     hg = [(TIERS.index(t), w) for t, w in hourglass.items()]
@@ -175,6 +188,10 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_b
         if not passive and mob not in NOT_MONSTER and rng.random() < GEM_CHANCE:
             extra["gems"] += 1
         from_spawner = rng.random() < p.spawner
+        if carriers and cfg["enabled"] and mob in BAG_CARRIERS and not from_spawner and rng.random() < cfg["carriers"]["chance"]:
+            nobody = Profile("", 0.0, 0, False, p.dim, p.hard)
+            bags[TIERS[pick(rng, tier_dist(cfg, cfg["carriers"]["luck"] + bag_luck(cfg, nobody, health)))]] += 1
+            extra["carried"] += 1
         # FTB Quests crate roll, independent of bags. A spawner mob keeps its crate a quarter of the time.
         if on and (not from_spawner or rng.random() < SPAWNER_CRATE_SHARE):
             kind = "boss" if mob in BAG_BOSSES else ("passive" if passive else "monster")
@@ -345,7 +362,7 @@ def main():
             if not pmix or kills < 50:
                 continue
             p = Profile(name, luck.get(name, 0.0), a.looting, a.talisman, a.dim, a.hard, a.spawner)
-            bags, _ = simulate(cfg, crates_cfg, pmix, p, kills * 20, hourglass={}, luck_bags=luck_bags)
+            bags, _ = simulate(cfg, crates_cfg, pmix, p, kills * 20, hourglass={}, luck_bags=luck_bags, carriers=False)
             cells = "  ".join(f"{e['found'][t]:>5} vs {bags[t] / 20:5.0f}" for t in TIERS)
             print(f"{name:<16}{kills:>6}  {p.luck:>5.1f}  {cells}")
         print("\nactual vs predicted at the luck given, with today's config. Actual counts cover the whole world's"
