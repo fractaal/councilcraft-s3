@@ -7357,6 +7357,14 @@ file = "global_packs/required_data/Aero Combat/pack.mcmeta"
 hash = "a0a4c0e467b040d54ffff3a90ab8aa151d33d17293bcb967c5c9618cffe34baf"
 
 [[files]]
+file = "global_packs/required_data/Aero Crate Rules/data/apotheosis/tags/item/cannot_be_duplicated.json"
+hash = "c33d72c82032f18d6104085b93ff2778121bddde93701887c45b50cc47714d57"
+
+[[files]]
+file = "global_packs/required_data/Aero Crate Rules/pack.mcmeta"
+hash = "872472a58c648f724d5f679315e70f03e6b5200a982cdf0a766184d2d4edafb9"
+
+[[files]]
 file = "global_packs/required_data/Aero Curio Slots/data/aero/curios/slots/necklace.json"
 hash = "61eb1e152788aa3dcd30094b1084fba3329826dcdd4396ca81e0801a0d090360"
 

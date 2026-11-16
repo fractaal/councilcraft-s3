@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": "Apotheosis's Festive affix no longer copies FTB Quests loot crates, so crate drop rates stay as set (asked for by fractal)"
+  }
+}
