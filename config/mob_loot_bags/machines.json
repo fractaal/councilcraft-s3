@@ -125,6 +125,9 @@
       "simplehats:hatbag_halloween": 3,
       "simplehats:hatbag_summer": 3,
       "minecraft:amethyst_shard": 1,
+      // 4 small essence craft into 1 great and back, so great is worth 4 small.
+      "knightlib:small_essence": 1,
+      "knightlib:great_essence": 4,
       // Every Apotheosis gem is one item id, so all rarities count the same here.
       "apotheosis:gem": 4
     }
