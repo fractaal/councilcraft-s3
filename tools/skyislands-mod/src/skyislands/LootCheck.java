@@ -5,8 +5,10 @@ import com.google.gson.JsonObject;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import io.netty.channel.embedded.EmbeddedChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -18,6 +20,8 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.UUIDUtil;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.Connection;
 import net.minecraft.network.PacketSendListener;
 import net.minecraft.network.protocol.Packet;
@@ -45,6 +49,8 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
@@ -56,6 +62,10 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  *   /lootcheck <player> <mob id> <count> [spawner]
  *   /lootcheck bot <luck> <mob id> <count> [spawner]
  *   /lootcheck hand <item>
+ *   /lootcheck build <player name>
+ *   /lootcheck slot <hotbar slot 0-8>
+ *   /lootcheck attr <attribute id>
+ *   /lootcheck run <mob id> <count> [spawner]
  *
  * spawns that many mobs at the player, one after another, kills each with a player attack from that player (so the kill
  * is theirs, with their Luck, gear and Apotheosis world tier), and counts every item the death puts into the world:
@@ -66,7 +76,9 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
  * Mob Loot Bags and Apotheosis give nothing for a fake player's kills, so the killer is either a logged-in player or,
  * with "bot", a stand-in those mods take for one (see standIn). The kills are real to every other mod too: they count toward that player's statistics, quests, advancements and loot bag
  * pity, and a mythic bag is announced in chat. "hand" puts an item, with any components, in the stand-in's main hand for
- * later bot runs, so weapon effects such as Apotheosis affixes take part. So this is for a test server. The command only exists when the server's
+ * later bot runs, so weapon effects such as Apotheosis affixes take part. "build" makes the stand-in a copy of a real
+ * player's saved character instead (see build), "slot" chooses which hotbar item it holds, "attr" lists every modifier on one of
+ * its attributes (where its Luck comes from), and "run" kills with the stand-in exactly as it is. So this is for a test server. The command only exists when the server's
  * JVM is started with -Dskyislands.lootcheck=true.
  */
 public final class LootCheck {
@@ -106,51 +118,191 @@ public final class LootCheck {
                 .then(Commands.literal("bot").then(Commands.argument("luck", DoubleArgumentType.doubleArg(0.0, 1024.0))
                         .then(Commands.argument("mob", ResourceLocationArgument.id())
                                 .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
-                                        .executes(c -> start(c, false, true))
-                                        .then(Commands.literal("spawner").executes(c -> start(c, true, true)))))))
+                                        .executes(c -> start(c, false, Killer.BOT))
+                                        .then(Commands.literal("spawner").executes(c -> start(c, true, Killer.BOT)))))))
                 .then(Commands.literal("hand").then(Commands.argument("item", ItemArgument.item(event.getBuildContext()))
                         .executes(LootCheck::hand)))
+                .then(Commands.literal("build").then(Commands.argument("name", StringArgumentType.word()).executes(LootCheck::build)))
+                .then(Commands.literal("slot").then(Commands.argument("slot", IntegerArgumentType.integer(0, 8)).executes(LootCheck::slot)))
+                .then(Commands.literal("attr").then(Commands.argument("attribute", ResourceLocationArgument.id()).executes(LootCheck::attr)))
+                .then(Commands.literal("run").then(Commands.argument("mob", ResourceLocationArgument.id())
+                        .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
+                                .executes(c -> start(c, false, Killer.STAND_IN))
+                                .then(Commands.literal("spawner").executes(c -> start(c, true, Killer.STAND_IN))))))
                 .then(Commands.argument("player", EntityArgument.player())
                         .then(Commands.argument("mob", ResourceLocationArgument.id())
                                 .then(Commands.argument("count", IntegerArgumentType.integer(1, 200000))
-                                        .executes(c -> start(c, false, false))
-                                        .then(Commands.literal("spawner").executes(c -> start(c, true, false)))))));
+                                        .executes(c -> start(c, false, Killer.PLAYER))
+                                        .then(Commands.literal("spawner").executes(c -> start(c, true, Killer.PLAYER)))))));
     }
 
+    /** Who does the killing: a logged-in player, the plain stand-in at a given Luck, or the stand-in as it is now. */
+    private enum Killer { PLAYER, BOT, STAND_IN }
+
     private static ServerPlayer standIn;
+    /** True when the stand-in was loaded from a player's save by "build", false for the plain one "bot" uses. */
+    private static boolean standInIsBuild;
 
     private static int hand(CommandContext<CommandSourceStack> c) throws CommandSyntaxException {
         ItemStack stack = ItemArgument.getItem(c, "item").createItemStack(1, false);
-        standIn(c.getSource().getServer(), 0.0).setItemInHand(InteractionHand.MAIN_HAND, stack);
-        c.getSource().sendSuccess(() -> Component.literal("lootcheck bot now holds " + stack.getHoverName().getString()), false);
+        if (standIn == null) standIn(c.getSource().getServer(), 0.0);
+        standIn.setItemInHand(InteractionHand.MAIN_HAND, stack);
+        c.getSource().sendSuccess(() -> Component.literal("lootcheck stand-in now holds " + stack.getHoverName().getString()), false);
         return 1;
+    }
+
+    /**
+     * Makes the stand-in a copy of a real player's saved character: "/lootcheck build otenlamiughh" loads that
+     * player's file from this world's playerdata folder (copy it there from the live server first), so the stand-in
+     * has their armour, curios, inventory and Apotheosis world tier, and the game itself works out their Luck. Mods
+     * that keep per-player data elsewhere need that file copied too: Pufferfish's Skills keeps everyone's skills in
+     * data/puffish_skills.dat and applies their attribute bonuses when a player logs in, so the login event is fired
+     * for the stand-in. Nothing is written back to the player's file. The stand-in stands at the world spawn in the
+     * overworld whatever the save says. Check a build against the live player before trusting it: its Luck, max
+     * health and armour should equal what "attribute <player> ... get" says on the live server for the same save.
+     */
+    private static int build(CommandContext<CommandSourceStack> c) {
+        CommandSourceStack source = c.getSource();
+        if (run != null) {
+            source.sendFailure(Component.literal("lootcheck is busy"));
+            return 0;
+        }
+        String name = StringArgumentType.getString(c, "name");
+        ServerPlayer player = newStandIn(source.getServer(), new GameProfile(UUIDUtil.createOfflinePlayerUUID(name), name));
+        if (source.getServer().getPlayerList().load(player).isEmpty()) {
+            source.sendFailure(Component.literal("no saved player file for " + name + " (" + player.getUUID() + ")"));
+            return 0;
+        }
+        toSpawn(player);
+        standIn = player;
+        standInIsBuild = true;
+        try {
+            EventHooks.firePlayerLoggedIn(player);
+        } catch (RuntimeException e) {
+            // One mod's login handler failing stops the ones after it, so the build may be missing their effects.
+            com.mojang.logging.LogUtils.getLogger().error("[skyislands] lootcheck build: a login handler failed for the stand-in", e);
+            source.sendFailure(Component.literal("a mod's login handler failed (see the log); the build may be incomplete"));
+        }
+        settle(player);
+        describe(source, "build");
+        return 1;
+    }
+
+    private static int attr(CommandContext<CommandSourceStack> c) {
+        ResourceLocation id = ResourceLocationArgument.getId(c, "attribute");
+        var instance = standIn == null ? null : BuiltInRegistries.ATTRIBUTE.getHolder(id).map(standIn::getAttribute).orElse(null);
+        if (instance == null) {
+            c.getSource().sendFailure(Component.literal(standIn == null ? "no stand-in yet: use build or bot first" : "the stand-in has no attribute " + id));
+            return 0;
+        }
+        StringBuilder line = new StringBuilder("lootcheck attr " + standIn.getScoreboardName() + " " + id + ": value " + instance.getValue() + ", base " + instance.getBaseValue());
+        instance.getModifiers().stream().sorted(java.util.Comparator.comparing(m -> m.id().toString()))
+                .forEach(m -> line.append(" | ").append(m.id()).append(' ').append(m.amount()).append(' ').append(m.operation().getSerializedName()));
+        com.mojang.logging.LogUtils.getLogger().info("[skyislands] {}", line);
+        c.getSource().sendSuccess(() -> Component.literal(line.toString()), false);
+        return 1;
+    }
+
+    private static int slot(CommandContext<CommandSourceStack> c) {
+        if (standIn == null || run != null) {
+            c.getSource().sendFailure(Component.literal(run != null ? "lootcheck is busy" : "no stand-in yet: use build or bot first"));
+            return 0;
+        }
+        standIn.getInventory().selected = IntegerArgumentType.getInteger(c, "slot");
+        settle(standIn);
+        describe(c.getSource(), "slot");
+        return 1;
+    }
+
+    /**
+     * Ticks the stand-in a few times the way the server ticks a connected player, so that everything worn takes effect:
+     * armour and held items add their attribute modifiers in LivingEntity.tick, curios in the entity tick event.
+     */
+    private static void settle(ServerPlayer player) {
+        for (int i = 0; i < 5; i++) {
+            player.serverLevel().tickNonPassenger(player);
+            player.doTick();
+        }
+        toSpawn(player);
+    }
+
+    /** One log line with what loot code will see: the stand-in's Luck and gear. */
+    private static void describe(CommandSourceStack source, String what) {
+        ServerPlayer p = standIn;
+        StringBuilder hotbar = new StringBuilder();
+        for (int i = 0; i < 9; i++) {
+            ItemStack stack = p.getInventory().getItem(i);
+            if (!stack.isEmpty()) hotbar.append(' ').append(i).append('=').append(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+        }
+        String line = "lootcheck " + what + " " + p.getScoreboardName() + ": luck " + p.getLuck()
+                + ", max_health " + p.getMaxHealth() + ", armor " + p.getAttributeValue(Attributes.ARMOR)
+                + ", armor_toughness " + p.getAttributeValue(Attributes.ARMOR_TOUGHNESS)
+                + ", looting " + looting(p) + (talisman(p) ? ", has a fortune talisman" : "") + ", holds " + BuiltInRegistries.ITEM.getKey(p.getMainHandItem().getItem())
+                + " (slot " + p.getInventory().selected + "), hotbar:" + hotbar;
+        com.mojang.logging.LogUtils.getLogger().info("[skyislands] {}", line);
+        source.sendSuccess(() -> Component.literal(line), false);
+    }
+
+    /**
+     * The Looting level as Mob Loot Bags reads it (DropEngine.lootingLevel): the highest over the player's equipment,
+     * through the enchantment-level hook that lets gear such as Apotheosis affixes add levels, not just the number
+     * written on the weapon.
+     */
+    private static int looting(ServerPlayer player) {
+        return EnchantmentHelper.getEnchantmentLevel(
+                player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING), player);
+    }
+
+    /** Mob Loot Bags' Fortune Talisman anywhere in the inventory: more bags and a better tier (DropEngine.hasTalisman). */
+    private static boolean talisman(ServerPlayer player) {
+        return player.getInventory().contains(stack -> BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals("mob_loot_bags:fortune_talisman"));
     }
 
     /**
      * A stand-in killer for "/lootcheck bot <luck> ...", so a run needs nobody logged in: an ordinary ServerPlayer that
      * stands at the world spawn and was never connected. Mob Loot Bags, Apotheosis and skyislands.LootRules tell a real
      * player from a machine's by one test, "is it NeoForge's FakePlayer class", and this isn't, so its kills count as a
-     * real player's. It has no gear unless "hand" gives it a weapon, and no Apotheosis world tier; its Luck is whatever the command gives it.
+     * real player's. The plain one "bot" uses has no gear unless "hand" gives it a weapon, and no Apotheosis world
+     * tier; its Luck is whatever the command gives it. "build" loads a real player's save into one instead.
      */
     private static ServerPlayer standIn(MinecraftServer server, double luck) {
-        if (standIn == null) {
-            ServerLevel level = server.overworld();
-            GameProfile profile = new GameProfile(UUID.nameUUIDFromBytes("skyislands:lootcheck".getBytes(StandardCharsets.UTF_8)), "lootcheck_bot");
-            ServerPlayer player = new ServerPlayer(server, level, profile, ClientInformation.createDefault());
-            new NoConnection(server, player);
-            BlockPos spawn = level.getSharedSpawnPos();
-            level.setChunkForced(spawn.getX() >> 4, spawn.getZ() >> 4, true);
-            player.setPos(spawn.getX() + 0.5, spawn.getY() + 1.0, spawn.getZ() + 0.5);
-            standIn = player;
+        if (standIn == null || standInIsBuild) {
+            standIn = newStandIn(server, new GameProfile(UUID.nameUUIDFromBytes("skyislands:lootcheck".getBytes(StandardCharsets.UTF_8)), "lootcheck_bot"));
+            standInIsBuild = false;
         }
         standIn.getAttribute(Attributes.LUCK).setBaseValue(luck);
         return standIn;
     }
 
+    private static ServerPlayer newStandIn(MinecraftServer server, GameProfile profile) {
+        ServerPlayer player = new ServerPlayer(server, server.overworld(), profile, ClientInformation.createDefault());
+        new NoConnection(server, player);
+        toSpawn(player);
+        return player;
+    }
+
+    private static void toSpawn(ServerPlayer player) {
+        ServerLevel level = player.serverLevel();
+        BlockPos spawn = level.getSharedSpawnPos();
+        level.setChunkForced(spawn.getX() >> 4, spawn.getZ() >> 4, true);
+        player.setPos(spawn.getX() + 0.5, spawn.getY() + 1.0, spawn.getZ() + 0.5);
+        player.setDeltaMovement(0.0, 0.0, 0.0);
+    }
+
     /** What the stand-in has where a player has a network connection: everything sent to it is dropped. */
     private static final class NoConnection extends ServerGamePacketListenerImpl {
         NoConnection(MinecraftServer server, ServerPlayer player) {
-            super(server, new Connection(PacketFlow.CLIENTBOUND), player, CommonListenerCookie.createInitial(player.getGameProfile(), false));
+            super(server, inMemory(), player, CommonListenerCookie.createInitial(player.getGameProfile(), false));
+        }
+
+        /**
+         * A connection with a channel that exists but leads nowhere. Mods ask a player's channel which of their
+         * payloads it accepts before sending (NeoForge's hasChannel), which fails on a connection with no channel.
+         */
+        private static Connection inMemory() {
+            Connection connection = new Connection(PacketFlow.CLIENTBOUND);
+            new EmbeddedChannel(connection);
+            return connection;
         }
 
         @Override
@@ -160,7 +312,7 @@ public final class LootCheck {
         public void send(Packet<?> packet, PacketSendListener listener) {}
     }
 
-    private static int start(CommandContext<CommandSourceStack> c, boolean spawner, boolean bot) throws CommandSyntaxException {
+    private static int start(CommandContext<CommandSourceStack> c, boolean spawner, Killer killer) throws CommandSyntaxException {
         CommandSourceStack source = c.getSource();
         if (run != null) {
             source.sendFailure(Component.literal("lootcheck is busy: " + run.killed + "/" + run.wanted + " " + run.typeId));
@@ -172,8 +324,16 @@ public final class LootCheck {
             source.sendFailure(Component.literal("no such entity type: " + id));
             return 0;
         }
+        if (killer == Killer.STAND_IN && standIn == null) {
+            source.sendFailure(Component.literal("no stand-in yet: use build or bot first"));
+            return 0;
+        }
         Run r = new Run();
-        r.player = bot ? standIn(source.getServer(), DoubleArgumentType.getDouble(c, "luck")) : EntityArgument.getPlayer(c, "player");
+        r.player = switch (killer) {
+            case BOT -> standIn(source.getServer(), DoubleArgumentType.getDouble(c, "luck"));
+            case STAND_IN -> standIn;
+            case PLAYER -> EntityArgument.getPlayer(c, "player");
+        };
         r.type = type;
         r.typeId = id;
         r.spawner = spawner;
@@ -263,6 +423,9 @@ public final class LootCheck {
         out.addProperty("player", r.player.getScoreboardName());
         out.addProperty("luck", r.player.getLuck());
         out.addProperty("held", BuiltInRegistries.ITEM.getKey(r.player.getMainHandItem().getItem()).toString());
+        out.addProperty("looting", looting(r.player));
+        out.addProperty("talisman", talisman(r.player));
+        out.addProperty("build", r.player == standIn && standInIsBuild);
         out.addProperty("dimension", r.player.serverLevel().dimension().location().toString());
         out.addProperty("difficulty", r.player.serverLevel().getDifficulty().getKey());
         out.addProperty("kills", r.killed);

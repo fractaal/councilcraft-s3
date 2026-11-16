@@ -9,8 +9,8 @@ apart they are. |z| above 3 is marked, since chance alone gets there about once 
 
 Expected bag counts come from sim.py's own Monte Carlo over the one mob in the report, at the Luck, dimension, difficulty
 and spawn kind the report records, with the mob's health set to the average the report measured. Expected crate counts
-are worked out exactly from the crate weights. Things sim.py doesn't model (Looting on the weapon held, the Fortune
-Talisman) show up here as differences, which is the point.
+are worked out exactly from the crate weights. The weapon's Looting level is read from the report. Things sim.py
+doesn't model (weapon affixes such as Festive, the Fortune Talisman) show up here as differences, which is the point.
 """
 import argparse, json, math, sys
 from collections import Counter
@@ -48,8 +48,9 @@ def main():
         r = json.loads(Path(path).read_text())
         kills, mob, spawner = r["kills"], r["mob"], r["spawn"] == "spawner"
         dim = {"minecraft:the_nether": "nether", "minecraft:the_end": "end"}.get(r["dimension"], "overworld")
-        p = sim.Profile("report", r["luck"], 0, False, dim, r["difficulty"] == "hard", 1.0 if spawner else 0.0)
-        print(f"\n{Path(path).name}: {kills} {mob} ({r['spawn']}), Luck {r['luck']:.2f}, {dim}, {r['difficulty']}"
+        p = sim.Profile("report", r["luck"], r.get("looting", 0), r.get("talisman", False), dim, r["difficulty"] == "hard", 1.0 if spawner else 0.0)
+        print(f"\n{Path(path).name}: {kills} {mob} ({r['spawn']}), {r.get('player', '?')}, Luck {r['luck']:.2f}, "
+              f"Looting {r.get('looting', 0)}{', talisman' if r.get('talisman') else ''}, holding {r.get('held', '?')}, {dim}, {r['difficulty']}"
               f"{', ' + str(r['survived']) + ' survived' if r['survived'] else ''}")
         print(f"  {'':<34}{'seen':>9}{'expected':>11}{'z':>8}")
         seen_bags, seen_crates, gems = Counter(), Counter(), 0
