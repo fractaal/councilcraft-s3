@@ -139,7 +139,9 @@
       "mysticalagriculture:tertium_essence": 16,
       "mysticalagriculture:imperium_essence": 64,
       "mysticalagriculture:supremium_essence": 256,
-      "mysticalagradditions:insanium_essence": 1024
+      "mysticalagradditions:insanium_essence": 1024,
+      // Reliquary's zombie heart, a rarer zombie drop, priced like the other uncommon mob drops (TechKeeper, 2026-11-16).
+      "reliquary:zombie_heart": 2
     }
   }
 }
