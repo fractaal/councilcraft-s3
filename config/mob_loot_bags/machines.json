@@ -173,7 +173,12 @@
       "immersive_melodies:piano": 15,
       "immersive_melodies:ender_bass": 20,
       "immersive_melodies:tiny_drum": 25,
-      "immersive_melodies:bagpipe": 40
+      "immersive_melodies:bagpipe": 40,
+      // The handpan costs 30 copper (3 ingots, 3 blocks), which the recycler doesn't take; TechKeeper asked for it
+      // anyway at a low value, so 13 handpans (390 copper) make a bag.
+      "immersive_melodies:handpan": 5,
+      // Farm & Charm's pitchfork (1 iron nugget, 2 sticks), also asked for at a low value: 64 make a bag.
+      "farm_and_charm:pitchfork": 1
     }
   }
 }
