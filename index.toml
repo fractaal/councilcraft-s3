@@ -8474,6 +8474,22 @@ hash = "73903861bedf26c99350cf5fc0cc1c55298e90ceace87913ccd8a72bbabcb1a8"
 metafile = true
 
 [[files]]
+file = "global_packs/required_resources/Aero Bonsai Models/assets/bonsaitrees4/models/multiblock/aero_bonsai/cactus.json"
+hash = "7aecd9d80ab82776d610d39fab82530e6688b26069bf85f46f0e20a2ea2d9bee"
+
+[[files]]
+file = "global_packs/required_resources/Aero Bonsai Models/assets/bonsaitrees4/models/multiblock/aero_bonsai/corn.json"
+hash = "fdbe8a6eb636365f86c463aac1071e00586c7f9021aa2250b51a65b3278baf59"
+
+[[files]]
+file = "global_packs/required_resources/Aero Bonsai Models/assets/bonsaitrees4/models/multiblock/aero_bonsai/sugar_cane.json"
+hash = "fad1683fb7ed9ef420e1d4f9e79b8a885a908d088d2aca86fa560450ef5a2c8f"
+
+[[files]]
+file = "global_packs/required_resources/Aero Bonsai Models/pack.mcmeta"
+hash = "35d991e149b2879897677ec63aa08816aa60ad4ff662cb5dde8b30fb8be95cea"
+
+[[files]]
 file = "global_packs/required_resources/Aero Combat/assets/aero_combat/lang/en_us.json"
 hash = "fb374a9035fcdc4a98b717bea8cd384de74bc5d45e9e603a5c7f7d9ec5823850"
 

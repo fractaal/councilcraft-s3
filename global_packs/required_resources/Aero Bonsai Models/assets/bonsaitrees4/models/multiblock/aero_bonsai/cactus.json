@@ -1,0 +1,19 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {
+      "Name": "minecraft:cactus",
+      "Properties": {
+        "age": "0"
+      }
+    }
+  },
+  "shape": [
+    [
+      "a",
+      "a",
+      "a"
+    ]
+  ]
+}

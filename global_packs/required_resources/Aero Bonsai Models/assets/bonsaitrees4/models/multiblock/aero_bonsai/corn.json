@@ -1,0 +1,34 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {
+      "Name": "culturaldelights:corn",
+      "Properties": {
+        "age": "7",
+        "height": "0"
+      }
+    },
+    "b": {
+      "Name": "culturaldelights:corn",
+      "Properties": {
+        "age": "7",
+        "height": "1"
+      }
+    },
+    "c": {
+      "Name": "culturaldelights:corn",
+      "Properties": {
+        "age": "7",
+        "height": "2"
+      }
+    }
+  },
+  "shape": [
+    [
+      "c",
+      "b",
+      "a"
+    ]
+  ]
+}
