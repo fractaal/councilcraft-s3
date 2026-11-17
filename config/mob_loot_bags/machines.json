@@ -162,7 +162,18 @@
       // Cataclysm's dying ember (Ignited Berserker drop) at 10 like the zombie heart, and Iron's
       // Spellbooks' Blaze Instruction Manual, a loot-only spell book, priced like knight armor (TechKeeper, 2026-11-17).
       "cataclysm:dying_ember": 10,
-      "irons_spellbooks:blaze_spell_book": 80
+      "irons_spellbooks:blaze_spell_book": 80,
+      // Immersive Melodies instruments (TechKeeper, 2026-11-17). They craft from cheap things, so each is worth
+      // what its recyclable ingredients are worth (bone, string and leather at 5, ender pearl at 20) and crafting
+      // one gains nothing. Triangle, trumpet, handpan and didgeridoo are left out: they are made only from copper,
+      // iron, lapis or wood, none of which the recycler takes, so listing them would turn those into loot bags.
+      "immersive_melodies:flute": 5,
+      "immersive_melodies:lute": 5,
+      "immersive_melodies:vielle": 5,
+      "immersive_melodies:piano": 15,
+      "immersive_melodies:ender_bass": 20,
+      "immersive_melodies:tiny_drum": 25,
+      "immersive_melodies:bagpipe": 40
     }
   }
 }
