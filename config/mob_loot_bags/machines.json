@@ -9,9 +9,11 @@
   // The Loot Recycler grinds mob-farm junk into salvage points and turns points_per_bag points into
   // one output_bag. Loot bags fed to it become stored experience instead (bag_xp).
   // junk: salvage points per item. Keys are item ids or #item tags. Anything not listed is refused.
+  // Enchantments don't change an item's points: the mod only reads the item id.
   "recycler": {
     "ticks_per_item": 5,
-    "points_per_bag": 64,
+    // Was 64; halved on 2026-11-17 so every item is worth twice as much (TechKeeper asked for more across the board).
+    "points_per_bag": 32,
     "output_bag": "common",
     "bag_xp": {
       "common": 10,
