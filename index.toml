@@ -6566,7 +6566,7 @@ hash = "97fa738939cb6a7e0ab5bcd7833544b1bde56b41e314c8a1e37278154082a874"
 
 [[files]]
 file = "config/skywhales-common.toml"
-hash = "0f79bd48fae145039d938ffe618145a348eeb41e73bdee16b63e956b7d9fa40c"
+hash = "367699c9b853ec63094e281841373f8084c7ba64ffc8aba1fbf9320a1e98a27f"
 
 [[files]]
 file = "config/sliceanddice-client.toml"
