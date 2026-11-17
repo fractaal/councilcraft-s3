@@ -37,9 +37,10 @@ public final class LootRules {
 
     /**
      * The share of their crates and gems that spawner mobs keep, and of their extra bag stacks (LuckBags): the same as
-     * spawner_multiplier in Mob Loot Bags' drops.json, so a spawner mob is worth a quarter in every per-kill reward.
+     * spawner_multiplier in Mob Loot Bags' drops.json, so a spawner mob is worth the same share of every per-kill reward.
+     * It was a quarter until fractal set both to full on 2026-11-17 (TechKeeper asked for more from spawner farms).
      */
-    public static final float SPAWNER_SHARE = 0.25F;
+    public static final float SPAWNER_SHARE = 1.0F;
 
     /**
      * The most Luck a player's attribute can add to a loot bag's tier roll. The roll's weights grow exponentially with

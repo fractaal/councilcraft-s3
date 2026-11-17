@@ -5878,7 +5878,7 @@ hash = "971bc2210b5e23635d9a0095bf83fd71ea2e07cdb2eed4416c5c74c70e9ab36d"
 
 [[files]]
 file = "config/mob_loot_bags/drops.json"
-hash = "dd6f8a6e1787e06ae9fb5c6f68deca461c1c0b5b5afbe1ba13cbafa2a1c92804"
+hash = "2ec920d676daf6edc9d43723780f9470f6a4f2f0324643f48c826ce900084416"
 
 [[files]]
 file = "config/mob_loot_bags/machines.json"
@@ -11744,7 +11744,7 @@ metafile = true
 
 [[files]]
 file = "mods/skyislands-1.0.0.jar"
-hash = "d4545ec830f3ebbf41c95fb20f226b9af930694f3324f3fed72654719199069a"
+hash = "b16334c11b099b9d129276de36b6f4264b002c56f4260c4cb7019fe399ac885b"
 
 [[files]]
 file = "mods/slice-and-dice.pw.toml"

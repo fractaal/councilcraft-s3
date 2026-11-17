@@ -28,8 +28,8 @@
     "max_multiplier": 2.5
   },
 
-  // Chance multiplier for mobs from monster spawners (keeps mob farms in check).
-  "spawner_multiplier": 0.25,
+  // Chance multiplier for mobs from monster spawners. Was 0.25 to keep mob farms in check; fractal set it to 1.0 on 2026-11-17 (TechKeeper asked for more low-tier bags).
+  "spawner_multiplier": 1.0,
 
   // Chance multiplier for mobs from trial spawners.
   "trial_spawner_multiplier": 1.0,

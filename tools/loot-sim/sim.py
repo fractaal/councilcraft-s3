@@ -19,7 +19,7 @@ Hourglass bags are counted as the two bags they ripen into (mob_loot_bags:bags/h
 Bags datapack in DIR's global_packs if it overrides the table, else the mod jar's epic 60 / legendary 30 / mythic 10;
 --hourglass overrides both), not as a bag of their own. Luck bags (the skyislands mod's LuckBags, on since 2026-11-16)
 are on by default: a hostile, non-boss kill by a real player also drops one LUCK_STACKS stack with chance
-min(0.5, 0.003 x Luck), a quarter of that from spawner mobs. The gems column is
+min(0.5, 0.003 x Luck), times SPAWNER_SHARE from spawner mobs. The gems column is
 Apotheosis 8.9.0's mob gem drops: gem_entity_drops (0.5%, killed_by_player) plus gem_entity_drops_from_real_players
 (4%), both only for `instanceof Monster` victims, so slimes, ghasts, phantoms, shulkers and hoglins give none.
 
@@ -62,7 +62,7 @@ PASSIVE = {"minecraft:cow", "minecraft:pig", "minecraft:sheep", "minecraft:chick
 BAG_BOSSES = {"minecraft:wither", "minecraft:ender_dragon", "minecraft:warden", "minecraft:elder_guardian"}
 # skyislands.LootRules: bags count a player's Luck up to this, and spawner mobs keep this share of their crates and gems.
 BAG_LUCK_CAP = 30.0
-SPAWNER_SHARE = 0.25
+SPAWNER_SHARE = 1.0  # 0.25 until 2026-11-17, when fractal took the spawner penalty off
 # Hostile in MOBS but not a net.minecraft.world.entity.monster.Monster subclass, so no Apotheosis mob gems.
 NOT_MONSTER = {"minecraft:slime", "minecraft:magma_cube", "minecraft:ghast", "minecraft:phantom", "minecraft:shulker",
                "minecraft:hoglin", "minecraft:ender_dragon", "irons_spellbooks:necromancer",
