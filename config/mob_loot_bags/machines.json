@@ -149,7 +149,12 @@
       "eternalnether:withered_bone": 1,
       "irregular_implements:ectoplasm": 2,
       // Name tags, a loot item with no crafting recipe, priced like a bow (TechKeeper, 2026-11-17).
-      "minecraft:name_tag": 3
+      "minecraft:name_tag": 3,
+      // Royal Variations knight armor, chainmail upgraded with royal armor fragments, at twice chainmail (TechKeeper, 2026-11-17).
+      "royalvariations:royal_knight_helmet": 8,
+      "royalvariations:royal_knight_cuirass": 12,
+      "royalvariations:royal_knight_leggings": 10,
+      "royalvariations:royal_knight_boots": 6
     }
   }
 }
