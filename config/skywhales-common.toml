@@ -27,7 +27,7 @@
 	nearbyWhaleRadius = 128
 	#When true, only spawn for players standing over an ocean biome (tag #minecraft:is_ocean).
 	#Set false to let whales spawn around players anywhere (any biome, including over land).
-	restrictToOceanBiome = true
+	restrictToOceanBiome = false
 	#When true, ALSO spawn for players out over the void — a column with no terrain/surface
 	#below (e.g. flying over the abyss on a void / lifted-island world). This is additive to
 	#the ocean rule above: with restrictToOceanBiome=true, whales then appear over ocean AND
