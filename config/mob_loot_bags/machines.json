@@ -12,8 +12,8 @@
   // Enchantments don't change an item's points: the mod only reads the item id.
   "recycler": {
     "ticks_per_item": 5,
-    // Was 64; halved on 2026-11-17 so every item is worth twice as much (TechKeeper asked for more across the board).
-    "points_per_bag": 32,
+    // Was 64; set to 21 on 2026-11-17 so every item is worth about three times as much (TechKeeper asked for 3x).
+    "points_per_bag": 21,
     "output_bag": "common",
     "bag_xp": {
       "common": 10,
