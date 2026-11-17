@@ -177,6 +177,8 @@
       // The handpan costs 30 copper (3 ingots, 3 blocks), which the recycler doesn't take; TechKeeper asked for it
       // anyway at a low value, so 13 handpans (390 copper) make a bag.
       "immersive_melodies:handpan": 5,
+      // The triangle is 6 copper ingots; at 1 point, 64 make a bag (384 copper), level with the handpan (TechKeeper).
+      "immersive_melodies:triangle": 1,
       // Farm & Charm's pitchfork (1 iron nugget, 2 sticks), also asked for at a low value: 64 make a bag.
       "farm_and_charm:pitchfork": 1
     }
