@@ -2,11 +2,21 @@
   "values": {
     "minecraft:sugar_cane": {
       "model": "aero_bonsai:sugar_cane",
-      "valid_soil_types": ["bonsaitrees4:sand"]
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
     },
     "minecraft:cactus": {
       "model": "aero_bonsai:cactus",
-      "valid_soil_types": ["bonsaitrees4:sand"]
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "culturaldelights:corn_kernels": {
+      "model": "aero_bonsai:corn",
+      "valid_soil_types": [
+        "bonsaitrees4:dirt"
+      ]
     }
   }
 }
