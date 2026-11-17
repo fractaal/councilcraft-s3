@@ -26,7 +26,7 @@ dynamic:
   # Enables dynamic performance checks.
   enabled: true
   # The average MSPT to target.
-  target-mspt: 35
+  target-mspt: 30
   # The default values for dynamic settings.
   # If left unspecified, the maximum value will be used.
   # Note: adding view / simulation distance here will override their value in server.properties.
@@ -179,10 +179,10 @@ activation-range:
   tick-new-entities: true
   # Enables vertical range checks. By default, activation ranges only work horizontally.
   # This can greatly improve performance on taller worlds, but might break a few very specific ai-based mobfarms.
-  use-vertical-range: false
+  use-vertical-range: true
   # Skips 1/4th of entity ticks whilst not immune.
   # This affects entities that are within the activation range, but not immune (for example by falling or being in water).
-  skip-non-immune: false
+  skip-non-immune: true
   # Allows villagers to tick regardless of the activation range when panicking.
   villager-tick-panic: true
   # The time in seconds that a villager needs to be inactive for before obtaining work immunity (if it has work tasks).
@@ -224,7 +224,7 @@ activation-range:
   # ► Available typeof classes: mob, monster, raider, neutral, ambient, animal, water_animal, flying_animal, flying_monster, villager, projectile.
   custom-activation-types:
     - name: 'raider'
-      activation-range: 48
+      activation-range: 32
       tick-interval: 20
       wakeup-interval: 20
       extra-height-up: true
@@ -261,7 +261,7 @@ activation-range:
         - 'minecraft:husk'
 
     - name: 'monster-below'
-      activation-range: 32
+      activation-range: 24
       tick-interval: 20
       wakeup-interval: 20
       extra-height-up: true
@@ -273,7 +273,7 @@ activation-range:
         - 'minecraft:hoglin'
 
     - name: 'flying-monster'
-      activation-range: 48
+      activation-range: 32
       tick-interval: 20
       wakeup-interval: 20
       extra-height-up: true
@@ -283,7 +283,7 @@ activation-range:
         - 'minecraft:phantom'
 
     - name: 'monster'
-      activation-range: 32
+      activation-range: 24
       tick-interval: 20
       wakeup-interval: 20
       extra-height-up: true
@@ -302,7 +302,7 @@ activation-range:
         - 'typeof:ambient'
 
     - name: 'creature'
-      activation-range: 24
+      activation-range: 16
       tick-interval: 20
       wakeup-interval: 30
       extra-height-up: false
