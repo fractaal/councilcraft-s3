@@ -179,6 +179,8 @@
       "immersive_melodies:handpan": 5,
       // The triangle is 6 copper ingots; at 1 point, 64 make a bag (384 copper), level with the handpan (TechKeeper).
       "immersive_melodies:triangle": 1,
+      // The trumpet is 2 iron and 3 copper ingots; at 2 points, 32 make a bag (TechKeeper).
+      "immersive_melodies:trumpet": 2,
       // Farm & Charm's pitchfork (1 iron nugget, 2 sticks), also asked for at a low value: 64 make a bag.
       "farm_and_charm:pitchfork": 1
     }
