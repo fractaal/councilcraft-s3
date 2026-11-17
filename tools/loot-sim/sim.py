@@ -76,7 +76,7 @@ BAG_CARRIERS = {"minecraft:zombie", "minecraft:husk", "minecraft:skeleton", "min
 GEM_CHANCE = 0.005 + 0.04
 HOURGLASS = {"epic": 60, "legendary": 30, "mythic": 10}  # the mod jar's own table
 HOURGLASS_OVERRIDE = "global_packs/required_data/Aero Loot Bags/data/mob_loot_bags/loot_table/bags/hourglass.json"
-LUCK_BAGS = (0.003, 0.5)  # skyislands LuckBags.RATE and CAP
+LUCK_BAGS = (0.003, 0.5, 0.01)  # skyislands LuckBags.RATE, CAP and LOOTING_RATE
 # skyislands LuckBags.STACKS (see --luck-bags): one bonus stack per success, tier by weight, count range.
 LUCK_STACKS = [("common", 60, 3, 5), ("uncommon", 28, 2, 3), ("rare", 10, 1, 2), ("epic", 2, 1, 1)]
 
@@ -87,7 +87,7 @@ def parse_luck_bags(arg):
     if arg == "off":
         return None
     parts = [float(x) for x in arg.split(",")]
-    return (parts[0], parts[1] if len(parts) > 1 else LUCK_BAGS[1])
+    return (parts[0], parts[1] if len(parts) > 1 else LUCK_BAGS[1], parts[2] if len(parts) > 2 else LUCK_BAGS[2])
 
 
 def load_hourglass(server):
@@ -187,8 +187,8 @@ def pick(rng, dist):
 def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_bags=None, carriers=True):
     """Monte Carlo over `kills` kills drawn from `mix` (Counter of mob id -> count), with pity, specials and bosses.
 
-    luck_bags = (rate, cap): skyislands LuckBags. On every hostile, non-boss kill that could drop a bag, with chance
-    min(cap, rate * Luck attribute) (times spawner_multiplier for spawner mobs) it also drops one LUCK_STACKS stack.
+    luck_bags = (rate, cap, looting_rate): skyislands LuckBags. On every hostile, non-boss kill that could drop a bag, with chance
+    min(cap, rate * Luck attribute + looting_rate * Looting) (times spawner_multiplier for spawner mobs) it also drops one LUCK_STACKS stack.
     carriers=False leaves out the bags that carrier mobs hold, to compare with the mod's "found" counters.
     """
     rng = random.Random(seed)
@@ -241,7 +241,7 @@ def simulate(cfg, crates_cfg, mix, p, kills, seed=1, hourglass=HOURGLASS, luck_b
         if chance <= 0:
             continue
         if luck_bags and not passive:
-            lb = min(luck_bags[1], luck_bags[0] * max(0.0, p.luck)) * (cfg["spawner_multiplier"] if from_spawner else 1)
+            lb = min(luck_bags[1], luck_bags[0] * max(0.0, p.luck) + luck_bags[2] * p.looting) * (cfg["spawner_multiplier"] if from_spawner else 1)
             if rng.random() < lb:
                 r = rng.random() * sum(s[1] for s in LUCK_STACKS)
                 for tier, w, lo, hi in LUCK_STACKS:
@@ -349,8 +349,8 @@ def main():
     ap.add_argument("--player-luck", action="append", default=[], help="NAME=LUCK for --validate")
     ap.add_argument("--crates", action="store_true", help="also list crates by type")
     ap.add_argument("--hourglass", help="hourglass bag weights, e.g. rare=60,epic=30,legendary=10")
-    ap.add_argument("--luck-bags", help="RATE[,CAP]: LuckBags bonus-stack chance per kill = min(CAP, RATE*Luck); "
-                    "default 0.003,0.5 as live; 'off' leaves it out")
+    ap.add_argument("--luck-bags", help="RATE[,CAP[,LOOTING_RATE]]: LuckBags bonus-stack chance per kill = min(CAP, RATE*Luck + LOOTING_RATE*Looting); "
+                    "default 0.003,0.5,0.01 as live; 'off' leaves it out")
     ap.add_argument("--contents", help="bag_contents.py --json output, for gems/affix items/nether stars from bags")
     a = ap.parse_args()
     hourglass = (dict((k, float(v)) for k, v in (x.split("=") for x in a.hourglass.split(","))) if a.hourglass

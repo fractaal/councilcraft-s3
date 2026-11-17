@@ -16,7 +16,8 @@ import tn.naizo.moblootbags.common.drop.DropEngine;
  * Luck gives more low-tier loot bags rather than better ones (chosen by fractal on 2026-11-16). Mob Loot Bags
  * still rolls its own bag on every kill, and its drops.json counts only a tenth of a player's Luck toward that bag's
  * tier. On top of that, a hostile kill credited to a real player drops one extra stack below with chance
- * min(CAP, RATE * Luck), a quarter as often from spawner mobs, never from bosses.
+ * min(CAP, RATE * Luck + LOOTING_RATE * Looting), times LootRules.SPAWNER_SHARE from spawner mobs, never from bosses.
+ * The Looting term was added on 2026-11-17 at 1% per level, chosen by TechKeeper, whom fractal put in charge of it.
  *
  * The bags come from Mob Loot Bags' own createBag and spawnBag, so they get the dimension theme, the drop sound and the
  * player's "found" counter like any other bag, and Apotheosis's Festive affix can't copy them (it only copies the drop
@@ -27,6 +28,8 @@ public final class LuckBags {
 
     public static final double RATE = 0.003;
     public static final double CAP = 0.5;
+    /** Added to the chance per level of Looting, as Mob Loot Bags reads it (LootRules.looting). */
+    public static final double LOOTING_RATE = 0.01;
 
     private record Stack(BagType bag, int weight, int min, int max) {}
 
@@ -39,7 +42,7 @@ public final class LuckBags {
     private static final int TOTAL_WEIGHT = 100;
 
     public static double chance(LivingEntity victim, ServerPlayer player) {
-        double chance = Math.min(CAP, RATE * Math.max(0.0, player.getLuck()));
+        double chance = Math.min(CAP, RATE * Math.max(0.0, player.getLuck()) + LOOTING_RATE * LootRules.looting(player));
         return victim.getTags().contains(DropEngine.SPAWNER_TAG) ? chance * LootRules.SPAWNER_SHARE : chance;
     }
 
@@ -51,7 +54,7 @@ public final class LuckBags {
         if (victim.getTags().contains(DropEngine.CURSED_TAG)) return;
         ServerPlayer player = LootRules.creditedPlayer(victim, event.getSource());
         if (player == null) return;
-        LootRules.logOnce(3, "[skyislands] Luck bags are running (rate " + RATE + " per Luck, cap " + CAP + ")");
+        LootRules.logOnce(3, "[skyislands] Luck bags are running (rate " + RATE + " per Luck, " + LOOTING_RATE + " per Looting, cap " + CAP + ")");
         if (level.getRandom().nextDouble() >= chance(victim, player)) return;
         int r = level.getRandom().nextInt(TOTAL_WEIGHT);
         for (Stack s : STACKS) {

@@ -12,6 +12,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 
@@ -104,6 +106,16 @@ public final class LootRules {
 
     public static boolean isGem(ItemStack stack) {
         return GEM.equals(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+    }
+
+    /**
+     * The Looting level as Mob Loot Bags reads it (DropEngine.lootingLevel): the highest over the player's equipment,
+     * through the enchantment-level hook that lets gear such as Apotheosis affixes add levels, not just the number
+     * written on the weapon.
+     */
+    public static int looting(ServerPlayer player) {
+        return EnchantmentHelper.getEnchantmentLevel(
+                player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING), player);
     }
 
     private static final boolean[] LOGGED = new boolean[5];

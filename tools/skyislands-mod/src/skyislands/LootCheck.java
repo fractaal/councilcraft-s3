@@ -49,8 +49,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
-import net.minecraft.world.item.enchantment.Enchantments;
 import net.neoforged.neoforge.event.EventHooks;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
@@ -237,20 +235,10 @@ public final class LootCheck {
         String line = "lootcheck " + what + " " + p.getScoreboardName() + ": luck " + p.getLuck()
                 + ", max_health " + p.getMaxHealth() + ", armor " + p.getAttributeValue(Attributes.ARMOR)
                 + ", armor_toughness " + p.getAttributeValue(Attributes.ARMOR_TOUGHNESS)
-                + ", looting " + looting(p) + (talisman(p) ? ", has a fortune talisman" : "") + ", holds " + BuiltInRegistries.ITEM.getKey(p.getMainHandItem().getItem())
+                + ", looting " + LootRules.looting(p) + (talisman(p) ? ", has a fortune talisman" : "") + ", holds " + BuiltInRegistries.ITEM.getKey(p.getMainHandItem().getItem())
                 + " (slot " + p.getInventory().selected + "), hotbar:" + hotbar;
         com.mojang.logging.LogUtils.getLogger().info("[skyislands] {}", line);
         source.sendSuccess(() -> Component.literal(line), false);
-    }
-
-    /**
-     * The Looting level as Mob Loot Bags reads it (DropEngine.lootingLevel): the highest over the player's equipment,
-     * through the enchantment-level hook that lets gear such as Apotheosis affixes add levels, not just the number
-     * written on the weapon.
-     */
-    private static int looting(ServerPlayer player) {
-        return EnchantmentHelper.getEnchantmentLevel(
-                player.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(Enchantments.LOOTING), player);
     }
 
     /** Mob Loot Bags' Fortune Talisman anywhere in the inventory: more bags and a better tier (DropEngine.hasTalisman). */
@@ -423,7 +411,7 @@ public final class LootCheck {
         out.addProperty("player", r.player.getScoreboardName());
         out.addProperty("luck", r.player.getLuck());
         out.addProperty("held", BuiltInRegistries.ITEM.getKey(r.player.getMainHandItem().getItem()).toString());
-        out.addProperty("looting", looting(r.player));
+        out.addProperty("looting", LootRules.looting(r.player));
         out.addProperty("talisman", talisman(r.player));
         out.addProperty("build", r.player == standIn && standInIsBuild);
         out.addProperty("dimension", r.player.serverLevel().dimension().location().toString());
