@@ -158,7 +158,11 @@
       "royalvariations:royal_knight_helmet": 80,
       "royalvariations:royal_knight_cuirass": 120,
       "royalvariations:royal_knight_leggings": 100,
-      "royalvariations:royal_knight_boots": 60
+      "royalvariations:royal_knight_boots": 60,
+      // Cataclysm's dying ember (Ignited Berserker drop) at 10 like the zombie heart, and Iron's
+      // Spellbooks' Blaze Instruction Manual, a loot-only spell book, priced like knight armor (TechKeeper, 2026-11-17).
+      "cataclysm:dying_ember": 10,
+      "irons_spellbooks:blaze_spell_book": 80
     }
   }
 }
