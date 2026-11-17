@@ -36,6 +36,9 @@
       "minecraft:phantom_membrane": 15,
       "minecraft:ender_pearl": 20,
       "minecraft:blaze_rod": 20,
+      // Magma cream (TechKeeper, 2026-11-17): crafted from a slime ball (10) and blaze powder (half a rod, 10),
+      // so it's under what those recycle for and crafting it gains nothing.
+      "minecraft:magma_cream": 15,
       "minecraft:ghast_tear": 30,
       "minecraft:bow": 30,
       "minecraft:crossbow": 30,
