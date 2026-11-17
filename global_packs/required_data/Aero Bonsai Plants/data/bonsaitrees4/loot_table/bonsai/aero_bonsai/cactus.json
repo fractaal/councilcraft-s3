@@ -1,0 +1,12 @@
+{
+  "pools": [
+    {
+      "name": "cactus",
+      "rolls": 3.0,
+      "bonus_rolls": 1.0,
+      "entries": [
+        { "type": "minecraft:item", "name": "minecraft:cactus" }
+      ]
+    }
+  ]
+}

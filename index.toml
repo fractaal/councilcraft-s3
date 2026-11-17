@@ -7001,6 +7001,30 @@ file = "global_packs/optional_data/Aero Sky Islands/pack.mcmeta"
 hash = "9fe75a15a68b4fe5d9c4eefdf279f9c67542f3861bad52908f8e349865a9590f"
 
 [[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/data/aero_bonsai/worldgen/configured_feature/cactus.json"
+hash = "3cecfc4eafabd90940135101d4acdf69aaa3f82e92cfaccd5ec6fb97783fa394"
+
+[[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/data/aero_bonsai/worldgen/configured_feature/sugar_cane.json"
+hash = "c9d031b0ddd6d381a49db7854dc75b6b292e5af20b907df8e2c49215bbc38db8"
+
+[[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/data/bonsaitrees4/data_maps/item/bonsai.json"
+hash = "f9791f165216116862b42d782b112e6bcdd9f854feedd17583581b0f2bb1d332"
+
+[[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/data/bonsaitrees4/loot_table/bonsai/aero_bonsai/cactus.json"
+hash = "a6a65b3e1e89cf3bda6bca7aaa6755c765098ba7c13e18c4a7ecdbbcab2eeb3a"
+
+[[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/data/bonsaitrees4/loot_table/bonsai/aero_bonsai/sugar_cane.json"
+hash = "69a38c258d86b6bff64903c41e6d7ed8c1285f1edf1fbdad559ee1a3529be66a"
+
+[[files]]
+file = "global_packs/required_data/Aero Bonsai Plants/pack.mcmeta"
+hash = "a9f3861e6be4418339a5249d8629ee9f5c40c6041620971b8d81c73b5512e7c3"
+
+[[files]]
 file = "global_packs/required_data/Aero Chipped Pine/data/chipped/tags/item/spruce_door.json"
 hash = "8fa8002102c999401b88bac5004054b9d5638aee9d2bdd0425d015245044b1cb"
 
