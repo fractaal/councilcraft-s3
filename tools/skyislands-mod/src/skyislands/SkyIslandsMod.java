@@ -33,6 +33,7 @@ public final class SkyIslandsMod {
         // After FTB Quests has added its loot crate to a mob's drops.
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, LootRules::onDrops);
         if (ModList.get().isLoaded("mob_loot_bags")) NeoForge.EVENT_BUS.addListener(LuckBags::onDrops);
+        if (ModList.get().isLoaded("buildinggadgets2")) NeoForge.EVENT_BUS.addListener(GadgetPick::onLeftClick);
         if (LootCheck.ENABLED) {
             NeoForge.EVENT_BUS.addListener(LootCheck::register);
             NeoForge.EVENT_BUS.addListener(LootCheck::onTick);
