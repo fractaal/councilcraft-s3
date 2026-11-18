@@ -10274,6 +10274,11 @@ hash = "9fe802c6e911ccd7117578a9fd92b0d1e1eb569c56535fadfbeedf8fe8045137"
 metafile = true
 
 [[files]]
+file = "mods/effortless-building.pw.toml"
+hash = "acca756841ee5e088eaec9474758e402247965f3adf6d7ccd612bb715aa836c9"
+metafile = true
+
+[[files]]
 file = "mods/elevatormod.pw.toml"
 hash = "58a52192b85fb49a4b772cd54677f84515a2dfc26a14d54eb880ed01f1186c5a"
 metafile = true
