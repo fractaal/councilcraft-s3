@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "culturaldelights" }
+  ],
+  "type": "create:milling",
+  "ingredients": [ { "tag": "c:crops/corn" } ],
+  "processing_time": 50,
+  "results": [
+    { "id": "culturaldelights:corn_kernels", "count": 1 },
+    { "id": "culturaldelights:corn_kernels", "chance": 0.5 }
+  ]
+}
