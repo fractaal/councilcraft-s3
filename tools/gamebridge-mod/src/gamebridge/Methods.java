@@ -63,7 +63,7 @@ final class Methods {
             case "attributes" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> attributes(p));
             case "nbt" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> nbt(p));
             case "find_blocks" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> Sight.find(p));
-            case "map" -> Bridge.onServerThread(reply, READ_TIMEOUT_MS, () -> Sight.map(p));
+            case "map" -> Sight.map(p, reply);
             case "view" -> Sight.view(p, reply);
             case "command" -> command(p, reply);
             default -> Bridge.fail(reply, "unknown_method", "There is no method '" + method + "'. Methods: " + LIST + ".");

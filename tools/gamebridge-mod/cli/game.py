@@ -13,12 +13,18 @@
   game find <block id> <target>            where a block is near a player or entity, as places with a block count;
   game find <block id> --near X Z          options: --radius R (default 96, max 256) --dim D --budget MS
   game map <target> --out FILE.png         a top-down picture of the area around a player or entity, north up;
-  game map --near X Z --out FILE.png       options: --radius R (default 96, max 256) --scale 1-4 --dim D; --out - writes
-                                           the PNG to standard output and the description to standard error
+  game map --near X [Y] Z --out FILE.png   options: --radius R (default 96, max 256) --dim D --scale 1-16 (pixels per
+                                           block; by default the largest a model sees in full) --cutaway (each column
+                                           from the target's eye level down: a plan of a cave or of the ground under
+                                           trees) or --max-y Y; --out - writes the PNG to standard output and the
+                                           description to standard error
   game view <target> --out FILE.png        an isometric picture of the blocks around a player or entity: shows shape
-  game view --near X Z --out FILE.png      and height, which the top-down map can't. Options: --radius R (default 32,
-                                           max 64) --from south-east|south-west|north-west|north-east --scale 1|2
-                                           --min-y Y --max-y Y (cut the world to a slab, to look under a roof) --dim D
+  game view --near X [Y] Z --out FILE.png  and height, which the top-down map can't. Options: --radius R (default 32,
+                                           max 64) --from south-east|south-west|north-west|north-east --cutaway (cut
+                                           everything above the target's eye level away, to see them in a forest, a
+                                           cave or a building) --min-y Y --max-y Y (cut the world to a slab; with a
+                                           target or height, it starts 24 below them or the ground under them)
+                                           --scale 1-16 (by default the largest a model sees in full) --dim D
   game cmd "<command>" [--wait MS]         run a console command and print everything it says; --wait keeps listening
                                            for answers that come late (locate needs --wait 10000 or so)
   game events [kind ...]                   live stream: chat join leave death advancement (all if none given)
@@ -26,7 +32,8 @@
 Add --json to print the bridge's reply as JSON instead of the summary; --full on inv prints every item's components.
 
 find, map and view read loaded chunks only (the bridge never loads a chunk to answer) and say how much of the area that was.
-They don't see Sable airships, which live outside the normal chunks.
+They don't see Sable airships, which live outside the normal chunks. In both pictures water is see-through, and faces
+striped with dark diagonal lines are where the picture cuts through solid blocks, not real surfaces.
 
 It talks to 127.0.0.1 on the machine it runs on, with the port and token from <server>/config/gamebridge.properties.
 <server> is --server DIR, else $GAME_SERVER_DIR, else the server folder this script is installed under
@@ -156,11 +163,13 @@ def main():
     n.add_argument("--client", action="store_true", help="for --block: what the server sends players for it, not what it saves")
     f = sub.add_parser("find"); f.add_argument("block"); f.add_argument("target", nargs="?"); f.add_argument("--near", nargs=2, type=float)
     f.add_argument("--radius", type=int); f.add_argument("--dim"); f.add_argument("--budget", type=int)
-    m = sub.add_parser("map"); m.add_argument("target", nargs="?"); m.add_argument("--near", nargs=2, type=float)
+    m = sub.add_parser("map"); m.add_argument("target", nargs="?"); m.add_argument("--near", nargs="+", type=float, metavar="X [Y] Z")
     m.add_argument("--radius", type=int); m.add_argument("--scale", type=int); m.add_argument("--dim"); m.add_argument("--out", required=True)
-    vw = sub.add_parser("view"); vw.add_argument("target", nargs="?"); vw.add_argument("--near", nargs=2, type=float)
+    m.add_argument("--cutaway", action="store_true"); m.add_argument("--max-y", type=int)
+    vw = sub.add_parser("view"); vw.add_argument("target", nargs="?"); vw.add_argument("--near", nargs="+", type=float, metavar="X [Y] Z")
     vw.add_argument("--radius", type=int); vw.add_argument("--scale", type=int); vw.add_argument("--dim"); vw.add_argument("--out", required=True)
     vw.add_argument("--from", dest="seen_from"); vw.add_argument("--min-y", type=int); vw.add_argument("--max-y", type=int); vw.add_argument("--budget", type=int)
+    vw.add_argument("--cutaway", action="store_true")
     c = sub.add_parser("cmd"); c.add_argument("command"); c.add_argument("--wait", type=int, default=0)
     ev = sub.add_parser("events"); ev.add_argument("kinds", nargs="*")
     args = ap.parse_args()
@@ -213,6 +222,8 @@ def main():
     elif args.what == "cmd":
         params = {"command": args.command, "wait_ms": args.wait}
     elif args.what in ("find", "map", "view"):
+        if args.near and len(args.near) not in ((2, 3) if args.what != "find" else (2,)):
+            sys.exit(f"game: --near takes X Z" + (" or X Y Z" if args.what != "find" else ""))
         if args.near: params["near"] = args.near
         elif args.target: params["target"] = args.target
         else: sys.exit(f"game: {args.what} needs a player or entity to centre on, or --near X Z")
@@ -221,8 +232,11 @@ def main():
             params["block"] = args.block
             if args.budget: params["budget_ms"] = args.budget
         elif args.scale: params["scale"] = args.scale
+        if args.what in ("map", "view"):
+            if args.cutaway: params["cutaway"] = True
+            if args.max_y is not None: params["max_y"] = args.max_y
         if args.what == "view":
-            for key, value in (("from", args.seen_from), ("min_y", args.min_y), ("max_y", args.max_y), ("budget_ms", args.budget)):
+            for key, value in (("from", args.seen_from), ("min_y", args.min_y), ("budget_ms", args.budget)):
                 if value is not None: params[key] = value
     if getattr(args, "dim", None): params["dimension"] = args.dim
 
@@ -241,10 +255,17 @@ def main():
               f"{r['dimension']}" + ("" if r["complete"] else ", INCOMPLETE"), file=info)
         print(f"  {r['reading']}", file=info)
         print(f"  area: {r['blocks_across']} blocks square from x {nw[0]}, z {nw[1]} (its north-west corner), y {r['y_from']} to {r['y_to']}; "
-              f"one block of height is {r['pixels_per_block_up']} px; {r['blocks_drawn']} blocks drawn", file=info)
-        if "note" in r: print("  " + r["note"], file=info)
-        for pl in r["players_in_view"]:
-            print(f"  player {pl['name']} at {pos(pl['pos'])}, pixel {pl['pixel'][0]},{pl['pixel'][1]} ({r['player_marker']})", file=info)
+              f"a block is {r['pixels_per_block_across']} px across and {r['pixels_per_block_up']} px tall; {r['blocks_drawn']} blocks drawn", file=info)
+        for k in ("range", "note", "hidden"):
+            if k in r: print("  " + r[k], file=info)
+        marked = [("player", pl, r["player_marker"]) for pl in r["players_in_view"]]
+        if "target" in r: marked.append(("target", r["target"], r["target"].get("marker")))
+        for kind, pl, marker in marked:
+            if "pixel" in pl:
+                print(f"  {kind} {pl['name']} at {pos(pl['pos'])}, pixel {pl['pixel'][0]},{pl['pixel'][1]} ({marker}; "
+                      f"{pl['hidden_percent']}% of it behind blocks)", file=info)
+            else:
+                print(f"  {kind} {pl['name']} at {pos(pl['pos'])}: {pl['outside']}", file=info)
         return
     if args.what == "map":
         tl = r["top_left_block"]
@@ -254,6 +275,8 @@ def main():
         print(f"  not loaded: {r['not_loaded_percent']}% of the area ({r['colour_not_loaded']})", file=info)
         print(f"  void: {r['void_percent']}% ({r['colour_void']})", file=info)
         if "lowest_surface_y" in r: print(f"  surface heights from y {r['lowest_surface_y']} to {r['highest_surface_y']}; {r['shading']}", file=info)
+        for k in ("cut", "water"):
+            if k in r: print("  " + r[k], file=info)
         for pl in r["players_in_view"]:
             print(f"  player {pl['name']} at {pos(pl['pos'])}, pixel {pl['pixel'][0]},{pl['pixel'][1]} ({r['player_marker']})", file=info)
         return

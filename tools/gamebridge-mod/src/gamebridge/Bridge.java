@@ -46,7 +46,7 @@ public final class Bridge {
     private Bridge() {}
 
     static final Logger LOG = LogUtils.getLogger();
-    static final String VERSION = "0.1.0";
+    static final String VERSION = "0.2.0";
     private static final int MAX_LINE = 1 << 20;
 
     static volatile MinecraftServer server;
