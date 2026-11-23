@@ -3,7 +3,7 @@
 # usage: ./build.sh [path to the server's libraries folder]   (default: /opt/minecraft-servers/exosphere-aero/libraries)
 # The jar is for the server's mods folder only. It is not part of the packwiz pack and must never go to clients.
 set -e
-V=0.2.0   # also in res/META-INF/neoforge.mods.toml and Bridge.VERSION
+V=0.2.1   # also in res/META-INF/neoforge.mods.toml and Bridge.VERSION
 L=${1:-/opt/minecraft-servers/exosphere-aero/libraries}
 cd "$(dirname "$0")"
 NF=$L/net/neoforged/neoforge/21.1.262/neoforge-21.1.262-universal.jar

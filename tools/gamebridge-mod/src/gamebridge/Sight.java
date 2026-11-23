@@ -397,7 +397,7 @@ final class Sight {
         int n, p, x0, z0, yMin, h, turns, chunksInRange, chunksNotLoaded, chunksNotReached, blocksLo, blocksHi;
         boolean cutTop;
         int[] cells;            // (n + 2)² × (h + 1): the area, a ring one block wide around it and one layer above, which are only read to tell a cut face from a real one
-        boolean[] columnKnown;  // n × n
+        boolean[] columnKnown;  // (n + 2)²: whether each column of the area and its ring is in a chunk that was read
         List<Mark> marks = new ArrayList<>();
 
         // Turns world offsets, -1 to n, into the view's axes in the ring's frame, 0 to p - 1.
@@ -407,6 +407,8 @@ final class Sight {
         int raw(int a, int b, int y) { return a < -1 || b < -1 || a > n || b > n || y < 0 || y > h ? 0 : cells[(y * p + b + 1) * p + a + 1]; }
         /** A cell of the drawn volume; everything outside it counts as empty. */
         int at(int a, int b, int y) { return a < 0 || b < 0 || a >= n || b >= n || y < 0 || y >= h ? 0 : raw(a, b, y); }
+        /** Whether the column at a, b (the ring included) is in a chunk that was loaded and read. */
+        boolean known(int a, int b) { return columnKnown[(b + 1) * p + a + 1]; }
     }
 
     /** A player, or the entity the view centres on, drawn as a pillar two blocks tall. */
@@ -489,9 +491,12 @@ final class Sight {
         if (cut != null && cut < top) { top = cut; v.cutTop = true; v.cutWhy = cutReason(p, c, cut); }
         if (p.has("min_y")) bottom = Math.max(bottom, p.get("min_y").getAsInt());
         else if (c.y != null) {
+            // The ground under them when it is lower, so someone flying shows with the ground below; nothing under them
+            // (between islands, or on an airship) leaves just their own height.
             int ground = c.y;
             LevelChunk here = c.level.getChunkSource().getChunkNow(c.x >> 4, c.z >> 4);
-            if (here != null) ground = Math.min(ground, here.getHeight(Heightmap.Types.WORLD_SURFACE, c.x & 15, c.z & 15));
+            int surface = here == null ? Integer.MIN_VALUE : here.getHeight(Heightmap.Types.WORLD_SURFACE, c.x & 15, c.z & 15);
+            if (surface >= c.level.getMinBuildHeight()) ground = Math.min(ground, surface);
             bottom = Math.max(bottom, Math.min(ground, top) - BELOW);
         }
         if (bottom > top) throw new Bridge.Refusal("empty_range", "There are no blocks between y " + bottom + " and y " + top + " in this area (blocks here span y " + lo + " to " + hi + ").");
@@ -500,7 +505,7 @@ final class Sight {
             throw new Bridge.Refusal("too_large", "That is " + v.n + " x " + v.n + " x " + v.h + " blocks, more than a view can hold. Lower \"radius\", or give \"min_y\" and \"max_y\" (blocks here span y " + lo + " to " + hi + ").");
         }
         v.cells = new int[v.p * v.p * (v.h + 1)];
-        v.columnKnown = new boolean[v.n * v.n];
+        v.columnKnown = new boolean[v.p * v.p];
 
         java.util.IdentityHashMap<BlockState, Integer> colours = new java.util.IdentityHashMap<>();
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -518,7 +523,7 @@ final class Sight {
             int bx = chunk.getPos().getMinBlockX(), bz = chunk.getPos().getMinBlockZ();
             for (int x = 0; x < 16; x++) for (int z = 0; z < 16; z++) {
                 int dx = bx + x - v.x0, dz = bz + z - v.z0;
-                if (dx >= 0 && dz >= 0 && dx < v.n && dz < v.n) v.columnKnown[(v.pb(dx, dz) - 1) * v.n + v.pa(dx, dz) - 1] = true;
+                if (dx >= -1 && dz >= -1 && dx <= v.n && dz <= v.n) v.columnKnown[v.pb(dx, dz) * v.p + v.pa(dx, dz)] = true;
             }
             LevelChunkSection[] sections = chunk.getSections();
             for (int s = 0; s < sections.length; s++) {
@@ -559,7 +564,10 @@ final class Sight {
 
     private static final int TOP = 1, LEFT = 2, RIGHT = 4, TOP_CUT = 8, LEFT_CUT = 16, RIGHT_CUT = 32;
 
-    /** Which of a cell's three faces towards the camera show, and which of those are cuts through solid blocks. */
+    /**
+     * Which of a cell's three faces towards the camera show, and which of those are cuts: faces against solid blocks
+     * the picture leaves out, or against a column in a chunk that wasn't read, where nothing is known.
+     */
     private static int faces(Volume v, int a, int b, int y) {
         int c = v.at(a, b, y);
         if (c == 0) return 0;
@@ -569,8 +577,8 @@ final class Sight {
         if (shows(c, v.at(a + 1, b, y))) f |= RIGHT;
         if ((c & WATER) == 0) {
             if ((f & TOP) != 0 && y == v.h - 1 && solid(v.raw(a, b, y + 1))) f |= TOP_CUT;
-            if ((f & LEFT) != 0 && b == v.n - 1 && solid(v.raw(a, b + 1, y))) f |= LEFT_CUT;
-            if ((f & RIGHT) != 0 && a == v.n - 1 && solid(v.raw(a + 1, b, y))) f |= RIGHT_CUT;
+            if ((f & LEFT) != 0 && (!v.known(a, b + 1) || b == v.n - 1 && solid(v.raw(a, b + 1, y)))) f |= LEFT_CUT;
+            if ((f & RIGHT) != 0 && (!v.known(a + 1, b) || a == v.n - 1 && solid(v.raw(a + 1, b, y)))) f |= RIGHT_CUT;
         }
         return f;
     }
@@ -652,7 +660,7 @@ final class Sight {
         int[] box = {Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE, Integer.MIN_VALUE};
         boolean any = false;
         for (int a = 0; a < n; a++) for (int b = 0; b < n; b++) {
-            if (!v.columnKnown[b * n + a]) { reach(box, a, b, 0); any = true; }
+            if (!v.known(a, b)) { reach(box, a, b, 0); any = true; }
             for (int y = 0; y < v.h; y++) if (faces(v, a, b, y) != 0) { reach(box, a, b, y); any = true; }
         }
         List<int[]> markers = new ArrayList<>();   // a, b, y of each mark's feet, or null when outside the slab
@@ -672,7 +680,7 @@ final class Sight {
         // Ground tiles for columns in chunks that were not loaded or not reached, so they don't read as void.
         for (int d = 0; d <= 2 * (n - 1); d++) for (int a = Math.max(0, d - n + 1); a <= Math.min(d, n - 1); a++) {
             int b = d - a;
-            if (!v.columnKnown[b * n + a]) cv.paint(cv.sx(a, b), cv.sy(a, b, 0), TOP, NOT_LOADED, 1.0, Integer.MIN_VALUE);
+            if (!v.known(a, b)) cv.paint(cv.sx(a, b), cv.sy(a, b, 0), TOP, NOT_LOADED, 1.0, Integer.MIN_VALUE);
         }
         int drawn = 0, cutFaces = 0, waterFaces = 0;
         for (int d = 0; d <= 2 * (n - 1); d++) for (int a = Math.max(0, d - n + 1); a <= Math.min(d, n - 1); a++) {
@@ -730,7 +738,7 @@ final class Sight {
         o.addProperty("seen_from", FROM[v.turns]);
         o.addProperty("reading", "The camera is to the " + FROM[v.turns] + " and above, looking down across the area; up on the picture is away from the camera and higher. "
                 + "Tops are brightest, the two visible sides darker, and higher blocks slightly brighter than lower ones. "
-                + "Faces striped with dark diagonal lines are where the picture cuts through solid blocks (the top of the slab, or the area's two near edges): they are not real floors or cliffs. "
+                + "Faces striped with dark diagonal lines are where the picture cuts through solid blocks (the top of the slab, or the area's two near edges) or stops at a chunk that isn't loaded: they are not real floors or cliffs. "
                 + "Water is see-through, tinted blue.");
         JsonArray corner = new JsonArray(); corner.add(v.x0); corner.add(v.z0);
         o.add("north_west_corner_block", corner);
@@ -754,7 +762,7 @@ final class Sight {
         if (v.chunksNotLoaded + v.chunksNotReached > 0) {
             o.addProperty("note", (v.chunksNotLoaded > 0 ? v.chunksNotLoaded + " chunks in range are not loaded. " : "")
                     + (v.chunksNotReached > 0 ? v.chunksNotReached + " loaded chunks were not copied before the time budget ran out (nearest go first); raise \"budget_ms\" or lower \"radius\". " : "")
-                    + "Their ground is drawn as flat dark purple tiles at the lowest level, and nothing in them is shown.");
+                    + "Their ground is drawn as flat dark purple tiles at the lowest level, nothing in them is shown, and the faces of blocks beside them are striped as cuts, since what lies past them is unknown.");
         }
         o.addProperty("player_marker", "bright red pillar two blocks tall, drawn over any blocks in front of it");
         if (target != null) {
