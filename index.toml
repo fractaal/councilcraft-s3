@@ -7409,6 +7409,22 @@ file = "global_packs/required_data/Aero Plushie Loot Fix/pack.mcmeta"
 hash = "89ff481d5cf37208db88bd90a3f57ba8139020c46eca536a700f7eaab89fa11d"
 
 [[files]]
+file = "global_packs/required_data/Aero Recipe Tweaks/data/aero/recipe/milling/corn_kernels.json"
+hash = "bcae1a3f715c24d03f0db35ad1796afe454db14af26b792f857a7885ae3a2445"
+
+[[files]]
+file = "global_packs/required_data/Aero Recipe Tweaks/pack.mcmeta"
+hash = "a51c4ae05a749c7de18968260cd8caa433a7b78e22868dc83ae5be437283705a"
+
+[[files]]
+file = "global_packs/required_data/Aero Sifter Fixes/data/aero/recipe/sifting/aa_gravel_advanced_brass.json"
+hash = "51a5d32c13510ac18e4a738170c3c047edcfee4d0e7b0762f8fcbfe3cf279bd9"
+
+[[files]]
+file = "global_packs/required_data/Aero Sifter Fixes/pack.mcmeta"
+hash = "757d583dbbab26e45061d2dd73e0748c49b1cf3edeb44c7191721a45f6a1f233"
+
+[[files]]
 file = "global_packs/required_data/Aero Skills/data/puffish_skills/puffish_skills/categories/athletics/category.json"
 hash = "de6a6055a767c271930efc0a95250cf42616d6aed9c266f3ab43d25fe70f7e54"
 
@@ -10484,8 +10500,8 @@ hash = "ad797a4747adf0a547aff1f6bdb0c99d27b96324356fd0420fe9167e526d7185"
 metafile = true
 
 [[files]]
-file = "mods/fractals-peripherals-1.21.1-0.3.3.jar"
-hash = "677663b3df0a2770aafab8467b1abe2cd563cd8286ae02a95abe7495aafb68b6"
+file = "mods/fractals-peripherals-1.21.1-0.4.0.jar"
+hash = "7050f9771536ef9de1cae29ec2eda141a404590061bf04361fb033831faecf1f"
 
 [[files]]
 file = "mods/fragmentum.pw.toml"
