@@ -1,8 +1,8 @@
 #!/bin/bash
 # Builds skyislands-1.0.0.jar against a NeoForge 21.1.262 server's libraries folder.
 # usage: ./build.sh [path to the server's libraries folder]   (default: /opt/minecraft-servers/exosphere-aero/libraries)
-# Mob Loot Bags (for LuckBags), Sable (for the coaster mixin) and Building Gadgets 2 (for GadgetPick) are compiled against from the mods folder next to that
-# libraries folder.
+# Mob Loot Bags (for LuckBags), Sable (for the coaster mixin), Building Gadgets 2 (for GadgetPick) and Sophisticated Core (for the crafting upgrade
+# mixins) are compiled against from the mods folder next to that libraries folder.
 set -e
 L=${1:-/opt/minecraft-servers/exosphere-aero/libraries}
 cd "$(dirname "$0")"
@@ -24,6 +24,10 @@ CP=$CP:$SABLE
 BG2=$(ls "$(dirname "$L")"/mods/buildinggadgets2-*.jar | head -1)
 [ -f "$BG2" ] || { echo "no Building Gadgets 2 jar in $(dirname "$L")/mods" >&2; exit 1; }
 CP=$CP:$BG2
+# Sophisticated Core (for the crafting upgrade mixins) is compiled against the same way.
+SOPH=$(ls "$(dirname "$L")"/mods/sophisticatedcore-*.jar | head -1)
+[ -f "$SOPH" ] || { echo "no Sophisticated Core jar in $(dirname "$L")/mods" >&2; exit 1; }
+CP=$CP:$SOPH
 javac --release 21 -nowarn -proc:none -cp "$CP" -d build/classes $(find src -name '*.java')
 (cd build/classes && jar cf ../../skyislands-1.0.0.jar .)
 jar uf skyislands-1.0.0.jar -C res .
