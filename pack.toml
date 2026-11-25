@@ -1,12 +1,12 @@
 name = "CouncilCraft Season 3"
 author = "fractal"
-version = "1.5.1+sky.17"
+version = "1.5.1+sky.18"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "534eaad0763cb1e6f5d284d24616ab1a1cb97c7370d378a07979ecda25a6bdf2"
+hash = "8bb9c867d84c96032d20ffd31d364068372183129e40542532fd9bc1fd9d8425"
 
 [versions]
 minecraft = "1.21.1"

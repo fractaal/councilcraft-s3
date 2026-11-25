@@ -5298,7 +5298,7 @@ hash = "d640c77b9cbb56c6ca4bd3bf4194ad5fa6dd3572cd22934e29c547d9d8942632"
 
 [[files]]
 file = "config/global_packs.toml"
-hash = "2637ab1aba4cb4f5302ef66a6ae31ed99dc008f8301f5d24e5d9359765446d67"
+hash = "e288fe3d20845e26335f2eaedb6f76756ca2fb835f39f2b84fda97898a3c499d"
 
 [[files]]
 file = "config/grapplemod-client.json"
