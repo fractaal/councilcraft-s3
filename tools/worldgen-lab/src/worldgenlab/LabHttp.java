@@ -120,6 +120,7 @@ final class LabHttp {
                 case "/api/colhash" -> colhash(ex, q);
                 case "/api/beard" -> beard(ex, q);
                 case "/api/waterwalls" -> waterwalls(ex, q);
+                case "/api/monuments" -> monuments(ex, q);
                 default -> serveFile(ex, path);
             }
         } catch (Exception e) {
@@ -614,6 +615,44 @@ final class LabHttp {
     /** The sky-island settings the template (the world's datapack) was generated with. */
     private static JsonObject templateSettings() {
         return template.getAsJsonObject("noise_router").getAsJsonObject("fluid_level_floodedness").getAsJsonObject("settings");
+    }
+
+    /**
+     * The lake islands in an area that get an ocean monument (SkyTerrain.monumentLakesIn), to list where monuments
+     * will stand; with all=1, every lake with room for one, to choose how rare they should be. Also counts the
+     * area's islands and lake islands.
+     */
+    private static void monuments(HttpExchange ex, Map<String, String> q) throws IOException {
+        int x0 = Integer.parseInt(q.get("x0")), z0 = Integer.parseInt(q.get("z0"));
+        int x1 = Integer.parseInt(q.get("x1")), z1 = Integer.parseInt(q.get("z1"));
+        skyislands.SkyTerrain t = world.terrain();
+        JsonObject r = new JsonObject();
+        com.google.gson.JsonArray lakes = new com.google.gson.JsonArray();
+        int islands = 0, lakeIslands = 0;
+        if (t != null) {
+            for (double[] is : t.islandsIn(x0, z0, x1, z1)) {
+                islands++;
+                if (is[4] == 1) lakeIslands++;
+            }
+            for (double[] m : t.monumentLakesIn(x0, z0, x1, z1, "1".equals(q.get("all")))) {
+                JsonObject o = new JsonObject();
+                o.addProperty("x", (int) m[0]);
+                o.addProperty("z", (int) m[1]);
+                o.addProperty("radius", Math.round(m[2]));
+                o.addProperty("chunkX", (int) m[3]);
+                o.addProperty("chunkZ", (int) m[4]);
+                o.addProperty("level", (int) m[5]);
+                o.addProperty("depth", Math.round(m[6] * 10.0) / 10.0);
+                o.addProperty("roll", m[7]);
+                o.addProperty("monument", m[8] > 0);
+                lakes.add(o);
+            }
+        }
+        r.addProperty("seed", world.seed);
+        r.addProperty("islands", islands);
+        r.addProperty("lakeIslands", lakeIslands);
+        r.add("lakes", lakes);
+        json(ex, 200, r);
     }
 
     /** Calderas, atolls and plateau regions in an area, so the viewer can list them and jump there. */

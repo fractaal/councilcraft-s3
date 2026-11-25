@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
+import net.minecraft.world.level.levelgen.structure.structures.OceanMonumentStructure;
 import net.neoforged.neoforge.common.Tags;
 
 /**
@@ -96,6 +97,8 @@ public final class StructureFootings {
      */
     private static boolean onMadeUpGround(StructureStart start, SkyTerrain terrain) {
         if (!ISLANDS || start.getPieces().isEmpty()) return false;
+        // An ocean monument stands in a lake, at a height taken from the lake's water (LakeMonuments).
+        if (start.getStructure() instanceof OceanMonumentStructure) return false;
         BoundingBox first = start.getPieces().get(0).getBoundingBox(), all = start.getBoundingBox();
         double pad = terrain.padHeight((first.minX() + first.maxX()) / 2, (first.minZ() + first.maxZ()) / 2);
         return !Double.isNaN(pad) && all.minY() <= pad + 6.0 && all.maxY() >= pad - 16.0;

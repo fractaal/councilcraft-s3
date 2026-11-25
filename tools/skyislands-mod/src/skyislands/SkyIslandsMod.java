@@ -28,6 +28,7 @@ public final class SkyIslandsMod {
         TYPES.register(modBus);
         FEATURES.register(modBus);
         NeoForge.EVENT_BUS.addListener(StructureDensity::onLevelLoad);
+        NeoForge.EVENT_BUS.addListener(LakeMonuments::onLevelLoad);
         NeoForge.EVENT_BUS.addListener(DfuWarmup::onServerAboutToStart);
         NeoForge.EVENT_BUS.addListener(DfuWarmup::onServerStarted);
         // After FTB Quests has added its loot crate to a mob's drops.

@@ -60,6 +60,8 @@ public final class SkyTerrain implements DensityFunction {
         final Map<Long, LandBridge> landBridges = new ConcurrentHashMap<>();
         final Map<Long, LandBridge[]> landBridgeTiles = new ConcurrentHashMap<>();
         final Map<Long, Island[]> bridgePicks = new ConcurrentHashMap<>();
+        final Map<Long, MonumentSite> monuments = new ConcurrentHashMap<>();
+        final Map<Long, MonumentSite> monumentCells = new ConcurrentHashMap<>();
     }
 
     private final Caches caches;
@@ -1817,6 +1819,184 @@ public final class SkyTerrain implements DensityFunction {
         return t * t * (3.0 - 2.0 * t);
     }
 
+    // ---- Monument lakes ----------------------------------------------------------------------------------------
+
+    /**
+     * Where an ocean monument stands in a lake. A sky-island world has no ocean, so the game finds no biome to put a
+     * monument in; here the terrain picks the places instead (skyislands.LakeMonuments turns them into monuments). A
+     * lake island with room for one gets it in the deepest open water it has, if it rolled one (monumentChance) and
+     * that water is deep enough (monumentMinDepth). The monument is centred on a chunk's corner, as the game centres
+     * it. `level` is the lake's water level (the first block above the water), which the monument takes for the sea
+     * level; `depth` is the average depth of the water its 58x58 box replaces.
+     */
+    public record MonumentSite(int chunkX, int chunkZ, int level, double depth, double islandX, double islandZ, double radius, double roll) {}
+
+    private static final MonumentSite NO_SITE = new MonumentSite(0, 0, 0, 0, 0, 0, 0, 1);
+    /** From a monument's water level down to its lowest block: 23 tall, with 2 of water over its top, as in an ocean. */
+    public static final int MONUMENT_BELOW = 24;
+    /**
+     * The monument's box reaches 29 blocks from its centre, and the game carves a stepped ring of water 5 wider around
+     * it. Every MON_STEP blocks out to MON_RING has to be the lake's open water, and within MON_BOX the island has to
+     * go on for MON_ROCK blocks under the monument's lowest block, so the pit it digs into the bed can't open the
+     * island's underside.
+     */
+    private static final int MON_STEP = 4, MON_BOX = 28, MON_RING = 36, MON_ROCK = 6;
+    private static final double[] NO_WATER = new double[0];
+
+    /** True if this world's lakes can hold monuments. */
+    public boolean hasMonuments() {
+        return p.arch != null && p.arch.monumentChance > 0 && islands != null;
+    }
+
+    /** The monument centred on this chunk's corner, or null. */
+    public MonumentSite monumentSiteAt(int chunkX, int chunkZ) {
+        if (!hasMonuments()) return null;
+        Arch a = p.arch;
+        int cx = (int) Math.floor(chunkX * 16.0 / a.cell), cz = (int) Math.floor(chunkZ * 16.0 / a.cell);
+        for (int dx = -a.search; dx <= a.search; dx++) for (int dz = -a.search; dz <= a.search; dz++) {
+            MonumentSite s = monumentSite(mainIsland(cx + dx, cz + dz));
+            if (s != null && s.chunkX == chunkX && s.chunkZ == chunkZ) return s;
+        }
+        return null;
+    }
+
+    /**
+     * The monument in cell (gx, gz) of a grid of `spacing` chunks, or null. The game allows one monument per cell of
+     * its placement grid and picks a chunk in each at random; this is the chunk it is given instead (LakeMonuments).
+     * Where two lakes in a cell have one, the cell keeps the one whose island comes first by key.
+     */
+    public MonumentSite monumentInCell(int gx, int gz, int spacing) {
+        if (!hasMonuments()) return null;
+        long key = mix((gx & 0x3FFFFFL) | (gz & 0x3FFFFFL) << 22 | (long) spacing << 44);
+        MonumentSite s = caches.monumentCells.get(key);
+        if (s == null) s = caches.monumentCells.computeIfAbsent(key, k -> buildMonumentCell(gx, gz, spacing));
+        return s == NO_SITE ? null : s;
+    }
+
+    private MonumentSite buildMonumentCell(int gx, int gz, int spacing) {
+        Arch a = p.arch;
+        double x0 = gx * spacing * 16.0, z0 = gz * spacing * 16.0, w = spacing * 16.0;
+        MonumentSite best = NO_SITE;
+        long bestKey = 0;
+        for (int cx = (int) Math.floor(x0 / a.cell) - a.search; cx <= (int) Math.floor((x0 + w) / a.cell) + a.search; cx++) {
+            for (int cz = (int) Math.floor(z0 / a.cell) - a.search; cz <= (int) Math.floor((z0 + w) / a.cell) + a.search; cz++) {
+                Island is = mainIsland(cx, cz);
+                MonumentSite s = monumentSite(is);
+                if (s == null || Math.floorDiv(s.chunkX, spacing) != gx || Math.floorDiv(s.chunkZ, spacing) != gz) continue;
+                long key = islandKey(is);
+                if (best == NO_SITE || key < bestKey) { best = s; bestKey = key; }
+            }
+        }
+        return best;
+    }
+
+    /** The island's monument, or null: it has to be a lake island that rolled one and has deep enough water with room for it. */
+    private MonumentSite monumentSite(Island is) {
+        if (is == NO_ISLAND || !(is.bowlDepth > 0)) return null;
+        if (monumentRoll(is) >= p.arch.monumentChance) return null;
+        MonumentSite s = monumentRoom(is);
+        return s != NO_SITE && s.depth >= p.arch.monumentMinDepth ? s : null;
+    }
+
+    /** Its own hash, so the roll changes no island's shape. */
+    private double monumentRoll(Island is) {
+        return unit(mix(seedMix ^ islandKey(is) ^ 0x4F6D656761526172L));
+    }
+
+    /** The deepest place in the island's lake with room for a monument, or NO_SITE. */
+    private MonumentSite monumentRoom(Island is) {
+        long key = islandKey(is);
+        MonumentSite s = caches.monuments.get(key);
+        return s != null ? s : caches.monuments.computeIfAbsent(key, k -> buildMonumentRoom(is));
+    }
+
+    private MonumentSite buildMonumentRoom(Island is) {
+        int level = (int) is.waterLevel;
+        // Never at the height the game builds its own at: that height is how a lake's monument is told from one of
+        // the game's when a saved monument is rebuilt (LakeMonuments.keepHeight).
+        if (level - MONUMENT_BELOW == 39) return NO_SITE;
+        Island[] mains = mainsIn(is.x - is.reach, is.z - is.reach, is.x + is.reach, is.z + is.reach);
+        java.util.Map<Long, double[]> probes = new java.util.HashMap<>();
+        int bestX = 0, bestZ = 0;
+        double bestDepth = -1.0, bestFar = 0.0;
+        for (int cx = (int) Math.floor((is.x - is.reach) / 16.0); cx <= (int) Math.floor((is.x + is.reach) / 16.0); cx++) {
+            for (int cz = (int) Math.floor((is.z - is.reach) / 16.0); cz <= (int) Math.floor((is.z + is.reach) / 16.0); cz++) {
+                double depth = monumentDepth(cx << 4, cz << 4, level, mains, probes);
+                double far = Math.hypot((cx << 4) - is.x, (cz << 4) - is.z);
+                if (depth > bestDepth || depth == bestDepth && depth >= 0 && far < bestFar) {
+                    bestX = cx; bestZ = cz; bestDepth = depth; bestFar = far;
+                }
+            }
+        }
+        return bestDepth < 0 ? NO_SITE : new MonumentSite(bestX, bestZ, level, bestDepth, is.x, is.z, is.r, monumentRoll(is));
+    }
+
+    /** The average depth of the lake's water under a monument centred on (x, z), or -1 where one has no room. */
+    private double monumentDepth(int x, int z, int level, Island[] mains, java.util.Map<Long, double[]> probes) {
+        // The middle and the rim first: most places fail there, on a few probes.
+        if (lakeWater(x, z, level, mains, probes) == NO_WATER) return -1.0;
+        for (int dx = -MON_RING; dx <= MON_RING; dx += MON_RING) for (int dz = -MON_RING; dz <= MON_RING; dz += MON_RING) {
+            if (lakeWater(x + dx, z + dz, level, mains, probes) == NO_WATER) return -1.0;
+        }
+        double sum = 0.0;
+        int n = 0;
+        for (int dx = -MON_RING; dx <= MON_RING; dx += MON_STEP) for (int dz = -MON_RING; dz <= MON_RING; dz += MON_STEP) {
+            double[] w = lakeWater(x + dx, z + dz, level, mains, probes);
+            if (w == NO_WATER) return -1.0;
+            if (Math.abs(dx) > MON_BOX || Math.abs(dz) > MON_BOX) continue;
+            if (!(w[1] <= level - MONUMENT_BELOW - MON_ROCK)) return -1.0;
+            sum += w[0];
+            n++;
+        }
+        return sum / n;
+    }
+
+    /**
+     * The open water of the lake at `level` at (x, z), as {its depth, the lake island's underside}, or NO_WATER: shore,
+     * an islet, or another island's land in or over the water. Islands only, as rivers are planned (groundAt).
+     */
+    private double[] lakeWater(int x, int z, int level, Island[] mains, java.util.Map<Long, double[]> probes) {
+        long key = (long) x << 32 | z & 0xFFFFFFFFL;
+        double[] w = probes.get(key);
+        if (w != null) return w;
+        Column t = new Column(this, x, z);
+        t.bare = true;
+        t.sharedWarp = sharedWarp(x, z);
+        for (Island m : mains) addIsland(t, m, x, z);
+        if (p.arch.pepperChance > 0) for (Island m : pepperTile(Math.floorDiv(x, PEPPER_TILE), Math.floorDiv(z, PEPPER_TILE))) addIsland(t, m, x, z);
+        double[] g = ground(t, level);
+        w = NO_WATER;
+        if (open(g, level)) {
+            double under = Double.NaN;
+            for (int i = 0; i < t.count; i++) if (t.basinLevel[i] == level) under = t.bottom[i] / B;
+            w = new double[]{level - g[0], under};
+        }
+        probes.put(key, w);
+        return w;
+    }
+
+    /**
+     * For tools: the lake islands centred in the area whose lake has room for a monument, as {island x, z, radius,
+     * chunk x, chunk z, water level, depth, roll, 1 if it gets one else 0}. With `all`, also those that get none
+     * (several times the work: every lake island is searched for room, not only the ones that rolled a monument).
+     */
+    public java.util.List<double[]> monumentLakesIn(int x0, int z0, int x1, int z1, boolean all) {
+        java.util.List<double[]> out = new java.util.ArrayList<>();
+        if (p.arch == null || islands == null) return out;
+        int c = (int) p.arch.cell;
+        for (int cx = Math.floorDiv(x0, c) - 1; cx <= Math.floorDiv(x1, c) + 1; cx++) {
+            for (int cz = Math.floorDiv(z0, c) - 1; cz <= Math.floorDiv(z1, c) + 1; cz++) {
+                Island is = mainIsland(cx, cz);
+                if (is == NO_ISLAND || !(is.bowlDepth > 0) || is.x < x0 || is.x > x1 || is.z < z0 || is.z > z1) continue;
+                if (!all && monumentSite(is) == null) continue;
+                MonumentSite s = monumentRoom(is);
+                if (s == NO_SITE) continue;
+                out.add(new double[]{is.x, is.z, is.r, s.chunkX, s.chunkZ, s.level, s.depth, s.roll, monumentSite(is) != null ? 1 : 0});
+            }
+        }
+        return out;
+    }
+
     // ---- Lakes -------------------------------------------------------------------------------------------------
 
     private record Lake(int x, int z, double radius, double level, double depth) {}
@@ -2420,6 +2600,7 @@ public final class SkyTerrain implements DensityFunction {
         final double riverChance, riverHalfWidth, riverDepth, riverStepMin, riverStepMax, riverBankSlope, riverMeander,
                 riverMeanderWavelength, riverMaxCut;
         final double chainChance, chainDistrict, chainMaxLength, chainMaxGap, chainMaxDrop;
+        final double monumentChance, monumentMinDepth;
         final double landBridgeChance, landBridgeSecond, landBridgeMaxGap;
         final double leyScale, leySpacing, leyPull, leyPullPepper, leyBand, leyPepperBand, leyOff, leyAlign, leyStretch, lineHeightSpread, leyGaps;
         final double leyCell, leyChance, leyMinRadius, leyMaxRadius;
@@ -2507,6 +2688,12 @@ public final class SkyTerrain implements DensityFunction {
             riverMeander = Params.num(rv, "meander", 1.0);
             riverMeanderWavelength = Params.num(rv, "meanderWavelength", 60);
             riverMaxCut = Params.num(rv, "maxCut", 30);
+            // Ocean monuments in lakes (monumentSite). On unless the settings say "monuments": {"chance": 0}. On the
+            // live seed, 93 lakes within 8,000 blocks of the origin have room for one in water averaging 20 or deeper,
+            // and 15 of them roll under 0.17: about one monument per 4,000 x 4,000 blocks.
+            JsonObject mon = o.has("monuments") ? o.getAsJsonObject("monuments") : null;
+            monumentChance = Params.num(mon, "chance", 0.17);
+            monumentMinDepth = Params.num(mon, "minDepth", 20.0);
             // Lake chains: links between neighbouring lake islands; off unless the settings have a "chains" object (and rivers).
             JsonObject chn = o.has("chains") ? o.getAsJsonObject("chains") : null;
             chainChance = chn == null || rv == null ? 0 : Params.num(chn, "chance", 0.8);
